@@ -48,9 +48,7 @@ class HomeDash extends Component {
                     <div className="main-container">
                         <div className="main">
                             <div className="content">
-                                <StatsPreview></StatsPreview>
-                                <GiftyPreviewSlide></GiftyPreviewSlide>
-                                <ShortSummary></ShortSummary>
+
                             </div>
                         </div>
                     </div>
@@ -76,3 +74,8 @@ export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeDash)
  <a href="#something" className="separator">Settings</a>
  </li>
  </ul>*/
+
+
+//<StatsPreview></StatsPreview>
+//<GiftyPreviewSlide></GiftyPreviewSlide>
+//<ShortSummary></ShortSummary>

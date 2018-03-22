@@ -4,6 +4,9 @@ import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import Icon from 'react-icon-base';
 
+import history from '../../Helpers/history';
+
+
 
 const mapStateToProps = state => ({
     ...state.auth,
@@ -176,7 +179,7 @@ class Login extends Component {
                         </div>
                         <div className="modal-content">
                             <form onSubmit={this.tryLogin(email, password)}>
-                                <div className="button-general" onClick={() => this.tryLogin(email, password)}>Login
+                                <div className="button-general" onClick={() => history.push('/home')}>Login
                                     with Facebook
                                 </div>
 

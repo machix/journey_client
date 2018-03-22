@@ -105,7 +105,7 @@ class RouterHome extends Component {
                 <ScrollToTop>
                     <Switch>
                         <Redirect exact from="/" to="/login"/>
-                        <LoginRoute authed={this.state.authed} path="/login" component={App}/>
+                        <Route exact path="/login" component={App}/>
                         <Dashboard>
                             <ModalMother/>
                             <Route exact path="/home" component={HomeDash}/>
@@ -122,3 +122,4 @@ class RouterHome extends Component {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(RouterHome);
+//                        <LoginRoute authed={this.state.authed} path="/login" component={App}/>

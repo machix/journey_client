@@ -59,17 +59,17 @@ class Dashboard extends Component {
         this.setState({mql: mql, sidebarDocked: mql.matches});
         this.props.desktop(mql.matches);
 
-        agent.Auth.current().then((user) => {
-/*
-            this.props.lookupConsole2(user.uid);
-*/
-
-        })
-        /*.then((snapshot) => {
-         console.log(snapshot.val());
-         this.props.fetchConsole(snapshot.val());
-         })*/.catch((error) => {
-        });
+//         agent.Auth.current().then((user) => {
+// /*
+//             this.props.lookupConsole2(user.uid);
+// */
+//
+//         })
+//         /*.then((snapshot) => {
+//          console.log(snapshot.val());
+//          this.props.fetchConsole(snapshot.val());
+//          })*/.catch((error) => {
+//         });
         this.props.watchDatabase();
     }
 
@@ -96,7 +96,6 @@ class Dashboard extends Component {
 
         return (
             <div className={this.props.modal_toggle === 'open' ? "root blur" : "root"}>
-                <Header></Header>
                 <Sidebar sidebar={sidebarContent}
                          open={this.props.sidebarOpen}
                          docked={this.props.desktop ? this.state.sidebarDocked : false}
@@ -124,6 +123,9 @@ class Dashboard extends Component {
         );
     }
 }
+
+//                <Header></Header>
+
 
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Dashboard));
