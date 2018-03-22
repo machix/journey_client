@@ -208,7 +208,7 @@ class Login extends Component {
                         <div className={'cause-container'}>
 
                             <div style={{paddingRight: '20px'}}>
-ACTIVE CLEANING OF THE OCEAN                            </div>
+ACTIVE OCEAN CLEAN UP                       </div>
 
 
                             <div className={'cause-border'}>
