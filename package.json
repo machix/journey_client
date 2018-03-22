@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "d3-geo": "^1.10.0",
     "emoji-mart-lite": "^0.4.9",
     "firebase": "^4.5.0",
     "immutability-helper": "^2.4.0",
@@ -15,6 +16,8 @@
     "react-copy-to-clipboard": "^5.0.1",
     "react-dates": "^12.6.0",
     "react-dom": "^15.6.2",
+    "react-exif-orientation-img": "^0.1.5",
+    "react-flipcard": "^0.2.1",
     "react-icons": "^2.2.5",
     "react-measure": "^2.0.2",
     "react-modal": "^2.3.3",

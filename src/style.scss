@@ -658,21 +658,41 @@ h1, h2, h3, h4, h5 {
           }
         }
 
-        .cause-border {
+        .flip-card {
           width: 150px;
           height: 150px;
-          border-radius: 200px;
-          background: linear-gradient(white, white);
-          display: flex;
-          align-items: center;
-          justify-content: center;
 
-          .cause-img {
-            width: 140px;
-            height: 140px;
-            border-radius: 180px;
+          display: flex;
+          flex-direction: column;
+
+          .cause-border {
+            width: 150px;
+            height: 150px;
+            border-radius: 200px;
+            background: linear-gradient(white, white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .cause-img {
+              width: 140px;
+              height: 140px;
+              border-radius: 180px;
+            }
+
+            .flip-card-back {
+              width: 140px;
+              height: 140px;
+              display: flex;
+              align-items: center;
+              justify-content:center;
+              border-radius: 180px;
+              background-color: rgba(34, 73, 90, 0.9);
+            }
           }
         }
+
+
       }
 
     }

@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import StatsPreview from '../Cards/StatsPreview.js';
-import ShortSummary from '../Cards/ShortSummary.js';
-import GiftyPreviewSlide from '../Cards/GiftyPreviewSlide.js';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
+
+import ExifOrientationImg from 'react-exif-orientation-img'
 
 import PageFade from '../../Helpers/PageFade.js'
 import HOC from '../../Helpers/HOC'
@@ -47,9 +46,10 @@ class HomeDash extends Component {
                 <PageFade>
                     <div className="main-container">
                         <div className="main">
-                            <div className="content">
-
-                            </div>
+                            <ExifOrientationImg
+                                style={{height: '80vh', width: 'auto', imageOrientation: 'from-image'}}
+                                className={'image-view'}
+                                src={'https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2F0fcfe593-6f26-4e03-9bb7-e9d53e7143d5.jpg?alt=media&token=b710b974-71f4-45fc-93fd-df0237efd85e=s256'}/>
                         </div>
                     </div>
                 </PageFade>

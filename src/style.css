@@ -465,18 +465,31 @@ h1, h2, h3, h4, h5 {
                 width: 100%;
                 background-color: white;
                 border-radius: 4px; }
-        .login-wrapper .login-jumbotron .cause-sidebar .live-container .cause-border {
+        .login-wrapper .login-jumbotron .cause-sidebar .live-container .flip-card {
           width: 150px;
           height: 150px;
-          border-radius: 200px;
-          background: linear-gradient(white, white);
           display: flex;
-          align-items: center;
-          justify-content: center; }
-          .login-wrapper .login-jumbotron .cause-sidebar .live-container .cause-border .cause-img {
-            width: 140px;
-            height: 140px;
-            border-radius: 180px; }
+          flex-direction: column; }
+          .login-wrapper .login-jumbotron .cause-sidebar .live-container .flip-card .cause-border {
+            width: 150px;
+            height: 150px;
+            border-radius: 200px;
+            background: linear-gradient(white, white);
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            .login-wrapper .login-jumbotron .cause-sidebar .live-container .flip-card .cause-border .cause-img {
+              width: 140px;
+              height: 140px;
+              border-radius: 180px; }
+            .login-wrapper .login-jumbotron .cause-sidebar .live-container .flip-card .cause-border .flip-card-back {
+              width: 140px;
+              height: 140px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 180px;
+              background-color: rgba(34, 73, 90, 0.9); }
 
 /* 	--- Container ----------------------- */
 .modal-container {
