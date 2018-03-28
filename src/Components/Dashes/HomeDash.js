@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 
-import ExifOrientationImg from 'react-exif-orientation-img'
+import EXIF from 'exif-js'
 
 import PageFade from '../../Helpers/PageFade.js'
 import HOC from '../../Helpers/HOC'
@@ -39,19 +39,31 @@ class HomeDash extends Component {
         }
     }
 
+    handleImageLoaded(e) {
+        console.log(e.target);
+        console.log(this.refs.img1)
+        console.log(EXIF.getData);
+        EXIF.getData(this.refs.img1, function () {
+            console.log('getData');
+            var make = EXIF.getTag(this, "Make");
+            var model = EXIF.getTag(this, "Model");
+            console.log(make);
+            console.log(model);
+        })
+    }
+
 
     render() {
         return (
             <HOC>
                 <PageFade>
-                    <div className="main-container">
-                        <div className="main">
-                            <ExifOrientationImg
-                                style={{height: '80vh', width: 'auto', imageOrientation: 'from-image'}}
-                                className={'image-view'}
-                                src={'https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2F0fcfe593-6f26-4e03-9bb7-e9d53e7143d5.jpg?alt=media&token=b710b974-71f4-45fc-93fd-df0237efd85e=s256'}/>
-                        </div>
-                    </div>
+
+                    <img
+                        ref={'img1'}
+                        onLoad={this.handleImageLoaded.bind(this)}
+                        style={{height: '80vh', width: 'auto', imageOrientation: '90deg'}}
+                        src={'asf'}/>
+
                 </PageFade>
             </HOC>
 

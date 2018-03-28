@@ -6,17 +6,16 @@ import _superagent from 'superagent';
 import history from './history';
 import flattener from './jsonFlattener';
 import aggregator from './aggregator';
-import { toast } from 'react-toastify';
 
 var Firebase = require('firebase');
 
 Firebase.initializeApp({
-    apiKey: "AIzaSyDx-jT5hlj-zpQvJxt9qMDwOVla-pm-iX4",
-    authDomain: "ip-gifty-staging.firebaseapp.com",
-    databaseURL: "https://ip-gifty-staging.firebaseio.com",
-    projectId: "ip-gifty-staging",
-    storageBucket: "ip-gifty-staging.appspot.com",
-    messagingSenderId: "965307490561"
+    apiKey: "AIzaSyCTZX0lG1JyIBUphH7m5SDoPCpRamPNm24",
+    authDomain: "journeyapp91.firebaseapp.com",
+    databaseURL: "https://journeyapp91.firebaseio.com",
+    projectId: "journeyapp91",
+    storageBucket: "journeyapp91.appspot.com",
+    messagingSenderId: "515548202082"
 });
 
 var authService = Firebase.auth();
@@ -86,7 +85,6 @@ const FirebaseWatcher = {
             linkWatcher.on('value', function (snapshot) {
 
                 if (snapshot.val()) {
-                    toast(<div>{snapshot.val().gifty}</div>);
                 }
                 dispatch({type: 'LINK', link: 'https://gifty.link/' + id});
             });
@@ -430,7 +428,7 @@ const FirebaseQuery = {
                     var linkWatcher = database.ref('api/v1/responses/' + dashboard + '/' + id);
                     linkWatcher.on('value', function (snapshot) {
                         if (snapshot.val()) {
-                            toast(<div>{snapshot.val().link}</div>);
+                            // toast(<div>{snapshot.val().link}</div>);
 /*
                             dispatch({type: 'LINK', link: 'https://gifty.link/' + snapshot.val().link, key: key});
 */

@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import Select from 'react-select';
-import {toast} from 'react-toastify';
 
 
 import CampaignStats from '../Cards/Campaign/CampaignStats';
@@ -60,13 +59,13 @@ class CampaignDash extends Component {
     createCampaign(key, console_id, name, type) {
         console.log(name);
         if (name === '' || typeof(name) === 'undefined') {
-            toast.error("Please enter a campaign name!", {
-                position: toast.POSITION.BOTTOM_RIGHT
-            });
+            // toast.error("Please enter a campaign name!", {
+            //     position: toast.POSITION.BOTTOM_RIGHT
+            // });
         } else if (type === null) {
-            toast.error("Please select a campaign type!", {
-                position: toast.POSITION.BOTTOM_RIGHT
-            });
+            // toast.error("Please select a campaign type!", {
+            //     position: toast.POSITION.BOTTOM_RIGHT
+            // });
         } else {
             this.props.createCampaign(key, console_id, {name: name, type: type});
             this.setState({
