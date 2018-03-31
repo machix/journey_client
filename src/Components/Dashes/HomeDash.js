@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import {Motion, spring} from 'react-motion'
+import Icon from 'react-icon-base';
+import Transition from 'react-transition-group/Transition';
+
 
 import Sidebar from '../Sidebar/Sidebar';
 import Map from '../Map/Map';
@@ -18,6 +21,17 @@ const mapDispatchToProps = dispatch => ({
     fetchLiveJourney: (journey_uid) => dispatch(agent.FirebaseQuery.liveJourney(journey_uid))
 });
 
+const duration = 300;
+
+const defaultStyle = {
+    transition: `opacity ${duration}ms ease-in-out`,
+    opacity: 0,
+}
+
+const transitionStyles = {
+    entering: {opacity: 0},
+    entered: {opacity: 1},
+};
 
 class HomeDash extends Component {
 
@@ -33,6 +47,9 @@ class HomeDash extends Component {
             auth: {},
             visible: false,
             isHover: false,
+            commandsVisible: false,
+            commands: ['Share, Donate, Contribute']
+
         }
     }
 
@@ -67,6 +84,23 @@ class HomeDash extends Component {
         });
     };
 
+    handleChange = (event,) => {
+        let str = event.target.value;
+        if (str.startsWith('/')) {
+            console.log('is a comman d')
+            this.setState({
+                ...this.state,
+                commandsVisible: true
+            })
+        } else {
+            console.log('is not a command');
+            this.setState({
+                ...this.state,
+                commandsVisible: false
+            })
+        }
+    };
+
 
     render() {
         return (
@@ -84,12 +118,49 @@ class HomeDash extends Component {
                 </Motion>
 
                 <div className={'chat'}>
+
+                    <Transition
+                        unmountOnExit={true}
+                        in={this.state.commandsVisible}
+                        out={!this.state.commandsVisible}
+                        timeout={200}>
+                        {(state) => (
+                            <span className={`chat-commands-${state} chat-commands`}>
+                                Share </span>)}
+                    </Transition>
+                    <Transition
+                        unmountOnExit={true}
+                        in={this.state.commandsVisible}
+                        out={!this.state.commandsVisible}
+                        timeout={200}>
+                        {(state) => (
+                            <span className={`chat-commands-${state} chat-commands`}>
+                                Donate </span>)}
+                    </Transition>
+
                     <div className={'chat-input'}>
+
+
                         <input type="text"
-                               placeholder='Meet Superman!'
+                               style={{width: '100%'}}
+                               placeholder="Enter a comment or /'command'"
                                autComplete="off"
-                               onChange={() => null}/>
+                               onChange={(e) => this.handleChange(e)}/>
                     </div>
+                </div>
+
+                <div className={'logo'} onClick={()=>this.toggle()}>
+                    <img className={'logo-image'} src={"https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/The_North_Face_logo.svg/1200px-The_North_Face_logo.svg.png"}/>
+                </div>
+
+                <div className={'menu'}>
+                    <Icon className="conditional-display" viewBox="0 0 40 40" size={20} style={{color: 'white'}}>
+                        <g>
+                            <path
+                                d="m20 18.6c-0.8 0-1.4 0.6-1.4 1.4s0.6 1.4 1.4 1.4 1.4-0.6 1.4-1.4-0.6-1.4-1.4-1.4z m0-1.1c1.4 0 2.5 1.1 2.5 2.5s-1.1 2.5-2.5 2.5-2.5-1.1-2.5-2.5 1.1-2.5 2.5-2.5z m-10 1.1c-0.8 0-1.4 0.6-1.4 1.4s0.6 1.4 1.4 1.4 1.4-0.6 1.4-1.4-0.6-1.4-1.4-1.4z m0-1.1c1.4 0 2.5 1.1 2.5 2.5s-1.1 2.5-2.5 2.5-2.5-1.1-2.5-2.5 1.1-2.5 2.5-2.5z m20 1.1c-0.8 0-1.4 0.6-1.4 1.4s0.6 1.4 1.4 1.4 1.4-0.6 1.4-1.4-0.6-1.4-1.4-1.4z m0-1.1c1.4 0 2.5 1.1 2.5 2.5s-1.1 2.5-2.5 2.5-2.5-1.1-2.5-2.5 1.1-2.5 2.5-2.5z"/>
+                        </g>
+
+                    </Icon>
                 </div>
 
 
@@ -100,26 +171,23 @@ class HomeDash extends Component {
                             style={{
                                 maxWidth: '100%',
                                 maxHeight: '100%',
-
                                 filter: this.state.visible ? 'blur(2px)' : 'none'
                             }}
                             src={'https://www.google.com/maps/about/images/behind-the-scenes/treks/everest-header-bg_2x.jpg'}/>
                         : null}
 
-                    <Motion style={{x: spring(this.state.isHover ? 3 : 1), y: spring(this.state.isHover ? 0.5: 1)}}>
+                    <Motion style={{x: spring(this.state.isHover ? 3 : 1), y: spring(this.state.isHover ? 0.5 : 1)}}>
                         {({x, y}) =>
                             <div className={'map-container'}
                                  onMouseOver={() => this.handleHover(true)}
                                  onMouseOut={() => this.handleHover(false)}
-                                 onClick={() => this.toggle()}
+
                                  style={{
                                      width: `${105 * x}px`,
                                      height: `${105 * x}px`,
-                                     borderRadius: `${106*y}px`,
+                                     borderRadius: `${106 * y}px`,
                                      right: '20px'
                                  }}
-
-
                             >
 
                                 <Map isMarkerShown={true}

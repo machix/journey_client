@@ -19,7 +19,6 @@ class Sidebar extends Component {
     render() {
         return (
             <div>
-                Check check
 
             </div>
 

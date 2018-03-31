@@ -232,6 +232,46 @@ h1, h2, h3, h4, h5 {
   color: #78D9BB !important; }
 
 /*  --- Helpers ------------------------- */
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 60%, 0);
+    transform: translate3d(0, 100%, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 60%, 0);
+    transform: translate3d(0, 100%, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+
+@-webkit-keyframes fadeOutDown {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 60%, 0);
+    transform: translate3d(0, 60%, 0); } }
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0); } }
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown; }
+
 .nodisplay {
   display: none !important; }
 
@@ -412,12 +452,63 @@ h1, h2, h3, h4, h5 {
     height: 100%;
     width: 100%; }
 
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  z-index: 10;
+  position: absolute;
+  bottom: 30px;
+  right: 30px; }
+
+.logo {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 10; }
+  .logo .logo-image {
+    cursor: pointer;
+    border-radius: 70px;
+    width: 70px;
+    height: 70px; }
+
 .chat {
   position: absolute;
   bottom: 30px;
-  z-index: 9; }
+  z-index: 9;
+  cursor: pointer; }
+  .chat .chat-commands-entering {
+    -webkit-animation-name: fadeInUp;
+    -webkit-animation-duration: 0.2s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    animation-name: fadeInUp;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear; }
+  .chat .chat-commands-exiting {
+    -webkit-animation-name: fadeOutDown;
+    -webkit-animation-duration: 0.2s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    animation-name: fadeOutDown;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear; }
+  .chat .chat-commands {
+    color: orange;
+    padding: 10px 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 30px;
+    display: inline-block;
+    margin: 5px 10px 5px 0; }
   .chat .chat-input {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
     align-items: center;
     border-radius: 30px;
     width: 40vw;
@@ -2205,28 +2296,6 @@ header {
 .example-leave.example-leave-active {
   opacity: 0.01;
   transition: opacity 300ms ease-in; }
-
-@keyframes bounceIn {
-  from, 20%, 40%, 60%, 80%, to {
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
-  0% {
-    opacity: 0;
-    transform: scale3d(0.7, 0.7, 0.7); }
-  20% {
-    transform: scale3d(1.1, 1.1, 1.1); }
-  40% {
-    transform: scale3d(0.95, 0.95, 0.95); }
-  60% {
-    opacity: 1;
-    transform: scale3d(1.01, 1.01, 1.01); }
-  80% {
-    transform: scale3d(0.9, 0.99, 0.99); }
-  to {
-    opacity: 1;
-    transform: scale3d(1, 1, 1); } }
-
-.bounceIn {
-  animation-name: bounceIn; }
 
 .documents-list .documents-list-enter {
   -webkit-animation-name: bounceIn;
