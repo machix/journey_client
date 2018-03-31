@@ -38,8 +38,6 @@ class SidebarData extends Component {
     render() {
         return (
             <div className="sidebar"><span>
-
-
 				<div className="navigation">
                     <div className="sidebar-wrapper">
 						<span>

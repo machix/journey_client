@@ -106,14 +106,8 @@ class RouterHome extends Component {
                     <Switch>
                         <Redirect exact from="/" to="/login"/>
                         <Route exact path="/login" component={App}/>
-                        <Dashboard>
-                            <ModalMother/>
-                            <Route exact path="/home" component={HomeDash}/>
-                            <Route exact path="/campaigns" component={CampaignDash}/>
-                            <Route exact path="/giftys" component={AgreementsDash}/>
-                            <Route exact path="/billing" component={BillingDash}/>
-                        </Dashboard>
-                        <Route component={HomeDash}/>
+
+                        <Route exact path="/home" component={HomeDash}/>
                     </Switch>
                 </ScrollToTop>
             </ConnectedRouter>
@@ -123,3 +117,13 @@ class RouterHome extends Component {
 
 export default connect(mapStateToProps, mapDispatchToProps)(RouterHome);
 //                        <LoginRoute authed={this.state.authed} path="/login" component={App}/>
+
+/*
+<Dashboard>
+    <ModalMother/>
+    <Route exact path="/home" component={HomeDash}/>
+    <Route exact path="/campaigns" component={CampaignDash}/>
+    <Route exact path="/giftys" component={AgreementsDash}/>
+    <Route exact path="/billing" component={BillingDash}/>
+</Dashboard>
+*/

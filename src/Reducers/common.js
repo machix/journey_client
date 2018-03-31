@@ -4,93 +4,18 @@ let SelectedStartDate = moment().subtract(7, 'days');
 var SelectedEndDate = moment();
 
 const defaultState = {
-    aggregateStats: {
-        gross: 0,
-        redeemed: 0,
-        new: 0,
-        total: 0,
-        percentChange: {
-            value: 'N/A',
-            description: 'No change data available!'
-        }
-    },
-    currentDate: SelectedEndDate,
-    dateFilter: 1,
-
-    startDate: SelectedStartDate,
-    endDate: SelectedEndDate,
-    modal_toggle: {
-        value: 'close',
-        child: null
-    },
-    sidebarOpen: false,
-    "links": {
-        defaultLink: null
-    },
-    loaderDisplay: true,
-    campaignMeta: {
-        default_email_gift: ''
-    },
-    chartData: {},
-    campaignSearch: {},
-    campaignSearchValue: '',
-    stats: {},
-    consoleData: {
-        "active_campaigns": {
-            campaign: null
-        },
-        "agreements": {
-            "-KmMclctWZDKexyM_9Xo": {
-                "active": true,
-                "owner": "console_1"
-            }
-        },
-        "name": "Console One",
-        "campaigns": {
-            campaign: 'default'
-        },
-        "giftys": {
-            "": {
-                "city": "",
-                "keyword": "",
-                "lang": {
-                    "gift": "",
-                    "gift_from": "",
-                    "gift_short": "",
-                    "how_to_redeem": ""
-                },
-                description: "",
-                "price": {
-                    "display": "",
-                    "stripe": {
-                        "all_fees_pct": null,
-                        "application_fee": null,
-                        "cents": null,
-                        "currency": null,
-                        "stripe_fee": null
-                    }
-                },
-                "vendor": "gravity_yyc"
-            }
-        },
-        "notifications": {
-            "uid": {
-                message: null
-            }
-        },
-        "payment": {
-            "balance": {
-                "cad": {
-                    "cents": null
-                }
-            }
-        },
-        "console_id": "console_1"
-    }
+    liveJourneyMeta: null
 };
 
-export default(state = defaultState, action) => {
+export default (state = defaultState, action) => {
     switch (action.type) {
+        case 'LIVE_JOURNEY_META':
+            console.log('livejourneymetareducer');
+            return {
+                ...state,
+                liveJourneyMeta: action.liveJourneyMeta
+            };
+
         case 'REDIRECT':
             return {...state, redirectTo: null};
         case 'LOGIN':
@@ -105,14 +30,14 @@ export default(state = defaultState, action) => {
             };
         case 'LOGOUT':
             return {...state, redirectTo: '/', token: null, currentUser: null};
-   /*     case'DATE_FILTER':
-            console.log('DATE_FILTER')
-            return {
-                ...state,
-                dateFilter: action.filter,
-                startDate: action.startDate,
-                endDate: action.endDate
-            };*/
+        /*     case'DATE_FILTER':
+                 console.log('DATE_FILTER')
+                 return {
+                     ...state,
+                     dateFilter: action.filter,
+                     startDate: action.startDate,
+                     endDate: action.endDate
+                 };*/
         case 'CAMPAIGN_META':
             return {
                 ...state,

@@ -240,7 +240,7 @@ h1, h2, h3, h4, h5 {
 
 /*For bluring modal*/
 .blur {
-  filter: blur(6px); }
+  filter: blur(2px); }
 
 .caption {
   border: 1px solid grey;
@@ -358,6 +358,79 @@ h1, h2, h3, h4, h5 {
 /* 	-----------------------------------------
      Page
     ----------------------------------------- */
+/* 	--- Home ------------------------ */
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center; }
+  .container .blur-background {
+    z-index: 0;
+    position: absolute;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; }
+  .container .blur-background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); }
+  .container .journey-container {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%; }
+    .container .journey-container .map-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 20px;
+      cursor: pointer;
+      background-color: white;
+      align-items: center;
+      position: absolute; }
+
+.sidebar-container {
+  position: absolute;
+  right: 100vw;
+  background-color: rgba(255, 255, 255, 0.97);
+  border-radius: 0 5px 5px 0;
+  z-index: 10;
+  height: 100%;
+  width: 30vw; }
+  .sidebar-container .sidebar {
+    height: 100%;
+    width: 100%; }
+
+.chat {
+  position: absolute;
+  bottom: 30px;
+  z-index: 9; }
+  .chat .chat-input {
+    background-color: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    border-radius: 30px;
+    width: 40vw;
+    display: flex;
+    height: 40px;
+    padding: 0 30px 0 30px; }
+    .chat .chat-input input {
+      background-color: transparent;
+      border: none;
+      color: white; }
+    .chat .chat-input input::placeholder {
+      color: white; }
+
 /* 	--- Wrappers ------------------------ */
 .login-wrapper {
   height: 100%;

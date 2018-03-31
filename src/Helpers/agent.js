@@ -100,7 +100,49 @@ const FirebaseWatcher = {
 
 }
 
+
 const FirebaseQuery = {
+    liveJourney: (journey_id) => {
+        return dispatch => {
+            console.log('GET_LIVE_JOURNEY');
+            new Promise(function (resolve, reject) {
+                database.ref('live_journeys/' + journey_id).on('value', (snapshot) => {
+                    if (snapshot.val() !== null) {
+                        console.log(snapshot.val());
+                        resolve(snapshot.val());
+                    }
+                })
+            }).then((object) => {
+                    //SORT JOURNEY_META APPROPRIATELY
+                    let sortable = [];
+
+                    for (let uid in object) {
+                        console.log('uid pushed: ' + uid);
+                        let temp = object;
+                        temp[uid].uid = uid;
+                        console.log(temp[uid].uid);
+                        sortable.push(temp[uid]);
+                    }
+                    console.log(sortable);
+
+                    sortable.sort(function (a, b) {
+                        return a.timestamp - b.timestamp
+                    });
+
+                    dispatch({
+                        type: 'LIVE_JOURNEY_META',
+                        liveJourneyMeta: sortable
+                    });
+
+                    dispatch({
+                        type: 'PRELOAD_META',
+                    })
+                }
+            )
+            ;
+        };
+
+    },
     aggregateData: (chartData, stats) => {
         console.log('AGGREGATE_DATA_FROM_ALL_CHARTS');
         return dispatch => {
@@ -132,7 +174,6 @@ const FirebaseQuery = {
                         campaignMeta: snapshot.val()
                     })
                 }
-
                 return (snapshot.val());
             });
         }
@@ -223,14 +264,21 @@ const FirebaseQuery = {
                     var chartData;
 
 
-                    if(snapshot.val() === null) {
+                    if (snapshot.val() === null) {
                         /*This is used for creating dummy data when there is:
                          * a) A new registrant
                          * b) When there is no *_public information compiled yet.
                          *Not very efficient? I agree. Hax0r
                          **/
 
-                        chartData = flattener({[startDate.clone().unix()] : {created: 0, gross: 0, new: 0, redeemed: 0}}, startDate.clone(), endDate.clone());
+                        chartData = flattener({
+                            [startDate.clone().unix()]: {
+                                created: 0,
+                                gross: 0,
+                                new: 0,
+                                redeemed: 0
+                            }
+                        }, startDate.clone(), endDate.clone());
                         console.log(chartData);
 
                     } else {
@@ -361,82 +409,81 @@ const FirebaseQuery = {
 
     },
     consoleEndpoint: (key, type, dashboard, endpoint, bundle) => {
- /*       return dispatch=> {*/
-            var newPostRef = database.ref('api/v1/requests').push();
-            var id = newPostRef.key;
-            var json = {};
-            switch (type) {
-                case 'create_console':
-                    json = {
-                        type: type,
-                        bundle: bundle
-                    }
-                    console.log(json);
-                    break;
-                case 'link_create':
-                    json = {
-                        console_id: dashboard,
-                        vendor: 'gravity_yyc',
-                        type: type,
-                        wait_for_response_at: id,
-                        offer: key
-                    };
-                    break;
-                case 'create_campaign':
-                    json = {
-                        console_id: dashboard,
-                        type: type,
-                        wait_for_response_at: id,
-                        bundle: bundle
-                    };
-                    console.log(json);
-                    break;
-                case 'remove_user':
-                    json = {
-                        console_id: dashboard,
-                        type: type,
-                        wait_for_response_at: id,
-                        name: bundle
-                    }
-                    break;
-                case 'assign_default':
-                    json = {
-                        console_id: dashboard,
-                        type: type,
-                        wait_for_response_at: endpoint,
-                        name: bundle
-                    }
-                    break;
-            }
-            newPostRef.set(json
-            )/*.then(FirebaseWatcher.links(id))*/.then(
-                /*
-                 database.ref('api/v1/responses/' + id).set({gifty: key, link: id})
-                 */
-            ).then(
-                /*   //This is only for the purposes of being able to mock and fake data
-                 database.ref('stats/stats_by_campaign/-KmMclctWZDKexyM_9Xo/' + moment().unix()).set({
-                 created: 1,
-                 new: Math.floor(Math.random() * 2),
-                 redeemed: Math.floor(Math.random() * 2),
-                 gross: Math.round(Math.random() * 2 *100)/100
-                 })*/
-            );
-            switch (type) {
-                case 'link_create':
-                {
-                    var linkWatcher = database.ref('api/v1/responses/' + dashboard + '/' + id);
-                    linkWatcher.on('value', function (snapshot) {
-                        if (snapshot.val()) {
-                            // toast(<div>{snapshot.val().link}</div>);
-/*
-                            dispatch({type: 'LINK', link: 'https://gifty.link/' + snapshot.val().link, key: key});
-*/
-                        }
-                    });
+        /*       return dispatch=> {*/
+        var newPostRef = database.ref('api/v1/requests').push();
+        var id = newPostRef.key;
+        var json = {};
+        switch (type) {
+            case 'create_console':
+                json = {
+                    type: type,
+                    bundle: bundle
                 }
+                console.log(json);
+                break;
+            case 'link_create':
+                json = {
+                    console_id: dashboard,
+                    vendor: 'gravity_yyc',
+                    type: type,
+                    wait_for_response_at: id,
+                    offer: key
+                };
+                break;
+            case 'create_campaign':
+                json = {
+                    console_id: dashboard,
+                    type: type,
+                    wait_for_response_at: id,
+                    bundle: bundle
+                };
+                console.log(json);
+                break;
+            case 'remove_user':
+                json = {
+                    console_id: dashboard,
+                    type: type,
+                    wait_for_response_at: id,
+                    name: bundle
+                }
+                break;
+            case 'assign_default':
+                json = {
+                    console_id: dashboard,
+                    type: type,
+                    wait_for_response_at: endpoint,
+                    name: bundle
+                }
+                break;
+        }
+        newPostRef.set(json
+        )/*.then(FirebaseWatcher.links(id))*/.then(
+            /*
+             database.ref('api/v1/responses/' + id).set({gifty: key, link: id})
+             */
+        ).then(
+            /*   //This is only for the purposes of being able to mock and fake data
+             database.ref('stats/stats_by_campaign/-KmMclctWZDKexyM_9Xo/' + moment().unix()).set({
+             created: 1,
+             new: Math.floor(Math.random() * 2),
+             redeemed: Math.floor(Math.random() * 2),
+             gross: Math.round(Math.random() * 2 *100)/100
+             })*/
+        );
+        switch (type) {
+            case 'link_create': {
+                var linkWatcher = database.ref('api/v1/responses/' + dashboard + '/' + id);
+                linkWatcher.on('value', function (snapshot) {
+                    if (snapshot.val()) {
+                        // toast(<div>{snapshot.val().link}</div>);
+                        /*
+                                                    dispatch({type: 'LINK', link: 'https://gifty.link/' + snapshot.val().link, key: key});
+                        */
+                    }
+                });
             }
-/*        }*/
+        }
+        /*        }*/
     }
 }
 

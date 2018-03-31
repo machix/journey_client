@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import Header from '../Header/Header';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import SidebarData from './SidebarData';
-import { withRouter } from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 
 import Sidebar from 'react-sidebar';
 
@@ -82,12 +81,12 @@ class Dashboard extends Component {
         this.props.desktop(mql.matches);
     }
 
-/*
-    componentWillReceiveProps(nextProps) {
-        console.log('dashboard');
-        console.log(nextProps.sidebarOpen)
-    }
-*/
+    /*
+        componentWillReceiveProps(nextProps) {
+            console.log('dashboard');
+            console.log(nextProps.sidebarOpen)
+        }
+    */
 
 
     render() {
@@ -96,28 +95,9 @@ class Dashboard extends Component {
 
         return (
             <div className={this.props.modal_toggle === 'open' ? "root blur" : "root"}>
-                <Sidebar sidebar={sidebarContent}
-                         open={this.props.sidebarOpen}
-                         docked={this.props.desktop ? this.state.sidebarDocked : false}
-                         onSetOpen={this.onSetSidebarOpen}
-                         shadow={false}
-                         contentClassName={'content-container'}
-                         touch={true}
-                         touchHandleWidth= {50}
-                         dragToggleDistance={10}
-                         styles={{
-                         content: {
-
-                         },
-                         overlay: {
-                         zIndex: 2
-                         },
-                         sidebar: {
-                         zIndex: 10}}}>
-                    <div className="container">
-                        {this.props.children}
-                    </div>
-                </Sidebar>
+                <div className="container">
+                    {this.props.children}
+                </div>
             </div>
 
         );
@@ -127,5 +107,28 @@ class Dashboard extends Component {
 //                <Header></Header>
 
 
-
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Dashboard));
+
+/*
+<Sidebar sidebar={sidebarContent}
+         open={this.props.sidebarOpen}
+         docked={this.props.desktop ? this.state.sidebarDocked : false}
+         onSetOpen={this.onSetSidebarOpen}
+         shadow={false}
+         contentClassName={'content-container'}
+         touch={true}
+         touchHandleWidth= {50}
+         dragToggleDistance={10}
+         styles={{
+             content: {
+
+             },
+             overlay: {
+                 zIndex: 2
+             },
+             sidebar: {
+                 zIndex: 10}}}>
+    <div className="container">
+        {this.props.children}
+    </div>
+</Sidebar>*/
