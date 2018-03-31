@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8eb92d85-80e0-4af9-8dc4-e20ffe8708d5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
     </list>
     <ignored path="gifty-console-client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,21 +25,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="676" column="14" lean-forward="true" selection-start-line="676" selection-start-column="14" selection-end-line="676" selection-end-column="14" />
-              <folding />
+            <state relative-caret-position="37398">
+              <caret line="3226" column="42" lean-forward="false" selection-start-line="3226" selection-start-column="42" selection-end-line="3226" selection-end-column="42" />
+              <folding>
+                <element signature="e#21962#22507#2" expanded="true" />
+                <element signature="e#24382#24883#2" expanded="true" />
+                <element signature="e#27274#29699#2" expanded="true" />
+                <element signature="e#58965#59774#2" expanded="true" />
+                <element signature="e#62863#63344#2" expanded="true" />
+                <element signature="e#64310#65571#2" expanded="true" />
+                <element signature="e#68484#69029#2" expanded="true" />
+                <element signature="e#69137#70042#2" expanded="true" />
+                <element signature="e#70123#71028#2" expanded="true" />
+                <element signature="e#71104#71993#2" expanded="true" />
+                <element signature="e#72125#73102#2" expanded="true" />
+                <element signature="e#73237#74494#2" expanded="true" />
+                <element signature="e#74626#75763#2" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeDash.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HomeDash.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/Dashes/HomeDash.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="198" column="35" lean-forward="false" selection-start-line="198" selection-start-column="35" selection-end-line="198" selection-end-column="35" />
+            <state relative-caret-position="273">
+              <caret line="241" column="18" lean-forward="true" selection-start-line="241" selection-start-column="18" selection-end-line="241" selection-end-column="18" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -76,16 +93,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="choreographer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Reducers/choreographer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -99,21 +106,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>toggle</find>
-      <find>or e</find>
-      <find>&lt;Map</find>
-      <find>this.state.visisbel</find>
-      <find>sidebar</find>
-      <find>this.state.bvisible</find>
-      <find>this.state.visible</find>
-      <find>20</find>
-      <find>hoverY</find>
-      <find>hoverWidth</find>
-      <find>100</find>
-      <find>.map-container</find>
-      <find>onClick</find>
-      <find>mpaExpa</find>
-      <find>Map</find>
       <find>map-container</find>
       <find>&lt;Icon</find>
       <find>&gt;</find>
@@ -129,6 +121,21 @@
       <find>.chat-</find>
       <find>Input</find>
       <find>Share</find>
+      <find>constructor</find>
+      <find>componentDid</find>
+      <find>Icon</find>
+      <find>ReactDom</find>
+      <find>Pin</find>
+      <find>menu</find>
+      <find>toggle</find>
+      <find>setState</find>
+      <find>setState</find>
+      <find>&lt;Motion</find>
+      <find>'menu'</find>
+      <find>webkit trans</find>
+      <find>rotate</find>
+      <find>&lt;transform</find>
+      <find>chat-commands</find>
     </findStrings>
     <replaceStrings>
       <replace>TypeForm</replace>
@@ -209,8 +216,8 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/Components/Map/Map.js" />
         <option value="$PROJECT_DIR$/src/Reducers/common.js" />
-        <option value="$PROJECT_DIR$/src/style.scss" />
         <option value="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" />
+        <option value="$PROJECT_DIR$/src/style.scss" />
       </list>
     </option>
   </component>
@@ -476,12 +483,12 @@
       <workItem from="1522193215634" duration="2183000" />
       <workItem from="1522277554585" duration="1840000" />
       <workItem from="1522281090642" duration="7870000" />
-      <workItem from="1522352159657" duration="25851000" />
+      <workItem from="1522352159657" duration="27754000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141798000" />
+    <option name="totallyTimeSpent" value="143701000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -537,13 +544,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Components/Header/SlideWrapper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Helpers/history.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -869,14 +869,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reducers/choreographer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Map/Map.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -905,14 +897,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="49" lean-forward="false" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Reducers/common.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -931,20 +915,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/style.scss">
+    <entry file="file://$PROJECT_DIR$/node_modules/react-dom/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="676" column="14" lean-forward="true" selection-start-line="676" selection-start-column="14" selection-end-line="676" selection-end-column="14" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reducers/choreographer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-78">
+          <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="49" lean-forward="false" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Dashes/HomeDash.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="198" column="35" lean-forward="false" selection-start-line="198" selection-start-column="35" selection-end-line="198" selection-end-column="35" />
+        <state relative-caret-position="273">
+          <caret line="241" column="18" lean-forward="true" selection-start-line="241" selection-start-column="18" selection-end-line="241" selection-end-column="18" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37398">
+          <caret line="3226" column="42" lean-forward="false" selection-start-line="3226" selection-start-column="42" selection-end-line="3226" selection-end-column="42" />
+          <folding>
+            <element signature="e#21962#22507#2" expanded="true" />
+            <element signature="e#24382#24883#2" expanded="true" />
+            <element signature="e#27274#29699#2" expanded="true" />
+            <element signature="e#58965#59774#2" expanded="true" />
+            <element signature="e#62863#63344#2" expanded="true" />
+            <element signature="e#64310#65571#2" expanded="true" />
+            <element signature="e#68484#69029#2" expanded="true" />
+            <element signature="e#69137#70042#2" expanded="true" />
+            <element signature="e#70123#71028#2" expanded="true" />
+            <element signature="e#71104#71993#2" expanded="true" />
+            <element signature="e#72125#73102#2" expanded="true" />
+            <element signature="e#73237#74494#2" expanded="true" />
+            <element signature="e#74626#75763#2" expanded="true" />
           </folding>
         </state>
       </provider>

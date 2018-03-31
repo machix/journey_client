@@ -4,7 +4,9 @@ import {withRouter} from 'react-router-dom';
 import {Motion, spring} from 'react-motion'
 import Icon from 'react-icon-base';
 import Transition from 'react-transition-group/Transition';
-import Measure from 'react-measure'
+import ArrowKeysReact from 'arrow-keys-react';
+import ReactDOM from 'react-dom';
+
 
 import Sidebar from '../Sidebar/Sidebar';
 import Map from '../Map/Map';
@@ -56,10 +58,19 @@ class HomeDash extends Component {
             mapExpanded: false,
             isHover: false,
             commandsVisible: false,
-            commands: ['Share, Donate, Contribute']
+            commands: ['Share, Donate, Contribute'],
+            menuToggled: false
         }
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 
+        ArrowKeysReact.config({
+            left: () => {
+                console.log('left arrow key pressed');
+            },
+            right: () => {
+                console.log('right arrow key pressed');
+            }
+        });
     }
 
     componentWillMount() {
@@ -69,6 +80,8 @@ class HomeDash extends Component {
     componentDidMount() {
         this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);
+        this.focusDiv();
+
     }
 
     componentWillUnmount() {
@@ -89,9 +102,9 @@ class HomeDash extends Component {
 
     toggle = (value) => {
 
+        console.log('toggle: ' + value);
         switch (value) {
             case 'sidebar': {
-
                 this.setState({
                     ...this.state,
                     sidebarVisible: !this.state.sidebarVisible
@@ -118,6 +131,13 @@ class HomeDash extends Component {
                     isHover: false,
                 });
                 return;
+            }
+            case 'menu': {
+                console.log('menu');
+                this.setState({
+                    ...this.state,
+                    menuToggled: !this.state.menuToggled
+                })
             }
         }
 
@@ -153,10 +173,18 @@ class HomeDash extends Component {
         }
     };
 
+    focusDiv() {
+        ReactDOM.findDOMNode(this.focus).focus();
+    }
 
     render() {
         return (
-            <div className={"container"}>
+            <div className={"container"}
+                 ref={(input) => {
+                     this.focus = input;
+                 }}
+                 tabIndex="1"
+                 {...ArrowKeysReact.events}   >
                 <Motion style={{x: spring(this.state.sidebarVisible ? 30 : 0)}}>
                     {({x}) =>
 
@@ -178,6 +206,14 @@ class HomeDash extends Component {
                         timeout={200}>
                         {(state) => (
                             <span className={`chat-commands-${state} chat-commands`}>
+    <span>
+                        <Icon viewBox="0 0 40 40" size={20}>
+            <g><path
+                d="m30 26.9c2.7 0 4.8 2.2 4.8 4.8s-2.1 4.9-4.8 4.9-4.8-2.2-4.8-4.9c0-0.4 0-0.8 0.1-1.1l-11.9-6.8c-0.9 0.8-2.1 1.3-3.4 1.3-2.7 0-5-2.3-5-5s2.2-5 4.9-5c1.3 0 2.5 0.4 3.5 1.3l11.8-6.8c-0.1-0.4-0.2-0.8-0.2-1.2 0-2.7 2.3-5 5-5s5 2.3 5 5-2.3 5-5 5c-1.3 0-2.5-0.4-3.4-1.3l-11.8 6.8c0 0.4 0.1 0.8 0.1 1.2s-0.1 0.8-0.1 1.1l11.9 6.9c0.9-0.8 2-1.2 3.3-1.2z"/></g>
+
+    </Icon>&emsp;
+           </span>
+
                                 Share </span>)}
                     </Transition>
                     <Transition
@@ -196,7 +232,19 @@ class HomeDash extends Component {
                         timeout={200}>
                         {(state) => (
                             <span className={`chat-commands-${state} chat-commands`}>
-                                Pin </span>)}
+                                  <span>
+                        <Icon viewBox="0 0 40 40" size={20}>
+        <g>
+            <path
+                d="m25.7 17.8c1.6 0.8 2.8 2.4 2.8 4.3 0 1.3-0.2 1.7-1.2 1.7h-6.3l-0.9 13.7h-0.7l-0.9-13.7h-6.3c-1 0-1.2-0.4-1.2-1.7 0-1.9 1.3-3.5 2.8-4.3 0.1 0 0.2-0.1 0.3-0.1 0.6-0.4 1-0.9 1.1-1.5l1.4-9.2v-0.4c0-0.6-0.3-0.8-0.8-1.1 0 0 0 0-0.1 0-0.6-0.3-1-0.7-1-1.4 0-1.5 0.5-1.6 1.5-1.6h7.1c1 0 1.5 0.1 1.5 1.6 0 0.7-0.4 1.1-1 1.4-0.1 0-0.1 0-0.1 0-0.5 0.3-0.8 0.5-0.8 1.1v0.4l1.4 9.2c0.1 0.6 0.5 1.1 1.1 1.5 0.1 0 0.2 0.1 0.3 0.1z"/>
+        </g>
+    </Icon>&emsp;
+           </span>
+                                Pin
+
+
+
+                            </span>)}
                     </Transition>
 
                     <div className={'chat-input'}>
@@ -213,13 +261,20 @@ class HomeDash extends Component {
                          src={"https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/The_North_Face_logo.svg/1200px-The_North_Face_logo.svg.png"}/>
                 </div>
 
-                <div className={'menu'}>
-                    <Icon viewBox="0 0 40 40" size={20} style={{color: 'white'}}>
-                        <g>
-                            <path
-                                d="m20 18.6c-0.8 0-1.4 0.6-1.4 1.4s0.6 1.4 1.4 1.4 1.4-0.6 1.4-1.4-0.6-1.4-1.4-1.4z m0-1.1c1.4 0 2.5 1.1 2.5 2.5s-1.1 2.5-2.5 2.5-2.5-1.1-2.5-2.5 1.1-2.5 2.5-2.5z m-10 1.1c-0.8 0-1.4 0.6-1.4 1.4s0.6 1.4 1.4 1.4 1.4-0.6 1.4-1.4-0.6-1.4-1.4-1.4z m0-1.1c1.4 0 2.5 1.1 2.5 2.5s-1.1 2.5-2.5 2.5-2.5-1.1-2.5-2.5 1.1-2.5 2.5-2.5z m20 1.1c-0.8 0-1.4 0.6-1.4 1.4s0.6 1.4 1.4 1.4 1.4-0.6 1.4-1.4-0.6-1.4-1.4-1.4z m0-1.1c1.4 0 2.5 1.1 2.5 2.5s-1.1 2.5-2.5 2.5-2.5-1.1-2.5-2.5 1.1-2.5 2.5-2.5z"/>
-                        </g>
-                    </Icon>
+                <div
+                    onClick={() => this.toggle('menu')}
+                    className={'menu'}>
+                    <Motion style={{x: spring(this.state.menuToggled ? 90 : 0)}}>
+                        {({x}) =>
+                            <Icon viewBox="0 0 40 40" size={20}
+                                  style={{color: 'white', transform: `rotate(${x}deg)`}}>
+                                <g>
+                                    <path
+                                        d="m20 18.6c-0.8 0-1.4 0.6-1.4 1.4s0.6 1.4 1.4 1.4 1.4-0.6 1.4-1.4-0.6-1.4-1.4-1.4z m0-1.1c1.4 0 2.5 1.1 2.5 2.5s-1.1 2.5-2.5 2.5-2.5-1.1-2.5-2.5 1.1-2.5 2.5-2.5z m-10 1.1c-0.8 0-1.4 0.6-1.4 1.4s0.6 1.4 1.4 1.4 1.4-0.6 1.4-1.4-0.6-1.4-1.4-1.4z m0-1.1c1.4 0 2.5 1.1 2.5 2.5s-1.1 2.5-2.5 2.5-2.5-1.1-2.5-2.5 1.1-2.5 2.5-2.5z m20 1.1c-0.8 0-1.4 0.6-1.4 1.4s0.6 1.4 1.4 1.4 1.4-0.6 1.4-1.4-0.6-1.4-1.4-1.4z m0-1.1c1.4 0 2.5 1.1 2.5 2.5s-1.1 2.5-2.5 2.5-2.5-1.1-2.5-2.5 1.1-2.5 2.5-2.5z"/>
+                                </g>
+                            </Icon>
+                        }
+                    </Motion>
                 </div>
 
 

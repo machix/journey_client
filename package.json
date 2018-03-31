@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "arrow-keys-react": "^1.0.6",
     "d3-geo": "^1.10.0",
     "emoji-mart-lite": "^0.4.9",
     "exif-js": "^2.3.0",
