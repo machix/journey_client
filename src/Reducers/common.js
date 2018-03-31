@@ -4,7 +4,9 @@ let SelectedStartDate = moment().subtract(7, 'days');
 var SelectedEndDate = moment();
 
 const defaultState = {
-    liveJourneyMeta: null
+    liveJourneyMeta: null,
+    windowWidth: 0,
+    windowHeight: 0
 };
 
 export default (state = defaultState, action) => {
@@ -15,6 +17,15 @@ export default (state = defaultState, action) => {
                 ...state,
                 liveJourneyMeta: action.liveJourneyMeta
             };
+
+        case 'SET_WINDOW_DIMS':
+            console.log('SET_WINDOW_DIMS: ' + action.windowWidth + '/' + action.windowHeight)
+            console.log(action.windowWidth);
+            return {
+                ...state,
+                windowWidth: action.windowWidth,
+                windowHeight: action.windowHeight
+            }
 
         case 'REDIRECT':
             return {...state, redirectTo: null};

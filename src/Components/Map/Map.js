@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom';
 
 import {   withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
@@ -30,6 +28,7 @@ class Map extends Component {
             <GoogleMap
                 defaultZoom={8}
                 defaultCenter={{ lat: -34.397, lng: 150.644 }}
+                mapTypeId="terrain"
             >
                 {this.props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} />}
             </GoogleMap>

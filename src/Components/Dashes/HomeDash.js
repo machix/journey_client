@@ -4,7 +4,7 @@ import {withRouter} from 'react-router-dom';
 import {Motion, spring} from 'react-motion'
 import Icon from 'react-icon-base';
 import Transition from 'react-transition-group/Transition';
-
+import Measure from 'react-measure'
 
 import Sidebar from '../Sidebar/Sidebar';
 import Map from '../Map/Map';
@@ -14,11 +14,18 @@ const mapStateToProps = state => ({
     loaderDisplay: state.common.loaderDisplay,
     liveJourneyMeta: state.common.liveJourneyMeta,
     visibleMeta: state.choreographer.visibleMeta,
-    position: state.choreographer.position
+    position: state.choreographer.position,
+    windowHeight: state.common.windowHeight,
+    windowWidth: state.common.windowWidth
 });
 
 const mapDispatchToProps = dispatch => ({
-    fetchLiveJourney: (journey_uid) => dispatch(agent.FirebaseQuery.liveJourney(journey_uid))
+    fetchLiveJourney: (journey_uid) => dispatch(agent.FirebaseQuery.liveJourney(journey_uid)),
+    setWindowDims: (width, height) => dispatch({
+        type: 'SET_WINDOW_DIMS',
+        windowWidth: width,
+        windowHeight: height
+    })
 });
 
 const duration = 300;
@@ -45,20 +52,31 @@ class HomeDash extends Component {
             loading: true,
             // Auth vars
             auth: {},
-            visible: false,
+            sidebarVisible: false,
+            mapExpanded: false,
             isHover: false,
             commandsVisible: false,
             commands: ['Share, Donate, Contribute']
-
         }
+        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+
     }
 
     componentWillMount() {
         this.props.fetchLiveJourney('test_journey');
     }
 
-    componentWillReceiveProps(nextProps) {
+    componentDidMount() {
+        this.updateWindowDimensions();
+        window.addEventListener('resize', this.updateWindowDimensions);
+    }
 
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.updateWindowDimensions);
+    }
+
+    updateWindowDimensions() {
+        this.props.setWindowDims(window.innerWidth, window.innerHeight);
     }
 
     photosMap = () => {
@@ -69,25 +87,59 @@ class HomeDash extends Component {
         });
     };
 
-    toggle = () => {
-        this.setState({
-            ...this.state,
-            visible: !this.state.visible
-        })
+    toggle = (value) => {
+
+        switch (value) {
+            case 'sidebar': {
+
+                this.setState({
+                    ...this.state,
+                    sidebarVisible: !this.state.sidebarVisible
+                });
+
+                return;
+            }
+            case 'map': {
+                console.log('this.state.mapExpanded: ' + this.state.mapExpanded);
+                if (this.state.mapExpanded) {
+                    return;
+                } else {
+                    this.setState({
+                        ...this.state,
+                        mapExpanded: !this.state.mapExpanded
+                    });
+                    return;
+                }
+            }
+            case 'closeMap': {
+                this.setState({
+                    ...this.state,
+                    mapExpanded: !this.state.mapExpanded,
+                    isHover: false,
+                });
+                return;
+            }
+        }
+
     };
 
     handleHover = (active) => {
         console.log(active);
-        this.setState({
-            ...this.state,
-            isHover: active
-        });
+        if (this.state.mapExpanded === true) {
+            return null
+        } else {
+            this.setState({
+                ...this.state,
+                isHover: active
+            });
+        }
+
     };
 
     handleChange = (event,) => {
         let str = event.target.value;
         if (str.startsWith('/')) {
-            console.log('is a comman d')
+            console.log('is a command')
             this.setState({
                 ...this.state,
                 commandsVisible: true
@@ -105,7 +157,7 @@ class HomeDash extends Component {
     render() {
         return (
             <div className={"container"}>
-                <Motion style={{x: spring(this.state.visible ? 30 : 0)}}>
+                <Motion style={{x: spring(this.state.sidebarVisible ? 30 : 0)}}>
                     {({x}) =>
 
                         <div className="sidebar-container" style={{
@@ -139,8 +191,6 @@ class HomeDash extends Component {
                     </Transition>
 
                     <div className={'chat-input'}>
-
-
                         <input type="text"
                                style={{width: '100%'}}
                                placeholder="Enter a comment or /'command'"
@@ -149,70 +199,118 @@ class HomeDash extends Component {
                     </div>
                 </div>
 
-                <div className={'logo'} onClick={()=>this.toggle()}>
-                    <img className={'logo-image'} src={"https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/The_North_Face_logo.svg/1200px-The_North_Face_logo.svg.png"}/>
+                <div className={'logo'} onClick={() => this.toggle('sidebar')}>
+                    <img className={'logo-image'}
+                         src={"https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/The_North_Face_logo.svg/1200px-The_North_Face_logo.svg.png"}/>
                 </div>
 
                 <div className={'menu'}>
-                    <Icon className="conditional-display" viewBox="0 0 40 40" size={20} style={{color: 'white'}}>
+                    <Icon viewBox="0 0 40 40" size={20} style={{color: 'white'}}>
                         <g>
                             <path
                                 d="m20 18.6c-0.8 0-1.4 0.6-1.4 1.4s0.6 1.4 1.4 1.4 1.4-0.6 1.4-1.4-0.6-1.4-1.4-1.4z m0-1.1c1.4 0 2.5 1.1 2.5 2.5s-1.1 2.5-2.5 2.5-2.5-1.1-2.5-2.5 1.1-2.5 2.5-2.5z m-10 1.1c-0.8 0-1.4 0.6-1.4 1.4s0.6 1.4 1.4 1.4 1.4-0.6 1.4-1.4-0.6-1.4-1.4-1.4z m0-1.1c1.4 0 2.5 1.1 2.5 2.5s-1.1 2.5-2.5 2.5-2.5-1.1-2.5-2.5 1.1-2.5 2.5-2.5z m20 1.1c-0.8 0-1.4 0.6-1.4 1.4s0.6 1.4 1.4 1.4 1.4-0.6 1.4-1.4-0.6-1.4-1.4-1.4z m0-1.1c1.4 0 2.5 1.1 2.5 2.5s-1.1 2.5-2.5 2.5-2.5-1.1-2.5-2.5 1.1-2.5 2.5-2.5z"/>
                         </g>
-
                     </Icon>
                 </div>
 
 
                 <div className={"journey-container"}>
                     {this.props.liveJourneyMeta !== null ?
-
-                        <img
+                        <Motion
                             style={{
-                                maxWidth: '100%',
-                                maxHeight: '100%',
-                                filter: this.state.visible ? 'blur(2px)' : 'none'
-                            }}
-                            src={'https://www.google.com/maps/about/images/behind-the-scenes/treks/everest-header-bg_2x.jpg'}/>
+                                marginControl: spring(this.state.mapExpanded ? 0 : 1),
+                                toggleHeight: spring(this.state.mapExpanded ? 7 : 0),
+                                hoverHeight: spring(this.state.mapExpanded ? 3 : 0),
+                            }}>
+                            {({hoverHeight, hoverRadius, toggleRadius, toggleHeight, marginControl}) =>
+                                <img
+                                    style={{
+                                        left: 0,
+                                        maxWidth: '100%',
+                                        maxHeight: '100%',
+                                        width: `${this.props.windowWidth - ((10 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowHeight)}px`,
+                                        filter: this.state.sidebarVisible ? 'blur(2px)' : 'none'
+                                    }}
+                                    src={'https://www.google.com/maps/about/images/behind-the-scenes/treks/everest-header-bg_2x.jpg'}/>}
+                        </Motion>
                         : null}
 
-                    <Motion style={{x: spring(this.state.isHover ? 3 : 1), y: spring(this.state.isHover ? 0.5 : 1)}}>
-                        {({x, y}) =>
+                    <Motion
+                        style={{
+                            marginControl: spring(this.state.mapExpanded ? 0 : 1),
+                            toggleHeight: spring(this.state.mapExpanded ? 7 : 0),
+                            toggleRadius: spring(this.state.mapExpanded ? 0 : 1),
+                            hoverHeight: spring(this.state.isHover ? 3 : 1),
+                            hoverRadius: spring(this.state.isHover ? 0.5 : 1),
+
+                        }}>
+                        {({hoverHeight, hoverRadius, toggleRadius, toggleHeight, marginControl}) =>
                             <div className={'map-container'}
                                  onMouseOver={() => this.handleHover(true)}
                                  onMouseOut={() => this.handleHover(false)}
-
+                                 onClick={() => this.toggle('map')}
                                  style={{
-                                     width: `${105 * x}px`,
-                                     height: `${105 * x}px`,
-                                     borderRadius: `${106 * y}px`,
-                                     right: '20px'
+                                     minHeight: '105px',
+                                     minWidth: '105px',
+                                     width: `${(10 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowHeight}px`,
+                                     height: `${10 * (hoverHeight + toggleHeight) / 100 * this.props.windowHeight}px`,
+                                     borderRadius: `${10 * hoverRadius * toggleRadius / 100 * this.props.windowHeight}`,
+                                     right: `${10 * marginControl}px`,
+                                     top: `${20 * marginControl}px`
                                  }}
                             >
+                                {this.state.mapExpanded ? <div
+                                    onClick={() => this.toggle('closeMap')}
+                                    style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        position: 'absolute',
+                                        left: -25,
+                                        backgroundColor: 'white',
+                                        width: '25px',
+                                        height: '40px',
+                                        borderBottomLeftRadius: '5px',
+                                        borderTopLeftRadius: '5px'
+                                    }}>
+                                    <Icon viewBox="0 0 40 40" size={20} style={{color: 'rgba(0, 0, 0, 0.7)'}}>
+                                        <g>
+                                            <path
+                                                d="m23.3 20l-13.1-13.6c-0.3-0.3-0.3-0.9 0-1.2l2.4-2.4c0.3-0.3 0.9-0.4 1.2-0.1l16 16.7c0.1 0.1 0.2 0.4 0.2 0.6s-0.1 0.5-0.2 0.6l-16 16.7c-0.3 0.3-0.9 0.3-1.2 0l-2.4-2.5c-0.3-0.3-0.3-0.9 0-1.2z"/>
+                                        </g>
+                                    </Icon>
+                                </div> : null}
+
 
                                 <Map isMarkerShown={true}
                                      googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIpabTnIbXsdIgI2Zo2zO6g3GGxUbYqw8&v=3.exp&libraries=geometry,drawing,places"
                                      loadingElement={<div style={{height: `100px`,}}/>}
-                                     containerElement={<div style={{
-                                         height: `${100 * x}px`,
-                                         width: `${100 * x}px`,
-                                         borderRadius: `${100 * y}px`,
-                                         overflow: 'hidden',
-                                         zIndex: 3
-                                     }}/>}
+                                     containerElement={
+                                         <div style={{
+                                             minHeight: '100px',
+                                             minWidth: '100px',
+                                             height: `${(9.85 * (hoverHeight + toggleHeight)) / 100 * this.props.windowHeight}px`,
+                                             width: `${(9.8 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowHeight}px`,
+                                             borderRadius: `${9.8 * hoverRadius * toggleRadius / 100 * this.props.windowHeight}px`,
+                                             overflow: 'hidden',
+                                             zIndex: 3
+                                         }}/>}
                                      mapElement={<div style={{height: `100%`}}/>}/>
 
                             </div>
                         }
                     </Motion>
                 </div>
+                {this.props.liveJourneyMeta !== null ?
+                    <div className={'blur-background blur'}
+                         style={{
+                             backgroundSize: 'cover',
+                             backgroundImage: `url(${'https://www.google.com/maps/about/images/behind-the-scenes/treks/everest-header-bg_2x.jpg'})`
+                         }}>
 
-                <div className={'blur-background blur'}>
-                    {this.props.liveJourneyMeta !== null ?
-                        <img
-                            style={{maxWidth: '100%'}}
-                            src={'https://www.google.com/maps/about/images/behind-the-scenes/treks/everest-header-bg_2x.jpg'}/> : null}
-                </div>
+
+                    </div>
+                    : null}
                 <div className={'blur-background-overlay'}>
 
                 </div>
