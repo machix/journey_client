@@ -4,10 +4,6 @@
     <list default="true" id="8eb92d85-80e0-4af9-8dc4-e20ffe8708d5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Map/Map.js" afterPath="$PROJECT_DIR$/src/Components/Map/Map.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reducers/common.js" afterPath="$PROJECT_DIR$/src/Reducers/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
     </list>
     <ignored path="gifty-console-client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,8 +35,8 @@
       <file leaf-file-name="HomeDash.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Components/Dashes/HomeDash.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="197" column="71" lean-forward="true" selection-start-line="197" selection-start-column="71" selection-end-line="197" selection-end-column="71" />
+            <state relative-caret-position="245">
+              <caret line="198" column="35" lean-forward="false" selection-start-line="198" selection-start-column="35" selection-end-line="198" selection-end-column="35" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -103,7 +99,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>check check</find>
       <find>toggle</find>
       <find>or e</find>
       <find>&lt;Map</find>
@@ -133,6 +128,7 @@
       <find>&lt;img</find>
       <find>.chat-</find>
       <find>Input</find>
+      <find>Share</find>
     </findStrings>
     <replaceStrings>
       <replace>TypeForm</replace>
@@ -480,12 +476,12 @@
       <workItem from="1522193215634" duration="2183000" />
       <workItem from="1522277554585" duration="1840000" />
       <workItem from="1522281090642" duration="7870000" />
-      <workItem from="1522352159657" duration="25741000" />
+      <workItem from="1522352159657" duration="25851000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141688000" />
+    <option name="totallyTimeSpent" value="141798000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -945,8 +941,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Dashes/HomeDash.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="197" column="71" lean-forward="true" selection-start-line="197" selection-start-column="71" selection-end-line="197" selection-end-column="71" />
+        <state relative-caret-position="245">
+          <caret line="198" column="35" lean-forward="false" selection-start-line="198" selection-start-column="35" selection-end-line="198" selection-end-column="35" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

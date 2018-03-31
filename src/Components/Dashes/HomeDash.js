@@ -187,7 +187,16 @@ class HomeDash extends Component {
                         timeout={200}>
                         {(state) => (
                             <span className={`chat-commands-${state} chat-commands`}>
-                                Donate </span>)}
+                                Contribute </span>)}
+                    </Transition>
+                    <Transition
+                        unmountOnExit={true}
+                        in={this.state.commandsVisible}
+                        out={!this.state.commandsVisible}
+                        timeout={200}>
+                        {(state) => (
+                            <span className={`chat-commands-${state} chat-commands`}>
+                                Pin </span>)}
                     </Transition>
 
                     <div className={'chat-input'}>
