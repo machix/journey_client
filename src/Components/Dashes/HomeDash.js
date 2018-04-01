@@ -5,7 +5,7 @@ import {Motion, spring} from 'react-motion'
 import Icon from 'react-icon-base';
 import ArrowKeysReact from 'arrow-keys-react';
 import ReactDOM from 'react-dom';
-
+import Transition from 'react-transition-group/Transition';
 
 import Chat from '../Chat/Chat';
 import Sidebar from '../Sidebar/Sidebar';
@@ -20,7 +20,8 @@ const mapStateToProps = state => ({
     windowHeight: state.common.windowHeight,
     windowWidth: state.common.windowWidth,
     mapExpanded: state.common.mapExpanded,
-    mapIsHover: state.common.mapIsHover,});
+    mapIsHover: state.common.mapIsHover,
+});
 
 const mapDispatchToProps = dispatch => ({
     fetchLiveJourney: (journey_uid) => dispatch(agent.FirebaseQuery.liveJourney(journey_uid)),
@@ -58,6 +59,7 @@ class HomeDash extends Component {
             sidebarVisible: false,
             commands: ['Share, Donate, Contribute'],
             menuToggled: false,
+            annotationVisible: false
         }
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 
@@ -115,12 +117,19 @@ class HomeDash extends Component {
                     ...this.state,
                     menuToggled: !this.state.menuToggled
                 })
+                return;
+            }
+            case 'annotation': {
+                console.log('annotation');
+                this.setState({
+                    ...this.state,
+                    annotationVisible: !this.state.annotationVisible
+                });
+                return;
             }
         }
 
     };
-
-
 
 
     focusDiv() {
@@ -172,6 +181,32 @@ class HomeDash extends Component {
 
 
                 <div className={"journey-container"}>
+
+                    <Transition
+                        unmountOnExit={true}
+                        in={this.state.menuToggled}
+                        out={!this.state.menu}
+                        timeout={200}>
+                        {(state) => (
+                            <div className={`annotation-${state} annotation`}>
+                                <div className={"close"} onClick={() => this.toggle('menu')}>
+                                    <Icon viewBox="0 0 40 40" size={15} style={{color: 'white'}}>
+                                        <g>
+                                            <path
+                                                d="m34.7 30.2c0.2 0.3 0.3 0.5 0.3 0.8s-0.1 0.6-0.3 0.8l-3 2.9c-0.2 0.2-0.4 0.3-0.7 0.3s-0.5-0.1-0.8-0.3l-10.2-10.2-10.2 10.2c-0.3 0.2-0.4 0.3-0.7 0.3s-0.6-0.1-0.8-0.3l-3-2.9c-0.2-0.2-0.3-0.5-0.3-0.8s0.1-0.5 0.3-0.8l10.3-10.2-10.3-10.2c-0.4-0.3-0.4-1.1 0-1.5l2.9-3c0.2-0.1 0.5-0.3 0.8-0.3s0.5 0.1 0.8 0.3l10.2 10.2 10.2-10.2c0.3-0.1 0.5-0.3 0.8-0.3s0.6 0.1 0.8 0.3l2.9 3c0.4 0.4 0.4 1.1 0 1.5l-10.3 10.1z"/>
+                                        </g>
+                                    </Icon>
+                                </div>
+                                <div className={"title"}>Climbing Everest</div>
+                                <div className={"subText"}>Day 12: Going up the North Face of the mountain in record
+                                    time!
+                                    Without oxygen and without my balls.
+                                </div>
+                            </div>
+                        )}
+                    </Transition>
+
+
                     {this.props.liveJourneyMeta !== null ?
                         <Motion
                             style={{
@@ -192,9 +227,8 @@ class HomeDash extends Component {
                         </Motion>
                         : null}
 
-                   <MapContainer></MapContainer>
+                    <MapContainer></MapContainer>
                 </div>
-
 
 
                 <div>

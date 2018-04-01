@@ -272,6 +272,50 @@ h1, h2, h3, h4, h5 {
   -webkit-animation-name: fadeOutDown;
   animation-name: fadeOutDown; }
 
+@-webkit-keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible; }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+
+@keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible; }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+
+.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft; }
+
+@-webkit-keyframes slideOutLeft {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0); } }
+
+@keyframes slideOutLeft {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0); } }
+
+.slideOutLeft {
+  -webkit-animation-name: slideOutLeft;
+  animation-name: slideOutLeft; }
+
 .nodisplay {
   display: none !important; }
 
@@ -475,6 +519,51 @@ h1, h2, h3, h4, h5 {
     width: 70px;
     height: 70px; }
 
+.title {
+  font-family: 'Open Sans', sans-serif;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
+  color: white;
+  font-weight: 700; }
+
+.annotation-entering {
+  -webkit-animation-name: slideInLeft;
+  -webkit-animation-duration: 0.2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+  animation-name: slideInLeft;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in; }
+
+.annotation-exiting {
+  -webkit-animation-name: slideOutLeft;
+  -webkit-animation-duration: 0.2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+  animation-name: slideOutLeft;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in; }
+
+.annotation {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 30px 20px 30px 30px;
+  max-width: 35vw;
+  cursor: pointer; }
+  .annotation .close {
+    position: absolute;
+    top: 20px;
+    right: 20px; }
+  .annotation .title {
+    font-size: 1.8rem;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    padding-bottom: 2px; }
+  .annotation .subText {
+    color: white;
+    font-family: 'Roboto', sans-serif; }
+
 .chat {
   position: absolute;
   bottom: 30px;
@@ -484,20 +573,20 @@ h1, h2, h3, h4, h5 {
     -webkit-animation-name: fadeInUp;
     -webkit-animation-duration: 0.2s;
     -webkit-animation-iteration-count: 1;
-    -webkit-animation-timing-function: linear;
+    -webkit-animation-timing-function: ease-in;
     animation-name: fadeInUp;
     animation-duration: 0.2s;
     animation-iteration-count: 1;
-    animation-timing-function: linear; }
+    animation-timing-function: ease-in; }
   .chat .chat-commands-exiting {
     -webkit-animation-name: fadeOutDown;
     -webkit-animation-duration: 0.2s;
     -webkit-animation-iteration-count: 1;
-    -webkit-animation-timing-function: linear;
+    -webkit-animation-timing-function: ease-in;
     animation-name: fadeOutDown;
     animation-duration: 0.2s;
     animation-iteration-count: 1;
-    animation-timing-function: linear; }
+    animation-timing-function: ease-in; }
   .chat .chat-commands {
     color: orange;
     padding: 10px 30px;
@@ -579,7 +668,7 @@ h1, h2, h3, h4, h5 {
           width: 60px;
           height: 60px;
           border-radius: 200px;
-          background: linear-gradient(25deg, white, white);
+          background: ease-in-gradient(25deg, white, white);
           display: flex;
           align-items: center;
           justify-content: center; }
@@ -623,7 +712,7 @@ h1, h2, h3, h4, h5 {
                 height: 4px;
                 bottom: 0;
                 width: 80%;
-                background: linear-gradient(45deg, #fffa0a, #ff8412);
+                background: ease-in-gradient(45deg, #fffa0a, #ff8412);
                 z-index: 3;
                 border-radius: 4px; }
               .login-wrapper .login-jumbotron .cause-sidebar .live-container .cause-info .funding .chart-container .total {
@@ -642,7 +731,7 @@ h1, h2, h3, h4, h5 {
             width: 150px;
             height: 150px;
             border-radius: 200px;
-            background: linear-gradient(white, white);
+            background: ease-in-gradient(white, white);
             display: flex;
             align-items: center;
             justify-content: center; }
@@ -2272,7 +2361,7 @@ header {
   transition: opacity 0.1s ease;
   transition-property: transform, opacity;
   transition-duration: 100ms;
-  transition-timing-function: cubic-bezier(0.175, 0.665, 0.32, 1), linear; }
+  transition-timing-function: cubic-bezier(0.175, 0.665, 0.32, 1), ease-in; }
 
 .test-leave {
   opacity: 1;
@@ -2280,7 +2369,7 @@ header {
   transform: translate3d(0, 0, 0);
   transition-property: transform, opacity;
   transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.175, 0.665, 0.32, 1), linear; }
+  transition-timing-function: cubic-bezier(0.175, 0.665, 0.32, 1), ease-in; }
 
 .test-leave.test-leave-active {
   opacity: 0;
@@ -2305,21 +2394,21 @@ header {
   -webkit-animation-name: bounceIn;
   -webkit-animation-duration: .8s;
   -webkit-animation-iteration-count: 1;
-  -webkit-animation-timing-function: linear;
+  -webkit-animation-timing-function: ease-in;
   animation-name: bounceIn;
   animation-duration: .8s;
   animation-iteration-count: 1;
-  animation-timing-function: linear; }
+  animation-timing-function: ease-in; }
 
 .documents-list .documents-list-leave {
   -webkit-animation-name: bounceOut;
   -webkit-animation-duration: 0.2s;
   -webkit-animation-iteration-count: 1;
-  -webkit-animation-timing-function: linear;
+  -webkit-animation-timing-function: ease-in;
   animation-name: bounceOut;
   animation-duration: 0.2s;
   animation-iteration-count: 1;
-  animation-timing-function: linear; }
+  animation-timing-function: ease-in; }
 
 .force_select {
   -webkit-user-select: all;
