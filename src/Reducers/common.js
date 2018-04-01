@@ -6,7 +6,9 @@ var SelectedEndDate = moment();
 const defaultState = {
     liveJourneyMeta: null,
     windowWidth: 0,
-    windowHeight: 0
+    windowHeight: 0,
+    mapExpanded: false,
+    mapIsHover: false
 };
 
 export default (state = defaultState, action) => {
@@ -17,6 +19,17 @@ export default (state = defaultState, action) => {
                 ...state,
                 liveJourneyMeta: action.liveJourneyMeta
             };
+        case 'SET_MAP_EXPANDED':
+
+            return {
+                ...state,
+                mapExpanded: action.value,
+            };
+        case 'SET_MAP_IS_HOVER':
+            return {
+                ...state,
+                mapIsHover: action.value,
+            };
 
         case 'SET_WINDOW_DIMS':
             console.log('SET_WINDOW_DIMS: ' + action.windowWidth + '/' + action.windowHeight)
@@ -25,7 +38,8 @@ export default (state = defaultState, action) => {
                 ...state,
                 windowWidth: action.windowWidth,
                 windowHeight: action.windowHeight
-            }
+            };
+
 
         case 'REDIRECT':
             return {...state, redirectTo: null};
