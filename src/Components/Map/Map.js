@@ -27,10 +27,10 @@ class Map extends Component {
         return (
             <GoogleMap
                 defaultZoom={8}
-                defaultCenter={{ lat: -34.397, lng: 150.644 }}
+                defaultCenter={{ lat: 28.003514, lng: 86.852070}}
                 mapTypeId="terrain"
             >
-                {this.props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} />}
+                {this.props.isMarkerShown && <Marker position={{ lat: 28.003514, lng: 86.852070}} />}
             </GoogleMap>
 
         );

@@ -191,7 +191,8 @@ class HomeDash extends Component {
                                         <g>
                                             <path
                                                 d="m34.7 30.2c0.2 0.3 0.3 0.5 0.3 0.8s-0.1 0.6-0.3 0.8l-3 2.9c-0.2 0.2-0.4 0.3-0.7 0.3s-0.5-0.1-0.8-0.3l-10.2-10.2-10.2 10.2c-0.3 0.2-0.4 0.3-0.7 0.3s-0.6-0.1-0.8-0.3l-3-2.9c-0.2-0.2-0.3-0.5-0.3-0.8s0.1-0.5 0.3-0.8l10.3-10.2-10.3-10.2c-0.4-0.3-0.4-1.1 0-1.5l2.9-3c0.2-0.1 0.5-0.3 0.8-0.3s0.5 0.1 0.8 0.3l10.2 10.2 10.2-10.2c0.3-0.1 0.5-0.3 0.8-0.3s0.6 0.1 0.8 0.3l2.9 3c0.4 0.4 0.4 1.1 0 1.5l-10.3 10.1z"/>
-                                        </g>œ
+                                        </g>
+                                        œ
                                     </Icon>
                                 </div>
                                 <div className={"title"}>Climbing Everest</div>
@@ -212,15 +213,40 @@ class HomeDash extends Component {
                                 hoverHeight: spring(this.props.mapExpanded ? 3 : 0),
                             }}>
                             {({hoverHeight, hoverRadius, toggleRadius, toggleHeight, marginControl}) =>
-                                <img
-                                    style={{
-                                        left: 0,
-                                        maxWidth: '100%',
-                                        maxHeight: '100%',
-                                        width: `${this.props.windowWidth - ((10 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowHeight)}px`,
-                                        filter: this.props.sidebarExpanded ? 'blur(2px)' : 'none'
-                                    }}
-                                    src={'https://www.google.com/maps/about/images/behind-the-scenes/treks/everest-header-bg_2x.jpg'}/>}
+
+
+                                <div>
+                                    <Transition
+                                        unmountOnExit={true}
+                                        in={this.state.menuToggled}
+                                        out={!this.state.menu}
+                                        timeout={200}>
+                                        {(state) => (
+                                            <div className={`annotation-${state} info-panel`}>
+                                                January 23, 2015
+
+                                                <Icon viewBox="0 0 40 40" size={20}
+                                                      style={{color: 'white'}}>
+                                                    <g>
+                                                        <path
+                                                            d="m19.8 3.8c-2.7 0-5.3 1-7.2 2.8s-2.8 4.5-2.8 7.2c0 3.3 1.8 8.3 5.4 14.5 1.7 3 3.5 5.6 4.6 7.1 1-1.5 2.8-4.1 4.5-7.1 3.6-6.2 5.5-11.2 5.5-14.5 0-2.7-1.1-5.3-2.9-7.2s-4.5-2.8-7.1-2.8z m0-1.3c6.2 0 11.2 5 11.2 11.3 0 8.7-11.2 23.7-11.2 23.7s-11.3-15-11.3-23.7c0-6.3 5-11.3 11.3-11.3z m0 6.3c2.7 0 5 2.2 5 5s-2.3 5-5 5-5-2.3-5-5 2.2-5 5-5z m0 8.6c2 0 3.6-1.6 3.6-3.6s-1.6-3.7-3.6-3.7-3.7 1.6-3.7 3.7 1.6 3.6 3.7 3.6z"/>
+                                                    </g>
+                                                </Icon>
+                                            </div>
+                                        )}
+                                    </Transition>
+
+
+                                    <img
+                                        style={{
+                                            left: 0,
+                                            maxWidth: '100%',
+                                            maxHeight: '100%',
+                                            width: `${this.props.windowWidth - ((10 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowHeight)}px`,
+                                            filter: this.props.sidebarExpanded ? 'blur(2px)' : 'none'
+                                        }}
+                                        src={'https://www.google.com/maps/about/images/behind-the-scenes/treks/everest-header-bg_2x.jpg'}/>
+                                </div>}
                         </Motion>
                         : null}
 
