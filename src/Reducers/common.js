@@ -8,7 +8,8 @@ const defaultState = {
     windowWidth: 0,
     windowHeight: 0,
     mapExpanded: false,
-    mapIsHover: false
+    mapIsHover: false,
+    sidebarExpanded: true
 };
 
 export default (state = defaultState, action) => {
@@ -20,7 +21,6 @@ export default (state = defaultState, action) => {
                 liveJourneyMeta: action.liveJourneyMeta
             };
         case 'SET_MAP_EXPANDED':
-
             return {
                 ...state,
                 mapExpanded: action.value,
@@ -30,7 +30,6 @@ export default (state = defaultState, action) => {
                 ...state,
                 mapIsHover: action.value,
             };
-
         case 'SET_WINDOW_DIMS':
             console.log('SET_WINDOW_DIMS: ' + action.windowWidth + '/' + action.windowHeight)
             console.log(action.windowWidth);
@@ -39,6 +38,12 @@ export default (state = defaultState, action) => {
                 windowWidth: action.windowWidth,
                 windowHeight: action.windowHeight
             };
+
+        case 'SET_SIDEBAR_EXPANDED':
+            return {
+                ...state,
+                sidebarExpanded: action.value
+            }
 
 
         case 'REDIRECT':

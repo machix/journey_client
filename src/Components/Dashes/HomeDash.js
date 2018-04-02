@@ -21,6 +21,7 @@ const mapStateToProps = state => ({
     windowWidth: state.common.windowWidth,
     mapExpanded: state.common.mapExpanded,
     mapIsHover: state.common.mapIsHover,
+    sidebarExpanded: state.common.sidebarExpanded,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -29,7 +30,12 @@ const mapDispatchToProps = dispatch => ({
         type: 'SET_WINDOW_DIMS',
         windowWidth: width,
         windowHeight: height
-    })
+    }),
+    setSidebarExpanded: (value) => dispatch({
+        type: 'SET_SIDEBAR_EXPANDED',
+        value: value
+    }),
+
 });
 
 const duration = 300;
@@ -56,7 +62,6 @@ class HomeDash extends Component {
             loading: true,
             // Auth vars
             auth: {},
-            sidebarVisible: false,
             commands: ['Share, Donate, Contribute'],
             menuToggled: false,
             annotationVisible: false
@@ -103,14 +108,6 @@ class HomeDash extends Component {
 
         console.log('toggle: ' + value);
         switch (value) {
-            case 'sidebar': {
-                this.setState({
-                    ...this.state,
-                    sidebarVisible: !this.state.sidebarVisible
-                });
-
-                return;
-            }
             case 'menu': {
                 console.log('menu');
                 this.setState({
@@ -144,7 +141,7 @@ class HomeDash extends Component {
                  }}
                  tabIndex="1"
                  {...ArrowKeysReact.events}   >
-                <Motion style={{x: spring(this.state.sidebarVisible ? 30 : 0)}}>
+                <Motion style={{x: spring(this.props.sidebarExpanded ? 30 : 0)}}>
                     {({x}) =>
 
                         <div className="sidebar-container" style={{
@@ -158,7 +155,7 @@ class HomeDash extends Component {
 
                 <Chat commandsVisible={this.state.commandsVisible}/>
 
-                <div className={'logo'} onClick={() => this.toggle('sidebar')}>
+                <div className={'logo'} onClick={() => this.props.setSidebarExpanded(!this.props.sidebarExpanded)}>
                     <img className={'logo-image'}
                          src={"https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/The_North_Face_logo.svg/1200px-The_North_Face_logo.svg.png"}/>
                 </div>
@@ -194,7 +191,7 @@ class HomeDash extends Component {
                                         <g>
                                             <path
                                                 d="m34.7 30.2c0.2 0.3 0.3 0.5 0.3 0.8s-0.1 0.6-0.3 0.8l-3 2.9c-0.2 0.2-0.4 0.3-0.7 0.3s-0.5-0.1-0.8-0.3l-10.2-10.2-10.2 10.2c-0.3 0.2-0.4 0.3-0.7 0.3s-0.6-0.1-0.8-0.3l-3-2.9c-0.2-0.2-0.3-0.5-0.3-0.8s0.1-0.5 0.3-0.8l10.3-10.2-10.3-10.2c-0.4-0.3-0.4-1.1 0-1.5l2.9-3c0.2-0.1 0.5-0.3 0.8-0.3s0.5 0.1 0.8 0.3l10.2 10.2 10.2-10.2c0.3-0.1 0.5-0.3 0.8-0.3s0.6 0.1 0.8 0.3l2.9 3c0.4 0.4 0.4 1.1 0 1.5l-10.3 10.1z"/>
-                                        </g>
+                                        </g>œ
                                     </Icon>
                                 </div>
                                 <div className={"title"}>Climbing Everest</div>
@@ -221,7 +218,7 @@ class HomeDash extends Component {
                                         maxWidth: '100%',
                                         maxHeight: '100%',
                                         width: `${this.props.windowWidth - ((10 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowHeight)}px`,
-                                        filter: this.state.sidebarVisible ? 'blur(2px)' : 'none'
+                                        filter: this.props.sidebarExpanded ? 'blur(2px)' : 'none'
                                     }}
                                     src={'https://www.google.com/maps/about/images/behind-the-scenes/treks/everest-header-bg_2x.jpg'}/>}
                         </Motion>
