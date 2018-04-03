@@ -22,6 +22,7 @@ const mapStateToProps = state => ({
     mapExpanded: state.common.mapExpanded,
     mapIsHover: state.common.mapIsHover,
     sidebarExpanded: state.common.sidebarExpanded,
+
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -64,7 +65,8 @@ class HomeDash extends Component {
             auth: {},
             commands: ['Share, Donate, Contribute'],
             menuToggled: false,
-            annotationVisible: false
+            annotationVisible: false,
+            infoBarExpanded: true,
         }
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 
@@ -218,7 +220,7 @@ class HomeDash extends Component {
                                 <div>
                                     <Transition
                                         unmountOnExit={true}
-                                        in={this.state.menuToggled}
+                                        in={this.state.infoBarExpanded}
                                         out={!this.state.menu}
                                         timeout={200}>
                                         {(state) => (
@@ -265,7 +267,6 @@ class HomeDash extends Component {
                                  backgroundSize: 'cover',
                                  backgroundImage: `url(${'https://www.google.com/maps/about/images/behind-the-scenes/treks/everest-header-bg_2x.jpg'})`
                              }}>
-
                         </div>
                         : null}
                     <div className={'blur-background-overlay'}>

@@ -3,6 +3,13 @@ import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import Icon from 'react-icon-base';
 
+import SponsoredContribution from './SponsoredContribution'
+
+import member1 from '../Assets/member1.jpeg';
+import member2 from '../Assets/member2.jpg';
+import member3 from '../Assets/member3.jpeg';
+import member4 from '../Assets/member4.jpg';
+import member7 from '../Assets/member7.jpg';
 
 const mapStateToProps = state => ({
     ...state,
@@ -23,13 +30,33 @@ class Sidebar extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            members: {member1: member1, member2: member2, member3: member3, member4: member4, member7: member7}
 
+        }
     }
+
+
+    membersMap = () => {
+        return Object.keys(this.state.members).map(function (key, index) {
+            return (
+                <div key={index} className="member-container">
+                    <div className={'member'}
+                         style={{
+                             backgroundImage: `url(${this.state.members[key]})`,
+
+                             backgroundSize: 'cover',
+                         }}
+                    >
+                    </div>
+                </div>)
+        }, this);
+    };
 
     render() {
         return (
             <div className={'sidebar'}>
-                <div className={"close"} onClick={()=>this.props.setSidebarExpanded(!this.props.sidebarExpanded)}>
+                <div className={"close"} onClick={() => this.props.setSidebarExpanded(!this.props.sidebarExpanded)}>
                     <Icon viewBox="0 0 40 40" size={15}>
                         <g>
                             <path
@@ -39,17 +66,45 @@ class Sidebar extends Component {
                     </Icon>
                 </div>
 
-                <div className={'logo'}>
+                <div className={'sidebar-logo'}>
                     <img className={'logo-image'}
                          src={"https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/The_North_Face_logo.svg/1200px-The_North_Face_logo.svg.png"}/>
                 </div>
 
 
                 <div className={'title'}>
+                    Hypoxia
                 </div>
 
                 <div className={'caption'}>
-Tiddlediddle                </div>
+                    For more than 50 years, The North Face has empowered people to push their boundaries in the
+                    outdoors. Today, we are pushing the boundaries of our athletes in breaking the world record for
+                    climbing
+                    Everest without oxygen.
+                </div>
+
+                <div className={'sidebar-header'}>
+                    OWNERS
+                </div>
+                <div className={'scroll-members'}>
+                    {this.membersMap()}
+                </div>
+
+                <div className={'sidebar-header'}>
+                    SPONSORED CONTRIBUTIONS
+                </div>
+                <div className={'sponsored-contributions'}>
+                    <SponsoredContribution
+                        imageUrl={'https://content.backcountry.com/promo_upload/bcs/brand-pages/mountain-hardwear/2017/MHW_logo.png'}
+                        name={'Mountain Hardware'}
+                        description={'18 Days Food and Tent Equipment'}
+                    />
+                </div>
+
+                <div className={'sidebar-header'}>
+                    CONTRIBUTIONS
+                </div>
+
                 <div className={'footer'}>
                         <span className={'social-text'}>
                         The North Face Social:
