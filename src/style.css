@@ -712,7 +712,27 @@ h1, h2, h3, h4, h5 {
   padding: 10px;
   color: white;
   right: 10vw;
-  cursor: pointer; }
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .info-panel .image-container {
+    margin-left: 10px;
+    margin-right: 10px;
+    align-items: center; }
+    .info-panel .image-container .image-background {
+      display: flex;
+      border-radius: 39px;
+      width: 39px;
+      height: 39px;
+      margin: auto;
+      background-color: white;
+      align-items: center;
+      justify-content: center; }
+      .info-panel .image-container .image-background .image {
+        width: 35px;
+        height: 35px;
+        border-radius: 35px; }
 
 .annotation {
   position: absolute;

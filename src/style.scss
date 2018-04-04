@@ -979,6 +979,38 @@ h1, h2, h3, h4, h5 {
   color: white;
   right: 10vw;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .info-container {
+
+  }
+
+  .image-container {
+    margin-left: 10px;
+    margin-right: 10px;
+    align-items: center;
+
+    .image-background {
+      display: flex;
+      border-radius: 39px;
+      width: 39px;
+      height: 39px;
+      margin: auto;
+      background-color: white;
+
+      align-items: center;
+      justify-content: center;
+
+      .image {
+        width: 35px;
+        height: 35px;
+        border-radius: 35px;
+      }
+    }
+
+  }
+
 }
 
 .annotation {
@@ -1013,10 +1045,9 @@ h1, h2, h3, h4, h5 {
     -o-transition: color 0.2s ease-out;
     transition: color 0.2s ease-out;
 
-    &:hover{
+    &:hover {
       color: white;
     }
-    
 
     .check-in-container {
       display: flex;
@@ -1030,7 +1061,7 @@ h1, h2, h3, h4, h5 {
 
     .image-container {
       display: flex;
-      justify-content:center;
+      justify-content: center;
       align-items: center;
       width: 40px;
       height: 40px;
