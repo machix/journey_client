@@ -90,7 +90,7 @@ class Sidebar extends Component {
                 </div>
 
                 <div className={'sidebar-header'}>
-                    SPONSORED CONTRIBUTIONS
+                    OFFICIAL CONTRIBUTIONS
                 </div>
                 <div className={'sponsored-contributions'}>
                     <SponsoredContribution

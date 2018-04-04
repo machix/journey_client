@@ -522,7 +522,7 @@ h1, h2, h3, h4, h5 {
     align-items: center;
     height: 100vh;
     width: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
     position: relative; }
     .sidebar-container .sidebar .sidebar-logo .logo-image {
       cursor: pointer;
@@ -580,10 +580,7 @@ h1, h2, h3, h4, h5 {
       align-items: center;
       justify-content: flex-start;
       width: 100%;
-      flex: 1 0 auto;
-      overflow-x: scroll;
-      color: #aaa;
-      border-bottom: none; }
+      flex: 1 0 auto; }
       .sidebar-container .sidebar .scroll-members .place-holder-member {
         width: 3.7vw;
         height: 3.7vw;
