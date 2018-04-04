@@ -27,15 +27,21 @@ class SponsoredContribution extends Component {
 
     render() {
         return (
-            <div className={'sponsored-contribution'}>
+            <div className={'sponsored-contribution hvr-grow'}>
                 <div className={'image'}
                      style={{
                          backgroundImage: `url(${this.props.imageUrl})`,
                      }}>
                 </div>
                 <div className={'description'}>
-                    {this.props.name}<br/>
-                    {this.props.description}
+                    <div>
+                        <div className={'description-title'}> {this.props.name}</div>
+                        <div className={'subText'}> {this.props.description}</div>
+                        {this.props.product ?
+                            <div className={'url'}><a href={this.props.productUrl}>{this.props.product}</a>
+                            </div> : null}
+
+                    </div>
                 </div>
 
                 {this.props.type === "money" ?

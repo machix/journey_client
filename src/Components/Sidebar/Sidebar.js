@@ -70,10 +70,13 @@ class Sidebar extends Component {
                     <img className={'logo-image'}
                          src={"https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/The_North_Face_logo.svg/1200px-The_North_Face_logo.svg.png"}/>
                 </div>
+                <div className={'scroll-members'}>
+                    {this.membersMap()} <div className={'place-holder-member'}>+7</div>
+                </div>
 
 
                 <div className={'title'}>
-                    Hypoxia
+                    Hypoxic
                 </div>
 
                 <div className={'caption'}>
@@ -82,34 +85,33 @@ class Sidebar extends Component {
                     Everest without oxygen - in record time.
                 </div>
 
-                <div className={'sidebar-header'}>
-                    OWNERS
-                </div>
-                <div className={'scroll-members'}>
-                    {this.membersMap()} <div className={'place-holder-member'}>+7</div>
-                </div>
+
+
 
                 <div className={'sidebar-header'}>
-                    OFFICIAL CONTRIBUTIONS
+                    PINNED CONTRIBUTIONS (13)
                 </div>
                 <div className={'sponsored-contributions'}>
                     <SponsoredContribution
-                        imageUrl={'https://content.backcountry.com/promo_upload/bcs/brand-pages/mountain-hardwear/2017/MHW_logo.png'}
-                        name={'Mountain Hardware'}
-                        description={'18 Days Food and Tent Equipment'}
+                        imageUrl={'https://goodlogo.com/images/logos/nike_classic_logo_2355.gif'}
+                        name={'Nike'}
+                        description={'We told them to "Just Do It"'}
                         type={"other"}
                     />
                     <SponsoredContribution
                         imageUrl={'https://content.backcountry.com/promo_upload/bcs/brand-pages/mountain-hardwear/2017/MHW_logo.png'}
-                        name={'Mountain Hardware'}
+                        name={'Mountain Hardwear'}
                         description={'18 Days Food and Tent Equipment'}
                         type={"money"}
                         amount={"500"}
+                        product={"Mountain Hardware Space Age Dome"}
+                        productUrl={'https://www.mountainhardwear.ca/en/space-station-%7C-842-%7C-none-887487428431.html?mid=paidsearch&eid=Google+PLA+CA&s_kwcid=AL!3937!3!237302709337!!!g!390683910683!&ef_id=WdWVeQAAAXh5NMu7:20180404031234:s'}
                     />
+                    <div className={'pointer'} style={{textAlign: 'right'}}>See All Contributions</div>
                 </div>
 
                 <div className={'sidebar-header'}>
-                    CONTRIBUTIONS
+                    SOCIAL CONTRIBUTIONS
                 </div>
 
                 <div className={'footer'}>

@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8eb92d85-80e0-4af9-8dc4-e20ffe8708d5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Helpers/constants.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" afterPath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Sidebar/SponsoredContribution.js" afterPath="$PROJECT_DIR$/src/Components/Sidebar/SponsoredContribution.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
     </list>
@@ -28,36 +29,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="475" column="10" lean-forward="false" selection-start-line="475" selection-start-column="2" selection-end-line="475" selection-end-column="10" />
+            <state relative-caret-position="228">
+              <caret line="778" column="24" lean-forward="true" selection-start-line="778" selection-start-column="24" selection-end-line="778" selection-end-column="24" />
               <folding>
-                <element signature="e#28027#28572#2" expanded="true" />
-                <element signature="e#30447#30948#2" expanded="true" />
-                <element signature="e#33339#35764#2" expanded="true" />
-                <element signature="e#65030#65839#2" expanded="true" />
+                <element signature="e#29632#30177#2" expanded="true" />
+                <element signature="e#32052#32553#2" expanded="true" />
+                <element signature="e#34944#37369#2" expanded="true" />
+                <element signature="e#66635#67444#2" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="constants.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Helpers/constants.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Sidebar.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Sidebar.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="105" column="38" lean-forward="true" selection-start-line="105" selection-start-column="38" selection-end-line="105" selection-end-column="38" />
+            <state relative-caret-position="177">
+              <caret line="74" column="22" lean-forward="false" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -65,14 +56,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Chat.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Chat/Chat.js">
+      <file leaf-file-name="SponsoredContribution.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/SponsoredContribution.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1035">
-              <caret line="78" column="42" lean-forward="false" selection-start-line="78" selection-start-column="42" selection-end-line="78" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="267">
+              <caret line="43" column="26" lean-forward="true" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -100,39 +89,38 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>5.3</find>
-      <find>4.3vw</find>
-      <find>Sponsord</find>
-      <find>Sponsore</find>
-      <find>SPONSORED</find>
-      <find>footer</find>
-      <find>.scroll</find>
-      <find>.footer</find>
-      <find>C</find>
-      <find>money</find>
-      <find>.scroll-members</find>
-      <find>.member-scro</find>
-      <find>Contr</find>
-      <find>SIDE</find>
-      <find>SIDEBARH</find>
-      <find>SIDEBAR-HEADER</find>
-      <find>Everst</find>
-      <find>contributions</find>
-      <find>color</find>
-      <find>background-color</find>
-      <find>member-container</find>
-      <find>rgb(170, 170, 170);</find>
-      <find>.place-ho</find>
-      <find>member</find>
-      <find>.membner</find>
+      <find>.caption</find>
+      <find>Mountain hardw</find>
+      <find>sponsored-contributions</find>
+      <find>.descrip</find>
       <find>.members</find>
-      <find>.sidebar</find>
-      <find>sponsored cont</find>
-      <find>Contributions</find>
-      <find>.CAPTION</find>
+      <find>.sponsor</find>
+      <find>Helpers</find>
+      <find>.description</find>
+      <find>.grow</find>
+      <find>.contributiosn</find>
+      <find>.contributi</find>
+      <find>.contrib</find>
+      <find>sponso</find>
+      <find>animation</find>
+      <find>hover</find>
+      <find>hvr-gr</find>
+      <find>.social-icon</find>
+      <find>&amp;:hover</find>
+      <find>color</find>
+      <find>.hvr-gro</find>
+      <find>&lt;img</find>
+      <find>Backgrou</find>
+      <find>.container</find>
+      <find>annot</find>
+      <find>journey-container</find>
+      <find>.subText</find>
+      <find>.TITLE</find>
+      <find>4</find>
+      <find>3</find>
+      <find>.title</find>
     </findStrings>
     <replaceStrings>
-      <replace>TypeForm</replace>
       <replace>this.enterWaypointEnter</replace>
       <replace>_enterWaypointEnter</replace>
       <replace>this.visibility</replace>
@@ -154,14 +142,15 @@
       <replace>ease-in</replace>
       <replace>ease-in-out</replace>
       <replace>10</replace>
-      <replace>3.3</replace>
       <replace>5.3</replace>
       <replace>4</replace>
       <replace>4.3</replace>
       <replace>3.7vw</replace>
       <replace>4vw</replace>
-      <replace>background-color</replace>
       <replace>color</replace>
+      <replace>background-color</replace>
+      <replace>3.5</replace>
+      <replace>3.3</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -225,8 +214,8 @@
         <option value="$PROJECT_DIR$/src/Components/Chat/Chat.js" />
         <option value="$PROJECT_DIR$/src/Reducers/common.js" />
         <option value="$PROJECT_DIR$/src/Components/Map/Map.js" />
-        <option value="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" />
         <option value="$PROJECT_DIR$/src/Components/Sidebar/SponsoredContribution.js" />
+        <option value="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" />
         <option value="$PROJECT_DIR$/src/style.scss" />
         <option value="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" />
       </list>
@@ -516,12 +505,12 @@
       <workItem from="1522602129821" duration="7705000" />
       <workItem from="1522702557041" duration="13541000" />
       <workItem from="1522804738518" duration="793000" />
-      <workItem from="1522806570934" duration="1001000" />
+      <workItem from="1522806570934" duration="5306000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167101000" />
+    <option name="totallyTimeSpent" value="171406000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -838,6 +827,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8">
           <caret line="107" column="53" lean-forward="true" selection-start-line="107" selection-start-column="53" selection-end-line="107" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -860,43 +852,11 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reducers/auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
           <caret line="441" column="36" lean-forward="false" selection-start-line="441" selection-start-column="36" selection-end-line="441" selection-end-column="36" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/HomeDash.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="267" column="47" lean-forward="false" selection-start-line="267" selection-start-column="47" selection-end-line="267" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/SponsoredContribution.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-318">
-          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Chat/Chat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1035">
-          <caret line="78" column="42" lean-forward="false" selection-start-line="78" selection-start-column="42" selection-end-line="78" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -908,25 +868,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js">
+    <entry file="file://$PROJECT_DIR$/src/Components/Chat/Chat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="105" column="38" lean-forward="true" selection-start-line="105" selection-start-column="38" selection-end-line="105" selection-end-column="38" />
+        <state relative-caret-position="121">
+          <caret line="70" column="40" lean-forward="false" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reducers/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/HomeDash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="193" column="43" lean-forward="true" selection-start-line="193" selection-start-column="43" selection-end-line="193" selection-end-column="43" />
+          <folding>
+            <element signature="e#4635#4954#0" expanded="false" />
+            <element signature="e#4972#6097#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/SponsoredContribution.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="43" column="26" lean-forward="true" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="475" column="10" lean-forward="false" selection-start-line="475" selection-start-column="2" selection-end-line="475" selection-end-column="10" />
+        <state relative-caret-position="228">
+          <caret line="778" column="24" lean-forward="true" selection-start-line="778" selection-start-column="24" selection-end-line="778" selection-end-column="24" />
           <folding>
-            <element signature="e#28027#28572#2" expanded="true" />
-            <element signature="e#30447#30948#2" expanded="true" />
-            <element signature="e#33339#35764#2" expanded="true" />
-            <element signature="e#65030#65839#2" expanded="true" />
+            <element signature="e#29632#30177#2" expanded="true" />
+            <element signature="e#32052#32553#2" expanded="true" />
+            <element signature="e#34944#37369#2" expanded="true" />
+            <element signature="e#66635#67444#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="74" column="22" lean-forward="false" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
