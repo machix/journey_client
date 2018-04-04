@@ -13,7 +13,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({});
 
 const getPixelPositionOffset = (width, height) => ({
-    x: -(width / 2),
+    x: -(width / 3),
     y: -(height / 2),
 });
 
@@ -106,7 +106,7 @@ class Map extends Component {
                      * 3. Create OverlayView content using standard React components.
                      */
                 >
-                    <div className={'image-container'}>
+                    <div className={'image-container hvr-grow-large'}>
                         <div className={'marker-image'}
                              style={{
                                  backgroundSize: 'cover',
@@ -114,7 +114,7 @@ class Map extends Component {
                              }}
                         >
                         </div>
-                        <div className={'marker-image'}
+                        <div className={'marker-image-pin'}
                              style={{
                                  border: 'solid 2px blue',
                                  backgroundSize: 'cover',

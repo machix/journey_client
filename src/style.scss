@@ -351,6 +351,22 @@ h1, h2, h3, h4, h5 {
   -webkit-transform: scale(1.02);
   transform: scale(1.02);
 }
+.hvr-grow-large {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.7s;
+  transition-duration: 0.7s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+.hvr-grow-large:hover, .hvr-grow-large:focus, .hvr-grow-large:active {
+  -webkit-transform: scale(2);
+  transform: scale(2);
+}
 
 @-webkit-keyframes fadeInUp {
   from {
@@ -717,9 +733,16 @@ h1, h2, h3, h4, h5 {
 
         .marker-image {
           z-index: 5;
-          width: 55px;
-          height: 55px;
-          border-radius: 55px;
+          width: 60px;
+          height: 60px;
+          border-radius: 60px;
+          border: solid white 2px;
+        }
+        .marker-image-pin {
+          z-index: 5;
+          width: 35px;
+          height: 35px;
+          border-radius: 35px;
           border: solid white 2px;
         }
 
