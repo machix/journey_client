@@ -203,21 +203,24 @@ class HomeDash extends Component {
                                     Without oxygen and without my balls.
                                 </div>
                                 <div className={'check-in'}>
-                                    <div className={'image-container'}>
-                                        <div className={'image'}
-                                        style={{
-                                            backgroundSize: 'cover',
-                                            backgroundImage: `url(${'https://s.hswstatic.com/gif/sherpa-125217967.jpg'})`
-                                        }}
-                                        >
+                                    Check-Ins:
+                                    <div style={{display: 'flex', paddingTop: '5px'}}>
+                                        <div className={'image-container'}>
+                                            <div className={'image'}
+                                                 style={{
+                                                     backgroundSize: 'cover',
+                                                     backgroundImage: `url(${'https://s.hswstatic.com/gif/sherpa-125217967.jpg'})`
+                                                 }}
+                                            >
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className={'check-in-container'}>
-                                        <div className={'name'}>
-                                            Annunu Sherpa
-                                        </div>
-                                        <div className={'description'}>
-                                            Service - $$
+                                        <div className={'check-in-container'}>
+                                            <div className={'name'}>
+                                                Annunu Sherpa
+                                            </div>
+                                            <div className={'description'}>
+                                                Service - $$
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

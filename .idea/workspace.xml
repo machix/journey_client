@@ -30,13 +30,13 @@
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="1007" column="21" lean-forward="false" selection-start-line="1007" selection-start-column="21" selection-end-line="1007" selection-end-column="21" />
+            <state relative-caret-position="313">
+              <caret line="1039" column="25" lean-forward="true" selection-start-line="1039" selection-start-column="25" selection-end-line="1039" selection-end-column="25" />
               <folding>
-                <element signature="e#30222#30767#2" expanded="true" />
-                <element signature="e#32642#33143#2" expanded="true" />
-                <element signature="e#35534#37959#2" expanded="true" />
-                <element signature="e#67225#68034#2" expanded="true" />
+                <element signature="e#30469#31014#2" expanded="true" />
+                <element signature="e#32889#33390#2" expanded="true" />
+                <element signature="e#35781#38206#2" expanded="true" />
+                <element signature="e#67472#68281#2" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -45,8 +45,8 @@
       <file leaf-file-name="HomeDash.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/Dashes/HomeDash.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="204" column="49" lean-forward="true" selection-start-line="204" selection-start-column="49" selection-end-line="204" selection-end-column="49" />
+            <state relative-caret-position="-2">
+              <caret line="195" column="60" lean-forward="false" selection-start-line="195" selection-start-column="60" selection-end-line="195" selection-end-column="60" />
               <folding>
                 <element signature="e#4635#4954#0" expanded="false" />
                 <element signature="e#4972#6097#0" expanded="false" />
@@ -65,16 +65,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="auth.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Reducers/auth.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -88,9 +78,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.sponsor</find>
-      <find>Helpers</find>
-      <find>.description</find>
       <find>.grow</find>
       <find>.contributiosn</find>
       <find>.contributi</find>
@@ -100,8 +87,6 @@
       <find>hover</find>
       <find>hvr-gr</find>
       <find>.social-icon</find>
-      <find>&amp;:hover</find>
-      <find>color</find>
       <find>.hvr-gro</find>
       <find>&lt;img</find>
       <find>Backgrou</find>
@@ -118,6 +103,11 @@
       <find>backgroundImage</find>
       <find>annunu</find>
       <find>.container</find>
+      <find>&amp;:hover</find>
+      <find>:hover</find>
+      <find>check-in</find>
+      <find>background-color</find>
+      <find>color</find>
     </findStrings>
     <replaceStrings>
       <replace>this.enterWaypointEnter</replace>
@@ -146,10 +136,10 @@
       <replace>4.3</replace>
       <replace>3.7vw</replace>
       <replace>4vw</replace>
-      <replace>color</replace>
-      <replace>background-color</replace>
       <replace>3.5</replace>
       <replace>3.3</replace>
+      <replace>color</replace>
+      <replace>background-color</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -504,12 +494,12 @@
       <workItem from="1522602129821" duration="7705000" />
       <workItem from="1522702557041" duration="13541000" />
       <workItem from="1522804738518" duration="793000" />
-      <workItem from="1522806570934" duration="6114000" />
+      <workItem from="1522806570934" duration="6437000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172214000" />
+    <option name="totallyTimeSpent" value="172537000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -522,6 +512,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="803" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18957011" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -530,7 +521,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968536" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25299507" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28107345" sideWeight="0.48511904" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28107345" sideWeight="0.48511904" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -886,6 +877,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/HomeDash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2">
+          <caret line="195" column="60" lean-forward="false" selection-start-line="195" selection-start-column="60" selection-end-line="195" selection-end-column="60" />
+          <folding>
+            <element signature="e#4635#4954#0" expanded="false" />
+            <element signature="e#4972#6097#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reducers/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/SponsoredContribution.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
@@ -894,34 +904,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reducers/auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/HomeDash.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="204" column="49" lean-forward="true" selection-start-line="204" selection-start-column="49" selection-end-line="204" selection-end-column="49" />
-          <folding>
-            <element signature="e#4635#4954#0" expanded="false" />
-            <element signature="e#4972#6097#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="1007" column="21" lean-forward="false" selection-start-line="1007" selection-start-column="21" selection-end-line="1007" selection-end-column="21" />
+        <state relative-caret-position="313">
+          <caret line="1039" column="25" lean-forward="true" selection-start-line="1039" selection-start-column="25" selection-end-line="1039" selection-end-column="25" />
           <folding>
-            <element signature="e#30222#30767#2" expanded="true" />
-            <element signature="e#32642#33143#2" expanded="true" />
-            <element signature="e#35534#37959#2" expanded="true" />
-            <element signature="e#67225#68034#2" expanded="true" />
+            <element signature="e#30469#31014#2" expanded="true" />
+            <element signature="e#32889#33390#2" expanded="true" />
+            <element signature="e#35781#38206#2" expanded="true" />
+            <element signature="e#67472#68281#2" expanded="true" />
           </folding>
         </state>
       </provider>
