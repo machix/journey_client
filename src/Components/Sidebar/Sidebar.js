@@ -78,16 +78,15 @@ class Sidebar extends Component {
 
                 <div className={'caption'}>
                     For more than 50 years, The North Face has empowered people to push their boundaries in the
-                    outdoors. Today, we are pushing the boundaries of our athletes in breaking the world record for
-                    climbing
-                    Everest without oxygen.
+                    outdoors. Today, we continue with that adage, having our athletes scale the North Face of
+                    Everest without oxygen - in record time.
                 </div>
 
                 <div className={'sidebar-header'}>
                     OWNERS
                 </div>
                 <div className={'scroll-members'}>
-                    {this.membersMap()}
+                    {this.membersMap()} <div className={'place-holder-member'}>+7</div>
                 </div>
 
                 <div className={'sidebar-header'}>
@@ -98,6 +97,14 @@ class Sidebar extends Component {
                         imageUrl={'https://content.backcountry.com/promo_upload/bcs/brand-pages/mountain-hardwear/2017/MHW_logo.png'}
                         name={'Mountain Hardware'}
                         description={'18 Days Food and Tent Equipment'}
+                        type={"other"}
+                    />
+                    <SponsoredContribution
+                        imageUrl={'https://content.backcountry.com/promo_upload/bcs/brand-pages/mountain-hardwear/2017/MHW_logo.png'}
+                        name={'Mountain Hardware'}
+                        description={'18 Days Food and Tent Equipment'}
+                        type={"money"}
+                        amount={"500"}
                     />
                 </div>
 

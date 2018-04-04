@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8eb92d85-80e0-4af9-8dc4-e20ffe8708d5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Components/Sidebar/SponsoredContribution.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" afterPath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Sidebar/SponsoredContribution.js" afterPath="$PROJECT_DIR$/src/Components/Sidebar/SponsoredContribution.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
     </list>
@@ -29,47 +28,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="761" column="22" lean-forward="true" selection-start-line="761" selection-start-column="22" selection-end-line="761" selection-end-column="22" />
+            <state relative-caret-position="291">
+              <caret line="752" column="20" lean-forward="false" selection-start-line="752" selection-start-column="20" selection-end-line="752" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sidebar.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Sidebar.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="86" column="20" lean-forward="false" selection-start-line="86" selection-start-column="20" selection-end-line="86" selection-end-column="20" />
+            <state relative-caret-position="307">
+              <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SponsoredContribution.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/SponsoredContribution.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="37" column="42" lean-forward="false" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomeDash.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Dashes/HomeDash.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="266" column="51" lean-forward="false" selection-start-line="266" selection-start-column="51" selection-end-line="266" selection-end-column="51" />
-              <folding>
-                <element signature="e#5415#5945#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -110,36 +85,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.annato</find>
-      <find>&lt;img</find>
-      <find>&lt;Icon</find>
-      <find>.annotation</find>
-      <find>annotatoin</find>
-      <find>annotat</find>
-      <find>January</find>
-      <find>annotation</find>
-      <find>&lt;MAP</find>
-      <find>JANUARY</find>
-      <find>defa</find>
-      <find>.info-panel</find>
-      <find>.title</find>
-      <find>.logo</find>
-      <find>'</find>
-      <find>10vw;</find>
-      <find>15</find>
-      <find>525f7f</find>
-      <find>.SIDEBAR</find>
       <find>map</find>
       <find>render</find>
-      <find>.sidebar</find>
       <find>gradient</find>
-      <find>member-container</find>
       <find>src=</find>
       <find>backgroundImage</find>
       <find>5.3</find>
       <find>4.3vw</find>
       <find>Sponsord</find>
       <find>Sponsore</find>
+      <find>SPONSORED</find>
+      <find>footer</find>
+      <find>.sidebar</find>
+      <find>.scroll</find>
+      <find>.footer</find>
+      <find>C</find>
+      <find>Contributions</find>
+      <find>money</find>
+      <find>.scroll-members</find>
+      <find>.members</find>
+      <find>.member-scro</find>
+      <find>Contr</find>
+      <find>SIDE</find>
+      <find>SIDEBARH</find>
+      <find>SIDEBAR-HEADER</find>
+      <find>Everst</find>
+      <find>contributions</find>
+      <find>member</find>
+      <find>color</find>
+      <find>background-color</find>
+      <find>member-container</find>
     </findStrings>
     <replaceStrings>
       <replace>TypeForm</replace>
@@ -170,6 +145,8 @@
       <replace>4.3</replace>
       <replace>3.7vw</replace>
       <replace>4vw</replace>
+      <replace>background-color</replace>
+      <replace>color</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -235,8 +212,8 @@
         <option value="$PROJECT_DIR$/src/Components/Map/Map.js" />
         <option value="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" />
         <option value="$PROJECT_DIR$/src/Components/Sidebar/SponsoredContribution.js" />
-        <option value="$PROJECT_DIR$/src/style.scss" />
         <option value="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" />
+        <option value="$PROJECT_DIR$/src/style.scss" />
       </list>
     </option>
   </component>
@@ -522,12 +499,12 @@
       <workItem from="1522281090642" duration="7870000" />
       <workItem from="1522352159657" duration="28114000" />
       <workItem from="1522602129821" duration="7705000" />
-      <workItem from="1522702557041" duration="10102000" />
+      <workItem from="1522702557041" duration="13073000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161868000" />
+    <option name="totallyTimeSpent" value="164839000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -914,16 +891,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Chat/Chat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="78" column="42" lean-forward="false" selection-start-line="78" selection-start-column="42" selection-end-line="78" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Reducers/auth.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -937,49 +904,59 @@
         <state relative-caret-position="302">
           <caret line="441" column="36" lean-forward="false" selection-start-line="441" selection-start-column="36" selection-end-line="441" selection-end-column="36" />
           <folding>
-            <marker date="1522784654484" expanded="false" signature="27482:28022" ph="data:image/svg+xml" />
-            <marker date="1522784654484" expanded="false" signature="30003:30499" ph="data:image/svg+xml" />
-            <marker date="1522784654484" expanded="false" signature="33109:35529" ph="data:image/svg+xml" />
-            <marker date="1522784654484" expanded="false" signature="71471:72275" ph="data:image/svg+xml" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/SponsoredContribution.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="37" column="42" lean-forward="false" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <marker date="1522800667097" expanded="false" signature="28848:29388" ph="data:image/svg+xml" />
+            <marker date="1522800667097" expanded="false" signature="31369:31865" ph="data:image/svg+xml" />
+            <marker date="1522800667097" expanded="false" signature="34475:36895" ph="data:image/svg+xml" />
+            <marker date="1522800667097" expanded="false" signature="72837:73641" ph="data:image/svg+xml" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Dashes/HomeDash.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="266" column="51" lean-forward="false" selection-start-line="266" selection-start-column="51" selection-end-line="266" selection-end-column="51" />
+        <state relative-caret-position="291">
+          <caret line="267" column="47" lean-forward="false" selection-start-line="267" selection-start-column="47" selection-end-line="267" selection-end-column="47" />
           <folding>
             <element signature="e#5415#5945#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/style.scss">
+    <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/SponsoredContribution.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="761" column="22" lean-forward="true" selection-start-line="761" selection-start-column="22" selection-end-line="761" selection-end-column="22" />
-          <folding />
+        <state relative-caret-position="-318">
+          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="86" column="20" lean-forward="false" selection-start-line="86" selection-start-column="20" selection-end-line="86" selection-end-column="20" />
+        <state relative-caret-position="307">
+          <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Chat/Chat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="78" column="42" lean-forward="false" selection-start-line="78" selection-start-column="42" selection-end-line="78" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="752" column="20" lean-forward="false" selection-start-line="752" selection-start-column="20" selection-end-line="752" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>

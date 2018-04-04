@@ -29,15 +29,20 @@ class SponsoredContribution extends Component {
         return (
             <div className={'sponsored-contribution'}>
                 <div className={'image'}
-                    style={{
-                        backgroundImage: `url(${this.props.imageUrl})`,
-                        backgroundSize: 'cover',
-                    }}>
+                     style={{
+                         backgroundImage: `url(${this.props.imageUrl})`,
+                     }}>
                 </div>
-                <div>
+                <div className={'description'}>
                     {this.props.name}<br/>
                     {this.props.description}
                 </div>
+
+                {this.props.type === "money" ?
+                    <div className={"money"}>
+                        ${this.props.amount}
+                    </div>
+                    : null}
 
             </div>
 
