@@ -66,7 +66,7 @@ $c-set-bg-2: #F6F9FC;
 $c-set-text-0: #424770; /* #333333; */
 $c-set-text-1: #545454;
 $c-set-text-1-super: #666;
-$c-set-text-1-sub: #aaa;
+$c-set-text-1-sub: #e6e6e6;
 $c-set-text-2: #525f7f; /*#32325d;*/
 $c-set-text-2-sub: #8898aa;
 
@@ -700,8 +700,32 @@ h1, h2, h3, h4, h5 {
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      background-color: white;
       position: absolute;
+
+
+      .image-container {
+        display: flex;
+        justify-content: center;
+
+        //.pin {
+        //  height: 50px;
+        //  top: 30px;
+        //  position: absolute;
+        //  width: 3px;
+        //  background-color: black;
+        //}
+
+        .marker-image {
+          z-index: 5;
+          width: 55px;
+          height: 55px;
+          border-radius: 55px;
+          border: solid white 2px;
+        }
+
+
+      }
+
     }
 
   }
@@ -972,6 +996,7 @@ h1, h2, h3, h4, h5 {
 
 .info-panel {
   text-align: right;
+  align-self: flex-start;
   font-size: 0.7rem;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.7);
@@ -987,26 +1012,15 @@ h1, h2, h3, h4, h5 {
   }
 
   .image-container {
-    margin-left: 10px;
+
     margin-right: 10px;
     align-items: center;
 
-    .image-background {
-      display: flex;
-      border-radius: 39px;
-      width: 39px;
-      height: 39px;
-      margin: auto;
-      background-color: white;
-
-      align-items: center;
-      justify-content: center;
-
-      .image {
-        width: 35px;
-        height: 35px;
-        border-radius: 35px;
-      }
+    .image {
+      width: 45px;
+      height: 45px;
+      border-radius: 45px;
+      border: solid white 2px;
     }
 
   }
@@ -1039,41 +1053,46 @@ h1, h2, h3, h4, h5 {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-    color: $c-set-text-1-sub;
+    color: white;
     -webkit-transition: color 0.2s ease-out;
-    -moz-transition: color 0.2s ease-out;
-    -o-transition: color 0.2s ease-out;
-    transition: color 0.2s ease-out;
-
-    &:hover {
-      color: white;
-    }
 
     .check-in-container {
       display: flex;
-      flex-direction: column;
-      margin-left: 10px;
+      padding-top: 5px;
+      color: white;
+      -moz-transition: color 0.2s ease-out;
+      -o-transition: color 0.2s ease-out;
+      transition: color 0.2s ease-out;
 
-      .name {
-        font-weight: 700;
+      &:hover {
+        color: white;
       }
-    }
 
-    .image-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 55px;
-      background-color: white;
-      align-items: center;
-      position: relative;
+      .description-container {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
 
-      .image {
-        width: 35px;
-        height: 35px;
-        border-radius: 35px;
+        .name {
+          font-weight: 700;
+        }
+        .description {
+          font-size: 0.6rem;
+        }
+      }
+
+      .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        .image {
+          width: 55px;
+          height: 55px;
+          border-radius: 55px;
+          border: solid white 2px;
+        }
       }
     }
 

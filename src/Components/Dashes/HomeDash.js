@@ -205,23 +205,26 @@ class HomeDash extends Component {
                                     Without oxygen and without my balls.
                                 </div>
                                 <div className={'check-in'}>
-                                    Check-Ins:
-                                    <div style={{display: 'flex', paddingTop: '5px'}}>
-                                        <div className={'image-container'}>
-                                            <div className={'image'}
-                                                 style={{
-                                                     backgroundSize: 'cover',
-                                                     backgroundImage: `url(${'https://s.hswstatic.com/gif/sherpa-125217967.jpg'})`
-                                                 }}
-                                            >
+                                    <div className={'check-in-container'}>
+                                        <div className={'check-in-container  hvr-grow'}>
+                                            <div className={'image-container'}>
+                                                <div className={'image'}
+                                                     style={{
+                                                         backgroundSize: 'cover',
+                                                         backgroundImage: `url(${'https://s.hswstatic.com/gif/sherpa-125217967.jpg'})`
+                                                     }}
+                                                >
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div className={'check-in-container'}>
-                                            <div className={'name'}>
-                                                Annunu Sherpa
-                                            </div>
-                                            <div className={'description'}>
-                                                Service - $$
+                                            <div className={'description-container'}>
+                                                <div className={'name'}>
+                                                    Annunu Sherpa
+                                                </div>
+                                                <div className={'description'}>
+                                                    High Quality Sherpa Services<br/>
+                                                    Nepalese Culture<br/>
+                                                    Contribution - 7 Day Service
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -241,15 +244,13 @@ class HomeDash extends Component {
                             {({hoverHeight, hoverRadius, toggleRadius, toggleHeight, marginControl}) =>
 
 
-                                <div>
+                                <div style={{height: '100vh', display: 'flex', alignItems: 'center'}}>
                                     <Transition
                                         unmountOnExit={true}
                                         in={this.state.infoBarExpanded}
                                         out={!this.state.menu}
                                         timeout={200}>
                                         {(state) => (
-
-
 
                                             <div className={`info-panel annotation-${state}`}>
                                                 <div className={'image-container'}>
@@ -282,7 +283,6 @@ class HomeDash extends Component {
                                         style={{
                                             left: 0,
                                             maxWidth: '100%',
-                                            maxHeight: '100%',
                                             width: `${this.props.windowWidth - ((10 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowHeight)}px`,
                                             filter: this.props.sidebarExpanded ? 'blur(2px)' : 'none'
                                         }}

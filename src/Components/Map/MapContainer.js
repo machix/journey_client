@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Motion, spring} from 'react-motion'
-import {   withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+import {withScriptjs, withGoogleMap, GoogleMap, Marker} from "react-google-maps"
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 
@@ -8,7 +8,6 @@ import Icon from 'react-icon-base';
 
 
 import Map from './Map';
-
 
 
 const mapStateToProps = state => ({
@@ -37,8 +36,7 @@ class MapContainer extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-        };
+        this.state = {};
 
     }
 
@@ -59,7 +57,7 @@ class MapContainer extends Component {
             case 'closeMap': {
                 this.props.setMapExpanded(!this.props.mapExpanded);
                 this.props.setMapIsHover(!this.props.mapIsHover)
-         
+
                 return;
             }
         }
@@ -73,7 +71,7 @@ class MapContainer extends Component {
 
         }
     };
-    
+
     render() {
         return (
 
@@ -94,9 +92,7 @@ class MapContainer extends Component {
                          style={{
                              minHeight: '105px',
                              minWidth: '105px',
-                             width: `${(10 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowHeight}px`,
-                             height: `${10 * (hoverHeight + toggleHeight) / 100 * this.props.windowHeight}px`,
-                             borderRadius: `${10 * hoverRadius * toggleRadius / 100 * this.props.windowHeight}`,
+
                              right: `${10 * marginControl}px`,
                              top: `${20 * marginControl}px`
                          }}
@@ -131,11 +127,11 @@ class MapContainer extends Component {
                                  <div style={{
                                      minHeight: '100px',
                                      minWidth: '100px',
-                                     height: `${(9.85 * (hoverHeight + toggleHeight)) / 100 * this.props.windowHeight}px`,
-                                     width: `${(9.8 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowHeight}px`,
-                                     borderRadius: `${9.8 * hoverRadius * toggleRadius / 100 * this.props.windowHeight}px`,
+                                     height: `${10 * (hoverHeight + toggleHeight) / 100 * this.props.windowHeight}px`,
+                                     width: `${(10 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowHeight}px`,                                     borderRadius: `${9.8 * hoverRadius * toggleRadius / 100 * this.props.windowHeight}px`,
                                      overflow: 'hidden',
-                                     zIndex: 3
+                                     zIndex: 3,
+                                     border: 'solid white 3px'
                                  }}/>}
                              mapElement={<div style={{height: `100%`}}/>}/>
 
@@ -149,3 +145,10 @@ class MapContainer extends Component {
 
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MapContainer));
+
+
+//This was removed from map-container
+/*    width: `${(10 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowHeight}px`,
+                             height: `${10 * (hoverHeight + toggleHeight) / 100 * this.props.windowHeight}px`,
+                             borderRadius: `${10 * hoverRadius * toggleRadius / 100 * this.props.windowHeight}`,
+                            */

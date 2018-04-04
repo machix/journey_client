@@ -494,8 +494,16 @@ h1, h2, h3, h4, h5 {
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      background-color: white;
       position: absolute; }
+      .container .journey-container .map-container .image-container {
+        display: flex;
+        justify-content: center; }
+        .container .journey-container .map-container .image-container .marker-image {
+          z-index: 5;
+          width: 55px;
+          height: 55px;
+          border-radius: 55px;
+          border: solid white 2px; }
 
 .menu {
   display: flex;
@@ -706,6 +714,7 @@ h1, h2, h3, h4, h5 {
 
 .info-panel {
   text-align: right;
+  align-self: flex-start;
   font-size: 0.7rem;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.7);
@@ -717,22 +726,13 @@ h1, h2, h3, h4, h5 {
   align-items: center;
   justify-content: center; }
   .info-panel .image-container {
-    margin-left: 10px;
     margin-right: 10px;
     align-items: center; }
-    .info-panel .image-container .image-background {
-      display: flex;
-      border-radius: 39px;
-      width: 39px;
-      height: 39px;
-      margin: auto;
-      background-color: white;
-      align-items: center;
-      justify-content: center; }
-      .info-panel .image-container .image-background .image {
-        width: 35px;
-        height: 35px;
-        border-radius: 35px; }
+    .info-panel .image-container .image {
+      width: 45px;
+      height: 45px;
+      border-radius: 45px;
+      border: solid white 2px; }
 
 .annotation {
   position: absolute;
@@ -755,33 +755,35 @@ h1, h2, h3, h4, h5 {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-    color: #aaa;
-    -webkit-transition: color 0.2s ease-out;
-    -moz-transition: color 0.2s ease-out;
-    -o-transition: color 0.2s ease-out;
-    transition: color 0.2s ease-out; }
-    .annotation .check-in:hover {
-      color: white; }
+    color: white;
+    -webkit-transition: color 0.2s ease-out; }
     .annotation .check-in .check-in-container {
       display: flex;
-      flex-direction: column;
-      margin-left: 10px; }
-      .annotation .check-in .check-in-container .name {
-        font-weight: 700; }
-    .annotation .check-in .image-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 55px;
-      background-color: white;
-      align-items: center;
-      position: relative; }
-      .annotation .check-in .image-container .image {
-        width: 35px;
-        height: 35px;
-        border-radius: 35px; }
+      padding-top: 5px;
+      color: white;
+      -moz-transition: color 0.2s ease-out;
+      -o-transition: color 0.2s ease-out;
+      transition: color 0.2s ease-out; }
+      .annotation .check-in .check-in-container:hover {
+        color: white; }
+      .annotation .check-in .check-in-container .description-container {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px; }
+        .annotation .check-in .check-in-container .description-container .name {
+          font-weight: 700; }
+        .annotation .check-in .check-in-container .description-container .description {
+          font-size: 0.6rem; }
+      .annotation .check-in .check-in-container .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative; }
+        .annotation .check-in .check-in-container .image-container .image {
+          width: 55px;
+          height: 55px;
+          border-radius: 55px;
+          border: solid white 2px; }
 
 .chat {
   position: absolute;
@@ -1422,7 +1424,7 @@ header {
           .modal-main .modal-content .form-wrapper .form-content .component .title {
             font-size: 1em; } }
       .modal-main .modal-content .form-wrapper .form-content .component .sub-header {
-        color: #aaa; }
+        color: #e6e6e6; }
         .modal-main .modal-content .form-wrapper .form-content .component .sub-header input {
           background: transparent; }
     .modal-main .modal-content .form-wrapper .form-content .component:last-child {
