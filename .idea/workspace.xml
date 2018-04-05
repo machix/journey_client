@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8eb92d85-80e0-4af9-8dc4-e20ffe8708d5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Map/Map.js" afterPath="$PROJECT_DIR$/src/Components/Map/Map.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" afterPath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Sidebar/SponsoredContribution.js" afterPath="$PROJECT_DIR$/src/Components/Sidebar/SponsoredContribution.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
     </list>
     <ignored path="gifty-console-client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,8 +29,8 @@
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="915" column="28" lean-forward="true" selection-start-line="915" selection-start-column="28" selection-end-line="915" selection-end-column="28" />
+            <state relative-caret-position="266">
+              <caret line="912" column="0" lean-forward="true" selection-start-line="912" selection-start-column="0" selection-end-line="912" selection-end-column="0" />
               <folding>
                 <element signature="e#36481#37026#2" expanded="true" />
                 <element signature="e#38901#39402#2" expanded="true" />
@@ -44,13 +41,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sidebar.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js">
+      <file leaf-file-name="HomeDash.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Components/Dashes/HomeDash.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="259" column="24" lean-forward="false" selection-start-line="259" selection-start-column="24" selection-end-line="259" selection-end-column="24" />
+            <state relative-caret-position="244">
+              <caret line="284" column="65" lean-forward="true" selection-start-line="284" selection-start-column="65" selection-end-line="284" selection-end-column="154" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#5018#6143#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -81,10 +79,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>logo-</find>
-      <find>Motion</find>
-      <find>spring</find>
-      <find>sidebar-logo</find>
       <find>bounce</find>
       <find>bounceIn</find>
       <find>slideInl</find>
@@ -111,6 +105,10 @@
       <find>37</find>
       <find>Pin</find>
       <find>Pins</find>
+      <find>See all contributsion</find>
+      <find>imageUrl</find>
+      <find>backgroundI</find>
+      <find>center</find>
     </findStrings>
     <replaceStrings>
       <replace>0.8</replace>
@@ -203,13 +201,13 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/Reducers/common.js" />
         <option value="$PROJECT_DIR$/src/Components/Map/MapContainer.js" />
-        <option value="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" />
         <option value="$PROJECT_DIR$/src/Components/Chat/Chat.js" />
         <option value="$PROJECT_DIR$/src/Components/Sidebar/SponsoredContribution.js" />
         <option value="$PROJECT_DIR$/src/style.css" />
         <option value="$PROJECT_DIR$/src/Components/Map/Map.js" />
         <option value="$PROJECT_DIR$/src/style.scss" />
         <option value="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" />
+        <option value="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" />
       </list>
     </option>
   </component>
@@ -498,12 +496,12 @@
       <workItem from="1522602129821" duration="7705000" />
       <workItem from="1522702557041" duration="13541000" />
       <workItem from="1522804738518" duration="793000" />
-      <workItem from="1522806570934" duration="31273000" />
+      <workItem from="1522806570934" duration="32172000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197373000" />
+    <option name="totallyTimeSpent" value="198272000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -521,12 +519,12 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18957011" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22525597" sideWeight="0.51488096" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33474576" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33474576" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3502825" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968536" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25299507" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28107345" sideWeight="0.48511904" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28107345" sideWeight="0.48511904" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -861,17 +859,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/HomeDash.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="153" column="27" lean-forward="true" selection-start-line="153" selection-start-column="27" selection-end-line="153" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#5018#6143#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -905,10 +892,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="841">
+          <caret line="182" column="31" lean-forward="true" selection-start-line="182" selection-start-column="31" selection-end-line="182" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="915" column="28" lean-forward="true" selection-start-line="915" selection-start-column="28" selection-end-line="915" selection-end-column="28" />
+        <state relative-caret-position="266">
+          <caret line="912" column="0" lean-forward="true" selection-start-line="912" selection-start-column="0" selection-end-line="912" selection-end-column="0" />
           <folding>
             <element signature="e#36481#37026#2" expanded="true" />
             <element signature="e#38901#39402#2" expanded="true" />
@@ -918,12 +915,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js">
+    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/HomeDash.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="259" column="24" lean-forward="false" selection-start-line="259" selection-start-column="24" selection-end-line="259" selection-end-column="24" />
+        <state relative-caret-position="244">
+          <caret line="284" column="65" lean-forward="true" selection-start-line="284" selection-start-column="65" selection-end-line="284" selection-end-column="154" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#5018#6143#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -278,15 +278,17 @@ class HomeDash extends Component {
                                         )}
                                     </Transition>
 
+                                    <div style={{
+                                        height: '100%',
+                                        width: `${this.props.windowWidth - ((10 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowHeight)}px`,
+                                        backgroundSize: 'contain',
+                                        backgroundImage: `url(${'https://www.google.com/maps/about/images/behind-the-scenes/treks/everest-header-bg_2x.jpg'})`,
+                                        backgroundRepeat: 'no-repeat',
+                                        backgroundPosition: 'center'
 
-                                    <img
-                                        style={{
-                                            left: 0,
-                                            maxWidth: '100%',
-                                            width: `${this.props.windowWidth - ((10 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowHeight)}px`,
-                                            filter: this.props.sidebarExpanded ? 'blur(2px)' : 'none'
-                                        }}
-                                        src={'https://www.google.com/maps/about/images/behind-the-scenes/treks/everest-header-bg_2x.jpg'}/>
+                                    }}>
+
+                                    </div>
                                 </div>}
                         </Motion>
                         : null}

@@ -173,7 +173,7 @@ class Sidebar extends Component {
                         amount={"500"}
                         productUrl={'https://www.mountainhardwear.ca/en/space-station-%7C-842-%7C-none-887487428431.html?mid=paidsearch&eid=Google+PLA+CA&s_kwcid=AL!3937!3!237302709337!!!g!390683910683!&ef_id=WdWVeQAAAXh5NMu7:20180404031234:s'}
                     />
-                    <div className={'pointer'} style={{textAlign: 'right'}}>See All Contributions</div>
+                    <div className={'pointer'} style={{color: 'white', textAlign: 'right'}}>See All Contributions</div>
                 </div>
 
 
