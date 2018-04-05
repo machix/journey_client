@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import Icon from 'react-icon-base';
+import Transition from 'react-transition-group/Transition';
 
 import SponsoredContribution from './SponsoredContribution'
 
@@ -14,7 +15,6 @@ import member7 from '../Assets/member7.jpg';
 const mapStateToProps = state => ({
     ...state,
     sidebarExpanded: state.common.sidebarExpanded,
-
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -31,7 +31,8 @@ class Sidebar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            members: {member1: member1, member2: member2, member3: member3, member4: member4, member7: member7}
+            members: {member1: member1, member2: member2, member3: member3, member4: member4, member7: member7},
+            context: ['context1', 'context 2', 'context3', 'context4'],
 
         }
     }
@@ -67,65 +68,97 @@ class Sidebar extends Component {
                 </div>
 
                 <div className={'sidebar-logo'}>
-                    <img className={'logo-image'}
+
+                    <img className={`logo-image`}
                          src={"https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/The_North_Face_logo.svg/1200px-The_North_Face_logo.svg.png"}/>
+
+                    <div className={'title-block'}>
+
+                        <div className={`title`}>
+                            HYPOXIC
+                        </div>
+
+
+                        <div className={`context  `}>
+                            /WOMEN OF ADVENTURE
+                        </div>
+
+
+                        <div className={`context  `}>
+                            /ALWAYS EXPLORE
+                        </div>
+
+
+                        <div className={`context  `}>
+                            /GARMENT ENGINEERING
+                        </div>
+                    </div>
+
                 </div>
 
                 <div className={'information'}>
 
-                    <div className={'title'}>
-                        Hypoxic
-                    </div>
 
                     <div className={'caption'}>
                         For more than 50 years, The North Face has empowered people to push their boundaries in the
                         outdoors. Today, we continue with that adage, having our athletes scale the North Face of
                         Everest without oxygen - in record time.
                     </div>
-                </div>
-                <div className={'scroll-members'}>
-                    {this.membersMap()}
-                    <div className={'place-holder-member'}>+7</div>
-                </div>
 
-                <div className={'main-info'}>
-
-                    <div className={'statistic'}>
-                        <Icon className={'icon'} viewBox="0 0 40 40" size={20}>
-                            <g>
-                                <path
-                                    d="m19.8 3.8c8.9 0 16.2 7.2 16.2 16.2s-7.3 16.3-16.2 16.3-16.3-7.3-16.3-16.3 7.3-16.2 16.3-16.2z m0 31.1c8.2 0 14.9-6.7 14.9-14.9s-6.7-14.9-14.9-14.9-15 6.7-15 14.9 6.7 14.9 15 14.9z m0.6-24.9v9.4h9.4v1.3h-9.4v9.3h-1.4v-9.3h-9.2v-1.3h9.2v-9.4h1.4z"/>
-                            </g>
-                        </Icon>
-                        33 Contributions
+                    <div className={'scroll-members'}>
+                        {this.membersMap()}
+                        <div className={'place-holder-member'}>+7</div>
                     </div>
-                    <div className={'statistic'}>
-                        <Icon className={'icon'} viewBox="0 0 40 40" size={20}>
+
+                    <div className={'main-info'}>
+
+                        <div className={'statistic'}>
+                            <Icon className={'icon'} viewBox="0 0 40 40" size={20}>
+                                <g>
+                                    <path
+                                        d="m19.8 3.8c8.9 0 16.2 7.2 16.2 16.2s-7.3 16.3-16.2 16.3-16.3-7.3-16.3-16.3 7.3-16.2 16.3-16.2z m0 31.1c8.2 0 14.9-6.7 14.9-14.9s-6.7-14.9-14.9-14.9-15 6.7-15 14.9 6.7 14.9 15 14.9z m0.6-24.9v9.4h9.4v1.3h-9.4v9.3h-1.4v-9.3h-9.2v-1.3h9.2v-9.4h1.4z"/>
+                                </g>
+                            </Icon>
+                            33 Interactions
+                        </div>
+                        <div className={'statistic'}>
+                            <Icon className={'icon'} viewBox="0 0 40 40" size={20}>
+                                <g>
+                                    <path
+                                        d="m25.7 17.8c1.6 0.8 2.8 2.4 2.8 4.3 0 1.3-0.2 1.7-1.2 1.7h-6.3l-0.9 13.7h-0.7l-0.9-13.7h-6.3c-1 0-1.2-0.4-1.2-1.7 0-1.9 1.3-3.5 2.8-4.3 0.1 0 0.2-0.1 0.3-0.1 0.6-0.4 1-0.9 1.1-1.5l1.4-9.2v-0.4c0-0.6-0.3-0.8-0.8-1.1 0 0 0 0-0.1 0-0.6-0.3-1-0.7-1-1.4 0-1.5 0.5-1.6 1.5-1.6h7.1c1 0 1.5 0.1 1.5 1.6 0 0.7-0.4 1.1-1 1.4-0.1 0-0.1 0-0.1 0-0.5 0.3-0.8 0.5-0.8 1.1v0.4l1.4 9.2c0.1 0.6 0.5 1.1 1.1 1.5 0.1 0 0.2 0.1 0.3 0.1z"/>
+                                </g>
+                            </Icon>
+                            44 Pins
+                        </div>
+
+                        <div className={'statistic'}>
+                            <Icon className={'icon'} viewBox="0 0 40 40" size={20}>
+                                <g>
+                                    <path
+                                        d="m33.3 7.5c3.6 3.7 3.6 9.7 0 13.4l-13.5 14.1-13.6-14.1c-3.6-3.7-3.6-9.7 0-13.4 3.1-3.3 8.3-3.3 11.4 0l2.2 2.2 2.1-2.2c3.2-3.3 8.3-3.3 11.4 0z"/>
+                                </g>
+                            </Icon>
+                            4400 likes
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <div className={'sidebar-header'}>
+                    INTERACTIONS
+                </div>
+                <div className={'sponsored-contributions'}>
+                    <div className={'pinned'}>
+                        <Icon viewBox="0 0 40 40" size={15}>
                             <g>
                                 <path
                                     d="m25.7 17.8c1.6 0.8 2.8 2.4 2.8 4.3 0 1.3-0.2 1.7-1.2 1.7h-6.3l-0.9 13.7h-0.7l-0.9-13.7h-6.3c-1 0-1.2-0.4-1.2-1.7 0-1.9 1.3-3.5 2.8-4.3 0.1 0 0.2-0.1 0.3-0.1 0.6-0.4 1-0.9 1.1-1.5l1.4-9.2v-0.4c0-0.6-0.3-0.8-0.8-1.1 0 0 0 0-0.1 0-0.6-0.3-1-0.7-1-1.4 0-1.5 0.5-1.6 1.5-1.6h7.1c1 0 1.5 0.1 1.5 1.6 0 0.7-0.4 1.1-1 1.4-0.1 0-0.1 0-0.1 0-0.5 0.3-0.8 0.5-0.8 1.1v0.4l1.4 9.2c0.1 0.6 0.5 1.1 1.1 1.5 0.1 0 0.2 0.1 0.3 0.1z"/>
                             </g>
                         </Icon>
-                        44 Pins
+                        Pinned by The North Face
                     </div>
-
-                    <div className={'statistic'}>
-                        <Icon className={'icon'} viewBox="0 0 40 40" size={20}>
-                            <g>
-                                <path
-                                    d="m33.3 7.5c3.6 3.7 3.6 9.7 0 13.4l-13.5 14.1-13.6-14.1c-3.6-3.7-3.6-9.7 0-13.4 3.1-3.3 8.3-3.3 11.4 0l2.2 2.2 2.1-2.2c3.2-3.3 8.3-3.3 11.4 0z"/>
-                            </g>
-                        </Icon>
-                        4400 likes
-                    </div>
-
-
-                </div>
-
-                <div className={'sidebar-header'}>
-                    PINNED CONTRIBUTIONS (13)
-                </div>
-                <div className={'sponsored-contributions'}>
                     <SponsoredContribution
                         imageUrl={'https://goodlogo.com/images/logos/nike_classic_logo_2355.gif'}
                         name={'Nike'}
@@ -138,22 +171,23 @@ class Sidebar extends Component {
                         description={'18 Days Food and Tent Equipment'}
                         type={"money"}
                         amount={"500"}
-                        product={"Mountain Hardware Space Age Dome"}
                         productUrl={'https://www.mountainhardwear.ca/en/space-station-%7C-842-%7C-none-887487428431.html?mid=paidsearch&eid=Google+PLA+CA&s_kwcid=AL!3937!3!237302709337!!!g!390683910683!&ef_id=WdWVeQAAAXh5NMu7:20180404031234:s'}
                     />
                     <div className={'pointer'} style={{textAlign: 'right'}}>See All Contributions</div>
                 </div>
 
-                <div className={'sidebar-header'}>
-                    CONTRIBUTIONS
-                </div>
 
                 <div className={'footer'}>
                         <span className={'social-text'}>
                         The North Face Social:
                         </span>
                     <div>
-
+                        <Icon className={'social-icon'} viewBox="0 0 40 40" size={25}>
+                            <g>
+                                <path
+                                    d="m19.8 3.8c8.9 0 16.2 7.2 16.2 16.2s-7.3 16.3-16.2 16.3-16.3-7.3-16.3-16.3 7.3-16.2 16.3-16.2z m0.6 9.6v6h5.8c0-2.4-0.4-4.7-0.8-6.6-1.7 0.4-3.3 0.6-5 0.6z m0-1.2c1.5-0.1 3.2-0.2 4.7-0.6-1.1-3.6-3-6-4.7-6.4v7z m-1.3-7c-1.8 0.4-3.5 2.8-4.7 6.4 1.5 0.4 3.1 0.5 4.7 0.6v-7z m0 8.2c-1.7 0-3.4-0.2-5.1-0.6-0.4 1.9-0.7 4.2-0.8 6.6h5.9v-6z m-7.2 6c0.1-2.5 0.4-4.9 0.9-6.9-1.6-0.5-3.2-1.2-4.6-2-2 2.5-3.2 5.5-3.4 8.9h7.1z m0 1.2h-7.1c0.2 3.4 1.4 6.4 3.4 8.9 1.5-0.8 3-1.5 4.6-2-0.6-2-0.8-4.4-0.9-6.9z m1.3 0c0.1 2.4 0.4 4.7 0.8 6.6 1.7-0.4 3.4-0.6 5.1-0.7v-5.9h-5.9z m5.9 7.2c-1.6 0.1-3.2 0.2-4.7 0.6 1.2 3.6 2.9 6 4.7 6.4v-7z m1.3 7c1.7-0.4 3.6-2.8 4.7-6.4-1.5-0.4-3.2-0.5-4.7-0.6v7z m0-8.3c1.7 0.1 3.3 0.3 5 0.7 0.4-1.9 0.8-4.2 0.8-6.6h-5.8v5.9z m7.2-5.9c-0.1 2.5-0.4 4.9-1 6.9 1.7 0.5 3.2 1.2 4.7 2 2-2.5 3.2-5.5 3.4-8.9h-7.1z m0-1.2h7.1c-0.2-3.4-1.4-6.4-3.4-8.9-1.5 0.8-3 1.5-4.6 2 0.6 2 0.8 4.4 0.9 6.9z m2.8-9.9c-2-1.9-4.4-3.4-7.1-4 1.2 1.3 2.2 3.3 3 5.8 1.4-0.5 2.7-1.1 4.1-1.8z m-14.2-4c-2.7 0.6-5.2 2.1-7.1 4 1.3 0.7 2.7 1.2 4.1 1.7 0.8-2.4 1.8-4.4 3-5.7z m-7.1 25c2 1.9 4.4 3.4 7.1 4-1.2-1.3-2.3-3.3-3.1-5.7-1.4 0.4-2.7 1-4 1.7z m14.2 4c2.7-0.6 5.1-2.1 7.1-4-1.4-0.7-2.7-1.3-4.1-1.8-0.8 2.5-1.8 4.5-3 5.8z"/>
+                            </g>
+                        </Icon>
                         <Icon className={'social-icon'} viewBox="0 0 40 40" size={25}>
                             <g>
                                 <path
@@ -188,3 +222,39 @@ class Sidebar extends Component {
 
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Sidebar));
+
+/*     <div className={'interactions'}>
+                    <div className={'action'}>
+                        <Icon className={'icon'} viewBox="0 0 40 40" size={20}>
+                            <g>
+                                <path
+                                    d="m33.3 7.5c3.6 3.7 3.6 9.7 0 13.4l-13.5 14.1-13.6-14.1c-3.6-3.7-3.6-9.7 0-13.4 3.1-3.3 8.3-3.3 11.4 0l2.2 2.2 2.1-2.2c3.2-3.3 8.3-3.3 11.4 0z"/>
+                            </g>
+                        </Icon>
+                        <div>
+                            Poll
+                        </div>
+                    </div>
+                    <div className={'action'}>
+                        <Icon className={'icon'} viewBox="0 0 40 40" size={20}>
+                            <g>
+                                <path
+                                    d="m33.3 7.5c3.6 3.7 3.6 9.7 0 13.4l-13.5 14.1-13.6-14.1c-3.6-3.7-3.6-9.7 0-13.4 3.1-3.3 8.3-3.3 11.4 0l2.2 2.2 2.1-2.2c3.2-3.3 8.3-3.3 11.4 0z"/>
+                            </g>
+                        </Icon>
+                        <div>
+                            Contribute
+                        </div>
+                    </div>
+                    <div className={'action'}>
+                        <Icon className={'icon'} viewBox="0 0 40 40" size={20}>
+                            <g>
+                                <path
+                                    d="m25.7 17.8c1.6 0.8 2.8 2.4 2.8 4.3 0 1.3-0.2 1.7-1.2 1.7h-6.3l-0.9 13.7h-0.7l-0.9-13.7h-6.3c-1 0-1.2-0.4-1.2-1.7 0-1.9 1.3-3.5 2.8-4.3 0.1 0 0.2-0.1 0.3-0.1 0.6-0.4 1-0.9 1.1-1.5l1.4-9.2v-0.4c0-0.6-0.3-0.8-0.8-1.1 0 0 0 0-0.1 0-0.6-0.3-1-0.7-1-1.4 0-1.5 0.5-1.6 1.5-1.6h7.1c1 0 1.5 0.1 1.5 1.6 0 0.7-0.4 1.1-1 1.4-0.1 0-0.1 0-0.1 0-0.5 0.3-0.8 0.5-0.8 1.1v0.4l1.4 9.2c0.1 0.6 0.5 1.1 1.1 1.5 0.1 0 0.2 0.1 0.3 0.1z"/>
+                            </g>
+                        </Icon>
+                        <div>
+                            Pin
+                        </div>
+                    </div>
+                </div>*/
