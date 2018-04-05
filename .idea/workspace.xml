@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8eb92d85-80e0-4af9-8dc4-e20ffe8708d5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Map/Map.js" afterPath="$PROJECT_DIR$/src/Components/Map/Map.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" afterPath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
     </list>
     <ignored path="gifty-console-client.iws" />
@@ -29,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="1037" column="21" lean-forward="false" selection-start-line="1037" selection-start-column="21" selection-end-line="1037" selection-end-column="21" />
+            <state relative-caret-position="377">
+              <caret line="351" column="23" lean-forward="false" selection-start-line="351" selection-start-column="23" selection-end-line="351" selection-end-column="23" />
               <folding>
                 <element signature="e#33653#34198#2" expanded="true" />
                 <element signature="e#36073#36574#2" expanded="true" />
@@ -54,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sidebar.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Sidebar.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="147" column="21" lean-forward="false" selection-start-line="147" selection-start-column="21" selection-end-line="147" selection-end-column="21" />
+            <state relative-caret-position="302">
+              <caret line="42" column="69" lean-forward="false" selection-start-line="42" selection-start-column="69" selection-end-line="42" selection-end-column="69" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -79,9 +76,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>flex: 0 1</find>
-      <find>flex: 0</find>
-      <find>.main-info</find>
       <find>&lt;Input</find>
       <find>size={20</find>
       <find>size={15</find>
@@ -109,6 +103,9 @@
       <find>.member-list</find>
       <find>.member</find>
       <find>Pinned</find>
+      <find>Member</find>
+      <find>member</find>
+      <find>.hvr-grow</find>
     </findStrings>
     <replaceStrings>
       <replace>animation</replace>
@@ -206,8 +203,8 @@
         <option value="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" />
         <option value="$PROJECT_DIR$/src/Components/Chat/Chat.js" />
         <option value="$PROJECT_DIR$/src/Components/Map/Map.js" />
-        <option value="$PROJECT_DIR$/src/style.scss" />
         <option value="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" />
+        <option value="$PROJECT_DIR$/src/style.scss" />
       </list>
     </option>
   </component>
@@ -496,12 +493,12 @@
       <workItem from="1522602129821" duration="7705000" />
       <workItem from="1522702557041" duration="13541000" />
       <workItem from="1522804738518" duration="793000" />
-      <workItem from="1522806570934" duration="21399000" />
+      <workItem from="1522806570934" duration="21623000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187499000" />
+    <option name="totallyTimeSpent" value="187723000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -897,25 +894,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="42" column="69" lean-forward="false" selection-start-line="42" selection-start-column="69" selection-end-line="42" selection-end-column="69" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="1037" column="21" lean-forward="false" selection-start-line="1037" selection-start-column="21" selection-end-line="1037" selection-end-column="21" />
+        <state relative-caret-position="377">
+          <caret line="351" column="23" lean-forward="false" selection-start-line="351" selection-start-column="23" selection-end-line="351" selection-end-column="23" />
           <folding>
             <element signature="e#33653#34198#2" expanded="true" />
             <element signature="e#36073#36574#2" expanded="true" />
             <element signature="e#38965#41390#2" expanded="true" />
             <element signature="e#70656#71465#2" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="147" column="21" lean-forward="false" selection-start-line="147" selection-start-column="21" selection-end-line="147" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>

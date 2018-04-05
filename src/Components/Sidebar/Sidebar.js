@@ -40,7 +40,7 @@ class Sidebar extends Component {
     membersMap = () => {
         return Object.keys(this.state.members).map(function (key, index) {
             return (
-                <div key={index} className="member-container">
+                <div key={index} className="member-container hvr-grow">
                     <div className={'member'}
                          style={{
                              backgroundImage: `url(${this.state.members[key]})`,
