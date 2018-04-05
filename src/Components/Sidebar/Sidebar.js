@@ -57,7 +57,7 @@ class Sidebar extends Component {
         return (
             <div className={'sidebar'}>
                 <div className={"close"} onClick={() => this.props.setSidebarExpanded(!this.props.sidebarExpanded)}>
-                    <Icon viewBox="0 0 40 40" size={15}>
+                    <Icon viewBox="0 0 40 40" size={18}>
                         <g>
                             <path
                                 d="m34.7 30.2c0.2 0.3 0.3 0.5 0.3 0.8s-0.1 0.6-0.3 0.8l-3 2.9c-0.2 0.2-0.4 0.3-0.7 0.3s-0.5-0.1-0.8-0.3l-10.2-10.2-10.2 10.2c-0.3 0.2-0.4 0.3-0.7 0.3s-0.6-0.1-0.8-0.3l-3-2.9c-0.2-0.2-0.3-0.5-0.3-0.8s0.1-0.5 0.3-0.8l10.3-10.2-10.3-10.2c-0.4-0.3-0.4-1.1 0-1.5l2.9-3c0.2-0.1 0.5-0.3 0.8-0.3s0.5 0.1 0.8 0.3l10.2 10.2 10.2-10.2c0.3-0.1 0.5-0.3 0.8-0.3s0.6 0.1 0.8 0.3l2.9 3c0.4 0.4 0.4 1.1 0 1.5l-10.3 10.1z"/>
@@ -70,23 +70,57 @@ class Sidebar extends Component {
                     <img className={'logo-image'}
                          src={"https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/The_North_Face_logo.svg/1200px-The_North_Face_logo.svg.png"}/>
                 </div>
+
+                <div className={'information'}>
+
+                    <div className={'title'}>
+                        Hypoxic
+                    </div>
+
+                    <div className={'caption'}>
+                        For more than 50 years, The North Face has empowered people to push their boundaries in the
+                        outdoors. Today, we continue with that adage, having our athletes scale the North Face of
+                        Everest without oxygen - in record time.
+                    </div>
+                </div>
                 <div className={'scroll-members'}>
-                    {this.membersMap()} <div className={'place-holder-member'}>+7</div>
+                    {this.membersMap()}
+                    <div className={'place-holder-member'}>+7</div>
                 </div>
 
+                <div className={'main-info'}>
 
-                <div className={'title'}>
-                    Hypoxic
+                    <div className={'statistic'}>
+                        <Icon className={'icon'} viewBox="0 0 40 40" size={20}>
+                            <g>
+                                <path
+                                    d="m19.8 3.8c8.9 0 16.2 7.2 16.2 16.2s-7.3 16.3-16.2 16.3-16.3-7.3-16.3-16.3 7.3-16.2 16.3-16.2z m0 31.1c8.2 0 14.9-6.7 14.9-14.9s-6.7-14.9-14.9-14.9-15 6.7-15 14.9 6.7 14.9 15 14.9z m0.6-24.9v9.4h9.4v1.3h-9.4v9.3h-1.4v-9.3h-9.2v-1.3h9.2v-9.4h1.4z"/>
+                            </g>
+                        </Icon>
+                        33 Contributions
+                    </div>
+                    <div className={'statistic'}>
+                        <Icon className={'icon'} viewBox="0 0 40 40" size={20}>
+                            <g>
+                                <path
+                                    d="m25.7 17.8c1.6 0.8 2.8 2.4 2.8 4.3 0 1.3-0.2 1.7-1.2 1.7h-6.3l-0.9 13.7h-0.7l-0.9-13.7h-6.3c-1 0-1.2-0.4-1.2-1.7 0-1.9 1.3-3.5 2.8-4.3 0.1 0 0.2-0.1 0.3-0.1 0.6-0.4 1-0.9 1.1-1.5l1.4-9.2v-0.4c0-0.6-0.3-0.8-0.8-1.1 0 0 0 0-0.1 0-0.6-0.3-1-0.7-1-1.4 0-1.5 0.5-1.6 1.5-1.6h7.1c1 0 1.5 0.1 1.5 1.6 0 0.7-0.4 1.1-1 1.4-0.1 0-0.1 0-0.1 0-0.5 0.3-0.8 0.5-0.8 1.1v0.4l1.4 9.2c0.1 0.6 0.5 1.1 1.1 1.5 0.1 0 0.2 0.1 0.3 0.1z"/>
+                            </g>
+                        </Icon>
+                        44 Pins
+                    </div>
+
+                    <div className={'statistic'}>
+                        <Icon className={'icon'} viewBox="0 0 40 40" size={20}>
+                            <g>
+                                <path
+                                    d="m33.3 7.5c3.6 3.7 3.6 9.7 0 13.4l-13.5 14.1-13.6-14.1c-3.6-3.7-3.6-9.7 0-13.4 3.1-3.3 8.3-3.3 11.4 0l2.2 2.2 2.1-2.2c3.2-3.3 8.3-3.3 11.4 0z"/>
+                            </g>
+                        </Icon>
+                        4400 likes
+                    </div>
+
+
                 </div>
-
-                <div className={'caption'}>
-                    For more than 50 years, The North Face has empowered people to push their boundaries in the
-                    outdoors. Today, we continue with that adage, having our athletes scale the North Face of
-                    Everest without oxygen - in record time.
-                </div>
-
-
-
 
                 <div className={'sidebar-header'}>
                     PINNED CONTRIBUTIONS (13)
@@ -111,7 +145,7 @@ class Sidebar extends Component {
                 </div>
 
                 <div className={'sidebar-header'}>
-                    SOCIAL CONTRIBUTIONS
+                    CONTRIBUTIONS
                 </div>
 
                 <div className={'footer'}>

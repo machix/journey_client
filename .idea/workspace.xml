@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8eb92d85-80e0-4af9-8dc4-e20ffe8708d5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Map/Map.js" afterPath="$PROJECT_DIR$/src/Components/Map/Map.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" afterPath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
     </list>
@@ -27,39 +29,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="367" column="20" lean-forward="false" selection-start-line="367" selection-start-column="20" selection-end-line="367" selection-end-column="20" />
+            <state relative-caret-position="347">
+              <caret line="1037" column="21" lean-forward="false" selection-start-line="1037" selection-start-column="21" selection-end-line="1037" selection-end-column="21" />
               <folding>
-                <element signature="e#31951#32496#2" expanded="true" />
-                <element signature="e#34371#34872#2" expanded="true" />
-                <element signature="e#37263#39688#2" expanded="true" />
-                <element signature="e#68954#69763#2" expanded="true" />
+                <element signature="e#33653#34198#2" expanded="true" />
+                <element signature="e#36073#36574#2" expanded="true" />
+                <element signature="e#38965#41390#2" expanded="true" />
+                <element signature="e#70656#71465#2" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeDash.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Dashes/HomeDash.js">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="220" column="48" lean-forward="false" selection-start-line="220" selection-start-column="48" selection-end-line="220" selection-end-column="48" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-                <element signature="e#5018#6143#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="302">
+              <caret line="441" column="36" lean-forward="false" selection-start-line="441" selection-start-column="36" selection-end-line="441" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Map.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Map/Map.js">
+      <file leaf-file-name="Sidebar.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="110" column="37" lean-forward="true" selection-start-line="110" selection-start-column="37" selection-end-line="110" selection-end-column="37" />
+            <state relative-caret-position="229">
+              <caret line="147" column="21" lean-forward="false" selection-start-line="147" selection-start-column="21" selection-end-line="147" selection-end-column="21" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -80,43 +79,38 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>zindex</find>
-      <find>image0</find>
-      <find>Map</find>
-      <find>map-co</find>
-      <find>img</find>
-      <find>info-</find>
-      <find>height: 35px;</find>
-      <find>info-panel</find>
-      <find>anunu</find>
-      <find>sherpa</find>
-      <find>50</find>
-      <find>.annotati</find>
-      <find>check-in-comta</find>
-      <find>With</find>
-      <find>description</find>
-      <find>.description-container</find>
-      <find>M</find>
-      <find>mapcon</find>
-      <find>marker</find>
-      <find>Marker</find>
-      <find>info-pane</find>
-      <find>45</find>
-      <find>.map-co</find>
-      <find>Anunu</find>
-      <find>annunu</find>
-      <find>40</find>
-      <find>image-</find>
-      <find>55</find>
-      <find>.hvr-grow</find>
-      <find>0.3</find>
+      <find>flex: 0 1</find>
+      <find>flex: 0</find>
+      <find>.main-info</find>
+      <find>&lt;Input</find>
+      <find>size={20</find>
+      <find>size={15</find>
+      <find>size={18</find>
+      <find>44 pins</find>
+      <find>marker-image-pin</find>
+      <find>import icon</find>
+      <find>&lt;Icon</find>
+      <find>bakcgr</find>
+      <find>.icon</find>
+      <find>animation</find>
+      <find>b</find>
+      <find>transition</find>
+      <find>.sidebar</find>
+      <find>Hypoxic</find>
+      <find>.titl</find>
+      <find>members</find>
+      <find>scroll-memeber</find>
+      <find>statistics</find>
+      <find>.scroll-</find>
+      <find>.statistics</find>
+      <find>.information</find>
+      <find>.statistic</find>
+      <find>20</find>
+      <find>.member-list</find>
+      <find>.member</find>
+      <find>Pinned</find>
     </findStrings>
     <replaceStrings>
-      <replace>40px</replace>
-      <replace>hoverRadius</replace>
-      <replace>70</replace>
-      <replace>hoverHeight</replace>
-      <replace>px</replace>
       <replace>animation</replace>
       <replace>this.props.commandsVisisble</replace>
       <replace>this.props.mapIsHover</replace>
@@ -142,6 +136,11 @@
       <replace>40</replace>
       <replace>35</replace>
       <replace>0.7</replace>
+      <replace>2</replace>
+      <replace>size={15</replace>
+      <replace>size={18</replace>
+      <replace>size={20</replace>
+      <replace>30</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -201,14 +200,14 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/Helpers/LottieAnimation.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/Components/Chat/Chat.js" />
         <option value="$PROJECT_DIR$/src/Reducers/common.js" />
         <option value="$PROJECT_DIR$/src/Components/Sidebar/SponsoredContribution.js" />
-        <option value="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" />
         <option value="$PROJECT_DIR$/src/Components/Map/MapContainer.js" />
         <option value="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" />
+        <option value="$PROJECT_DIR$/src/Components/Chat/Chat.js" />
         <option value="$PROJECT_DIR$/src/Components/Map/Map.js" />
         <option value="$PROJECT_DIR$/src/style.scss" />
+        <option value="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" />
       </list>
     </option>
   </component>
@@ -342,6 +341,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/machinatron/Documents/Programming/journey_client/src/Components/Sidebar/Sidebar.js" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -496,12 +496,12 @@
       <workItem from="1522602129821" duration="7705000" />
       <workItem from="1522702557041" duration="13541000" />
       <workItem from="1522804738518" duration="793000" />
-      <workItem from="1522806570934" duration="14681000" />
+      <workItem from="1522806570934" duration="21399000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180781000" />
+    <option name="totallyTimeSpent" value="187499000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -557,13 +557,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Components/Modals/ProductEntry.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7320">
-          <caret line="502" column="38" lean-forward="false" selection-start-line="502" selection-start-column="38" selection-end-line="508" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Cards/Campaign/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -826,29 +819,11 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="441" column="36" lean-forward="false" selection-start-line="441" selection-start-column="36" selection-end-line="441" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Helpers/constants.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Chat/Chat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="70" column="40" lean-forward="false" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -868,16 +843,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="42" column="17" lean-forward="false" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Map/MapContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
@@ -888,12 +853,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Chat/Chat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="133" column="46" lean-forward="true" selection-start-line="133" selection-start-column="46" selection-end-line="133" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-icon-base/lib/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Dashes/HomeDash.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="220" column="48" lean-forward="false" selection-start-line="220" selection-start-column="48" selection-end-line="220" selection-end-column="48" />
+        <state relative-caret-position="105">
+          <caret line="7" column="59" lean-forward="true" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
             <element signature="e#5018#6143#0" expanded="false" />
           </folding>
         </state>
@@ -901,23 +881,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Map/Map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="110" column="37" lean-forward="true" selection-start-line="110" selection-start-column="37" selection-end-line="110" selection-end-column="37" />
+        <state relative-caret-position="204">
+          <caret line="123" column="32" lean-forward="true" selection-start-line="123" selection-start-column="32" selection-end-line="123" selection-end-column="32" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="441" column="36" lean-forward="false" selection-start-line="441" selection-start-column="36" selection-end-line="441" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="367" column="20" lean-forward="false" selection-start-line="367" selection-start-column="20" selection-end-line="367" selection-end-column="20" />
+        <state relative-caret-position="347">
+          <caret line="1037" column="21" lean-forward="false" selection-start-line="1037" selection-start-column="21" selection-end-line="1037" selection-end-column="21" />
           <folding>
-            <element signature="e#31951#32496#2" expanded="true" />
-            <element signature="e#34371#34872#2" expanded="true" />
-            <element signature="e#37263#39688#2" expanded="true" />
-            <element signature="e#68954#69763#2" expanded="true" />
+            <element signature="e#33653#34198#2" expanded="true" />
+            <element signature="e#36073#36574#2" expanded="true" />
+            <element signature="e#38965#41390#2" expanded="true" />
+            <element signature="e#70656#71465#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="147" column="21" lean-forward="false" selection-start-line="147" selection-start-column="21" selection-end-line="147" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>

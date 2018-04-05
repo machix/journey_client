@@ -221,9 +221,9 @@ class HomeDash extends Component {
                                                     Annunu Sherpa
                                                 </div>
                                                 <div className={'description'}>
+                                                    <strong>Contribution - 7 Day Service</strong><br/>
                                                     High Quality Sherpa Services<br/>
                                                     Nepalese Culture<br/>
-                                                    Contribution - 7 Day Service
                                                 </div>
                                             </div>
                                         </div>
