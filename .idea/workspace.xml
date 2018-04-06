@@ -7,7 +7,9 @@
     <list default="true" id="8eb92d85-80e0-4af9-8dc4-e20ffe8708d5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" afterPath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reducers/common.js" afterPath="$PROJECT_DIR$/src/Reducers/common.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
     </list>
     <ignored path="gifty-console-client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,13 +31,13 @@
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="912" column="0" lean-forward="true" selection-start-line="912" selection-start-column="0" selection-end-line="912" selection-end-column="0" />
+            <state relative-caret-position="205">
+              <caret line="790" column="30" lean-forward="true" selection-start-line="790" selection-start-column="30" selection-end-line="790" selection-end-column="30" />
               <folding>
-                <element signature="e#36481#37026#2" expanded="true" />
-                <element signature="e#38901#39402#2" expanded="true" />
-                <element signature="e#41793#44218#2" expanded="true" />
-                <element signature="e#73529#74338#2" expanded="true" />
+                <element signature="e#37359#37904#2" expanded="true" />
+                <element signature="e#39779#40280#2" expanded="true" />
+                <element signature="e#42671#45096#2" expanded="true" />
+                <element signature="e#74407#75216#2" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -44,21 +46,31 @@
       <file leaf-file-name="HomeDash.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Components/Dashes/HomeDash.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="284" column="65" lean-forward="true" selection-start-line="284" selection-start-column="65" selection-end-line="284" selection-end-column="154" />
+            <state relative-caret-position="104">
+              <caret line="201" column="70" lean-forward="false" selection-start-line="201" selection-start-column="70" selection-end-line="201" selection-end-column="70" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-                <element signature="e#5018#6143#0" expanded="false" />
+                <element signature="e#5328#6453#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Map.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Map/Map.js">
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Reducers/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="96" column="22" lean-forward="true" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="22" />
+            <state relative-caret-position="99">
+              <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MapContainer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/Map/MapContainer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="113" column="59" lean-forward="false" selection-start-line="113" selection-start-column="59" selection-end-line="113" selection-end-column="59" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -79,28 +91,9 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>bounce</find>
-      <find>bounceIn</find>
-      <find>slideInl</find>
-      <find>logo-image</find>
-      <find>slideInLeft</find>
-      <find>slideLef</find>
-      <find>sidebar-logo-entere</find>
-      <find>slideLeft</find>
-      <find>entered</find>
-      <find>M</find>
-      <find>1s</find>
-      <find>0.5s</find>
-      <find>.information</find>
-      <find>context-${state}</find>
-      <find>statistics</find>
-      <find>&lt;Marker</find>
-      <find>Marker</find>
-      <find>.icon</find>
       <find>{</find>
       <find>Overlay</find>
       <find>overlay</find>
-      <find>.icon</find>
       <find>.sidebar</find>
       <find>37</find>
       <find>Pin</find>
@@ -109,10 +102,27 @@
       <find>imageUrl</find>
       <find>backgroundI</find>
       <find>center</find>
+      <find>&lt;Icon</find>
+      <find>Map</find>
+      <find>map</find>
+      <find>button-</find>
+      <find>journey-container</find>
+      <find>button-left</find>
+      <find>translate</find>
+      <find>animate</find>
+      <find>transition</find>
+      <find>background-color</find>
+      <find>entering</find>
+      <find>button</find>
+      <find>fadeIn</find>
+      <find>.button</find>
+      <find>LEFT</find>
+      <find>ARROW</find>
+      <find>slideLeft</find>
+      <find>.button-ent</find>
+      <find>onhover</find>
     </findStrings>
     <replaceStrings>
-      <replace>0.8</replace>
-      <replace>0.2</replace>
       <replace>ease-in</replace>
       <replace>ease-in-out</replace>
       <replace>10</replace>
@@ -141,6 +151,8 @@
       <replace>0.2s</replace>
       <replace />
       <replace>30</replace>
+      <replace>opacity</replace>
+      <replace>fadeIn</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -199,14 +211,14 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/Helpers/LottieAnimation.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/Reducers/common.js" />
         <option value="$PROJECT_DIR$/src/Components/Map/MapContainer.js" />
         <option value="$PROJECT_DIR$/src/Components/Chat/Chat.js" />
         <option value="$PROJECT_DIR$/src/Components/Sidebar/SponsoredContribution.js" />
         <option value="$PROJECT_DIR$/src/style.css" />
         <option value="$PROJECT_DIR$/src/Components/Map/Map.js" />
-        <option value="$PROJECT_DIR$/src/style.scss" />
         <option value="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" />
+        <option value="$PROJECT_DIR$/src/Reducers/common.js" />
+        <option value="$PROJECT_DIR$/src/style.scss" />
         <option value="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" />
       </list>
     </option>
@@ -242,8 +254,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -496,12 +508,13 @@
       <workItem from="1522602129821" duration="7705000" />
       <workItem from="1522702557041" duration="13541000" />
       <workItem from="1522804738518" duration="793000" />
-      <workItem from="1522806570934" duration="32172000" />
+      <workItem from="1522806570934" duration="32624000" />
+      <workItem from="1522992237845" duration="3230000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198272000" />
+    <option name="totallyTimeSpent" value="201954000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -726,7 +739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="35" column="9" lean-forward="false" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -800,13 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reducers/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/store.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -823,7 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -831,7 +835,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -863,32 +866,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="274" column="6" lean-forward="true" selection-start-line="274" selection-start-column="6" selection-end-line="274" selection-end-column="6" />
-          <folding>
-            <marker date="1522965899182" expanded="false" signature="38641:39181" ph="data:image/svg+xml" />
-            <marker date="1522965899182" expanded="false" signature="41162:41658" ph="data:image/svg+xml" />
-            <marker date="1522965899182" expanded="false" signature="44268:46688" ph="data:image/svg+xml" />
-            <marker date="1522965899182" expanded="false" signature="82672:83476" ph="data:image/svg+xml" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Map/MapContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="129" column="59" lean-forward="false" selection-start-line="129" selection-start-column="59" selection-end-line="129" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Map/Map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="96" column="22" lean-forward="true" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -902,26 +880,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Map/Map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="99" column="33" lean-forward="false" selection-start-line="99" selection-start-column="28" selection-end-line="99" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Map/MapContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="113" column="59" lean-forward="false" selection-start-line="113" selection-start-column="59" selection-end-line="113" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reducers/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="912" column="0" lean-forward="true" selection-start-line="912" selection-start-column="0" selection-end-line="912" selection-end-column="0" />
+        <state relative-caret-position="205">
+          <caret line="790" column="30" lean-forward="true" selection-start-line="790" selection-start-column="30" selection-end-line="790" selection-end-column="30" />
           <folding>
-            <element signature="e#36481#37026#2" expanded="true" />
-            <element signature="e#38901#39402#2" expanded="true" />
-            <element signature="e#41793#44218#2" expanded="true" />
-            <element signature="e#73529#74338#2" expanded="true" />
+            <element signature="e#37359#37904#2" expanded="true" />
+            <element signature="e#39779#40280#2" expanded="true" />
+            <element signature="e#42671#45096#2" expanded="true" />
+            <element signature="e#74407#75216#2" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Dashes/HomeDash.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="284" column="65" lean-forward="true" selection-start-line="284" selection-start-column="65" selection-end-line="284" selection-end-column="154" />
+        <state relative-caret-position="104">
+          <caret line="201" column="70" lean-forward="false" selection-start-line="201" selection-start-column="70" selection-end-line="201" selection-end-column="70" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#5018#6143#0" expanded="false" />
+            <element signature="e#5328#6453#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -9,11 +9,17 @@ const defaultState = {
     windowHeight: 0,
     mapExpanded: false,
     mapIsHover: false,
-    sidebarExpanded: true
+    sidebarExpanded: true,
+    arrowKey: null
 };
 
 export default (state = defaultState, action) => {
     switch (action.type) {
+        case 'ARROW_KEY':
+            return {
+                ...state,
+                arrowKey: action.value
+            };
         case 'LIVE_JOURNEY_META':
             console.log('livejourneymetareducer');
             return {

@@ -24,6 +24,8 @@ const mapStateToProps = state => ({
     mapExpanded: state.common.mapExpanded,
     mapIsHover: state.common.mapIsHover,
     sidebarExpanded: state.common.sidebarExpanded,
+    arrowKey: state.common.arrowKey
+
 
 });
 
@@ -36,6 +38,10 @@ const mapDispatchToProps = dispatch => ({
     }),
     setSidebarExpanded: (value) => dispatch({
         type: 'SET_SIDEBAR_EXPANDED',
+        value: value
+    }),
+    setArrowKey: (value) => dispatch({
+        type: 'ARROW_KEY',
         value: value
     }),
 
@@ -69,15 +75,18 @@ class HomeDash extends Component {
             menuToggled: false,
             annotationVisible: false,
             infoBarExpanded: true,
+            active: true
         }
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 
         ArrowKeysReact.config({
             left: () => {
                 console.log('left arrow key pressed');
+                this.props.setArrowKey('left');
             },
             right: () => {
                 console.log('right arrow key pressed');
+                this.props.setArrowKey('right')
             }
         });
     }
@@ -137,6 +146,10 @@ class HomeDash extends Component {
         ReactDOM.findDOMNode(this.focus).focus();
     }
 
+    done() {
+        this.props.setArrowKey(null)
+    }
+
     render() {
         return (
             <div className={"container"}
@@ -183,6 +196,41 @@ class HomeDash extends Component {
 
                 <div className={"journey-container"}>
 
+                    <Transition
+                        unmountOnExit={false}
+                        in={this.props.arrowKey === 'left'}
+                        onEntered={() => this.props.setArrowKey(null)}
+                        timeout={{enter: 400, exit: 0}}>
+                        {(state) => (
+                            <div className={`button button-${state}`} onMouseLeave={() => this.props.setArrowKey(null)}
+                                 onMouseOver={() => this.props.setArrowKey('left')}>
+                                <Icon viewBox="0 0 40 40" size={20} style={{color: 'white'}}>
+                                    <g>
+                                        <path
+                                            d="m16.7 20l13.1 13.6c0.3 0.3 0.3 0.9 0 1.2l-2.4 2.5c-0.3 0.3-0.9 0.3-1.2 0l-16-16.7c-0.1-0.1-0.2-0.4-0.2-0.6s0.1-0.5 0.2-0.6l16-16.7c0.3-0.3 0.9-0.2 1.2 0.1l2.4 2.4c0.3 0.3 0.3 0.9 0 1.2l-13.1 13.6z"/>
+                                    </g>
+                                </Icon>
+                            </div>)}
+                    </Transition>
+
+                    <Transition
+                        unmountOnExit={false}
+                        in={this.props.arrowKey === 'right'}
+                        onEntered={() => this.props.setArrowKey(null)}
+                        timeout={{enter: 400, exit: 0}}>
+                        {(state) => (
+                            <div className={`button button-${state} right`}
+                                 onMouseLeave={() => this.props.setArrowKey(null)}
+                                 onMouseOver={() => this.props.setArrowKey('right')}>
+                                <Icon viewBox="0 0 40 40" size={20} style={{color: 'white'}}>
+                                    <g>
+                                        <path
+                                            d="m23.3 20l-13.1-13.6c-0.3-0.3-0.3-0.9 0-1.2l2.4-2.4c0.3-0.3 0.9-0.4 1.2-0.1l16 16.7c0.1 0.1 0.2 0.4 0.2 0.6s-0.1 0.5-0.2 0.6l-16 16.7c-0.3 0.3-0.9 0.3-1.2 0l-2.4-2.5c-0.3-0.3-0.3-0.9 0-1.2z"/>
+                                    </g>
+                                </Icon>
+                            </div>
+                        )}
+                    </Transition>
                     <Transition
                         unmountOnExit={true}
                         style={{height: '100%'}}
