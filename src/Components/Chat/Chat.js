@@ -6,16 +6,16 @@ import Icon from 'react-icon-base';
 
 import * as animationData from '../Assets/heart.json';
 
-
 import LottieAnimation from '../../Helpers/LottieAnimation';
-
+import ChatBox from './ChatBox';
+import agent from '../../Helpers/agent';
 
 const mapStateToProps = state => ({
     ...state,
-
 });
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+});
 
 
 class Chat extends Component {
@@ -24,7 +24,9 @@ class Chat extends Component {
         super(props);
         this.state = {
             liked: false,
-            commandsVisible: false
+            chatInput: '',
+            commandsVisible: false,
+            inputVisible: true,
         }
 
     }
@@ -48,19 +50,38 @@ class Chat extends Component {
     };
 
     handleChange = (event,) => {
+
         let str = event.target.value;
         if (str.startsWith('/')) {
             this.setState({
                 ...this.state,
-                commandsVisible: true
+                commandsVisible: true,
+                chatInput: event.target.value,
+                inputVisible: true
             })
         } else {
             this.setState({
                 ...this.state,
-                commandsVisible: false
+                commandsVisible: false,
+                chatInput: event.target.value,
+                inputVisible: true
+
+
             })
         }
     };
+
+    handleKeyPress(target) {
+        if (target.charCode == 13) {
+            agent.FirebaseQuery.sendChat('test_journey', this.state.chatInput, 'anonymous_hardcode');
+            this.setState({
+                ...this.state,
+                commandsVisible: false,
+                inputVisible: false
+
+            })
+        }
+    }
 
     render() {
         return (
@@ -121,14 +142,28 @@ class Chat extends Component {
                                Expand_Chat
                             </span>)}
                 </Transition>
+                <ChatBox/>
 
                 <div className={'chat-input'}>
-                    <input type="text"
-                           style={{width: '100%'}}
-                           placeholder="Enter a comment or /'command'"
-                           autoComplete="off"
-                           onChange={(e) => this.handleChange(e)}/>
-                    <span onClick={() => this.toggle('liked')}>
+                    <Transition
+                        unmountOnExit={false}
+                        in={this.state.inputVisible}
+                        onExited={()=>this.setState({...this.state, chatInput: ''})}
+
+                        timeout={200}>
+                        {(state) => (
+                            <input
+                                className={`chat-input-box-${state}`}
+                                type="text"
+                                style={{width: '100%'}}
+                                placeholder="Enter a comment or /'command'"
+                                autoComplete="off"
+                                value={this.state.chatInput}
+                                onChange={(e) => this.handleChange(e)}
+                                onKeyPress={(e) => this.handleKeyPress(e)}/>
+                        )}
+                    </Transition>
+                    <span className="pointer" onClick={() => this.toggle('liked')}>
                          <LottieAnimation
                              autoplay={false}
                              animationData={animationData}

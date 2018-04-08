@@ -73,6 +73,11 @@ $c-set-text-2-sub: #8898aa;
 $c-set-border-0: #EFEFEF;
 $c-set-border-2: #E6EBF1;
 
+$c-set-chat-left: #1fcfdc;
+$c-set-chat-right: rgba(82, 120, 245, 0.9);
+$c-set-chat-left-text: white;
+$c-set-chat-right-text: #66759e;
+
 /*  /////////////////////////////////////////
      STYLES
     \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
@@ -370,6 +375,34 @@ h1, h2, h3, h4, h5 {
   transform: scale(2);
 }
 
+@-webkit-keyframes fadeOutUp {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+.fadeOutUp {
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp;
+}
 
 @-webkit-keyframes slideLeft {
   from {
@@ -399,8 +432,6 @@ h1, h2, h3, h4, h5 {
   -webkit-animation-name: slideLeft;
   animation-name: slideLeft;
 }
-
-
 
 @-webkit-keyframes fadeInUp {
   from {
@@ -454,7 +485,6 @@ h1, h2, h3, h4, h5 {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }
-
 
 @-webkit-keyframes fadeOutDown {
   from {
@@ -786,7 +816,7 @@ h1, h2, h3, h4, h5 {
       opacity: 0
     }
 
-    .button{
+    .button {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -808,7 +838,6 @@ h1, h2, h3, h4, h5 {
         margin-right: 10px;
       }
     }
-
 
     .map-container {
       display: flex;
@@ -892,7 +921,7 @@ h1, h2, h3, h4, h5 {
   left: 30px;
   z-index: 10;
 
-  .load-next{
+  .load-next {
     width: 1px;
     height: 1px;
   }
@@ -955,7 +984,7 @@ h1, h2, h3, h4, h5 {
 
     .interactions {
       display: flex;
-      flex: 1 0  auto;
+      flex: 1 0 auto;
       align-items: center;
       justify-content: center;
       width: 100%;
@@ -975,7 +1004,7 @@ h1, h2, h3, h4, h5 {
 
     .sidebar-logo {
       display: flex;
-      flex: 0 1  auto;
+      flex: 0 1 auto;
       width: 100%;
       align-items: center;
       margin-top: 20px;
@@ -1003,11 +1032,9 @@ h1, h2, h3, h4, h5 {
       }
 
       .logo-image-entered {
-        top:0;
+        top: 0;
         transform: translate3d(-100%, 0, 0)
       }
-
-
 
       .title-block {
         margin-left: 20px;
@@ -1144,7 +1171,6 @@ h1, h2, h3, h4, h5 {
       }
 
     }
-
 
     .caption {
       color: white;
@@ -1391,7 +1417,40 @@ h1, h2, h3, h4, h5 {
   position: absolute;
   bottom: 30px;
   z-index: 9;
-  cursor: pointer;
+
+  .chat-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .message {
+      display: flex;
+      flex-direction: column;
+      margin: 7px;
+      background-color: $c-set-chat-right;
+      color: white;
+      font-weight: 600;
+      padding: 5px 10px 5px 10px;
+      border-radius: 3px;
+
+      &.left {
+        margin-right: auto;
+        align-items: flex-start;
+      }
+
+      &.right {
+        margin-left: auto;
+        align-items: flex-end;
+        text-align: right;
+      }
+
+      .message-meta {
+        font-weight: 200;
+        font-size: 0.65rem;
+      }
+    }
+
+  }
 
   .chat-commands-entering {
     -webkit-animation-name: fadeInUp;
@@ -1416,6 +1475,7 @@ h1, h2, h3, h4, h5 {
   }
 
   .chat-commands {
+    cursor: pointer;
     color: orange;
     padding: 10px 30px;
     background: rgba(0, 0, 0, 0.7);
@@ -1449,6 +1509,19 @@ h1, h2, h3, h4, h5 {
     input::placeholder {
       color: white;
     }
+  }
+
+  .chat-input-box-exiting{
+    -webkit-animation-name: fadeOutUp;
+    -webkit-animation-duration: 0.2s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    animation-name: fadeOutUp;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    color: $c-set-chat-right-text;
+    background-color: #3cefbe;
   }
 
 }

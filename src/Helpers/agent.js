@@ -106,67 +106,69 @@ const FirebaseQuery = {
         return dispatch => {
             console.log('GET_LIVE_JOURNEY');
             // new Promise(function (resolve, reject) {
-                database.ref('live_journeys/' + journey_id).on('value', (snapshot) => {
-                    console.log('new snapshot');
-                    console.log(snapshot.val());
-                    if (snapshot.val() !== null) {
-                        // resolve(snapshot.val());
-                        let sortable = [];
+            database.ref('live_journeys/' + journey_id).on('value', (snapshot) => {
+                console.log('new snapshot');
+                console.log(snapshot.val());
+                if (snapshot.val() !== null) {
+                    // resolve(snapshot.val());
+                    let sortable = [];
 
-                        for (let uid in snapshot.val()) {
-                            let temp = snapshot.val();
-                            temp[uid].uid = uid;
-                            if(temp[uid].imageUploaded === true) {
-                                sortable.push(temp[uid]);
+                    for (let uid in snapshot.val()) {
+                        let temp = snapshot.val();
+                        temp[uid].uid = uid;
+                        if (temp[uid].imageUploaded === true) {
+                            sortable.push(temp[uid]);
 
-                            }
                         }
-
-                        sortable.sort(function (a, b) {
-                            return a.timestamp - b.timestamp
-                        });
-                        console.log(sortable);
-                        dispatch({
-                            type: 'LIVE_JOURNEY_META',
-                            liveJourneyMeta: sortable,
-                            journeyId: journey_id,
-                            journeyLength: sortable.length
-                        });
-
                     }
-                })
-            // })
 
-                // .then((object) => {
-                //         //SORT JOURNEY_META APPROPRIATELY
-                //         // let sortable = [];
-                //         //
-                //         // for (let uid in object) {
-                //         //     let temp = object;
-                //         //     temp[uid].uid = uid;
-                //         //     sortable.push(temp[uid]);
-                //         // }
-                //         //
-                //         // sortable.sort(function (a, b) {
-                //         //     return a.timestamp - b.timestamp
-                //         // });
-                //         //
-                //         // console.log(sortable);
-                //         //
-                //         //
-                //         // dispatch({
-                //         //     type: 'LIVE_JOURNEY_META',
-                //         //     liveJourneyMeta: sortable,
-                //         //     journeyId: journey_id,
-                //         //     journeyLength: sortable.length
-                //         // });
-                //
-                //     }
-                // )
+                    sortable.sort(function (a, b) {
+                        return a.timestamp - b.timestamp
+                    });
+                    console.log(sortable);
+                    dispatch({
+                        type: 'LIVE_JOURNEY_META',
+                        liveJourneyMeta: sortable,
+                        journeyId: journey_id,
+                        journeyLength: sortable.length
+                    });
+
+                }
+            })
             ;
         };
-
     },
+    sendChat: (journey_id, message, member) => {
+        console.log('SEND_CHAT');
+        database.ref('messages/' + journey_id).push({
+            name: member,
+            message: message,
+            timestamp: Firebase.database.ServerValue.TIMESTAMP
+        })
+        ;
+    },
+    chatListener: (journey_id) => {
+        console.log('CHAT_LISTENER');
+        var ignoreItems = true;
+
+        return dispatch => {
+            database.ref('messages/' + journey_id).on('child_added', (snapshot) => {
+                if (!ignoreItems) {
+                    console.log('new Chatlistener Snapshot');
+                    console.log(snapshot.val());
+                }
+
+            });
+            database.ref('messages/' + journey_id).once('value', (snapshot) => {
+                console.log('Initial ChatListener Load');
+                ignoreItems = false;
+
+            });
+
+        };
+    },
+
+
     aggregateData: (chartData, stats) => {
         console.log('AGGREGATE_DATA_FROM_ALL_CHARTS');
         return dispatch => {

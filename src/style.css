@@ -263,6 +263,26 @@ h1, h2, h3, h4, h5 {
   -webkit-transform: scale(2);
   transform: scale(2); }
 
+@-webkit-keyframes fadeOutUp {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); } }
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); } }
+
+.fadeOutUp {
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp; }
+
 @-webkit-keyframes slideLeft {
   from {
     -webkit-transform: translate3d(0, 0, 0);
@@ -678,7 +698,7 @@ h1, h2, h3, h4, h5 {
     position: relative; }
     .sidebar-container .sidebar .interactions {
       display: flex;
-      flex: 1 0  auto;
+      flex: 1 0 auto;
       align-items: center;
       justify-content: center;
       width: 100%; }
@@ -694,7 +714,7 @@ h1, h2, h3, h4, h5 {
         width: 33%; }
     .sidebar-container .sidebar .sidebar-logo {
       display: flex;
-      flex: 0 1  auto;
+      flex: 0 1 auto;
       width: 100%;
       align-items: center;
       margin-top: 20px;
@@ -998,8 +1018,30 @@ h1, h2, h3, h4, h5 {
 .chat {
   position: absolute;
   bottom: 30px;
-  z-index: 9;
-  cursor: pointer; }
+  z-index: 9; }
+  .chat .chat-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column; }
+    .chat .chat-box .message {
+      display: flex;
+      flex-direction: column;
+      margin: 7px;
+      background-color: rgba(82, 120, 245, 0.9);
+      color: white;
+      font-weight: 600;
+      padding: 5px 10px 5px 10px;
+      border-radius: 3px; }
+      .chat .chat-box .message.left {
+        margin-right: auto;
+        align-items: flex-start; }
+      .chat .chat-box .message.right {
+        margin-left: auto;
+        align-items: flex-end;
+        text-align: right; }
+      .chat .chat-box .message .message-meta {
+        font-weight: 200;
+        font-size: 0.65rem; }
   .chat .chat-commands-entering {
     -webkit-animation-name: fadeInUp;
     -webkit-animation-duration: 0.2s;
@@ -1019,6 +1061,7 @@ h1, h2, h3, h4, h5 {
     animation-iteration-count: 1;
     animation-timing-function: ease-in; }
   .chat .chat-commands {
+    cursor: pointer;
     color: orange;
     padding: 10px 30px;
     background: rgba(0, 0, 0, 0.7);
@@ -1045,6 +1088,17 @@ h1, h2, h3, h4, h5 {
       color: white; }
     .chat .chat-input input::placeholder {
       color: white; }
+  .chat .chat-input-box-exiting {
+    -webkit-animation-name: fadeOutUp;
+    -webkit-animation-duration: 0.2s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    animation-name: fadeOutUp;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    color: #66759e;
+    background-color: #3cefbe; }
 
 /* 	--- Wrappers ------------------------ */
 .login-wrapper {
