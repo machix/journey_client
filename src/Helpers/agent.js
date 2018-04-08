@@ -105,41 +105,64 @@ const FirebaseQuery = {
     liveJourney: (journey_id) => {
         return dispatch => {
             console.log('GET_LIVE_JOURNEY');
-            new Promise(function (resolve, reject) {
+            // new Promise(function (resolve, reject) {
                 database.ref('live_journeys/' + journey_id).on('value', (snapshot) => {
+                    console.log('new snapshot');
+                    console.log(snapshot.val());
                     if (snapshot.val() !== null) {
-                        resolve(snapshot.val());
+                        // resolve(snapshot.val());
+                        let sortable = [];
+
+                        for (let uid in snapshot.val()) {
+                            let temp = snapshot.val();
+                            temp[uid].uid = uid;
+                            if(temp[uid].imageUploaded === true) {
+                                sortable.push(temp[uid]);
+
+                            }
+                        }
+
+                        sortable.sort(function (a, b) {
+                            return a.timestamp - b.timestamp
+                        });
+                        console.log(sortable);
+                        dispatch({
+                            type: 'LIVE_JOURNEY_META',
+                            liveJourneyMeta: sortable,
+                            journeyId: journey_id,
+                            journeyLength: sortable.length
+                        });
+
                     }
                 })
-            }).then((object) => {
-                    //SORT JOURNEY_META APPROPRIATELY
-                    let sortable = [];
+            // })
 
-                    for (let uid in object) {
-                        let temp = object;
-                        temp[uid].uid = uid;
-                        sortable.push(temp[uid]);
-                    }
-
-                    sortable.sort(function (a, b) {
-                        return a.timestamp - b.timestamp
-                    });
-
-                    console.log(sortable);
-
-
-                    dispatch({
-                        type: 'LIVE_JOURNEY_META',
-                        liveJourneyMeta: sortable,
-                        journeyId: journey_id,
-                        journeyLength: sortable.length
-                    });
-
-                    dispatch({
-                        type: 'PRELOAD_META',
-                    })
-                }
-            )
+                // .then((object) => {
+                //         //SORT JOURNEY_META APPROPRIATELY
+                //         // let sortable = [];
+                //         //
+                //         // for (let uid in object) {
+                //         //     let temp = object;
+                //         //     temp[uid].uid = uid;
+                //         //     sortable.push(temp[uid]);
+                //         // }
+                //         //
+                //         // sortable.sort(function (a, b) {
+                //         //     return a.timestamp - b.timestamp
+                //         // });
+                //         //
+                //         // console.log(sortable);
+                //         //
+                //         //
+                //         // dispatch({
+                //         //     type: 'LIVE_JOURNEY_META',
+                //         //     liveJourneyMeta: sortable,
+                //         //     journeyId: journey_id,
+                //         //     journeyLength: sortable.length
+                //         // });
+                //
+                //     }
+                // )
             ;
         };
 

@@ -10,11 +10,18 @@ const defaultState = {
     mapExpanded: false,
     mapIsHover: false,
     sidebarExpanded: true,
-    arrowKey: null
+    arrowKey: null,
+    alertNew: false
 };
 
 export default (state = defaultState, action) => {
     switch (action.type) {
+        case 'NEW_DATA':
+            return {
+                ...state,
+                alertNew: action.value
+            };
+
         case 'ARROW_KEY':
             return {
                 ...state,

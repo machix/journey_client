@@ -29,7 +29,8 @@ const mapStateToProps = state => ({
     position: state.choreographer.position,
     prevPosition: state.choreographer.prevPosition,
     nextPosition: state.choreographer.nextPosition,
-    journeyId: state.choreographer.journeyId
+    journeyId: state.choreographer.journeyId,
+    alertNew: state.common.alertNew
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -51,6 +52,10 @@ const mapDispatchToProps = dispatch => ({
         type: 'CHANGE_POSITION',
         value: value
     }),
+    setAlertNew: (value) => dispatch({
+        type: 'NEW_DATA',
+        value: value
+    })
 
 
 });
@@ -100,7 +105,7 @@ class HomeDash extends Component {
             },
             right: () => {
                 console.log('right arrow key pressed');
-                if (this.props.position === this.props.liveJourneyMeta.length-1) {
+                if (this.props.position === this.props.liveJourneyMeta.length - 1) {
                     this.props.setArrowKey('right')
                 } else {
                     this.props.setArrowKey('right');
@@ -123,14 +128,18 @@ class HomeDash extends Component {
 
     componentWillReceiveProps(nextProps) {
         console.log('nextProps received');
-        console.log(nextProps.position);
-        if (nextProps.journeyId !== this.props.journeyId) {
-            console.log('This is a newly loaded Journey');
-            console.log(nextProps.liveJourneyMeta);
-            // let newArray = update(nextProps.liveJourneyMeta, {$splice: [[0, 1]]});
-            let newArray = nextProps.liveJourneyMeta[0];
-            console.log(newArray);
-            // this.props.loadNext(newArray);
+
+        console.log(this.props.liveJourneyMeta);
+        console.log(this.props.liveJourneyMeta.length);
+
+        console.log(nextProps.liveJourneyMeta.length);
+        console.log(nextProps.liveJourneyMeta);
+
+        if (nextProps.liveJourneyMeta.length !== this.props.liveJourneyMeta.length && this.props.liveJourneyMeta.length > 0) {
+            console.log('There is a new submission');
+            this.props.setAlertNew(true);
+            this.props.changePosition(this.props.position + 1);
+
         }
 
 
@@ -157,7 +166,7 @@ class HomeDash extends Component {
         if (this.props.position === 0 && value === 'left') {
         } else if (value === 'left') {
             this.props.changePosition(this.props.position - 1);
-        } else if (this.props.position < this.props.liveJourneyMeta.length-1 && value === 'right') {
+        } else if (this.props.position < this.props.liveJourneyMeta.length - 1 && value === 'right') {
             this.props.changePosition(this.props.position + 1);
         } else {
 
@@ -219,15 +228,17 @@ class HomeDash extends Component {
 
                 <Chat commandsVisible={this.state.commandsVisible}/>
                 {this.props.liveJourneyMeta.length > 0 ?
-                <div className={'logo'} onClick={() => this.props.setSidebarExpanded(!this.props.sidebarExpanded)}>
-                    <img className={'logo-image'}
-                         src={"https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/The_North_Face_logo.svg/1200px-The_North_Face_logo.svg.png"}/>
+                    <div className={'logo'} onClick={() => this.props.setSidebarExpanded(!this.props.sidebarExpanded)}>
+                        <img className={'logo-image'}
+                             src={"https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/The_North_Face_logo.svg/1200px-The_North_Face_logo.svg.png"}/>
 
-                    <img src={`https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_${this.props.liveJourneyMeta[this.props.prevPosition].uid}.jpg?alt=media&token=ccd5ab02-54bb-4bca-8f2f-9e253de52523`}
-                         className={'load-next'}/>
-                    <img src={`https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_${this.props.liveJourneyMeta[this.props.nextPosition].uid}.jpg?alt=media&token=ccd5ab02-54bb-4bca-8f2f-9e253de52523`}
-                         className={'load-next'}/>
-                </div> : null }
+                        <img
+                            src={`https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_${this.props.liveJourneyMeta[this.props.prevPosition].uid}.jpg?alt=media&token=ccd5ab02-54bb-4bca-8f2f-9e253de52523`}
+                            className={'load-next'}/>
+                        <img
+                            src={`https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_${this.props.liveJourneyMeta[this.props.nextPosition].uid}.jpg?alt=media&token=ccd5ab02-54bb-4bca-8f2f-9e253de52523`}
+                            className={'load-next'}/>
+                    </div> : null}
 
                 <div
                     onClick={() => this.toggle('menu')}
@@ -254,7 +265,7 @@ class HomeDash extends Component {
                         timeout={{enter: 400, exit: 0}}>
                         {(state) => (
                             <div className={`button button-${state}`} onMouseLeave={() => this.props.setArrowKey(null)}
-                                 onClick={()=>this.navButtonClick('left')}
+                                 onClick={() => this.navButtonClick('left')}
                                  onMouseOver={() => this.props.setArrowKey('left')}>
                                 <Icon viewBox="0 0 40 40" size={20} style={{color: 'white'}}>
                                     <g>
@@ -272,7 +283,7 @@ class HomeDash extends Component {
                         timeout={{enter: 400, exit: 0}}>
                         {(state) => (
                             <div className={`button button-${state} right`}
-                                 onClick={()=>this.navButtonClick('right')}
+                                 onClick={() => this.navButtonClick('right')}
 
                                  onMouseLeave={() => this.props.setArrowKey(null)}
                                  onMouseOver={() => this.props.setArrowKey('right')}>
@@ -360,6 +371,8 @@ class HomeDash extends Component {
                                                         <img className={'image'} src={member3}/>
                                                     </div>
                                                 </div>
+                                                {this.props.alertNew === true ?
+                                                    <div>YOU GOT A NEW PICTURE BITCH!</div> : null}
                                                 <div className={'info-container'}>
                                                     13 Minutes Ago
                                                     <div>
@@ -371,7 +384,11 @@ class HomeDash extends Component {
                                                             </g>
                                                         </Icon>
                                                         Everest Base Camp <br/>
-                                                        28.003514, 86.852070
+                                                        {this.props.liveJourneyMeta.length > 0 ? <div>
+                                                            {this.props.liveJourneyMeta[this.props.position].coordinates.latitude}, {this.props.liveJourneyMeta[this.props.position].coordinates.longitude}
+                                                        </div> : null
+
+                                                        }
 
                                                     </div>
                                                 </div>
