@@ -1032,6 +1032,24 @@ h1, h2, h3, h4, h5 {
       font-weight: 600;
       padding: 5px 10px 5px 10px;
       border-radius: 3px; }
+      .chat .chat-box .message-entering {
+        -webkit-animation-name: fadeInUp;
+        -webkit-animation-duration: 0.5s;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-timing-function: ease-in;
+        animation-name: fadeInUp;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in; }
+      .chat .chat-box .message-exiting {
+        -webkit-animation-name: fadeOutUp;
+        -webkit-animation-duration: 0.2s;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-timing-function: ease-in;
+        animation-name: fadeOutUp;
+        animation-duration: 0.2s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in; }
       .chat .chat-box .message.left {
         margin-right: auto;
         align-items: flex-start; }

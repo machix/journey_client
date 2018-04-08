@@ -156,12 +156,37 @@ const FirebaseQuery = {
                 if (!ignoreItems) {
                     console.log('new Chatlistener Snapshot');
                     console.log(snapshot.val());
+                    dispatch({
+                        type: 'CHAT_CHILD_ADDED',
+                        message: snapshot.val()
+                    })
+
                 }
 
             });
             database.ref('messages/' + journey_id).once('value', (snapshot) => {
                 console.log('Initial ChatListener Load');
+                console.log(snapshot.val())
                 ignoreItems = false;
+
+                let chatSortable = [];
+
+                for (let message in snapshot.val()) {
+                    let temp = snapshot.val();
+                    chatSortable.push(temp[message]);
+                }
+
+                chatSortable.sort(function (b, a) {
+                    return a.timestamp - b.timestamp
+                });
+
+                console.log(chatSortable);
+
+
+                dispatch({
+                    type: 'CHAT_INITIAL_LOAD',
+                    messages: chatSortable
+                })
 
             });
 
