@@ -389,7 +389,7 @@ class HomeDash extends Component {
                                                         </Icon>
                                                         Everest Base Camp <br/>
                                                         {this.props.liveJourneyMeta.length > 0 ? <div>
-                                                            {this.props.liveJourneyMeta[this.props.position].coordinates.latitude}, {this.props.liveJourneyMeta[this.props.position].coordinates.longitude}
+                                                            {this.props.liveJourneyMeta[this.props.position].coordinates.lat}, {this.props.liveJourneyMeta[this.props.position].coordinates.lng}
                                                         </div> : null
 
                                                         }
