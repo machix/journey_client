@@ -15,11 +15,20 @@ class TextAwareCommand extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            mounted: false
+            mounted: true
         }
     }
 
     componentWillReceiveProps(nextProps) {
+        let reg = new RegExp(this.props.input, "ig");
+console.log(this.props.command.match(reg));
+        if (nextProps.input.length > 1 && this.props.command.match(reg) === null) {
+            console.log('unmount');
+            this.setState({mounted: false})
+        } else {
+            console.log('mounted');
+            this.setState({mounted: true})
+        }
 
     }
 
@@ -37,11 +46,15 @@ class TextAwareCommand extends Component {
     }
 
     render() {
-        return (<span>
+        return (
+            <span>
+            {this.state.mounted === true ? <span>
        <span className={'command-match'}>
            {this.initial()}
        </span>
                 {this.remaining()}
+            </span> : null}
+
             </span>
 
         );

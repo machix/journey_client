@@ -100,6 +100,7 @@ class Chat extends Component {
                     out={!this.state.commandsVisible}
                     timeout={200}>
                     {(state) => (
+                        <span>
                         <span className={`chat-commands-${state} chat-commands`}>
     <span>
                         <Icon viewBox="0 0 40 40" size={20}>
@@ -109,24 +110,17 @@ class Chat extends Component {
     </Icon>&emsp;
            </span>
 
-                                <TextAwareCommand command={'/Share'} input={this.state.chatInput}/> </span>)}
-                </Transition>
-                <Transition
-                    unmountOnExit={true}
-                    in={this.state.commandsVisible}
-                    out={!this.state.commandsVisible}
-                    timeout={200}>
-                    {(state) => (
-                        <span className={`chat-commands-${state} chat-commands`}>
-                                <TextAwareCommand command={'/Contribute'} input={this.state.chatInput}/> </span>)}
-                </Transition>
-                <Transition
-                    unmountOnExit={true}
-                    in={this.state.commandsVisible}
-                    out={!this.state.commandsVisible}
-                    timeout={200}>
-                    {(state) => (
-                        <span className={`chat-commands-${state} chat-commands`}>
+                                <TextAwareCommand command={'/Share'} input={this.state.chatInput}/>
+                        </span>
+
+
+
+                            <span className={`chat-commands-${state} chat-commands`}>
+                                <TextAwareCommand command={'/Contribute'} input={this.state.chatInput}/> </span>
+
+
+
+                              <span className={`chat-commands-${state} chat-commands`}>
                                   <span>
                         <Icon viewBox="0 0 40 40" size={20}>
         <g>
@@ -136,19 +130,21 @@ class Chat extends Component {
     </Icon>&emsp;
            </span>
                                 <TextAwareCommand command={'/Pin'} input={this.state.chatInput}/>
-                            </span>)}
+                            </span>
+
+                              <span className={`chat-commands-${state} chat-commands`}>
+                               <TextAwareCommand command={'/Expand_Chat'} input={this.state.chatInput}/>
+                            </span>
+
+                        </span>
+
+
+
+
+
+                    )}
                 </Transition>
 
-                <Transition
-                    unmountOnExit={true}
-                    in={this.state.commandsVisible}
-                    out={!this.state.commandsVisible}
-                    timeout={200}>
-                    {(state) => (
-                        <span className={`chat-commands-${state} chat-commands`}>
-                               <TextAwareCommand command={'/Expand_Chat'} input={this.state.chatInput}/>
-                            </span>)}
-                </Transition>
                 <ChatBox/>
 
                 <div className={'chat-input'}>
