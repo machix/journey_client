@@ -6,8 +6,7 @@ import Icon from 'react-icon-base';
 import ArrowKeysReact from 'arrow-keys-react';
 import ReactDOM from 'react-dom';
 import Transition from 'react-transition-group/Transition';
-import update from 'immutability-helper';
-
+import moment from 'moment';
 
 import member3 from '../Assets/member2.jpg';
 
@@ -55,7 +54,7 @@ const mapDispatchToProps = dispatch => ({
     setAlertNew: (value) => dispatch({
         type: 'NEW_DATA',
         value: value
-    })
+    }),
 
 
 });
@@ -94,7 +93,6 @@ class HomeDash extends Component {
 
         ArrowKeysReact.config({
             left: () => {
-                console.log('left arrow key pressed');
                 if (this.props.position === 0) {
                     this.props.setArrowKey('left');
 
@@ -104,7 +102,6 @@ class HomeDash extends Component {
                 }
             },
             right: () => {
-                console.log('right arrow key pressed');
                 if (this.props.position === this.props.liveJourneyMeta.length - 1) {
                     this.props.setArrowKey('right')
                 } else {
@@ -123,18 +120,12 @@ class HomeDash extends Component {
     componentDidMount() {
         this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);
+
+
         this.focusDiv();
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log('nextProps received');
-
-        console.log(this.props.liveJourneyMeta);
-        console.log(this.props.liveJourneyMeta.length);
-
-        console.log(nextProps.liveJourneyMeta.length);
-        console.log(nextProps.liveJourneyMeta);
-
         if (nextProps.liveJourneyMeta.length !== this.props.liveJourneyMeta.length && this.props.liveJourneyMeta.length > 0) {
             console.log('There is a new submission');
             this.props.setAlertNew(true);
@@ -153,10 +144,23 @@ class HomeDash extends Component {
         this.props.setWindowDims(window.innerWidth, window.innerHeight);
     }
 
+    blur() {
+        this.props.setSidebarExpanded()
+    }
+
+    getTime = () => {
+        let timestamp = moment(-this.props.liveJourneyMeta[this.props.position].timestamp);
+        if (moment().diff( timestamp, 'days') >= 1) {
+            return timestamp.format('MMMM Do YYYY, h:mm:ss a')
+        } else {
+            let string = timestamp.fromNow();
+               return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+    }
+
     photosMap = () => {
         console.log('photosMap');
         return Object.keys(this.props.liveJourneyMeta).sort((a, b) => this.props.liveJourneyMeta[a].timeStamp - this.props.liveJourneyMeta[b].timeStamp).map((key, index) => {
-            console.log(key, index);
             return
         });
     };
@@ -374,7 +378,7 @@ class HomeDash extends Component {
                                                 {this.props.alertNew === true ?
                                                     <div>YOU GOT A NEW PICTURE BITCH!</div> : null}
                                                 <div className={'info-container'}>
-                                                    13 Minutes Ago
+                                                    {this.props.liveJourneyMeta.length > 0 ? this.getTime() : 'Loading'}
                                                     <div>
                                                         <Icon viewBox="0 0 40 40" size={20}
                                                               style={{color: 'white'}}>
@@ -406,7 +410,9 @@ class HomeDash extends Component {
                                             //'https://www.google.com/maps/about/images/behind-the-scenes/treks/everest-header-bg_2x.jpg'
                                             backgroundRepeat: 'no-repeat',
                                             backgroundPosition: 'center'
-                                        }}>
+                                        }}
+                                             onClick={()=>{this.blur()}}
+                                        >
 
                                         </div> : null}
                                 </div>}
@@ -421,6 +427,7 @@ class HomeDash extends Component {
                     {this.props.liveJourneyMeta.length > 0 ?
 
                         <div className={'blur-background blur'}
+                             onClick={()=>{this.blur()}}
                              style={{
                                  backgroundSize: 'cover',
                                  backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_${this.props.liveJourneyMeta[this.props.position].uid}.jpg?alt=media&token=ccd5ab02-54bb-4bca-8f2f-9e253de52523)`,

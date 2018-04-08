@@ -41,6 +41,7 @@ class MapContainer extends Component {
     }
 
     toggle = (value) => {
+        this.mapContainer.blur();
 
         console.log('toggle: ' + value);
         switch (value) {
@@ -62,6 +63,11 @@ class MapContainer extends Component {
             }
         }
     };
+
+    componentWillReceiveProps(nextProps) {
+        this.mapContainer.blur();
+
+    }
 
     handleHover = (active) => {
         if (this.props.mapExpanded === true) {
@@ -86,9 +92,13 @@ class MapContainer extends Component {
                 }}>
                 {({hoverHeight, hoverRadius, toggleRadius, toggleHeight, marginControl}) =>
                     <div className={'map-container'}
+                         tabIndex={-1}
                          onMouseOver={() => this.handleHover(true)}
                          onMouseOut={() => this.handleHover(false)}
                          onClick={() => this.toggle('map')}
+                         ref={c => this.mapContainer = c}
+                         onBlur={()=> {console.log('blured')}}
+
                          style={{
                              minHeight: '105px',
                              minWidth: '105px',
@@ -123,6 +133,8 @@ class MapContainer extends Component {
                         <Map isMarkerShown={true}
                              googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIpabTnIbXsdIgI2Zo2zO6g3GGxUbYqw8&v=3.exp&libraries=geometry,drawing,places"
                              loadingElement={<div style={{height: `100px`,}}/>}
+                             tabIndex={-1}
+
                              containerElement={
                                  <div style={{
                                      minHeight: '100px',

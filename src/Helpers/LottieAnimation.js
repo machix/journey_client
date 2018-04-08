@@ -29,7 +29,6 @@ class LottieAnimation extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log(nextProps.liked);
         if (nextProps.liked === true ) {
             this.lottie.setDirection(1);
 
