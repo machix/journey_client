@@ -6,6 +6,8 @@ import Icon from 'react-icon-base';
 import ArrowKeysReact from 'arrow-keys-react';
 import ReactDOM from 'react-dom';
 import Transition from 'react-transition-group/Transition';
+import update from 'immutability-helper';
+
 
 import member3 from '../Assets/member2.jpg';
 
@@ -17,16 +19,17 @@ import MapContainer from '../Map/MapContainer';
 const mapStateToProps = state => ({
     loaderDisplay: state.common.loaderDisplay,
     liveJourneyMeta: state.common.liveJourneyMeta,
-    visibleMeta: state.choreographer.visibleMeta,
-    position: state.choreographer.position,
     windowHeight: state.common.windowHeight,
     windowWidth: state.common.windowWidth,
     mapExpanded: state.common.mapExpanded,
     mapIsHover: state.common.mapIsHover,
     sidebarExpanded: state.common.sidebarExpanded,
-    arrowKey: state.common.arrowKey
+    arrowKey: state.common.arrowKey,
 
-
+    position: state.choreographer.position,
+    prevPosition: state.choreographer.prevPosition,
+    nextPosition: state.choreographer.nextPosition,
+    journeyId: state.choreographer.journeyId
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -44,6 +47,11 @@ const mapDispatchToProps = dispatch => ({
         type: 'ARROW_KEY',
         value: value
     }),
+    changePosition: (value) => dispatch({
+        type: 'CHANGE_POSITION',
+        value: value
+    }),
+
 
 });
 
@@ -82,11 +90,23 @@ class HomeDash extends Component {
         ArrowKeysReact.config({
             left: () => {
                 console.log('left arrow key pressed');
-                this.props.setArrowKey('left');
+                if (this.props.position === 0) {
+                    this.props.setArrowKey('left');
+
+                } else {
+                    this.props.changePosition(this.props.position - 1);
+                    this.props.setArrowKey('left');
+                }
             },
             right: () => {
                 console.log('right arrow key pressed');
-                this.props.setArrowKey('right')
+                if (this.props.position === this.props.liveJourneyMeta.length-1) {
+                    this.props.setArrowKey('right')
+                } else {
+                    this.props.setArrowKey('right');
+                    this.props.changePosition(this.props.position + 1);
+                }
+
             }
         });
     }
@@ -99,6 +119,21 @@ class HomeDash extends Component {
         this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);
         this.focusDiv();
+    }
+
+    componentWillReceiveProps(nextProps) {
+        console.log('nextProps received');
+        console.log(nextProps.position);
+        if (nextProps.journeyId !== this.props.journeyId) {
+            console.log('This is a newly loaded Journey');
+            console.log(nextProps.liveJourneyMeta);
+            // let newArray = update(nextProps.liveJourneyMeta, {$splice: [[0, 1]]});
+            let newArray = nextProps.liveJourneyMeta[0];
+            console.log(newArray);
+            // this.props.loadNext(newArray);
+        }
+
+
     }
 
     componentWillUnmount() {
@@ -116,6 +151,19 @@ class HomeDash extends Component {
             return
         });
     };
+
+    navButtonClick = (value) => {
+        console.log(value);
+        if (this.props.position === 0 && value === 'left') {
+        } else if (value === 'left') {
+            this.props.changePosition(this.props.position - 1);
+        } else if (this.props.position < this.props.liveJourneyMeta.length-1 && value === 'right') {
+            this.props.changePosition(this.props.position + 1);
+        } else {
+
+        }
+
+    }
 
     toggle = (value) => {
 
@@ -138,7 +186,6 @@ class HomeDash extends Component {
                 return;
             }
         }
-
     };
 
 
@@ -171,11 +218,16 @@ class HomeDash extends Component {
                 </Motion>
 
                 <Chat commandsVisible={this.state.commandsVisible}/>
-
+                {this.props.liveJourneyMeta.length > 0 ?
                 <div className={'logo'} onClick={() => this.props.setSidebarExpanded(!this.props.sidebarExpanded)}>
                     <img className={'logo-image'}
                          src={"https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/The_North_Face_logo.svg/1200px-The_North_Face_logo.svg.png"}/>
-                </div>
+
+                    <img src={`https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_${this.props.liveJourneyMeta[this.props.prevPosition].uid}.jpg?alt=media&token=ccd5ab02-54bb-4bca-8f2f-9e253de52523`}
+                         className={'load-next'}/>
+                    <img src={`https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_${this.props.liveJourneyMeta[this.props.nextPosition].uid}.jpg?alt=media&token=ccd5ab02-54bb-4bca-8f2f-9e253de52523`}
+                         className={'load-next'}/>
+                </div> : null }
 
                 <div
                     onClick={() => this.toggle('menu')}
@@ -193,16 +245,16 @@ class HomeDash extends Component {
                     </Motion>
                 </div>
 
-
                 <div className={"journey-container"}>
 
                     <Transition
                         unmountOnExit={false}
                         in={this.props.arrowKey === 'left'}
-                        onEntered={() => this.props.setArrowKey(null)}
+                        // onEntered={() => this.props.setArrowKey(null)}
                         timeout={{enter: 400, exit: 0}}>
                         {(state) => (
                             <div className={`button button-${state}`} onMouseLeave={() => this.props.setArrowKey(null)}
+                                 onClick={()=>this.navButtonClick('left')}
                                  onMouseOver={() => this.props.setArrowKey('left')}>
                                 <Icon viewBox="0 0 40 40" size={20} style={{color: 'white'}}>
                                     <g>
@@ -216,10 +268,12 @@ class HomeDash extends Component {
                     <Transition
                         unmountOnExit={false}
                         in={this.props.arrowKey === 'right'}
-                        onEntered={() => this.props.setArrowKey(null)}
+                        // onEntered={() => this.props.setArrowKey(null)}
                         timeout={{enter: 400, exit: 0}}>
                         {(state) => (
                             <div className={`button button-${state} right`}
+                                 onClick={()=>this.navButtonClick('right')}
+
                                  onMouseLeave={() => this.props.setArrowKey(null)}
                                  onMouseOver={() => this.props.setArrowKey('right')}>
                                 <Icon viewBox="0 0 40 40" size={20} style={{color: 'white'}}>
@@ -325,18 +379,19 @@ class HomeDash extends Component {
                                             </div>
                                         )}
                                     </Transition>
+                                    {this.props.liveJourneyMeta.length > 0 ?
 
-                                    <div style={{
-                                        height: '100%',
-                                        width: `${this.props.windowWidth - ((10 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowHeight)}px`,
-                                        backgroundSize: 'contain',
-                                        backgroundImage: `url(${'https://www.google.com/maps/about/images/behind-the-scenes/treks/everest-header-bg_2x.jpg'})`,
-                                        backgroundRepeat: 'no-repeat',
-                                        backgroundPosition: 'center'
+                                        <div style={{
+                                            height: '100%',
+                                            width: `${this.props.windowWidth - ((10 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowHeight)}px`,
+                                            backgroundSize: 'contain',
+                                            backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_${this.props.liveJourneyMeta[this.props.position].uid}.jpg?alt=media&token=ccd5ab02-54bb-4bca-8f2f-9e253de52523)`,
+                                            //'https://www.google.com/maps/about/images/behind-the-scenes/treks/everest-header-bg_2x.jpg'
+                                            backgroundRepeat: 'no-repeat',
+                                            backgroundPosition: 'center'
+                                        }}>
 
-                                    }}>
-
-                                    </div>
+                                        </div> : null}
                                 </div>}
                         </Motion>
                         : null}
@@ -346,11 +401,12 @@ class HomeDash extends Component {
 
 
                 <div style={{height: '100%'}}>
-                    {this.props.liveJourneyMeta !== null ?
+                    {this.props.liveJourneyMeta.length > 0 ?
+
                         <div className={'blur-background blur'}
                              style={{
                                  backgroundSize: 'cover',
-                                 backgroundImage: `url(${'https://www.google.com/maps/about/images/behind-the-scenes/treks/everest-header-bg_2x.jpg'})`
+                                 backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_${this.props.liveJourneyMeta[this.props.position].uid}.jpg?alt=media&token=ccd5ab02-54bb-4bca-8f2f-9e253de52523)`,
                              }}>
                         </div>
                         : null}
@@ -374,4 +430,4 @@ export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeDash)
 //<GiftyPreviewSlide></GiftyPreviewSlide>
 //<ShortSummary></ShortSummary>
 
-//https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_' + this.props.liveJourneyMeta[3].uid + '.jpg?alt=media&token=6b901b9e-7265-4319-b0ba-2b8ca8a48878
+//https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_' +

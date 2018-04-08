@@ -146,36 +146,6 @@ class Sidebar extends Component {
                 </div>
 
 
-                <div className={'sidebar-header'}>
-                    INTERACTIONS
-                </div>
-                <div className={'sponsored-contributions'}>
-                    <div className={'pinned'}>
-                        <Icon viewBox="0 0 40 40" size={15}>
-                            <g>
-                                <path
-                                    d="m25.7 17.8c1.6 0.8 2.8 2.4 2.8 4.3 0 1.3-0.2 1.7-1.2 1.7h-6.3l-0.9 13.7h-0.7l-0.9-13.7h-6.3c-1 0-1.2-0.4-1.2-1.7 0-1.9 1.3-3.5 2.8-4.3 0.1 0 0.2-0.1 0.3-0.1 0.6-0.4 1-0.9 1.1-1.5l1.4-9.2v-0.4c0-0.6-0.3-0.8-0.8-1.1 0 0 0 0-0.1 0-0.6-0.3-1-0.7-1-1.4 0-1.5 0.5-1.6 1.5-1.6h7.1c1 0 1.5 0.1 1.5 1.6 0 0.7-0.4 1.1-1 1.4-0.1 0-0.1 0-0.1 0-0.5 0.3-0.8 0.5-0.8 1.1v0.4l1.4 9.2c0.1 0.6 0.5 1.1 1.1 1.5 0.1 0 0.2 0.1 0.3 0.1z"/>
-                            </g>
-                        </Icon>
-                        Pinned by The North Face
-                    </div>
-                    <SponsoredContribution
-                        imageUrl={'https://goodlogo.com/images/logos/nike_classic_logo_2355.gif'}
-                        name={'Nike'}
-                        description={'We told them to "Just Do It"'}
-                        type={"other"}
-                    />
-                    <SponsoredContribution
-                        imageUrl={'https://content.backcountry.com/promo_upload/bcs/brand-pages/mountain-hardwear/2017/MHW_logo.png'}
-                        name={'Mountain Hardwear'}
-                        description={'18 Days Food and Tent Equipment'}
-                        type={"money"}
-                        amount={"500"}
-                        productUrl={'https://www.mountainhardwear.ca/en/space-station-%7C-842-%7C-none-887487428431.html?mid=paidsearch&eid=Google+PLA+CA&s_kwcid=AL!3937!3!237302709337!!!g!390683910683!&ef_id=WdWVeQAAAXh5NMu7:20180404031234:s'}
-                    />
-                    <div className={'pointer'} style={{color: 'white', textAlign: 'right'}}>See All Contributions</div>
-                </div>
-
 
                 <div className={'footer'}>
                         <span className={'social-text'}>
@@ -258,3 +228,38 @@ export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Sidebar))
                         </div>
                     </div>
                 </div>*/
+
+
+/*
+
+                <div className={'sidebar-header'}>
+                    INTERACTIONS
+                </div>
+                <div className={'sponsored-contributions'}>
+                    <div className={'pinned'}>
+                        <Icon viewBox="0 0 40 40" size={15}>
+                            <g>
+                                <path
+                                    d="m25.7 17.8c1.6 0.8 2.8 2.4 2.8 4.3 0 1.3-0.2 1.7-1.2 1.7h-6.3l-0.9 13.7h-0.7l-0.9-13.7h-6.3c-1 0-1.2-0.4-1.2-1.7 0-1.9 1.3-3.5 2.8-4.3 0.1 0 0.2-0.1 0.3-0.1 0.6-0.4 1-0.9 1.1-1.5l1.4-9.2v-0.4c0-0.6-0.3-0.8-0.8-1.1 0 0 0 0-0.1 0-0.6-0.3-1-0.7-1-1.4 0-1.5 0.5-1.6 1.5-1.6h7.1c1 0 1.5 0.1 1.5 1.6 0 0.7-0.4 1.1-1 1.4-0.1 0-0.1 0-0.1 0-0.5 0.3-0.8 0.5-0.8 1.1v0.4l1.4 9.2c0.1 0.6 0.5 1.1 1.1 1.5 0.1 0 0.2 0.1 0.3 0.1z"/>
+                            </g>
+                        </Icon>
+                        Pinned by The North Face
+                    </div>
+                    <SponsoredContribution
+                        imageUrl={'https://goodlogo.com/images/logos/nike_classic_logo_2355.gif'}
+                        name={'Nike'}
+                        description={'We told them to "Just Do It"'}
+                        type={"other"}
+                    />
+                    <SponsoredContribution
+                        imageUrl={'https://content.backcountry.com/promo_upload/bcs/brand-pages/mountain-hardwear/2017/MHW_logo.png'}
+                        name={'Mountain Hardwear'}
+                        description={'18 Days Food and Tent Equipment'}
+                        type={"money"}
+                        amount={"500"}
+                        productUrl={'https://www.mountainhardwear.ca/en/space-station-%7C-842-%7C-none-887487428431.html?mid=paidsearch&eid=Google+PLA+CA&s_kwcid=AL!3937!3!237302709337!!!g!390683910683!&ef_id=WdWVeQAAAXh5NMu7:20180404031234:s'}
+                    />
+                    <div className={'pointer'} style={{color: 'white', textAlign: 'right'}}>See All Contributions</div>
+                </div>
+
+ */

@@ -4,7 +4,7 @@ let SelectedStartDate = moment().subtract(7, 'days');
 var SelectedEndDate = moment();
 
 const defaultState = {
-    liveJourneyMeta: null,
+    liveJourneyMeta: [],
     windowWidth: 0,
     windowHeight: 0,
     mapExpanded: false,

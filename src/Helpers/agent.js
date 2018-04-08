@@ -108,7 +108,6 @@ const FirebaseQuery = {
             new Promise(function (resolve, reject) {
                 database.ref('live_journeys/' + journey_id).on('value', (snapshot) => {
                     if (snapshot.val() !== null) {
-                        console.log(snapshot.val());
                         resolve(snapshot.val());
                     }
                 })
@@ -117,21 +116,23 @@ const FirebaseQuery = {
                     let sortable = [];
 
                     for (let uid in object) {
-                        console.log('uid pushed: ' + uid);
                         let temp = object;
                         temp[uid].uid = uid;
-                        console.log(temp[uid].uid);
                         sortable.push(temp[uid]);
                     }
-                    console.log(sortable);
 
                     sortable.sort(function (a, b) {
                         return a.timestamp - b.timestamp
                     });
 
+                    console.log(sortable);
+
+
                     dispatch({
                         type: 'LIVE_JOURNEY_META',
-                        liveJourneyMeta: sortable
+                        liveJourneyMeta: sortable,
+                        journeyId: journey_id,
+                        journeyLength: sortable.length
                     });
 
                     dispatch({

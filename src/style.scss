@@ -290,6 +290,7 @@ input {
   vertical-align: middle;
   white-space: nowrap;
   word-break: keep-all;
+  margin-left: 10px;
 
   box-sizing: border-box;
   cursor: pointer;
@@ -792,6 +793,7 @@ h1, h2, h3, h4, h5 {
       cursor: pointer;
       position: absolute;
       background-color: rgba(0, 0, 0, 0.7);
+      margin-left: 10px;
       width: 70px;
       height: 70px;
       border-radius: 70px;
@@ -801,7 +803,9 @@ h1, h2, h3, h4, h5 {
       transition: opacity 0.2s ease-in-out;
 
       &.right {
-        right: 0
+        right: 0;
+        margin-left: 0;
+        margin-right: 10px;
       }
     }
 
@@ -888,6 +892,15 @@ h1, h2, h3, h4, h5 {
   left: 30px;
   z-index: 10;
 
+  .load-next{
+    width: 1px;
+    height: 1px;
+  }
+  .load-prev {
+    width: 1px;
+    height: 1px;
+  }
+
   .logo-image {
     cursor: pointer;
     border-radius: 70px;
@@ -962,11 +975,11 @@ h1, h2, h3, h4, h5 {
 
     .sidebar-logo {
       display: flex;
-      flex: 1 0  auto;
+      flex: 0 1  auto;
       width: 100%;
       align-items: center;
       margin-top: 20px;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
       justify-content: flex-start;
       position: relative;
 
@@ -1216,7 +1229,7 @@ h1, h2, h3, h4, h5 {
     }
 
     .footer {
-      margin: 15vh 0 15px 0;
+      margin: 0 0 15px 0;
       bottom: 0;
       display: flex;
       justify-content: space-between;

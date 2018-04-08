@@ -1,9 +1,13 @@
 import moment from 'moment';
 const defaultState = {
-    liveJourneyMeta: null,
+    liveJourneyMeta: [],
     preloadMeta: [null, null],
-    visibleMeta: null,
-    position: 0
+    currentMeta: null,
+    position: 0,
+    prevPosition: 0,
+    nextPosition: 0,
+    initialLoad: true,
+    currentJourney: null
 
 };
 
@@ -13,7 +17,8 @@ export default(state = defaultState, action) => {
             console.log('livejourneymetareducer');
             return {
                 ...state,
-                liveJourneyMeta: action.liveJourneyMeta
+                liveJourneyMeta: action.liveJourneyMeta,
+                journeyId: action.journeyId
             };
         case 'PRELOAD_META':
             console.log('PRELOAD_META');
@@ -21,12 +26,39 @@ export default(state = defaultState, action) => {
                 ...state,
                 preloadMeta: action.value
             };
-        case 'VISIBLE_META':
-            console.log('VISIBLE_META');
-            return {
-                ...state,
-                visibleMeta: action.value
+
+        case 'CHANGE_POSITION':
+            console.log('CHANGE_POSITION');
+            console.log(action.value);
+
+            if(action.value > 0 && action.value < state.liveJourneyMeta.length -1  ) {
+                console.log('in the middle');
+                //IN THE THICK OF IT
+                return {
+                    ...state,
+                    position: action.value,
+                    prevPosition: action.value-1,
+                    nextPosition: action.value+1
+                }
+            }  else if (action.value === state.liveJourneyMeta.length -1) {
+                console.log('at the end');
+                //AT THE END
+                return {
+                    ...state,
+                    position: action.value,
+                    prevPosition: action.value-1,
+                    nextPosition: action.value
+                }
+            } else {
+                console.log('at the beginning');
+                return {
+                    ...state,
+                    position: action.value,
+                    prevPosition: 0,
+                    nextPosition: action.value+1
+                }
             }
+
         default:
             return state;
 
