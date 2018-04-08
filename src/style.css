@@ -1090,6 +1090,8 @@ h1, h2, h3, h4, h5 {
     -moz-transition: background-color 0.2s ease-out;
     -o-transition: background-color 0.2s ease-out;
     transition: background-color 0.2s ease-out; }
+  .chat .command-match {
+    font-weight: 900; }
   .chat .chat-commands:hover {
     background-color: rgba(0, 0, 0, 0.9); }
   .chat .chat-input {

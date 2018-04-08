@@ -1508,6 +1508,9 @@ h1, h2, h3, h4, h5 {
     -o-transition: background-color 0.2s ease-out;
     transition: background-color 0.2s ease-out;
   }
+  .command-match {
+    font-weight: 900;
+  }
 
   .chat-commands:hover {
     background-color: rgba(0, 0, 0, 0.9);
@@ -1532,7 +1535,7 @@ h1, h2, h3, h4, h5 {
     }
   }
 
-  .chat-input-box-exiting{
+  .chat-input-box-exiting {
     -webkit-animation-name: fadeOutUp;
     -webkit-animation-duration: 0.2s;
     -webkit-animation-iteration-count: 1;

@@ -9,13 +9,13 @@ import * as animationData from '../Assets/heart.json';
 import LottieAnimation from '../../Helpers/LottieAnimation';
 import ChatBox from './ChatBox';
 import agent from '../../Helpers/agent';
+import TextAwareCommand from './TextAwareCommand';
 
 const mapStateToProps = state => ({
     ...state,
 });
 
-const mapDispatchToProps = dispatch => ({
-});
+const mapDispatchToProps = dispatch => ({});
 
 
 class Chat extends Component {
@@ -72,8 +72,15 @@ class Chat extends Component {
     };
 
     handleKeyPress(target) {
-        if (target.charCode == 13) {
+        if (target.charCode == 13 && !this.state.chatInput.startsWith('/')) {
             agent.FirebaseQuery.sendChat('test_journey', this.state.chatInput, 'anonymous_hardcode');
+            this.setState({
+                ...this.state,
+                commandsVisible: false,
+                inputVisible: false
+
+            })
+        } else if (target.charChode == 13 && !this.state.chatInput.startsWith('/')) {
             this.setState({
                 ...this.state,
                 commandsVisible: false,
@@ -102,7 +109,7 @@ class Chat extends Component {
     </Icon>&emsp;
            </span>
 
-                                Share </span>)}
+                                <TextAwareCommand command={'/Share'} input={this.state.chatInput}/> </span>)}
                 </Transition>
                 <Transition
                     unmountOnExit={true}
@@ -111,7 +118,7 @@ class Chat extends Component {
                     timeout={200}>
                     {(state) => (
                         <span className={`chat-commands-${state} chat-commands`}>
-                                Contribute </span>)}
+                                <TextAwareCommand command={'/Contribute'} input={this.state.chatInput}/> </span>)}
                 </Transition>
                 <Transition
                     unmountOnExit={true}
@@ -128,7 +135,7 @@ class Chat extends Component {
         </g>
     </Icon>&emsp;
            </span>
-                                Pin
+                                <TextAwareCommand command={'/Pin'} input={this.state.chatInput}/>
                             </span>)}
                 </Transition>
 
@@ -139,7 +146,7 @@ class Chat extends Component {
                     timeout={200}>
                     {(state) => (
                         <span className={`chat-commands-${state} chat-commands`}>
-                               Expand_Chat
+                               <TextAwareCommand command={'/Expand_Chat'} input={this.state.chatInput}/>
                             </span>)}
                 </Transition>
                 <ChatBox/>
@@ -148,7 +155,7 @@ class Chat extends Component {
                     <Transition
                         unmountOnExit={false}
                         in={this.state.inputVisible}
-                        onExited={()=>this.setState({...this.state, chatInput: ''})}
+                        onExited={() => this.setState({...this.state, chatInput: ''})}
 
                         timeout={200}>
                         {(state) => (
