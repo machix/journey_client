@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Motion, spring} from 'react-motion'
+
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import Icon from 'react-icon-base';
@@ -10,7 +11,7 @@ const mapStateToProps = state => ({
     ...state,
     chatExpanded: state.common.chatExpanded,
     mapExpanded: state.common.mapExpanded,
-    mapIsHover: state.common.mapIsHover,
+
     windowHeight: state.common.windowHeight,
     windowWidth: state.common.windowWidth,
 
@@ -71,8 +72,6 @@ class ChatContainer extends Component {
 
     chatMap() {
         return this.props.messages.map((array, index) => {
-            console.log(index);
-            console.log(array);
             return <Message
                 key={index}
                 side={'right'}
@@ -92,6 +91,7 @@ class ChatContainer extends Component {
         return (
 
             <Motion
+                onRest={()=>this.scrollToBottom()}
                 style={{
                     marginControl: spring(this.props.chatExpanded ? 0 : 1),
                     toggleHeight: spring(this.props.chatExpanded ? 7 : 0),
@@ -109,8 +109,8 @@ class ChatContainer extends Component {
                              bottom: `90px`,
                              right: `${10 * marginControl}px`,
 
-                             minHeight: '100px',
-                             minWidth: '100px',
+                             minHeight: '1px',
+                             minWidth: '1px',
                              height: `${10 * (toggleHeight) / 100 * this.props.windowHeight * mapMultiplier}px`,
                              width: `${(10 + toggleHeight * 1 * 5) / 100 * this.props.windowHeight}px`,
                              borderRadius: `${9.8 * toggleRadius / 100 * this.props.windowHeight}px`,
