@@ -87,6 +87,18 @@ class ChatContainer extends Component {
         this.el.scrollIntoView({behavior: 'smooth'});
     }
 
+    shouldUnmount() {
+        console.log('this is a question, not a statement he said');
+        if(!this.props.chatExpanded){
+            this.setState({
+                ...this.state,
+                unmount: true
+            })
+        } else {
+            this.setState
+        }
+    }
+
     render() {
         return (
 
