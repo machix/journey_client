@@ -14,6 +14,8 @@ import Chat from '../Chat/Chat';
 import Sidebar from '../Sidebar/Sidebar';
 import agent from '../../Helpers/agent';
 import MapContainer from '../Map/MapContainer';
+import ChatContainer from '../Chat/ChatContainer';
+
 
 const mapStateToProps = state => ({
     loaderDisplay: state.common.loaderDisplay,
@@ -420,6 +422,7 @@ class HomeDash extends Component {
                         : null}
 
                     <MapContainer></MapContainer>
+                    <ChatContainer></ChatContainer>
                 </div>
 
 

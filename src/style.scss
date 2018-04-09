@@ -1418,6 +1418,56 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+.chat-container {
+  position: absolute;
+
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+
+  .message {
+    display: block;
+    flex: 0 1 auto;
+    flex-direction: column;
+    margin: 3px;
+    background-color: $c-set-chat-right;
+    padding: 5px 10px 5px 10px;
+    border-radius: 3px;
+
+    .message-owner {
+      font-size: 0.7rem;
+      color: white;
+      font-weight: 600;
+    }
+    .message-message {
+      font-size: 0.7rem;
+      font-weight: normal;
+      color: white;
+
+    }
+
+    &.left {
+      margin-right: auto;
+      align-items: flex-start;
+    }
+
+    &.right {
+      margin-left: auto;
+      align-items: flex-end;
+      text-align: right;
+    }
+
+    .message-meta {
+      color: white;
+      display: block;
+      font-weight: 200;
+      font-size: 0.65rem;
+    }
+  }
+
+}
+
 .chat {
   position: absolute;
   bottom: 30px;

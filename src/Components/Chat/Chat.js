@@ -13,16 +13,18 @@ import TextAwareCommand from './TextAwareCommand';
 
 const mapStateToProps = state => ({
     ...state,
+    chatExpanded: state.common.chatExpanded,
+
     activeCommands: state.choreographer.activeCommands,
-    chatExpanded: state.choreographer.chatExpanded
 
 });
 
 const mapDispatchToProps = dispatch => ({
-    toggleChatExpanded: (value) => dispatch({
-        type: 'TOGGLE_CHAT_EXPANDED',
+
+    setChatExpanded: (value) => dispatch({
+        type: 'SET_CHAT_EXPANDED',
         value: value
-    })
+    }),
 });
 
 
@@ -54,7 +56,7 @@ class Chat extends Component {
                 return;
             }
             case 'chatbox': {
-                this.props.toggleChatExpanded(!this.props.chatExpanded)
+                this.props.setChatExpanded(!this.props.chatExpanded)
             }
         }
     };

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 
-import Message from './Message';
+import InstantMessage from './InstantMessage';
 import agent from '../../Helpers/agent';
 
 const mapStateToProps = state => ({
@@ -38,7 +38,7 @@ class ChatBox extends Component {
             <div className={'chat-box'}>
                 {
                     this.props.message !== null ?
-                        <Message side={'right'} message={this.props.message.message} timestamp={this.props.message.timestamp} owner={this.props.message.name}/>
+                        <InstantMessage side={'right'} message={this.props.message.message} timestamp={this.props.message.timestamp} owner={this.props.message.name}/>
                         : null
                 }
 

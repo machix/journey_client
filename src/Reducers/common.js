@@ -4,6 +4,7 @@ let SelectedStartDate = moment().subtract(7, 'days');
 var SelectedEndDate = moment();
 
 const defaultState = {
+    chatExpanded: false,
     liveJourneyMeta: [],
     windowWidth: 0,
     windowHeight: 0,
@@ -32,6 +33,11 @@ export default (state = defaultState, action) => {
             return {
                 ...state,
                 liveJourneyMeta: action.liveJourneyMeta
+            };
+        case 'SET_CHAT_EXPANDED':
+            return {
+                ...state,
+                chatExpanded: action.value,
             };
         case 'SET_MAP_EXPANDED':
             return {

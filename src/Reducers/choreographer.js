@@ -73,14 +73,10 @@ export default (state = defaultState, action) => {
             console.log('CHAT_CHILD_ADDED');
             return {
                 ...state,
-                messages: [...state, action.message],
+                messages: [...state.messages, action.message],
                 message: action.message
             };
-        case 'TOGGLE_CHAT_EXPANDED':
-            return{
-                ...state,
-                chatExpanded: action.value
-            };
+
         case 'UPDATE_COMMANDS':
             return{
                 ...state,

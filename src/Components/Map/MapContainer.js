@@ -12,6 +12,7 @@ import Map from './Map';
 
 const mapStateToProps = state => ({
     ...state,
+    chatExpanded: state.common.chatExpanded,
     mapExpanded: state.common.mapExpanded,
     mapIsHover: state.common.mapIsHover,
     windowHeight: state.common.windowHeight,
@@ -78,6 +79,12 @@ class MapContainer extends Component {
         }
     };
 
+    toggleHeight() {
+        if(this.props.mapExpanded && !this.props.chatExpanded) {
+            return 7
+        }
+    }
+
     render() {
         return (
 
@@ -88,9 +95,10 @@ class MapContainer extends Component {
                     toggleRadius: spring(this.props.mapExpanded ? 0 : 1),
                     hoverHeight: spring(this.props.mapIsHover ? 3 : 1),
                     hoverRadius: spring(this.props.mapIsHover ? 0.5 : 1),
+                    chatMultiplier: spring(this.props.chatExpanded ? 0.5 : 1)
 
                 }}>
-                {({hoverHeight, hoverRadius, toggleRadius, toggleHeight, marginControl}) =>
+                {({hoverHeight, chatMultiplier, hoverRadius, toggleRadius, toggleHeight, marginControl}) =>
                     <div className={'map-container'}
                          tabIndex={-1}
                          onMouseOver={() => this.handleHover(true)}
@@ -139,7 +147,7 @@ class MapContainer extends Component {
                                  <div style={{
                                      minHeight: '100px',
                                      minWidth: '100px',
-                                     height: `${10 * (hoverHeight + toggleHeight) / 100 * this.props.windowHeight*0.5}px`,
+                                     height: `${10 * (hoverHeight + toggleHeight) * chatMultiplier / 100 * this.props.windowHeight}px`,
                                      width: `${(10 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowHeight}px`,                                     borderRadius: `${9.8 * hoverRadius * toggleRadius / 100 * this.props.windowHeight}px`,
                                      overflow: 'hidden',
                                      zIndex: 3,

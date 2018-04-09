@@ -8,6 +8,7 @@ import history from '../Helpers/history.js';
 
 import App from '../App';
 import HomeDash from './Dashes/HomeDash';
+import ChatContainer from './Chat/ChatContainer';
 import AgreementsDash from './Dashes/AgreementsDash';
 import Dashboard from './Common/Dashboard';
 import ScrollToTop from '../Helpers/ScrollToTop.js';
