@@ -2,6 +2,7 @@ import moment from 'moment';
 
 const defaultState = {
     activeCommands: [],
+    chatExpanded: false,
     liveJourneyMeta: [],
     preloadMeta: [null, null],
     currentMeta: null,
@@ -75,7 +76,11 @@ export default (state = defaultState, action) => {
                 messages: [...state, action.message],
                 message: action.message
             };
-
+        case 'TOGGLE_CHAT_EXPANDED':
+            return{
+                ...state,
+                chatExpanded: action.value
+            };
         case 'UPDATE_COMMANDS':
             return{
                 ...state,

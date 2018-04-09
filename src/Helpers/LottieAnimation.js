@@ -42,7 +42,7 @@ class LottieAnimation extends Component {
     render() {
 
         return (
-            <div style={{pointerEvents: 'none'}} ref={(animation) => {
+            <div style={{pointerEvents: 'none', display: 'flex', alignItems: 'center'}} ref={(animation) => {
                 this.animation = animation;
             }}></div>
 

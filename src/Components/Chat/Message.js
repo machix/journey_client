@@ -57,7 +57,7 @@ class Message extends Component {
                     <div className={`message message-${state} ${this.props.side} box`}>
                         <div className={'message-meta'}>
                             {this.props.owner}<br/>
-                            {moment.unix(this.props.timestamp).format('YYYY-MM-DD, h:mm:ss a').toUpperCase()}
+                            {moment.unix(this.props.timestamp/1000).format('YYYY-MM-DD, h:mm:ss a').toUpperCase()}
                         </div>
                         {this.props.message}
                     </div>)}

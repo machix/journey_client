@@ -13,11 +13,17 @@ import TextAwareCommand from './TextAwareCommand';
 
 const mapStateToProps = state => ({
     ...state,
-    activeCommands: state.choreographer.activeCommands
+    activeCommands: state.choreographer.activeCommands,
+    chatExpanded: state.choreographer.chatExpanded
 
 });
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+    toggleChatExpanded: (value) => dispatch({
+        type: 'TOGGLE_CHAT_EXPANDED',
+        value: value
+    })
+});
 
 
 class Chat extends Component {
@@ -29,6 +35,7 @@ class Chat extends Component {
             chatInput: '',
             commandsVisible: false,
             inputVisible: true,
+            chatExpanded: false,
         }
 
     }
@@ -46,9 +53,10 @@ class Chat extends Component {
                 });
                 return;
             }
-
+            case 'chatbox': {
+                this.props.toggleChatExpanded(!this.props.chatExpanded)
+            }
         }
-
     };
 
     handleChange = (event,) => {
@@ -74,7 +82,7 @@ class Chat extends Component {
     };
 
     handleKeyPress(target) {
-        if (target.charCode == 13 && !this.state.chatInput.startsWith('/')) {
+        if (target.charCode == 13 && !this.state.chatInput.startsWith('/') && this.state.chatInput !== '') {
             agent.FirebaseQuery.sendChat('test_journey', this.state.chatInput, 'anonymous_hardcode');
             this.setState({
                 ...this.state,
@@ -105,15 +113,18 @@ class Chat extends Component {
                     {(state) => (
                         <div className={`chat-commands-${state}`}>
 
-                                <TextAwareCommand command={'Share'} input={this.state.chatInput.substring(1,this.state.chatInput.length)}/>
+                            <TextAwareCommand command={'Share'}
+                                              input={this.state.chatInput.substring(1, this.state.chatInput.length)}/>
 
-                                <TextAwareCommand command={'Contribute'} input={this.state.chatInput.substring(1,this.state.chatInput.length)}/>
+                            <TextAwareCommand command={'Contribute'}
+                                              input={this.state.chatInput.substring(1, this.state.chatInput.length)}/>
 
 
+                            <TextAwareCommand command={'Pin'}
+                                              input={this.state.chatInput.substring(1, this.state.chatInput.length)}/>
 
-                                <TextAwareCommand command={'Pin'} input={this.state.chatInput.substring(1,this.state.chatInput.length)}/>
-
-                               <TextAwareCommand command={'Expand_Chat'} input={this.state.chatInput.substring(1,this.state.chatInput.length)}/>
+                            <TextAwareCommand command={'Expand_Chat'}
+                                              input={this.state.chatInput.substring(1, this.state.chatInput.length)}/>
 
                         </div>
 
@@ -145,6 +156,20 @@ class Chat extends Component {
                                 onKeyPress={(e) => this.handleKeyPress(e)}/>
                         )}
                     </Transition>
+                    <span className="pointer" onClick={() => this.toggle('chatbox')}>
+                        {this.props.chatExpanded ? <Icon viewBox="0 0 40 40" size={28} color={'white'}>
+                            <g>
+                                <path
+                                    d="m20 7.5c8.3 0 15 5.4 15 12s-6.6 11.8-14.9 11.8c-2.1 0-4.1-0.3-5.9-0.9h-0.1c-0.3-0.1-0.5-0.2-0.8-0.2s-0.7 0.1-1 0.2c0 0-0.7 0.3-0.7 0.3l-3.9 1.7-0.2 0.1h-0.5c-0.4-0.1-0.6-0.5-0.5-0.8s1.3-4.4 1.3-4.5c0-0.3-0.1-0.6-0.2-0.9l-0.3-0.2c-1.4-1.9-2.3-4.1-2.3-6.6 0-6.6 6.7-12 15-12z"/>
+                            </g>
+                        </Icon> : <Icon viewBox="0 0 40 40" size={28} color={'white'}>
+                            <g>
+                                <path
+                                    d="m20 8.8c-7.6 0-13.7 4.8-13.7 10.7 0 2.1 0.7 4 2.1 5.7 0 0.1 0 0.2 0 0.3s0.2 0 0.2 0.1c0.3 0.5 0.5 1 0.5 1.6 0 0.2 0 0.2-1.1 3.7l3.1-1.4c0.1 0 0.8-0.3 0.9-0.3h0c0.4-0.1 0.8-0.2 1.3-0.2 0.4 0 0.7 0.1 1.1 0.1l0.1 0.1h0.1c1.5 0.5 3.2 0.8 5.5 0.8 3.7 0 7.2-1.2 9.7-3.1 2.5-2 3.9-4.6 3.9-7.4 0-5.9-6.1-10.8-13.7-10.8z m0-1.3c8.3 0 15 5.4 15 12s-6.6 11.8-14.9 11.8c-2.1 0-4.1-0.3-5.9-0.9h-0.1c-0.3-0.1-0.5-0.2-0.8-0.2s-0.7 0.1-1 0.2c0 0-0.7 0.3-0.7 0.3l-3.9 1.7-0.2 0.1h-0.5c-0.4-0.1-0.6-0.5-0.5-0.8s1.3-4.4 1.3-4.5c0-0.3-0.1-0.6-0.2-0.9l-0.3-0.2c-1.4-1.9-2.3-4.1-2.3-6.6 0-6.6 6.7-12 15-12z"/>
+                            </g>
+                        </Icon>}
+
+                    </span>
                     <span className="pointer" onClick={() => this.toggle('liked')}>
                          <LottieAnimation
                              autoplay={false}
