@@ -37,6 +37,14 @@ class ChatContainer extends Component {
         this.state = {};
     }
 
+    componentDidMount() {
+        this.scrollToBottom();
+    }
+
+    componentDidUpdate() {
+        this.scrollToBottom();
+    }
+
     toggle = (value) => {
         this.mapContainer.blur();
 
@@ -72,7 +80,12 @@ class ChatContainer extends Component {
                 timestamp={array.timestamp}
                 owner={array.name}/>
         })
+    }
 
+
+    scrollToBottom() {
+        console.log('should scroll');
+        this.el.scrollIntoView({behavior: 'smooth'});
     }
 
     render() {
@@ -83,30 +96,34 @@ class ChatContainer extends Component {
                     marginControl: spring(this.props.chatExpanded ? 0 : 1),
                     toggleHeight: spring(this.props.chatExpanded ? 7 : 0),
                     toggleRadius: spring(this.props.chatExpanded ? 0 : 1),
-                    mapMultiplier: spring(this.props.mapExpanded ? 0.5: 0.9)
+                    mapMultiplier: spring(this.props.mapExpanded ? 0.5 : 0.95)
                     // hoverHeight: spring(this.props.mapIsHover ? 3 : 1),
                     // hoverRadius: spring(this.props.mapIsHover ? 0.5 : 1),
 
                 }}>
-                {({ mapMultiplier, toggleRadius, toggleHeight, marginControl}) =>
+                {({mapMultiplier, toggleRadius, toggleHeight, marginControl}) =>
 
 
+                    <div className={'chat-container'}
+                         style={{
+                             bottom: `90px`,
+                             right: `${10 * marginControl}px`,
 
-                        <div className={'chat-container'}
-                             style={{
-                                 bottom: `90px`,
-                                 right: `${10 * marginControl}px`,
-
-                                 minHeight: '100px',
-                                 minWidth: '100px',
-                                 height: `${10 * (toggleHeight) / 100 * this.props.windowHeight * mapMultiplier}px`,
-                                 width: `${(10 + toggleHeight * 1 * 5) / 100 * this.props.windowHeight}px`,
-                                 borderRadius: `${9.8 * toggleRadius / 100 * this.props.windowHeight}px`,
-                                 backgroundColor: 'rgba(0, 0, 0, 0)',
-                                 zIndex: 3,
-                             }}>
-                            {this.props.messages.length > 0 ? this.chatMap() : null}
-                        </div>
+                             minHeight: '100px',
+                             minWidth: '100px',
+                             height: `${10 * (toggleHeight) / 100 * this.props.windowHeight * mapMultiplier}px`,
+                             width: `${(10 + toggleHeight * 1 * 5) / 100 * this.props.windowHeight}px`,
+                             borderRadius: `${9.8 * toggleRadius / 100 * this.props.windowHeight}px`,
+                             backgroundColor: 'rgba(0, 0, 0, 0)',
+                             zIndex: 3,
+                         }}>
+                        {this.props.messages.length > 0 ? this.chatMap() : null}
+                        <div
+                            ref={el => {
+                                this.el = el;
+                            }}
+                        ></div>
+                    </div>
 
 
                 }
