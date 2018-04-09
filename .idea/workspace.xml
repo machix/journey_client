@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8eb92d85-80e0-4af9-8dc4-e20ffe8708d5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Components/Chat/InstantMessage.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Chat/Chat.js" afterPath="$PROJECT_DIR$/src/Components/Chat/Chat.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Chat/ChatBox.js" afterPath="$PROJECT_DIR$/src/Components/Chat/ChatBox.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Chat/ChatContainer.js" afterPath="$PROJECT_DIR$/src/Components/Chat/ChatContainer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Chat/Message.js" afterPath="$PROJECT_DIR$/src/Components/Chat/Message.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Map/MapContainer.js" afterPath="$PROJECT_DIR$/src/Components/Map/MapContainer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/RouterHome.js" afterPath="$PROJECT_DIR$/src/Components/RouterHome.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reducers/choreographer.js" afterPath="$PROJECT_DIR$/src/Reducers/choreographer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reducers/common.js" afterPath="$PROJECT_DIR$/src/Reducers/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Helpers/agent.js" afterPath="$PROJECT_DIR$/src/Helpers/agent.js" />
     </list>
     <ignored path="gifty-console-client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="agent.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="agent.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Helpers/agent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-103">
-              <caret line="132" column="54" lean-forward="true" selection-start-line="132" selection-start-column="54" selection-end-line="132" selection-end-column="54" />
+            <state relative-caret-position="393">
+              <caret line="182" column="42" lean-forward="true" selection-start-line="182" selection-start-column="42" selection-end-line="182" selection-end-column="42" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -90,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChatContainer.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ChatContainer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/Chat/ChatContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="85" column="75" lean-forward="false" selection-start-line="85" selection-start-column="75" selection-end-line="85" selection-end-column="75" />
+            <state relative-caret-position="293">
+              <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -243,7 +232,6 @@
         <option value="$PROJECT_DIR$/src/Components/Map/Map.js" />
         <option value="$PROJECT_DIR$/src/Components/Chat/TextAwareCommand.js" />
         <option value="$PROJECT_DIR$/src/Helpers/LottieAnimation.js" />
-        <option value="$PROJECT_DIR$/src/Helpers/agent.js" />
         <option value="$PROJECT_DIR$/src/Components/RouterHome.js" />
         <option value="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" />
         <option value="$PROJECT_DIR$/src/Components/Chat/ChatBox.js" />
@@ -254,6 +242,7 @@
         <option value="$PROJECT_DIR$/src/style.scss" />
         <option value="$PROJECT_DIR$/src/Components/Map/MapContainer.js" />
         <option value="$PROJECT_DIR$/src/Components/Chat/ChatContainer.js" />
+        <option value="$PROJECT_DIR$/src/Helpers/agent.js" />
       </list>
     </option>
   </component>
@@ -532,12 +521,12 @@
       <workItem from="1522992237845" duration="3858000" />
       <workItem from="1523141488221" duration="7999000" />
       <workItem from="1523153666574" duration="5469000" />
-      <workItem from="1523203863539" duration="22916000" />
+      <workItem from="1523203863539" duration="23140000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238966000" />
+    <option name="totallyTimeSpent" value="239190000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1267,31 +1256,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Helpers/agent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-103">
-          <caret line="132" column="54" lean-forward="true" selection-start-line="132" selection-start-column="54" selection-end-line="132" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Reducers/choreographer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1170">
           <caret line="78" column="7" lean-forward="false" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Chat/Message.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1329,6 +1298,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Chat/Message.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Map/MapContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-407">
@@ -1339,10 +1318,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Chat/ChatContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="85" column="75" lean-forward="false" selection-start-line="85" selection-start-column="75" selection-end-line="85" selection-end-column="75" />
+        <state relative-caret-position="293">
+          <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Helpers/agent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="182" column="42" lean-forward="true" selection-start-line="182" selection-start-column="42" selection-end-line="182" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

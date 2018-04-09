@@ -176,7 +176,7 @@ const FirebaseQuery = {
                     chatSortable.push(temp[message]);
                 }
 
-                chatSortable.sort(function (b, a) {
+                chatSortable.sort(function (a, b) {
                     return a.timestamp - b.timestamp
                 });
 
