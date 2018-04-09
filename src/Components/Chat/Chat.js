@@ -13,6 +13,8 @@ import TextAwareCommand from './TextAwareCommand';
 
 const mapStateToProps = state => ({
     ...state,
+    activeCommands: state.choreographer.activeCommands
+
 });
 
 const mapDispatchToProps = dispatch => ({});
@@ -80,7 +82,8 @@ class Chat extends Component {
                 inputVisible: false
 
             })
-        } else if (target.charChode == 13 && !this.state.chatInput.startsWith('/')) {
+        } else if (target.charCode == 13 && this.state.chatInput.startsWith('/') && this.props.activeCommands.length === 1) {
+            console.log('Command is: ' + this.props.activeCommands[0]);
             this.setState({
                 ...this.state,
                 commandsVisible: false,
@@ -100,43 +103,19 @@ class Chat extends Component {
                     out={!this.state.commandsVisible}
                     timeout={200}>
                     {(state) => (
-                        <span>
-                        <span className={`chat-commands-${state} chat-commands`}>
-    <span>
-                        <Icon viewBox="0 0 40 40" size={20}>
-            <g><path
-                d="m30 26.9c2.7 0 4.8 2.2 4.8 4.8s-2.1 4.9-4.8 4.9-4.8-2.2-4.8-4.9c0-0.4 0-0.8 0.1-1.1l-11.9-6.8c-0.9 0.8-2.1 1.3-3.4 1.3-2.7 0-5-2.3-5-5s2.2-5 4.9-5c1.3 0 2.5 0.4 3.5 1.3l11.8-6.8c-0.1-0.4-0.2-0.8-0.2-1.2 0-2.7 2.3-5 5-5s5 2.3 5 5-2.3 5-5 5c-1.3 0-2.5-0.4-3.4-1.3l-11.8 6.8c0 0.4 0.1 0.8 0.1 1.2s-0.1 0.8-0.1 1.1l11.9 6.9c0.9-0.8 2-1.2 3.3-1.2z"/></g>
+                        <div className={`chat-commands-${state}`}>
 
-    </Icon>&emsp;
-           </span>
+                                <TextAwareCommand command={'Share'} input={this.state.chatInput.substring(1,this.state.chatInput.length)}/>
 
-                                <TextAwareCommand command={'/Share'} input={this.state.chatInput}/>
-                        </span>
+                                <TextAwareCommand command={'Contribute'} input={this.state.chatInput.substring(1,this.state.chatInput.length)}/>
 
 
 
-                            <span className={`chat-commands-${state} chat-commands`}>
-                                <TextAwareCommand command={'/Contribute'} input={this.state.chatInput}/> </span>
+                                <TextAwareCommand command={'Pin'} input={this.state.chatInput.substring(1,this.state.chatInput.length)}/>
 
+                               <TextAwareCommand command={'Expand_Chat'} input={this.state.chatInput.substring(1,this.state.chatInput.length)}/>
 
-
-                              <span className={`chat-commands-${state} chat-commands`}>
-                                  <span>
-                        <Icon viewBox="0 0 40 40" size={20}>
-        <g>
-            <path
-                d="m25.7 17.8c1.6 0.8 2.8 2.4 2.8 4.3 0 1.3-0.2 1.7-1.2 1.7h-6.3l-0.9 13.7h-0.7l-0.9-13.7h-6.3c-1 0-1.2-0.4-1.2-1.7 0-1.9 1.3-3.5 2.8-4.3 0.1 0 0.2-0.1 0.3-0.1 0.6-0.4 1-0.9 1.1-1.5l1.4-9.2v-0.4c0-0.6-0.3-0.8-0.8-1.1 0 0 0 0-0.1 0-0.6-0.3-1-0.7-1-1.4 0-1.5 0.5-1.6 1.5-1.6h7.1c1 0 1.5 0.1 1.5 1.6 0 0.7-0.4 1.1-1 1.4-0.1 0-0.1 0-0.1 0-0.5 0.3-0.8 0.5-0.8 1.1v0.4l1.4 9.2c0.1 0.6 0.5 1.1 1.1 1.5 0.1 0 0.2 0.1 0.3 0.1z"/>
-        </g>
-    </Icon>&emsp;
-           </span>
-                                <TextAwareCommand command={'/Pin'} input={this.state.chatInput}/>
-                            </span>
-
-                              <span className={`chat-commands-${state} chat-commands`}>
-                               <TextAwareCommand command={'/Expand_Chat'} input={this.state.chatInput}/>
-                            </span>
-
-                        </span>
+                        </div>
 
 
 

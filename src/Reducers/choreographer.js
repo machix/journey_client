@@ -1,6 +1,7 @@
 import moment from 'moment';
 
 const defaultState = {
+    activeCommands: [],
     liveJourneyMeta: [],
     preloadMeta: [null, null],
     currentMeta: null,
@@ -74,6 +75,13 @@ export default (state = defaultState, action) => {
                 messages: [...state, action.message],
                 message: action.message
             };
+
+        case 'UPDATE_COMMANDS':
+            return{
+                ...state,
+                activeCommands: action.value
+            };
+
 
         default:
             return state;

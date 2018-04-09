@@ -436,7 +436,7 @@ h1, h2, h3, h4, h5 {
 @-webkit-keyframes fadeInUp {
   from {
     opacity: 0;
-    -webkit-transform: translate3d(0, 60%, 0);
+    -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
   }
 
@@ -450,7 +450,7 @@ h1, h2, h3, h4, h5 {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    -webkit-transform: translate3d(0, 60%, 0);
+    -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
   }
 
@@ -459,6 +459,11 @@ h1, h2, h3, h4, h5 {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
 }
 
 @-webkit-keyframes fadeIn {
@@ -493,8 +498,8 @@ h1, h2, h3, h4, h5 {
 
   to {
     opacity: 0;
-    -webkit-transform: translate3d(0, 60%, 0);
-    transform: translate3d(0, 60%, 0);
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
   }
 }
 
