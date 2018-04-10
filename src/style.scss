@@ -68,7 +68,7 @@ $c-set-text-1: #545454;
 $c-set-text-1-super: #666;
 $c-set-text-1-sub: #e6e6e6;
 $c-set-text-2: #525f7f; /*#32325d;*/
-$c-set-text-2-sub: #8898aa;
+$c-set-text-2-sub: #b4b4b4;
 
 $c-set-border-0: #EFEFEF;
 $c-set-border-2: #E6EBF1;
@@ -1611,6 +1611,7 @@ h1, h2, h3, h4, h5 {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  position: relative;
 
   .title {
     font-family: 'Open Sans', sans-serif;
@@ -1624,12 +1625,34 @@ h1, h2, h3, h4, h5 {
 
   }
 
+  .login-social{
+    position: absolute;
+    bottom: 15px;
+    right: 110%;
+    white-space: nowrap;
+
+    .social-icon {
+      -webkit-transition: color 0.2s ease-in-out;
+      -moz-transition: color 0.2s ease-in-out;
+      -o-transition: color 0.2s ease-in-out;
+      transition: color 0.2s ease-in-out;
+      cursor: pointer;
+      color: white;
+
+      &:hover {
+        color: white;
+      }
+
+    }
+  }
+
   .login-sidebar {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
+    position: relative;
 
     box-shadow: 0 0 0 0.2px rgba(49, 49, 93, .03), 0 2px 5px 0 rgba(49, 49, 93, .1), 0 1px 2px 0 rgba(0, 0, 0, .08);
     border-left: 1px solid rgba(14, 41, 57, .1);

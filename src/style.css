@@ -1164,7 +1164,8 @@ h1, h2, h3, h4, h5 {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end; }
+  justify-content: flex-end;
+  position: relative; }
   .login-wrapper .title {
     font-family: 'Open Sans', sans-serif;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
@@ -1174,12 +1175,27 @@ h1, h2, h3, h4, h5 {
     color: white;
     margin-right: auto;
     margin-left: 100px; }
+  .login-wrapper .login-social {
+    position: absolute;
+    bottom: 15px;
+    right: 110%;
+    white-space: nowrap; }
+    .login-wrapper .login-social .social-icon {
+      -webkit-transition: color 0.2s ease-in-out;
+      -moz-transition: color 0.2s ease-in-out;
+      -o-transition: color 0.2s ease-in-out;
+      transition: color 0.2s ease-in-out;
+      cursor: pointer;
+      color: white; }
+      .login-wrapper .login-social .social-icon:hover {
+        color: white; }
   .login-wrapper .login-sidebar {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
+    position: relative;
     box-shadow: 0 0 0 0.2px rgba(49, 49, 93, 0.03), 0 2px 5px 0 rgba(49, 49, 93, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
     border-left: 1px solid rgba(14, 41, 57, 0.1); }
   .login-wrapper .login-jumbotron {
@@ -1966,7 +1982,7 @@ header {
           margin-top: 5px; }
           @media screen and (max-width: 800px) {
             .main .content .overview-header .block-combine .block-label {
-              color: #8898aa;
+              color: #b4b4b4;
               font-size: 0.8em;
               font-weight: 400; } }
       .main .content .overview-header .overview-block {
@@ -1999,7 +2015,7 @@ header {
               align-items: center;
               justify-content: center;
               margin-top: 5px;
-              color: #8898aa;
+              color: #b4b4b4;
               flex-grow: 1;
               font-size: 0.83em;
               font-weight: 400; } }
@@ -2423,7 +2439,7 @@ header {
           position: relative;
           height: 30px;
           font-size: 10px;
-          color: #8898aa;
+          color: #b4b4b4;
           box-sizing: border-box; }
           .main .content .analytics-chart .line-chart-y-legend .line-chart-y-legend-item .line-chart-y-legend-item-right {
             float: right; }
@@ -2453,7 +2469,7 @@ header {
             overflow: hidden;
             text-align: center;
             font-size: 11px;
-            color: #8898aa; }
+            color: #b4b4b4; }
       .main .content .analytics-chart .line-chart {
         padding: 18px 48px;
         height: 144px;
@@ -2521,7 +2537,7 @@ header {
                 .main .content section.columns .column-content .column-content-children .overview-information-container .overview-information .overview-information-value {
                   text-align: center; } }
             .main .content section.columns .column-content .column-content-children .overview-information-container .overview-information .overview-information-subtitle {
-              color: #8898aa;
+              color: #b4b4b4;
               font-size: 14px;
               font-weight: 400;
               white-space: nowrap; }
@@ -2703,7 +2719,7 @@ header {
   overflow: hidden;
   text-align: center;
   font-size: 13px;
-  fill: #8898aa; }
+  fill: #b4b4b4; }
 
 .test-enter {
   opacity: 1;
