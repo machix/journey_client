@@ -213,7 +213,7 @@ class Login extends Component {
             }}>
 
 
-                <div className="login-sidebar" style={{backgroundColor: 'rgba(240,240,240,0.5)'}}>
+                <div className="login-sidebar" style={{backgroundColor: 'rgba(240,240,240,0.2)'}}>
                     <img src={require('../Assets/V5.png')}
                          style={{width: '20vh', height: '20vh', marginBottom: '2vh'}}></img>
                     <div className="modal-container login">

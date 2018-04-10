@@ -7,8 +7,6 @@
     <list default="true" id="8eb92d85-80e0-4af9-8dc4-e20ffe8708d5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Common/Login.js" afterPath="$PROJECT_DIR$/src/Components/Common/Login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
     </list>
     <ignored path="gifty-console-client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -507,12 +505,12 @@
       <workItem from="1523141488221" duration="7999000" />
       <workItem from="1523153666574" duration="5469000" />
       <workItem from="1523203863539" duration="25423000" />
-      <workItem from="1523309694826" duration="13187000" />
+      <workItem from="1523309694826" duration="13302000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="254660000" />
+    <option name="totallyTimeSpent" value="254775000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
