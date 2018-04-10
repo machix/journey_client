@@ -1163,8 +1163,17 @@ h1, h2, h3, h4, h5 {
 .login-wrapper {
   height: 100%;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-end; }
+  .login-wrapper .title {
+    font-family: 'Open Sans', sans-serif;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 4.5rem;
+    color: white;
+    margin-right: auto;
+    margin-left: 100px; }
   .login-wrapper .login-sidebar {
     display: flex;
     flex-direction: column;

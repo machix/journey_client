@@ -39,8 +39,9 @@ class Login extends Component {
         super(props);
         this.state = {
             checked: false,
+            message: '',
+            mode: 'write',
             svgHeight: 150,
-
             geojson: {
                 "type": "LineString",
                 "coordinates": [
@@ -150,6 +151,8 @@ class Login extends Component {
                     ]
                 ]
             },
+            verbs: ["share", "find", "celebrate"],
+            thing: "share"
 
         }
     }
@@ -187,6 +190,59 @@ class Login extends Component {
         this.props.onUnload();
     }
 
+    // whatLetters() {
+    //     switch (mode) {
+    //         case 'write' :
+    //
+    //             this.setState({
+    //                 ...this.state,
+    //                 message: this.state.thing.slice(0,1),
+    //                 thing: this.state.thing.substr(1)
+    //             });
+    //
+    //             if (this.state.thing.length === 0 && t === (things.length - 1)) {
+    //                 window.clearTimeout(timeout);
+    //                 return;
+    //             }
+    //
+    //             if (this.state.thing.length === 0) {
+    //                 this.setState({
+    //                     ...this.state,
+    //                     mode:'delete',
+    //                     delay: 1000
+    //                 })
+    //             } else {
+    //                 this.setState({
+    //                     ...this.state,
+    //                     delay: 32 + Math.round(Math.random() * 2)
+    //                 })
+    //             }
+    //
+    //             break;
+    //
+    //         case 'delete' :
+    //             this.setState({
+    //                 ...this.state,
+    //                 message: this.state.message.slice(0, -1)
+    //             });
+    //
+    //             if (this.state.message.length === 0) {
+    //                 this.setState({
+    //                     ...this.state,
+    //                     mode: 'write',
+    //                     delay: 500
+    //                 });
+    //             } else {
+    //                 this.setState({
+    //                     ...this.state,
+    //                     mode: 'write',
+    //                     delay: 32 + Math.round(Math.random() * 100)
+    //                 });
+    //             }
+    //             break;
+    //     }
+    // }
+
     render() {
         const email = this.props.email;
         const password = this.props.password;
@@ -197,11 +253,6 @@ class Login extends Component {
         const projection = geoMercator().fitExtent([[0, 0], [150, this.state.svgHeight]], this.state.geojson);
         const pathGenerator = geoPath().projection(projection)
 
-        var jumbotronStyle = {
-            backgroundImage: 'url(' + "https://d3i6fh83elv35t.cloudfront.net/static/2018/03/TOC_MLT_lowering_1280-1200x675.jpg" + ')',
-
-
-        }
 
         return (
             <div className="login-wrapper" style={{
@@ -212,6 +263,12 @@ class Login extends Component {
 
             }}>
 
+                <div className={'title'}>
+                    Where You {this.state.message}
+                    <br/>
+                    Adventure
+                </div>
+
 
                 <div className="login-sidebar" style={{backgroundColor: 'rgba(240,240,240,0.2)'}}>
                     <img src={require('../Assets/V5.png')}
@@ -219,14 +276,15 @@ class Login extends Component {
                     <div className="modal-container login">
                         <div className="modal-header">
                             <h3 className="header-title">Account</h3>
-                            <span  className="header-sub">Create an Account or Login to Journey</span>
+                            <span className="header-sub">Create an Account or Login to Journey</span>
 
-                                <form onSubmit={this.tryLogin(email, password)}>
-                                    <div style={{marginTop: '15px'}} className="button-general" onClick={() => history.push('/home')}>Login
-                                        with Facebook
-                                    </div>
-                                    <button type="submit" className="nodisplay"></button>
-                                </form>
+                            <form onSubmit={this.tryLogin(email, password)}>
+                                <div style={{marginTop: '15px'}} className="button-general"
+                                     onClick={() => history.push('/home')}>Login
+                                    with Facebook
+                                </div>
+                                <button type="submit" className="nodisplay"></button>
+                            </form>
                         </div>
 
                     </div>
