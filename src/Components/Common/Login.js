@@ -213,24 +213,22 @@ class Login extends Component {
             }}>
 
 
-                <div className="login-sidebar" style={{backgroundColor: 'rgba(255,255,255,0.9)'}}>
+                <div className="login-sidebar" style={{backgroundColor: 'rgba(240,240,240,0.5)'}}>
                     <img src={require('../Assets/V5.png')}
                          style={{width: '20vh', height: '20vh', marginBottom: '2vh'}}></img>
                     <div className="modal-container login">
                         <div className="modal-header">
                             <h3 className="header-title">Account</h3>
-                            <span className="header-sub">Create an Account or Login to Journey</span>
-                        </div>
-                        <div className="modal-content">
-                            <form onSubmit={this.tryLogin(email, password)}>
-                                <div className="button-general" onClick={() => history.push('/home')}>Login
-                                    with Facebook
-                                </div>
+                            <span  className="header-sub">Create an Account or Login to Journey</span>
 
-                                <button type="submit" className="nodisplay"></button>
-
-                            </form>
+                                <form onSubmit={this.tryLogin(email, password)}>
+                                    <div style={{marginTop: '15px'}} className="button-general" onClick={() => history.push('/home')}>Login
+                                        with Facebook
+                                    </div>
+                                    <button type="submit" className="nodisplay"></button>
+                                </form>
                         </div>
+
                     </div>
                 </div>
             </div>
