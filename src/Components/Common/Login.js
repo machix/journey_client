@@ -195,7 +195,87 @@ class Login extends Component {
 
         return (
             <div className="login-wrapper">
-                <div className={"login-jumbotron"}
+
+
+                <div className="login-sidebar">
+                    <img src={require('../Assets/V5.png')}
+                         style={{width: '20vh', height: '20vh', marginBottom: '2vh'}}></img>
+                    <div className="modal-container login">
+                        <div className="modal-header">
+                            <h3 className="header-title">Account</h3>
+                            <span className="header-sub">Create an Account or Login to Journey</span>
+                        </div>
+                        <div className="modal-content">
+                            <form onSubmit={this.tryLogin(email, password)}>
+                                <div className="button-general" onClick={() => history.push('/home')}>Login
+                                    with Facebook
+                                </div>
+
+                                <button type="submit" className="nodisplay"></button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        );
+    }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));
+
+//
+//
+// <div className="login-input-set">
+//     {this.state.register ?
+//         <input type="text" className="input-general" placeholder="Your Name"
+//                value={name}
+//                onChange={this.changeName}/>
+//         : null}
+//     {this.state.register ?
+//         <input type="text" className="input-general" placeholder="Organization"
+//                value={vendor}
+//                onChange={this.changeVendor}/> : null}
+//     <input type="text" className="input-general" placeholder="Email Address"
+//            value={email}
+//            onChange={this.changeEmail}/>
+//     <input className="input-general"
+//            type="password"
+//            placeholder="Password"
+//            value={password}
+//            onChange={this.changePassword}/>
+// </div>
+
+
+// {
+//     this.state.register ?
+//         <div>
+//             <div>
+//
+//                 <p> Before proceeding, please accept our <u>Terms & Conditions!</u>
+//                 </p>
+//             </div>
+//             <div style={{margin: '12px 0px', display: 'flex'}}>
+//                 <input type="checkbox"
+//                        style={{alignSelf: 'center'}}
+//                        checked={this.state.checked}
+//                        onChange={() => this.changeHandler()}/> &emsp; I accept Gifty's&nbsp;
+//                 <u>
+//                     Terms
+//                     & Conditions</u>
+//             </div>
+//             <div className="button-general"
+//                  onClick={() => this.props.onRegister(name, vendor, email, password, this.state.checked)}>
+//                 Register
+//             </div>
+//         </div>
+//         : <div className="button-general" onClick={()=> this.tryLogin(email, password)}>Enter
+//         </div>
+// }
+
+
+/*             <div className={"login-jumbotron"}
                      style={jumbotronStyle}
                 >
                     <div className={'logo-container'}>
@@ -294,81 +374,4 @@ ACTIVE OCEAN CLEAN UP                       </div>
                     </div>
 
 
-                </div>
-
-                <div className="login-sidebar">
-                    <img src={require('../Assets/V5.png')}
-                         style={{width: '20vh', height: '20vh', marginBottom: '2vh'}}></img>
-                    <div className="modal-container login">
-                        <div className="modal-header">
-                            <h3 className="header-title">Account</h3>
-                            <span className="header-sub">Create an Account or Login to Journey</span>
-                        </div>
-                        <div className="modal-content">
-                            <form onSubmit={this.tryLogin(email, password)}>
-                                <div className="button-general" onClick={() => history.push('/home')}>Login
-                                    with Facebook
-                                </div>
-
-                                <button type="submit" className="nodisplay"></button>
-
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        );
-    }
-}
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));
-
-//
-//
-// <div className="login-input-set">
-//     {this.state.register ?
-//         <input type="text" className="input-general" placeholder="Your Name"
-//                value={name}
-//                onChange={this.changeName}/>
-//         : null}
-//     {this.state.register ?
-//         <input type="text" className="input-general" placeholder="Organization"
-//                value={vendor}
-//                onChange={this.changeVendor}/> : null}
-//     <input type="text" className="input-general" placeholder="Email Address"
-//            value={email}
-//            onChange={this.changeEmail}/>
-//     <input className="input-general"
-//            type="password"
-//            placeholder="Password"
-//            value={password}
-//            onChange={this.changePassword}/>
-// </div>
-
-
-// {
-//     this.state.register ?
-//         <div>
-//             <div>
-//
-//                 <p> Before proceeding, please accept our <u>Terms & Conditions!</u>
-//                 </p>
-//             </div>
-//             <div style={{margin: '12px 0px', display: 'flex'}}>
-//                 <input type="checkbox"
-//                        style={{alignSelf: 'center'}}
-//                        checked={this.state.checked}
-//                        onChange={() => this.changeHandler()}/> &emsp; I accept Gifty's&nbsp;
-//                 <u>
-//                     Terms
-//                     & Conditions</u>
-//             </div>
-//             <div className="button-general"
-//                  onClick={() => this.props.onRegister(name, vendor, email, password, this.state.checked)}>
-//                 Register
-//             </div>
-//         </div>
-//         : <div className="button-general" onClick={()=> this.tryLogin(email, password)}>Enter
-//         </div>
-// }
+                </div>*/
