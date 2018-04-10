@@ -151,8 +151,11 @@ class Login extends Component {
                     ]
                 ]
             },
-            verbs: ["share", "find", "celebrate"],
-            thing: "share"
+            verbs: ["Explore", "Live", "Inspire", "Define", "Discover", "Celebrate"],
+            thing: "Explore",
+            whereYou: "Where You",
+            verbIndex: 0,
+            delay: "1000"
 
         }
     }
@@ -169,7 +172,8 @@ class Login extends Component {
     };
 
     componentWillMount() {
-        this.props.getBeautifulUnsplash()
+        this.props.getBeautifulUnsplash();
+        this.timeout = setTimeout(() => this.letterChoreographer(), this.state.delay);
     }
 
     componentDidMount() {
@@ -177,71 +181,81 @@ class Login extends Component {
         const pathGenerator = geoPath().projection(projection)
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.register) {
-            this.setState({
-                ...this.state,
-                register: true
-            })
-        }
-    }
 
     componentWillUnmount() {
         this.props.onUnload();
     }
 
-    // whatLetters() {
-    //     switch (mode) {
-    //         case 'write' :
-    //
-    //             this.setState({
-    //                 ...this.state,
-    //                 message: this.state.thing.slice(0,1),
-    //                 thing: this.state.thing.substr(1)
-    //             });
-    //
-    //             if (this.state.thing.length === 0 && t === (things.length - 1)) {
-    //                 window.clearTimeout(timeout);
-    //                 return;
-    //             }
-    //
-    //             if (this.state.thing.length === 0) {
-    //                 this.setState({
-    //                     ...this.state,
-    //                     mode:'delete',
-    //                     delay: 1000
-    //                 })
-    //             } else {
-    //                 this.setState({
-    //                     ...this.state,
-    //                     delay: 32 + Math.round(Math.random() * 2)
-    //                 })
-    //             }
-    //
-    //             break;
-    //
-    //         case 'delete' :
-    //             this.setState({
-    //                 ...this.state,
-    //                 message: this.state.message.slice(0, -1)
-    //             });
-    //
-    //             if (this.state.message.length === 0) {
-    //                 this.setState({
-    //                     ...this.state,
-    //                     mode: 'write',
-    //                     delay: 500
-    //                 });
-    //             } else {
-    //                 this.setState({
-    //                     ...this.state,
-    //                     mode: 'write',
-    //                     delay: 32 + Math.round(Math.random() * 100)
-    //                 });
-    //             }
-    //             break;
-    //     }
-    // }
+    letterChoreographer() {
+
+        console.log(this.state.mode);
+        switch (this.state.mode) {
+            case 'write' :
+                console.log(this.state.thing);
+                if(this.state.thing === 'Celebrate') {
+                    this.setState({
+                        ...this.state,
+                        message: this.state.message + this.state.thing.slice(0, 1),
+                        thing: this.state.thing.substr(1),
+                        whereYou: ''
+                    })
+                }
+
+                this.setState({
+                    ...this.state,
+                    message: this.state.message + this.state.thing.slice(0, 1),
+                    thing: this.state.thing.substr(1)
+                });
+
+                if (this.state.thing.length === 0 && this.state.verbIndex === (this.state.verbs.length - 1)) {
+                    window.clearTimeout(this.timeout);
+                    return;
+                }
+
+                if (this.state.thing.length === 0) {
+                    this.setState({
+                        ...this.state,
+                        mode: 'delete',
+                        delay: 2000
+                    })
+
+                } else {
+                    this.setState({
+                        ...this.state,
+                        delay: 32 + Math.round(Math.random() * 10)
+                    })
+
+                }
+                break;
+
+            case 'delete' :
+
+                this.setState({
+                    ...this.state,
+                    message: this.state.message.slice(0, -1)
+                });
+
+                if (this.state.message.length === 0) {
+                    let newVerbIndex = this.state.verbIndex + 1;
+
+                    this.setState({
+                        ...this.state,
+                        mode: 'write',
+                        delay: 1000,
+                        verbIndex: newVerbIndex,
+                        thing: this.state.verbs[newVerbIndex]
+                    });
+                } else {
+                    this.setState({
+                        ...this.state,
+                        mode: 'delete',
+                        delay: 32 + Math.round(Math.random() * 200)
+                    });
+                }
+                break;
+        }
+        this.timeout = setTimeout(() => this.letterChoreographer(), this.state.delay);
+    }
 
     render() {
         const email = this.props.email;
@@ -264,9 +278,9 @@ class Login extends Component {
             }}>
 
                 <div className={'title'}>
-                    Where You {this.state.message}
+                    {this.state.whereYou} {this.state.message}
                     <br/>
-                    Adventure
+                    Adventure.
                 </div>
 
 

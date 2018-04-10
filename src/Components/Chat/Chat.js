@@ -62,11 +62,11 @@ class Chat extends Component {
             }
             case 'chatbox': {
                 this.props.setChatExpanded(!this.props.chatExpanded);
-                if(this.props.boxes.length === 1) {
-                    this.props.setBoxExpanded([]);
-                } else {
-                    this.props.setBoxExpanded(['mary'])
-                }
+                // if(this.props.boxes.length === 1) {
+                //     this.props.setBoxExpanded([]);
+                // } else {
+                //     this.props.setBoxExpanded(['mary'])
+                // }
 
             }
         }
