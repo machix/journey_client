@@ -78,6 +78,31 @@ const Auth = {
     }
 };
 
+const common = {
+    beautifulUnsplash: () => {
+        return dispatch => {
+            console.log('im in here!')
+            const URL = "https://api.unsplash.com/photos/random?client_id=17d1aeb4a5d48238dd727a19feff53cc3cdd55c8160f3a48364eb4cb879c6722&collections=142324,369,1278105";
+            return fetch(URL, {method: 'GET'})
+                .then(response => Promise.all([response, response.json()])).then(([response, json]) => {
+                    console.log(response)
+                    if (response.status === 200) {
+                        console.log(json);
+                        console.log('hi')
+                        dispatch({
+                            type: 'BEAUTIFUL_UNSPLASH',
+                            value: json.urls.regular});
+
+                    }
+                    else {
+                        console.log('oh no')
+                    }
+                });
+        }
+
+    },
+};
+
 const FirebaseWatcher = {
     links: (id) => {
         return dispatch => {
@@ -546,5 +571,6 @@ export default {
     setToken: _token => {
         token = _token;
     },
+    common,
     authService
 };

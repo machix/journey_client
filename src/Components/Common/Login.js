@@ -13,10 +13,13 @@ import FlipCard from 'react-flipcard';
 
 const mapStateToProps = state => ({
     ...state.auth,
-    register: state.common.register
+    beautifulUnsplash: state.common.beautifulUnsplash,
+    register: state.common.register,
+
 });
 
 const mapDispatchToProps = dispatch => ({
+    getBeautifulUnsplash: () => dispatch(agent.common.beautifulUnsplash()),
     updateFieldAuth: (key, value) =>
         dispatch({type: 'UPDATE_FIELD_AUTH', key: key, value}),
     onSubmit: (email, password) => {
@@ -37,6 +40,7 @@ class Login extends Component {
         this.state = {
             checked: false,
             svgHeight: 150,
+
             geojson: {
                 "type": "LineString",
                 "coordinates": [
@@ -161,6 +165,10 @@ class Login extends Component {
         this.props.onSubmit(email, password);
     };
 
+    componentWillMount() {
+        this.props.getBeautifulUnsplash()
+    }
+
     componentDidMount() {
         const projection = geoMercator();
         const pathGenerator = geoPath().projection(projection)
@@ -190,14 +198,22 @@ class Login extends Component {
         const pathGenerator = geoPath().projection(projection)
 
         var jumbotronStyle = {
-            backgroundImage: 'url(' + "https://d3i6fh83elv35t.cloudfront.net/static/2018/03/TOC_MLT_lowering_1280-1200x675.jpg" + ')'
+            backgroundImage: 'url(' + "https://d3i6fh83elv35t.cloudfront.net/static/2018/03/TOC_MLT_lowering_1280-1200x675.jpg" + ')',
+
+
         }
 
         return (
-            <div className="login-wrapper">
+            <div className="login-wrapper" style={{
+                backgroundImage: `url(${this.props.beautifulUnsplash})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+
+            }}>
 
 
-                <div className="login-sidebar">
+                <div className="login-sidebar" style={{backgroundColor: 'rgba(255,255,255,0.9)'}}>
                     <img src={require('../Assets/V5.png')}
                          style={{width: '20vh', height: '20vh', marginBottom: '2vh'}}></img>
                     <div className="modal-container login">

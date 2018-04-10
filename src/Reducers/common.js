@@ -4,7 +4,7 @@ let SelectedStartDate = moment().subtract(7, 'days');
 var SelectedEndDate = moment();
 
 const defaultState = {
-    boxes: ['mary'],
+    beautifulUnsplash: null,
     chatExpanded: false,
     liveJourneyMeta: [],
     windowWidth: 0,
@@ -13,11 +13,17 @@ const defaultState = {
     mapIsHover: false,
     sidebarExpanded: true,
     arrowKey: null,
-    alertNew: false
+    alertNew: false,
+
 };
 
 export default (state = defaultState, action) => {
     switch (action.type) {
+        case 'BEAUTIFUL_UNSPLASH':
+            return {
+                ...state,
+                beautifulUnsplash: action.value
+            };
         case 'NEW_DATA':
             return {
                 ...state,
