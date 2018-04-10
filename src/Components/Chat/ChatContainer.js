@@ -35,39 +35,21 @@ class ChatContainer extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            chatExpanded: false
+        };
     }
 
     componentDidMount() {
-        this.scrollToBottom();
+        this.setState({
+            chatExpanded: true
+        });
     }
 
     componentDidUpdate() {
         this.scrollToBottom();
     }
 
-    toggle = (value) => {
-        this.mapContainer.blur();
-
-        console.log('toggle: ' + value);
-        switch (value) {
-
-            case 'map': {
-                console.log('this.props.mapExpanded: ' + this.props.mapExpanded);
-                if (this.props.mapExpanded) {
-                    return;
-                } else {
-                    this.props.setMapExpanded(!this.props.mapExpanded);
-                    return;
-                }
-            }
-            case 'closeChat': {
-                this.props.setChatExpanded(!this.props.mapExpanded);
-
-                return;
-            }
-        }
-    };
 
 
     chatMap() {
@@ -87,28 +69,18 @@ class ChatContainer extends Component {
         this.el.scrollIntoView({behavior: 'smooth'});
     }
 
-    shouldUnmount() {
-        console.log('this is a question, not a statement he said');
-        if(!this.props.chatExpanded){
-            this.setState({
-                ...this.state,
-                unmount: true
-            })
-        } else {
-            this.setState
-        }
-    }
+
 
     render() {
         return (
 
             <Motion
-                onRest={()=>this.scrollToBottom()}
+                onRest={() => this.scrollToBottom()}
                 style={{
-                    marginControl: spring(this.props.chatExpanded ? 0 : 1),
-                    toggleHeight: spring(this.props.chatExpanded ? 7 : 0),
-                    toggleRadius: spring(this.props.chatExpanded ? 0 : 1),
-                    mapMultiplier: spring(this.props.mapExpanded ? 0.5 : 0.95)
+                    marginControl: spring(this.state.chatExpanded ? 0 : 1),
+                    toggleHeight: spring(this.state.chatExpanded ? 7 : 0),
+                    toggleRadius: spring(this.state.chatExpanded ? 0 : 1),
+                    mapMultiplier: spring(this.props.mapExpanded ? 0.5 : 0.9)
                     // hoverHeight: spring(this.props.mapIsHover ? 3 : 1),
                     // hoverRadius: spring(this.props.mapIsHover ? 0.5 : 1),
 

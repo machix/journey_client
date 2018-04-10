@@ -18,6 +18,7 @@ import ChatContainer from '../Chat/ChatContainer';
 
 
 const mapStateToProps = state => ({
+    chatExpanded: state.common.chatExpanded,
     loaderDisplay: state.common.loaderDisplay,
     liveJourneyMeta: state.common.liveJourneyMeta,
     windowHeight: state.common.windowHeight,
@@ -364,7 +365,66 @@ class HomeDash extends Component {
 
 
                                 <div style={{height: '100vh', display: 'flex', alignItems: 'center'}}>
-                                    <Transition
+
+                                    {this.props.liveJourneyMeta.length > 0 ?
+
+                                        <div style={{
+                                            height: '100%',
+                                            width: `${this.props.windowWidth - ((10 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowHeight)}px`,
+                                            backgroundSize: 'contain',
+                                            backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_${this.props.liveJourneyMeta[this.props.position].uid}.jpg?alt=media&token=ccd5ab02-54bb-4bca-8f2f-9e253de52523)`,
+                                            //'https://www.google.com/maps/about/images/behind-the-scenes/treks/everest-header-bg_2x.jpg'
+                                            backgroundRepeat: 'no-repeat',
+                                            backgroundPosition: 'center'
+                                        }}
+                                             onClick={()=>{this.blur()}}
+                                        >
+
+                                        </div> : null}
+                                </div>}
+                        </Motion>
+                        : null}
+
+                    <MapContainer></MapContainer>
+                    {this.props.chatExpanded ? <ChatContainer></ChatContainer> : null}
+                </div>
+
+
+                <div style={{height: '100%'}}>
+                    {this.props.liveJourneyMeta.length > 0 ?
+
+                        <div className={'blur-background blur'}
+                             onClick={()=>{this.blur()}}
+                             style={{
+                                 backgroundSize: 'cover',
+                                 backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_${this.props.liveJourneyMeta[this.props.position].uid}.jpg?alt=media&token=ccd5ab02-54bb-4bca-8f2f-9e253de52523)`,
+                             }}>
+                        </div>
+                        : null}
+                    <div className={'blur-background-overlay'}>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
+
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeDash));
+
+/*
+
+*/
+
+
+//<StatsPreview></StatsPreview>
+//<GiftyPreviewSlide></GiftyPreviewSlide>
+//<ShortSummary></ShortSummary>
+
+//https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_' +
+
+
+/* <Transition
                                         unmountOnExit={true}
                                         in={this.state.infoBarExpanded}
                                         out={!this.state.menu}
@@ -401,60 +461,4 @@ class HomeDash extends Component {
 
                                             </div>
                                         )}
-                                    </Transition>
-                                    {this.props.liveJourneyMeta.length > 0 ?
-
-                                        <div style={{
-                                            height: '100%',
-                                            width: `${this.props.windowWidth - ((10 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowHeight)}px`,
-                                            backgroundSize: 'contain',
-                                            backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_${this.props.liveJourneyMeta[this.props.position].uid}.jpg?alt=media&token=ccd5ab02-54bb-4bca-8f2f-9e253de52523)`,
-                                            //'https://www.google.com/maps/about/images/behind-the-scenes/treks/everest-header-bg_2x.jpg'
-                                            backgroundRepeat: 'no-repeat',
-                                            backgroundPosition: 'center'
-                                        }}
-                                             onClick={()=>{this.blur()}}
-                                        >
-
-                                        </div> : null}
-                                </div>}
-                        </Motion>
-                        : null}
-
-                    <MapContainer></MapContainer>
-                    <ChatContainer></ChatContainer>
-                </div>
-
-
-                <div style={{height: '100%'}}>
-                    {this.props.liveJourneyMeta.length > 0 ?
-
-                        <div className={'blur-background blur'}
-                             onClick={()=>{this.blur()}}
-                             style={{
-                                 backgroundSize: 'cover',
-                                 backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_${this.props.liveJourneyMeta[this.props.position].uid}.jpg?alt=media&token=ccd5ab02-54bb-4bca-8f2f-9e253de52523)`,
-                             }}>
-                        </div>
-                        : null}
-                    <div className={'blur-background-overlay'}>
-                    </div>
-                </div>
-            </div>
-        );
-    }
-}
-
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeDash));
-
-/*
-
-*/
-
-
-//<StatsPreview></StatsPreview>
-//<GiftyPreviewSlide></GiftyPreviewSlide>
-//<ShortSummary></ShortSummary>
-
-//https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_' +
+                                    </Transition>*/

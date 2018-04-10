@@ -953,8 +953,8 @@ h1, h2, h3, h4, h5 {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.7);
   padding: 10px;
+  white-space: nowrap;
   color: white;
-  right: 10vw;
   cursor: pointer;
   display: flex;
   align-items: center;

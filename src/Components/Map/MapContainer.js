@@ -3,6 +3,7 @@ import {Motion, spring} from 'react-motion'
 import {withScriptjs, withGoogleMap, GoogleMap, Marker} from "react-google-maps"
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
+import moment from 'moment';
 
 import Icon from 'react-icon-base';
 
@@ -17,6 +18,14 @@ const mapStateToProps = state => ({
     mapIsHover: state.common.mapIsHover,
     windowHeight: state.common.windowHeight,
     windowWidth: state.common.windowWidth,
+    liveJourneyMeta: state.common.liveJourneyMeta,
+
+    position: state.choreographer.position,
+    prevPosition: state.choreographer.prevPosition,
+    nextPosition: state.choreographer.nextPosition,
+    journeyId: state.choreographer.journeyId,
+    alertNew: state.common.alertNew
+
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -39,6 +48,15 @@ class MapContainer extends Component {
 
         this.state = {};
 
+    }
+    getTime = () => {
+        let timestamp = moment(-this.props.liveJourneyMeta[this.props.position].timestamp);
+        if (moment().diff( timestamp, 'days') >= 1) {
+            return timestamp.format('MMMM Do YYYY, h:mm:ss a')
+        } else {
+            let string = timestamp.fromNow();
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
     }
 
     toggle = (value) => {
@@ -106,7 +124,6 @@ class MapContainer extends Component {
                          onClick={() => this.toggle('map')}
                          ref={c => this.mapContainer = c}
                          onBlur={()=> {console.log('blured')}}
-
                          style={{
                              minHeight: '105px',
                              minWidth: '105px',
@@ -115,6 +132,37 @@ class MapContainer extends Component {
                              top: `${20 * marginControl}px`
                          }}
                     >
+                        <div
+                            style={{right: `${108+marginControl*50}%`, top: `${-20*marginControl}px`}}
+                            className={`info-panel `}>
+                            <div className={'image-container'}>
+                                <div className={'image-background'}>
+                                    <img className={'image'} />
+                                </div>
+                            </div>
+                            {this.props.alertNew === true ?
+                                <div>YOU GOT A NEW PICTURE BITCH!</div> : null}
+                            <div className={'info-container'}>
+                                {this.props.liveJourneyMeta.length > 0 ? this.getTime() : 'Loading'}
+                                <div>
+                                    <Icon viewBox="0 0 40 40" size={20}
+                                          style={{color: 'white'}}>
+                                        <g>
+                                            <path
+                                                d="m19.8 3.8c-2.7 0-5.3 1-7.2 2.8s-2.8 4.5-2.8 7.2c0 3.3 1.8 8.3 5.4 14.5 1.7 3 3.5 5.6 4.6 7.1 1-1.5 2.8-4.1 4.5-7.1 3.6-6.2 5.5-11.2 5.5-14.5 0-2.7-1.1-5.3-2.9-7.2s-4.5-2.8-7.1-2.8z m0-1.3c6.2 0 11.2 5 11.2 11.3 0 8.7-11.2 23.7-11.2 23.7s-11.3-15-11.3-23.7c0-6.3 5-11.3 11.3-11.3z m0 6.3c2.7 0 5 2.2 5 5s-2.3 5-5 5-5-2.3-5-5 2.2-5 5-5z m0 8.6c2 0 3.6-1.6 3.6-3.6s-1.6-3.7-3.6-3.7-3.7 1.6-3.7 3.7 1.6 3.6 3.7 3.6z"/>
+                                        </g>
+                                    </Icon>
+                                    Everest Base Camp <br/>
+                                    {this.props.liveJourneyMeta.length > 0 ? <div>
+                                        {this.props.liveJourneyMeta[this.props.position].coordinates.lat}, {this.props.liveJourneyMeta[this.props.position].coordinates.lng}
+                                    </div> : null
+
+                                    }
+
+                                </div>
+                            </div>
+
+                        </div>
                         {this.props.mapExpanded ? <div
                             onClick={() => this.toggle('closeMap')}
                             style={{

@@ -4,6 +4,7 @@ let SelectedStartDate = moment().subtract(7, 'days');
 var SelectedEndDate = moment();
 
 const defaultState = {
+    boxes: ['mary'],
     chatExpanded: false,
     liveJourneyMeta: [],
     windowWidth: 0,
@@ -39,6 +40,12 @@ export default (state = defaultState, action) => {
                 ...state,
                 chatExpanded: action.value,
             };
+        case 'SET_BOX_EXPANDED':
+            console.log('box toggled');
+            return {
+                ...state,
+                boxes: action.value
+            }
         case 'SET_MAP_EXPANDED':
             return {
                 ...state,
