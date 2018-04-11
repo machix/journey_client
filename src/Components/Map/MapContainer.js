@@ -141,7 +141,7 @@ class MapContainer extends Component {
                                 </div>
                             </div>
                             {this.props.alertNew === true ?
-                                <div>YOU GOT A NEW PICTURE BITCH!</div> : null}
+                                <div>New Picture!</div> : null}
                             <div className={'info-container'}>
                                 {this.props.liveJourneyMeta.length > 0 ? this.getTime() : 'Loading'}
                                 <div>
