@@ -139,9 +139,8 @@ const FirebaseQuery = {
                     for (let uid in snapshot.val()) {
                         let temp = snapshot.val();
                         temp[uid].uid = uid;
-                        if (temp[uid].imageUploaded === true) {
+                        if (temp[uid].dataUploaded === true) {
                             sortable.push(temp[uid]);
-
                         }
                     }
 

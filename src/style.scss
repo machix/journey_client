@@ -1314,6 +1314,19 @@ h1, h2, h3, h4, h5 {
   animation-timing-function: ease-in;
 }
 
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25%;
+  width: 100%;
+  height: 100%;
+
+  .react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
 .info-panel {
   text-align: right;
   align-self: flex-start;
@@ -1625,7 +1638,7 @@ h1, h2, h3, h4, h5 {
 
   }
 
-  .login-social{
+  .login-social {
     position: absolute;
     bottom: 15px;
     right: 110%;

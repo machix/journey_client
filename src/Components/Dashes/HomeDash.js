@@ -8,13 +8,12 @@ import ReactDOM from 'react-dom';
 import Transition from 'react-transition-group/Transition';
 import moment from 'moment';
 
-import member3 from '../Assets/member2.jpg';
-
 import Chat from '../Chat/Chat';
 import Sidebar from '../Sidebar/Sidebar';
 import agent from '../../Helpers/agent';
 import MapContainer from '../Map/MapContainer';
 import ChatContainer from '../Chat/ChatContainer';
+import Video from '../Video/Video';
 
 
 const mapStateToProps = state => ({
@@ -153,11 +152,11 @@ class HomeDash extends Component {
 
     getTime = () => {
         let timestamp = moment(-this.props.liveJourneyMeta[this.props.position].timestamp);
-        if (moment().diff( timestamp, 'days') >= 1) {
+        if (moment().diff(timestamp, 'days') >= 1) {
             return timestamp.format('MMMM Do YYYY, h:mm:ss a')
         } else {
             let string = timestamp.fromNow();
-               return string.charAt(0).toUpperCase() + string.slice(1);
+            return string.charAt(0).toUpperCase() + string.slice(1);
         }
     }
 
@@ -364,9 +363,10 @@ class HomeDash extends Component {
                             {({hoverHeight, hoverRadius, toggleRadius, toggleHeight, marginControl}) =>
 
 
-                                <div style={{height: '100vh', display: 'flex', alignItems: 'center'}}>
+                                <div style={{height: '100vh', width: '100%', display: 'flex', alignItems: 'center'}}>
+                                    {this.props.liveJourneyMeta.length > 0 && this.props.liveJourneyMeta[this.props.position].type === "video" ? <Video url={`https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2F${this.props.liveJourneyMeta[this.props.position].uid}.mp4?alt=media&token=9f9e06ad-db93-4a22-bdfb-fed973efd936`}/> : null}
 
-                                    {this.props.liveJourneyMeta.length > 0 ?
+                                    {this.props.liveJourneyMeta.length > 0 && this.props.liveJourneyMeta[this.props.position].type === "image" ?
 
                                         <div style={{
                                             height: '100%',
@@ -377,7 +377,9 @@ class HomeDash extends Component {
                                             backgroundRepeat: 'no-repeat',
                                             backgroundPosition: 'center'
                                         }}
-                                             onClick={()=>{this.blur()}}
+                                             onClick={() => {
+                                                 this.blur()
+                                             }}
                                         >
 
                                         </div> : null}
@@ -394,7 +396,9 @@ class HomeDash extends Component {
                     {this.props.liveJourneyMeta.length > 0 ?
 
                         <div className={'blur-background blur'}
-                             onClick={()=>{this.blur()}}
+                             onClick={() => {
+                                 this.blur()
+                             }}
                              style={{
                                  backgroundSize: 'cover',
                                  backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_${this.props.liveJourneyMeta[this.props.position].uid}.jpg?alt=media&token=ccd5ab02-54bb-4bca-8f2f-9e253de52523)`,
