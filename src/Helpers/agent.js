@@ -18,8 +18,9 @@ Firebase.initializeApp({
     messagingSenderId: "515548202082"
 });
 
-var authService = Firebase.auth();
 var database = Firebase.database();
+var provider = new Firebase.auth.FacebookAuthProvider();
+
 
 let token = null;
 
@@ -37,45 +38,84 @@ let token = null;
  */
 
 const Auth = {
-    current: () => {
-        return new Promise(function (resolve, reject) {
-            authService.onAuthStateChanged(function (user) {
-                if (user) {
-                    resolve(user);
-                } else {
-                    history.push('/');
-                    reject('There was an error bish');
-                }
-            })
-        })
-    },
-    login: (email, password) => {
-        return authService.signInWithEmailAndPassword(email, password);
-    },
-    register: (email, password) => {
-        return authService.createUserWithEmailAndPassword(email, password);
-    },
-    assignConsole: (uid) => {
-        return database.ref('users/' + uid).push();
-    },
-    lookupConsole: (uid) => {
-        return database.ref('users/' + uid).once('value');
-    },
-    lookupConsole2: (uid) => {
+    getCurrentUser: () => {
         return dispatch => {
-            var consoleWatch = database.ref('users/' + uid);
-            consoleWatch.on('value', function (snapshot) {
-                /*
-                 console.log(snapshot.val());
-                 */
+            console.log('getCurrentUser called');
+            Firebase.auth().onAuthStateChanged(function (user) {
+                if (user) {
+                    console.log('User is logged in');
 
-                dispatch(FirebaseQuery.fetchConsole(snapshot.val()))
+                    dispatch({
+                        type: 'LOGIN',
+                        user: user,
+                        authenticated: true
+                    });
+                }
+                else {
+                    console.log('logging out');
+                    history.push('/');
+                    dispatch({
+                        type: 'LOGIN',
+                        user: false,
+                        authenticated: false
+                    });
+                }
+            });
+        };
+
+    },
+    login: () => {
+        return dispatch => {
+            Firebase.auth().signInWithPopup(provider).then(function (result) {
+                // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+                var token = result.credential.accessToken;
+                // The signed-in user info.
+                var user = result.user;
+                console.log(user);
+                dispatch({
+                    type: 'LOGIN',
+                    user: user,
+                    authenticated: true
+                });
+
+                // ...
+            }).catch(function (error) {
+                console.log('User not Authenticated');
+                console.log(error.code);
+                console.log(error.message);
+                // console.log(error.credential);
+                dispatch({
+                    type: 'LOGIN',
+                    user: null,
+                    authenticated: false
+                });
             });
         }
     },
-    logout: () => {
-        authService.signOut();
-    }
+    // register: (email, password) => {
+    //     return authService.createUserWithEmailAndPassword(email, password);
+    // },
+    // assignConsole: (uid) => {
+    //     return database.ref('users/' + uid).push();
+    // },
+    // lookupConsole: (uid) => {
+    //     return database.ref('users/' + uid).once('value');
+    // },
+    // lookupConsole2: (uid) => {
+    //     return dispatch => {
+    //         var consoleWatch = database.ref('users/' + uid);
+    //         consoleWatch.on('value', function (snapshot) {
+    //             /*
+    //              console.log(snapshot.val());
+    //              */
+    //
+    //             dispatch(FirebaseQuery.fetchConsole(snapshot.val()))
+    //         });
+    //     }
+    // },
+    // logout: () => {
+    //     authService.signOut();
+    // }
 };
 
 const common = {
@@ -89,7 +129,8 @@ const common = {
 
                         dispatch({
                             type: 'BEAUTIFUL_UNSPLASH',
-                            value: json.urls.regular});
+                            value: json.urls.regular
+                        });
 
                     }
                     else {
@@ -568,6 +609,5 @@ export default {
     setToken: _token => {
         token = _token;
     },
-    common,
-    authService
+    common
 };

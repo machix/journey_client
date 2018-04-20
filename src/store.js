@@ -10,8 +10,7 @@ import dashState from './Reducers/dashState';
 const reducer = combineReducers({
     common,
     dashState,
-    choreographer
-    ,
+    choreographer,
     auth
 });
 

@@ -1,13 +1,15 @@
-export default (state = {}, action) => {
+export default (state = {
+    isAuthed: false,
+    user: null
+}, action) => {
     switch (action.type) {
         /*Register & Login both use an older version of middleware. Please switch to Redux-Thunk*/
         case 'LOGIN':
-        case 'REGISTER':
+            console.log('Login');
             return {
                 ...state,
-                inProgress: false,
-                errors: action.error ? action.payload.errors : null,
-                uid: action.uid
+                user: action.user,
+                isAuthed: action.authenticated
             };
         case 'LOGIN_PAGE_UNLOADED':
         case 'REGISTER_PAGE_UNLOADED':

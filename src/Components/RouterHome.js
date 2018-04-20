@@ -1,64 +1,61 @@
 import React, {Component} from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
-import { Switch, Route, Redirect } from 'react-router-dom';
-import { ConnectedRouter } from 'react-router-redux';
+import {Switch, Route, Redirect} from 'react-router-dom';
+import {ConnectedRouter} from 'react-router-redux';
 import history from '../Helpers/history.js';
 
 
 import App from '../App';
 import HomeDash from './Dashes/HomeDash';
-import ChatContainer from './Chat/ChatContainer';
-import AgreementsDash from './Dashes/AgreementsDash';
-import Dashboard from './Common/Dashboard';
+
 import ScrollToTop from '../Helpers/ScrollToTop.js';
-import CampaignDash from './Dashes/CampaignDash';
-import BillingDash from './Dashes/BillingDash';
-import ModalMother from './Modals/ModalMother';
 import agent from '../Helpers/agent'
 
 const mapStateToProps = state => ({
-    ...state
+    ...state,
+    isAuthed: state.auth.isAuthed,
+    user: state.auth.user
 });
 
 const mapDispatchToProps = dispatch => ({
-    lookupConsole2: (uid) => dispatch(agent.Auth.lookupConsole2(uid))
+
+    getCurrentUser: () => dispatch(agent.Auth.getCurrentUser()),
 
 });
 
-function PrivateRoute({component: Component, authed, ...rest}) {
+function PrivateRoute({component: Component, isAuthed, ...rest}) {
     return (
         <Route
             {...rest}
-            render={(props) => authed === true
-        ? <Component {...props} />
-        : <Redirect to={{pathname: '/login', state: {from: props.location}}} />}
+            render={(props) => isAuthed === true
+                ? <Component {...props} />
+                : <Redirect to={{pathname: '/login'}}/>}
         />
     )
 }
 
-function LoginRoute({component: Component, authed, ...rest}) {
-   /* console.log('loginRoute');
-    console.log(authed);*/
+function LoginRoute({component: Component, isAuthed, ...rest}) {
+    console.log(isAuthed)
     return (
         <Route
             exact
             {...rest}
-            render={(props) => authed === false
-        ? <Component {...props} />
-        : <Redirect to='/home' />}
+            render={(props) => isAuthed === false
+                ? <Component {...props} />
+                : <Redirect to='/home'/>}
         />
     )
 }
 
 
-function PublicRoute({component: Component, authed, ...rest}) {
+function PublicRoute({component: Component, isAuthed, ...rest}) {
     return (
         <Route
             {...rest}
-            render={(props) => authed === false
-        ? <Component {...props} />
-        : <Redirect to='/dashboard' />}
+            render={(props) => isAuthed === true
+                ? <Component {...props} />
+                : <Redirect to='/dashboard'/>}
         />
     )
 }
@@ -69,46 +66,47 @@ class RouterHome extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            authed: false,
-            loading: true
-        }
     }
 
     componentDidMount() {
+        //
+        // this.removeListener = agent.authService.onAuthStateChanged((user) => {
+        //
+        //     if (user) {
+        //         /*Populate the Console Data*/
+        //         this.props.lookupConsole2(user.uid);
+        //
+        //         this.setState({
+        //             authed: true,
+        //             loading: false
+        //         })
+        //     } else {
+        //         this.setState({
+        //             authed: false,
+        //             loading: false
+        //         })
+        //     }
+        // })
+        this.props.getCurrentUser();
 
-        this.removeListener = agent.authService.onAuthStateChanged((user) => {
-
-            if (user) {
-                /*Populate the Console Data*/
-                this.props.lookupConsole2(user.uid);
-
-                this.setState({
-                    authed: true,
-                    loading: false
-                })
-            } else {
-                this.setState({
-                    authed: false,
-                    loading: false
-                })
-            }
-        })
     }
 
     componentWillUnmount() {
-        this.removeListener()
+        // this.removeListener()
+
     }
 
     render() {
-        return (this.state.loading === true ? <div dangerouslySetInnerHTML={{ __html: svgString }}/> : (
+        return ( (
             <ConnectedRouter onUpdate={() => window.scrollTo(0, 0)} history={history}>
                 <ScrollToTop>
                     <Switch>
                         <Redirect exact from="/" to="/login"/>
-                        <Route exact path="/login" component={App}/>
+                        <LoginRoute path={'/login'} component={App} isAuthed={this.props.isAuthed}/>
 
                         <Route exact path="/home" component={HomeDash}/>
+
+                        <PrivateRoute exact path={'/home'} component={HomeDash} isAuthed={this.props.isAuthed}/>
                     </Switch>
                 </ScrollToTop>
             </ConnectedRouter>
@@ -128,3 +126,4 @@ export default connect(mapStateToProps, mapDispatchToProps)(RouterHome);
     <Route exact path="/billing" component={BillingDash}/>
 </Dashboard>
 */
+//                        <Route exact path="/home" component={HomeDash}/>

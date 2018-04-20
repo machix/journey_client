@@ -20,6 +20,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     getBeautifulUnsplash: () => dispatch(agent.common.beautifulUnsplash()),
+    login: ()=> dispatch(agent.Auth.login()),
     updateFieldAuth: (key, value) =>
         dispatch({type: 'UPDATE_FIELD_AUTH', key: key, value}),
     onSubmit: (email, password) => {
@@ -166,9 +167,9 @@ class Login extends Component {
     changeName = ev => this.props.updateFieldAuth('name', ev.target.value);
     changeVendor = ev => this.props.updateFieldAuth('vendor', ev.target.value);
 
-    tryLogin = (email, password) => ev => {
-        ev.preventDefault();
-        this.props.onSubmit(email, password);
+    login = () => {
+        console.log('attempting to log in');
+        this.props.login();
     };
 
     componentWillMount() {
@@ -187,12 +188,9 @@ class Login extends Component {
     }
 
     letterChoreographer() {
-
-        console.log(this.state.mode);
         switch (this.state.mode) {
             case 'write' :
-                console.log(this.state.thing);
-                if(this.state.thing === 'Celebrate') {
+                if (this.state.thing === 'Celebrate') {
                     this.setState({
                         ...this.state,
                         message: this.state.message + this.state.thing.slice(0, 1),
@@ -265,7 +263,7 @@ class Login extends Component {
 
 
         const projection = geoMercator().fitExtent([[0, 0], [150, this.state.svgHeight]], this.state.geojson);
-        const pathGenerator = geoPath().projection(projection)
+        const pathGenerator = geoPath().projection(projection);
 
 
         return (
@@ -320,9 +318,9 @@ class Login extends Component {
                             <h3 className="header-title">Account</h3>
                             <span className="header-sub">Create an Account or Login to Journey</span>
 
-                            <form onSubmit={this.tryLogin(email, password)}>
+                            <form onSubmit={() => this.login()}>
                                 <div style={{marginTop: '15px'}} className="button-general"
-                                     onClick={() => history.push('/home')}>Login
+                                     onClick={() => this.login()}>Login
                                     with Facebook
                                 </div>
                                 <button type="submit" className="nodisplay"></button>
