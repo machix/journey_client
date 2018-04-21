@@ -16,6 +16,7 @@
     "npm-run-all": "^4.1.1",
     "react": "^15.6.2",
     "react-addons-shallow-compare": "^15.6.2",
+    "react-awesome-button": "^4.2.0",
     "react-collapse": "^4.0.3",
     "react-copy-to-clipboard": "^5.0.1",
     "react-dates": "^12.6.0",

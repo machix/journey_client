@@ -36,6 +36,17 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     fetchLiveJourney: (journey_uid) => dispatch(agent.FirebaseQuery.liveJourney(journey_uid)),
+
+
+
+
+
+
+
+
+
+
+
     setWindowDims: (width, height) => dispatch({
         type: 'SET_WINDOW_DIMS',
         windowWidth: width,
@@ -318,7 +329,7 @@ class HomeDash extends Component {
                                         </g>
                                     </Icon>
                                 </div>
-                                <div className={"title"}>Climbing Everest</div>
+                                <div onClick={()=>agent.Auth.logout()} className={"title"}>Climbing Everest</div>
                                 <div className={"subText"}>Day 12: Going up the North Face of the mountain in record
                                     time!
                                     Without oxygen and without my balls.

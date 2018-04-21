@@ -53,12 +53,12 @@ const Auth = {
                 }
                 else {
                     console.log('logging out');
-                    history.push('/');
                     dispatch({
                         type: 'LOGIN',
                         user: false,
                         authenticated: false
                     });
+
                 }
             });
         };
@@ -113,9 +113,22 @@ const Auth = {
     //         });
     //     }
     // },
-    // logout: () => {
-    //     authService.signOut();
-    // }
+    logout: () => {
+
+        return dispatch => {
+            Firebase.auth().signOut().then(function () {
+                console.log('signedOut');
+                dispatch({
+                    type: 'LOGIN',
+                    user: null,
+                    authenticated: false
+                });
+            }, function () {
+                console.log('error');
+            });
+        }
+
+    }
 };
 
 const common = {

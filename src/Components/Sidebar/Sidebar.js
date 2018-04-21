@@ -5,6 +5,11 @@ import Icon from 'react-icon-base';
 import Transition from 'react-transition-group/Transition';
 
 import SponsoredContribution from './SponsoredContribution'
+import agent from '../../Helpers/agent';
+
+
+import {AwesomeButton} from 'react-awesome-button';
+import 'react-awesome-button/dist/themes/theme-rickiest.css';
 
 import member1 from '../Assets/member1.jpeg';
 import member2 from '../Assets/member2.jpg';
@@ -22,6 +27,9 @@ const mapDispatchToProps = dispatch => ({
         type: 'SET_SIDEBAR_EXPANDED',
         value: value
     }),
+    logout: () => {
+        dispatch(agent.Auth.logout())
+    }
 
 });
 
@@ -144,7 +152,9 @@ class Sidebar extends Component {
 
                     </div>
                 </div>
+                <AwesomeButton>LIVE! Request An Update</AwesomeButton>
 
+                <div styles={{cursor: 'pointer'}} onClick={() => this.props.logout()}>Logout</div>
 
 
                 <div className={'footer'}>

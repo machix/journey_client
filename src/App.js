@@ -35,12 +35,12 @@ class App extends Component {
         }
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.redirectTo) {
-            history.push(nextProps.redirectTo);
-            this.props.onRedirect();
-        }
-    }
+    // componentWillReceiveProps(nextProps) {
+    //     if (nextProps.redirectTo) {
+    //         history.push(nextProps.redirectTo);
+    //         this.props.onRedirect();
+    //     }
+    // }
 
 
     render() {

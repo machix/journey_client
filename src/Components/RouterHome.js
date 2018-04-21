@@ -8,6 +8,8 @@ import history from '../Helpers/history.js';
 
 import App from '../App';
 import HomeDash from './Dashes/HomeDash';
+import Login from './Common/Login.js';
+
 
 import ScrollToTop from '../Helpers/ScrollToTop.js';
 import agent from '../Helpers/agent'
@@ -24,36 +26,36 @@ const mapDispatchToProps = dispatch => ({
 
 });
 
-function PrivateRoute({component: Component, isAuthed, ...rest}) {
+function PrivateRoute({component: Component, authed, ...rest}) {
+    console.log('This is the Authorization state isAuthed from PrivateRoute: ' + authed)
+
     return (
         <Route
             {...rest}
-            render={(props) => isAuthed === true
+            render={(props) => authed === true
                 ? <Component {...props} />
-                : <Redirect to={{pathname: '/login'}}/>}
+                : <Redirect to={'/login'}/>}
         />
     )
 }
 
-function LoginRoute({component: Component, isAuthed, ...rest}) {
-    console.log(isAuthed)
+function LoginRoute({component: Component, authed, ...rest}) {
+    console.log('This is the Authorization state isAuthed from Login: ' + authed)
+
     return (
         <Route
-            exact
             {...rest}
-            render={(props) => isAuthed === false
-                ? <Component {...props} />
-                : <Redirect to='/home'/>}
+            render={(props) => authed === false ? <Component {...props} /> : <Redirect to='/home'/>}
         />
     )
 }
 
 
-function PublicRoute({component: Component, isAuthed, ...rest}) {
+function PublicRoute({component: Component, authed, ...rest}) {
     return (
         <Route
             {...rest}
-            render={(props) => isAuthed === true
+            render={(props) => authed === true
                 ? <Component {...props} />
                 : <Redirect to='/dashboard'/>}
         />
@@ -101,12 +103,9 @@ class RouterHome extends Component {
             <ConnectedRouter onUpdate={() => window.scrollTo(0, 0)} history={history}>
                 <ScrollToTop>
                     <Switch>
-                        <Redirect exact from="/" to="/login"/>
-                        <LoginRoute path={'/login'} component={App} isAuthed={this.props.isAuthed}/>
-
-                        <Route exact path="/home" component={HomeDash}/>
-
-                        <PrivateRoute exact path={'/home'} component={HomeDash} isAuthed={this.props.isAuthed}/>
+                        <LoginRoute exact path={'/'} component={Login} authed={this.props.isAuthed}/>
+                        <LoginRoute exact path={'/login'} component={Login} authed={this.props.isAuthed}/>
+                        <PrivateRoute exact path={'/home'} component={HomeDash} authed={this.props.isAuthed}/>
                     </Switch>
                 </ScrollToTop>
             </ConnectedRouter>
@@ -127,3 +126,4 @@ export default connect(mapStateToProps, mapDispatchToProps)(RouterHome);
 </Dashboard>
 */
 //                        <Route exact path="/home" component={HomeDash}/>
+//                        <Redirect exact from="/" to="/login"/>

@@ -31,8 +31,8 @@ const mapDispatchToProps = dispatch => ({
             dispatch({type: 'REGISTER', payload: agent.Auth.register(email, password), name: name, vendor: vendor})
         }
     },
-    onUnload: () =>
-        dispatch({type: 'LOGIN_PAGE_UNLOADED'})
+    // onUnload: () =>
+    //     dispatch({type: 'LOGIN_PAGE_UNLOADED'})
 });
 
 class Login extends Component {
@@ -174,17 +174,18 @@ class Login extends Component {
 
     componentWillMount() {
         this.props.getBeautifulUnsplash();
-        this.timeout = setTimeout(() => this.letterChoreographer(), this.state.delay);
     }
 
     componentDidMount() {
         const projection = geoMercator();
-        const pathGenerator = geoPath().projection(projection)
+        const pathGenerator = geoPath().projection(projection);
+        this.timeout = setTimeout(() => this.letterChoreographer(), this.state.delay);
     }
 
 
     componentWillUnmount() {
-        this.props.onUnload();
+        // this.props.onUnload();
+        window.clearTimeout(this.timeout);
     }
 
     letterChoreographer() {

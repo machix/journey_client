@@ -11,14 +11,15 @@ export default (state = {
                 user: action.user,
                 isAuthed: action.authenticated
             };
-        case 'LOGIN_PAGE_UNLOADED':
-        case 'REGISTER_PAGE_UNLOADED':
-            return {uid: state.uid};
-        /*        case 'ASYNC_START':
-         if (action.subtype === 'LOGIN' || action.subtype === 'REGISTER') {
-         return {...state, inProgress: true};
-         }
-         break;*/
+        // case 'LOGIN_PAGE_UNLOADED':
+        // case 'REGISTER_PAGE_UNLOADED':
+        //     console.log('asd;flka;fdlkjasd;flkjasd;flkjasd;fklja;fkljasdf');
+        //     return {uid: state.uid};
+        // /*        case 'ASYNC_START':
+        //  if (action.subtype === 'LOGIN' || action.subtype === 'REGISTER') {
+        //  return {...state, inProgress: true};
+        //  }
+        //  break;*/
         case 'UPDATE_FIELD_AUTH':
             return {
                 ...state,
