@@ -11,7 +11,9 @@ import Icon from 'react-icon-base';
 
 import agent from '../../Helpers/agent';
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+    user: state.auth.user
+});
 
 const mapDispatchToProps = dispatch => ({
     dateSelection: (selection, startDate, endDate) => dispatch({
@@ -50,6 +52,17 @@ class Header extends Component {
 
         return (
             <div className="header-container">
+                <div className={'header'}>
+                    <nav>
+                    </nav>
+                    <div className={'profile-information'}>
+                        {this.props.user !== null ? this.props.user.displayName : 'loading'}
+                        {this.props.user !== null ?
+                            <img className={'profile-photo'} src={this.props.user.photoURL}/> : null}
+                    </div>
+
+                </div>
+
             </div>
         );
     }

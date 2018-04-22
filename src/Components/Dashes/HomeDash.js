@@ -11,7 +11,7 @@ import moment from 'moment';
 import Chat from '../Chat/Chat';
 import Sidebar from '../Sidebar/Sidebar';
 import agent from '../../Helpers/agent';
-import MapContainer from '../Map/MapContainer';
+import MapContainer from '../Map/JourneyMapContainer';
 import ChatContainer from '../Chat/ChatContainer';
 import Video from '../Video/Video';
 import Header from '../Header/Header';
@@ -108,8 +108,7 @@ class HomeDash extends Component {
                 <div className={'home-container'}>
                     <div className={'start-now-banner'}>
                         <h1>Start Your Journey</h1>
-                        <h3>A Journey begins anywhere. Connect <b><u>people,</u> <u>places</u></b> and <b><u>things </u></b>
-                            to track your own experience.
+                        <h3>A Journey begins anywhere. Connect <b><u>people,</u> <u>places</u></b> and <b><u>things</u></b> to track your own Journey.
                         </h3>
 
                         <div className={'start-now'}>
@@ -127,10 +126,11 @@ class HomeDash extends Component {
                             </div>
                         </div>
                     </div>
-                    <h1>People Doing Things Now</h1>
                     <FullJourneyBanner>
 
                     </FullJourneyBanner>
+
+                    <h1>Active Experiences Near You</h1>
 
                 </div>
 

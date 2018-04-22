@@ -11,7 +11,7 @@ import moment from 'moment';
 import Chat from '../Chat/Chat';
 import Sidebar from '../Sidebar/Sidebar';
 import agent from '../../Helpers/agent';
-import MapContainer from '../Map/MapContainer';
+import MapContainer from '../Map/JourneyMapContainer';
 import ChatContainer from '../Chat/ChatContainer';
 import Video from '../Video/Video';
 

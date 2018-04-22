@@ -43,6 +43,7 @@ const Auth = {
         return dispatch => {
             console.log('getCurrentUser called');
             Firebase.auth().onAuthStateChanged(function (user) {
+                console.log(user);
                 if (user) {
                     console.log('User is logged in');
 

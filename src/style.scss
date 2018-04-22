@@ -56,7 +56,7 @@ $c-set-status-affirmative-hover: rgb(131, 234, 188);
 /*  /////////////////////////////////////////
      MODERN WHITE + RED
     \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
-$c-set-highlight-0: #4e5b7f; /*#EC6D73;*/
+$c-set-highlight-0: #1fb3b2; /*#EC6D73;*/
 $c-set-highlight-green: #78D9BB;
 
 $c-set-bg-0: #f5f5f5; /* light grey */
@@ -65,9 +65,10 @@ $c-set-bg-2: #F6F9FC;
 
 $c-set-text-0: #484848; /* #333333; */
 $c-set-text-1: #6b6b6b;
+$c-set-text-2: #939393; /*#32325d;*/
 $c-set-text-1-super: #666;
 $c-set-text-1-sub: #e6e6e6;
-$c-set-text-2: #525f7f; /*#32325d;*/
+
 $c-set-text-2-sub: #b4b4b4;
 
 $c-set-border-0: #EFEFEF;
@@ -283,7 +284,7 @@ input {
   display: inline-block;
   flex: 0 0 auto;
   background-color: #fff;
-  /*padding: 4px 9px 2px;*/
+  padding: 5px 9px;
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
@@ -768,7 +769,7 @@ h1, h2, h3, h4, h5 {
   display: flex;
   flex-direction: row;
   width: 100vw;
-  height: 100vh;
+  //height: 100vh;
   align-items: center;
   justify-content: center;
 
@@ -1800,7 +1801,7 @@ h1, h2, h3, h4, h5 {
 
 .header-container {
   display: flex;
-  flex-direction: row;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -1813,6 +1814,32 @@ h1, h2, h3, h4, h5 {
   align-items: center;
   z-index: 6;
 
+  .header {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    color: $c-set-text-2;
+
+    .profile-information {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+
+      .profile-photo {
+        margin-left: 20px;
+        width: 40px;
+        height: 40px;
+        border: 2px solid white;
+        border-radius: 40px;
+      }
+    }
+
+  }
+
 }
 
 //MINE
@@ -1820,12 +1847,12 @@ h1, h2, h3, h4, h5 {
 .home-container {
   position: relative;
   padding-top: 80px;
-  margin-bottom: 80px;
+  margin-bottom: 400px;
   width: 70%;
   color: $c-set-text-0;
 
   .start-now-banner {
-    margin: 400px 100px 150px 100px;
+    margin: 100px 100px 150px 100px;
     display: flex;
     flex-direction: column;
 
@@ -1877,34 +1904,61 @@ h1, h2, h3, h4, h5 {
       }
     }
   }
+  .banner {
+    margin: 70px 0 70px 0;
 
-  .full-journey-banner {
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06) !important;
-    height: 300px;
-    border-radius: 5px;
-    padding: 50px;
-    margin: 20px 0 20px 0;
+    .full-journey-banner {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.2) !important;
+      height: 400px;
+      border-radius: 5px;
+      display: flex;
+      overflow: hidden;
 
-    .journey-banner-title {
-      font-family: 'Open Sans', sans-serif;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
-      font-weight: 700;
-      font-size: 2.3rem;
-      align-self: flex-start;
-      color: white;
-      line-height: 3rem;
+      .left-container {
+        width: 70%;
+        padding: 30px;
+
+        .journey-banner-title {
+          font-family: 'Open Sans', sans-serif;
+          text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
+          font-weight: 700;
+          font-size: 2.3rem;
+          align-self: flex-start;
+          color: white;
+          line-height: 3rem;
+        }
+
+        .journey-banner-description {
+          color: white;
+          font-size: 1.2rem;
+          font-weight: 550;
+          text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
+
+        }
+      }
+
+      .map-container {
+        width: 30%;
+      }
     }
+    .banner-footer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
 
-    .journey-banner-description {
-      color: white;
-      font-size: 1.2rem;
-      font-weight: 550;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
+      .journey-tags {
+        margin-left: 5px;
+        color: $c-set-text-2;
+        font-weight: bold;
+      }
 
-
-
+      .awesome-button-container {
+        align-self: flex-end;
+        margin-left: auto;
+      }
     }
-
   }
 
 }
@@ -1913,7 +1967,6 @@ header {
   display: block;
   max-width: 1102px;
   min-width: 770px;
-
 
   /*margin: 0 -25px;*/
   /*padding: 22px 23px;*/
@@ -1979,14 +2032,6 @@ header {
       min-width: 0;
       margin: 15px;
     }
-  }
-
-  .container {
-    display: flex;
-    flex-direction: row;
-    min-height: 100vh;
-
-    /*background-color: $c-screen-bg;*/
   }
 
   /*  --- Elements ------------------------ */
