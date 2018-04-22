@@ -21,6 +21,7 @@ Firebase.initializeApp({
 var database = Firebase.database();
 var provider = new Firebase.auth.FacebookAuthProvider();
 
+const FirebaseAuthService = Firebase.auth();
 
 let token = null;
 
@@ -185,7 +186,7 @@ const FirebaseQuery = {
             // new Promise(function (resolve, reject) {
             database.ref('live_journeys/' + journey_id).on('value', (snapshot) => {
                 console.log('new snapshot');
-                console.log(snapshot.val());
+                // console.log(snapshot.val());
                 if (snapshot.val() !== null) {
                     // resolve(snapshot.val());
                     let sortable = [];
@@ -201,7 +202,7 @@ const FirebaseQuery = {
                     sortable.sort(function (a, b) {
                         return a.timestamp - b.timestamp
                     });
-                    console.log(sortable);
+                    // console.log(sortable);
                     dispatch({
                         type: 'LIVE_JOURNEY_META',
                         liveJourneyMeta: sortable,
@@ -256,7 +257,7 @@ const FirebaseQuery = {
                     return a.timestamp - b.timestamp
                 });
 
-                console.log(chatSortable);
+                // console.log(chatSortable);
 
 
                 dispatch({
@@ -622,5 +623,6 @@ export default {
     setToken: _token => {
         token = _token;
     },
+    FirebaseAuthService,
     common
 };

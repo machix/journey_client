@@ -8,6 +8,8 @@ import history from '../Helpers/history.js';
 
 import App from '../App';
 import HomeDash from './Dashes/HomeDash';
+import JourneyDash from './Dashes/JourneyDash';
+
 import Login from './Common/Login.js';
 
 
@@ -15,9 +17,7 @@ import ScrollToTop from '../Helpers/ScrollToTop.js';
 import agent from '../Helpers/agent'
 
 const mapStateToProps = state => ({
-    ...state,
-    isAuthed: state.auth.isAuthed,
-    user: state.auth.user
+    isAuthed: state.auth.isAuthed
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -27,7 +27,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 function PrivateRoute({component: Component, authed, ...rest}) {
-    console.log('This is the Authorization state isAuthed from PrivateRoute: ' + authed)
+    console.log('This is the Authorization state isAuthed from PrivateRoute: ' + agent.FirebaseAuthService.currentUser)
 
     return (
         <Route
@@ -40,12 +40,13 @@ function PrivateRoute({component: Component, authed, ...rest}) {
 }
 
 function LoginRoute({component: Component, authed, ...rest}) {
-    console.log('This is the Authorization state isAuthed from Login: ' + authed)
+    console.log('This is the Authorization state isAuthed from Login: ' + agent.FirebaseAuthService.currentUser)
 
     return (
         <Route
             {...rest}
-            render={(props) => authed === false ? <Component {...props} /> : <Redirect to='/home'/>}
+            render={(props) => agent.FirebaseAuthService.currentUser === null ? <Component {...props} /> :
+                <Redirect to='/journey'/>}
         />
     )
 }
@@ -55,7 +56,7 @@ function PublicRoute({component: Component, authed, ...rest}) {
     return (
         <Route
             {...rest}
-            render={(props) => authed === true
+            render={(props) => agent.FirebaseAuthService.currentUser !== null
                 ? <Component {...props} />
                 : <Redirect to='/dashboard'/>}
         />
@@ -70,7 +71,12 @@ class RouterHome extends Component {
         super(props);
     }
 
-    componentDidMount() {
+    componentWillReceiveProps(nextProps) {
+        console.log('receiving props');
+        console.log(nextProps);
+    }
+
+    componentWillMount() {
         //
         // this.removeListener = agent.authService.onAuthStateChanged((user) => {
         //
@@ -105,7 +111,8 @@ class RouterHome extends Component {
                     <Switch>
                         <LoginRoute exact path={'/'} component={Login} authed={this.props.isAuthed}/>
                         <LoginRoute exact path={'/login'} component={Login} authed={this.props.isAuthed}/>
-                        <PrivateRoute exact path={'/home'} component={HomeDash} authed={this.props.isAuthed}/>
+                        <Route exact path={'/home'} component={HomeDash}/>
+                        <PrivateRoute exact path={'/journey'} component={JourneyDash} authed={this.props.isAuthed}/>
                     </Switch>
                 </ScrollToTop>
             </ConnectedRouter>

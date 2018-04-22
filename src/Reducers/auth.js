@@ -1,5 +1,4 @@
 export default (state = {
-    isAuthed: false,
     user: null
 }, action) => {
     switch (action.type) {

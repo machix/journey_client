@@ -36,7 +36,6 @@ export default (state = defaultState, action) => {
                 arrowKey: action.value
             };
         case 'LIVE_JOURNEY_META':
-            console.log('livejourneymetareducer');
             return {
                 ...state,
                 liveJourneyMeta: action.liveJourneyMeta
