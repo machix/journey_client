@@ -1,5 +1,6 @@
 export default (state = {
-    user: null
+    user: null,
+    isAuthed:true
 }, action) => {
     switch (action.type) {
         /*Register & Login both use an older version of middleware. Please switch to Redux-Thunk*/

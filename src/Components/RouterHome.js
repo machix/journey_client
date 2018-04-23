@@ -27,14 +27,14 @@ const mapDispatchToProps = dispatch => ({
 });
 
 function PrivateRoute({component: Component, authed, ...rest}) {
-    console.log('This is the Authorization state isAuthed from PrivateRoute: ' + agent.FirebaseAuthService.currentUser)
+    console.log('This is the Authorization state isAuthed from PrivateRoute: ' + authed)
 
     return (
         <Route
             {...rest}
             render={(props) => authed === true
                 ? <Component {...props} />
-                : <Redirect to={'/login'}/>}
+                : <Redirect to={'/'}/>}
         />
     )
 }
@@ -58,7 +58,7 @@ function PublicRoute({component: Component, authed, ...rest}) {
             {...rest}
             render={(props) => agent.FirebaseAuthService.currentUser !== null
                 ? <Component {...props} />
-                : <Redirect to='/dashboard'/>}
+                : <Redirect to='/'/>}
         />
     )
 }
@@ -109,9 +109,7 @@ class RouterHome extends Component {
             <ConnectedRouter onUpdate={() => window.scrollTo(0, 0)} history={history}>
                 <ScrollToTop>
                     <Switch>
-                        <LoginRoute exact path={'/'} component={Login} authed={this.props.isAuthed}/>
-                        <LoginRoute exact path={'/login'} component={Login} authed={this.props.isAuthed}/>
-                        <Route exact path={'/home'} component={HomeDash}/>
+                        <Route exact path={'/'} component={HomeDash}/>
                         <PrivateRoute exact path={'/journey'} component={JourneyDash} authed={this.props.isAuthed}/>
                     </Switch>
                 </ScrollToTop>
