@@ -1,12 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import {Motion, spring} from 'react-motion'
-import Icon from 'react-icon-base';
-import ArrowKeysReact from 'arrow-keys-react';
-import ReactDOM from 'react-dom';
-import Transition from 'react-transition-group/Transition';
-import moment from 'moment';
+import history from '../../Helpers/history';
 
 import Chat from '../Chat/Chat';
 import Sidebar from '../Sidebar/Sidebar';
@@ -59,7 +54,12 @@ class FullJourneyBanner extends Component {
     doSomethingThenCall = (next) => {
         setTimeout(() => {
             next();
-        }, 1000);    }
+        }, 1000);
+    }
+
+    navigate = () => {
+        history.push('/journey');
+    }
 
     render() {
         return (
@@ -67,6 +67,7 @@ class FullJourneyBanner extends Component {
                 <h1>People Doing Things Now</h1>
                 <div className={'full-journey-banner'}>
                     <div
+                        onClick={() => this.navigate()}
                         className={'left-container'}
                         style={{
                             backgroundSize: 'cover',

@@ -1424,6 +1424,7 @@ h1, h2, h3, h4, h5 {
   .home-container .banner {
     margin: 40px 0 70px 0; }
     .home-container .banner .full-journey-banner {
+      cursor: pointer;
       margin-top: 15px;
       margin-bottom: 15px;
       box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.2) !important;

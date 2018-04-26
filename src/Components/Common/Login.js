@@ -161,19 +161,13 @@ class Login extends Component {
         }
     }
 
-    /*TODO: MAKE DRY CODE*/
-    changeEmail = ev => this.props.updateFieldAuth('email', ev.target.value);
-    changePassword = ev => this.props.updateFieldAuth('password', ev.target.value);
-    changeName = ev => this.props.updateFieldAuth('name', ev.target.value);
-    changeVendor = ev => this.props.updateFieldAuth('vendor', ev.target.value);
-
     login = () => {
         console.log('attempting to log in');
         this.props.login();
     };
 
     componentWillMount() {
-        // this.props.getBeautifulUnsplash();
+        this.props.getBeautifulUnsplash();
     }
 
     render() {
