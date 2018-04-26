@@ -3,11 +3,11 @@ import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import DatePicker from './DatePicker';
 import {CSSTransitionGroup} from 'react-transition-group';
-import Measure from 'react-measure';
-import moment from 'moment';
 
-import SlideWrapper from './SlideWrapper';
-import Icon from 'react-icon-base';
+
+import store from '../../store.js';
+
+import DropDown from '../DropDown/DropDown';
 
 import agent from '../../Helpers/agent';
 
@@ -37,29 +37,44 @@ class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            dimensions: {
-                width: -1,
-                height: -1
-            },
-            dimensions2: {
-                width: -1,
-                height: -1
-            }
+            isDropDownOpen: false
         }
     }
 
-    render() {
+    toggleDropDown() {
+        console.log('this is clicked');
 
+        this.setState({
+            ...this.state,
+            isDropDownOpen: !this.state.isDropDownOpen
+        })
+
+    }
+
+    render() {
+        console.log(this.props.isOpen);
         return (
             <div className="header-container">
                 <div className={'header'}>
                     <nav>
                     </nav>
-                    <div className={'profile-information'}>
-                        {this.props.user !== null ? this.props.user.displayName : 'loading'}
-                        {this.props.user !== null ?
-                            <img className={'profile-photo'} src={this.props.user.photoURL}/> : null}
-                    </div>
+                    {this.props.user !== null ?
+                        <div className={'profile-information'}
+                             tabIndex="1"
+                             onBlur={()=>this.toggleDropDown()}
+                             onClick={() => this.toggleDropDown()}>
+                            {this.props.user.displayName}
+                            <img className={'profile-photo'} src={this.props.user.photoURL}/>
+                            <DropDown
+                                isOpen={this.state.isDropDownOpen}
+
+                                align={'right'}
+                                listItems={[{
+                                    icon: null,
+                                    name: 'Logout',
+                                    handleClick: () => store.dispatch(agent.Auth.logout())
+                                }]}></DropDown>
+                        </div> : null}
 
                 </div>
 
@@ -67,7 +82,6 @@ class Header extends Component {
         );
     }
 }
-
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));
 

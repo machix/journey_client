@@ -57,7 +57,7 @@ const Auth = {
                     console.log('logging out');
                     dispatch({
                         type: 'LOGIN',
-                        user: false,
+                        user: null,
                         authenticated: false
                     });
 
@@ -120,11 +120,6 @@ const Auth = {
         return dispatch => {
             Firebase.auth().signOut().then(function () {
                 console.log('signedOut');
-                dispatch({
-                    type: 'LOGIN',
-                    user: null,
-                    authenticated: false
-                });
             }, function () {
                 console.log('error');
             });

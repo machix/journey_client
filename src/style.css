@@ -1153,33 +1153,98 @@ h1, h2, h3, h4, h5 {
   flex-direction: column;
   justify-content: center;
   position: relative; }
-  .login-wrapper .title {
+  .login-wrapper .start-now-banner {
+    margin: 50px 100px 0 100px;
+    display: flex;
+    flex-direction: column;
     font-family: 'Open Sans', sans-serif;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
-    font-weight: 700;
-    font-size: 4rem;
-    line-height: 4.5rem;
-    color: white;
-    margin-right: auto;
-    margin-left: 100px; }
-  .login-wrapper .button-general {
-    margin-top: 5px;
-    border-radius: 4px;
-    font-weight: 400;
-    margin-right: auto;
-    font-size: 14px;
-    padding: 8px 7px;
-    margin-left: 100px;
-    text-align: center;
-    color: #fff;
-    background-color: #525f7f;
-    /*border: 1px solid #aaa;*/
-    box-shadow: 0 0 0 0.5px rgba(49, 49, 93, 0.03), 0 2px 5px 0 rgba(49, 49, 93, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; }
+    color: white; }
+    .login-wrapper .start-now-banner-entering {
+      -webkit-animation-name: slideInLeft;
+      -webkit-animation-duration: 0.5s;
+      -webkit-animation-iteration-count: 1;
+      -webkit-animation-timing-function: linear;
+      animation-name: slideInLeft;
+      animation-duration: 0.5s;
+      animation-iteration-count: 1;
+      animation-timing-function: linear; }
+    .login-wrapper .start-now-banner h1 {
+      font-size: 3rem;
+      line-height: 4rem;
+      font-weight: 700; }
+    .login-wrapper .start-now-banner h3 {
+      font-size: 1.7rem;
+      font-weight: normal; }
+    .login-wrapper .start-now-banner .start-now {
+      margin-top: 30px;
+      display: flex;
+      align-items: stretch;
+      cursor: pointer;
+      border-radius: 4px;
+      overflow: hidden;
+      background-color: #1fb3b2;
+      margin-right: auto; }
+      .login-wrapper .start-now-banner .start-now .left {
+        font-size: 1rem;
+        padding: 9px 9px;
+        display: flex;
+        flex: 1;
+        align-self: stretch;
+        text-transform: uppercase;
+        color: white;
+        height: 100%;
+        font-weight: 700;
+        background-color: #1fb3b2;
+        transition: background-color .1s ease-in-out; }
+        .login-wrapper .start-now-banner .start-now .left:hover {
+          background-color: #1b9c9b; }
+      .login-wrapper .start-now-banner .start-now .right {
+        padding: 9px 9px;
+        align-items: center;
+        background-color: #32454f; }
+  .login-wrapper .intro-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative; }
+    .login-wrapper .intro-wrapper .title {
+      font-family: 'Open Sans', sans-serif;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
+      font-weight: 700;
+      font-size: 4rem;
+      line-height: 4.5rem;
+      color: white;
+      margin-right: auto;
+      margin-left: 100px; }
+    .login-wrapper .intro-wrapper .facebook-login {
+      display: flex;
+      margin-top: 20px;
+      border-radius: 4px;
+      font-weight: 500;
+      font-family: roboto;
+      font-size: 14px;
+      margin-right: auto;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 16px;
+      margin-left: 100px;
+      text-align: center;
+      color: #fff;
+      background-color: #3b5998;
+      direction: ltr;
+      /*border: 1px solid #aaa;*/
+      box-shadow: 0 0 0 0.5px rgba(49, 49, 93, 0.03), 0 2px 5px 0 rgba(49, 49, 93, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none; }
+      .login-wrapper .intro-wrapper .facebook-login .login-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 15px; }
   .login-wrapper .login-social {
     position: absolute;
     bottom: 40px;
@@ -1304,31 +1369,51 @@ h1, h2, h3, h4, h5 {
   top: 0;
   left: 0;
   right: 0;
+  background-color: white;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06) !important;
   border-bottom: 1px solid #e4e4e4 !important;
   box-sizing: border-box;
-  min-height: 7vh;
   align-items: center;
   z-index: 6; }
   .header-container .header {
-    width: 70%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     align-items: center;
     flex-direction: row;
-    color: #939393; }
+    color: #939393;
+    font-weight: 500; }
     .header-container .header .profile-information {
       cursor: pointer;
       display: flex;
       align-items: center;
+      position: relative;
       margin-left: auto; }
       .header-container .header .profile-information .profile-photo {
-        margin-left: 20px;
+        margin: 10px 0 10px 20px;
         width: 40px;
         height: 40px;
-        border: 2px solid white;
+        border: 2px solid #F2F2F2;
         border-radius: 40px; }
+
+.dropdown {
+  position: absolute;
+  top: 101%;
+  background-color: white;
+  min-width: 282px;
+  color: #939393;
+  font-weight: 500;
+  z-index: 5; }
+  .dropdown .list-item {
+    border-bottom: 1px solid #EFEFEF;
+    padding: 16px;
+    cursor: pointer;
+    transition: background-color .1s ease-in-out;
+    background-color: white; }
+    .dropdown .list-item:hover {
+      border-bottom: 1px solid #E6EBF1;
+      background-color: #f9f9f9; }
 
 .home-container {
   position: relative;
@@ -1336,44 +1421,6 @@ h1, h2, h3, h4, h5 {
   margin-bottom: 400px;
   width: 77%;
   color: #484848; }
-  .home-container .start-now-banner {
-    margin: 100px 100px 150px 100px;
-    display: flex;
-    flex-direction: column; }
-    .home-container .start-now-banner h1 {
-      font-size: 2.5rem;
-      line-height: 4rem;
-      font-weight: 700; }
-    .home-container .start-now-banner h3 {
-      font-weight: normal;
-      color: #6b6b6b; }
-    .home-container .start-now-banner .start-now {
-      margin-top: 30px;
-      display: flex;
-      align-items: stretch;
-      cursor: pointer;
-      border-radius: 4px;
-      overflow: hidden;
-      background-color: #1fb3b2;
-      margin-right: auto; }
-      .home-container .start-now-banner .start-now .left {
-        font-size: 1rem;
-        padding: 9px 9px;
-        display: flex;
-        flex: 1;
-        align-self: stretch;
-        text-transform: uppercase;
-        color: white;
-        height: 100%;
-        font-weight: 700;
-        background-color: #1fb3b2;
-        transition: background-color .1s ease-in-out; }
-        .home-container .start-now-banner .start-now .left:hover {
-          background-color: #1b9c9b; }
-      .home-container .start-now-banner .start-now .right {
-        padding: 9px 9px;
-        align-items: center;
-        background-color: #32454f; }
   .home-container .banner {
     margin: 40px 0 70px 0; }
     .home-container .banner .full-journey-banner {

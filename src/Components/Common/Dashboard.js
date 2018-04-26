@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import SidebarData from './SidebarData';
 import {withRouter} from 'react-router-dom';
 
 import Sidebar from 'react-sidebar';

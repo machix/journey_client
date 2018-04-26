@@ -4,6 +4,9 @@ import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import Icon from 'react-icon-base';
 
+import IntroWrapper from './IntroWrapper';
+import GetStarted from './GetStarted'
+
 import history from '../../Helpers/history';
 import {geoPath, geoMercator} from 'd3-geo';
 
@@ -16,11 +19,12 @@ const mapStateToProps = state => ({
     beautifulUnsplash: state.common.beautifulUnsplash,
     register: state.common.register,
 
+    user: state.auth.user
+
 });
 
 const mapDispatchToProps = dispatch => ({
     getBeautifulUnsplash: () => dispatch(agent.common.beautifulUnsplash()),
-    login: ()=> dispatch(agent.Auth.login()),
     updateFieldAuth: (key, value) =>
         dispatch({type: 'UPDATE_FIELD_AUTH', key: key, value}),
     onSubmit: (email, password) => {
@@ -41,7 +45,6 @@ class Login extends Component {
         this.state = {
             checked: false,
             message: '',
-            mode: 'write',
             svgHeight: 150,
             geojson: {
                 "type": "LineString",
@@ -152,10 +155,7 @@ class Login extends Component {
                     ]
                 ]
             },
-            verbs: ["Explore", "Live", "Inspire", "Define", "Discover", "Celebrate"],
-            thing: "Explore",
-            whereYou: "Where You",
-            verbIndex: 0,
+
             delay: "2000"
 
         }
@@ -173,91 +173,10 @@ class Login extends Component {
     };
 
     componentWillMount() {
-        this.props.getBeautifulUnsplash();
-    }
-
-    componentDidMount() {
-        const projection = geoMercator();
-        const pathGenerator = geoPath().projection(projection);
-        this.timeout = setTimeout(() => this.letterChoreographer(), this.state.delay);
-    }
-
-
-    componentWillUnmount() {
-        // this.props.onUnload();
-        window.clearTimeout(this.timeout);
-    }
-
-    letterChoreographer() {
-        switch (this.state.mode) {
-            case 'write' :
-                if (this.state.thing === 'Celebrate') {
-                    this.setState({
-                        ...this.state,
-                        message: this.state.message + this.state.thing.slice(0, 1),
-                        thing: this.state.thing.substr(1),
-                        whereYou: ''
-                    })
-                }
-
-                this.setState({
-                    ...this.state,
-                    message: this.state.message + this.state.thing.slice(0, 1),
-                    thing: this.state.thing.substr(1)
-                });
-
-                if (this.state.thing.length === 0 && this.state.verbIndex === (this.state.verbs.length - 1)) {
-                    window.clearTimeout(this.timeout);
-                    return;
-                }
-
-                if (this.state.thing.length === 0) {
-                    this.setState({
-                        ...this.state,
-                        mode: 'delete',
-                        delay: 2000
-                    })
-
-                } else {
-                    this.setState({
-                        ...this.state,
-                        delay: 32 + Math.round(Math.random() * 10)
-                    })
-
-                }
-                break;
-
-            case 'delete' :
-
-                this.setState({
-                    ...this.state,
-                    message: this.state.message.slice(0, -1)
-                });
-
-                if (this.state.message.length === 0) {
-                    let newVerbIndex = this.state.verbIndex + 1;
-
-                    this.setState({
-                        ...this.state,
-                        mode: 'write',
-                        delay: 1000,
-                        verbIndex: newVerbIndex,
-                        thing: this.state.verbs[newVerbIndex]
-                    });
-                } else {
-                    this.setState({
-                        ...this.state,
-                        mode: 'delete',
-                        delay: 32 + Math.round(Math.random() * 200)
-                    });
-                }
-                break;
-        }
-        this.timeout = setTimeout(() => this.letterChoreographer(), this.state.delay);
+        // this.props.getBeautifulUnsplash();
     }
 
     render() {
-
         return (
             <div className="login-wrapper" style={{
                 backgroundImage: `url(${this.props.beautifulUnsplash})`,
@@ -267,16 +186,8 @@ class Login extends Component {
 
             }}>
 
-                <div className={'title'}>
-                    {this.state.whereYou} {this.state.message}
-                    <br/>
-                    Adventure.
-
-                </div>
-                <div style={{marginTop: '15px', display: 'flex'}} className="button-general"
-                     onClick={() => this.login()}>Join with Facebook
-                </div>
-
+                {this.props.user == null ?
+                    <IntroWrapper/> : <GetStarted/>}
 
 
                 <div className={'login-social'}>
