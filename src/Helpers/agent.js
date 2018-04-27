@@ -205,7 +205,6 @@ const FirebaseQuery = {
                         journeyId: journey_id,
                         journeyLength: sortable.length
                     });
-
                 }
             })
             ;
@@ -263,6 +262,34 @@ const FirebaseQuery = {
 
             });
 
+        };
+    },
+
+    requestCapture: (journeyId) => {
+
+        return dispatch => {
+
+            console.log('requesting a capture');
+            Firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then((idToken) => {
+                // Send token to your backend via HTTPS
+                // ...
+                console.log('This is the hourly refreshed idToken: ' + idToken);
+                fetch('https://us-central1-journeyapp91.cloudfunctions.net/remoteCapture', {
+                    headers: {
+                        'Authorization': `Bearer ${idToken}`
+                    },
+                })
+                    .then(response => Promise.all([response, response.json()])).then(([response, json]) => {
+                    if (response.status === 200) {
+                        console.log('win');
+                    }
+                    else {
+                        console.log('oh no ' + response.status);
+                    }
+                });
+            }).catch(function (error) {
+                // Handle error
+            });
         };
     },
 

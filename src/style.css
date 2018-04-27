@@ -1404,7 +1404,10 @@ h1, h2, h3, h4, h5 {
   min-width: 282px;
   color: #939393;
   font-weight: 500;
-  z-index: 5; }
+  z-index: 5;
+  overflow: hidden;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px; }
   .dropdown .list-item {
     border-bottom: 1px solid #EFEFEF;
     padding: 16px;

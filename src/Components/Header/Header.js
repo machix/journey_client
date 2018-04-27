@@ -61,7 +61,7 @@ class Header extends Component {
                     {this.props.user !== null ?
                         <div className={'profile-information'}
                              tabIndex="1"
-                             onBlur={()=>this.toggleDropDown()}
+                             onBlur={() => this.toggleDropDown()}
                              onClick={() => this.toggleDropDown()}>
                             {this.props.user.displayName}
                             <img className={'profile-photo'} src={this.props.user.photoURL}/>
@@ -69,11 +69,17 @@ class Header extends Component {
                                 isOpen={this.state.isDropDownOpen}
 
                                 align={'right'}
-                                listItems={[{
-                                    icon: null,
-                                    name: 'Logout',
-                                    handleClick: () => store.dispatch(agent.Auth.logout())
-                                }]}></DropDown>
+                                listItems={[
+                                    {
+                                        icon: null,
+                                        name: 'Your Profile',
+                                        handleClick: () => console.log('nothing yet!')
+                                    },
+                                    {
+                                        icon: null,
+                                        name: 'Logout',
+                                        handleClick: () => store.dispatch(agent.Auth.logout())
+                                    }]}></DropDown>
                         </div> : null}
 
                 </div>

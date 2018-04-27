@@ -23,7 +23,7 @@ class DropDown extends Component {
 
             return (
                 <div onClick={() => this.props.listItems[index].handleClick()} key={index} className="list-item">
-                    {this.props.listItems[0].name}
+                    {this.props.listItems[index].name}
                 </div>)
         }, this);
     };

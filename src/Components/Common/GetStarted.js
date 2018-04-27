@@ -2,13 +2,15 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import Icon from 'react-icon-base';
-
 import Transition from 'react-transition-group/Transition';
 
+import agent from '../../Helpers/agent';
 
 const mapStateToProps = state => ({});
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+    remoteCapture: dispatch(agent.FirebaseQuery.requestCapture(null))
+});
 
 class GetStarted extends Component {
     constructor(props) {
@@ -35,6 +37,7 @@ class GetStarted extends Component {
             <Transition
                 unmountOnExit={true}
                 in={this.state.mount}
+                timeout={500}
             >
                 {(state) => (
                     <div className={`start-now-banner start-now-banner-${state}`}>
@@ -43,7 +46,7 @@ class GetStarted extends Component {
                             to track your own Journey.
                         </h3>
 
-                        <div className={'start-now'}>
+                        <div className={'start-now'} onClick={() => this.props.remoteCapture() }>
                             <div className={'left'}>
                                 START NOW
                             </div>
