@@ -9,8 +9,10 @@ import agent from '../../Helpers/agent';
 const mapStateToProps = state => ({});
 
 const mapDispatchToProps = dispatch => ({
-    remoteCapture: dispatch(agent.FirebaseQuery.requestCapture(null))
+    remoteCapture: () => dispatch(agent.FirebaseQuery.requestCapture(null))
 });
+
+
 
 class GetStarted extends Component {
     constructor(props) {

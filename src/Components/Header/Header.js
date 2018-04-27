@@ -52,7 +52,6 @@ class Header extends Component {
     }
 
     render() {
-        console.log(this.props.isOpen);
         return (
             <div className="header-container">
                 <div className={'header'}>
