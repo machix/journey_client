@@ -31,6 +31,7 @@ class IntroWrapper extends Component {
             message: '',
             mode: 'write',
             verbIndex: 0,
+            completed: false
         }
     }
 
@@ -61,7 +62,8 @@ class IntroWrapper extends Component {
                         ...this.state,
                         message: this.state.message + this.state.thing.slice(0, 1),
                         thing: this.state.thing.substr(1),
-                        whereYou: ''
+                        whereYou: '',
+                        complete: true,
                     })
                 }
 
@@ -127,9 +129,8 @@ class IntroWrapper extends Component {
 
             <div className={'intro-wrapper'}>
                 <div className={'title'}>
-                    {this.state.whereYou} {this.state.message}
-                    <br/>
-                    Adventure.
+                    {this.state.whereYou} <span className={'place-holder'}>{this.state.message} {this.state.complete === true ? null :
+                    <span className={'place-holder-text'}>!</span>} </span> <span className={'conditional-display'}><br/></span> Adventure.
 
                 </div>
                 <div className="facebook-login"

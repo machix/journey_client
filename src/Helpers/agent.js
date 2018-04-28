@@ -340,7 +340,7 @@ const FirebaseQuery = {
 
         return dispatch => {
 
-            console.log('requesting a capture');
+            console.log('requesting a m startcapture');
             firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then((idToken) => {
                 // Send token to your backend via HTTPS
                 // ...

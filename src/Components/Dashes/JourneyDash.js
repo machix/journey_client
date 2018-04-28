@@ -229,7 +229,7 @@ class HomeDash extends Component {
                  }}
                  tabIndex="1"
                  {...ArrowKeysReact.events}   >
-                <Motion style={{x: spring(this.props.sidebarExpanded ? 30 : 0)}}>
+                <Motion style={{x: spring(this.props.sidebarExpanded ? this.props.windowWidth < 800 ? 100 : 30 : 0)}}>
                     {({x}) =>
 
                         <div className="sidebar-container" style={{

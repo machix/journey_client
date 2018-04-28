@@ -165,12 +165,13 @@ class MapContainer extends Component {
                         </div>
                         {this.props.mapExpanded ? <div
                             onClick={() => this.toggle('closeMap')}
+                            className={'map-toggle'}
                             style={{
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
                                 position: 'absolute',
-                                left: -25,
+                                left: 0,
                                 backgroundColor: 'white',
                                 width: '25px',
                                 height: '40px',
@@ -195,8 +196,8 @@ class MapContainer extends Component {
                                  <div style={{
                                      minHeight: '100px',
                                      minWidth: '100px',
-                                     height: `${10 * (hoverHeight + toggleHeight) * chatMultiplier / 100 * this.props.windowHeight}px`,
-                                     width: `${(10 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowHeight}px`,                                     borderRadius: `${9.8 * hoverRadius * toggleRadius / 100 * this.props.windowHeight}px`,
+                                     height: this.props.windowWidth < 800 ? `${10 * (toggleHeight) * chatMultiplier * 10/7 / 100 * this.props.windowHeight}px` : `${10 * (hoverHeight + toggleHeight) * chatMultiplier / 100 * this.props.windowHeight}px`,
+                                     width: this.props.windowWidth < 800 ? `${(toggleHeight * (100/7)) / 100 * this.props.windowWidth}px` : `${(10 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowWidth * 0.5}px`,                                     borderRadius: `${9.8 * hoverRadius * toggleRadius / 100 * this.props.windowHeight}px`,
                                      overflow: 'hidden',
                                      zIndex: 3,
                                      border: 'solid white 3px'

@@ -27,10 +27,7 @@ const mapStateToProps = state => ({
 
 });
 
-const mapDispatchToProps = dispatch => ({
-
-
-});
+const mapDispatchToProps = dispatch => ({});
 
 
 class MapContainer extends Component {
@@ -49,12 +46,13 @@ class MapContainer extends Component {
                  googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIpabTnIbXsdIgI2Zo2zO6g3GGxUbYqw8&v=3.exp&libraries=geometry,drawing,places"
                  loadingElement={<div style={{height: `100px`,}}/>}
                  containerElement={
-                     <div style={{
-                         minHeight: '100px',
-                         minWidth: '100px',
-                         height: '100%',
-                         width: '100%',
-                     }}/>}
+                     <div className={'map-element'}
+                          style={{
+                              minHeight: '100px',
+                              minWidth: '100px',
+                              height: '100%',
+                              width: '100%',
+                          }}/>}
                  mapElement={<div style={{height: `100%`, width: '100%'}}/>}/>
 
         );

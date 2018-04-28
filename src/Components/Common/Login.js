@@ -172,13 +172,14 @@ class Login extends Component {
 
     render() {
         return (
-            <div className="login-wrapper" style={{
-                backgroundImage: `url(${this.props.beautifulUnsplash})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
+            <div className="login-wrapper"
+                 style={{
+                     backgroundImage: `url(${this.props.beautifulUnsplash})`,
+                     backgroundRepeat: 'no-repeat',
+                     backgroundPosition: 'center',
+                     backgroundSize: 'cover',
 
-            }}>
+                 }}>
 
                 {this.props.user == null ?
                     <IntroWrapper/> : <GetStarted/>}
