@@ -3,7 +3,10 @@ import moment from 'moment';
 const defaultState = {
     activeCommands: [],
     chatExpanded: false,
-    liveJourneyMeta: [],
+    liveJourneyData: [],
+    LIVE: null,
+    liveJourneyMeta: null,
+    liveJourneyAuthor: null,
     preloadMeta: [null, null],
     currentMeta: null,
     position: 0,
@@ -17,12 +20,26 @@ const defaultState = {
 
 export default (state = defaultState, action) => {
     switch (action.type) {
+        case 'LIVE_JOURNEY_DATA':
+            console.log('LIVE_JOURNEY_DATA');
+            return {
+                ...state,
+                liveJourneyData: action.liveJourneyData,
+                journeyId: action.journeyId
+            };
+        case 'LIVE_JOURNEY_AUTHOR':
+            console.log('LIVE_JOURNEY_AUTHOR');
+            return {
+                ...state,
+                liveJourneyAuthor: action.liveJourneyAuthor,
+            };
+
+
         case 'LIVE_JOURNEY_META':
-            console.log('livejourneymetareducer');
+            console.log('LIVE_JOURNEY_META');
             return {
                 ...state,
                 liveJourneyMeta: action.liveJourneyMeta,
-                journeyId: action.journeyId
             };
         case 'PRELOAD_META':
             console.log('PRELOAD_META');
@@ -35,7 +52,7 @@ export default (state = defaultState, action) => {
             console.log('CHANGE_POSITION');
             console.log(action.value);
 
-            if (action.value > 0 && action.value < state.liveJourneyMeta.length - 1) {
+            if (action.value > 0 && action.value < state.liveJourneyData.length - 1) {
                 console.log('in the middle');
                 //IN THE THICK OF IT
                 return {
@@ -44,7 +61,7 @@ export default (state = defaultState, action) => {
                     prevPosition: action.value - 1,
                     nextPosition: action.value + 1
                 }
-            } else if (action.value === state.liveJourneyMeta.length - 1) {
+            } else if (action.value === state.liveJourneyData.length - 1) {
                 console.log('at the end');
                 //AT THE END
                 return {

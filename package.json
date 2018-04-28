@@ -6,7 +6,6 @@
     "arrow-keys-react": "^1.0.6",
     "d3-geo": "^1.10.0",
     "emoji-mart-lite": "^0.4.9",
-    "exif-js": "^2.3.0",
     "express": "^4.16.3",
     "firebase": "^4.5.0",
     "immutability-helper": "^2.4.0",

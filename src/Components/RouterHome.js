@@ -71,10 +71,6 @@ class RouterHome extends Component {
         super(props);
     }
 
-    componentWillReceiveProps(nextProps) {
-        console.log('receiving props');
-        console.log(nextProps);
-    }
 
     componentWillMount() {
         //
@@ -110,7 +106,7 @@ class RouterHome extends Component {
                 <ScrollToTop>
                     <Switch>
                         <Route exact path={'/'} component={HomeDash}/>
-                        <PrivateRoute exact path={'/journey'} component={JourneyDash} authed={this.props.isAuthed}/>
+                        <PrivateRoute path={'/journey/:journey_id'} component={JourneyDash} authed={this.props.isAuthed}/>
                     </Switch>
                 </ScrollToTop>
             </ConnectedRouter>

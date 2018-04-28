@@ -22,7 +22,7 @@ import Login from '../Common/Login';
 const mapStateToProps = state => ({
     chatExpanded: state.common.chatExpanded,
     loaderDisplay: state.common.loaderDisplay,
-    liveJourneyMeta: state.common.liveJourneyMeta,
+    liveJourneyData: state.common.liveJourneyData,
     windowHeight: state.common.windowHeight,
     windowWidth: state.common.windowWidth,
     mapExpanded: state.common.mapExpanded,

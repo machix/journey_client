@@ -18,7 +18,7 @@ const mapStateToProps = state => ({
     mapIsHover: state.common.mapIsHover,
     windowHeight: state.common.windowHeight,
     windowWidth: state.common.windowWidth,
-    liveJourneyMeta: state.common.liveJourneyMeta,
+    liveJourneyData: state.common.liveJourneyData,
 
     position: state.choreographer.position,
     prevPosition: state.choreographer.prevPosition,
@@ -50,7 +50,7 @@ class MapContainer extends Component {
 
     }
     getTime = () => {
-        let timestamp = moment(-this.props.liveJourneyMeta[this.props.position].timestamp);
+        let timestamp = moment(-this.props.liveJourneyData[this.props.position].timestamp);
         if (moment().diff( timestamp, 'days') >= 1) {
             return timestamp.format('MMMM Do YYYY, h:mm:ss a')
         } else {
@@ -143,7 +143,7 @@ class MapContainer extends Component {
                             {this.props.alertNew === true ?
                                 <div>New Picture!</div> : null}
                             <div className={'info-container'}>
-                                {this.props.liveJourneyMeta.length > 0 ? this.getTime() : 'Loading'}
+                                {this.props.liveJourneyData.length > 0 ? this.getTime() : 'Loading'}
                                 <div>
                                     <Icon viewBox="0 0 40 40" size={20}
                                           style={{color: 'white'}}>
@@ -153,8 +153,8 @@ class MapContainer extends Component {
                                         </g>
                                     </Icon>
                                     Everest Base Camp <br/>
-                                    {this.props.liveJourneyMeta.length > 0 ? <div>
-                                        {this.props.liveJourneyMeta[this.props.position].coordinates.lat}, {this.props.liveJourneyMeta[this.props.position].coordinates.lng}
+                                    {this.props.liveJourneyData.length > 0 ? <div>
+                                        {this.props.liveJourneyData[this.props.position].coordinates.lat}, {this.props.liveJourneyData[this.props.position].coordinates.lng}
                                     </div> : null
 
                                     }

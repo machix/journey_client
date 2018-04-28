@@ -20,6 +20,7 @@ import member7 from '../Assets/member7.jpg';
 const mapStateToProps = state => ({
     ...state,
     sidebarExpanded: state.common.sidebarExpanded,
+    author: state.choreographer.liveJourneyAuthor
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -29,7 +30,9 @@ const mapDispatchToProps = dispatch => ({
     }),
     logout: () => {
         dispatch(agent.Auth.logout())
-    }
+    },
+    remoteCapture: (fcmToken) => dispatch(agent.FirebaseQuery.requestCapture(fcmToken))
+
 
 });
 
@@ -152,7 +155,7 @@ class Sidebar extends Component {
 
                     </div>
                 </div>
-                <AwesomeButton>LIVE! Request An Update</AwesomeButton>
+                <AwesomeButton action={()=>this.props.remoteCapture(this.props.author.fcm_token)}>LIVE! Request An Update</AwesomeButton>
 
                 <div styles={{cursor: 'pointer'}} onClick={() => this.props.logout()}>Logout</div>
 

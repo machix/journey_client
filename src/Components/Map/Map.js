@@ -11,7 +11,7 @@ import member3 from '../Assets/member2.jpg';
 
 const mapStateToProps = state => ({
     ...state,
-    liveJourneyMeta: state.common.liveJourneyMeta,
+    liveJourneyData: state.common.liveJourneyData,
     position: state.choreographer.position,
 
 });
@@ -38,7 +38,7 @@ class Map extends Component {
 
 
     click = () => {
-        this.map.panTo(this.props.liveJourneyMeta[this.props.position].coordinates);
+        this.map.panTo(this.props.liveJourneyData[this.props.position].coordinates);
     }
 
     render() {

@@ -7,9 +7,11 @@ import history from './history';
 import flattener from './jsonFlattener';
 import aggregator from './aggregator';
 
-var Firebase = require('firebase');
+const firebase = require('firebase');
+require("firebase/firestore");
 
-Firebase.initializeApp({
+
+firebase.initializeApp({
     apiKey: "AIzaSyCTZX0lG1JyIBUphH7m5SDoPCpRamPNm24",
     authDomain: "journeyapp91.firebaseapp.com",
     databaseURL: "https://journeyapp91.firebaseio.com",
@@ -18,10 +20,12 @@ Firebase.initializeApp({
     messagingSenderId: "515548202082"
 });
 
-var database = Firebase.database();
-var provider = new Firebase.auth.FacebookAuthProvider();
+var database = firebase.database();
+var provider = new firebase.auth.FacebookAuthProvider();
+var db = firebase.firestore();
 
-const FirebaseAuthService = Firebase.auth();
+
+const FirebaseAuthService = firebase.auth();
 
 let token = null;
 
@@ -42,7 +46,7 @@ const Auth = {
     getCurrentUser: () => {
         return dispatch => {
             console.log('getCurrentUser called');
-            Firebase.auth().onAuthStateChanged(function (user) {
+            firebase.auth().onAuthStateChanged(function (user) {
                 console.log(user);
                 if (user) {
                     console.log('User is logged in');
@@ -68,8 +72,34 @@ const Auth = {
     },
     login: () => {
         return dispatch => {
-            Firebase.auth().signInWithPopup(provider).then(function (result) {
+            firebase.auth().signInWithPopup(provider).then((result) => {
                 // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+
+
+                let additionalUserInfo = result.additionalUserInfo;
+                console.log(additionalUserInfo);
+                console.log(result);
+                console.log(additionalUserInfo.profile.first_name);
+                console.log(additionalUserInfo.profile.last_name);
+                console.log(additionalUserInfo.profile.phone_number);
+                console.log(additionalUserInfo.profile.timezone);
+                console.log(result.displayName);
+
+
+                if (result.additionalUserInfo.isNewUser === true) {
+                    console.log(additionalUserInfo.profile.first_name);
+                    db.collection("users").doc(result.user.uid).set({
+                        first_name: additionalUserInfo.profile.first_name,
+                        last_name: additionalUserInfo.profile.last_name,
+                        phone_number: result.user.phoneNumber,
+                        timezone: additionalUserInfo.profile.timezone,
+                        uid: result.user.uid,
+                        display_name: result.user.displayName,
+                        photo_url: result.user.photoURL,
+                        fcm_token: null
+                    })
+                }
+
                 var token = result.credential.accessToken;
                 // The signed-in user info.
                 var user = result.user;
@@ -111,14 +141,14 @@ const Auth = {
     //              console.log(snapshot.val());
     //              */
     //
-    //             dispatch(FirebaseQuery.fetchConsole(snapshot.val()))
+    //             dispatch(firebaseQuery.fetchConsole(snapshot.val()))
     //         });
     //     }
     // },
     logout: () => {
 
         return dispatch => {
-            Firebase.auth().signOut().then(function () {
+            firebase.auth().signOut().then(function () {
                 console.log('signedOut');
             }, function () {
                 console.log('error');
@@ -171,8 +201,49 @@ const FirebaseWatcher = {
     campaignWatcher: (console_id) => {
         return database.ref('consoles/' + console_id + '/campaigns')
     }
+};
 
-}
+const FireStoreQuery = {
+    fetchJourneyMeta: (journey_id) => {
+        return dispatch => {
+           db.collection('journey_meta').doc(journey_id).get().then(function(doc){
+               if(doc.exists)   {
+                   console.log('Doc Data: ' + doc);
+                   console.log(doc.data());
+
+                   dispatch({
+                       type: 'LIVE_JOURNEY_META',
+                       liveJourneyMeta: doc.data()
+                   });
+
+                   dispatch(FireStoreQuery.fetchUserInfo(doc.data().uid));
+               } else {
+                   console.log('No such Document');
+               }
+           })
+        }
+    },
+    fetchUserInfo: (uid) => {
+        console.log('fetchUserInfo');
+        return dispatch => {
+            db.collection('users').doc(uid).get().then(function(doc){
+                if(doc.exists)   {
+                    console.log('Doc Data: ' + doc.data());
+                    console.log(doc.data());
+                    dispatch({
+                        type: 'LIVE_JOURNEY_AUTHOR',
+                        liveJourneyAuthor: doc.data()
+                    });
+
+
+                } else {
+                    console.log('No such Document');
+                }
+            })
+        }
+
+    }
+};
 
 
 const FirebaseQuery = {
@@ -200,8 +271,8 @@ const FirebaseQuery = {
                     });
                     // console.log(sortable);
                     dispatch({
-                        type: 'LIVE_JOURNEY_META',
-                        liveJourneyMeta: sortable,
+                        type: 'LIVE_JOURNEY_DATA',
+                        liveJourneyData: sortable,
                         journeyId: journey_id,
                         journeyLength: sortable.length
                     });
@@ -215,7 +286,7 @@ const FirebaseQuery = {
         database.ref('messages/' + journey_id).push({
             name: member,
             message: message,
-            timestamp: Firebase.database.ServerValue.TIMESTAMP
+            timestamp: firebase.database.ServerValue.TIMESTAMP
         })
         ;
     },
@@ -265,19 +336,24 @@ const FirebaseQuery = {
         };
     },
 
-    requestCapture: (journeyId) => {
+    requestCapture: (fcmToken) => {
 
         return dispatch => {
 
             console.log('requesting a capture');
-            Firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then((idToken) => {
+            firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then((idToken) => {
                 // Send token to your backend via HTTPS
                 // ...
                 console.log('This is the hourly refreshed idToken: ' + idToken);
+                console.log('This is the FCM Token: ' + fcmToken);
+
                 fetch('https://us-central1-journeyapp91.cloudfunctions.net/remoteCapture', {
                     headers: {
-                        'Authorization': `Bearer ${idToken}`
+                        'Authorization': `Bearer ${idToken}`,
                     },
+                    body: fcmToken,
+                    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+
                 })
                     .then(response => Promise.all([response, response.json()])).then(([response, json]) => {
                     if (response.status === 200) {
@@ -643,6 +719,7 @@ export default {
     Auth,
     FirebaseQuery,
     FirebaseWatcher,
+    FireStoreQuery,
     setToken: _token => {
         token = _token;
     },

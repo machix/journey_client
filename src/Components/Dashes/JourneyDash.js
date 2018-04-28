@@ -19,7 +19,7 @@ import Video from '../Video/Video';
 const mapStateToProps = state => ({
     chatExpanded: state.common.chatExpanded,
     loaderDisplay: state.common.loaderDisplay,
-    liveJourneyMeta: state.common.liveJourneyMeta,
+    liveJourneyData: state.common.liveJourneyData,
     windowHeight: state.common.windowHeight,
     windowWidth: state.common.windowWidth,
     mapExpanded: state.common.mapExpanded,
@@ -36,13 +36,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     fetchLiveJourney: (journey_uid) => dispatch(agent.FirebaseQuery.liveJourney(journey_uid)),
-
-
-
-
-
-
-
+    fetchJourneyMeta: (journey_uid) => dispatch(agent.FireStoreQuery.fetchJourneyMeta(journey_uid)),
 
 
 
@@ -115,7 +109,7 @@ class HomeDash extends Component {
                 }
             },
             right: () => {
-                if (this.props.position === this.props.liveJourneyMeta.length - 1) {
+                if (this.props.position === this.props.liveJourneyData.length - 1) {
                     this.props.setArrowKey('right')
                 } else {
                     this.props.setArrowKey('right');
@@ -127,7 +121,11 @@ class HomeDash extends Component {
     }
 
     componentWillMount() {
-        this.props.fetchLiveJourney('test_journey');
+        //==================FETCH THE journey_id FROM THE PARAMS ==================>
+        console.log('This is the path: ' + this.props.match.params.journey_id);
+        this.props.fetchJourneyMeta(this.props.match.params.journey_id);
+
+        this.props.fetchLiveJourney(this.props.match.params.journey_id);
     }
 
     componentDidMount() {
@@ -139,7 +137,7 @@ class HomeDash extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.liveJourneyMeta.length !== this.props.liveJourneyMeta.length && this.props.liveJourneyMeta.length > 0) {
+        if (nextProps.liveJourneyData.length !== this.props.liveJourneyData.length && this.props.liveJourneyData.length > 0) {
             console.log('There is a new submission');
             this.props.setAlertNew(true);
             this.props.changePosition(this.props.position + 1);
@@ -162,7 +160,7 @@ class HomeDash extends Component {
     }
 
     getTime = () => {
-        let timestamp = moment(-this.props.liveJourneyMeta[this.props.position].timestamp);
+        let timestamp = moment(-this.props.liveJourneyData[this.props.position].timestamp);
         if (moment().diff(timestamp, 'days') >= 1) {
             return timestamp.format('MMMM Do YYYY, h:mm:ss a')
         } else {
@@ -173,7 +171,7 @@ class HomeDash extends Component {
 
     photosMap = () => {
         console.log('photosMap');
-        return Object.keys(this.props.liveJourneyMeta).sort((a, b) => this.props.liveJourneyMeta[a].timeStamp - this.props.liveJourneyMeta[b].timeStamp).map((key, index) => {
+        return Object.keys(this.props.liveJourneyData).sort((a, b) => this.props.liveJourneyData[a].timeStamp - this.props.liveJourneyData[b].timeStamp).map((key, index) => {
             return
         });
     };
@@ -183,7 +181,7 @@ class HomeDash extends Component {
         if (this.props.position === 0 && value === 'left') {
         } else if (value === 'left') {
             this.props.changePosition(this.props.position - 1);
-        } else if (this.props.position < this.props.liveJourneyMeta.length - 1 && value === 'right') {
+        } else if (this.props.position < this.props.liveJourneyData.length - 1 && value === 'right') {
             this.props.changePosition(this.props.position + 1);
         } else {
 
@@ -244,16 +242,16 @@ class HomeDash extends Component {
                 </Motion>
 
                 <Chat commandsVisible={this.state.commandsVisible}/>
-                {this.props.liveJourneyMeta.length > 0 ?
+                {this.props.liveJourneyData.length > 0 ?
                     <div className={'logo'} onClick={() => this.props.setSidebarExpanded(!this.props.sidebarExpanded)}>
                         <img className={'logo-image'}
                              src={"https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/The_North_Face_logo.svg/1200px-The_North_Face_logo.svg.png"}/>
 
                         <img
-                            src={`https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_${this.props.liveJourneyMeta[this.props.prevPosition].uid}.jpg?alt=media&token=ccd5ab02-54bb-4bca-8f2f-9e253de52523`}
+                            src={`https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_${this.props.liveJourneyData[this.props.prevPosition].uid}.jpg?alt=media&token=ccd5ab02-54bb-4bca-8f2f-9e253de52523`}
                             className={'load-next'}/>
                         <img
-                            src={`https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_${this.props.liveJourneyMeta[this.props.nextPosition].uid}.jpg?alt=media&token=ccd5ab02-54bb-4bca-8f2f-9e253de52523`}
+                            src={`https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_${this.props.liveJourneyData[this.props.nextPosition].uid}.jpg?alt=media&token=ccd5ab02-54bb-4bca-8f2f-9e253de52523`}
                             className={'load-next'}/>
                     </div> : null}
 
@@ -329,7 +327,7 @@ class HomeDash extends Component {
                                         </g>
                                     </Icon>
                                 </div>
-                                <div onClick={()=>agent.Auth.logout()} className={"title"}>Climbing Everest</div>
+                                <div onClick={() => agent.Auth.logout()} className={"title"}>Climbing Everest</div>
                                 <div className={"subText"}>Day 12: Going up the North Face of the mountain in record
                                     time!
                                     Without oxygen and without my balls.
@@ -364,7 +362,7 @@ class HomeDash extends Component {
                     </Transition>
 
 
-                    {this.props.liveJourneyMeta !== null ?
+                    {this.props.liveJourneyData !== null ?
                         <Motion
                             style={{
                                 marginControl: spring(this.props.mapExpanded ? 0 : 1),
@@ -375,15 +373,17 @@ class HomeDash extends Component {
 
 
                                 <div style={{height: '100vh', width: '100%', display: 'flex', alignItems: 'center'}}>
-                                    {this.props.liveJourneyMeta.length > 0 && this.props.liveJourneyMeta[this.props.position].type === "video" ? <Video url={`https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2F${this.props.liveJourneyMeta[this.props.position].uid}.mp4?alt=media&token=9f9e06ad-db93-4a22-bdfb-fed973efd936`}/> : null}
+                                    {this.props.liveJourneyData.length > 0 && this.props.liveJourneyData[this.props.position].type === "video" ?
+                                        <Video
+                                            url={`https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2F${this.props.liveJourneyData[this.props.position].uid}.mp4?alt=media&token=9f9e06ad-db93-4a22-bdfb-fed973efd936`}/> : null}
 
-                                    {this.props.liveJourneyMeta.length > 0 && this.props.liveJourneyMeta[this.props.position].type === "image" ?
+                                    {this.props.liveJourneyData.length > 0 && this.props.liveJourneyData[this.props.position].type === "image" ?
 
                                         <div style={{
                                             height: '100%',
                                             width: `${this.props.windowWidth - ((10 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowHeight)}px`,
                                             backgroundSize: 'contain',
-                                            backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_${this.props.liveJourneyMeta[this.props.position].uid}.jpg?alt=media&token=ccd5ab02-54bb-4bca-8f2f-9e253de52523)`,
+                                            backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_${this.props.liveJourneyData[this.props.position].uid}.jpg?alt=media&token=ccd5ab02-54bb-4bca-8f2f-9e253de52523)`,
                                             //'https://www.google.com/maps/about/images/behind-the-scenes/treks/everest-header-bg_2x.jpg'
                                             backgroundRepeat: 'no-repeat',
                                             backgroundPosition: 'center'
@@ -404,7 +404,7 @@ class HomeDash extends Component {
 
 
                 <div style={{height: '100%'}}>
-                    {this.props.liveJourneyMeta.length > 0 ?
+                    {this.props.liveJourneyData.length > 0 ?
 
                         <div className={'blur-background blur'}
                              onClick={() => {
@@ -412,7 +412,7 @@ class HomeDash extends Component {
                              }}
                              style={{
                                  backgroundSize: 'cover',
-                                 backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_${this.props.liveJourneyMeta[this.props.position].uid}.jpg?alt=media&token=ccd5ab02-54bb-4bca-8f2f-9e253de52523)`,
+                                 backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_${this.props.liveJourneyData[this.props.position].uid}.jpg?alt=media&token=ccd5ab02-54bb-4bca-8f2f-9e253de52523)`,
                              }}>
                         </div>
                         : null}
@@ -455,7 +455,7 @@ export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeDash)
                                                 {this.props.alertNew === true ?
                                                     <div>YOU GOT A NEW PICTURE BITCH!</div> : null}
                                                 <div className={'info-container'}>
-                                                    {this.props.liveJourneyMeta.length > 0 ? this.getTime() : 'Loading'}
+                                                    {this.props.liveJourneyData.length > 0 ? this.getTime() : 'Loading'}
                                                     <div>
                                                         <Icon viewBox="0 0 40 40" size={20}
                                                               style={{color: 'white'}}>
@@ -465,8 +465,8 @@ export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeDash)
                                                             </g>
                                                         </Icon>
                                                         Everest Base Camp <br/>
-                                                        {this.props.liveJourneyMeta.length > 0 ? <div>
-                                                            {this.props.liveJourneyMeta[this.props.position].coordinates.lat}, {this.props.liveJourneyMeta[this.props.position].coordinates.lng}
+                                                        {this.props.liveJourneyData.length > 0 ? <div>
+                                                            {this.props.liveJourneyData[this.props.position].coordinates.lat}, {this.props.liveJourneyData[this.props.position].coordinates.lng}
                                                         </div> : null
 
                                                         }

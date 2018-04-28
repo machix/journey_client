@@ -6,7 +6,7 @@ var SelectedEndDate = moment();
 const defaultState = {
     beautifulUnsplash: null,
     chatExpanded: false,
-    liveJourneyMeta: [],
+    liveJourneyData: [],
     windowWidth: 0,
     windowHeight: 0,
     mapExpanded: false,
@@ -35,10 +35,10 @@ export default (state = defaultState, action) => {
                 ...state,
                 arrowKey: action.value
             };
-        case 'LIVE_JOURNEY_META':
+        case 'LIVE_JOURNEY_DATA':
             return {
                 ...state,
-                liveJourneyMeta: action.liveJourneyMeta
+                liveJourneyData: action.liveJourneyData
             };
         case 'SET_CHAT_EXPANDED':
             return {

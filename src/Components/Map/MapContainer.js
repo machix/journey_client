@@ -17,7 +17,7 @@ const mapStateToProps = state => ({
     mapIsHover: state.common.mapIsHover,
     windowHeight: state.common.windowHeight,
     windowWidth: state.common.windowWidth,
-    liveJourneyMeta: state.common.liveJourneyMeta,
+    liveJourneyData: state.common.liveJourneyData,
 
     position: state.choreographer.position,
     prevPosition: state.choreographer.prevPosition,

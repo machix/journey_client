@@ -19,7 +19,7 @@ import Header from '../Header/Header';
 const mapStateToProps = state => ({
     chatExpanded: state.common.chatExpanded,
     loaderDisplay: state.common.loaderDisplay,
-    liveJourneyMeta: state.common.liveJourneyMeta,
+    liveJourneyData: state.common.liveJourneyData,
     windowHeight: state.common.windowHeight,
     windowWidth: state.common.windowWidth,
     mapExpanded: state.common.mapExpanded,
@@ -58,7 +58,7 @@ class FullJourneyBanner extends Component {
     }
 
     navigate = () => {
-        history.push('/journey');
+        history.push('/journey/test_journey');
     }
 
     render() {

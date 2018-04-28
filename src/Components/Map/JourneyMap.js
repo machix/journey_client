@@ -11,7 +11,7 @@ import member3 from '../Assets/member2.jpg';
 
 const mapStateToProps = state => ({
     ...state,
-    liveJourneyMeta: state.common.liveJourneyMeta,
+    liveJourneyData: state.common.liveJourneyData,
     position: state.choreographer.position,
 
 });
@@ -51,18 +51,18 @@ class Map extends Component {
 
 
     click = () => {
-        this.map.panTo(this.props.liveJourneyMeta[this.props.position].coordinates);
+        this.map.panTo(this.props.liveJourneyData[this.props.position].coordinates);
     }
 
     render() {
         return (
-            this.props.liveJourneyMeta.length > 0 ?
+            this.props.liveJourneyData.length > 0 ?
 
                 <GoogleMap
                     defaultZoom={12}
                     //lat: 28.003514, lng: 86.852070}
-                    defaultCenter={this.props.liveJourneyMeta[0].coordinates}
-                    center={this.props.liveJourneyMeta[this.props.position].coordinates}
+                    defaultCenter={this.props.liveJourneyData[0].coordinates}
+                    center={this.props.liveJourneyData[this.props.position].coordinates}
 
                     ref={(map) => this.map = map}
                     onClick={(e) => {
@@ -132,7 +132,7 @@ class Map extends Component {
                         </div>
                     </OverlayView>
                     <OverlayView
-                        position={this.props.liveJourneyMeta[this.props.position].coordinates}
+                        position={this.props.liveJourneyData[this.props.position].coordinates}
                         //{lat: 28.003514, lng: 86.852070}
                         /*
                          * An alternative to specifying position is specifying bounds.
