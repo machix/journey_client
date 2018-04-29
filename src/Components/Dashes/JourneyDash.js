@@ -384,6 +384,7 @@ class HomeDash extends Component {
                                 }}>
                                     {this.props.liveJourneyData.length > 0 && this.props.liveJourneyData[this.props.position].type === "video" ?
                                         <Video
+
                                             url={`https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2F${this.props.liveJourneyData[this.props.position].uid}.mp4?alt=media&token=9f9e06ad-db93-4a22-bdfb-fed973efd936`}/> : null}
 
                                     {this.props.liveJourneyData.length > 0 && this.props.liveJourneyData[this.props.position].type === "image" ?
