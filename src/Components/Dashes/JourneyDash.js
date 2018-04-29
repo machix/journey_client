@@ -377,6 +377,7 @@ class HomeDash extends Component {
 
                                 <div style={{
                                     height: this.props.windowWidth > 800 ? '100vh' : '100%',
+                                    minHeight: '70vh',
                                     width: '100%',
                                     display: 'flex',
                                     alignItems: 'center'
