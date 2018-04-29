@@ -782,6 +782,8 @@ h1, h2, h3, h4, h5 {
     width: 100%;
     height: 100%;
 
+    flex-grow: 1;
+
     .button-entering {
       -webkit-animation-name: fadeIn;
       -webkit-animation-duration: 0.2s;

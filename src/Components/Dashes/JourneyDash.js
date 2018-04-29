@@ -242,8 +242,7 @@ class HomeDash extends Component {
                     }
                 </Motion>
 
-                <Chat
-                    commandsVisible={this.state.commandsVisible}/>
+
                 {this.props.liveJourneyData.length > 0 ?
                     <div className={'logo'} onClick={() => this.props.setSidebarExpanded(!this.props.sidebarExpanded)}>
                         <img className={'logo-image'}
@@ -273,151 +272,157 @@ class HomeDash extends Component {
                     </Motion>
                 </div>
 
-                <div className={"journey-container"}>
+                <div style={{zIndex: 5, display: 'flex', flexDirection: 'column', minHeight: '100vh', width: '100%', justifyContent: 'center', alignItems: 'center'}}>
+                    <Chat
+                        commandsVisible={this.state.commandsVisible}/>
+                    <div className={"journey-container"}>
 
-                    <Transition
-                        unmountOnExit={false}
-                        in={this.props.arrowKey === 'left'}
-                        // onEntered={() => this.props.setArrowKey(null)}
-                        timeout={{enter: 400, exit: 0}}>
-                        {(state) => (
-                            <div className={`button button-${state}`} onMouseLeave={() => this.props.setArrowKey(null)}
-                                 onClick={() => this.navButtonClick('left')}
-                                 onMouseOver={() => this.props.setArrowKey('left')}>
-                                <Icon viewBox="0 0 40 40" size={20} style={{color: 'white'}}>
-                                    <g>
-                                        <path
-                                            d="m16.7 20l13.1 13.6c0.3 0.3 0.3 0.9 0 1.2l-2.4 2.5c-0.3 0.3-0.9 0.3-1.2 0l-16-16.7c-0.1-0.1-0.2-0.4-0.2-0.6s0.1-0.5 0.2-0.6l16-16.7c0.3-0.3 0.9-0.2 1.2 0.1l2.4 2.4c0.3 0.3 0.3 0.9 0 1.2l-13.1 13.6z"/>
-                                    </g>
-                                </Icon>
-                            </div>)}
-                    </Transition>
 
-                    <Transition
-                        unmountOnExit={false}
-                        in={this.props.arrowKey === 'right'}
-                        // onEntered={() => this.props.setArrowKey(null)}
-                        timeout={{enter: 400, exit: 0}}>
-                        {(state) => (
-                            <div className={`button button-${state} right`}
-                                 onClick={() => this.navButtonClick('right')}
-
-                                 onMouseLeave={() => this.props.setArrowKey(null)}
-                                 onMouseOver={() => this.props.setArrowKey('right')}>
-                                <Icon viewBox="0 0 40 40" size={20} style={{color: 'white'}}>
-                                    <g>
-                                        <path
-                                            d="m23.3 20l-13.1-13.6c-0.3-0.3-0.3-0.9 0-1.2l2.4-2.4c0.3-0.3 0.9-0.4 1.2-0.1l16 16.7c0.1 0.1 0.2 0.4 0.2 0.6s-0.1 0.5-0.2 0.6l-16 16.7c-0.3 0.3-0.9 0.3-1.2 0l-2.4-2.5c-0.3-0.3-0.3-0.9 0-1.2z"/>
-                                    </g>
-                                </Icon>
-                            </div>
-                        )}
-                    </Transition>
-                    <Transition
-                        unmountOnExit={true}
-                        style={{height: '100%'}}
-                        in={this.state.menuToggled}
-                        out={!this.state.menu}
-                        timeout={200}>
-                        {(state) => (
-                            <div className={`annotation-${state} annotation`}>
-                                <div className={"close"} onClick={() => this.toggle('menu')}>
-                                    <Icon viewBox="0 0 40 40" size={15} style={{color: 'white'}}>
+                        <Transition
+                            unmountOnExit={false}
+                            in={this.props.arrowKey === 'left'}
+                            // onEntered={() => this.props.setArrowKey(null)}
+                            timeout={{enter: 400, exit: 0}}>
+                            {(state) => (
+                                <div className={`button button-${state}`}
+                                     onMouseLeave={() => this.props.setArrowKey(null)}
+                                     onClick={() => this.navButtonClick('left')}
+                                     onMouseOver={() => this.props.setArrowKey('left')}>
+                                    <Icon viewBox="0 0 40 40" size={20} style={{color: 'white'}}>
                                         <g>
                                             <path
-                                                d="m34.7 30.2c0.2 0.3 0.3 0.5 0.3 0.8s-0.1 0.6-0.3 0.8l-3 2.9c-0.2 0.2-0.4 0.3-0.7 0.3s-0.5-0.1-0.8-0.3l-10.2-10.2-10.2 10.2c-0.3 0.2-0.4 0.3-0.7 0.3s-0.6-0.1-0.8-0.3l-3-2.9c-0.2-0.2-0.3-0.5-0.3-0.8s0.1-0.5 0.3-0.8l10.3-10.2-10.3-10.2c-0.4-0.3-0.4-1.1 0-1.5l2.9-3c0.2-0.1 0.5-0.3 0.8-0.3s0.5 0.1 0.8 0.3l10.2 10.2 10.2-10.2c0.3-0.1 0.5-0.3 0.8-0.3s0.6 0.1 0.8 0.3l2.9 3c0.4 0.4 0.4 1.1 0 1.5l-10.3 10.1z"/>
+                                                d="m16.7 20l13.1 13.6c0.3 0.3 0.3 0.9 0 1.2l-2.4 2.5c-0.3 0.3-0.9 0.3-1.2 0l-16-16.7c-0.1-0.1-0.2-0.4-0.2-0.6s0.1-0.5 0.2-0.6l16-16.7c0.3-0.3 0.9-0.2 1.2 0.1l2.4 2.4c0.3 0.3 0.3 0.9 0 1.2l-13.1 13.6z"/>
+                                        </g>
+                                    </Icon>
+                                </div>)}
+                        </Transition>
+
+                        <Transition
+                            unmountOnExit={false}
+                            in={this.props.arrowKey === 'right'}
+                            // onEntered={() => this.props.setArrowKey(null)}
+                            timeout={{enter: 400, exit: 0}}>
+                            {(state) => (
+                                <div className={`button button-${state} right`}
+                                     onClick={() => this.navButtonClick('right')}
+
+                                     onMouseLeave={() => this.props.setArrowKey(null)}
+                                     onMouseOver={() => this.props.setArrowKey('right')}>
+                                    <Icon viewBox="0 0 40 40" size={20} style={{color: 'white'}}>
+                                        <g>
+                                            <path
+                                                d="m23.3 20l-13.1-13.6c-0.3-0.3-0.3-0.9 0-1.2l2.4-2.4c0.3-0.3 0.9-0.4 1.2-0.1l16 16.7c0.1 0.1 0.2 0.4 0.2 0.6s-0.1 0.5-0.2 0.6l-16 16.7c-0.3 0.3-0.9 0.3-1.2 0l-2.4-2.5c-0.3-0.3-0.3-0.9 0-1.2z"/>
                                         </g>
                                     </Icon>
                                 </div>
-                                <div onClick={() => agent.Auth.logout()} className={"title"}>Climbing Everest</div>
-                                <div className={"subText"}>Day 12: Going up the North Face of the mountain in record
-                                    time!
-                                    Without oxygen and without my balls.
-                                </div>
-                                <div className={'check-in'}>
-                                    <div className={'check-in-container'}>
-                                        <div className={'check-in-container  hvr-grow'}>
-                                            <div className={'image-container'}>
-                                                <div className={'image'}
-                                                     style={{
-                                                         backgroundSize: 'cover',
-                                                         backgroundImage: `url(${'https://s.hswstatic.com/gif/sherpa-125217967.jpg'})`
-                                                     }}
-                                                >
+                            )}
+                        </Transition>
+                        <Transition
+                            unmountOnExit={true}
+                            style={{height: '100%'}}
+                            in={this.state.menuToggled}
+                            out={!this.state.menu}
+                            timeout={200}>
+                            {(state) => (
+                                <div className={`annotation-${state} annotation`}>
+                                    <div className={"close"} onClick={() => this.toggle('menu')}>
+                                        <Icon viewBox="0 0 40 40" size={15} style={{color: 'white'}}>
+                                            <g>
+                                                <path
+                                                    d="m34.7 30.2c0.2 0.3 0.3 0.5 0.3 0.8s-0.1 0.6-0.3 0.8l-3 2.9c-0.2 0.2-0.4 0.3-0.7 0.3s-0.5-0.1-0.8-0.3l-10.2-10.2-10.2 10.2c-0.3 0.2-0.4 0.3-0.7 0.3s-0.6-0.1-0.8-0.3l-3-2.9c-0.2-0.2-0.3-0.5-0.3-0.8s0.1-0.5 0.3-0.8l10.3-10.2-10.3-10.2c-0.4-0.3-0.4-1.1 0-1.5l2.9-3c0.2-0.1 0.5-0.3 0.8-0.3s0.5 0.1 0.8 0.3l10.2 10.2 10.2-10.2c0.3-0.1 0.5-0.3 0.8-0.3s0.6 0.1 0.8 0.3l2.9 3c0.4 0.4 0.4 1.1 0 1.5l-10.3 10.1z"/>
+                                            </g>
+                                        </Icon>
+                                    </div>
+                                    <div onClick={() => agent.Auth.logout()} className={"title"}>Climbing Everest</div>
+                                    <div className={"subText"}>Day 12: Going up the North Face of the mountain in record
+                                        time!
+                                        Without oxygen and without my balls.
+                                    </div>
+                                    <div className={'check-in'}>
+                                        <div className={'check-in-container'}>
+                                            <div className={'check-in-container  hvr-grow'}>
+                                                <div className={'image-container'}>
+                                                    <div className={'image'}
+                                                         style={{
+                                                             backgroundSize: 'cover',
+                                                             backgroundImage: `url(${'https://s.hswstatic.com/gif/sherpa-125217967.jpg'})`
+                                                         }}
+                                                    >
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div className={'description-container'}>
-                                                <div className={'name'}>
-                                                    Annunu Sherpa
-                                                </div>
-                                                <div className={'description'}>
-                                                    <strong>Contribution - 7 Day Service</strong><br/>
-                                                    High Quality Sherpa Services<br/>
-                                                    Nepalese Culture<br/>
+                                                <div className={'description-container'}>
+                                                    <div className={'name'}>
+                                                        Annunu Sherpa
+                                                    </div>
+                                                    <div className={'description'}>
+                                                        <strong>Contribution - 7 Day Service</strong><br/>
+                                                        High Quality Sherpa Services<br/>
+                                                        Nepalese Culture<br/>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        )}
-                    </Transition>
+                            )}
+                        </Transition>
 
 
-                    {this.props.liveJourneyData ?
-                        <Motion
-                            className={'conditional-nodisplay'}
-                            style={{
-                                marginControl: spring(this.props.mapExpanded ? 0 : 1),
-                                toggleHeight: spring(this.props.mapExpanded ? 7 : 0),
-                                hoverHeight: spring(this.props.mapExpanded ? 3 : 0),
-                            }}>
-                            {({hoverHeight, hoverRadius, toggleRadius, toggleHeight, marginControl}) =>
-
-
-                                <div style={{
-                                    height: this.props.windowWidth > 800 ? '100vh' : '100%',
-                                    minHeight: '70vh',
-                                    width: '100%',
-                                    display: 'flex',
-                                    alignItems: 'center'
+                        {this.props.liveJourneyData ?
+                            <Motion
+                                className={'conditional-nodisplay'}
+                                style={{
+                                    marginControl: spring(this.props.mapExpanded ? 0 : 1),
+                                    toggleHeight: spring(this.props.mapExpanded ? 7 : 0),
+                                    hoverHeight: spring(this.props.mapExpanded ? 3 : 0),
                                 }}>
-                                    {this.props.liveJourneyData.length > 0 && this.props.liveJourneyData[this.props.position].type === "video" ?
-                                        <Video
-
-                                            url={`https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2F${this.props.liveJourneyData[this.props.position].uid}.mp4?alt=media&token=9f9e06ad-db93-4a22-bdfb-fed973efd936`}/> : null}
-
-                                    {this.props.liveJourneyData.length > 0 && this.props.liveJourneyData[this.props.position].type === "image" ?
-
-                                        <div style={{
-                                            height: '100%',
-                                            width: `${this.props.windowWidth - ((10 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowHeight)}px`,
-                                            backgroundSize: 'contain',
-                                            backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_${this.props.liveJourneyData[this.props.position].uid}.jpg?alt=media&token=ccd5ab02-54bb-4bca-8f2f-9e253de52523)`,
-                                            //'https://www.google.com/maps/about/images/behind-the-scenes/treks/everest-header-bg_2x.jpg'
-                                            backgroundRepeat: 'no-repeat',
-                                            backgroundPosition: 'center'
-                                        }}
-                                             onClick={() => {
-                                                 this.blur()
-                                             }}
-                                        >
-
-                                        </div> : null}
-                                </div>}
-                        </Motion>
-                        : null}
-
-                    <MapContainer></MapContainer>
+                                {({hoverHeight, hoverRadius, toggleRadius, toggleHeight, marginControl}) =>
 
 
-                    {this.props.chatExpanded ? <ChatContainer></ChatContainer> : null}
+                                    <div style={{
+                                        height: this.props.windowWidth > 800 ? '100vh' : '100%',
+                                        minHeight: '70vh',
+                                        width: '100%',
+                                        display: 'flex',
+                                        alignItems: 'center'
+                                    }}>
+                                        {this.props.liveJourneyData.length > 0 && this.props.liveJourneyData[this.props.position].type === "video" ?
+                                            <Video
+
+                                                url={`https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2F${this.props.liveJourneyData[this.props.position].uid}.mp4?alt=media&token=9f9e06ad-db93-4a22-bdfb-fed973efd936`}/> : null}
+
+                                        {this.props.liveJourneyData.length > 0 && this.props.liveJourneyData[this.props.position].type === "image" ?
+
+                                            <div style={{
+                                                height: '100%',
+                                                width: `${this.props.windowWidth - ((10 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowHeight)}px`,
+                                                backgroundSize: 'contain',
+                                                backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2Fjourney_${this.props.liveJourneyData[this.props.position].uid}.jpg?alt=media&token=ccd5ab02-54bb-4bca-8f2f-9e253de52523)`,
+                                                //'https://www.google.com/maps/about/images/behind-the-scenes/treks/everest-header-bg_2x.jpg'
+                                                backgroundRepeat: 'no-repeat',
+                                                backgroundPosition: 'center'
+                                            }}
+                                                 onClick={() => {
+                                                     this.blur()
+                                                 }}
+                                            >
+
+                                            </div> : null}
+                                    </div>}
+                            </Motion>
+                            : null}
+
+                        <MapContainer></MapContainer>
+
+
+                        {this.props.chatExpanded ? <ChatContainer></ChatContainer> : null}
+                    </div>
+
+                    <JourneyMapContainerSmall></JourneyMapContainerSmall>
                 </div>
 
-                <JourneyMapContainerSmall></JourneyMapContainerSmall>
 
-
-                <div >
+                <div>
                     {this.props.liveJourneyData.length > 0 ?
 
                         <div className={'blur-background blur'}

@@ -118,6 +118,7 @@ class MapContainerSmall extends Component {
                              style={{
                                  minHeight: '105px',
                                  minWidth: '105px',
+                                 alignSelf: 'flex-end',
                                  zIndex: 2,
                                  right: `${10 * marginControl}px`,
                                  top: `${20 * marginControl}px`
