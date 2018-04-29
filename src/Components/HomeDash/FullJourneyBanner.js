@@ -82,6 +82,10 @@ class FullJourneyBanner extends Component {
                             Doing a Bike Trip with My Buddy Yvan. Some things are better in the wild!
                         </div>
 
+                        <div className={'journey-banner-time'}>
+                            Last updated 2 minute ago
+                        </div>
+
                     </div>
                     <div className={'map-container'}>
                         <MapContainer>
