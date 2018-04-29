@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8eb92d85-80e0-4af9-8dc4-e20ffe8708d5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Chat/Chat.js" afterPath="$PROJECT_DIR$/src/Components/Chat/Chat.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/JourneyDash.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/JourneyDash.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Video/Video.js" afterPath="$PROJECT_DIR$/src/Components/Video/Video.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
     </list>
     <ignored path="gifty-console-client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JourneyDash.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="JourneyDash.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Components/Dashes/JourneyDash.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="118" column="0" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+            <state relative-caret-position="290">
+              <caret line="188" column="0" lean-forward="true" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -51,10 +47,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Chat.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Chat.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/Chat/Chat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
+            <state relative-caret-position="237">
               <caret line="203" column="75" lean-forward="false" selection-start-line="203" selection-start-column="75" selection-end-line="203" selection-end-column="75" />
               <folding />
             </state>
@@ -104,11 +100,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>chat-contain</find>
-      <find>&lt;ChatContain</find>
-      <find>&lt;ChatContainer</find>
-      <find>player-wrapper</find>
-      <find>scroll-members</find>
       <find>10</find>
       <find>Logout</find>
       <find>social-icon</find>
@@ -130,10 +121,15 @@
       <find>button-entering</find>
       <find>button b</find>
       <find>arrow k</find>
-      <find>hover</find>
-      <find>button</find>
       <find>chat</find>
       <find>&lt;Chat</find>
+      <find>this.props.posiiton =</find>
+      <find>this.props.position === 0</find>
+      <find>onHover</find>
+      <find>onHo</find>
+      <find>onhover</find>
+      <find>hover</find>
+      <find>button</find>
     </findStrings>
     <replaceStrings>
       <replace>color</replace>
@@ -231,8 +227,8 @@
         <option value="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" />
         <option value="$PROJECT_DIR$/src/Components/Video/Video.js" />
         <option value="$PROJECT_DIR$/src/style.scss" />
-        <option value="$PROJECT_DIR$/src/Components/Dashes/JourneyDash.js" />
         <option value="$PROJECT_DIR$/src/Components/Chat/Chat.js" />
+        <option value="$PROJECT_DIR$/src/Components/Dashes/JourneyDash.js" />
       </list>
     </option>
   </component>
@@ -593,12 +589,12 @@
       <workItem from="1524793114257" duration="1415000" />
       <workItem from="1524846458904" duration="5709000" />
       <workItem from="1524857201930" duration="7807000" />
-      <workItem from="1524934275694" duration="18721000" />
+      <workItem from="1524934275694" duration="19092000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="348579000" />
+    <option name="totallyTimeSpent" value="348950000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -996,21 +992,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/JourneyDash.js">
+    <entry file="file://$PROJECT_DIR$/src/Components/Chat/Chat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="118" column="0" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="237">
+          <caret line="203" column="75" lean-forward="false" selection-start-line="203" selection-start-column="75" selection-end-line="203" selection-end-column="75" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Chat/Chat.js">
+    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/JourneyDash.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="203" column="75" lean-forward="false" selection-start-line="203" selection-start-column="75" selection-end-line="203" selection-end-column="75" />
-          <folding />
+        <state relative-caret-position="290">
+          <caret line="188" column="0" lean-forward="true" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

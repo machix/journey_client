@@ -181,8 +181,12 @@ class HomeDash extends Component {
         if (this.props.position === 0 && value === 'left') {
         } else if (value === 'left') {
             this.props.changePosition(this.props.position - 1);
+            setTimeout(()=>this.props.setArrowKey(null), 300);
+
         } else if (this.props.position < this.props.liveJourneyData.length - 1 && value === 'right') {
             this.props.changePosition(this.props.position + 1);
+            setTimeout(()=>this.props.setArrowKey(null), 300);
+
         } else {
 
         }
