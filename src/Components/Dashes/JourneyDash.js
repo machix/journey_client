@@ -376,7 +376,7 @@ class HomeDash extends Component {
 
 
                                 <div style={{
-                                    height: this.props.windowWidth > 800 ? '100vh' : 'auto',
+                                    height: this.props.windowWidth > 800 ? '100vh' : '100%',
                                     width: '100%',
                                     display: 'flex',
                                     alignItems: 'center'
@@ -415,7 +415,7 @@ class HomeDash extends Component {
                 <JourneyMapContainerSmall></JourneyMapContainerSmall>
 
 
-                <div style={{height: '100%'}}>
+                <div >
                     {this.props.liveJourneyData.length > 0 ?
 
                         <div className={'blur-background blur'}

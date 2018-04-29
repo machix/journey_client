@@ -159,7 +159,6 @@ class MapContainerSmall extends Component {
                                 position: 'relative',
                                 display: 'flex',
                                 justifyContent: 'center',
-                                marginTop: '-11px'
                             }}>
                                 {this.props.mapExpanded ? <div
                                     onClick={() => this.toggle('closeMap')}
@@ -196,7 +195,7 @@ class MapContainerSmall extends Component {
                                          <div style={{
                                              minHeight: '100px',
                                              minWidth: '100px',
-                                             height: this.props.windowWidth < 800 ? `${10 * (toggleHeight) * 10 / 7 / 100 * this.props.windowHeight}px` : `${10 * (hoverHeight + toggleHeight)/ 100 * this.props.windowHeight}px`,
+                                             height: `${10 * (toggleHeight) * 10 / 7 / 100 * this.props.windowHeight * 0.4}px`,
                                              width: '100vw',
                                              overflow: 'hidden',
                                              zIndex: 3,
