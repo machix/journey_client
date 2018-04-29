@@ -44,7 +44,7 @@ class GetStarted extends Component {
                 {(state) => (
                     <div className={`start-now-banner start-now-banner-${state}`}>
                         <h1>Start Your Journey</h1>
-                        <h3>Track and share your Adventure's hands free, in real-time.<br/>
+                        <h3>Track and share your Adventure's: hands free, in real-time.<br/>
                         </h3>
 
                         <div className={'start-now'} >
