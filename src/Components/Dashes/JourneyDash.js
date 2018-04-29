@@ -101,19 +101,20 @@ class HomeDash extends Component {
         ArrowKeysReact.config({
             left: () => {
                 if (this.props.position === 0) {
-                    this.props.setArrowKey('left');
 
                 } else {
                     this.props.changePosition(this.props.position - 1);
                     this.props.setArrowKey('left');
+                    setTimeout(()=>this.props.setArrowKey(null), 300);
                 }
             },
             right: () => {
                 if (this.props.position === this.props.liveJourneyData.length - 1) {
-                    this.props.setArrowKey('right')
                 } else {
                     this.props.setArrowKey('right');
                     this.props.changePosition(this.props.position + 1);
+                    setTimeout(()=>this.props.setArrowKey(null), 300);
+
                 }
 
             }
@@ -141,7 +142,6 @@ class HomeDash extends Component {
             console.log('There is a new submission');
             this.props.setAlertNew(true);
             this.props.changePosition(this.props.position + 1);
-
         }
 
 

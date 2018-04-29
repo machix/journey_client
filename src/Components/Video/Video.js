@@ -46,7 +46,7 @@ class Video extends Component {
                              width='100%'
                              height='100%'
                              url={this.props.url}
-                             controls
+                             // controls
                              // playing={this.state.playing}
                              // playsinline={true}
                              // autoplay={true}

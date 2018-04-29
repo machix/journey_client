@@ -7,11 +7,7 @@
     <list default="true" id="8eb92d85-80e0-4af9-8dc4-e20ffe8708d5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Chat/Chat.js" afterPath="$PROJECT_DIR$/src/Components/Chat/Chat.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Chat/ChatContainer.js" afterPath="$PROJECT_DIR$/src/Components/Chat/ChatContainer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Common/Login.js" afterPath="$PROJECT_DIR$/src/Components/Common/Login.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/JourneyDash.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/JourneyDash.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Map/JourneyMapContainerSmall.js" afterPath="$PROJECT_DIR$/src/Components/Map/JourneyMapContainerSmall.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" afterPath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Video/Video.js" afterPath="$PROJECT_DIR$/src/Components/Video/Video.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
@@ -33,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="1056" column="30" lean-forward="false" selection-start-line="1056" selection-start-column="30" selection-end-line="1056" selection-end-column="30" />
+            <state relative-caret-position="305">
+              <caret line="831" column="22" lean-forward="false" selection-start-line="831" selection-start-column="22" selection-end-line="831" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -46,8 +42,8 @@
       <file leaf-file-name="JourneyDash.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/Dashes/JourneyDash.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="417" column="51" lean-forward="false" selection-start-line="417" selection-start-column="51" selection-end-line="417" selection-end-column="51" />
+            <state relative-caret-position="321">
+              <caret line="118" column="0" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -55,55 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Chat.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Chat.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Components/Chat/Chat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="158" column="63" lean-forward="true" selection-start-line="158" selection-start-column="63" selection-end-line="158" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Common/Login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="10" column="44" lean-forward="true" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Sidebar.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="159" column="0" lean-forward="true" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TextAwareCommand.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Chat/TextAwareCommand.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="87" column="12" lean-forward="true" selection-start-line="87" selection-start-column="12" selection-end-line="87" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChatContainer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Chat/ChatContainer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="96" column="56" lean-forward="false" selection-start-line="96" selection-start-column="56" selection-end-line="96" selection-end-column="56" />
+            <state relative-caret-position="310">
+              <caret line="203" column="75" lean-forward="false" selection-start-line="203" selection-start-column="75" selection-end-line="203" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -112,8 +64,8 @@
       <file leaf-file-name="Video.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/Video/Video.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="51" column="47" lean-forward="true" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
+            <state relative-caret-position="285">
+              <caret line="50" column="48" lean-forward="true" selection-start-line="50" selection-start-column="48" selection-end-line="50" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -152,22 +104,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>chat-input</find>
-      <find>chat-commands-entered</find>
-      <find>.chat-commands</find>
-      <find>@</find>
-      <find>chat-conta</find>
-      <find>MapContainerMo</find>
-      <find>chat-container</find>
-      <find>journey-mobile</find>
-      <find>.logo</find>
-      <find>annotation</find>
-      <find>annotat</find>
-      <find>.annotation</find>
-      <find>sidebarExpa</find>
-      <find>setSide</find>
-      <find>onCl</find>
-      <find>sidebarExpande</find>
       <find>chat-contain</find>
       <find>&lt;ChatContain</find>
       <find>&lt;ChatContainer</find>
@@ -181,7 +117,23 @@
       <find>react-awesome-button</find>
       <find>react-awesome</find>
       <find>awesomebutton</find>
+      <find>React-player</find>
+      <find>blur-</find>
+      <find>sidebar</find>
+      <find>color:</find>
       <find>.sidebar</find>
+      <find>.information</find>
+      <find>.caption</find>
+      <find>button-exited</find>
+      <find>button-</find>
+      <find>@medi</find>
+      <find>button-entering</find>
+      <find>button b</find>
+      <find>arrow k</find>
+      <find>hover</find>
+      <find>button</find>
+      <find>chat</find>
+      <find>&lt;Chat</find>
     </findStrings>
     <replaceStrings>
       <replace>color</replace>
@@ -273,14 +225,14 @@
         <option value="$PROJECT_DIR$/src/Components/Common/IntroWrapper.js" />
         <option value="$PROJECT_DIR$/src/Components/Map/JourneyMapContainer.js" />
         <option value="$PROJECT_DIR$/src/Components/HomeDash/FullJourneyBanner.js" />
-        <option value="$PROJECT_DIR$/src/Components/Video/Video.js" />
-        <option value="$PROJECT_DIR$/src/Components/Dashes/JourneyDash.js" />
-        <option value="$PROJECT_DIR$/src/Components/Chat/Chat.js" />
         <option value="$PROJECT_DIR$/src/Components/Chat/ChatContainer.js" />
         <option value="$PROJECT_DIR$/src/Components/Map/JourneyMapContainerSmall.js" />
         <option value="$PROJECT_DIR$/src/Components/Common/Login.js" />
         <option value="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" />
+        <option value="$PROJECT_DIR$/src/Components/Video/Video.js" />
         <option value="$PROJECT_DIR$/src/style.scss" />
+        <option value="$PROJECT_DIR$/src/Components/Dashes/JourneyDash.js" />
+        <option value="$PROJECT_DIR$/src/Components/Chat/Chat.js" />
       </list>
     </option>
   </component>
@@ -641,12 +593,12 @@
       <workItem from="1524793114257" duration="1415000" />
       <workItem from="1524846458904" duration="5709000" />
       <workItem from="1524857201930" duration="7807000" />
-      <workItem from="1524934275694" duration="17152000" />
+      <workItem from="1524934275694" duration="18721000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="347010000" />
+    <option name="totallyTimeSpent" value="348579000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -976,40 +928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Chat/TextAwareCommand.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="87" column="12" lean-forward="true" selection-start-line="87" selection-start-column="12" selection-end-line="87" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/JourneyDash.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="417" column="51" lean-forward="false" selection-start-line="417" selection-start-column="51" selection-end-line="417" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Chat/ChatContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="96" column="56" lean-forward="false" selection-start-line="96" selection-start-column="56" selection-end-line="96" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Video/Video.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="51" column="47" lean-forward="true" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Map/JourneyMapContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
@@ -1026,21 +944,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Chat/Chat.js">
+    <entry file="file://$PROJECT_DIR$/src/Components/Video/Video.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="158" column="63" lean-forward="true" selection-start-line="158" selection-start-column="63" selection-end-line="158" selection-end-column="63" />
+        <state relative-caret-position="285">
+          <caret line="50" column="48" lean-forward="true" selection-start-line="50" selection-start-column="48" selection-end-line="50" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Common/Login.js">
+    <entry file="file://$PROJECT_DIR$/src/Components/Chat/ChatContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="10" column="44" lean-forward="true" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="372">
+          <caret line="107" column="26" lean-forward="true" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Chat/TextAwareCommand.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="87" column="12" lean-forward="true" selection-start-line="87" selection-start-column="12" selection-end-line="87" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1049,15 +973,43 @@
         <state relative-caret-position="188">
           <caret line="159" column="0" lean-forward="true" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Common/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="10" column="44" lean-forward="true" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="1056" column="30" lean-forward="false" selection-start-line="1056" selection-start-column="30" selection-end-line="1056" selection-end-column="30" />
+        <state relative-caret-position="305">
+          <caret line="831" column="22" lean-forward="false" selection-start-line="831" selection-start-column="22" selection-end-line="831" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/JourneyDash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="118" column="0" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Chat/Chat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="203" column="75" lean-forward="false" selection-start-line="203" selection-start-column="75" selection-end-line="203" selection-end-column="75" />
           <folding />
         </state>
       </provider>

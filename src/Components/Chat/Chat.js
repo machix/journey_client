@@ -201,7 +201,7 @@ class Chat extends Component {
                         </Icon>}
 
                     </span>
-                    <span className="pointer" onClick={() => this.toggle('liked')}>
+                    <span className="pointer" style={{marginLeft: '-5px'}} onClick={() => this.toggle('liked')}>
                          <LottieAnimation
                              autoplay={false}
                              animationData={animationData}
