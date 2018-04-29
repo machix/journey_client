@@ -515,6 +515,7 @@ h1, h2, h3, h4, h5 {
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: relative;
   align-items: center;
   justify-content: center; }
   .container .blur-background {

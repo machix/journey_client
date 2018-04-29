@@ -28,8 +28,8 @@
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="918" column="0" lean-forward="false" selection-start-line="918" selection-start-column="0" selection-end-line="918" selection-end-column="0" />
+            <state relative-caret-position="237">
+              <caret line="750" column="21" lean-forward="false" selection-start-line="750" selection-start-column="21" selection-end-line="750" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -112,7 +112,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>chat</find>
       <find>border</find>
       <find>map-toggle</find>
       <find>.lgo</find>
@@ -136,12 +135,13 @@
       <find>-11px</find>
       <find>.</find>
       <find>.sidebar</find>
-      <find>.container</find>
       <find>Alaska to Calgary</find>
       <find>'auto</find>
       <find>journey-banner-desci</find>
       <find>header-conta</find>
       <find>.logo</find>
+      <find>sidebar-container</find>
+      <find>.container</find>
     </findStrings>
     <replaceStrings>
       <replace>size={20</replace>
@@ -601,12 +601,12 @@
       <workItem from="1524793114257" duration="1415000" />
       <workItem from="1524846458904" duration="5709000" />
       <workItem from="1524857201930" duration="7807000" />
-      <workItem from="1524934275694" duration="11347000" />
+      <workItem from="1524934275694" duration="11573000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="341205000" />
+    <option name="totallyTimeSpent" value="341431000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1022,8 +1022,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="918" column="0" lean-forward="false" selection-start-line="918" selection-start-column="0" selection-end-line="918" selection-end-column="0" />
+        <state relative-caret-position="237">
+          <caret line="750" column="21" lean-forward="false" selection-start-line="750" selection-start-column="21" selection-end-line="750" selection-end-column="21" />
           <folding />
         </state>
       </provider>
