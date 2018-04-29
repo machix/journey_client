@@ -166,7 +166,7 @@ class Sidebar extends Component {
                         <strong> This User is Currently Live on this Journey!<br/>
                             Request a Live Update after Signing In.</strong>
                         <div className="facebook-login"
-                             onClick={() => this.login()}>
+                             onClick={() => this.props.login()}>
                             <img className={'login-icon'} alt=""
                                  src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/facebook.svg"/> Sign in
                             with

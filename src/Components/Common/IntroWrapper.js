@@ -114,7 +114,7 @@ class IntroWrapper extends Component {
                     this.setState({
                         ...this.state,
                         mode: 'delete',
-                        delay: 32 + Math.round(Math.random() * 200)
+                        delay: 32 + Math.round(Math.random() * 100)
                     });
                 }
                 break;
