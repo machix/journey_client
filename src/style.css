@@ -517,6 +517,7 @@ h1, h2, h3, h4, h5 {
   width: 100%;
   position: relative;
   align-items: center;
+  min-height: 100vh;
   justify-content: center; }
   .container .blur-background {
     z-index: 0;

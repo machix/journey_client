@@ -750,6 +750,7 @@ h1, h2, h3, h4, h5 {
   //height: 100%;
   position: relative;
   align-items: center;
+  min-height: 100vh;
   justify-content: center;
 
   .blur-background {
