@@ -49,9 +49,10 @@ class MapContainer extends Component {
         this.state = {};
 
     }
+
     getTime = () => {
         let timestamp = moment(-this.props.liveJourneyData[this.props.position].timestamp);
-        if (moment().diff( timestamp, 'days') >= 1) {
+        if (moment().diff(timestamp, 'days') >= 1) {
             return timestamp.format('MMMM Do YYYY, h:mm:ss a')
         } else {
             let string = timestamp.fromNow();
@@ -84,7 +85,11 @@ class MapContainer extends Component {
     };
 
     componentWillReceiveProps(nextProps) {
-        this.mapContainer.blur();
+
+        //=======MAP WILL NOT BE SHOWING UNLESS > 800PX
+        if(this.props.windowWidth > 800) {
+            this.mapContainer.blur();
+        }
 
     }
 
@@ -98,7 +103,7 @@ class MapContainer extends Component {
     };
 
     toggleHeight() {
-        if(this.props.mapExpanded && !this.props.chatExpanded) {
+        if (this.props.mapExpanded && !this.props.chatExpanded) {
             return 7
         }
     }
@@ -106,7 +111,7 @@ class MapContainer extends Component {
     render() {
         return (
 
-            <Motion
+            this.props.windowWidth > 800 ? <Motion
                 style={{
                     marginControl: spring(this.props.mapExpanded ? 0 : 1),
                     toggleHeight: spring(this.props.mapExpanded ? 7 : 0),
@@ -123,7 +128,9 @@ class MapContainer extends Component {
                          onMouseOut={() => this.handleHover(false)}
                          onClick={() => this.toggle('map')}
                          ref={c => this.mapContainer = c}
-                         onBlur={()=> {console.log('blured')}}
+                         onBlur={() => {
+                             console.log('blured')
+                         }}
                          style={{
                              minHeight: '105px',
                              minWidth: '105px',
@@ -133,11 +140,11 @@ class MapContainer extends Component {
                          }}
                     >
                         <div
-                            style={{right: `${108+marginControl*50}%`, top: `${-20*marginControl}px`}}
+                            style={{right: `${108 + marginControl * 50}%`, top: `${-20 * marginControl}px`}}
                             className={`info-panel `}>
                             <div className={'image-container'}>
                                 <div className={'image-background'}>
-                                    <img className={'image'} />
+                                    <img className={'image'}/>
                                 </div>
                             </div>
                             {this.props.alertNew === true ?
@@ -196,8 +203,9 @@ class MapContainer extends Component {
                                  <div style={{
                                      minHeight: '100px',
                                      minWidth: '100px',
-                                     height: this.props.windowWidth < 800 ? `${10 * (toggleHeight) * chatMultiplier * 10/7 / 100 * this.props.windowHeight}px` : `${10 * (hoverHeight + toggleHeight) * chatMultiplier / 100 * this.props.windowHeight}px`,
-                                     width: this.props.windowWidth < 800 ? `${(toggleHeight * (100/7)) / 100 * this.props.windowWidth}px` : `${(10 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowWidth * 0.5}px`,                                     borderRadius: `${9.8 * hoverRadius * toggleRadius / 100 * this.props.windowHeight}px`,
+                                     height: this.props.windowWidth < 800 ? `${10 * (toggleHeight) * chatMultiplier * 10 / 7 / 100 * this.props.windowHeight}px` : `${10 * (hoverHeight + toggleHeight) * chatMultiplier / 100 * this.props.windowHeight}px`,
+                                     width: this.props.windowWidth < 800 ? `${(toggleHeight * (100 / 7)) / 100 * this.props.windowWidth}px` : `${(10 * hoverHeight + toggleHeight * 5) / 100 * this.props.windowWidth * 0.5}px`,
+                                     borderRadius: `${9.8 * hoverRadius * toggleRadius / 100 * this.props.windowHeight}px`,
                                      overflow: 'hidden',
                                      zIndex: 3,
                                      border: 'solid white 3px'
@@ -206,7 +214,9 @@ class MapContainer extends Component {
 
                     </div>
                 }
-            </Motion>
+            </Motion> : null
+
+
 
         );
     }

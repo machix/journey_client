@@ -91,10 +91,7 @@ class FullJourneyBanner extends Component {
                 <div className={'banner-footer'}>
                     <div className={'journey-tags'}>Alaska, Travel, Adventure, Bike Trip, Shimano</div>
                     <div className={'awesome-button-container'}>
-                        <AwesomeButtonProgress
-                            action={(element, next) => this.doSomethingThenCall(next)}
-                            successLabel={"Request Complete"}
-                            type={'secondary'}>LIVE! Request An Update</AwesomeButtonProgress>
+
                     </div>
                 </div>
 

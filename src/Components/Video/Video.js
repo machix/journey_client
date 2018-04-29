@@ -43,7 +43,7 @@ class Video extends Component {
                              height='100%'
                              url={this.props.url}
                              controls
-                             playing/>
+                             />
             </div>
 
         );

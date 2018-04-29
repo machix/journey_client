@@ -838,8 +838,6 @@ h1, h2, h3, h4, h5 {
         z-index: 10;
       }
 
-
-
       .image-container {
         display: flex;
         justify-content: center;
@@ -910,10 +908,16 @@ h1, h2, h3, h4, h5 {
 }
 
 .logo {
+
   position: absolute;
   top: 30px;
   left: 30px;
   z-index: 10;
+
+  @media screen and (max-width: 800px) {
+    left: 15px;
+    top: 15px;
+  }
 
   .load-next {
     width: 1px;
@@ -929,6 +933,12 @@ h1, h2, h3, h4, h5 {
     border-radius: 70px;
     width: 70px;
     height: 70px;
+
+    @media screen and (max-width: 800px) {
+      width: 30px;
+      height: 30px;
+    }
+
   }
 }
 
@@ -958,6 +968,7 @@ h1, h2, h3, h4, h5 {
 
 .sidebar-container {
   position: absolute;
+  top: 0;
   right: 100vw;
   background-color: rgba(51, 51, 51, 0.95);
   border-radius: 0 5px 5px 0;
@@ -1312,11 +1323,18 @@ h1, h2, h3, h4, h5 {
   padding-top: 56.25%;
   width: 100%;
   height: 100%;
+  @media screen and (max-width: 800px) {
+    padding-top: 0;
+  }
 
   .react-player {
     position: absolute;
     top: 0;
     left: 0;
+    @media screen and (max-width: 800px) {
+      position: relative;
+    }
+
   }
 }
 
@@ -1480,7 +1498,9 @@ h1, h2, h3, h4, h5 {
   z-index: 9;
 
   @media screen and (max-width: 800px) {
-    width: 70%;
+    position: relative;
+    width: 100%;
+    bottom: 0px;
   }
 
   .chat-box {
@@ -1592,6 +1612,8 @@ h1, h2, h3, h4, h5 {
 
     @media screen and (max-width: 800px) {
       width: 100%;
+      font-size: 0.7rem;
+      border-radius: 0;
     }
 
     input {
@@ -2029,7 +2051,7 @@ h1, h2, h3, h4, h5 {
   @media screen and (max-width: 800px) {
     padding-top: 20px;
     padding-bottom: 20px;
-    width: 90%;
+    width: 95%;
   }
 
   .banner {
@@ -2073,6 +2095,11 @@ h1, h2, h3, h4, h5 {
           align-self: flex-start;
           color: white;
           line-height: 3rem;
+
+          @media screen and (max-width: 800px) {
+            font-size: 1.8rem;
+            line-height: 2rem;
+          }
         }
 
         .journey-banner-description {
@@ -2081,16 +2108,21 @@ h1, h2, h3, h4, h5 {
           font-weight: 550;
           text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
 
+          @media screen and (max-width: 800px) {
+            padding-top: 20px;
+            font-size: 1rem;
+            line-height: 1.2rem;
+          }
+
         }
       }
 
       .map-container {
         width: 30%;
 
-
         @media screen and (max-width: 800px) {
           width: 100%;
-          height: 30vh;
+          height: 25vh;
           .map-element {
             height: auto;
           }

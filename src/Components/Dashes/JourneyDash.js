@@ -12,6 +12,8 @@ import Chat from '../Chat/Chat';
 import Sidebar from '../Sidebar/Sidebar';
 import agent from '../../Helpers/agent';
 import MapContainer from '../Map/JourneyMapContainer';
+import JourneyMapContainerSmall from '../Map/JourneyMapContainerSmall';
+
 import ChatContainer from '../Chat/ChatContainer';
 import Video from '../Video/Video';
 
@@ -37,8 +39,6 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
     fetchLiveJourney: (journey_uid) => dispatch(agent.FirebaseQuery.liveJourney(journey_uid)),
     fetchJourneyMeta: (journey_uid) => dispatch(agent.FireStoreQuery.fetchJourneyMeta(journey_uid)),
-
-
 
 
     setWindowDims: (width, height) => dispatch({
@@ -232,16 +232,18 @@ class HomeDash extends Component {
                 <Motion style={{x: spring(this.props.sidebarExpanded ? this.props.windowWidth < 800 ? 100 : 30 : 0)}}>
                     {({x}) =>
 
-                        <div className="sidebar-container" style={{
-                            WebkitTransform: `translate3d(${x}vw, 0, 0)`,
-                            transform: `translate3d(${x}vw, 0, 0)`,
-                        }}>
+                        <div className="sidebar-container"
+                             style={{
+                                 WebkitTransform: `translate3d(${x}vw, 0, 0)`,
+                                 transform: `translate3d(${x}vw, 0, 0)`,
+                             }}>
                             <Sidebar></Sidebar>
                         </div>
                     }
                 </Motion>
 
-                <Chat commandsVisible={this.state.commandsVisible}/>
+                <Chat
+                    commandsVisible={this.state.commandsVisible}/>
                 {this.props.liveJourneyData.length > 0 ?
                     <div className={'logo'} onClick={() => this.props.setSidebarExpanded(!this.props.sidebarExpanded)}>
                         <img className={'logo-image'}
@@ -362,8 +364,9 @@ class HomeDash extends Component {
                     </Transition>
 
 
-                    {this.props.liveJourneyData !== null ?
+                    {this.props.liveJourneyData ?
                         <Motion
+                            className={'conditional-nodisplay'}
                             style={{
                                 marginControl: spring(this.props.mapExpanded ? 0 : 1),
                                 toggleHeight: spring(this.props.mapExpanded ? 7 : 0),
@@ -372,7 +375,12 @@ class HomeDash extends Component {
                             {({hoverHeight, hoverRadius, toggleRadius, toggleHeight, marginControl}) =>
 
 
-                                <div style={{height: '100vh', width: '100%', display: 'flex', alignItems: 'center'}}>
+                                <div style={{
+                                    height: this.props.windowWidth > 800 ? '100vh' : 'auto',
+                                    width: '100%',
+                                    display: 'flex',
+                                    alignItems: 'center'
+                                }}>
                                     {this.props.liveJourneyData.length > 0 && this.props.liveJourneyData[this.props.position].type === "video" ?
                                         <Video
                                             url={`https://firebasestorage.googleapis.com/v0/b/journeyapp91.appspot.com/o/test_journey%2F${this.props.liveJourneyData[this.props.position].uid}.mp4?alt=media&token=9f9e06ad-db93-4a22-bdfb-fed973efd936`}/> : null}
@@ -399,8 +407,12 @@ class HomeDash extends Component {
                         : null}
 
                     <MapContainer></MapContainer>
+
+
                     {this.props.chatExpanded ? <ChatContainer></ChatContainer> : null}
                 </div>
+
+                <JourneyMapContainerSmall></JourneyMapContainerSmall>
 
 
                 <div style={{height: '100%'}}>

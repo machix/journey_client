@@ -8,7 +8,6 @@ import Transition from 'react-transition-group/Transition';
 import {geoPath, geoMercator} from 'd3-geo';
 
 
-import FlipCard from 'react-flipcard';
 
 
 const mapStateToProps = state => ({

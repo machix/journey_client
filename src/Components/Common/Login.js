@@ -11,7 +11,6 @@ import history from '../../Helpers/history';
 import {geoPath, geoMercator} from 'd3-geo';
 
 
-import FlipCard from 'react-flipcard';
 
 
 const mapStateToProps = state => ({
