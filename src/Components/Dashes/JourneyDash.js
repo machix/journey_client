@@ -272,10 +272,10 @@ class HomeDash extends Component {
                     </Motion>
                 </div>
 
-                <div style={{zIndex: 5, display: 'flex', flexDirection: 'column', minHeight: '100vh', width: '100%', justifyContent: 'center', alignItems: 'center'}}>
+                <div className={'journey-container'}>
                     <Chat
                         commandsVisible={this.state.commandsVisible}/>
-                    <div className={"journey-container"}>
+                    <div className={"journey-mobile-container"}>
 
 
                         <Transition

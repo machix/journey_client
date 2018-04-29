@@ -15,6 +15,8 @@ const mapStateToProps = state => ({
     ...state,
     chatExpanded: state.common.chatExpanded,
     boxes: state.common.boxes,
+    sidebarExpanded: state.common.sidebarExpanded,
+
 
     activeCommands: state.choreographer.activeCommands,
 
@@ -29,7 +31,11 @@ const mapDispatchToProps = dispatch => ({
     setBoxExpanded: (value) => dispatch({
         type: 'SET_BOX_EXPANDED',
         value: value
-    })
+    }),
+    setSidebarExpanded: (value) => dispatch({
+        type: 'SET_SIDEBAR_EXPANDED',
+        value: value
+    }),
 });
 
 
@@ -124,7 +130,8 @@ class Chat extends Component {
                     out={!this.state.commandsVisible}
                     timeout={200}>
                     {(state) => (
-                        <div className={`chat-commands-${state}`}>
+
+                        <div className={`chat-commands-container chat-commands-${state}`}>
 
                             <TextAwareCommand command={'Share'}
                                               input={this.state.chatInput.substring(1, this.state.chatInput.length)}/>
@@ -140,11 +147,6 @@ class Chat extends Component {
                                               input={this.state.chatInput.substring(1, this.state.chatInput.length)}/>
 
                         </div>
-
-
-
-
-
                     )}
                 </Transition>
 
@@ -169,6 +171,22 @@ class Chat extends Component {
                                 onKeyPress={(e) => this.handleKeyPress(e)}/>
                         )}
                     </Transition>
+                    <span className="pointer" onClick={() => this.props.setSidebarExpanded(!this.props.sidebarExpanded)}>
+                        {this.props.sidebarExpanded ? <Icon viewBox="0 0 40 40" size={28} color={'white'}>
+                            <g>
+                                <path
+                                    d="m19.8 3.8c8.9 0 16.2 7.2 16.2 16.2s-7.3 16.3-16.2 16.3-16.3-7.3-16.3-16.3 7.3-16.2 16.3-16.2z m-0.4 8.1c-0.8 0-1.5 0.7-1.5 1.5s0.7 1.6 1.5 1.6 1.6-0.7 1.6-1.6-0.7-1.5-1.6-1.5z m2.9 15.6v-0.6h-1.3v-10h-3.7v0.6h1.2v9.4h-1.2v0.6h5z"/>
+                            </g>
+
+                        </Icon> : <Icon viewBox="0 0 40 40" size={28} color={'white'}>
+                            <g>
+                                <path
+                                    d="m17.9 13.4c0-1 0.5-1.5 1.5-1.5s1.6 0.5 1.6 1.5-0.5 1.6-1.6 1.6-1.5-0.5-1.5-1.6z m3.1 13.5h1.3v0.6h-5v-0.6h1.2v-9.4h-1.2v-0.6h3.7v10z m-1.2-23.1c4.4 0 8.2 1.5 11.4 4.7s4.8 7 4.8 11.5-1.6 8.3-4.8 11.5-7 4.8-11.4 4.8-8.3-1.6-11.5-4.8-4.8-7-4.8-11.5 1.6-8.3 4.8-11.5 7-4.7 11.5-4.7z m0 31.1c4.1 0 7.6-1.5 10.5-4.4s4.4-6.4 4.4-10.5-1.5-7.7-4.4-10.5-6.4-4.4-10.5-4.4-7.7 1.5-10.6 4.4-4.4 6.4-4.4 10.5 1.5 7.7 4.4 10.5 6.4 4.4 10.6 4.4z"/>
+                            </g>
+
+                        </Icon>}
+
+                    </span>
                     <span className="pointer" onClick={() => this.toggle('chatbox')}>
                         {this.props.chatExpanded ? <Icon viewBox="0 0 40 40" size={28} color={'white'}>
                             <g>

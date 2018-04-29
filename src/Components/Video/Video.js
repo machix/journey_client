@@ -47,13 +47,13 @@ class Video extends Component {
                              height='100%'
                              url={this.props.url}
                              controls
-                             playing={this.state.playing}
-                             playsinline={true}
-                             autoplay={true}
-                             onReady={() => {
-                                 console.log('onReadyCalled');
-                                 this.setState({...this.state, playing: true})
-                             }}
+                             // playing={this.state.playing}
+                             // playsinline={true}
+                             // autoplay={true}
+                             // onReady={() => {
+                             //     console.log('onReadyCalled');
+                             //     this.setState({...this.state, playing: true})
+                             // }}
                 />
             </div>
 

@@ -116,12 +116,9 @@ class MapContainerSmall extends Component {
                                  console.log('blured')
                              }}
                              style={{
-                                 minHeight: '105px',
                                  minWidth: '105px',
                                  alignSelf: 'flex-end',
                                  zIndex: 2,
-                                 right: `${10 * marginControl}px`,
-                                 top: `${20 * marginControl}px`
                              }}
                         >
                             <div
@@ -194,14 +191,14 @@ class MapContainerSmall extends Component {
 
                                      containerElement={
                                          <div style={{
-                                             minHeight: '100px',
+                                             minHeight: '140px',
                                              minWidth: '100px',
-                                             height: `${10 * (toggleHeight) * 10 / 7 / 100 * this.props.windowHeight * 0.4}px`,
+                                             height: `${10 * (toggleHeight) * 10 / 7 / 100 * this.props.windowHeight * 0.6}px`,
                                              width: '100vw',
                                              overflow: 'hidden',
                                              zIndex: 3,
                                              position: 'relative',
-                                             border: 'solid white 3px'
+                                             borderTop: 'solid white 3px'
                                          }}>
                                          </div>}
                                      mapElement={<div style={{height: `100%`}}/>}/>

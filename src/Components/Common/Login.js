@@ -11,8 +11,6 @@ import history from '../../Helpers/history';
 import {geoPath, geoMercator} from 'd3-geo';
 
 
-
-
 const mapStateToProps = state => ({
     ...state.auth,
     beautifulUnsplash: state.common.beautifulUnsplash,

@@ -83,16 +83,14 @@ class ChatContainer extends Component {
                     mapMultiplier: spring(this.props.mapExpanded ? 0.5 : 0.9)
                     // hoverHeight: spring(this.props.mapIsHover ? 3 : 1),
                     // hoverRadius: spring(this.props.mapIsHover ? 0.5 : 1),
-
                 }}>
                 {({mapMultiplier, toggleRadius, toggleHeight, marginControl}) =>
 
 
                     <div className={'chat-container'}
                          style={{
-                             bottom: `90px`,
+                             position: 'absolute',
                              right: `${10 * marginControl}px`,
-
                              minHeight: '1px',
                              minWidth: '1px',
                              height: `${10 * (toggleHeight) / 100 * this.props.windowHeight * mapMultiplier}px`,
