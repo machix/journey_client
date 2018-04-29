@@ -717,16 +717,20 @@ h1, h2, h3, h4, h5 {
         width: 33%; }
     .sidebar-container .sidebar .live-prompt {
       color: white;
-      margin-top: 20px;
+      margin: 30px;
       text-align: center;
-      font-size: 0.7rem; }
+      display: flex;
+      flex-direction: column;
+      font-size: 1.2rem; }
       .sidebar-container .sidebar .live-prompt .facebook-login {
+        margin-top: 20px;
         display: flex;
-        margin-top: 10px;
         border-radius: 4px;
-        flex: 1 0  auto;
+        flex: 1 0 auto;
         font-weight: 500;
         font-family: roboto;
+        margin-left: auto;
+        margin-right: auto;
         font-size: 14px;
         justify-content: space-between;
         align-items: center;
@@ -815,7 +819,7 @@ h1, h2, h3, h4, h5 {
     .sidebar-container .sidebar .information {
       margin-top: 10px;
       background-color: rgba(83, 83, 83, 0.3);
-      padding: 20px 20px 0px 20px; }
+      padding: 20px 20px 20px 20px; }
       .sidebar-container .sidebar .information .scroll-members {
         margin-top: 15px;
         display: flex;

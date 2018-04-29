@@ -110,8 +110,8 @@ class Sidebar extends Component {
 
                 </div>
 
-                <div className={'information'}>
 
+                <div className={'information'}>
 
                     <div className={'caption'}>
                         For more than 50 years, The North Face has empowered people to push their boundaries in the
@@ -123,6 +123,8 @@ class Sidebar extends Component {
                         {this.membersMap()}
                         <div className={'place-holder-member'}>+7</div>
                     </div>
+
+                    {this.props.user !== null ?
 
                     <div className={'main-info'}>
 
@@ -156,15 +158,15 @@ class Sidebar extends Component {
                         </div>
 
 
-                    </div>
+                    </div> : null}
                 </div>
 
                 {this.props.user !== null ? <AwesomeButton style={{marginTop: '30px'}}
                                                            action={() => this.props.remoteCapture(this.props.author.fcm_token)}>LIVE!
                         Request An Update</AwesomeButton> :
                     <div className={'live-prompt'}>
-                        <strong> This User is Currently Live on this Journey!<br/>
-                            Request a Live Update after Signing In.</strong>
+                        <strong> This User is Currently Live!<br/></strong>
+                        <span style={{fontSize: '0.8rem',}}> Sign in to Request Live Updates and to Interact with this Journey</span>
                         <div className="facebook-login"
                              onClick={() => this.props.login()}>
                             <img className={'login-icon'} alt=""
@@ -173,8 +175,6 @@ class Sidebar extends Component {
                             Facebook
                         </div>
                     </div>
-
-
                 }
 
 
