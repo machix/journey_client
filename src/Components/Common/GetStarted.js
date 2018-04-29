@@ -13,7 +13,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 
-
 class GetStarted extends Component {
     constructor(props) {
         super(props);
@@ -28,6 +27,7 @@ class GetStarted extends Component {
             mount: true
         })
     }
+
     componentWillUnmount() {
         this.setState({
             mount: false
@@ -44,13 +44,12 @@ class GetStarted extends Component {
                 {(state) => (
                     <div className={`start-now-banner start-now-banner-${state}`}>
                         <h1>Start Your Journey</h1>
-                        <h3>A Journey begins anywhere. Connect <b><u>people,</u> <u>places</u></b> and <b><u>things</u></b><br/>
-                            to track your own Journey.
+                        <h3>Track and share your Adventure's hands free, inreal-time.<br/>
                         </h3>
 
-                        <div className={'start-now'} onClick={() => this.props.remoteCapture() }>
+                        <div className={'start-now'} >
                             <div className={'left'}>
-                                START NOW
+                                How Does it Work?
                             </div>
                             <div className={'right'}>
                                 <Icon viewBox="0 0 40 40" style={{color: 'white'}} size={25}>

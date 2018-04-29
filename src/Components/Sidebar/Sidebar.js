@@ -162,8 +162,7 @@ class Sidebar extends Component {
                 </div>
 
                 {this.props.user !== null ? <AwesomeButton style={{marginTop: '30px'}}
-                                                           action={() => this.props.remoteCapture(this.props.author.fcm_token)}>LIVE!
-                        Request An Update</AwesomeButton> :
+                                                           action={() => this.props.remoteCapture(this.props.author.fcm_token)}>Take A Look</AwesomeButton> :
                     <div className={'live-prompt'}>
                         <strong> This User is Currently Live!<br/></strong>
                         <span style={{fontSize: '0.8rem',}}> Sign in to Request Live Updates and to Interact with this Journey</span>
