@@ -43,8 +43,9 @@ class Video extends Component {
                              height='100%'
                              url={this.props.url}
                              controls
-                             playing
-                             playsinline
+                             playing={true}
+                             playsinline={true}
+                             autoplay={true}
                              />
             </div>
 
