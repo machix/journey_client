@@ -106,7 +106,7 @@ class RouterHome extends Component {
                 <ScrollToTop>
                     <Switch>
                         <Route exact path={'/'} component={HomeDash}/>
-                        <PrivateRoute path={'/journey/:journey_id'} component={JourneyDash} authed={this.props.isAuthed}/>
+                        <Route path={'/journey/:journey_id'} component={JourneyDash} authed={this.props.isAuthed}/>
                     </Switch>
                 </ScrollToTop>
             </ConnectedRouter>

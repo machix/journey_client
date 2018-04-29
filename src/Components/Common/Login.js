@@ -158,10 +158,6 @@ class Login extends Component {
         }
     }
 
-    login = () => {
-        console.log('attempting to log in');
-        this.props.login();
-    };
 
     componentWillMount() {
         this.props.getBeautifulUnsplash();
