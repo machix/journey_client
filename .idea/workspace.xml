@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8eb92d85-80e0-4af9-8dc4-e20ffe8708d5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/HomeDash/FullJourneyBanner.js" afterPath="$PROJECT_DIR$/src/Components/HomeDash/FullJourneyBanner.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
     </list>
     <ignored path="gifty-console-client.iws" />
@@ -31,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/src/style.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="282">
-              <caret line="1982" column="14" lean-forward="false" selection-start-line="1982" selection-start-column="14" selection-end-line="1982" selection-end-column="14" />
+              <caret line="918" column="0" lean-forward="false" selection-start-line="918" selection-start-column="0" selection-end-line="918" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -138,12 +136,12 @@
       <find>-11px</find>
       <find>.</find>
       <find>.sidebar</find>
-      <find>.logo</find>
       <find>.container</find>
       <find>Alaska to Calgary</find>
       <find>'auto</find>
       <find>journey-banner-desci</find>
       <find>header-conta</find>
+      <find>.logo</find>
     </findStrings>
     <replaceStrings>
       <replace>size={20</replace>
@@ -603,12 +601,12 @@
       <workItem from="1524793114257" duration="1415000" />
       <workItem from="1524846458904" duration="5709000" />
       <workItem from="1524857201930" duration="7807000" />
-      <workItem from="1524934275694" duration="11210000" />
+      <workItem from="1524934275694" duration="11347000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="341068000" />
+    <option name="totallyTimeSpent" value="341205000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1025,7 +1023,7 @@
     <entry file="file://$PROJECT_DIR$/src/style.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
-          <caret line="1982" column="14" lean-forward="false" selection-start-line="1982" selection-start-column="14" selection-end-line="1982" selection-end-column="14" />
+          <caret line="918" column="0" lean-forward="false" selection-start-line="918" selection-start-column="0" selection-end-line="918" selection-end-column="0" />
           <folding />
         </state>
       </provider>
