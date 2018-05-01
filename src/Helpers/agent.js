@@ -8,6 +8,8 @@ import flattener from './jsonFlattener';
 import aggregator from './aggregator';
 
 const firebase = require('firebase');
+
+
 require("firebase/firestore");
 
 
