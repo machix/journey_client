@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import DatePicker from './DatePicker';
 import {CSSTransitionGroup} from 'react-transition-group';
 
+import history from '../../Helpers/history.js';
 
 import store from '../../store.js';
 
@@ -56,6 +56,8 @@ class Header extends Component {
             <div className="header-container">
                 <div className={'header'}>
                     <nav>
+                        <li onClick={()=>history.push('/about')}>About</li>
+                        <li>Find a Plan</li>
                     </nav>
                     {this.props.user !== null ?
                         <div className={'profile-information'}

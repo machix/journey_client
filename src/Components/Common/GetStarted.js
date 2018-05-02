@@ -5,6 +5,7 @@ import Icon from 'react-icon-base';
 import Transition from 'react-transition-group/Transition';
 
 import agent from '../../Helpers/agent';
+import history from '../../Helpers/history';
 
 const mapStateToProps = state => ({});
 
@@ -48,7 +49,7 @@ class GetStarted extends Component {
                         </h3>
 
                         <div className={'start-now'} >
-                            <div className={'left'}>
+                            <div className={'left'} onClick={()=>history.push('/about')}>
                                 How Does it Work?
                             </div>
                             <div className={'right'}>
