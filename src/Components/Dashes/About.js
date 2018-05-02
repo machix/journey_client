@@ -189,7 +189,8 @@ class About extends Component {
                         <h1 style={{position: 'inline-block'}}>We know you like great adventures.</h1> <span>(cause we do too...)</span>
                         <p>
                             We also know that (some) adventures are better shared with others.<br/>
-                            Bring others along on your adventure, <strong>real-time and hands-free</strong>, so you can
+                            Track your progress and bring others along on your adventure.<br/>
+                            <strong>Real-time and hands-free</strong>, so you can
                             enjoy the experience.
                         </p>
 
