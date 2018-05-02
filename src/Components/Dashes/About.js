@@ -224,8 +224,9 @@ class About extends Component {
                     <br/>
                     <div className={'row'}>
 
-                        <h1>And... some extra coin never hurt...<br/> <span
-                            style={{color: '#13B57D'}}>Coin</span> = more awesome adventures.</h1>
+                        <h1>And... some extra <span
+                            style={{color: '#13B57D'}}>coin</span> never hurt...<br/> <span
+                            style={{color: '#13B57D'}}>coin</span> = more awesome adventures.</h1>
                         <p>Think you've got the recipe to a great adventure? Maybe you'd like to help the public get into
                             the outdoors? See if someone might pay some <span
                                 style={{color: '#13B57D'}}><strong>coin </strong></span> for your recipe!
