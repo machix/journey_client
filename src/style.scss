@@ -306,7 +306,6 @@ input {
 h1, h2, h3, h4, h5 {
   margin: 0;
   font-family: Open Sans, Segoe UI, sans-serif;
-  line-height: 1.6;
 }
 
 .green {
@@ -2232,9 +2231,16 @@ h1, h2, h3, h4, h5 {
   color: $c-set-text-0;
   height: 200vh;
 
+  @media screen and (max-width: 800px) {
+    padding-top: 200px;
+    width: 90%;
+
+  }
+
   h1 {
     font-family: Roboto;
     font-size: 2.5rem;
+    padding-bottom: 20px;
   }
 
   .headline {
@@ -2326,30 +2332,73 @@ h1, h2, h3, h4, h5 {
   }
 
   .explorer-classes {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    .explorer {
-      display: inline-block;
-      background-color: #32b4b2;
-      padding: 5px 15px;
-      border-radius: 40px;
-      color: white;
-      cursor: pointer;
-      box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2) !important;
-      margin-top: 5px;
-      text-align: center;
+
+    padding: 30px;
+    display: table;
+    table-layout: fixed;
+    @media screen and (max-width: 800px) {
+      display: block;
     }
 
-    .guide {
-      display: inline-block;
-      margin-top: 5px;
-      background-color: #37ab7d;
-      padding: 5px 15px;
-      border-radius: 40px;
-      box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2) !important;
-      color: white;
-      cursor: pointer;
-      text-align: center;
+    .explorer-container {
+      display: table-row;
+
+
+      @media screen and (max-width: 800px) {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .explorer-column {
+        display: table-cell;
+        vertical-align: middle;
+        .explorer-description {
+          font-size: 1.2rem;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          color: $c-set-text-2
+
+        }
+
+        @media screen and (max-width: 800px) {
+          display: flex;
+        }
+      }
+
+    }
+  }
+  .explorer {
+    display: inline-block;
+    background-color: #32b4b2;
+    padding: 5px 15px;
+    margin-right: 10px;
+    border-radius: 40px;
+    margin-left: 10px;
+
+    color: white;
+    cursor: pointer;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2) !important;
+    text-align: center;
+    @media screen and (max-width: 800px) {
+      margin-right: auto;
+    }
+  }
+
+  .guide {
+    display: inline-block;
+    margin-top: 5px;
+    background-color: #37ab7d;
+    margin-right: 10px;
+    margin-left: 10px;
+
+    padding: 5px 15px;
+    border-radius: 40px;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2) !important;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    @media screen and (max-width: 800px) {
+      margin-right: auto;
     }
   }
 

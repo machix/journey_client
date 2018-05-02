@@ -6,7 +6,7 @@ import {withRouter} from 'react-router-dom';
 import grill from '../Assets/014-grill.svg';
 import agent from '../../Helpers/agent';
 import Header from '../Header/Header';
-import * as basicScroll from 'basicscroll'
+import * as basicScroll from '../../Helpers/basicScroll.min';
 
 
 const mapStateToProps = state => ({
@@ -188,25 +188,23 @@ class About extends Component {
                     <div className={'row'}>
                         <h1 style={{position: 'inline-block'}}>We know you like great adventures.</h1> <span>(cause we do too...)</span>
                         <p>
-                            We also know that (some) adventures are better shared with others and that <strong>inspiration</strong>
-                            is a great thing.
-                            Bring others along on your adventure, <strong>real-time and hands-free</strong>, capturing
-                            your experience authentically - while enjoying the sites and sounds.
+                            We also know that (some) adventures are better shared with others.<br/>
+                            Bring others along on your adventure, <strong>real-time and hands-free</strong>, so you can
+                            enjoy the experience.
                         </p>
 
                         <p className={'col-med'}>
                             <br/>
                             <ul>
-                                <li>&#9679; &emsp;Purchase a Phone Backpack Mount <span style={{fontSize: '0.7rem'}}> (or use some duct-tape)</span>
+                                <li>&#9679; &emsp;Cheap Phone Mounts <span style={{fontSize: '0.7rem'}}> (or use some duct-tape)</span>
                                 </li>
-                                <li>&#9679; &emsp;Capture Information You Think is Important (Distance, Elevation,
+                                <li>&#9679; &emsp;Simple Adventure Data Capture (Distance, Elevation,
                                     etc).
                                 </li>
-                                <li>&#9679; &emsp;Create an Album</li>
-                                <li>&#9679; &emsp;Bring Others Along with Shared Collections</li>
+                                <li>&#9679; &emsp;Shared Adventure Experiences</li>
                                 <li>&#9679; &emsp;Collect <span
                                     style={{color: '#13B57D'}}><strong>funds </strong></span>
-                                    for any <span style={{color: '#13B57D'}}><strong>causes </strong></span>if
+                                    for any <span style={{color: '#13B57D'}}><strong>needs/causes </strong></span>if
                                     applicable.
                                 </li>
 
@@ -217,41 +215,68 @@ class About extends Component {
                     <div className={'row'}>
 
                         <h1>We also want others to have great adventures.</h1>
-                        <p>Need an extra person for that hut trip, or have an extra permit for that trail?
+                        <p>Need an extra person for that hut trip? An extra permit for that trail?
                             <br/>
-                            <br/><span style={{fontSize: '1.3rem', textDecoration: 'underline', cursor: 'pointer'}}>Share and find a plan</span>
-                            - Get out there!
+                            <br/><span style={{fontSize: '1.3rem', textDecoration: 'underline', cursor: 'pointer'}}>Share and find a plan</span> to get out there.
                         </p>
                     </div>
                     <br/>
                     <div className={'row'}>
 
-                        <h1>And some extra coin helps for more awesome adventures.</h1>
-                        <p>Think you've got the recipe to a great adventure? Share the tips and make some extra <span
-                            style={{color: '#13B57D'}}><strong>money</strong></span>.
-                            There are currently two types of ways you can do this.
+                        <h1>And... some extra coin never hurt...<br/> <span
+                            style={{color: '#13B57D'}}>Coin</span> = more awesome adventures.</h1>
+                        <p>Think you've got the recipe to a great adventure? Maybe you'd like to help the public get into
+                            the outdoors? See if someone might pay some <span
+                                style={{color: '#13B57D'}}><strong>coin </strong></span> for your recipe!
 
+                        </p>
+                        <p>
+                            There are currently two types of ways you can do this.
+                        </p>
+                        <p>
                             <div className={'explorer-classes'}>
-                                <div>
-                                    <div
-                                        className={'explorer'}>EXPLORER
+                                <div className={'explorer-container'}>
+                                    <div className={'explorer-column'}>
+                                        <div
+                                            className={'explorer'}>EXPLORERS
+                                        </div>
                                     </div>
-                                    An Explorer Publishes <span
-                                    style={{color: '#13B57D'}}><strong>Beta</strong></span> and <span
-                                    style={{color: '#13B57D'}}><strong>Adventures</strong></span>. Almost a recipe.
+                                    <div className={'explorer-column'}>
+
+                                        <div className={'explorer-description'}>
+                                            An explorer publishes <span
+                                            style={{color: '#13B57D'}}><strong>Beta</strong></span> and <span
+                                            style={{color: '#13B57D'}}><strong>Recipes</strong></span>. Docs that help people find their way.
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div>
-                                    <div
-                                        className={'guide'}>GUIDE
+                                <div className={'explorer-container'}>
+                                    <div className={'explorer-column'}>
+
+                                        <div
+                                            className={'guide'}>GUIDES
+                                        </div>
                                     </div>
-                                    Get out there and help people find what makes your Adventure real.
+                                    <div className={'explorer-column'}>
+                                        <div className={'explorer-description'}>
+                                            You like working with people? Introduce people to what you love yourself!
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <br/>
 
-                            As an EXPLORER or GUIDE make sure you <strong>broadcast live</strong> to help others see
-                            what the experience will be like.
+                            As an
+                            <div
+                                className={'explorer'}>EXPLORER
+                            </div>
+                            or
+                            <div className={'guide'}>GUIDE
+                            </div>
+                            make sure you <strong>broadcast live</strong> to help others & future interested individuals see
+                            to see what it's like in adventure land.
+
 
                         </p>
                     </div>

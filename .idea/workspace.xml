@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8eb92d85-80e0-4af9-8dc4-e20ffe8708d5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Components/Dashes/About.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Common/GetStarted.js" afterPath="$PROJECT_DIR$/src/Components/Common/GetStarted.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Header/Header.js" afterPath="$PROJECT_DIR$/src/Components/Header/Header.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/RouterHome.js" afterPath="$PROJECT_DIR$/src/Components/RouterHome.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/About.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/About.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
     </list>
@@ -35,8 +30,8 @@
       <file leaf-file-name="About.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Components/Dashes/About.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="254" column="28" lean-forward="false" selection-start-line="254" selection-start-column="28" selection-end-line="254" selection-end-column="28" />
+            <state relative-caret-position="353">
+              <caret line="277" column="68" lean-forward="false" selection-start-line="277" selection-start-column="68" selection-end-line="277" selection-end-column="68" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -47,8 +42,8 @@
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="2329" column="25" lean-forward="false" selection-start-line="2329" selection-start-column="25" selection-end-line="2329" selection-end-column="25" />
+            <state relative-caret-position="253">
+              <caret line="2342" column="25" lean-forward="true" selection-start-line="2342" selection-start-column="25" selection-end-line="2342" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -77,23 +72,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>import history</find>
-      <find>How Does It</find>
-      <find>home-container</find>
-      <find>box-shade</find>
-      <find>.explorer</find>
-      <find>4</find>
-      <find>.container {</find>
-      <find>.about-</find>
-      <find>h1</find>
-      <find>&lt;Icon</find>
-      <find>Arrow</find>
-      <find>basic</find>
-      <find>componentdidm</find>
-      <find>export</find>
-      <find>from</find>
-      <find>.row</find>
-      <find>.about-conta</find>
       <find>sm</find>
       <find>class</find>
       <find>S</find>
@@ -106,13 +84,27 @@
       <find>ul {</find>
       <find>Explorer</find>
       <find>authentically</find>
+      <find>line-height: 1.6</find>
+      <find>@m</find>
+      <find>about-container</find>
+      <find>we also know</find>
+      <find>and get</find>
+      <find>ul</find>
       <find>explorer</find>
+      <find>outdoors?</find>
+      <find>plan to</find>
+      <find>display: table</find>
+      <find>display: table;</find>
+      <find>table-row</find>
+      <find>table-column</find>
+      <find>5</find>
+      <find>explorer-classes</find>
+      <find>20</find>
+      <find>n</find>
+      <find>present momen</find>
     </findStrings>
     <replaceStrings>
-      <replace>0.5s</replace>
-      <replace>0.2s</replace>
       <replace />
-      <replace>30</replace>
       <replace>opacity</replace>
       <replace>fadeIn</replace>
       <replace>700</replace>
@@ -139,6 +131,9 @@
       <replace>About</replace>
       <replace>2</replace>
       <replace>className</replace>
+      <replace>10</replace>
+      <replace>20</replace>
+      <replace>30</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -155,7 +150,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Components/Header/SlideWrapper.js" />
         <option value="$PROJECT_DIR$/src/Helpers/history.js" />
         <option value="$PROJECT_DIR$/src/Components/Cards/GiftyPreviewSlide.js" />
         <option value="$PROJECT_DIR$/src/Helpers/HOC.js" />
@@ -204,6 +198,7 @@
         <option value="$PROJECT_DIR$/src/Components/RouterHome.js" />
         <option value="$PROJECT_DIR$/src/Components/Common/GetStarted.js" />
         <option value="$PROJECT_DIR$/src/Components/Header/Header.js" />
+        <option value="$PROJECT_DIR$/src/Helpers/basicScroll.min.js" />
         <option value="$PROJECT_DIR$/src/style.scss" />
         <option value="$PROJECT_DIR$/src/Components/Dashes/About.js" />
       </list>
@@ -468,12 +463,12 @@
       <workItem from="1524857201930" duration="7807000" />
       <workItem from="1524934275694" duration="24218000" />
       <workItem from="1525155519579" duration="348000" />
-      <workItem from="1525210334076" duration="10308000" />
+      <workItem from="1525210334076" duration="13273000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="364732000" />
+    <option name="totallyTimeSpent" value="367697000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -541,13 +536,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/firebase/externs/firebase-auth-externs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="216" column="23" lean-forward="false" selection-start-line="216" selection-start-column="19" selection-end-line="216" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Helpers/history.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -868,18 +856,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Helpers/basicScroll.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="458" column="6" lean-forward="true" selection-start-line="458" selection-start-column="6" selection-end-line="458" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="2329" column="25" lean-forward="false" selection-start-line="2329" selection-start-column="25" selection-end-line="2329" selection-end-column="25" />
+        <state relative-caret-position="253">
+          <caret line="2342" column="25" lean-forward="true" selection-start-line="2342" selection-start-column="25" selection-end-line="2342" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Dashes/About.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="254" column="28" lean-forward="false" selection-start-line="254" selection-start-column="28" selection-end-line="254" selection-end-column="28" />
+        <state relative-caret-position="353">
+          <caret line="277" column="68" lean-forward="false" selection-start-line="277" selection-start-column="68" selection-end-line="277" selection-end-column="68" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
