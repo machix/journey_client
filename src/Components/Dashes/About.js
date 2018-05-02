@@ -216,7 +216,7 @@ class About extends Component {
                     <div className={'row'}>
 
                         <h1>We also want others to have great adventures.</h1>
-                        <p>Need an extra person for that hut trip? An extra permit for that trail?
+                        <p>Thinking of walking painstakingly slow across the Southern States? Have an extra permit for that trail?
                             <br/>
                             <br/><span style={{fontSize: '1.3rem', textDecoration: 'underline', cursor: 'pointer'}}>Share and find a plan</span> to get out there.
                         </p>
