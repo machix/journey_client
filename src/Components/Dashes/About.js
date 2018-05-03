@@ -83,23 +83,26 @@ class About extends Component {
 
     componentDidMount() {
         console.log(basicScroll);
-        // const instance = basicScroll.create({
-        //     elem: document.querySelector('.small-asset'),
-        //     from: 'top-bottom',
-        //     to: 'middle-middle',
-        //     props: {
-        //         '--opacity': {
-        //             from: .01,
-        //             to: .99
-        //         }
-        //     }
-        // })
-        //
-        //
-        //
-        // instance.start()
+        const instance = basicScroll.create({
+            elem: document.querySelector('.list'),
+            from: 300,
+            to: 350,
+            props: {
+                '--opacity': {
+                    from: .01,
+                    to: .99
+                },
+                '--tx': {
+                    from: '20px',
+                    to: 0
+                },
+            }
+        });
 
-        const instances = []
+
+        instance.start();
+
+        const instances = [];
 
         const anchor = document.querySelector('.anchor')
 
@@ -196,7 +199,7 @@ class About extends Component {
 
                         <p className={'col-med'}>
                             <br/>
-                            <ul>
+                            <ul className={'list'} >
                                 <li>&#9679; &emsp;Cheap Phone Mounts <span style={{fontSize: '0.7rem'}}> (or use some duct-tape)</span>
                                 </li>
                                 <li>&#9679; &emsp;Simple Adventure Data Capture (Distance, Elevation,

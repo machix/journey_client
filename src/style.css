@@ -1600,7 +1600,7 @@ h1, h2, h3, h4, h5 {
   padding-bottom: 60px;
   width: 65%;
   color: #484848;
-  height: 200vh; }
+  overflow: hidden; }
   @media screen and (max-width: 800px) {
     .about-container {
       padding-top: 200px;
@@ -1656,9 +1656,13 @@ h1, h2, h3, h4, h5 {
       font-size: 1.3rem;
       line-height: 1.8rem;
       text-rendering: optimizeLegibility; }
-      .about-container .row p ul {
+      .about-container .row p .list {
+        position: absolute;
+        will-change: transform;
         font-size: 1rem;
-        text-indent: 7%; }
+        text-indent: 7%;
+        transform: translate(var(--tx), 0);
+        opacity: var(--opacity); }
   .about-container .small-asset {
     width: 100px;
     height: 100px;
