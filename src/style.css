@@ -1596,139 +1596,177 @@ h1, h2, h3, h4, h5 {
 
 .about-container {
   position: relative;
-  padding-top: 200px;
   padding-bottom: 60px;
-  width: 65%;
   color: #484848;
-  overflow: hidden; }
-  @media screen and (max-width: 800px) {
-    .about-container {
-      padding-top: 200px;
-      width: 90%; } }
+  overflow: hidden;
+  width: 100%; }
+  .about-container .highlight {
+    color: #13B57D;
+    font-weight: bold; }
   .about-container h1 {
     font-family: Roboto;
     font-size: 2.5rem;
     padding-bottom: 20px; }
-  .about-container .headline {
-    position: relative;
-    padding: .4em .6em .45em;
-    font-size: 3em;
-    line-height: 1;
-    text-transform: uppercase; }
-  .about-container .border {
-    --size: 5px;
-    position: absolute;
-    background: currentcolor;
-    transform: translate(var(--tx), var(--ty)) rotate(var(--r));
-    will-change: transform;
-    opacity: var(--opacity); }
-    .about-container .border--top {
-      top: 0;
-      right: 0;
-      left: 0;
-      height: var(--size); }
-    .about-container .border--right {
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: var(--size); }
-    .about-container .border--bottom {
-      right: 0;
-      bottom: 0;
-      left: 0;
-      height: var(--size); }
-    .about-container .border--left {
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: var(--size); }
-  .about-container .letter {
-    display: inline-block;
-    transform: translate(var(--tx), var(--ty)) rotate(var(--r));
-    will-change: transform;
-    opacity: var(--opacity); }
-  .about-container .row {
-    padding-top: 100px;
-    padding-bottom: 100px; }
-    .about-container .row p {
-      font-family: Roboto;
-      margin-top: 15px;
-      font-size: 1.3rem;
-      line-height: 1.8rem;
-      text-rendering: optimizeLegibility; }
-      .about-container .row p .list {
-        position: absolute;
-        will-change: transform;
-        font-size: 1rem;
-        text-indent: 7%;
-        transform: translate(var(--tx), 0);
-        opacity: var(--opacity); }
-  .about-container .small-asset {
-    width: 100px;
-    height: 100px;
-    /*
-	 * Use the same CSS variable as specified in our instance.
-	 */
-    opacity: var(--opacity);
-    /*
-     * The will-change CSS property provides a way for authors to hint browsers about the kind of changes
-     * to be expected on an element, so that the browser can setup appropriate optimizations ahead of time
-     * before the element is actually changed.
-     */
-    will-change: opacity; }
-  .about-container .explorer-classes {
-    padding: 30px;
-    display: table;
-    table-layout: fixed; }
+  .about-container .about-header .row {
+    color: white;
+    background-image: url("https://images.unsplash.com/photo-1422396769210-b2bc60066b85?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjI0MzQ2fQ&s=01b4a63fff4808bdc18cfde1858eebbd");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 50vh 15vw 40vh 15vw; }
     @media screen and (max-width: 800px) {
-      .about-container .explorer-classes {
-        display: block; } }
-    .about-container .explorer-classes .explorer-container {
-      display: table-row; }
+      .about-container .about-header .row {
+        padding: 50vh 5vw 40vh 5vw; } }
+    .about-container .about-header .row .headline {
+      position: relative;
+      padding: .4em .6em .45em;
+      font-size: 3em;
+      line-height: 1;
+      text-transform: uppercase; }
+    .about-container .about-header .row .border {
+      color: white;
+      --size: 5px;
+      position: absolute;
+      background: currentcolor;
+      transform: translate(var(--tx), var(--ty)) rotate(var(--r));
+      will-change: transform;
+      opacity: var(--opacity);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); }
+      .about-container .about-header .row .border--top {
+        top: 0;
+        right: 0;
+        left: 0;
+        height: var(--size); }
+      .about-container .about-header .row .border--right {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: var(--size); }
+      .about-container .about-header .row .border--bottom {
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: var(--size); }
+      .about-container .about-header .row .border--left {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: var(--size); }
+    .about-container .about-header .row .letter {
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
+      color: white;
+      display: inline-block;
+      transform: translate(var(--tx), var(--ty)) rotate(var(--r));
+      will-change: transform;
+      opacity: var(--opacity); }
+  .about-container .about-content-container {
+    width: 66%;
+    margin-left: auto;
+    margin-right: auto; }
+    @media screen and (max-width: 800px) {
+      .about-container .about-content-container {
+        width: 90%; } }
+    .about-container .about-content-container .row {
+      padding-top: 75px;
+      padding-bottom: 75px; }
       @media screen and (max-width: 800px) {
-        .about-container .explorer-classes .explorer-container {
+        .about-container .about-content-container .row {
           display: flex;
-          flex-direction: column; } }
-      .about-container .explorer-classes .explorer-container .explorer-column {
-        display: table-cell;
-        vertical-align: middle; }
-        .about-container .explorer-classes .explorer-container .explorer-column .explorer-description {
-          font-size: 1.2rem;
-          margin-top: 10px;
-          margin-bottom: 10px;
-          color: #939393; }
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; } }
+      .about-container .about-content-container .row p {
+        font-family: Roboto;
+        font-size: 1.3rem;
+        line-height: 1.8rem;
+        text-rendering: optimizeLegibility; }
+        .about-container .about-content-container .row p .list {
+          position: absolute;
+          will-change: transform;
+          font-size: 1rem;
+          text-indent: 7%;
+          transform: translate(var(--tx), 0);
+          opacity: var(--opacity-list); }
+    .about-container .about-content-container .small-asset-coin {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      transform: translateY(var(--ty-coin));
+      opacity: var(--opacity-coin);
+      transition: transform .1s linear;
+      will-change: transform; }
+    .about-container .about-content-container .small-asset-waypoint {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      transform: translateX(var(--tx-waypoint)) rotate(var(--r-waypoint));
+      transition: transform .1s linear;
+      will-change: transform; }
+    .about-container .about-content-container .small-asset-placeholder {
+      width: 100px;
+      height: 100px;
+      opacity: 0; }
+    .about-container .about-content-container .explorer-classes {
+      padding: 30px 60px 30px 60px;
+      display: table;
+      table-layout: fixed; }
+      @media screen and (max-width: 800px) {
+        .about-container .about-content-container .explorer-classes {
+          display: block;
+          padding: 0 30px 20px 30px;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          margin-top: 50px;
+          margin-bottom: 50px;
+          width: 98%;
+          margin-left: auto;
+          margin-right: auto; } }
+      .about-container .about-content-container .explorer-classes .explorer-container {
+        display: table-row; }
         @media screen and (max-width: 800px) {
-          .about-container .explorer-classes .explorer-container .explorer-column {
-            display: flex; } }
-  .about-container .explorer {
-    display: inline-block;
-    background-color: #32b4b2;
-    padding: 5px 15px;
-    margin-right: 10px;
-    border-radius: 40px;
-    margin-left: 10px;
-    color: white;
-    cursor: pointer;
-    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2) !important;
-    text-align: center; }
-    @media screen and (max-width: 800px) {
-      .about-container .explorer {
-        margin-right: auto; } }
-  .about-container .guide {
-    display: inline-block;
-    margin-top: 5px;
-    background-color: #37ab7d;
-    margin-right: 10px;
-    margin-left: 10px;
-    padding: 5px 15px;
-    border-radius: 40px;
-    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2) !important;
-    color: white;
-    cursor: pointer;
-    text-align: center; }
-    @media screen and (max-width: 800px) {
-      .about-container .guide {
-        margin-right: auto; } }
+          .about-container .about-content-container .explorer-classes .explorer-container {
+            display: flex;
+            flex-direction: column; } }
+        .about-container .about-content-container .explorer-classes .explorer-container .explorer-column {
+          display: table-cell;
+          vertical-align: middle;
+          align-items: center; }
+          @media screen and (max-width: 800px) {
+            .about-container .about-content-container .explorer-classes .explorer-container .explorer-column {
+              display: flex;
+              justify-content: center; } }
+          @media screen and (max-width: 800px) {
+            .about-container .about-content-container .explorer-classes .explorer-container .explorer-column:first-child {
+              margin: 30px 0 0 0; } }
+          .about-container .about-content-container .explorer-classes .explorer-container .explorer-column .explorer-description {
+            font-size: 1.2rem;
+            margin: 10px 20px;
+            color: #939393; }
+            @media screen and (max-width: 800px) {
+              .about-container .about-content-container .explorer-classes .explorer-container .explorer-column .explorer-description {
+                text-align: center; } }
+          @media screen and (max-width: 800px) {
+            .about-container .about-content-container .explorer-classes .explorer-container .explorer-column {
+              display: flex; } }
+    .about-container .about-content-container .pill {
+      display: inline-block;
+      padding: 5px 15px;
+      margin-right: 10px;
+      border-radius: 40px;
+      margin-left: 10px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2) !important;
+      text-align: center; }
+    .about-container .about-content-container .explorer {
+      background-color: #32b4b2; }
+    .about-container .about-content-container .guide {
+      background-color: #37ab7d; }
+    .about-container .about-content-container .waypoints {
+      background-color: #ff8e3a; }
 
 .home-container {
   position: relative;

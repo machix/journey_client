@@ -2225,189 +2225,248 @@ h1, h2, h3, h4, h5 {
 
 .about-container {
   position: relative;
-  padding-top: 200px;
   padding-bottom: 60px;
-  width: 65%;
   color: $c-set-text-0;
   overflow: hidden;
+  width: 100%;
 
-  @media screen and (max-width: 800px) {
-    padding-top: 200px;
-    width: 90%;
-
+  .highlight {
+    color: #13B57D;
+    font-weight: bold;
   }
-
   h1 {
     font-family: Roboto;
     font-size: 2.5rem;
     padding-bottom: 20px;
   }
 
-  .headline {
-    position: relative;
-    padding: .4em .6em .45em;
-    font-size: 3em;
-    line-height: 1;
-    text-transform: uppercase;
-  }
+  .about-header {
 
-  .border {
-    --size: 5px;
+    .row {
+      color: white;
+      background-image: url('https://images.unsplash.com/photo-1422396769210-b2bc60066b85?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjI0MzQ2fQ&s=01b4a63fff4808bdc18cfde1858eebbd');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      padding: 50vh 15vw 40vh 15vw;
 
-    position: absolute;
-    background: currentcolor;
-    transform: translate(var(--tx), var(--ty)) rotate(var(--r));
-    will-change: transform;
-    opacity: var(--opacity);
+      @media screen and (max-width: 800px) {
+        padding: 50vh 5vw 40vh 5vw;
 
-    &--top {
-      top: 0;
-      right: 0;
-      left: 0;
-      height: var(--size);
-    }
-
-    &--right {
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: var(--size);
-    }
-
-    &--bottom {
-      right: 0;
-      bottom: 0;
-      left: 0;
-      height: var(--size);
-    }
-
-    &--left {
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: var(--size);
-    }
-  }
-
-  .letter {
-    display: inline-block;
-    transform: translate(var(--tx), var(--ty)) rotate(var(--r));
-    will-change: transform;
-    opacity: var(--opacity);
-
-  }
-
-  .row {
-    padding-top: 100px;
-    padding-bottom: 100px;
-
-    p {
-      font-family: Roboto;
-      margin-top: 15px;
-      font-size: 1.3rem;
-      line-height: 1.8rem;
-      text-rendering: optimizeLegibility;
-
-      .list {
-        position: absolute;
-
-        will-change: transform;
-        font-size: 1rem;
-        text-indent: 7%;
-        transform: translate(var(--tx), 0);
-
-        opacity: var(--opacity);
       }
 
+      .headline {
+        position: relative;
+        padding: .4em .6em .45em;
+        font-size: 3em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .border {
+        color: white;
+        --size: 5px;
+        position: absolute;
+        background: currentcolor;
+        transform: translate(var(--tx), var(--ty)) rotate(var(--r));
+        will-change: transform;
+        opacity: var(--opacity);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+        &--top {
+          top: 0;
+          right: 0;
+          left: 0;
+          height: var(--size);
+        }
+
+        &--right {
+          top: 0;
+          right: 0;
+          bottom: 0;
+          width: var(--size);
+        }
+
+        &--bottom {
+          right: 0;
+          bottom: 0;
+          left: 0;
+          height: var(--size);
+        }
+
+        &--left {
+          top: 0;
+          bottom: 0;
+          left: 0;
+          width: var(--size);
+        }
+      }
+
+      .letter {
+        text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
+        color: white;
+        display: inline-block;
+        transform: translate(var(--tx), var(--ty)) rotate(var(--r));
+        will-change: transform;
+        opacity: var(--opacity);
+
+      }
     }
+
   }
 
-  .small-asset {
-    width: 100px;
-    height: 100px;
-    /*
-	 * Use the same CSS variable as specified in our instance.
-	 */
-    opacity: var(--opacity);
-    /*
-     * The will-change CSS property provides a way for authors to hint browsers about the kind of changes
-     * to be expected on an element, so that the browser can setup appropriate optimizations ahead of time
-     * before the element is actually changed.
-     */
-    will-change: opacity;
-  }
-
-  .explorer-classes {
-
-    padding: 30px;
-    display: table;
-    table-layout: fixed;
+  .about-content-container {
+    width: 66%;
+    margin-left: auto;
+    margin-right: auto;
     @media screen and (max-width: 800px) {
-      display: block;
+      width: 90%;
+
     }
-
-    .explorer-container {
-      display: table-row;
-
+    .row {
+      padding-top: 75px;
+      padding-bottom: 75px;
 
       @media screen and (max-width: 800px) {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      p {
+        font-family: Roboto;
+        font-size: 1.3rem;
+        line-height: 1.8rem;
+        text-rendering: optimizeLegibility;
+
+        .list {
+          position: absolute;
+          will-change: transform;
+          font-size: 1rem;
+          text-indent: 7%;
+          transform: translate(var(--tx), 0);
+          opacity: var(--opacity-list);
+        }
+
+      }
+    }
+
+    .small-asset-coin {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      transform: translateY(var(--ty-coin));
+      opacity: var(--opacity-coin);
+      transition: transform .1s linear;
+      will-change: transform;
+    }
+
+    .small-asset-waypoint {
+      width: 100px;
+      height: 100px;
+
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      transform: translateX(var(--tx-waypoint)) rotate(var(--r-waypoint));
+      transition: transform .1s linear;
+      will-change: transform;
+    }
+    .small-asset-placeholder {
+
+      width: 100px;
+      height: 100px;
+
+      opacity: 0;
+
+    }
+
+    .explorer-classes {
+
+      padding: 30px 60px 30px 60px;
+      display: table;
+      table-layout: fixed;
+      @media screen and (max-width: 800px) {
+        display: block;
+        padding: 0 30px 20px 30px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        margin-top:50px;
+        margin-bottom: 50px;
+        width: 98%;
+        margin-left: auto;
+        margin-right: auto;
       }
 
-      .explorer-column {
-        display: table-cell;
-        vertical-align: middle;
-        .explorer-description {
-          font-size: 1.2rem;
-          margin-top: 10px;
-          margin-bottom: 10px;
-          color: $c-set-text-2
-
-        }
+      .explorer-container {
+        display: table-row;
 
         @media screen and (max-width: 800px) {
           display: flex;
+          flex-direction: column;
         }
+
+        .explorer-column {
+          display: table-cell;
+          vertical-align: middle;
+          align-items: center;
+          @media screen and (max-width: 800px) {
+            display: flex;
+            justify-content:center;
+          }
+
+          &:first-child {
+            @media screen and (max-width: 800px) {
+              margin: 30px 0 0 0;
+            }
+          }
+
+          .explorer-description {
+            font-size: 1.2rem;
+
+            margin: 10px 20px;
+            color: $c-set-text-2;
+            @media screen and (max-width: 800px) {
+              text-align: center;
+            }
+
+          }
+
+          @media screen and (max-width: 800px) {
+            display: flex;
+          }
+        }
+
       }
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 5px 15px;
+      margin-right: 10px;
+      border-radius: 40px;
+      margin-left: 10px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2) !important;
+      text-align: center;
+
 
     }
-  }
-  .explorer {
-    display: inline-block;
-    background-color: #32b4b2;
-    padding: 5px 15px;
-    margin-right: 10px;
-    border-radius: 40px;
-    margin-left: 10px;
-
-    color: white;
-    cursor: pointer;
-    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2) !important;
-    text-align: center;
-    @media screen and (max-width: 800px) {
-      margin-right: auto;
+    .explorer {
+      background-color: #32b4b2;
     }
-  }
 
-  .guide {
-    display: inline-block;
-    margin-top: 5px;
-    background-color: #37ab7d;
-    margin-right: 10px;
-    margin-left: 10px;
-
-    padding: 5px 15px;
-    border-radius: 40px;
-    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2) !important;
-    color: white;
-    cursor: pointer;
-    text-align: center;
-    @media screen and (max-width: 800px) {
-      margin-right: auto;
+    .guide {
+      background-color: #37ab7d;
     }
-  }
 
+    .waypoints {
+      background-color: #ff8e3a;
+    }
+
+  }
 }
 
 .home-container {

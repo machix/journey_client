@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
+import * as basicScroll from '../../Helpers/basicScroll.min';
 
 
-import grill from '../Assets/014-grill.svg';
 import agent from '../../Helpers/agent';
 import Header from '../Header/Header';
-import * as basicScroll from '../../Helpers/basicScroll.min';
+import grill from '../Assets/014-grill.svg';
+import waypoint from '../Assets/039-sign-post.svg'
+import coin from '../Assets/043-money.svg';
 
 
 const mapStateToProps = state => ({
@@ -83,24 +85,56 @@ class About extends Component {
 
     componentDidMount() {
         console.log(basicScroll);
-        const instance = basicScroll.create({
-            elem: document.querySelector('.list'),
-            from: 300,
-            to: 350,
+        // const instance = basicScroll.create({
+        //     elem: document.querySelector('.list'),
+        //     from: 'bottom-bottom',
+        //     to: 'top-middle',
+        //     props: {
+        //         '--opacity-list': {
+        //             from: .01,
+        //             to: .99
+        //         },
+        //         '--tx': {
+        //             from: '10px',
+        //             to: 0
+        //         },
+        //     }
+        // });
+        // instance.start();
+
+        const instanceWaypoint = basicScroll.create({
+            elem: document.querySelector('.small-asset-waypoint'),
+            from: 'top-middle',
+            to: 'bottom-middle',
+            direct: true,
             props: {
-                '--opacity': {
-                    from: .01,
-                    to: .99
+                '--r-waypoint': {
+                    from: '0',
+                    to: '1turn'
                 },
-                '--tx': {
-                    from: '20px',
-                    to: 0
-                },
+                '--tx-waypoint': {
+                    from: '-60vw',
+                    to: '0'
+                }
             }
         });
-
-
-        instance.start();
+        instanceWaypoint.start();
+        const instanceCoin = basicScroll.create({
+            elem: document.querySelector('.small-asset-coin'),
+            from: 'bottom-bottom',
+            to: 'top-middle',
+            props: {
+                '--ty-coin': {
+                    from: '100px',
+                    to: '0'
+                },
+                '--opacity-coin': {
+                    from: 0,
+                    to: 99
+                }
+            }
+        });
+        instanceCoin.start();
 
         const instances = [];
 
@@ -154,142 +188,147 @@ class About extends Component {
                     <Header></Header> : null}
 
                 <div className={'about-container'}>
+                    <div className={'about-header'}>
+                        <div className={'row'}>
+                            <h1 className="headline">
 
-                    <div className={'row'}>
-                        <h1 className="headline">
+                                <span className="border border--top" data-tx="-40" data-ty="20" data-r="-20"></span>
+                                <span className="border border--right" data-tx="-10" data-ty="10" data-r="30"></span>
+                                <span className="border border--bottom" data-tx="60" data-ty="0" data-r="40"></span>
+                                <span className="border border--left" data-tx="50" data-ty="-80" data-r="20"></span>
+                                <span className="letter" data-tx="-80" data-ty="-40" data-r="10">H</span>
+                                <span className="letter" data-tx="-20" data-ty="50" data-r="-50">O</span>
+                                <span className="letter" data-tx="50" data-ty="100" data-r="20"> W</span>
+                                <span className="letter" style={{width: '1rem'}} data-tx="-30" data-ty="-100"
+                                      data-r="-40"> </span>
+                                <span className="letter" data-tx="20" data-ty="-20" data-r="5"> D</span>
+                                <span className="letter" data-tx="80" data-ty="40" data-r="80"> O</span>
+                                <span className="letter" data-tx="-80" data-ty="-40" data-r="10">E</span>
+                                <span className="letter" data-tx="-20" data-ty="50" data-r="-50">S</span>
+                                <span className="letter" style={{width: '1rem'}} data-tx="50" data-ty="100"
+                                      data-r="20"> </span>
+                                <span className="letter" data-tx="-30" data-ty="-100" data-r="-40">I</span>
+                                <span className="letter" data-tx="20" data-ty="-20" data-r="5"> T</span>
+                                <span className="letter" style={{width: '1rem'}} data-tx="-30" data-ty="-100"
+                                      data-r="-40"></span>
+                                <span className="letter" data-tx="20" data-ty="-20" data-r="5"> W</span>
+                                <span className="letter" data-tx="80" data-ty="40" data-r="80"> O</span>
+                                <span className="letter" data-tx="-80" data-ty="-40" data-r="10">R</span>
+                                <span className="letter" data-tx="-20" data-ty="50" data-r="-50">K</span>
+                                <span className="letter" data-tx="-20" data-ty="50" data-r="-50">?</span>
 
-                            <span className="border border--top" data-tx="-40" data-ty="20" data-r="-20"></span>
-                            <span className="border border--right" data-tx="-10" data-ty="10" data-r="30"></span>
-                            <span className="border border--bottom" data-tx="60" data-ty="0" data-r="40"></span>
-                            <span className="border border--left" data-tx="50" data-ty="-80" data-r="20"></span>
-                            <span className="letter" data-tx="-80" data-ty="-40" data-r="10">H</span>
-                            <span className="letter" data-tx="-20" data-ty="50" data-r="-50">O</span>
-                            <span className="letter" data-tx="50" data-ty="100" data-r="20"> W</span>
-                            <span className="letter" style={{width: '1rem'}} data-tx="-30" data-ty="-100"
-                                  data-r="-40"> </span>
-                            <span className="letter" data-tx="20" data-ty="-20" data-r="5"> D</span>
-                            <span className="letter" data-tx="80" data-ty="40" data-r="80"> O</span>
-                            <span className="letter" data-tx="-80" data-ty="-40" data-r="10">E</span>
-                            <span className="letter" data-tx="-20" data-ty="50" data-r="-50">S</span>
-                            <span className="letter" style={{width: '1rem'}} data-tx="50" data-ty="100"
-                                  data-r="20"> </span>
-                            <span className="letter" data-tx="-30" data-ty="-100" data-r="-40">I</span>
-                            <span className="letter" data-tx="20" data-ty="-20" data-r="5"> T</span>
-                            <span className="letter" style={{width: '1rem'}} data-tx="-30" data-ty="-100"
-                                  data-r="-40"></span>
-                            <span className="letter" data-tx="20" data-ty="-20" data-r="5"> W</span>
-                            <span className="letter" data-tx="80" data-ty="40" data-r="80"> O</span>
-                            <span className="letter" data-tx="-80" data-ty="-40" data-r="10">R</span>
-                            <span className="letter" data-tx="-20" data-ty="50" data-r="-50">K</span>
-                            <span className="letter" data-tx="-20" data-ty="50" data-r="-50">?</span>
-
-                        </h1>
-                        <div className="anchor"></div>
-                        <h2> It's pretty simple actually...</h2>
+                            </h1>
+                            <div className="anchor"></div>
+                            <h2> It's pretty simple actually...</h2>
+                        </div>
                     </div>
+                    <div className={'about-content-container'}>
 
-                    <div className={'row'}>
-                        <h1 style={{position: 'inline-block'}}>We know you like great adventures.</h1> <span>(cause we do too...)</span>
-                        <p>
-                            We also know that (some) adventures are better shared with others.<br/>
-                            Track your progress and bring others along on your adventure.<br/>
-                            <strong>Real-time and hands-free</strong>, so you can
-                            enjoy the experience.
-                        </p>
+                        <div className={'row'}>
+                            <div>
+                                <img src={waypoint} className={'small-asset-waypoint'}/>
+                                <img src={waypoint} className={'small-asset-placeholder'} style={{opacity: 0}}/>
+                            </div>
+                            <h1 style={{position: 'inline-block'}}>We know you like great adventures.
+                                <div style={{fontSize: '1rem', paddingTop: '5px'}}> (cause we do too...)</div>
+                            </h1>
+                            <p>
+                                Track your progress and bring others along on your adventure
+                                <div><strong className={'highlight'}>real-time, and hands-free.</strong></div>
+                            </p>
 
-                        <p className={'col-med'}>
-                            <br/>
-                            <ul className={'list'} >
-                                <li>&#9679; &emsp;Cheap Phone Mounts <span style={{fontSize: '0.7rem'}}> (or use some duct-tape)</span>
-                                </li>
-                                <li>&#9679; &emsp;Simple Adventure Data Capture (Distance, Elevation,
-                                    etc).
-                                </li>
-                                <li>&#9679; &emsp;Shared Adventure Experiences</li>
-                                <li>&#9679; &emsp;Collect <span
-                                    style={{color: '#13B57D'}}><strong>funds </strong></span>
-                                    for any <span style={{color: '#13B57D'}}><strong>needs/causes </strong></span>if
-                                    applicable.
-                                </li>
 
-                            </ul>
+                        </div>
+                        <div className={'row'}>
 
-                        </p>
-                    </div>
-                    <div className={'row'}>
 
-                        <h1>We also want others to have great adventures.</h1>
-                        <p>Thinking of walking painstakingly slow across the Southern States? Have an extra permit for that trail? Cool.
-                            <br/>
-                            <br/><span style={{fontSize: '1.3rem', textDecoration: 'underline', cursor: 'pointer'}}>Share and find a plan</span> to get out there.
-                        </p>
-                    </div>
-                    <br/>
-                    <div className={'row'}>
+                            <h1>We also want others to have great adventures.</h1>
+                            <p>Thinking of walking across the Southern States and need another person? Have an extra permit for
+                                that trail? Cool.
+                                <br/>
+                                <br/><span className={'highlight'}>Share and find a plan</span> to get out there.
+                            </p>
+                        </div>
+                        <br/>
+                        <div className={'row'}>
+                            <div>
+                                <img src={coin} className={'small-asset-coin'}/>
+                                <img src={coin} className={'small-asset-placeholder'} style={{opacity: 0}}/>
+                            </div>
+                            <h1>And... some extra <span
+                                style={{color: '#13B57D'}}>coin</span> never hurt...<br/> <span
+                                style={{color: '#13B57D'}}>Coin</span> = more awesome adventures.</h1>
+                            <p>Think you've got a recipe for a great adventure? See if someone might pay some <span
+                                className={'highlight'}><strong>coin </strong></span> for your adventure recipe!
 
-                        <h1>And... some extra <span
-                            style={{color: '#13B57D'}}>coin</span> never hurt...<br/> <span
-                            style={{color: '#13B57D'}}>coin</span> = more awesome adventures.</h1>
-                        <p>Think you've got the recipe to a great adventure? Maybe you'd like to help the public get into
-                            the outdoors? See if someone might pay some <span
-                                style={{color: '#13B57D'}}><strong>coin </strong></span> for your recipe!
+                            </p>
 
-                        </p>
-                        <p>
-                            There are currently two types of ways you can do this.
-                        </p>
-                        <p>
-                            <div className={'explorer-classes'}>
-                                <div className={'explorer-container'}>
-                                    <div className={'explorer-column'}>
-                                        <div
-                                            className={'explorer'}>EXPLORERS
+                            <p>
+                                <div className={'explorer-classes'}>
+                                    <div className={'explorer-container'}>
+                                        <div className={'explorer-column'}>
+                                            <div
+                                                className={'explorer pill'}>EXPLORERS
+                                            </div>
+                                        </div>
+                                        <div className={'explorer-column'}>
+
+                                            <div className={'explorer-description '}>
+                                                An explorer publishes <span
+                                                style={{color: '#13B57D'}}><strong>information/beta</strong></span> and
+                                                <span
+                                                    style={{color: '#13B57D'}}><strong> recipes</strong></span>.
+                                                Information or ideas with enough detail to help others find their way.
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className={'explorer-column'}>
 
-                                        <div className={'explorer-description'}>
-                                            An explorer publishes <span
-                                            style={{color: '#13B57D'}}><strong>Beta</strong></span> and <span
-                                            style={{color: '#13B57D'}}><strong>Recipes</strong></span>. Docs that help people find their way.
+                                    <div className={'explorer-container'}>
+                                        <div className={'explorer-column'}>
+
+                                            <div
+                                                className={'guide pill'}>GUIDES
+                                            </div>
+                                        </div>
+                                        <div className={'explorer-column'}>
+                                            <div className={'explorer-description'}>
+                                                Like working with people? Introduce people to what you love yourself!
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className={'explorer-container'}>
+                                        <div className={'explorer-column'}>
+
+                                            <div
+                                                className={'waypoints pill'}>WAYPOINTS
+                                            </div>
+                                        </div>
+                                        <div className={'explorer-column'}>
+                                            <div className={'explorer-description'}>
+                                                When others complete your Journey, they will earn a waypoint!
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <br/>
 
-                                <div className={'explorer-container'}>
-                                    <div className={'explorer-column'}>
-
-                                        <div
-                                            className={'guide'}>GUIDES
-                                        </div>
-                                    </div>
-                                    <div className={'explorer-column'}>
-                                        <div className={'explorer-description'}>
-                                            You like working with people? Introduce people to what you love yourself!
-                                        </div>
-                                    </div>
+                                As an
+                                <div
+                                    className={'explorer pill'}>EXPLORER
                                 </div>
-                            </div>
-                            <br/>
-
-                            As an
-                            <div
-                                className={'explorer'}>EXPLORER
-                            </div>
-                            or
-                            <div className={'guide'}>GUIDE
-                            </div>
-                            make sure you <strong>broadcast live</strong> to help others & future interested individuals see
-                            to see what it's like in adventure land.
+                                or
+                                <div className={'guide pill'}>GUIDE
+                                </div>
+                                make sure you <span className="highlight">broadcast live</span> and create a <span
+                                className={"highlight"}>Journey</span> to help others see what your offering is and why your plan is the best plan.
 
 
-                        </p>
+                            </p>
+                        </div>
+
                     </div>
-
-                    <img src={grill} className={'small-asset'}/>
 
                 </div>
-
 
             </div>
         );
@@ -298,3 +337,17 @@ class About extends Component {
 
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(About));
+/*          <ul className={'list'}>
+                                    <li>&#9679; &emsp;Cheap Phone Mounts <span style={{fontSize: '0.7rem'}}> (or use some duct-tape)</span>
+                                    </li>
+                                    <li>&#9679; &emsp;Simple Adventure Data Capture (Distance, Elevation,
+                                        etc).
+                                    </li>
+                                    <li>&#9679; &emsp;Shared Adventure Experiences</li>
+                                    <li>&#9679; &emsp;Collect <span
+                                        style={{color: '#13B57D'}}><strong>funds </strong></span>
+                                        for any <span style={{color: '#13B57D'}}><strong>needs/causes </strong></span>if
+                                        applicable.
+                                    </li>
+
+                                </ul>*/
