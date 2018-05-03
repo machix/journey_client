@@ -243,7 +243,7 @@ class About extends Component {
 
 
                             <h1>We also want others to have great adventures.</h1>
-                            <p>Thinking of walking across the Southern States and need another person? Have an extra permit for
+                            <p>Want to find another person to walk across the southern states with you? Have an extra permit for
                                 that trail? Cool.
                                 <br/>
                                 <br/><span className={'highlight'}>Share and find a plan</span> to get out there.
@@ -259,7 +259,7 @@ class About extends Component {
                                 style={{color: '#13B57D'}}>coin</span> never hurt...<br/> <span
                                 style={{color: '#13B57D'}}>Coin</span> = more awesome adventures.</h1>
                             <p>Think you've got a recipe for a great adventure? See if someone might pay some <span
-                                className={'highlight'}><strong>coin </strong></span> for your adventure recipe!
+                                className={'highlight'}><strong>coin </strong></span> for your adventure recipe or!
 
                             </p>
 
