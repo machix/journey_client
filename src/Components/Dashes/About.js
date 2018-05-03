@@ -255,11 +255,11 @@ class About extends Component {
                                 <img src={coin} className={'small-asset-coin'}/>
                                 <img src={coin} className={'small-asset-placeholder'} style={{opacity: 0}}/>
                             </div>
-                            <h1>And... some extra <span
+                            <h1>And... earning some extra <span
                                 style={{color: '#13B57D'}}>coin</span> never hurt...<br/> <span
                                 style={{color: '#13B57D'}}>Coin</span> = more awesome adventures.</h1>
-                            <p>Think you've got a recipe for a great adventure? See if someone might pay some <span
-                                className={'highlight'}><strong>coin </strong></span> for your adventure recipe or!
+                            <p>You're out there all the time - others don't even know where to start. See if someone might pay some <span
+                                className={'highlight'}><strong>coin </strong></span> for some of your expertise!
 
                             </p>
 
