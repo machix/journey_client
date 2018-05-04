@@ -1697,11 +1697,26 @@ h1, h2, h3, h4, h5 {
         flex-direction: column;
         justify-content: center;
         padding: 15vw; }
+        @media screen and (max-width: 800px) {
+          .about-container .about-content-container .row-plans .plans-overlay {
+            padding: 10vw; } }
         .about-container .about-content-container .row-plans .plans-overlay .plans-description {
           font-size: 1.7rem; }
           @media screen and (max-width: 800px) {
             .about-container .about-content-container .row-plans .plans-overlay .plans-description {
               font-size: 1.3rem; } }
+        .about-container .about-content-container .row-plans .plans-overlay .get-out {
+          padding-top: 40px;
+          align-items: center;
+          margin-right: auto;
+          font-size: 1.2rem; }
+          .about-container .about-content-container .row-plans .plans-overlay .get-out .get-out-button {
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+            overflow: hidden;
+            padding: 10px 20px;
+            background-color: #1fb3b2; }
     .about-container .about-content-container .row {
       padding-top: 20vh;
       padding-bottom: 20vh; }
@@ -1716,18 +1731,6 @@ h1, h2, h3, h4, h5 {
         font-size: 1.3rem;
         line-height: 1.8rem;
         text-rendering: optimizeLegibility; }
-      .about-container .about-content-container .row .get-out {
-        padding-top: 40px;
-        align-items: center;
-        margin-right: auto;
-        font-size: 1.2rem; }
-        .about-container .about-content-container .row .get-out .get-out-button {
-          color: white;
-          cursor: pointer;
-          border-radius: 4px;
-          overflow: hidden;
-          padding: 10px 20px;
-          background-color: #1fb3b2; }
       .about-container .about-content-container .row .dynamic-row {
         display: flex; }
         @media screen and (max-width: 800px) {

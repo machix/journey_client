@@ -2328,8 +2328,6 @@ h1, h2, h3, h4, h5 {
       }
     }
 
-
-
     .row-plans {
       position: relative;
 
@@ -2360,19 +2358,39 @@ h1, h2, h3, h4, h5 {
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.6);
-
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding: 15vw;
+
+        @media screen and (max-width: 800px) {
+          padding: 10vw;
+
+        }
 
         .plans-description {
           font-size: 1.7rem;
           @media screen and (max-width: 800px) {
             font-size: 1.3rem;
           }
-        }
 
+        }
+        .get-out {
+          padding-top: 40px;
+          align-items: center;
+          margin-right: auto;
+          font-size: 1.2rem;
+
+          .get-out-button {
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+            overflow: hidden;
+            padding: 10px 20px;
+            background-color: #1fb3b2;
+          }
+
+        }
       }
 
     }
@@ -2391,23 +2409,6 @@ h1, h2, h3, h4, h5 {
         font-size: 1.3rem;
         line-height: 1.8rem;
         text-rendering: optimizeLegibility;
-      }
-
-      .get-out {
-        padding-top: 40px;
-        align-items: center;
-        margin-right: auto;
-        font-size: 1.2rem;
-
-        .get-out-button {
-          color: white;
-          cursor: pointer;
-          border-radius: 4px;
-          overflow: hidden;
-          padding: 10px 20px;
-          background-color: #1fb3b2;
-        }
-
       }
 
       .dynamic-row {

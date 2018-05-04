@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8eb92d85-80e0-4af9-8dc4-e20ffe8708d5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/About.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/About.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
     </list>
     <ignored path="gifty-console-client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="About.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="About.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/Dashes/About.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5073">
-              <caret line="449" column="0" lean-forward="true" selection-start-line="449" selection-start-column="0" selection-end-line="449" selection-end-column="0" />
+            <state relative-caret-position="258">
+              <caret line="359" column="83" lean-forward="false" selection-start-line="359" selection-start-column="76" selection-end-line="359" selection-end-column="83" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -37,16 +38,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="2561" column="27" lean-forward="true" selection-start-line="2561" selection-start-column="27" selection-end-line="2561" selection-end-column="27" />
+            <state relative-caret-position="429">
+              <caret line="2392" column="9" lean-forward="false" selection-start-line="2392" selection-start-column="9" selection-end-line="2392" selection-end-column="9" />
               <folding>
-                <marker date="1525410409098" expanded="false" signature="60981:61521" ph="data:image/svg+xml" />
-                <marker date="1525410409098" expanded="false" signature="62446:62942" ph="data:image/svg+xml" />
-                <marker date="1525410409098" expanded="false" signature="65142:67562" ph="data:image/svg+xml" />
-                <marker date="1525410409098" expanded="false" signature="96566:97370" ph="data:image/svg+xml" />
+                <marker date="1525411235123" expanded="false" signature="61089:61629" ph="data:image/svg+xml" />
+                <marker date="1525411235123" expanded="false" signature="62554:63050" ph="data:image/svg+xml" />
+                <marker date="1525411235123" expanded="false" signature="65250:67670" ph="data:image/svg+xml" />
+                <marker date="1525411235123" expanded="false" signature="96674:97478" ph="data:image/svg+xml" />
               </folding>
             </state>
           </provider>
@@ -85,9 +86,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>to get out</find>
-      <find>small0</find>
-      <find>small-asset-placeholder</find>
       <find>conditiona</find>
       <find>explorer</find>
       <find>20</find>
@@ -105,16 +103,19 @@
       <find>blur</find>
       <find>about</find>
       <find>plans-</find>
-      <find>get</find>
       <find>dya</find>
       <find>dynamic</find>
-      <find>plans-overlay</find>
       <find>expert</find>
       <find>expertise</find>
       <find>coin</find>
       <find>and earning</find>
       <find>and...</find>
       <find>gear</find>
+      <find>share an</find>
+      <find>share-</find>
+      <find>share a</find>
+      <find>get</find>
+      <find>plans-overlay</find>
     </findStrings>
     <replaceStrings>
       <replace>fadeIn</replace>
@@ -212,8 +213,8 @@
         <option value="$PROJECT_DIR$/src/Components/Common/GetStarted.js" />
         <option value="$PROJECT_DIR$/src/Components/Header/Header.js" />
         <option value="$PROJECT_DIR$/src/Helpers/basicScroll.min.js" />
-        <option value="$PROJECT_DIR$/src/style.scss" />
         <option value="$PROJECT_DIR$/src/Components/Dashes/About.js" />
+        <option value="$PROJECT_DIR$/src/style.scss" />
       </list>
     </option>
   </component>
@@ -477,12 +478,12 @@
       <workItem from="1524934275694" duration="24218000" />
       <workItem from="1525155519579" duration="348000" />
       <workItem from="1525210334076" duration="15569000" />
-      <workItem from="1525307639817" duration="20074000" />
+      <workItem from="1525307639817" duration="20259000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="390067000" />
+    <option name="totallyTimeSpent" value="390252000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -495,6 +496,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="805" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18957011" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32676056" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -504,7 +506,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957748" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25299507" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28732395" sideWeight="0.48511904" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28732395" sideWeight="0.48511904" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -869,25 +871,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/style.scss">
+    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/About.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="2561" column="27" lean-forward="true" selection-start-line="2561" selection-start-column="27" selection-end-line="2561" selection-end-column="27" />
+        <state relative-caret-position="258">
+          <caret line="359" column="83" lean-forward="false" selection-start-line="359" selection-start-column="76" selection-end-line="359" selection-end-column="83" />
           <folding>
-            <marker date="1525410409098" expanded="false" signature="60981:61521" ph="data:image/svg+xml" />
-            <marker date="1525410409098" expanded="false" signature="62446:62942" ph="data:image/svg+xml" />
-            <marker date="1525410409098" expanded="false" signature="65142:67562" ph="data:image/svg+xml" />
-            <marker date="1525410409098" expanded="false" signature="96566:97370" ph="data:image/svg+xml" />
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/About.js">
+    <entry file="file://$PROJECT_DIR$/src/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5073">
-          <caret line="449" column="0" lean-forward="true" selection-start-line="449" selection-start-column="0" selection-end-line="449" selection-end-column="0" />
+        <state relative-caret-position="429">
+          <caret line="2392" column="9" lean-forward="false" selection-start-line="2392" selection-start-column="9" selection-end-line="2392" selection-end-column="9" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <marker date="1525411235123" expanded="false" signature="61089:61629" ph="data:image/svg+xml" />
+            <marker date="1525411235123" expanded="false" signature="62554:63050" ph="data:image/svg+xml" />
+            <marker date="1525411235123" expanded="false" signature="65250:67670" ph="data:image/svg+xml" />
+            <marker date="1525411235123" expanded="false" signature="96674:97478" ph="data:image/svg+xml" />
           </folding>
         </state>
       </provider>
