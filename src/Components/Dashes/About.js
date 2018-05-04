@@ -377,7 +377,7 @@ class About extends Component {
                                     className={'highlight'}><strong>coin </strong></span> for some of your expertise!
 
                                 <br/><br/>
-                                Share your <span className={'highlight'}>gear</span>,   <span className={'highlight'}>loadouts</span>, and <span className={'highlight'}>tips</span> along the way.
+                                Share your <span className={'highlight'}>daily gear</span>,   <span className={'highlight'}>loadouts</span>, and <span className={'highlight'}> adventure tips</span> along the way.
 
                             </p>
 
@@ -439,8 +439,7 @@ class About extends Component {
                                 <div className={'guide pill'}>GUIDE
                                 </div>
                                 make sure you <span className="highlight">broadcast live</span> and regularly update your <span
-                                className={"highlight"}>Journey</span> to help others see why your information is valuable.
-
+                                className={"highlight"}>Journey</span> to help others see why your information is best information.
 
                             </p>
                         </div>
