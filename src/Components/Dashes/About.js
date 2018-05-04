@@ -9,6 +9,10 @@ import Header from '../Header/Header';
 import grill from '../Assets/014-grill.svg';
 import waypoint from '../Assets/039-sign-post.svg'
 import coin from '../Assets/043-money.svg';
+import photo from '../Assets/047-camera.svg';
+import money from '../Assets/money.svg';
+import metrics from '../Assets/growth.svg'
+import youtube from '../Assets/youtube.svg';
 
 
 const mapStateToProps = state => ({
@@ -119,6 +123,42 @@ class About extends Component {
             }
         });
         instanceWaypoint.start();
+
+        const featureContainer = basicScroll.create({
+            elem: document.querySelector('.feature-container'),
+            from: 'bottom-bottom',
+            to: 'top-middle',
+            direct: true,
+            props: {
+                '--ty-feature-container': {
+                    from: '100px',
+                    to: '0'
+                },
+                '--opacity-feature-container': {
+                    from: 0,
+                    to: 1
+                }
+            }
+        });
+        featureContainer.start();
+        // const getOut = basicScroll.create({
+        //     elem: document.querySelector('.get-out'),
+        //     from: 'top-middle',
+        //     to: 'bottom-middle',
+        //     direct: true,
+        //     props: {
+        //         '--ty-get-out': {
+        //             from: '10px',
+        //             to: '0'
+        //         },
+        //         '--opacity-get-out': {
+        //             from: 0,
+        //             to: 1
+        //         }
+        //     }
+        // });
+        // getOut.start();
+
         const instanceCoin = basicScroll.create({
             elem: document.querySelector('.small-asset-coin'),
             from: 'bottom-bottom',
@@ -130,7 +170,7 @@ class About extends Component {
                 },
                 '--opacity-coin': {
                     from: 0,
-                    to: 99
+                    to: 1
                 }
             }
         });
@@ -225,41 +265,119 @@ class About extends Component {
                     <div className={'about-content-container'}>
 
                         <div className={'row'}>
-                            <div>
+                            <div className={'conditional-nodisplay-desktop'}>
                                 <img src={waypoint} className={'small-asset-waypoint'}/>
                                 <img src={waypoint} className={'small-asset-placeholder'} style={{opacity: 0}}/>
                             </div>
-                            <h1 style={{position: 'inline-block'}}>We know you like great adventures.
-                                <div style={{fontSize: '1rem', paddingTop: '5px'}}> (cause we do too...)</div>
-                            </h1>
-                            <p>
-                                Track your progress and bring others along on your adventure
-                                <div><strong className={'highlight'}>real-time, and hands-free.</strong></div>
-                            </p>
+
+                            <div className={'dynamic-row'}>
+                                <div className={'intro-container'}>
+                                    <h1 style={{position: 'inline-block'}}>We know you like great adventures.
+                                        <div style={{fontSize: '1rem', paddingTop: '5px'}}> (cause we do too...) <span>
+</span></div>
+                                    </h1>
+                                    <p>
+                                        Track your progress and bring others along on your adventure
+                                        <span><strong
+                                            className={'highlight'}> real-time, and hands-free.</strong></span>
+                                    </p>
+                                </div>
+                                <div className={'feature-column'}>
+                                    <div className={'feature-container'} style={{position: 'absolute'}}>
+                                        <div className={'feature'}>
+                                            <div style={{backgroundColor: 'orange'}}>
+                                                <img src={metrics}/>
+                                            </div>
+                                            Track relevant data (elevation, distance, etc).
+                                        </div>
+                                        <div className={'feature'}>
+                                            <div style={{backgroundColor: '#FFDA44'}}>
+                                                <img src={youtube}/>
+                                            </div>
+                                            Stream Live - Have users check in on your adventure.
+                                        </div>
+                                        <div className={'feature'}>
+                                            <div style={{backgroundColor: '#FFDA44'}}>
+                                                <img src={photo}/>
+                                            </div>
+                                            Collaborate with others on your Journey.
+                                        </div>
+                                        <div className={'feature'}>
+                                            <div style={{backgroundColor: '#ADDFBA'}}>
+                                                <img src={money}/>
+                                            </div>
+                                            Collect <span className={'highlight'}>coin</span> for your cause! <span
+                                            style={{fontSize: '0.6rem'}}>(if applicable)</span>
+                                        </div>
+                                    </div>
+                                    <div className={'feature-container placeholder'}>
+                                        <div className={'feature'}>
+                                            <div style={{backgroundColor: 'orange'}}>
+                                                <img src={metrics}/>
+                                            </div>
+                                            Track relevant data (elevation, distance, etc).
+                                        </div>
+                                        <div className={'feature'}>
+                                            <div style={{backgroundColor: '#FFDA44'}}>
+                                                <img src={youtube}/>
+                                            </div>
+                                            Stream Live - Have users check in on your journey.
+                                        </div>
+                                        <div className={'feature'}>
+                                            <div style={{backgroundColor: '#FFDA44'}}>
+                                                <img src={photo}/>
+                                            </div>
+                                            Participate in collaborative Journeys sharing pictures & video
+                                            collaboratively.
+                                        </div>
+                                        <div className={'feature'}>
+                                            <div style={{backgroundColor: '#ADDFBA'}}>
+                                                <img src={money}/>
+                                            </div>
+                                            Collect <span className={'highlight'}>coin</span> for your cause! <span
+                                            style={{fontSize: '0.6rem'}}>(if applicable)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
 
                         </div>
-                        <div className={'row'}>
+                        <div className={'row row-plans'}>
+                            <div className={'row-plans-background'}>
+                            </div>
+                            <div className={'plans-overlay'}>
+
+                                <h1>And we also want others to have great adventures.</h1>
+                                <div className={'plans-description'}>Need to find another person to walk
+                                    across the southern
+                                    states with you? <br/>Have an extra
+                                    permit for
+                                    that trail? Cool.
+                                </div>
+
+                                <div className={'get-out'}><div
+                                    className={' get-out-button no-select'}>SHARE AND FIND A PLAN</div></div>
+                            </div>
 
 
-                            <h1>We also want others to have great adventures.</h1>
-                            <p>Want to find another person to walk across the southern states with you? Have an extra permit for
-                                that trail? Cool.
-                                <br/>
-                                <br/><span className={'highlight'}>Share and find a plan</span> to get out there.
-                            </p>
                         </div>
                         <br/>
                         <div className={'row'}>
                             <div>
                                 <img src={coin} className={'small-asset-coin'}/>
-                                <img src={coin} className={'small-asset-placeholder'} style={{opacity: 0}}/>
+                                <img src={coin} className={'small-asset-placeholder conditional-nodisplay-desktop'}
+                                     style={{opacity: 0}}/>
                             </div>
-                            <h1>And... earning some extra <span
+                            <h1 style={{paddingTop: '30px'}}>And... earning some extra <span
                                 style={{color: '#13B57D'}}>coin</span> never hurt...<br/> <span
                                 style={{color: '#13B57D'}}>Coin</span> = more awesome adventures.</h1>
-                            <p>You're out there all the time - others don't even know where to start. See if someone might pay some <span
-                                className={'highlight'}><strong>coin </strong></span> for some of your expertise!
+                            <p>You're out there all the time - others don't even know where to start. See if someone
+                                might pay some <span
+                                    className={'highlight'}><strong>coin </strong></span> for some of your expertise!
+
+                                <br/><br/>
+                                Share your <span className={'highlight'}>gear</span>,   <span className={'highlight'}>loadouts</span>, and <span className={'highlight'}>tips</span> along the way.
 
                             </p>
 
@@ -278,7 +396,8 @@ class About extends Component {
                                                 style={{color: '#13B57D'}}><strong>information/beta</strong></span> and
                                                 <span
                                                     style={{color: '#13B57D'}}><strong> recipes</strong></span>.
-                                                Information or ideas with enough detail to help others find their way.
+                                                Information or inspiration with enough detail to help others find their
+                                                way.
                                             </div>
                                         </div>
                                     </div>
@@ -319,8 +438,8 @@ class About extends Component {
                                 or
                                 <div className={'guide pill'}>GUIDE
                                 </div>
-                                make sure you <span className="highlight">broadcast live</span> and create a <span
-                                className={"highlight"}>Journey</span> to help others see what your offering is and why your plan is the best plan.
+                                make sure you <span className="highlight">broadcast live</span> and regularly update your <span
+                                className={"highlight"}>Journey</span> to help others see why your information is valuable.
 
 
                             </p>

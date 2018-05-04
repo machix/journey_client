@@ -1660,15 +1660,51 @@ h1, h2, h3, h4, h5 {
       will-change: transform;
       opacity: var(--opacity); }
   .about-container .about-content-container {
-    width: 66%;
     margin-left: auto;
     margin-right: auto; }
-    @media screen and (max-width: 800px) {
-      .about-container .about-content-container {
-        width: 90%; } }
     .about-container .about-content-container .row {
-      padding-top: 75px;
-      padding-bottom: 75px; }
+      width: 66%;
+      margin-left: auto;
+      margin-right: auto; }
+      @media screen and (max-width: 800px) {
+        .about-container .about-content-container .row {
+          width: 90%; } }
+    .about-container .about-content-container .row-plans {
+      position: relative;
+      width: 100% !important;
+      height: 80vh;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
+      color: white; }
+      .about-container .about-content-container .row-plans .row-plans-background {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        filter: blur(2px);
+        background-image: url("https://images.unsplash.com/photo-1478812181266-ff089b43bb96?ixlib=rb-0.3.5&s=793fceaa9f07bfec4b0d66c194717b77&auto=format&fit=crop&w=1500&q=80");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; }
+      .about-container .about-content-container .row-plans .plans-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 15vw; }
+        .about-container .about-content-container .row-plans .plans-overlay .plans-description {
+          font-size: 1.7rem; }
+          @media screen and (max-width: 800px) {
+            .about-container .about-content-container .row-plans .plans-overlay .plans-description {
+              font-size: 1.3rem; } }
+    .about-container .about-content-container .row {
+      padding-top: 20vh;
+      padding-bottom: 20vh; }
       @media screen and (max-width: 800px) {
         .about-container .about-content-container .row {
           display: flex;
@@ -1680,14 +1716,83 @@ h1, h2, h3, h4, h5 {
         font-size: 1.3rem;
         line-height: 1.8rem;
         text-rendering: optimizeLegibility; }
-        .about-container .about-content-container .row p .list {
-          position: absolute;
-          will-change: transform;
-          font-size: 1rem;
-          text-indent: 7%;
-          transform: translate(var(--tx), 0);
-          opacity: var(--opacity-list); }
+      .about-container .about-content-container .row .get-out {
+        padding-top: 40px;
+        align-items: center;
+        margin-right: auto;
+        font-size: 1.2rem; }
+        .about-container .about-content-container .row .get-out .get-out-button {
+          color: white;
+          cursor: pointer;
+          border-radius: 4px;
+          overflow: hidden;
+          padding: 10px 20px;
+          background-color: #1fb3b2; }
+      .about-container .about-content-container .row .dynamic-row {
+        display: flex; }
+        @media screen and (max-width: 800px) {
+          .about-container .about-content-container .row .dynamic-row {
+            flex-direction: column; } }
+        .about-container .about-content-container .row .dynamic-row .intro-container {
+          margin-right: 30px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around; }
+          @media screen and (max-width: 800px) {
+            .about-container .about-content-container .row .dynamic-row .intro-container {
+              margin-right: 30px; } }
+          .about-container .about-content-container .row .dynamic-row .intro-container h1 {
+            padding-top: 30px; }
+          .about-container .about-content-container .row .dynamic-row .intro-container p {
+            padding-bottom: 30px; }
+        .about-container .about-content-container .row .dynamic-row .placeholder {
+          opacity: 0 !important; }
+        .about-container .about-content-container .row .dynamic-row .feature-column {
+          width: 55%;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          @media screen and (max-width: 800px) {
+            .about-container .about-content-container .row .dynamic-row .feature-column {
+              width: 100%;
+              margin: 10px 0 10px 0; } }
+          .about-container .about-content-container .row .dynamic-row .feature-column .feature-container {
+            margin-left: 20px;
+            margin-right: 20px;
+            transform: translateY(var(--ty-feature-container));
+            opacity: var(--opacity-feature-container);
+            will-change: transform;
+            width: 100%; }
+            @media screen and (max-width: 800px) {
+              .about-container .about-content-container .row .dynamic-row .feature-column .feature-container {
+                margin-left: 0; } }
+            .about-container .about-content-container .row .dynamic-row .feature-column .feature-container .feature {
+              display: inline-flex;
+              text-align: center;
+              width: 50%;
+              margin-top: 20px;
+              color: #939393;
+              flex-direction: column;
+              align-items: center; }
+              @media screen and (max-width: 800px) {
+                .about-container .about-content-container .row .dynamic-row .feature-column .feature-container .feature {
+                  margin-top: 40px; } }
+              .about-container .about-content-container .row .dynamic-row .feature-column .feature-container .feature:nth-child(-n+2) {
+                margin: 0; }
+              .about-container .about-content-container .row .dynamic-row .feature-column .feature-container .feature div {
+                width: 60px;
+                height: 60px;
+                border-radius: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 5px; }
+                .about-container .about-content-container .row .dynamic-row .feature-column .feature-container .feature div img {
+                  width: 40px;
+                  height: 40px; }
     .about-container .about-content-container .small-asset-coin {
+      display: none;
       width: 100px;
       height: 100px;
       position: absolute;
@@ -1696,29 +1801,38 @@ h1, h2, h3, h4, h5 {
       transform: translateY(var(--ty-coin));
       opacity: var(--opacity-coin);
       transition: transform .1s linear;
-      will-change: transform; }
+      will-change: transform;
+      margin-bottom: 30px; }
+      @media screen and (max-width: 800px) {
+        .about-container .about-content-container .small-asset-coin {
+          display: inherit; } }
     .about-container .about-content-container .small-asset-waypoint {
-      width: 100px;
-      height: 100px;
+      display: none;
       position: absolute;
       margin-left: auto;
       margin-right: auto;
       transform: translateX(var(--tx-waypoint)) rotate(var(--r-waypoint));
       transition: transform .1s linear;
       will-change: transform; }
+      @media screen and (max-width: 800px) {
+        .about-container .about-content-container .small-asset-waypoint {
+          display: inherit;
+          width: 100px;
+          height: 100px; } }
     .about-container .about-content-container .small-asset-placeholder {
       width: 100px;
       height: 100px;
       opacity: 0; }
     .about-container .about-content-container .explorer-classes {
-      padding: 30px 60px 30px 60px;
+      padding: 0px 60px 20px 60px;
       display: table;
-      table-layout: fixed; }
+      table-layout: fixed;
+      margin: 40px 0 40px 0;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); }
       @media screen and (max-width: 800px) {
         .about-container .about-content-container .explorer-classes {
           display: block;
           padding: 0 30px 20px 30px;
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           margin-top: 50px;
           margin-bottom: 50px;
           width: 98%;
