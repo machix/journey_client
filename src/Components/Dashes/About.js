@@ -356,8 +356,11 @@ class About extends Component {
                                     that trail? Cool.
                                 </div>
 
-                                <div className={'get-out'}><div
-                                    className={' get-out-button no-select'}>SHARE AND FIND A PLAN</div></div>
+                                <div className={'get-out'}>
+                                    <div
+                                        className={' get-out-button no-select'}>SHARE AND FIND A PLAN
+                                    </div>
+                                </div>
                             </div>
 
 
@@ -376,8 +379,11 @@ class About extends Component {
                                 might pay some <span
                                     className={'highlight'}><strong>coin </strong></span> for some of your expertise!
 
+
                                 <br/><br/>
-                                Share your <span className={'highlight'}>daily gear</span>,   <span className={'highlight'}>loadouts</span>, and <span className={'highlight'}> adventure tips</span> along the way.
+                                Share your <span className={'highlight'}>favorite gear</span>, <span
+                                    className={'highlight'}>loadouts</span>, and <span className={'highlight'}> adventure tips </span>
+                                along the way.
 
                             </p>
 
@@ -438,8 +444,10 @@ class About extends Component {
                                 or
                                 <div className={'guide pill'}>GUIDE
                                 </div>
-                                make sure you <span className="highlight">broadcast live</span> and regularly update your <span
-                                className={"highlight"}>Journey</span> to help others see why your information is best information.
+                                make sure you <span className="highlight">broadcast live</span> and regularly update
+                                your <span
+                                className={"highlight"}>Journey</span> to help others see why your information is best
+                                information.
 
                             </p>
                         </div>

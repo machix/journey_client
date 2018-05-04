@@ -55,8 +55,10 @@ class Header extends Component {
         return (
             <div className="header-container">
                 <div className={'header'}>
-                    <nav>
-                        <li onClick={()=>history.push('/about')}>About</li>
+                    <nav className={'no-select'
+                    }>
+                        <li onClick={() => history.push('/')}>Home</li>
+                        <li onClick={() => history.push('/about')}>About</li>
                         <li>Find a Plan</li>
                     </nav>
                     {this.props.user !== null ?
