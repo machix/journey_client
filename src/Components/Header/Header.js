@@ -51,14 +51,23 @@ class Header extends Component {
 
     }
 
+    navigate(location) {
+        console.log(this.props.location.pathname);
+        if (this.props.location.pathname === location) {
+            console.log('not navigating');
+        } else {
+            history.push(location)
+        }
+    }
+
     render() {
         return (
             <div className="header-container">
                 <div className={'header'}>
                     <nav className={'no-select'
                     }>
-                        <li onClick={() => history.push('/')}>Home</li>
-                        <li onClick={() => history.push('/about')}>About</li>
+                        <li onClick={() => this.navigate('/')}>Home</li>
+                        <li onClick={() => this.navigate('/about')}>About</li>
                         <li>Find a Plan</li>
                     </nav>
                     {this.props.user !== null ?
