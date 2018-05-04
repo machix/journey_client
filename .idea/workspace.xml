@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8eb92d85-80e0-4af9-8dc4-e20ffe8708d5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/About.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/About.js" />
     </list>
     <ignored path="gifty-console-client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="About.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="About.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Components/Dashes/About.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="359" column="83" lean-forward="false" selection-start-line="359" selection-start-column="76" selection-end-line="359" selection-end-column="83" />
+            <state relative-caret-position="71">
+              <caret line="128" column="22" lean-forward="false" selection-start-line="128" selection-start-column="22" selection-end-line="128" selection-end-column="22" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -38,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="2392" column="9" lean-forward="false" selection-start-line="2392" selection-start-column="9" selection-end-line="2392" selection-end-column="9" />
+            <state relative-caret-position="373">
+              <caret line="2421" column="29" lean-forward="true" selection-start-line="2421" selection-start-column="29" selection-end-line="2421" selection-end-column="29" />
               <folding>
                 <marker date="1525411235123" expanded="false" signature="61089:61629" ph="data:image/svg+xml" />
                 <marker date="1525411235123" expanded="false" signature="62554:63050" ph="data:image/svg+xml" />
@@ -213,8 +212,8 @@
         <option value="$PROJECT_DIR$/src/Components/Common/GetStarted.js" />
         <option value="$PROJECT_DIR$/src/Components/Header/Header.js" />
         <option value="$PROJECT_DIR$/src/Helpers/basicScroll.min.js" />
-        <option value="$PROJECT_DIR$/src/Components/Dashes/About.js" />
         <option value="$PROJECT_DIR$/src/style.scss" />
+        <option value="$PROJECT_DIR$/src/Components/Dashes/About.js" />
       </list>
     </option>
   </component>
@@ -478,12 +477,12 @@
       <workItem from="1524934275694" duration="24218000" />
       <workItem from="1525155519579" duration="348000" />
       <workItem from="1525210334076" duration="15569000" />
-      <workItem from="1525307639817" duration="20259000" />
+      <workItem from="1525307639817" duration="20371000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="390252000" />
+    <option name="totallyTimeSpent" value="390364000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -871,25 +870,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/About.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="359" column="83" lean-forward="false" selection-start-line="359" selection-start-column="76" selection-end-line="359" selection-end-column="83" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="2392" column="9" lean-forward="false" selection-start-line="2392" selection-start-column="9" selection-end-line="2392" selection-end-column="9" />
+        <state relative-caret-position="373">
+          <caret line="2421" column="29" lean-forward="true" selection-start-line="2421" selection-start-column="29" selection-end-line="2421" selection-end-column="29" />
           <folding>
             <marker date="1525411235123" expanded="false" signature="61089:61629" ph="data:image/svg+xml" />
             <marker date="1525411235123" expanded="false" signature="62554:63050" ph="data:image/svg+xml" />
             <marker date="1525411235123" expanded="false" signature="65250:67670" ph="data:image/svg+xml" />
             <marker date="1525411235123" expanded="false" signature="96674:97478" ph="data:image/svg+xml" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/About.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="128" column="22" lean-forward="false" selection-start-line="128" selection-start-column="22" selection-end-line="128" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>

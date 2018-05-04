@@ -126,7 +126,7 @@ class About extends Component {
 
         const featureContainer = basicScroll.create({
             elem: document.querySelector('.feature-container'),
-            from: 'middle-bottom',
+            from: 'top-bottom',
             to: 'top-middle',
             direct: true,
             props: {
