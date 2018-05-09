@@ -45,8 +45,9 @@ class GetStarted extends Component {
                 {(state) => (
                     <div className={`start-now-banner start-now-banner-${state}`}>
                         <h1>Start Your Journey</h1>
-                        <h3>Track and share your Adventure's: hands free, in real-time.<br/>
-                        </h3>
+                        <h3>Track and share your Experiences: hands free, in real-time.<br/>
+                        </h3><br/>
+
 
                         <div className={'start-now'} >
                             <div className={'left'} onClick={()=>history.push('/about')}>

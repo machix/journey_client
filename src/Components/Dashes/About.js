@@ -124,23 +124,23 @@ class About extends Component {
         });
         instanceWaypoint.start();
 
-        const featureContainer = basicScroll.create({
-            elem: document.querySelector('.feature-container'),
-            from: 'top-bottom',
-            to: 'top-middle',
-            direct: true,
-            props: {
-                '--ty-feature-container': {
-                    from: '100px',
-                    to: '0'
-                },
-                '--opacity-feature-container': {
-                    from: 0,
-                    to: 1
-                }
-            }
-        });
-        featureContainer.start();
+        // const featureContainer = basicScroll.create({
+        //     elem: document.querySelector('.feature-container'),
+        //     from: 'top-bottom',
+        //     to: 'top-middle',
+        //     direct: true,
+        //     props: {
+        //         '--ty-feature-container': {
+        //             from: '100px',
+        //             to: '0'
+        //         },
+        //         '--opacity-feature-container': {
+        //             from: 0,
+        //             to: 1
+        //         }
+        //     }
+        // });
+        // featureContainer.start();
         // const getOut = basicScroll.create({
         //     elem: document.querySelector('.get-out'),
         //     from: 'top-middle',
@@ -223,9 +223,8 @@ class About extends Component {
     render() {
         return (
             <div className={"container"}>
-                {this.props.user !== null ?
 
-                    <Header></Header> : null}
+                <Header></Header>
 
                 <div className={'about-container'}>
                     <div className={'about-header'}>
@@ -282,63 +281,7 @@ class About extends Component {
                                             className={'highlight'}> real-time, and hands-free.</strong></span>
                                     </p>
                                 </div>
-                                <div className={'feature-column'}>
-                                    <div className={'feature-container'} style={{position: 'absolute'}}>
-                                        <div className={'feature'}>
-                                            <div style={{backgroundColor: 'orange'}}>
-                                                <img src={metrics}/>
-                                            </div>
-                                            Track relevant data (elevation, distance, etc).
-                                        </div>
-                                        <div className={'feature'}>
-                                            <div style={{backgroundColor: '#FFDA44'}}>
-                                                <img src={youtube}/>
-                                            </div>
-                                            Stream Live - Have users check in on your adventure.
-                                        </div>
-                                        <div className={'feature'}>
-                                            <div style={{backgroundColor: '#FFDA44'}}>
-                                                <img src={photo}/>
-                                            </div>
-                                            Collaborate with others on your Journey.
-                                        </div>
-                                        <div className={'feature'}>
-                                            <div style={{backgroundColor: '#ADDFBA'}}>
-                                                <img src={money}/>
-                                            </div>
-                                            Collect <span className={'highlight'}>coin</span> for your cause! <span
-                                            style={{fontSize: '0.6rem'}}>(if applicable)</span>
-                                        </div>
-                                    </div>
-                                    <div className={'feature-container placeholder'}>
-                                        <div className={'feature'}>
-                                            <div style={{backgroundColor: 'orange'}}>
-                                                <img src={metrics}/>
-                                            </div>
-                                            Track relevant data (elevation, distance, etc).
-                                        </div>
-                                        <div className={'feature'}>
-                                            <div style={{backgroundColor: '#FFDA44'}}>
-                                                <img src={youtube}/>
-                                            </div>
-                                            Stream Live - Have users check in on your journey.
-                                        </div>
-                                        <div className={'feature'}>
-                                            <div style={{backgroundColor: '#FFDA44'}}>
-                                                <img src={photo}/>
-                                            </div>
-                                            Participate in collaborative Journeys sharing pictures & video
-                                            collaboratively.
-                                        </div>
-                                        <div className={'feature'}>
-                                            <div style={{backgroundColor: '#ADDFBA'}}>
-                                                <img src={money}/>
-                                            </div>
-                                            Collect <span className={'highlight'}>coin</span> for your cause! <span
-                                            style={{fontSize: '0.6rem'}}>(if applicable)</span>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
 
 
@@ -349,12 +292,7 @@ class About extends Component {
                             <div className={'plans-overlay'}>
 
                                 <h1>And we also want others to have great adventures.</h1>
-                                <div className={'plans-description'}>Need to find another person to walk
-                                    across the southern
-                                    states with you? <br/>Have an extra
-                                    permit for
-                                    that trail? Cool.
-                                </div>
+
 
                                 <div className={'get-out'}>
                                     <div
@@ -463,17 +401,72 @@ class About extends Component {
 
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(About));
-/*          <ul className={'list'}>
-                                    <li>&#9679; &emsp;Cheap Phone Mounts <span style={{fontSize: '0.7rem'}}> (or use some duct-tape)</span>
-                                    </li>
-                                    <li>&#9679; &emsp;Simple Adventure Data Capture (Distance, Elevation,
-                                        etc).
-                                    </li>
-                                    <li>&#9679; &emsp;Shared Adventure Experiences</li>
-                                    <li>&#9679; &emsp;Collect <span
-                                        style={{color: '#13B57D'}}><strong>funds </strong></span>
-                                        for any <span style={{color: '#13B57D'}}><strong>needs/causes </strong></span>if
-                                        applicable.
-                                    </li>
 
-                                </ul>*/
+
+/*======================THIS IS EVEYRTHING THAT'S BEING REMOVED ===================>
+  <div className={'feature-column'}>
+                                    <div className={'feature-container'} style={{position: 'absolute'}}>
+                                        <div className={'feature'}>
+                                            <div style={{backgroundColor: 'orange'}}>
+                                                <img src={metrics}/>
+                                            </div>
+                                            Track relevant data (elevation, distance, etc).
+                                        </div>
+                                        <div className={'feature'}>
+                                            <div style={{backgroundColor: '#FFDA44'}}>
+                                                <img src={youtube}/>
+                                            </div>
+                                            Stream Live - Have users check in on your adventure.
+                                        </div>
+                                        <div className={'feature'}>
+                                            <div style={{backgroundColor: '#FFDA44'}}>
+                                                <img src={photo}/>
+                                            </div>
+                                            Collaborate with others on your Journey.
+                                        </div>
+                                        <div className={'feature'}>
+                                            <div style={{backgroundColor: '#ADDFBA'}}>
+                                                <img src={money}/>
+                                            </div>
+                                            Collect <span className={'highlight'}>coin</span> for your cause! <span
+                                            style={{fontSize: '0.6rem'}}>(if applicable)</span>
+                                        </div>
+                                    </div>
+                                    <div className={'feature-container placeholder'}>
+                                        <div className={'feature'}>
+                                            <div style={{backgroundColor: 'orange'}}>
+                                                <img src={metrics}/>
+                                            </div>
+                                            Track relevant data (elevation, distance, etc).
+                                        </div>
+                                        <div className={'feature'}>
+                                            <div style={{backgroundColor: '#FFDA44'}}>
+                                                <img src={youtube}/>
+                                            </div>
+                                            Stream Live - Have users check in on your journey.
+                                        </div>
+                                        <div className={'feature'}>
+                                            <div style={{backgroundColor: '#FFDA44'}}>
+                                                <img src={photo}/>
+                                            </div>
+                                            Participate in collaborative Journeys sharing pictures & video
+                                            collaboratively.
+                                        </div>
+                                        <div className={'feature'}>
+                                            <div style={{backgroundColor: '#ADDFBA'}}>
+                                                <img src={money}/>
+                                            </div>
+                                            Collect <span className={'highlight'}>coin</span> for your cause! <span
+                                            style={{fontSize: '0.6rem'}}>(if applicable)</span>
+                                        </div>
+                                    </div>
+                                </div>
+ */
+
+/*
+*           <div className={'plans-description'}>Need to find another person to walk
+                                    across the southern
+                                    states with you? <br/>Have an extra
+                                    permit for
+                                    that trail? Cool.
+                                </div>*/

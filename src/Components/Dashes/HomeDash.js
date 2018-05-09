@@ -108,13 +108,9 @@ class HomeDash extends Component {
                  }}
                  tabIndex="1"
                  {...ArrowKeysReact.events}   >
-                {this.props.user !== null ?
-
-                    <Header></Header> : null}
+                <Header></Header>
                 <Login></Login>
                 <div className={'home-container'}>
-
-
 
 
                     <FullJourneyBanner>
