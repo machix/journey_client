@@ -10,6 +10,7 @@ import App from '../App';
 import HomeDash from './Dashes/HomeDash';
 import JourneyDash from './Dashes/JourneyDash';
 import About from './Dashes/About';
+import Profile from './Dashes/ProfileDash';
 
 
 import Login from './Common/Login.js';
@@ -110,6 +111,7 @@ class RouterHome extends Component {
                         <Route exact path={'/'} component={HomeDash}/>
                         <Route path={'/journey/:journey_id'} component={JourneyDash} authed={this.props.isAuthed}/>
                         <Route path={'/about/'} component={About} />
+                        <Route path={'/profile/:journey_id'} component={Profile} />
 
                     </Switch>
                 </ScrollToTop>

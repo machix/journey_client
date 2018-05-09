@@ -180,7 +180,29 @@ const common = {
                     }
                 });
         }
-
+    },
+    getMultipleUnsplash: () => {
+        return dispatch => {
+            console.log('im in here!')
+            const URL = "https://api.unsplash.com/collections/2071606/photos?client_id=17d1aeb4a5d48238dd727a19feff53cc3cdd55c8160f3a48364eb4cb879c6722";
+            return fetch(URL, {method: 'GET'})
+                .then((response) => {
+                    if (response.status === 200) {
+                        return response.json();
+                    } else {
+                        console.log('You got mad errors');
+                    }
+                }).then((json) => {
+                    console.log(json);
+                    dispatch({
+                        type: 'JOURNEY_THUMBNAILS',
+                        value: json
+                    });
+                }).catch(function (error) {
+                    console.log('There was an error');
+                    console.log(error);
+                });
+        }
     },
 };
 
@@ -208,28 +230,28 @@ const FirebaseWatcher = {
 const FireStoreQuery = {
     fetchJourneyMeta: (journey_id) => {
         return dispatch => {
-           db.collection('journey_meta').doc(journey_id).get().then(function(doc){
-               if(doc.exists)   {
-                   console.log('Doc Data: ' + doc);
-                   console.log(doc.data());
+            db.collection('journey_meta').doc(journey_id).get().then(function (doc) {
+                if (doc.exists) {
+                    console.log('Doc Data: ' + doc);
+                    console.log(doc.data());
 
-                   dispatch({
-                       type: 'LIVE_JOURNEY_META',
-                       liveJourneyMeta: doc.data()
-                   });
+                    dispatch({
+                        type: 'LIVE_JOURNEY_META',
+                        liveJourneyMeta: doc.data()
+                    });
 
-                   dispatch(FireStoreQuery.fetchUserInfo(doc.data().uid));
-               } else {
-                   console.log('No such Document');
-               }
-           })
+                    dispatch(FireStoreQuery.fetchUserInfo(doc.data().uid));
+                } else {
+                    console.log('No such Document');
+                }
+            })
         }
     },
     fetchUserInfo: (uid) => {
         console.log('fetchUserInfo');
         return dispatch => {
-            db.collection('users').doc(uid).get().then(function(doc){
-                if(doc.exists)   {
+            db.collection('users').doc(uid).get().then(function (doc) {
+                if (doc.exists) {
                     console.log('Doc Data: ' + doc.data());
                     console.log(doc.data());
                     dispatch({

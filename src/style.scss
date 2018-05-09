@@ -2168,6 +2168,23 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+.gallery-container {
+  width: 60%;
+  display: flex;
+  justify-content:space-around;
+  flex-wrap: wrap;
+
+
+  .gallery-image {
+    margin-top: 30px;
+    width: 15vw;
+    height: 15vw;
+    border-radius: 15vw;
+    cursor: pointer;
+
+  }
+}
+
 .header-container {
   display: flex;
   align-items: center;

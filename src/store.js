@@ -6,12 +6,15 @@ import common from './Reducers/common.js';
 import auth from './Reducers/auth.js';
 import choreographer from './Reducers/choreographer.js';
 import dashState from './Reducers/dashState';
+import profile from './Reducers/profile';
+
 
 const reducer = combineReducers({
     common,
     dashState,
     choreographer,
-    auth
+    auth,
+    profile
 });
 
 const middleware = applyMiddleware(thunk, promiseMiddleware/*, localStorageMiddleware*/);

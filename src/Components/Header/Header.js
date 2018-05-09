@@ -68,6 +68,8 @@ class Header extends Component {
                     }>
                         <li onClick={() => this.navigate('/')}>Home</li>
                         <li onClick={() => this.navigate('/about')}>About</li>
+                        <li onClick={() => this.navigate('/profile/test_journey')}>The Trip</li>
+
                     </nav>
                     {this.props.user !== null ?
                         <div className={'profile-information'}
