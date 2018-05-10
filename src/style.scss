@@ -1776,7 +1776,12 @@ h1, h2, h3, h4, h5 {
   justify-content: center;
   position: relative;
 
-  .start-now-banner {
+  @media screen and (max-width: 800px) {
+  height: auto;
+  }
+
+
+    .start-now-banner {
     margin: 50px 100px 0 100px;
     display: flex;
     flex-direction: column;
@@ -1867,7 +1872,7 @@ h1, h2, h3, h4, h5 {
     padding-left: 100px;
 
     @media screen and (max-width: 800px) {
-      padding: 50px 20px 20px 20px;
+      padding: 100px 20px 20px 20px;
     }
 
     .temporary-info-banner {
@@ -2169,20 +2174,45 @@ h1, h2, h3, h4, h5 {
 }
 
 .gallery-container {
-  width: 60%;
+  padding: 30vh 0 30vh 0;
+  padding-right: 18vw;
+  padding-left: 18vw;
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
   flex-wrap: wrap;
 
-
-  .gallery-image {
-    margin-top: 30px;
-    width: 15vw;
-    height: 15vw;
-    border-radius: 15vw;
+  .gallery-image-parent {
+    margin-top: 50px;
+    width: 20vw;
+    height: 20vw;
     cursor: pointer;
+    transition: all .3s ease-in-out;
+    overflow: hidden;
+
+    .gallery-image-child {
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 100%;
+      -webkit-transition: all 0.7s;
+      -moz-transition: all 0.7s;
+      -o-transition: all 0.7s;
+      transition: all 0.7s;
+
+      &:hover {
+
+        //border-radius: 10px;
+        -ms-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        transform: scale(1.2);
+
+      }
+    }
 
   }
+
 }
 
 .header-container {
@@ -2199,7 +2229,7 @@ h1, h2, h3, h4, h5 {
   box-sizing: border-box;
   align-items: center;
   z-index: 6;
-  min-height: 40px;
+  min-height: 60px;
 
   .header {
     width: 90%;

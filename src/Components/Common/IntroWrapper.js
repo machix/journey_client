@@ -145,7 +145,7 @@ class IntroWrapper extends Component {
                     </div>
                     <div className={'divider'}>
                         <h3>
-                            I'm also currently looking for feedback to help develop the concept of authentic, and visible experience capture!<br/>
+                            I'm also currently looking for feedback to help develop the concept of authentic, less-curated experience capture!<br/>
 
                             <div className="button"
                                  onClick={() => this.login()}>
@@ -153,8 +153,7 @@ class IntroWrapper extends Component {
                             </div>
                         </h3>
                         <h3>
-                            If you're interested in the development of this project, please subscribe to any updates on product
-                            development!
+                            If the idea of this project interests you, you can subscribe here:
                             <div id="mc_embed_signup">
                                 <form action="https://linkedin.us18.list-manage.com/subscribe/post?u=e3c7aac8d0c9d9ca1a75a4297&amp;id=914dd63735" method="post" id="mc-embedded-subscribe-htmlForm" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
                                     <div id="mc_embed_signup_scroll">

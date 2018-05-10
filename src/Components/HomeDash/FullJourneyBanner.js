@@ -64,7 +64,7 @@ class FullJourneyBanner extends Component {
     render() {
         return (
             <div className={'banner'}>
-                <h1>Outdoor Adventures</h1>
+                <h1></h1>
                 <div className={'full-journey-banner'}>
                     <div
                         onClick={() => this.navigate()}

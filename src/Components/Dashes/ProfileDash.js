@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
+import Header from '../Header/Header';
+
 import {Motion, spring} from 'react-motion'
 import Icon from 'react-icon-base';
 import ArrowKeysReact from 'arrow-keys-react';
@@ -80,12 +82,14 @@ class Profile extends Component {
             console.log("The current element is: " + currElement);
             console.log(currElement.urls)
             return <div
-                style={{
-                    backgroundSize: 'cover',
-                    backgroundImage: `url(${currElement.urls.thumb})`,
-                }}
-                className={'gallery-image'}>
-                &emsp;
+
+                className={'gallery-image-parent'}>
+                <div className={'gallery-image-child'}
+                     style={{
+                         backgroundImage: `url(${currElement.urls.small})`,
+                     }}>
+                    &emsp;
+                </div>
             </div>
         })
     };
@@ -94,6 +98,8 @@ class Profile extends Component {
     render() {
         return (
             <div className={"container"}>
+                <Header></Header>
+
                 <div className={'gallery-container'}>
                     {this.props.thumbnails.length > 0 ? this.renderThumbnails() : null}
                 </div>
