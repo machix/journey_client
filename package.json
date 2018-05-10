@@ -27,7 +27,6 @@
     "react-overdrive": "0.0.9",
     "react-player": "^1.4.0",
     "react-redux": "^5.0.6",
-    "react-redux-firebase": "^2.0.0-beta.8",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.6",
     "react-sidebar": "^2.3.2",
