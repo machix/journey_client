@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8eb92d85-80e0-4af9-8dc4-e20ffe8708d5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
     </list>
     <ignored path="gifty-console-client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,17 +70,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1615">
-              <caret line="2271" column="25" lean-forward="true" selection-start-line="2271" selection-start-column="25" selection-end-line="2271" selection-end-column="25" />
+            <state relative-caret-position="291">
+              <caret line="2217" column="0" lean-forward="false" selection-start-line="2217" selection-start-column="0" selection-end-line="2217" selection-end-column="0" />
               <folding>
-                <marker date="1526586450388" expanded="false" signature="64206:64746" ph="data:image/svg+xml" />
-                <marker date="1526586450388" expanded="false" signature="65671:66167" ph="data:image/svg+xml" />
-                <marker date="1526586450388" expanded="false" signature="68367:70787" ph="data:image/svg+xml" />
-                <marker date="1526586450388" expanded="false" signature="99791:100595" ph="data:image/svg+xml" />
+                <marker date="1526589776520" expanded="false" signature="64229:64769" ph="data:image/svg+xml" />
+                <marker date="1526589776520" expanded="false" signature="65694:66190" ph="data:image/svg+xml" />
+                <marker date="1526589776520" expanded="false" signature="68390:70810" ph="data:image/svg+xml" />
+                <marker date="1526589776520" expanded="false" signature="99814:100618" ph="data:image/svg+xml" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-274">
+              <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package-lock.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package-lock.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="10968" column="20" lean-forward="false" selection-start-line="10968" selection-start-column="11" selection-end-line="10968" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -106,8 +128,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>intro-wrapper</find>
-      <find>&lt;header</find>
       <find>Outdoor A</find>
       <find>&lt;H</find>
       <find>.profile</find>
@@ -136,6 +156,8 @@
       <find>.gallery-image-parent</find>
       <find>.gallery-imate-ch</find>
       <find>.gallery-image-child</find>
+      <find>.gallery-listi</find>
+      <find>overdrive</find>
     </findStrings>
     <replaceStrings>
       <replace>600</replace>
@@ -530,12 +552,12 @@
       <workItem from="1525977164748" duration="815000" />
       <workItem from="1526068278067" duration="1365000" />
       <workItem from="1526407288680" duration="156000" />
-      <workItem from="1526571491096" duration="8106000" />
+      <workItem from="1526571491096" duration="8679000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="418483000" />
+    <option name="totallyTimeSpent" value="419056000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -645,13 +667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
           <caret line="47" column="15" lean-forward="false" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="4255" column="39" lean-forward="true" selection-start-line="4255" selection-start-column="39" selection-end-line="4255" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -882,14 +897,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="34" column="31" lean-forward="true" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Dashes/ProfileDash/ProfileDash.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-157">
@@ -948,14 +955,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="2271" column="25" lean-forward="true" selection-start-line="2271" selection-start-column="25" selection-end-line="2271" selection-end-column="25" />
+        <state relative-caret-position="291">
+          <caret line="2217" column="0" lean-forward="false" selection-start-line="2217" selection-start-column="0" selection-end-line="2217" selection-end-column="0" />
           <folding>
-            <marker date="1526586450388" expanded="false" signature="64206:64746" ph="data:image/svg+xml" />
-            <marker date="1526586450388" expanded="false" signature="65671:66167" ph="data:image/svg+xml" />
-            <marker date="1526586450388" expanded="false" signature="68367:70787" ph="data:image/svg+xml" />
-            <marker date="1526586450388" expanded="false" signature="99791:100595" ph="data:image/svg+xml" />
+            <marker date="1526589776520" expanded="false" signature="64229:64769" ph="data:image/svg+xml" />
+            <marker date="1526589776520" expanded="false" signature="65694:66190" ph="data:image/svg+xml" />
+            <marker date="1526589776520" expanded="false" signature="68390:70810" ph="data:image/svg+xml" />
+            <marker date="1526589776520" expanded="false" signature="99814:100618" ph="data:image/svg+xml" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="10968" column="20" lean-forward="false" selection-start-line="10968" selection-start-column="11" selection-end-line="10968" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-274">
+          <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>

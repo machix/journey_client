@@ -1603,7 +1603,8 @@ h1, h2, h3, h4, h5 {
   .profile-container .gallery-list .gallery-list-item {
     height: 200px;
     margin-bottom: 5px;
-    border: solid #cecece 1px; }
+    border: solid #cecece 1px;
+    cursor: pointer; }
     .profile-container .gallery-list .gallery-list-item .gallery-image-parent {
       height: 100%;
       width: 200px;
