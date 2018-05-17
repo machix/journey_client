@@ -52,7 +52,7 @@ class ListView extends Component {
             console.log("The current element is: " + currElement);
             console.log(currElement.urls)
             return <div className={'gallery-list-item'}>
-                <Overdrive id={index} style={{height: '100%',  width: '100%', position: 'relative'}} >
+                <Overdrive id={index} style={{height: '100%', position: 'relative'}} >
                     <div
                         className={'gallery-image-parent'}>
                         <div className={'gallery-image-child'}
@@ -66,6 +66,10 @@ class ListView extends Component {
                         </div>
                     </div>
                 </Overdrive>
+                <div className={"list-information-container"}>
+                    <h1>JANUARY 2, 2018</h1>
+                    This is some miscellaneous information
+                </div>
 
             </div>
 

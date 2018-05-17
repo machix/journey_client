@@ -70,13 +70,17 @@ $c-set-text-1-super: #666;
 $c-set-text-1-sub: #e6e6e6;
 $c-set-text-2-sub: #b4b4b4;
 
-$c-set-label-sub: #cecece;
+$c-set-label-sub: #dfdfdf;
 
 .gallery-image-child {
   background-size: cover;
   background-position: center;
   width: 100%;
   height: 100%;
+
+  @media screen and (max-width: 800px) {
+    width: 100vw;
+  }
 }
 
 $c-set-border-0: #EFEFEF;
@@ -2211,16 +2215,38 @@ h1, h2, h3, h4, h5 {
   .gallery-list {
 
     .gallery-list-item {
-      height: 200px;
+      display: flex;
+      height: 250px;
       margin-bottom: 5px;
       border: solid $c-set-label-sub 1px;
       cursor: pointer;
+      border-radius: 5px;
+
+      @media screen and (max-width: 800px) {
+        width: 100vw;
+        height: 100%;
+        flex-direction: column;
+      }
 
       .gallery-image-parent {
         height: 100%;
-        width: 200px;
+        width: 250px;
         overflow: hidden;
+
+        @media screen and (max-width: 800px) {
+          width: 100%;
+          height: 100vw;
+
+        }
+
       }
+    }
+
+    .list-information-container {
+      display: flex;
+      flex: 1;
+      margin: 20px;
+      flex-direction: column;
     }
 
   }
@@ -2248,7 +2274,6 @@ h1, h2, h3, h4, h5 {
 
     }
 
-
   }
 
   .gallery-image-parent {
@@ -2266,6 +2291,8 @@ h1, h2, h3, h4, h5 {
       -moz-transition: all 0.7s;
       -o-transition: all 0.7s;
       transition: all 0.7s;
+
+
 
       &:hover {
         //border-radius: 10px;

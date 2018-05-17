@@ -41,7 +41,7 @@ class Profile extends Component {
             console.log("The current iteration is: " + index);
             console.log("The current element is: " + currElement);
             console.log(currElement.urls)
-            return <Overdrive id={index} style={{height: '100%',  width: '100%', position: 'relative'}} >
+            return <Overdrive id={index} style={{height: '100%', position: 'relative'}}>
                 <div
                     className={'gallery-image-parent'}>
 
@@ -49,7 +49,7 @@ class Profile extends Component {
                          style={{
                              backgroundImage: `url(${currElement.urls.small})`,
                          }}>
-&emsp;
+                        &emsp;
                     </div>
                 </div>
             </Overdrive>

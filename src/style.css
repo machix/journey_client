@@ -56,6 +56,9 @@
   background-position: center;
   width: 100%;
   height: 100%; }
+  @media screen and (max-width: 800px) {
+    .gallery-image-child {
+      width: 100vw; } }
 
 /*  /////////////////////////////////////////
      STYLES
@@ -1596,19 +1599,35 @@ h1, h2, h3, h4, h5 {
     margin: 10px; }
     .profile-container .profile-switch span {
       margin: 5px;
-      color: #cecece; }
+      color: #dfdfdf; }
   .profile-container .placeholder-image {
     opacity: 0 !important;
     height: 50px; }
   .profile-container .gallery-list .gallery-list-item {
-    height: 200px;
+    display: flex;
+    height: 250px;
     margin-bottom: 5px;
-    border: solid #cecece 1px;
-    cursor: pointer; }
+    border: solid #dfdfdf 1px;
+    cursor: pointer;
+    border-radius: 5px; }
+    @media screen and (max-width: 800px) {
+      .profile-container .gallery-list .gallery-list-item {
+        width: 100vw;
+        height: 100%;
+        flex-direction: column; } }
     .profile-container .gallery-list .gallery-list-item .gallery-image-parent {
       height: 100%;
-      width: 200px;
+      width: 250px;
       overflow: hidden; }
+      @media screen and (max-width: 800px) {
+        .profile-container .gallery-list .gallery-list-item .gallery-image-parent {
+          width: 100%;
+          height: 100vw; } }
+  .profile-container .gallery-list .list-information-container {
+    display: flex;
+    flex: 1;
+    margin: 20px;
+    flex-direction: column; }
   @supports (display: grid) {
     .profile-container .gallery-grid::before {
       content: '';
