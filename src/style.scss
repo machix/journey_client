@@ -68,8 +68,16 @@ $c-set-text-1: #6b6b6b;
 $c-set-text-2: #939393; /*#32325d;*/
 $c-set-text-1-super: #666;
 $c-set-text-1-sub: #e6e6e6;
-
 $c-set-text-2-sub: #b4b4b4;
+
+$c-set-label-sub: #cecece;
+
+.gallery-image-child {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
 
 $c-set-border-0: #EFEFEF;
 $c-set-border-1: #f9f9f9;
@@ -1777,11 +1785,10 @@ h1, h2, h3, h4, h5 {
   position: relative;
 
   @media screen and (max-width: 800px) {
-  height: auto;
+    height: auto;
   }
 
-
-    .start-now-banner {
+  .start-now-banner {
     margin: 50px 100px 0 100px;
     display: flex;
     flex-direction: column;
@@ -2173,21 +2180,81 @@ h1, h2, h3, h4, h5 {
   }
 }
 
-.gallery-container {
-  padding: 30vh 0 30vh 0;
-  padding-right: 18vw;
-  padding-left: 18vw;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+.profile-container {
+  width: 60%;
+  padding-top: 100px;
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
+
+  .profile-info {
+    min-height: 30vh;
+  }
+
+  .profile-switch {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+
+    span {
+      margin: 5px;
+      color: $c-set-label-sub;
+
+    }
+  }
+
+  .placeholder-image {
+    opacity: 0 !important;
+    height: 50px;
+  }
+  .gallery-list {
+
+    .gallery-list-item {
+      height: 200px;
+      margin-bottom: 5px;
+      border: solid $c-set-label-sub 1px;
+
+      .gallery-image-parent {
+        height: 100%;
+        width: 200px;
+        overflow: hidden;
+      }
+    }
+
+  }
+
+  //ToDo: Must add in support for non-display grid types
+  @supports (display: grid) {
+    .gallery-grid::before {
+      content: '';
+      width: 0;
+      padding-bottom: 100%;
+      grid-row: 1 / 1;
+      grid-column: 1 / 1;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+      grid-auto-rows: 1fr;
+      width: 100%;
+      grid-gap: 5px;
+
+      & > *:first-child {
+        grid-row: 1 / 1;
+        grid-column: 1 / 1;
+      }
+
+    }
+
+
+  }
 
   .gallery-image-parent {
-    margin-top: 50px;
-    width: 20vw;
-    height: 20vw;
     cursor: pointer;
     transition: all .3s ease-in-out;
     overflow: hidden;
+    height: 100%;
 
     .gallery-image-child {
       background-size: cover;
@@ -2200,7 +2267,6 @@ h1, h2, h3, h4, h5 {
       transition: all 0.7s;
 
       &:hover {
-
         //border-radius: 10px;
         -ms-transform: scale(1.2);
         -moz-transform: scale(1.2);

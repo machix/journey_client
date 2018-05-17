@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8eb92d85-80e0-4af9-8dc4-e20ffe8708d5" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Components/Dashes/ProfileDash/GridView.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Components/Dashes/ProfileDash/ListView.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Components/Dashes/ProfileDash.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/ProfileDash/ProfileDash.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Common/IntroWrapper.js" afterPath="$PROJECT_DIR$/src/Components/Common/IntroWrapper.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/ProfileDash.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/ProfileDash.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/HomeDash/FullJourneyBanner.js" afterPath="$PROJECT_DIR$/src/Components/HomeDash/FullJourneyBanner.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/RouterHome.js" afterPath="$PROJECT_DIR$/src/Components/RouterHome.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Helpers/agent.js" afterPath="$PROJECT_DIR$/src/Helpers/agent.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
     </list>
@@ -32,18 +36,30 @@
       <file leaf-file-name="IntroWrapper.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/Common/IntroWrapper.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="151" column="48" lean-forward="true" selection-start-line="151" selection-start-column="48" selection-end-line="151" selection-end-column="48" />
+            <state relative-caret-position="174">
+              <caret line="67" column="34" lean-forward="true" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProfileDash.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Dashes/ProfileDash.js">
+      <file leaf-file-name="GridView.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/Dashes/ProfileDash/GridView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="44" lean-forward="true" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
+            <state relative-caret-position="96">
+              <caret line="43" column="65" lean-forward="false" selection-start-line="43" selection-start-column="65" selection-end-line="43" selection-end-column="65" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListView.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/Dashes/ProfileDash/ListView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="58" column="37" lean-forward="true" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -54,8 +70,8 @@
       <file leaf-file-name="agent.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Helpers/agent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="214" column="37" lean-forward="false" selection-start-line="214" selection-start-column="37" selection-end-line="214" selection-end-column="37" />
+            <state relative-caret-position="-10">
+              <caret line="80" column="13" lean-forward="true" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -64,9 +80,14 @@
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="2176" column="20" lean-forward="false" selection-start-line="2176" selection-start-column="20" selection-end-line="2176" selection-end-column="20" />
-              <folding />
+            <state relative-caret-position="1615">
+              <caret line="2271" column="25" lean-forward="true" selection-start-line="2271" selection-start-column="25" selection-end-line="2271" selection-end-column="25" />
+              <folding>
+                <marker date="1526586450388" expanded="false" signature="64206:64746" ph="data:image/svg+xml" />
+                <marker date="1526586450388" expanded="false" signature="65671:66167" ph="data:image/svg+xml" />
+                <marker date="1526586450388" expanded="false" signature="68367:70787" ph="data:image/svg+xml" />
+                <marker date="1526586450388" expanded="false" signature="99791:100595" ph="data:image/svg+xml" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,29 +115,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>style</find>
-      <find>subscribe</find>
-      <find>.button</find>
-      <find>&lt;heade</find>
-      <find>&lt;Header</find>
-      <find>.header-container</find>
-      <find>Where You</find>
-      <find>login-social</find>
-      <find>If you're</find>
-      <find>fetature</find>
-      <find>And we e</find>
-      <find>unsplash</find>
-      <find>map</find>
-      <find>backgroundIMage</find>
-      <find>backgroundImage</find>
-      <find>30</find>
-      <find>.5</find>
-      <find>23</find>
-      <find>20</find>
-      <find>login-wrapper</find>
-      <find>If you're interested</find>
-      <find>@</find>
-      <find>header-</find>
       <find>intro-wrapper</find>
       <find>&lt;header</find>
       <find>Outdoor A</find>
@@ -124,6 +122,29 @@
       <find>.profile</find>
       <find>image-</find>
       <find>gallery-conta</find>
+      <find>login:</find>
+      <find>ove</find>
+      <find>max-width</find>
+      <find>@ media screen &amp;</find>
+      <find>screen &amp;</find>
+      <find>.header</find>
+      <find>c-set-text-2-sub</find>
+      <find>c-settex</find>
+      <find>$c-set</find>
+      <find>box-shda</find>
+      <find>box-shado</find>
+      <find>shadow</find>
+      <find>span {</find>
+      <find>text-label</find>
+      <find>set-label</find>
+      <find>.gallery-list</find>
+      <find>Over</find>
+      <find>0.7</find>
+      <find>.image-parent</find>
+      <find>gallery-image-parent</find>
+      <find>.gallery-image-parent</find>
+      <find>.gallery-imate-ch</find>
+      <find>.gallery-image-child</find>
     </findStrings>
     <replaceStrings>
       <replace>600</replace>
@@ -150,12 +171,12 @@
       <replace>30</replace>
       <replace>20vw</replace>
       <replace>get-out</replace>
-      <replace>2</replace>
       <replace>className</replace>
       <replace>htmlFor</replace>
       <replace>15</replace>
       <replace>20</replace>
       <replace>18</replace>
+      <replace>2</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -172,9 +193,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/Components/Dashes/CampaignDash.js" />
-        <option value="$PROJECT_DIR$/src/Components/Common/SidebarData.js" />
         <option value="$PROJECT_DIR$/src/Components/Map/Dashboard.js" />
         <option value="$PROJECT_DIR$/src/Components/Chat/Map.js" />
         <option value="$PROJECT_DIR$/src/Components/Sidebar/SponsoredContribution.js" />
@@ -212,16 +230,19 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/Components/Dashes/HomeDash.js" />
         <option value="$PROJECT_DIR$/src/Components/Header/Header.js" />
-        <option value="$PROJECT_DIR$/src/Components/RouterHome.js" />
         <option value="$PROJECT_DIR$/src/Reducers/Profile.js" />
-        <option value="$PROJECT_DIR$/src/Helpers/agent.js" />
         <option value="$PROJECT_DIR$/src/store.js" />
         <option value="$PROJECT_DIR$/src/Reducers/profile.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/Components/Common/IntroWrapper.js" />
         <option value="$PROJECT_DIR$/src/Components/HomeDash/FullJourneyBanner.js" />
         <option value="$PROJECT_DIR$/src/Components/Dashes/About.js" />
+        <option value="$PROJECT_DIR$/src/Helpers/agent.js" />
+        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/Components/Dashes/ProfileDash.js" />
+        <option value="$PROJECT_DIR$/src/Components/RouterHome.js" />
+        <option value="$PROJECT_DIR$/src/Components/Dashes/ProfileDash/ProfileDash.js" />
+        <option value="$PROJECT_DIR$/src/Components/Dashes/ProfileDash/ListView.js" />
+        <option value="$PROJECT_DIR$/src/Components/Dashes/ProfileDash/GridView.js" />
         <option value="$PROJECT_DIR$/src/style.scss" />
       </list>
     </option>
@@ -257,7 +278,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -293,7 +314,8 @@
               <item name="journey_client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="Header" type="462c0819:PsiDirectoryNode" />
+              <item name="Dashes" type="462c0819:PsiDirectoryNode" />
+              <item name="ProfileDash" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="journey-client" type="b2602c69:ProjectViewProjectNode" />
@@ -317,7 +339,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -332,19 +354,19 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/machinatron/Documents/Programming/journey_client/src/Components/Header/Header.js" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Reducers" />
-      <recent name="$PROJECT_DIR$/src/Components/Dashes" />
-      <recent name="$PROJECT_DIR$/src/Components/Map" />
-      <recent name="$PROJECT_DIR$/src/Components/Common" />
-      <recent name="$PROJECT_DIR$/src/Components" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Components/Dashes/ProfileDash" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/Components" />
       <recent name="$PROJECT_DIR$/src/Components/Assets" />
       <recent name="C:\Programming\gifty-console-client\src\Components\Cards\Billing" />
-      <recent name="C:\Programming\gifty-console-client\src\Components\Cards" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Components/Dashes/ProfileDash" />
+      <recent name="$PROJECT_DIR$/src/Reducers" />
+      <recent name="$PROJECT_DIR$/src/Components/Dashes" />
+      <recent name="$PROJECT_DIR$/src/Components/Map" />
+      <recent name="$PROJECT_DIR$/src/Components/Common" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -512,12 +534,17 @@
       <workItem from="1525307639817" duration="21056000" />
       <workItem from="1525413503969" duration="947000" />
       <workItem from="1525717710703" duration="11953000" />
-      <workItem from="1525926169661" duration="3456000" />
+      <workItem from="1525926169661" duration="3564000" />
+      <workItem from="1525969484411" duration="528000" />
+      <workItem from="1525977164748" duration="815000" />
+      <workItem from="1526068278067" duration="1365000" />
+      <workItem from="1526407288680" duration="156000" />
+      <workItem from="1526571491096" duration="8080000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="407405000" />
+    <option name="totallyTimeSpent" value="418457000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -529,13 +556,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1440" height="805" extended-state="6" />
+    <frame x="0" y="25" width="1440" height="805" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18957011" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32676056" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22525597" sideWeight="0.51488096" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.047887325" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957748" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3502825" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -549,6 +575,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.047887325" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -585,8 +612,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Components/HomeDash/aws-button.css" />
-    <entry file="file://$PROJECT_DIR$/src/Components/HomeDash/aws-button.scss" />
     <entry file="file://$PROJECT_DIR$/node_modules/react-awesome-button/dist/themes/theme-rickiest.css" />
     <entry file="file://$PROJECT_DIR$/src/Components/Form/index.js" />
     <entry file="file://$PROJECT_DIR$/src/Components/Other/PercentageChange.js">
@@ -771,7 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
           <caret line="158" column="0" lean-forward="false" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -787,7 +811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="538" column="14" lean-forward="false" selection-start-line="538" selection-start-column="14" selection-end-line="538" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -795,7 +818,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
           <caret line="175" column="0" lean-forward="true" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -803,7 +825,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -811,7 +832,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-216">
           <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -819,7 +839,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="110" column="33" lean-forward="true" selection-start-line="110" selection-start-column="33" selection-end-line="110" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -841,7 +860,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
           <caret line="77" column="67" lean-forward="true" selection-start-line="77" selection-start-column="67" selection-end-line="77" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -849,17 +867,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#69#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="30" column="43" lean-forward="true" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -867,17 +874,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/RouterHome.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -885,7 +881,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="66" column="18" lean-forward="false" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -897,10 +892,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/ProfileDash.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="44" lean-forward="true" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
+        <state relative-caret-position="291">
+          <caret line="34" column="31" lean-forward="true" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/ProfileDash/ProfileDash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-157">
+          <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/RouterHome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="115" column="29" lean-forward="true" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -909,25 +922,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Common/IntroWrapper.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="151" column="48" lean-forward="true" selection-start-line="151" selection-start-column="48" selection-end-line="151" selection-end-column="48" />
+        <state relative-caret-position="174">
+          <caret line="67" column="34" lean-forward="true" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Helpers/agent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="214" column="37" lean-forward="false" selection-start-line="214" selection-start-column="37" selection-end-line="214" selection-end-column="37" />
+        <state relative-caret-position="-10">
+          <caret line="80" column="13" lean-forward="true" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/ProfileDash/ListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="58" column="37" lean-forward="true" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/ProfileDash/GridView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="43" column="65" lean-forward="false" selection-start-line="43" selection-start-column="65" selection-end-line="43" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="2176" column="20" lean-forward="false" selection-start-line="2176" selection-start-column="20" selection-end-line="2176" selection-end-column="20" />
-          <folding />
+        <state relative-caret-position="1615">
+          <caret line="2271" column="25" lean-forward="true" selection-start-line="2271" selection-start-column="25" selection-end-line="2271" selection-end-column="25" />
+          <folding>
+            <marker date="1526586450388" expanded="false" signature="64206:64746" ph="data:image/svg+xml" />
+            <marker date="1526586450388" expanded="false" signature="65671:66167" ph="data:image/svg+xml" />
+            <marker date="1526586450388" expanded="false" signature="68367:70787" ph="data:image/svg+xml" />
+            <marker date="1526586450388" expanded="false" signature="99791:100595" ph="data:image/svg+xml" />
+          </folding>
         </state>
       </provider>
     </entry>

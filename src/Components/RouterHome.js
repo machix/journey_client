@@ -10,7 +10,7 @@ import App from '../App';
 import HomeDash from './Dashes/HomeDash';
 import JourneyDash from './Dashes/JourneyDash';
 import About from './Dashes/About';
-import Profile from './Dashes/ProfileDash';
+import Profile from './Dashes/ProfileDash/ProfileDash';
 
 
 import Login from './Common/Login.js';

@@ -76,7 +76,7 @@ const Auth = {
         return dispatch => {
             firebase.auth().signInWithPopup(provider).then((result) => {
                 // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-
+                console.log(result);
 
                 let additionalUserInfo = result.additionalUserInfo;
                 console.log(additionalUserInfo);
