@@ -72,7 +72,7 @@ class Profile extends Component {
     componentDidMount() {
         const backgroundImage = basicScroll.create({
             elem: document.querySelector('.profile-switch'),
-            from: 'top-middle',
+            from: 'top-bottom',
             to: 'top-top',
             props: {
                 '--background-image-ty': {
