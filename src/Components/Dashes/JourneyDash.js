@@ -133,7 +133,6 @@ class HomeDash extends Component {
         this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);
 
-
         this.focusDiv();
     }
 

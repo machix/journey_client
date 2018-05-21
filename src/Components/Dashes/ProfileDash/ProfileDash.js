@@ -152,7 +152,6 @@ class Profile extends Component {
 
                         {this.state.checked === false ? <GridView/> : <ListView/>}
 
-                        <FancyButton></FancyButton>
 
                     </div>
                 </div>

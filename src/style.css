@@ -1592,24 +1592,38 @@ h1, h2, h3, h4, h5 {
     background-image: url("https://images.unsplash.com/photo-1518559946231-d79e79b7d540?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e156c2e812b499d400a1ef05f8213f84&auto=format&fit=crop&w=2767&q=80");
     background-position: center;
     background-size: cover;
-    height: 90vh;
+    height: 100vh;
     position: fixed;
     width: 100%;
     -webkit-mask-image: -webkit-gradient(linear, left 90%, left bottom, from(black), to(rgba(0, 0, 0, 0)));
     z-index: -1;
     transform: translate(0, var(--background-image-ty)); }
   .profile-container .profile-info {
-    min-height: 90vh;
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    color: white;
+    width: 100%; }
+    .profile-container .profile-info .title {
+      font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
+      font-weight: 700;
+      font-size: 3rem;
+      color: white;
+      line-height: 3rem;
+      text-transform: uppercase; }
+    .profile-container .profile-info .description {
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
+      font-size: 1.3rem;
+      font-weight: 400; }
     .profile-container .profile-info .fancy-button {
       position: relative;
       display: block;
       cursor: pointer;
       perspective: 1800px; }
       .profile-container .profile-info .fancy-button .fancy-flipper {
-        position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
@@ -1619,7 +1633,6 @@ h1, h2, h3, h4, h5 {
         transition: transform 0.3s ease; }
       .profile-container .profile-info .fancy-button .fancy-front,
       .profile-container .profile-info .fancy-button .fancy-back {
-        position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
@@ -1628,20 +1641,9 @@ h1, h2, h3, h4, h5 {
         .profile-container .profile-info .fancy-button .fancy-front svg,
         .profile-container .profile-info .fancy-button .fancy-back svg {
           display: block; }
-      .profile-container .profile-info .fancy-button:active .fancy-flipper {
-        transform: rotateX(0deg) scale(0.95);
-        transition: transform 0.05s ease; }
       .profile-container .profile-info .fancy-button .button-text {
         letter-spacing: 0.01em;
-        font-family: Futura, "Helvetica Neue", Helvetica, sans-serif; }
-    .profile-container .profile-info .title {
-      font-family: 'Open Sans', sans-serif;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
-      font-weight: 700;
-      font-size: 4rem;
-      color: white;
-      line-height: 4rem;
-      text-transform: uppercase; }
+        text-align: center; }
   .profile-container .gallery-container {
     z-index: 1;
     width: 60%;

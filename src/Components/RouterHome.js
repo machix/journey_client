@@ -20,12 +20,18 @@ import ScrollToTop from '../Helpers/ScrollToTop.js';
 import agent from '../Helpers/agent'
 
 const mapStateToProps = state => ({
-    isAuthed: state.auth.isAuthed
+    isAuthed: state.auth.isAuthed,
 });
 
 const mapDispatchToProps = dispatch => ({
 
     getCurrentUser: () => dispatch(agent.Auth.getCurrentUser()),
+
+    setWindowDims: (width, height) => dispatch({
+        type: 'SET_WINDOW_DIMS',
+        windowWidth: width,
+        windowHeight: height
+    }),
 
 });
 
@@ -72,6 +78,7 @@ class RouterHome extends Component {
 
     constructor(props) {
         super(props);
+        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     }
 
 
@@ -98,11 +105,18 @@ class RouterHome extends Component {
 
     }
 
-    componentWillUnmount() {
-        // this.removeListener()
-
+    componentDidMount() {
+        this.updateWindowDimensions();
+        window.addEventListener('resize', this.updateWindowDimensions);
     }
 
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.updateWindowDimensions);
+    }
+
+    updateWindowDimensions() {
+        this.props.setWindowDims(window.innerWidth, window.innerHeight);
+    }
     render() {
         return ( (
             <ConnectedRouter onUpdate={() => window.scrollTo(0, 0)} history={history}>

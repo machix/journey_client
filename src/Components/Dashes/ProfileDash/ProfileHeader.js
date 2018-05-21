@@ -35,6 +35,9 @@ class ProfileHeader extends Component {
                 <div className={'title'}>
                     <FancyButton/>
                 </div>
+                <div className={'description'}>
+                    Trip Start: July 18, 2017
+                </div>
             </div>
 
         );
