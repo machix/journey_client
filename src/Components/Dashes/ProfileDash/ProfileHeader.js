@@ -32,6 +32,8 @@ class ProfileHeader extends Component {
         return (
 
             <div className={'profile-info'}>
+                <div className={'background-image'}>
+                </div>
                 <div className={'title'}>
                     <FancyButton/>
                 </div>

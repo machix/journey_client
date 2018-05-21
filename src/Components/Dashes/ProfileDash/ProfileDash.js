@@ -70,18 +70,18 @@ class Profile extends Component {
     }
 
     componentDidMount() {
-        const backgroundImage = basicScroll.create({
-            elem: document.querySelector('.profile-switch'),
-            from: 'top-bottom',
-            to: 'top-top',
-            props: {
-                '--background-image-ty': {
-                    from: '0',
-                    to: '-80vh'
-                },
-            }
-        });
-        backgroundImage.start();
+        // const backgroundImage = basicScroll.create({
+        //     elem: document.querySelector('.profile-switch'),
+        //     from: 'top-bottom',
+        //     to: 'top-top',
+        //     props: {
+        //         '--background-image-ty': {
+        //             from: '0',
+        //             to: '-80vh'
+        //         },
+        //     }
+        // });
+        // backgroundImage.start();
     }
 
     handleChange(checked) {
@@ -112,8 +112,7 @@ class Profile extends Component {
                 <Header/>
 
                 <div className={'profile-container'}>
-                    <div className={'background-image'}>
-                    </div>
+
                     <ProfileHeader/>
                     <div className={'gallery-container'}>
                         <div className={'profile-switch'}>

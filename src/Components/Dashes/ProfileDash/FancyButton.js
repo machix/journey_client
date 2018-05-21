@@ -24,8 +24,8 @@ class FancyButton extends Component {
     componentDidMount() {
         const titleElement = basicScroll.create({
             elem: document.querySelector('.fancy-flipper'),
-            from: 'bottom-middle',
-            to: 'top-top',
+            from: 'top-top',
+            to: 'bottom-middle',
             props: {
                 '--fancy-button-rotation': {
                     from: '-90deg',
