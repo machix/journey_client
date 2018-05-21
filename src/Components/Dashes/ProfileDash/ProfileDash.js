@@ -7,10 +7,13 @@ import Switch from "react-switch";
 
 import agent from '../../../Helpers/agent';
 import Header from '../../Header/Header';
+import * as basicScroll from '../../../Helpers/basicScroll.min';
+
 
 import GridView from './GridView';
 import ListView from './ListView';
-
+import ProfileHeader from './ProfileHeader';
+import FancyButton from './FancyButton';
 
 
 const mapStateToProps = state => ({
@@ -66,6 +69,21 @@ class Profile extends Component {
         this.props.fetchJourneyThumbs(this.props.match.params.journey_id);
     }
 
+    componentDidMount() {
+        const backgroundImage = basicScroll.create({
+            elem: document.querySelector('.profile-switch'),
+            from: 'top-middle',
+            to: 'top-top',
+            props: {
+                '--background-image-ty': {
+                    from: '0',
+                    to: '-80vh'
+                },
+            }
+        });
+        backgroundImage.start();
+    }
+
     handleChange(checked) {
         this.setState({checked});
     }
@@ -92,10 +110,13 @@ class Profile extends Component {
         return (
             <div className={"container"}>
                 <Header/>
+
                 <div className={'profile-container'}>
-                    <div className={'profile-info'}>
+                    <div className={'background-image'}>
                     </div>
-                    <div className={'profile-switch'}>
+                    <ProfileHeader/>
+                    <div className={'gallery-container'}>
+                        <div className={'profile-switch'}>
 
                         <span>
                         <Icon viewBox="0 0 40 40" size={20}>
@@ -105,21 +126,21 @@ class Profile extends Component {
                             </g>
                         </Icon>
                         </span>
-                        <Switch
-                            checked={this.state.checked}
-                            onChange={this.handleChange}
-                            onColor="#888"
-                            onHandleColor="white"
-                            handleDiameter={20}
-                            uncheckedIcon={false}
-                            checkedIcon={false}
-                            boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
-                            activeBoxShadow="0px 0px 1px 5px rgba(0, 0, 0, 0.2)"
-                            height={15}
-                            width={40}
-                            className="react-switch"
-                        />
-                        <span>
+                            <Switch
+                                checked={this.state.checked}
+                                onChange={this.handleChange}
+                                onColor="#888"
+                                onHandleColor="white"
+                                handleDiameter={20}
+                                uncheckedIcon={false}
+                                checkedIcon={false}
+                                boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+                                activeBoxShadow="0px 0px 1px 5px rgba(0, 0, 0, 0.2)"
+                                height={15}
+                                width={40}
+                                className="react-switch"
+                            />
+                            <span>
                         <Icon viewBox="0 0 40 40" size={20}>
                             <g>
                                 <path
@@ -127,11 +148,13 @@ class Profile extends Component {
                             </g>
                         </Icon>
                         </span>
+                        </div>
+
+                        {this.state.checked === false ? <GridView/> : <ListView/>}
+
+                        <FancyButton></FancyButton>
+
                     </div>
-
-                    {this.state.checked === false ? <GridView/> : <ListView/>}
-
-
                 </div>
             </div>
         );

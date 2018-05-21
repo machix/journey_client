@@ -1294,7 +1294,8 @@ h1, h2, h3, h4, h5 {
   position: relative; }
   @media screen and (max-width: 800px) {
     .login-wrapper {
-      height: auto; } }
+      height: auto;
+      min-height: 100vh; } }
   .login-wrapper .start-now-banner {
     margin: 50px 100px 0 100px;
     display: flex;
@@ -1586,84 +1587,141 @@ h1, h2, h3, h4, h5 {
                 border-radius: 4px; }
 
 .profile-container {
-  width: 60%;
-  padding-top: 100px; }
-  @media screen and (max-width: 800px) {
-    .profile-container {
-      width: 100%; } }
+  width: 100%; }
+  .profile-container .background-image {
+    background-image: url("https://images.unsplash.com/photo-1518559946231-d79e79b7d540?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e156c2e812b499d400a1ef05f8213f84&auto=format&fit=crop&w=2767&q=80");
+    background-position: center;
+    background-size: cover;
+    height: 90vh;
+    position: fixed;
+    width: 100%;
+    -webkit-mask-image: -webkit-gradient(linear, left 90%, left bottom, from(black), to(rgba(0, 0, 0, 0)));
+    z-index: -1;
+    transform: translate(0, var(--background-image-ty)); }
   .profile-container .profile-info {
-    min-height: 30vh; }
-  .profile-container .profile-switch {
+    min-height: 90vh;
     display: flex;
     align-items: center;
-    margin: 10px; }
-    .profile-container .profile-switch span {
-      margin: 5px;
-      color: #dfdfdf; }
-  .profile-container .placeholder-image {
-    opacity: 0 !important;
-    height: 50px; }
-  .profile-container .gallery-list .gallery-list-item {
-    display: flex;
-    height: 250px;
-    margin-bottom: 5px;
-    border: solid #dfdfdf 1px;
-    cursor: pointer;
-    border-radius: 5px; }
+    justify-content: center; }
+    .profile-container .profile-info .fancy-button {
+      position: relative;
+      display: block;
+      cursor: pointer;
+      perspective: 1800px; }
+      .profile-container .profile-info .fancy-button .fancy-flipper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform-style: preserve-3d;
+        transform: rotateX(var(--fancy-button-rotation));
+        transition: transform 0.3s ease; }
+      .profile-container .profile-info .fancy-button .fancy-front,
+      .profile-container .profile-info .fancy-button .fancy-back {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        backface-visibility: hidden; }
+        .profile-container .profile-info .fancy-button .fancy-front svg,
+        .profile-container .profile-info .fancy-button .fancy-back svg {
+          display: block; }
+      .profile-container .profile-info .fancy-button:active .fancy-flipper {
+        transform: rotateX(0deg) scale(0.95);
+        transition: transform 0.05s ease; }
+      .profile-container .profile-info .fancy-button .button-text {
+        letter-spacing: 0.01em;
+        font-family: Futura, "Helvetica Neue", Helvetica, sans-serif; }
+    .profile-container .profile-info .title {
+      font-family: 'Open Sans', sans-serif;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
+      font-weight: 700;
+      font-size: 4rem;
+      color: white;
+      line-height: 4rem;
+      text-transform: uppercase; }
+  .profile-container .gallery-container {
+    z-index: 1;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto; }
     @media screen and (max-width: 800px) {
-      .profile-container .gallery-list .gallery-list-item {
-        width: 100vw;
-        height: 100%;
-        flex-direction: column; } }
-    .profile-container .gallery-list .gallery-list-item .gallery-image-parent {
-      height: 100%;
-      width: 250px;
-      overflow: hidden; }
+      .profile-container .gallery-container {
+        width: 100%; } }
+    .profile-container .gallery-container .profile-switch {
+      display: flex;
+      align-items: center;
+      margin: 10px; }
+      .profile-container .gallery-container .profile-switch span {
+        margin: 5px;
+        color: #dfdfdf; }
+    .profile-container .gallery-container .placeholder-image {
+      opacity: 0 !important;
+      height: 50px; }
+    .profile-container .gallery-container .gallery-list .gallery-list-item {
+      display: flex;
+      height: 250px;
+      margin-bottom: 5px;
+      border: solid #dfdfdf 1px;
+      cursor: pointer;
+      border-radius: 5px;
+      background-color: white; }
       @media screen and (max-width: 800px) {
-        .profile-container .gallery-list .gallery-list-item .gallery-image-parent {
-          width: 100%;
-          height: 100vw; } }
-  .profile-container .gallery-list .list-information-container {
-    display: flex;
-    flex: 1;
-    margin: 20px;
-    flex-direction: column; }
-  @supports (display: grid) {
-    .profile-container .gallery-grid::before {
-      content: '';
-      width: 0;
-      padding-bottom: 100%;
-      grid-row: 1 / 1;
-      grid-column: 1 / 1; }
-    .profile-container .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
-      grid-auto-rows: 1fr;
-      width: 100%;
-      grid-gap: 5px; }
-      .profile-container .gallery-grid > *:first-child {
+        .profile-container .gallery-container .gallery-list .gallery-list-item {
+          width: 100vw;
+          height: 100%;
+          flex-direction: column; } }
+      .profile-container .gallery-container .gallery-list .gallery-list-item .gallery-image-parent {
+        height: 100%;
+        width: 250px;
+        overflow: hidden; }
+        @media screen and (max-width: 800px) {
+          .profile-container .gallery-container .gallery-list .gallery-list-item .gallery-image-parent {
+            width: 100%;
+            height: 100vw; } }
+      .profile-container .gallery-container .gallery-list .gallery-list-item .list-information-container {
+        display: flex;
+        flex: 1;
+        margin: 20px;
+        flex-direction: column; }
+    @supports (display: grid) {
+      .profile-container .gallery-container .gallery-grid::before {
+        content: '';
+        width: 0;
+        padding-bottom: 100%;
         grid-row: 1 / 1;
-        grid-column: 1 / 1; } }
-  .profile-container .gallery-image-parent {
-    cursor: pointer;
-    transition: all .3s ease-in-out;
-    overflow: hidden;
-    height: 100%; }
-    .profile-container .gallery-image-parent .gallery-image-child {
-      background-size: cover;
-      background-position: center;
-      width: 100%;
-      height: 100%;
-      -webkit-transition: all 0.7s;
-      -moz-transition: all 0.7s;
-      -o-transition: all 0.7s;
-      transition: all 0.7s; }
-      .profile-container .gallery-image-parent .gallery-image-child:hover {
-        -ms-transform: scale(1.2);
-        -moz-transform: scale(1.2);
-        -webkit-transform: scale(1.2);
-        -o-transform: scale(1.2);
-        transform: scale(1.2); }
+        grid-column: 1 / 1; }
+      .profile-container .gallery-container .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+        grid-auto-rows: 1fr;
+        width: 100%;
+        grid-gap: 5px; }
+        .profile-container .gallery-container .gallery-grid > *:first-child {
+          grid-row: 1 / 1;
+          grid-column: 1 / 1; } }
+    .profile-container .gallery-container .gallery-image-parent {
+      cursor: pointer;
+      transition: all .3s ease-in-out;
+      overflow: hidden;
+      height: 100%; }
+      .profile-container .gallery-container .gallery-image-parent .gallery-image-child {
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all 0.7s;
+        -moz-transition: all 0.7s;
+        -o-transition: all 0.7s;
+        transition: all 0.7s; }
+        .profile-container .gallery-container .gallery-image-parent .gallery-image-child:hover {
+          -ms-transform: scale(1.2);
+          -moz-transform: scale(1.2);
+          -webkit-transform: scale(1.2);
+          -o-transform: scale(1.2);
+          transform: scale(1.2); }
 
 .header-container {
   display: flex;

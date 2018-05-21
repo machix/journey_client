@@ -38,9 +38,7 @@ class Profile extends Component {
 
     renderThumbnails = () => {
         return this.props.thumbnails.map((currElement, index) => {
-            console.log("The current iteration is: " + index);
-            console.log("The current element is: " + currElement);
-            console.log(currElement.urls)
+
             return <Overdrive id={index} style={{height: '100%', position: 'relative'}}>
                 <div
                     className={'gallery-image-parent'}>
