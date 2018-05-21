@@ -22,18 +22,32 @@ class FancyButton extends Component {
     }
 
     componentDidMount() {
-        const titleElement = basicScroll.create({
-            elem: document.querySelector('.fancy-flipper'),
-            from: 'top-top',
-            to: 'bottom-middle',
-            props: {
-                '--fancy-button-rotation': {
-                    from: '-90deg',
-                    to: '10deg'
+
+        setTimeout(() => {
+            this.titleElement = basicScroll.create({
+                elem: document.querySelector('.fancy-flipper'),
+                from: 'bottom-middle',
+                to: 'top-top',
+                direct: true,
+                inside: (instance, percentage, props) => {
+                    console.log(instance);
+                    console.log(percentage);
+                    console.log(props)
                 },
-            }
-        });
-        titleElement.start();
+                props: {
+                    '--fancy-button-rotation': {
+                        from: '-90deg',
+                        to: '10deg'
+                    },
+                }
+            });
+            this.titleElement.start();
+        }, 100)
+
+    }
+
+    componentWillUnmount() {
+        this.titleElement.destroy();
     }
 
     render() {
@@ -52,7 +66,6 @@ class FancyButton extends Component {
         };
 
 
-
         return (
             <div className="fancy-button"
                  style={buttonStyle}
@@ -60,7 +73,7 @@ class FancyButton extends Component {
                 <div className="fancy-flipper">
                     <div className="fancy-back" style={fancyBackStyle}>
 
-                            <div className="button-text">{this.props.buttonText}</div>
+                        <div className="button-text">{this.props.buttonText}</div>
                     </div>
                 </div>
             </div>

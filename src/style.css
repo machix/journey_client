@@ -1613,7 +1613,8 @@ h1, h2, h3, h4, h5 {
       font-size: 3rem;
       color: white;
       line-height: 3rem;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      padding-bottom: 20px; }
     .profile-container .profile-info .description {
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
       font-size: 1.3rem;
