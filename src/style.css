@@ -1724,7 +1724,10 @@ h1, h2, h3, h4, h5 {
       color: white;
       line-height: 3rem;
       text-transform: uppercase;
-      text-align: center; }
+      text-align: center;
+      will-change: transform, opacity;
+      transform: translateY(var(--translation-title-one));
+      opacity: var(--opacity-group); }
       .profile-container .profile-info .title .sub {
         font-weight: 500;
         font-size: 0.9rem;
@@ -1736,7 +1739,10 @@ h1, h2, h3, h4, h5 {
       font-weight: 400;
       text-align: center;
       width: 60%;
-      margin-bottom: 30px; }
+      margin-bottom: 30px;
+      will-change: transform, opacity;
+      transform: translateY(var(--translation-description-two));
+      opacity: var(--opacity-group); }
       @media screen and (max-width: 800px) {
         .profile-container .profile-info .description {
           width: 95%; } }
@@ -1746,7 +1752,10 @@ h1, h2, h3, h4, h5 {
       justify-content: center;
       align-items: center;
       font-size: 0.85rem;
-      width: 30%; }
+      width: 30%;
+      will-change: transform, opacity;
+      transform: translateY(var(--translation-button-three));
+      opacity: var(--opacity-group); }
       @media screen and (max-width: 800px) {
         .profile-container .profile-info .action-button-container {
           width: 100%;

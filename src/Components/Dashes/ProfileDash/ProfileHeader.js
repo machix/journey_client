@@ -6,6 +6,8 @@ import Icon from 'react-icon-base';
 import agent from '../../../Helpers/agent';
 import Statistics from './statistics';
 import FancyButton from './FancyButton';
+import * as basicScroll from '../../../Helpers/basicScroll.min';
+
 
 
 const mapStateToProps = state => ({});
@@ -33,7 +35,33 @@ class ProfileHeader extends Component {
     }
 
     componentDidMount() {
-        setTimeout(() => this.setState({loading: false}), 2000)
+        setTimeout(() => this.setState({loading: false}), 2000);
+
+        this.titleElement = basicScroll.create({
+            elem: document.querySelector('.profile-info'),
+            from: 'top-top',
+            to: 'bottom-top',
+            direct: true,
+            props: {
+                '--translation-title-one': {
+                    from: '0',
+                    to: '-200px'
+                },
+                '--translation-description-two': {
+                    from: '0',
+                    to: '-150px'
+                },
+                '--translation-button-three': {
+                    from: '0',
+                    to: '-25px'
+                },
+                '--opacity-group': {
+                    from: '.99',
+                    to: '0.01'
+                },
+            }
+        });
+        this.titleElement.start();
     }
 
 
@@ -45,7 +73,7 @@ class ProfileHeader extends Component {
                 </div>
 
 
-                <Statistics displayMobile={false}></Statistics>
+                <Statistics displayMobile={false}/>
                 <div className={'title'}>
                     Alaska to Calgary
                     <div className={'sub'}>
