@@ -156,7 +156,7 @@ $c-main-attribution-text: $c-set-text-1-alt;*/
   font-size: 14px;
   font-weight: 400;
   line-height: normal;
-  color: #525f7f;
+  color: $c-set-text-1;
   text-transform: none;
 }
 
@@ -2258,9 +2258,8 @@ h1, h2, h3, h4, h5 {
 .profile-container {
   width: 100%;
 
-  .stats-container {
+  .statistics {
     position: absolute;
-
     right: 10px;
     display: flex;
     flex-direction: column;
@@ -2268,28 +2267,54 @@ h1, h2, h3, h4, h5 {
     justify-content: space-around;
     min-height: 45%;
 
+    @media screen and (max-width: 800px) {
+      position: relative;
+      right: auto;
+      min-height: auto;
+      width: 100%;
+      padding: 20px 10px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+    }
+
     .stats-title {
       font-weight: bold;
       display: block;
     }
 
-    .stat {
+    .stats-container {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      max-width: 100px;
-      padding: 10px 0 10px 0;
-
-      .stat-top {
-        font-size: 1rem;
-        font-weight: bold;
-
+      width: 100%;
+      @media screen and (max-width: 800px) {
+        flex-direction: row;
+        justify-content: space-around;
       }
-      .stat-bottom {
-        text-align: center;
-        font-size: 0.7rem;
 
+      .stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 100px;
+        padding: 10px 0 10px 0;
+
+        @media screen and (max-width: 800px) {
+          padding-top: 5px;
+        }
+
+        .stat-top {
+          font-size: 1rem;
+          font-weight: bold;
+
+        }
+        .stat-bottom {
+          text-align: center;
+          font-size: 0.7rem;
+          @media screen and (max-width: 800px) {
+            font-size: 0.6rem;
+          }
+        }
       }
     }
   }
@@ -2303,7 +2328,11 @@ h1, h2, h3, h4, h5 {
     width: 100%;
     -webkit-mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
     z-index: -1;
-    transform: translate(0, var(--background-image-ty))
+    transform: translate(0, var(--background-image-ty));
+    @media screen and (max-width: 800px) {
+      -webkit-mask-image: none;
+    }
+
   }
 
   .profile-info {
@@ -2315,10 +2344,11 @@ h1, h2, h3, h4, h5 {
     color: white;
     width: 100%;
     position: relative;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
+    font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
+
 
     .title {
-      font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
       font-weight: 700;
       font-size: 3rem;
       color: white;
@@ -2327,8 +2357,6 @@ h1, h2, h3, h4, h5 {
       text-align: center;
 
       .sub {
-        font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
-        text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
         font-weight: 500;
         font-size: 0.9rem;
         padding-bottom: 10px;
@@ -2356,11 +2384,20 @@ h1, h2, h3, h4, h5 {
       justify-content: center;
       align-items: center;
       font-size: 0.85rem;
-      margin-top: 30px;
+      width: 30%;
+
+      @media screen and (max-width: 800px) {
+        width: 100%;
+        position: absolute;
+        bottom: 50px;
+      }
 
       .action-button-group {
         display: flex;
         align-items: center;
+        width: 100%;
+        justify-content: center;
+
         animation: slide-in-vertical 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both 1s;
 
         &:not(first-child) {
@@ -2369,29 +2406,22 @@ h1, h2, h3, h4, h5 {
 
         .action-button {
           cursor: pointer;
-          margin-left: 5px;
           padding: 10px 10px;
           display: flex;
           text-transform: uppercase;
+          width: 90%;
           color: white;
           height: 100%;
           font-weight: 700;
-          border: 5px solid white;
-          background-color: rgba(0, 0, 0, 0.5);
-          //background-color: #1fb3b2;
-          transition: background-color 0.4s ease-in-out;
-
-
-          &:hover {
-            background-color: rgba(17, 99, 97, 0.8);
-          }
-        }
-
-        .donation {
-          //background-color: #c98920;
+          border: 2px solid white;
+          border-radius: 100px;
+          transition: background-color 1s ease-in-out;
+          justify-content: center;
+          align-items:center;
 
           &:hover {
-            background-color: rgba(155, 107, 23, 0.8);
+            background-color: rgba(0, 0, 0, 0.4);
+
           }
 
         }

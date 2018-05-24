@@ -14,6 +14,8 @@ import GridView from './GridView';
 import ListView from './ListView';
 import ProfileHeader from './ProfileHeader';
 import FancyButton from './FancyButton';
+import Statistics from './statistics';
+
 
 
 const mapStateToProps = state => ({
@@ -114,6 +116,7 @@ class Profile extends Component {
                 <div className={'profile-container'}>
 
                     <ProfileHeader/>
+                    <Statistics displayMobile={true}/>
                     <div className={'gallery-container'}>
                         <div className={'profile-switch'}>
 

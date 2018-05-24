@@ -113,7 +113,7 @@ body {
   font-size: 14px;
   font-weight: 400;
   line-height: normal;
-  color: #525f7f;
+  color: #6b6b6b;
   text-transform: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1647,7 +1647,7 @@ h1, h2, h3, h4, h5 {
 
 .profile-container {
   width: 100%; }
-  .profile-container .stats-container {
+  .profile-container .statistics {
     position: absolute;
     right: 10px;
     display: flex;
@@ -1655,22 +1655,45 @@ h1, h2, h3, h4, h5 {
     align-items: center;
     justify-content: space-around;
     min-height: 45%; }
-    .profile-container .stats-container .stats-title {
+    @media screen and (max-width: 800px) {
+      .profile-container .statistics {
+        position: relative;
+        right: auto;
+        min-height: auto;
+        width: 100%;
+        padding: 20px 10px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white; } }
+    .profile-container .statistics .stats-title {
       font-weight: bold;
       display: block; }
-    .profile-container .stats-container .stat {
+    .profile-container .statistics .stats-container {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      max-width: 100px;
-      padding: 10px 0 10px 0; }
-      .profile-container .stats-container .stat .stat-top {
-        font-size: 1rem;
-        font-weight: bold; }
-      .profile-container .stats-container .stat .stat-bottom {
-        text-align: center;
-        font-size: 0.7rem; }
+      width: 100%; }
+      @media screen and (max-width: 800px) {
+        .profile-container .statistics .stats-container {
+          flex-direction: row;
+          justify-content: space-around; } }
+      .profile-container .statistics .stats-container .stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 100px;
+        padding: 10px 0 10px 0; }
+        @media screen and (max-width: 800px) {
+          .profile-container .statistics .stats-container .stat {
+            padding-top: 5px; } }
+        .profile-container .statistics .stats-container .stat .stat-top {
+          font-size: 1rem;
+          font-weight: bold; }
+        .profile-container .statistics .stats-container .stat .stat-bottom {
+          text-align: center;
+          font-size: 0.7rem; }
+          @media screen and (max-width: 800px) {
+            .profile-container .statistics .stats-container .stat .stat-bottom {
+              font-size: 0.6rem; } }
   .profile-container .background-image {
     background-image: url("https://images.unsplash.com/photo-1518559946231-d79e79b7d540?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e156c2e812b499d400a1ef05f8213f84&auto=format&fit=crop&w=2767&q=80");
     background-position: center;
@@ -1681,6 +1704,9 @@ h1, h2, h3, h4, h5 {
     -webkit-mask-image: -webkit-gradient(linear, left 90%, left bottom, from(black), to(rgba(0, 0, 0, 0)));
     z-index: -1;
     transform: translate(0, var(--background-image-ty)); }
+    @media screen and (max-width: 800px) {
+      .profile-container .background-image {
+        -webkit-mask-image: none; } }
   .profile-container .profile-info {
     min-height: 100vh;
     display: flex;
@@ -1689,10 +1715,10 @@ h1, h2, h3, h4, h5 {
     justify-content: center;
     color: white;
     width: 100%;
-    position: relative; }
+    position: relative;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
+    font-family: Futura, "Helvetica Neue", Helvetica, sans-serif; }
     .profile-container .profile-info .title {
-      font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
       font-weight: 700;
       font-size: 3rem;
       color: white;
@@ -1700,8 +1726,6 @@ h1, h2, h3, h4, h5 {
       text-transform: uppercase;
       text-align: center; }
       .profile-container .profile-info .title .sub {
-        font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
         font-weight: 500;
         font-size: 0.9rem;
         padding-bottom: 10px; }
@@ -1722,29 +1746,36 @@ h1, h2, h3, h4, h5 {
       justify-content: center;
       align-items: center;
       font-size: 0.85rem;
-      margin-top: 30px; }
+      width: 30%; }
+      @media screen and (max-width: 800px) {
+        .profile-container .profile-info .action-button-container {
+          width: 100%;
+          position: absolute;
+          bottom: 50px; } }
       .profile-container .profile-info .action-button-container .action-button-group {
         display: flex;
         align-items: center;
+        width: 100%;
+        justify-content: center;
         animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 1s; }
         .profile-container .profile-info .action-button-container .action-button-group:not(first-child) {
           margin-top: 5px; }
         .profile-container .profile-info .action-button-container .action-button-group .action-button {
           cursor: pointer;
-          margin-left: 5px;
           padding: 10px 10px;
           display: flex;
           text-transform: uppercase;
+          width: 90%;
           color: white;
           height: 100%;
           font-weight: 700;
-          border: 5px solid white;
-          background-color: rgba(0, 0, 0, 0.5);
-          transition: background-color 0.4s ease-in-out; }
+          border: 2px solid white;
+          border-radius: 100px;
+          transition: background-color 1s ease-in-out;
+          justify-content: center;
+          align-items: center; }
           .profile-container .profile-info .action-button-container .action-button-group .action-button:hover {
-            background-color: rgba(17, 99, 97, 0.8); }
-        .profile-container .profile-info .action-button-container .action-button-group .donation:hover {
-          background-color: rgba(155, 107, 23, 0.8); }
+            background-color: rgba(0, 0, 0, 0.4); }
     .profile-container .profile-info .fancy-button {
       position: relative;
       display: block;
