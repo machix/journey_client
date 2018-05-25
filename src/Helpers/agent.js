@@ -183,11 +183,11 @@ const common = {
         },
         stripePurchase: (token, value) => {
             console.log('Stripe Purchase');
+            console.log(token);
+            console.log(value);
             fetch('https://us-central1-journeyapp91.cloudfunctions.net/stripePurchase', {
-                body: {
-                    "token": token,
-                    "value": value
-                },
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(token),
                 method: 'POST', // *GET, POST, PUT, DELETE, etc.
 
             }).then(response => {
