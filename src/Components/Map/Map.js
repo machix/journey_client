@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 
 
 import member3 from '../Assets/member2.jpg';
+import medkit from '../Assets/first-aid-kit.svg'
 
 
 const mapStateToProps = state => ({
@@ -46,10 +47,42 @@ class Map extends Component {
 
             <GoogleMap
                 defaultZoom={12}
-                defaultCenter={{lat: 28.003514, lng: 86.852070}}
-                center={{lat: 28.003514, lng: 86.852070}}
+                defaultCenter={this.props.coordinates}
+                center={this.props.coordinates}
+
                 // ref={c => this.map = c}
             >
+                {this.props.overlayIcon != null ? <OverlayView
+                    mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
+                    getPixelPositionOffset={getPixelPositionOffset}
+
+                    position={this.props.coordinates}>
+                    <div style={{
+                        height: '50px',
+                        width: '50px',
+                        backgroundColor: 'white',
+                        borderRadius: '50px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)'
+                    }}>
+                        <div style={{
+                            position: 'absolute',
+                            bottom: '100%',
+                            textShadow: '0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075)',
+                            fontSize: '1.1rem',
+                            fontWeight: '700',
+                            color: 'white',
+                        }}>
+                            DEPLOY ME!
+                        </div>
+
+                        <img src={this.props.overlayIcon} style={{height: '30px'}}/>
+
+                    </div>
+                </OverlayView> : null}
+
 
             </GoogleMap>
 

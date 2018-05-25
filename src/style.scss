@@ -290,7 +290,7 @@ input {
 /*  --- Text ---------------------------- */
 h1, h2, h3, h4, h5 {
   margin: 0;
-  font-family: Open Sans, Segoe UI, sans-serif;
+  //font-family: Open Sans, Segoe UI, sans-serif;
 }
 
 .green {
@@ -714,62 +714,6 @@ h1, h2, h3, h4, h5 {
 
 }
 
-/*Billing Dash*/
-
-.campaign-select {
-  width: 100%;
-  margin-left: 15px;
-  margin-right: 15px;
-
-  .button-small {
-    margin-right: 10px;
-  }
-
-  .Select-control {
-    height: 26px;
-  }
-  .Select-placeholder {
-    line-height: 26px
-  }
-  .Select-value {
-    line-height: 25px !important;
-  }
-
-  .Select-value-label {
-    line-height: 26px;
-  }
-
-  .Select-input {
-    height: 26px;
-  }
-
-}
-
-.transaction-select {
-  min-width: 40%;
-  .Select-control {
-    height: 26px;
-  }
-  .Select-placeholder {
-    line-height: 26px
-  }
-  .Select-value {
-    line-height: 25px !important;
-  }
-
-  .Select-value-label {
-    line-height: 26px;
-  }
-
-  .Select-input {
-    height: 26px;
-  }
-  @media screen and (max-width: 800px) {
-    margin-top: 5px;
-    min-width: 100%;
-  }
-}
-
 .feedback-indication {
   margin-left: 3px;
   display: inline-flex;
@@ -987,6 +931,130 @@ h1, h2, h3, h4, h5 {
     }
 
   }
+}
+
+//==================CONTRIBUTION DASH===============>
+.contribution-container {
+  background-image: linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%);
+  font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+
+  h1, h2 {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
+
+    font-weight: 900;
+    padding-bottom: 5px;
+    text-transform: uppercase
+  }
+
+  .awesome-logo {
+    border-radius: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    background-color: white;
+
+    display: inline-flex;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+
+    img {
+      width: 125px;
+      height: 125px;
+    }
+  }
+
+  .map-container {
+    height: 40vh;
+    width: 40vh;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (max-width: 800px) {
+      width: 100%;
+      height: 100vw;
+
+      .map-element {
+        height: auto;
+      }
+    }
+
+  }
+
+  .card {
+    //box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+    width: 50%;
+    min-height: 90vh;
+    margin: 15px 15px 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    //background-color: white;
+
+    @media screen and (max-width: 800px) {
+      width: 95%;
+    }
+
+    .contribution-button:first-of-type:hover {
+      background-color: #c693f0;
+    }
+    .contribution-button:nth-of-type(2):hover {
+      background-color: #899cf0;
+    }
+
+    .contribution-button:nth-of-type(3):hover {
+      background-color: #f08159;
+    }
+    .contribution-button:nth-of-type(4):hover {
+      background-color: #3ac732;
+    }
+    .contribution-button {
+      cursor: pointer;
+      border-radius: 60px;
+      border: solid $c-set-border-0 2px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      min-width: 60%;
+      transition: background-color 0.2s ease-in-out;
+      background-color: transparent;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
+
+
+      &:not(first-child) {
+        margin-top: 20px;
+      }
+
+      @media screen and (max-width: 800px) {
+        width: 95%;
+      }
+
+      .description {
+        font-size: 0.8rem;
+        font-weight: normal;
+      }
+    }
+
+  }
+
 }
 
 .menu {
@@ -2347,7 +2415,6 @@ h1, h2, h3, h4, h5 {
     text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
     font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
 
-
     .title {
       font-weight: 700;
       font-size: 3rem;
@@ -2379,7 +2446,6 @@ h1, h2, h3, h4, h5 {
       transform: translateY(var(--translation-description-two));
       opacity: var(--opacity-group);
 
-
       @media screen and (max-width: 800px) {
         width: 95%;
       }
@@ -2396,12 +2462,12 @@ h1, h2, h3, h4, h5 {
       transform: translateY(var(--translation-button-three));
       opacity: var(--opacity-group);
 
-
-
       @media screen and (max-width: 800px) {
         width: 100%;
         position: absolute;
         bottom: 50px;
+        font-size: 0.7rem;
+
       }
 
       .action-button-group {
@@ -2429,7 +2495,7 @@ h1, h2, h3, h4, h5 {
           border-radius: 100px;
           transition: background-color 1s ease-in-out;
           justify-content: center;
-          align-items:center;
+          align-items: center;
 
           &:hover {
             background-color: rgba(0, 0, 0, 0.4);
@@ -3611,35 +3677,6 @@ footer {
   border-radius: 7px;
   -webkit-box-shadow: inset 0 0 6px rgba(51, 51, 51, 0.95);;
   background-color: rgba(51, 51, 51, 0.95);;
-}
-
-/*Transaction-History*/
-.transaction-wrapper {
-  max-width: 400px;
-  min-width: 400px;
-
-  @media screen and (max-width: 800px) {
-    max-width: 600px;
-    min-width: 0;
-  }
-
-  .transaction-history {
-    background: rgba(0, 0, 0, .03);
-    border-color: rgba(0, 0, 0, .15);
-    box-shadow: inset 0 1px 6px rgba(0, 0, 0, .1);
-    margin-bottom: 4px;
-    transition: background 85ms ease-in, border-color 85ms ease-in;
-    border: 1px solid #CDD2D4;
-    border-radius: 0 0 3px 3px;
-    font-family: Consolas;
-    text-transform: uppercase;
-
-    .transaction-row {
-      display: flex;
-      justify-content: space-between
-    }
-  }
-
 }
 
 /*All of dis is for the Product Entry*/

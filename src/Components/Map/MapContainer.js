@@ -43,6 +43,8 @@ class MapContainer extends Component {
         return (
 
             <Map isMarkerShown={true}
+                 coordinates={this.props.coordinates}
+                 overlayIcon={this.props.overlayIcon}
                  googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIpabTnIbXsdIgI2Zo2zO6g3GGxUbYqw8&v=3.exp&libraries=geometry,drawing,places"
                  loadingElement={<div style={{height: `100px`,}}/>}
                  containerElement={

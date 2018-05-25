@@ -1,12 +1,16 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Icon from 'react-icon-base';
+import {withRouter} from 'react-router-dom';
+
 
 
 import agent from '../../../Helpers/agent';
 import Statistics from './statistics';
 import FancyButton from './FancyButton';
 import * as basicScroll from '../../../Helpers/basicScroll.min';
+import history from '../../../Helpers/history.js';
+
 
 
 
@@ -64,6 +68,15 @@ class ProfileHeader extends Component {
         this.titleElement.start();
     }
 
+    navigate(location) {
+        console.log(this.props.location.pathname);
+        if (this.props.location.pathname === location) {
+            console.log('not navigating');
+        } else {
+            history.push(location)
+        }
+    }
+
 
     render() {
         return (
@@ -105,8 +118,8 @@ class ProfileHeader extends Component {
                         </div>
                         <div className={'action-button-group'}>
 
-                            <div className={'action-button donation'}>
-                                <div className={'action-icon'}>
+                            <div className={'action-button donation'} onClick={() => this.navigate('/contribute')}>
+                                <div className={'action-icon'} >
                                     <Icon viewBox="0 0 40 40" size={20} style={{marginRight: '5px',}}
                                           className={'action-icon'}>
                                         <g>
@@ -129,5 +142,5 @@ class ProfileHeader extends Component {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileHeader);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProfileHeader));
 

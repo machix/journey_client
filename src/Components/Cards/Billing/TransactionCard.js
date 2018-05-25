@@ -3,17 +3,15 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import agent from '../../../Helpers/agent';
-import Select from 'react-select';
-import 'react-select/dist/react-select.css';
 
-import TransactionDisplay from './TransactionDisplay'
+
 
 const mapStateToProps = (state, ownProps) => ({
-    transaction_id: state.common.consoleData.transaction_id,
-    transactions: state.billingReducer.transactions,
-    giftys: state.common.consoleData.giftys,
-    startDate: state.common.startDate,
-    endDate: state.common.endDate,
+    // transaction_id: state.common.consoleData.transaction_id,
+    // transactions: state.billingReducer.transactions,
+    // giftys: state.common.consoleData.giftys,
+    // startDate: state.common.startDate,
+    // endDate: state.common.endDate,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -70,17 +68,17 @@ class TransactionCard extends Component {
 
     componentWillMount() {
 
-        if (this.props.giftys) {
-            let options = this.selectionsMap(this.props.giftys);
-            this.setState({
-                ...this.state,
-                options: options
-            })
-        }
-        if (this.props.transactions && this.props.transaction_id) {
-        } else {
-            this.props.updateTransactionInfo(this.props.transaction_id, 'all', this.props.startDate.clone(), this.props.endDate.clone());
-        }
+        // if (this.props.giftys) {
+        //     let options = this.selectionsMap(this.props.giftys);
+        //     this.setState({
+        //         ...this.state,
+        //         options: options
+        //     })
+        // }
+        // if (this.props.transactions && this.props.transaction_id) {
+        // } else {
+        //     this.props.updateTransactionInfo(this.props.transaction_id, 'all', this.props.startDate.clone(), this.props.endDate.clone());
+        // }
     }
 
     componentWillReceiveProps(nextProps) {
@@ -113,17 +111,9 @@ class TransactionCard extends Component {
                         <div className="header-copy">
                             <h4>Transaction History by Gifty </h4>
                         </div>
-                        <Select
-                            name="form-field-name"
-                            className="transaction-select"
-                            value={this.state.selected}
-                            clearable={false}
-                            searchable={false}
-                            options={this.state.options}
-                            onChange={(val)=>this.selectHandler(val)}/>
+
                     </div>
 
-                    <TransactionDisplay filteredGifty={this.state.selected}></TransactionDisplay>
                 </section>
 
             </div>

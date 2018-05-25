@@ -187,8 +187,7 @@ input {
 
 /*  --- Text ---------------------------- */
 h1, h2, h3, h4, h5 {
-  margin: 0;
-  font-family: Open Sans, Segoe UI, sans-serif; }
+  margin: 0; }
 
 .green {
   color: #78D9BB !important; }
@@ -502,41 +501,6 @@ h1, h2, h3, h4, h5 {
 .uppercase {
   text-transform: uppercase; }
 
-/*Billing Dash*/
-.campaign-select {
-  width: 100%;
-  margin-left: 15px;
-  margin-right: 15px; }
-  .campaign-select .button-small {
-    margin-right: 10px; }
-  .campaign-select .Select-control {
-    height: 26px; }
-  .campaign-select .Select-placeholder {
-    line-height: 26px; }
-  .campaign-select .Select-value {
-    line-height: 25px !important; }
-  .campaign-select .Select-value-label {
-    line-height: 26px; }
-  .campaign-select .Select-input {
-    height: 26px; }
-
-.transaction-select {
-  min-width: 40%; }
-  .transaction-select .Select-control {
-    height: 26px; }
-  .transaction-select .Select-placeholder {
-    line-height: 26px; }
-  .transaction-select .Select-value {
-    line-height: 25px !important; }
-  .transaction-select .Select-value-label {
-    line-height: 26px; }
-  .transaction-select .Select-input {
-    height: 26px; }
-  @media screen and (max-width: 800px) {
-    .transaction-select {
-      margin-top: 5px;
-      min-width: 100%; } }
-
 .feedback-indication {
   margin-left: 3px;
   display: inline-flex;
@@ -692,6 +656,92 @@ h1, h2, h3, h4, h5 {
             width: 25px; }
             .container .journey-container .map-container .image-container .marker-image-pin .icon .image-pin-icon {
               color: white; }
+
+.contribution-container {
+  background-image: linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%);
+  font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-size: 1.2rem; }
+  .contribution-container h1, .contribution-container h2 {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
+    font-weight: 900;
+    padding-bottom: 5px;
+    text-transform: uppercase; }
+  .contribution-container .awesome-logo {
+    border-radius: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    background-color: white;
+    display: inline-flex;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px; }
+    .contribution-container .awesome-logo img {
+      width: 125px;
+      height: 125px; }
+  .contribution-container .map-container {
+    height: 40vh;
+    width: 40vh;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto; }
+    @media screen and (max-width: 800px) {
+      .contribution-container .map-container {
+        width: 100%;
+        height: 100vw; }
+        .contribution-container .map-container .map-element {
+          height: auto; } }
+  .contribution-container .card {
+    width: 50%;
+    min-height: 90vh;
+    margin: 15px 15px 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    @media screen and (max-width: 800px) {
+      .contribution-container .card {
+        width: 95%; } }
+    .contribution-container .card .contribution-button:first-of-type:hover {
+      background-color: #c693f0; }
+    .contribution-container .card .contribution-button:nth-of-type(2):hover {
+      background-color: #899cf0; }
+    .contribution-container .card .contribution-button:nth-of-type(3):hover {
+      background-color: #f08159; }
+    .contribution-container .card .contribution-button:nth-of-type(4):hover {
+      background-color: #3ac732; }
+    .contribution-container .card .contribution-button {
+      cursor: pointer;
+      border-radius: 60px;
+      border: solid #EFEFEF 2px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      min-width: 60%;
+      transition: background-color 0.2s ease-in-out;
+      background-color: transparent;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075); }
+      .contribution-container .card .contribution-button:not(first-child) {
+        margin-top: 20px; }
+      @media screen and (max-width: 800px) {
+        .contribution-container .card .contribution-button {
+          width: 95%; } }
+      .contribution-container .card .contribution-button .description {
+        font-size: 0.8rem;
+        font-weight: normal; }
 
 .menu {
   display: flex;
@@ -1760,7 +1810,8 @@ h1, h2, h3, h4, h5 {
         .profile-container .profile-info .action-button-container {
           width: 100%;
           position: absolute;
-          bottom: 50px; } }
+          bottom: 50px;
+          font-size: 0.7rem; } }
       .profile-container .profile-info .action-button-container .action-button-group {
         display: flex;
         align-items: center;
@@ -2639,28 +2690,6 @@ ul.top-links {
   border-radius: 7px;
   -webkit-box-shadow: inset 0 0 6px rgba(51, 51, 51, 0.95);
   background-color: rgba(51, 51, 51, 0.95); }
-
-/*Transaction-History*/
-.transaction-wrapper {
-  max-width: 400px;
-  min-width: 400px; }
-  @media screen and (max-width: 800px) {
-    .transaction-wrapper {
-      max-width: 600px;
-      min-width: 0; } }
-  .transaction-wrapper .transaction-history {
-    background: rgba(0, 0, 0, 0.03);
-    border-color: rgba(0, 0, 0, 0.15);
-    box-shadow: inset 0 1px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 4px;
-    transition: background 85ms ease-in, border-color 85ms ease-in;
-    border: 1px solid #CDD2D4;
-    border-radius: 0 0 3px 3px;
-    font-family: Consolas;
-    text-transform: uppercase; }
-    .transaction-wrapper .transaction-history .transaction-row {
-      display: flex;
-      justify-content: space-between; }
 
 /*All of dis is for the Product Entry*/
 .modal-main {
