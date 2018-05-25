@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import {injectStripe} from 'react-stripe-elements';
 import {CardElement} from 'react-stripe-elements';
 
+import agent from '../../../../Helpers/agent';
+
 const Success = () => {
     return (
         <div className="feedback-indication">
@@ -50,26 +52,27 @@ class CheckoutForm extends React.Component {
         // Within the context of `Elements`, this call to createToken knows which Element to
         // tokenize, since there's only one in this group.
 
-        if(this.props.contributionValue === null) {
+        if (this.props.contributionValue === null) {
             alert('Please select a Contribution first!');
         } else {
             this.props.stripe.createToken({name: 'Jenny Rosen'}).then(({token}) => {
+                console.log('token received: ' + token);
                 if (typeof token === 'undefined') {
                     this.setState({
                         success: false,
                         error: true
-                    })
+                    });
                     this._element.clear();
 
-
-
                 } else {
+                    console.log(token);
                     this.setState({
                         success: true,
                         error: false
-                    })
-                    this._element.clear();
+                    });
+                    agent.common.stripePurchase(token, this.props.contributionValue);
 
+                    this._element.clear();
                 }
 
             }).catch((error) => {
@@ -82,8 +85,6 @@ class CheckoutForm extends React.Component {
             );
 
         }
-
-
 
 
         // However, this line of code will do the same thing:

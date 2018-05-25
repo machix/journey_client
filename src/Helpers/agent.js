@@ -161,50 +161,75 @@ const Auth = {
 };
 
 const common = {
-    beautifulUnsplash: () => {
-        return dispatch => {
-            console.log('im in here!')
-            const URL = "https://api.unsplash.com/photos/random?client_id=17d1aeb4a5d48238dd727a19feff53cc3cdd55c8160f3a48364eb4cb879c6722&collections=142324,369,1278105,536176";
-            return fetch(URL, {method: 'GET'})
-                .then(response => Promise.all([response, response.json()])).then(([response, json]) => {
-                    if (response.status === 200) {
+        beautifulUnsplash: () => {
+            return dispatch => {
+                console.log('im in here!')
+                const URL = "https://api.unsplash.com/photos/random?client_id=17d1aeb4a5d48238dd727a19feff53cc3cdd55c8160f3a48364eb4cb879c6722&collections=142324,369,1278105,536176";
+                return fetch(URL, {method: 'GET'})
+                    .then(response => Promise.all([response, response.json()])).then(([response, json]) => {
+                        if (response.status === 200) {
 
-                        dispatch({
-                            type: 'BEAUTIFUL_UNSPLASH',
-                            value: json.urls.regular
-                        });
+                            dispatch({
+                                type: 'BEAUTIFUL_UNSPLASH',
+                                value: json.urls.regular
+                            });
 
-                    }
-                    else {
-                        console.log('oh no')
-                    }
-                });
-        }
-    },
-    getMultipleUnsplash: () => {
-        return dispatch => {
-            console.log('im in here!')
-            const URL = "https://api.unsplash.com/collections/2071606/photos?client_id=17d1aeb4a5d48238dd727a19feff53cc3cdd55c8160f3a48364eb4cb879c6722";
-            return fetch(URL, {method: 'GET'})
-                .then((response) => {
-                    if (response.status === 200) {
-                        return response.json();
-                    } else {
-                        console.log('You got mad errors');
-                    }
-                }).then((json) => {
-                    console.log(json);
-                    dispatch({
-                        type: 'JOURNEY_THUMBNAILS',
-                        value: json
+                        }
+                        else {
+                            console.log('oh no')
+                        }
                     });
-                }).catch(function (error) {
-                    console.log('There was an error');
-                    console.log(error);
-                });
+            }
+        },
+        stripePurchase: (token, value) => {
+            console.log('Stripe Purchase');
+            fetch('https://us-central1-journeyapp91.cloudfunctions.net/stripePurchase', {
+                body: {
+                    "token": token,
+                    "value": value
+                },
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+
+            }).then(response => {
+                console.log(response);
+                Promise.all([response, response.json()])
+            }).then(([response, json]) => {
+                console.log(response);
+                if (response.status === 200) {
+                    console.log('win');
+                }
+                else {
+                    console.log('oh no ' + response.status);
+                }
+            });
         }
-    },
-};
+
+        ,
+        getMultipleUnsplash: () => {
+            return dispatch => {
+                console.log('im in here!')
+                const URL = "https://api.unsplash.com/collections/2071606/photos?client_id=17d1aeb4a5d48238dd727a19feff53cc3cdd55c8160f3a48364eb4cb879c6722";
+                return fetch(URL, {method: 'GET'})
+                    .then((response) => {
+                        if (response.status === 200) {
+                            return response.json();
+                        } else {
+                            console.log('You got mad errors');
+                        }
+                    }).then((json) => {
+                        console.log(json);
+                        dispatch({
+                            type: 'JOURNEY_THUMBNAILS',
+                            value: json
+                        });
+                    }).catch(function (error) {
+                        console.log('There was an error');
+                        console.log(error);
+                    });
+            }
+        },
+    }
+;
 
 const FirebaseWatcher = {
     links: (id) => {
@@ -392,31 +417,6 @@ const FirebaseQuery = {
             });
         };
     },
-    stripePurchase: (token, value) => {
-        return dispatch => {
-            console.log('Stripe Purchase');
-            fetch('ttps://us-central1-journeyapp91.cloudfunctions.net/stripePurchase', {
-                body: {
-                    "token": token,
-                    "value": value
-                },
-                method: 'POST', // *GET, POST, PUT, DELETE, etc.
-
-            }).then(response => {
-                console.log(response);
-                Promise.all([response, response.json()])
-            }).then(([response, json]) => {
-                console.log(response);
-                if (response.status === 200) {
-                    console.log('win');
-                }
-                else {
-                    console.log('oh no ' + response.status);
-                }
-            });
-        };
-    },
-
 
     aggregateData: (chartData, stats) => {
         console.log('AGGREGATE_DATA_FROM_ALL_CHARTS');
