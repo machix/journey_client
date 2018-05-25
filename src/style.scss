@@ -299,6 +299,10 @@ h1, h2, h3, h4, h5 {
 
 /*  --- Helpers ------------------------- */
 
+.slideInVertical {
+  animation: slide-in-vertical 0.2s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
 .loader,
 .loader:before,
 .loader:after {
@@ -949,9 +953,10 @@ h1, h2, h3, h4, h5 {
   text-align: center;
   color: white;
   font-size: 1.2rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
+
 
   h1, h2 {
-    text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
 
     font-weight: 900;
     padding-bottom: 5px;
@@ -977,8 +982,8 @@ h1, h2, h3, h4, h5 {
   }
 
   .map-container {
-    height: 40vh;
-    width: 40vh;
+    height: 50vh;
+    width: 100%;
     overflow: hidden;
     border-radius: 5px;
     margin-bottom: 20px;
@@ -1007,6 +1012,14 @@ h1, h2, h3, h4, h5 {
     flex-direction: column;
     //background-color: white;
 
+    .billing-container {
+      padding-top: 80px;
+
+      .CardField-number::placeholder{
+        color: white !important;
+      }
+    }
+
     &:last-child {
       min-height: auto;
       padding-bottom: 30vh;
@@ -1027,7 +1040,7 @@ h1, h2, h3, h4, h5 {
       background-color: #f08159;
     }
     .contribution-button:nth-of-type(4):hover {
-      background-color: #3ac732;
+      background-color: #47c767;
     }
     .contribution-button {
       cursor: pointer;
@@ -1040,7 +1053,7 @@ h1, h2, h3, h4, h5 {
       font-weight: bold;
       min-width: 60%;
       transition: background-color 0.2s ease-in-out;
-      background-color: transparent;
+      background-color: rgba(0,0,0,0.05);
       text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
 
 

@@ -193,6 +193,9 @@ h1, h2, h3, h4, h5 {
   color: #78D9BB !important; }
 
 /*  --- Helpers ------------------------- */
+.slideInVertical {
+  animation: slide-in-vertical 0.2s cubic-bezier(0.23, 1, 0.32, 1) both; }
+
 .loader,
 .loader:before,
 .loader:after {
@@ -669,9 +672,9 @@ h1, h2, h3, h4, h5 {
   justify-content: center;
   text-align: center;
   color: white;
-  font-size: 1.2rem; }
+  font-size: 1.2rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075); }
   .contribution-container h1, .contribution-container h2 {
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
     font-weight: 900;
     padding-bottom: 5px;
     text-transform: uppercase; }
@@ -689,8 +692,8 @@ h1, h2, h3, h4, h5 {
       width: 125px;
       height: 125px; }
   .contribution-container .map-container {
-    height: 40vh;
-    width: 40vh;
+    height: 50vh;
+    width: 100%;
     overflow: hidden;
     border-radius: 5px;
     margin-bottom: 20px;
@@ -710,6 +713,10 @@ h1, h2, h3, h4, h5 {
     justify-content: center;
     align-items: center;
     flex-direction: column; }
+    .contribution-container .card .billing-container {
+      padding-top: 80px; }
+      .contribution-container .card .billing-container .CardField-number::placeholder {
+        color: white !important; }
     .contribution-container .card:last-child {
       min-height: auto;
       padding-bottom: 30vh; }
@@ -723,7 +730,7 @@ h1, h2, h3, h4, h5 {
     .contribution-container .card .contribution-button:nth-of-type(3):hover {
       background-color: #f08159; }
     .contribution-container .card .contribution-button:nth-of-type(4):hover {
-      background-color: #3ac732; }
+      background-color: #47c767; }
     .contribution-container .card .contribution-button {
       cursor: pointer;
       border-radius: 60px;
@@ -735,7 +742,7 @@ h1, h2, h3, h4, h5 {
       font-weight: bold;
       min-width: 60%;
       transition: background-color 0.2s ease-in-out;
-      background-color: transparent;
+      background-color: rgba(0, 0, 0, 0.05);
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075); }
       .contribution-container .card .contribution-button:not(first-child) {
         margin-top: 20px; }

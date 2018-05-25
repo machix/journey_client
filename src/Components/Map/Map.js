@@ -75,7 +75,7 @@ class Map extends Component {
                             fontWeight: '700',
                             color: 'white',
                         }}>
-                            DEPLOY ME!
+                            HALP!
                         </div>
 
                         <img src={this.props.overlayIcon} style={{height: '30px'}}/>

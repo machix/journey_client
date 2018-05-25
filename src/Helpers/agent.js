@@ -392,6 +392,30 @@ const FirebaseQuery = {
             });
         };
     },
+    stripePurchase: (token, value) => {
+        return dispatch => {
+            console.log('Stripe Purchase');
+            fetch('ttps://us-central1-journeyapp91.cloudfunctions.net/stripePurchase', {
+                body: {
+                    "token": token,
+                    "value": value
+                },
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+
+            }).then(response => {
+                console.log(response);
+                Promise.all([response, response.json()])
+            }).then(([response, json]) => {
+                console.log(response);
+                if (response.status === 200) {
+                    console.log('win');
+                }
+                else {
+                    console.log('oh no ' + response.status);
+                }
+            });
+        };
+    },
 
 
     aggregateData: (chartData, stats) => {

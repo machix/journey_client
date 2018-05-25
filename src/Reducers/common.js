@@ -14,6 +14,7 @@ const defaultState = {
     sidebarExpanded: true,
     arrowKey: null,
     alertNew: false,
+    contributionValue: null
 
 };
 
@@ -39,6 +40,11 @@ export default (state = defaultState, action) => {
             return {
                 ...state,
                 liveJourneyData: action.liveJourneyData
+            };
+        case 'SET_CONTRIBUTION_VALUE':
+            return {
+                ...state,
+                contributionValue: action.value
             };
         case 'SET_CHAT_EXPANDED':
             return {
@@ -74,9 +80,7 @@ export default (state = defaultState, action) => {
             return {
                 ...state,
                 sidebarExpanded: action.value
-            }
-
-
+            };
         case 'REDIRECT':
             return {...state, redirectTo: null};
         case 'LOGIN':

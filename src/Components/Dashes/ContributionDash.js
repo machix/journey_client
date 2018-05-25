@@ -9,10 +9,12 @@ import MapContainer from '../Map/MapContainer';
 
 import StripeCard from '../Cards/Billing/StripeCard';
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+    contributionValue: state.common.contributionValue
+});
 
 const mapDispatchToProps = dispatch => ({
-    onTabClick: (tab) => dispatch({type: 'CHANGE_TAB', tab})
+    setContributionValue: (value) => dispatch({type: 'SET_CONTRIBUTION_VALUE', value: value})
 });
 
 const ContributionButton = props => {
@@ -62,30 +64,41 @@ class ContributionDash extends Component {
         console.log(number);
         switch (number) {
             case 5:
-                this.setState({
-                    ...this.state,
-                    selected: 5
-                });
+                this.props.setContributionValue(5);
                 break;
             case 10:
-                this.setState({
-                    ...this.state,
-                    selected: 10
-                });
+                this.props.setContributionValue(10);
+
                 break;
             case 15:
-                this.setState({
-                    ...this.state,
-                    selected: 15
-                });
+                this.props.setContributionValue(15);
+
                 break;
             case 50:
-                this.setState({
-                    ...this.state,
-                    selected: 50
-                });
+                this.props.setContributionValue(50);
+
                 break;
         }
+    };
+
+    renderSelected() {
+        switch (this.props.contributionValue) {
+            case 5:
+                return <div key={'1'} className={'slideInVertical'}>Rations Small: $5</div>;
+                break;
+            case 10:
+                return <div key={'2'} className={'slideInVertical'}>Rations Medium: $10</div>;
+
+            case 15:
+                return <div key={'3'} className={'slideInVertical'}>Rations Large: $15</div>;
+            case 50:
+                return <div key={'4'} className={'slideInVertical'}>A fucking pickaxe: $50</div>;
+            default:
+                return <div key={'5'} className={'slideInVertical'}>Please select a Contribution first!</div>;
+
+        }
+
+
     }
 
 
@@ -132,7 +145,7 @@ class ContributionDash extends Component {
                     <ContributionButton title={'  Rations Small: $5'}
                                         description={"We're currently eating beans and canned food for our mainstay. \n \n" +
                                         "An event will be triggered when we use this."}
-                                        selected={this.state.selected}
+                                        selected={this.props.contributionValue}
                                         match={5}
                                         selectedColor={'#c693f0'}
                                         onClick={() => this.selected(5)}/>
@@ -140,7 +153,7 @@ class ContributionDash extends Component {
                     <ContributionButton title={'  Rations Medium: $10'}
                                         description={"We're currently eating beans and canned food for our mainstay. \n \n" +
                                         "An event will be triggered when we use this."}
-                                        selected={this.state.selected}
+                                        selected={this.props.contributionValue}
                                         match={10}
                                         selectedColor={'#899cf0'}
                                         onClick={() => this.selected(10)}/>
@@ -148,22 +161,31 @@ class ContributionDash extends Component {
                     <ContributionButton title={'  Rations Small: $15'}
                                         description={"We're currently eating beans and canned food for our mainstay. \n \n" +
                                         "An event will be triggered when we use this."}
-                                        selected={this.state.selected}
+                                        selected={this.props.contributionValue}
                                         match={15}
                                         selectedColor={'#f08159'}
                                         onClick={() => this.selected(15)}/>
                     <ContributionButton title={'                        Pickaxe: $50\n'}
                                         description={'Pickaxes are great.'}
-                                        selected={this.state.selected}
+                                        selected={this.props.contributionValue}
                                         match={50}
-                                        selectedColor={'#3ac732'}
+                                        selectedColor={'#47c767'}
                                         onClick={() => this.selected(50)}/>
 
-                </div>
-                <div className={'card'}>
+                    <div className={'billing-container'}>
+                        <div className=" no-select" style={{paddingBottom: '5px'}}>
+                            <h3>Provide your Billing Information Below </h3>
+                        </div>
+                        <div> {this.renderSelected()}
+                            <br/>
+                            <br/>
+                        </div>
+                        <StripeCard></StripeCard>
+                    </div>
 
-                    <StripeCard></StripeCard>
+
                 </div>
+
             </div>
 
 
