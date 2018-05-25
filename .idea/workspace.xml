@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8eb92d85-80e0-4af9-8dc4-e20ffe8708d5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Components/Cards/Billing/TransactionDisplay.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Components/Dashes/BillingDash.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/ContributionDash.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Cards/Billing/StripeCard.js" afterPath="$PROJECT_DIR$/src/Components/Cards/Billing/StripeCard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Cards/Billing/TransactionCard.js" afterPath="$PROJECT_DIR$/src/Components/Cards/Billing/TransactionCard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/ProfileDash/ProfileHeader.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/ProfileDash/ProfileHeader.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Map/Map.js" afterPath="$PROJECT_DIR$/src/Components/Map/Map.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Map/MapContainer.js" afterPath="$PROJECT_DIR$/src/Components/Map/MapContainer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/RouterHome.js" afterPath="$PROJECT_DIR$/src/Components/RouterHome.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Helpers/constants.js" afterPath="$PROJECT_DIR$/src/Helpers/constants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/ContributionDash.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/ContributionDash.js" />
     </list>
     <ignored path="gifty-console-client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,8 +28,8 @@
       <file leaf-file-name="ContributionDash.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Components/Dashes/ContributionDash.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+            <state relative-caret-position="300">
+              <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -74,8 +64,8 @@
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="1036" column="51" lean-forward="false" selection-start-line="1036" selection-start-column="51" selection-end-line="1036" selection-end-column="51" />
+            <state relative-caret-position="262">
+              <caret line="1024" column="31" lean-forward="false" selection-start-line="1024" selection-start-column="25" selection-end-line="1024" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -94,7 +84,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>react-selec</find>
       <find>&lt;se</find>
       <find>this.navigate</find>
       <find>&lt;</find>
@@ -124,6 +113,7 @@
       <find>&amp;:first-chi</find>
       <find>first-child</find>
       <find>.card</find>
+      <find>constructor</find>
     </findStrings>
     <replaceStrings>
       <replace>0</replace>
@@ -532,12 +522,12 @@
       <workItem from="1527007272234" duration="602000" />
       <workItem from="1527013682601" duration="4527000" />
       <workItem from="1527135521186" duration="11304000" />
-      <workItem from="1527201965121" duration="4978000" />
+      <workItem from="1527201965121" duration="6335000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="458432000" />
+    <option name="totallyTimeSpent" value="459789000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -781,6 +771,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -854,6 +845,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
           <caret line="78" column="65" lean-forward="true" selection-start-line="78" selection-start-column="65" selection-end-line="78" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -885,6 +877,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -955,7 +948,7 @@
         <state relative-caret-position="407">
           <caret line="155" column="39" lean-forward="false" selection-start-line="155" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -978,14 +971,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="1036" column="51" lean-forward="false" selection-start-line="1036" selection-start-column="51" selection-end-line="1036" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Map/MapContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
@@ -996,10 +981,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="1024" column="31" lean-forward="false" selection-start-line="1024" selection-start-column="25" selection-end-line="1024" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Dashes/ContributionDash.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
