@@ -1007,6 +1007,11 @@ h1, h2, h3, h4, h5 {
     flex-direction: column;
     //background-color: white;
 
+    &:last-child {
+      min-height: auto;
+      padding-bottom: 30vh;
+    }
+
     @media screen and (max-width: 800px) {
       width: 95%;
     }
