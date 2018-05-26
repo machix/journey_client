@@ -63,19 +63,19 @@ class ContributionDash extends Component {
     selected = (number) => {
         console.log(number);
         switch (number) {
-            case 5:
-                this.props.setContributionValue(5);
+            case 500:
+                this.props.setContributionValue(500);
                 break;
-            case 10:
-                this.props.setContributionValue(10);
+            case 1000:
+                this.props.setContributionValue(1000);
 
                 break;
-            case 15:
-                this.props.setContributionValue(15);
+            case 1500:
+                this.props.setContributionValue(1500);
 
                 break;
-            case 50:
-                this.props.setContributionValue(50);
+            case 5000:
+                this.props.setContributionValue(5000);
 
                 break;
         }
@@ -83,15 +83,15 @@ class ContributionDash extends Component {
 
     renderSelected() {
         switch (this.props.contributionValue) {
-            case 5:
+            case 500:
                 return <div key={'1'} className={'slideInVertical'}>Rations Small: $5</div>;
                 break;
-            case 10:
+            case 1000:
                 return <div key={'2'} className={'slideInVertical'}>Rations Medium: $10</div>;
 
-            case 15:
+            case 1500:
                 return <div key={'3'} className={'slideInVertical'}>Rations Large: $15</div>;
-            case 50:
+            case 5000:
                 return <div key={'4'} className={'slideInVertical'}>A fucking pickaxe: $50</div>;
             default:
                 return <div key={'5'} className={'slideInVertical'}>Please select a Contribution first!</div>;
@@ -146,31 +146,31 @@ class ContributionDash extends Component {
                                         description={"We're currently eating beans and canned food for our mainstay. \n \n" +
                                         "An event will be triggered when we use this."}
                                         selected={this.props.contributionValue}
-                                        match={5}
+                                        match={500}
                                         selectedColor={'#c693f0'}
-                                        onClick={() => this.selected(5)}/>
+                                        onClick={() => this.selected(500)}/>
 
                     <ContributionButton title={'  Rations Medium: $10'}
                                         description={"We're currently eating beans and canned food for our mainstay. \n \n" +
                                         "An event will be triggered when we use this."}
                                         selected={this.props.contributionValue}
-                                        match={10}
+                                        match={1000}
                                         selectedColor={'#899cf0'}
-                                        onClick={() => this.selected(10)}/>
+                                        onClick={() => this.selected(1000)}/>
 
                     <ContributionButton title={'  Rations Small: $15'}
                                         description={"We're currently eating beans and canned food for our mainstay. \n \n" +
                                         "An event will be triggered when we use this."}
                                         selected={this.props.contributionValue}
-                                        match={15}
+                                        match={1500}
                                         selectedColor={'#f08159'}
-                                        onClick={() => this.selected(15)}/>
+                                        onClick={() => this.selected(1500)}/>
                     <ContributionButton title={'                        Pickaxe: $50\n'}
                                         description={'Pickaxes are great.'}
                                         selected={this.props.contributionValue}
-                                        match={50}
+                                        match={5000}
                                         selectedColor={'#47c767'}
-                                        onClick={() => this.selected(50)}/>
+                                        onClick={() => this.selected(5000)}/>
 
                     <div className={'billing-container'}>
                         <div className=" no-select" style={{paddingBottom: '5px'}}>

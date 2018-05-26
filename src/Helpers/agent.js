@@ -183,23 +183,20 @@ const common = {
         },
         stripePurchase: (token, value) => {
             console.log('Stripe Purchase');
-            console.log(token);
+            console.log(token.id);
             console.log(value);
+            console.log(JSON.stringify(token));
             fetch('https://us-central1-journeyapp91.cloudfunctions.net/stripePurchase', {
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify(token),
                 method: 'POST', // *GET, POST, PUT, DELETE, etc.
-
-            }).then(response => {
-                console.log(response);
-                Promise.all([response, response.json()])
-            }).then(([response, json]) => {
-                console.log(response);
-                if (response.status === 200) {
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({"token": token.id, "value": value}),
+            }).then(response => response.json()
+            ).then((response) => {
+                if (response.status === "succeeded") {
                     console.log('win');
                 }
                 else {
-                    console.log('oh no ' + response.status);
+                    console.log('oh no ' + response.error);
                 }
             });
         }
@@ -293,7 +290,6 @@ const FireStoreQuery = {
 
     }
 };
-
 
 const FirebaseQuery = {
     liveJourney: (journey_id) => {

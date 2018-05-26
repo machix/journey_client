@@ -707,7 +707,7 @@ h1, h2, h3, h4, h5 {
           height: auto; } }
   .contribution-container .card {
     width: 50%;
-    min-height: 90vh;
+    min-height: 100vh;
     margin: 15px 15px 0 15px;
     display: flex;
     justify-content: center;
