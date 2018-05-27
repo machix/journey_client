@@ -1,3 +1,3 @@
-const MARKER_COLORS = ['#c5eefa', '#dcebfc', '#d1eeeb', '#cdf5d4', '#d9f5cb', '#eff1e0', '#efe1da', '#fcdede', '#fae1ca', '#faf4cf', '#dfdffa', '#fadff4', '#ede2f5', '#eee9e8'];
+const MARKER_COLORS = ['#c693f0', '#899cf0', '#f08159', '#47c767', '#f4beaf', '#f481ad', '#f4dc63'];
 
 export {MARKER_COLORS,};

@@ -937,10 +937,131 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+//==================MAPVIEW DASH====================>
+.mapview-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+
+  .mapview-sidebar {
+    width: 30%;
+    height: 100%;
+    position: relative;
+
+
+    .title {
+      font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
+      text-transform: uppercase;
+    }
+
+    .statistics {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+
+      .stats-title {
+        font-weight: bold;
+        display: block;
+      }
+
+      .stats-container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+        .stat {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          max-width: 100px;
+          padding-top: 10px;
+
+          .stat-top {
+            font-size: 1rem;
+            font-weight: bold;
+
+          }
+          .stat-bottom {
+            text-align: center;
+            font-size: 0.7rem;
+            @media screen and (max-width: 800px) {
+              font-size: 0.6rem;
+            }
+          }
+        }
+      }
+    }
+
+  }
+  .map-container {
+    width: 70%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+
+    .check-in {
+      background-color: #EB5D57;
+      color: white;
+      cursor: pointer;
+      position: absolute;
+      word-wrap: none;
+      left: 0;
+      z-index: 21;
+      padding: 20px 10px;
+      box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.5);
+
+      div {
+        writing-mode: tb-rl;
+
+      }
+    }
+
+
+    .mapview-contribution-container {
+      display: flex;
+      position: absolute;
+      bottom: 30px;
+      width: 80%;
+      justify-content: space-around;
+
+      z-index: 20;
+
+      .pill {
+        border-radius: 50px;
+        cursor: pointer;
+        font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
+        padding: 10px 25px;
+        box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.5);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
+        overflow: hidden;
+        align-self: center;
+      }
+
+    }
+
+  }
+}
+
 //==================CONTRIBUTION DASH===============>
 .contribution-container {
   background-image: linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%);
   font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
 
   display: flex;
   flex-direction: column;
@@ -953,8 +1074,6 @@ h1, h2, h3, h4, h5 {
   text-align: center;
   color: white;
   font-size: 1.2rem;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
-
 
   h1, h2 {
 
@@ -1015,7 +1134,7 @@ h1, h2, h3, h4, h5 {
     .billing-container {
       padding-top: 80px;
 
-      .CardField-number::placeholder{
+      .CardField-number::placeholder {
         color: white !important;
       }
     }
@@ -1053,9 +1172,8 @@ h1, h2, h3, h4, h5 {
       font-weight: bold;
       min-width: 60%;
       transition: background-color 0.2s ease-in-out;
-      background-color: rgba(0,0,0,0.05);
+      background-color: rgba(0, 0, 0, 0.05);
       text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
-
 
       &:not(first-child) {
         margin-top: 20px;

@@ -12,6 +12,7 @@ import JourneyDash from './Dashes/JourneyDash';
 import About from './Dashes/About';
 import Profile from './Dashes/ProfileDash/ProfileDash';
 import ContributionDash from './Dashes/ContributionDash';
+import MapView from './Dashes/MapView';
 
 
 
@@ -128,6 +129,7 @@ class RouterHome extends Component {
                         <Route path={'/journey/:journey_id'} component={JourneyDash} authed={this.props.isAuthed}/>
                         <Route path={'/about/'} component={About} />
                         <Route path={'/profile/:journey_id'} component={Profile} />
+                        <Route path={'/mapView'} component={MapView} />
                         <Route path={'/contribute'} component={ContributionDash} />
 
 

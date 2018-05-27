@@ -660,9 +660,97 @@ h1, h2, h3, h4, h5 {
             .container .journey-container .map-container .image-container .marker-image-pin .icon .image-pin-icon {
               color: white; }
 
+.mapview-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row; }
+  .mapview-container .mapview-sidebar {
+    width: 30%;
+    height: 100%;
+    position: relative; }
+    .mapview-container .mapview-sidebar .title {
+      font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
+      text-transform: uppercase; }
+    .mapview-container .mapview-sidebar .statistics {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px; }
+      .mapview-container .mapview-sidebar .statistics .stats-title {
+        font-weight: bold;
+        display: block; }
+      .mapview-container .mapview-sidebar .statistics .stats-container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around; }
+        .mapview-container .mapview-sidebar .statistics .stats-container .stat {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          max-width: 100px;
+          padding-top: 10px; }
+          .mapview-container .mapview-sidebar .statistics .stats-container .stat .stat-top {
+            font-size: 1rem;
+            font-weight: bold; }
+          .mapview-container .mapview-sidebar .statistics .stats-container .stat .stat-bottom {
+            text-align: center;
+            font-size: 0.7rem; }
+            @media screen and (max-width: 800px) {
+              .mapview-container .mapview-sidebar .statistics .stats-container .stat .stat-bottom {
+                font-size: 0.6rem; } }
+  .mapview-container .map-container {
+    width: 70%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .mapview-container .map-container .check-in {
+      background-color: #EB5D57;
+      color: white;
+      cursor: pointer;
+      position: absolute;
+      word-wrap: none;
+      left: 0;
+      z-index: 21;
+      padding: 20px 10px;
+      box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.5); }
+      .mapview-container .map-container .check-in div {
+        writing-mode: tb-rl; }
+    .mapview-container .map-container .mapview-contribution-container {
+      display: flex;
+      position: absolute;
+      bottom: 30px;
+      width: 80%;
+      justify-content: space-around;
+      z-index: 20; }
+      .mapview-container .map-container .mapview-contribution-container .pill {
+        border-radius: 50px;
+        cursor: pointer;
+        font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
+        padding: 10px 25px;
+        box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.5);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
+        overflow: hidden;
+        align-self: center; }
+
 .contribution-container {
   background-image: linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%);
   font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -672,8 +760,7 @@ h1, h2, h3, h4, h5 {
   justify-content: center;
   text-align: center;
   color: white;
-  font-size: 1.2rem;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075); }
+  font-size: 1.2rem; }
   .contribution-container h1, .contribution-container h2 {
     font-weight: 900;
     padding-bottom: 5px;
