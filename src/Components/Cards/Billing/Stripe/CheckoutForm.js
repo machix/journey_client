@@ -99,11 +99,12 @@ class CheckoutForm extends React.Component {
                                  style={{
 
                                      base: {
-                                         fontSize: '18px', color: 'white',
-                                         iconColor: 'white',
+                                         fontSize: '18px', color: this.props.color,
+                                         iconColor: this.props.color,
                                          '::placeholder': {
-                                             color: 'white',
+                                             color: this.props.color,
                                          },
+                                         textShadow: '0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075)'
                                      },
 
                                      paddingRight: '10px'

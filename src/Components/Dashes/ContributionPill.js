@@ -49,6 +49,7 @@ class Statistics extends Component {
             <div className={'pill hvr-grow'}
                  onMouseEnter={this.hoverOn}
                  onMouseLeave={this.hoverOff}
+                 onClick={()=>this.props.onClick()}
                  style={{backgroundColor: this.state.backgroundColor}}>
                 {this.state.isHover ? <div className={'slideInVertical'} >Contribute</div> : this.props.string}
 

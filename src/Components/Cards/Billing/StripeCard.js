@@ -4,12 +4,10 @@ import StripeWrapper from './Stripe/StripeWrapper';
 import PageFade from '../../../Helpers/PageFade'
 
 const StripeCard = (props) => {
-    return <section className="list">
 
 
-        <StripeWrapper></StripeWrapper>
+    return <StripeWrapper color={props.color}></StripeWrapper>
 
-    </section>
 
 };
 export default StripeCard;

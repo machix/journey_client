@@ -67,7 +67,7 @@ class Header extends Component {
                     <nav className={'no-select'
                     }>
                         <li onClick={() => this.navigate('/')}>Home</li>
-                        <li onClick={() => this.navigate('/about')}>About</li>
+                        <li onClick={() => this.navigate('/mapview')}>Map</li>
                         <li onClick={() => this.navigate('/profile/test_journey')}>The Trip</li>
 
                     </nav>

@@ -27,8 +27,27 @@ class MapView extends Component {
         super(props);
 
         this.state = {
-            selected: 1
+            selected: 1,
+            contributionVisible: false,
+            value: 0
         }
+    }
+
+    contributionToggle(value) {
+        if(this.state.contributionVisible === true) {
+            this.setState({
+                ...this.state,
+                contributionVisible: !this.state.contributionVisible,
+                value: 0
+            })
+        } else {
+            this.setState({
+                ...this.state,
+                contributionVisible: !this.state.contributionVisible,
+                value: value
+            })
+        }
+
     }
 
     render() {
@@ -45,6 +64,20 @@ class MapView extends Component {
 
                 </div>
                 <div className={'map-container'}>
+                    {this.state.contributionVisible === true ? <div className={'billing-modal slideInVertical'}>
+                            <div className={'medkit-container'}>
+                                <img src={medkit} style={{height: '50px'}}/>
+                            </div>
+                            <h2>
+                                Oh, a contribution!
+                            </h2>
+                            Contributions are mainly an exploration of fun ways to interact with someone live.
+                            <div className={'stripe-container'}>
+                                <StripeCard color={'white'}></StripeCard>
+                            </div>
+                        </div>
+                        : null}
+
 
                     <div className={'check-in'}>
                         <div>
@@ -54,14 +87,14 @@ class MapView extends Component {
                     <div className={'mapview-contribution-container'}>
 
 
-                        <ContributionPill string={' Meal: $5'}/>
+                        <ContributionPill string={' Meal: $5'} onClick={()=>this.contributionToggle(500)}/>
 
-                        <ContributionPill string={' Meal: $10'}/>
+                        <ContributionPill string={' Meal: $10'} onClick={()=>this.contributionToggle(1000)}/>
 
-                        <ContributionPill string={' Meal: $15'}/>
+                        <ContributionPill string={' Meal: $15'} onClick={()=>this.contributionToggle(1500)}/>
 
 
-                        <ContributionPill string={' Pickaxe: $50'}/>
+                        <ContributionPill string={' Pickaxe: $50'} onClick={()=>this.contributionToggle(5000)}/>
                     </div>
                     <MapContainer
                         coordinates={{lat: 28.003514, lng: 86.852070}}

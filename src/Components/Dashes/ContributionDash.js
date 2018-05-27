@@ -180,7 +180,7 @@ class ContributionDash extends Component {
                             <br/>
                             <br/>
                         </div>
-                        <StripeCard></StripeCard>
+                        <StripeCard color={'white'}></StripeCard>
                     </div>
 
 

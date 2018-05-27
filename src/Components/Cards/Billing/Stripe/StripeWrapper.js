@@ -3,12 +3,16 @@ import {StripeProvider} from 'react-stripe-elements';
 import MyStoreCheckout from './MyStoreCheckout';
 
 class StripeWrapper extends React.Component {
+    constructor(props) {
+        super(props);
+        console.log(props);
+    }
 
     render() {
         return (
             /*Test API Key*/
             <StripeProvider apiKey="pk_test_vCZDlNlODYMEdX159yzNdRcp">
-                <MyStoreCheckout />
+                <MyStoreCheckout color={this.props.color}/>
             </StripeProvider>
         );
     }
