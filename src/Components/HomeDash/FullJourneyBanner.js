@@ -88,8 +88,7 @@ class FullJourneyBanner extends Component {
 
                     </div>
                     <div className={'map-container'}>
-                        <MapContainer>
-                        </MapContainer>
+
                     </div>
                 </div>
                 <div className={'banner-footer'}>

@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8eb92d85-80e0-4af9-8dc4-e20ffe8708d5" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Components/Cards/StatsPreview.js" afterPath="$PROJECT_DIR$/src/Components/Cards/AltitudePreview.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/MapView.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/MapView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/ProfileDash/statistics.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/ProfileDash/statistics.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Map/Map.js" afterPath="$PROJECT_DIR$/src/Components/Map/Map.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Map/MapContainer.js" afterPath="$PROJECT_DIR$/src/Components/Map/MapContainer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reducers/common.js" afterPath="$PROJECT_DIR$/src/Reducers/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Cards/AltitudePreview.js" afterPath="$PROJECT_DIR$/src/Components/Cards/AltitudePreview.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/HomeDash/FullJourneyBanner.js" afterPath="$PROJECT_DIR$/src/Components/HomeDash/FullJourneyBanner.js" />
     </list>
     <ignored path="gifty-console-client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,97 +26,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MapView.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Dashes/MapView.js">
+      <file leaf-file-name="HomeDash.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/Dashes/HomeDash.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="147" column="37" lean-forward="true" selection-start-line="147" selection-start-column="37" selection-end-line="147" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Map.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Components/Map/Map.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AltitudePreview.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Cards/AltitudePreview.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="35" column="25" lean-forward="false" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="customizedAxisTick.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Helpers/customizedAxisTick.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="34" lean-forward="true" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+            <state relative-caret-position="141">
+              <caret line="115" column="33" lean-forward="false" selection-start-line="115" selection-start-column="33" selection-end-line="115" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GetStarted.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Common/GetStarted.js">
+      <file leaf-file-name="FullJourneyBanner.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Components/HomeDash/FullJourneyBanner.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="62" column="39" lean-forward="true" selection-start-line="56" selection-start-column="32" selection-end-line="62" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JourneyDash.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Dashes/JourneyDash.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="274" column="29" lean-forward="true" selection-start-line="274" selection-start-column="29" selection-end-line="274" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/style.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="1021" column="23" lean-forward="true" selection-start-line="1021" selection-start-column="23" selection-end-line="1021" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="agent.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Helpers/agent.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="316" column="45" lean-forward="true" selection-start-line="316" selection-start-column="45" selection-end-line="316" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="choreographer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Reducers/choreographer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+            <state relative-caret-position="307">
+              <caret line="90" column="19" lean-forward="false" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -141,8 +59,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>medkit</find>
-      <find>stripewrap</find>
       <find>fadeIn</find>
       <find>fadein</find>
       <find>@keyframes</find>
@@ -171,6 +87,8 @@
       <find>bottom</find>
       <find>map</find>
       <find>altitude</find>
+      <find>s</find>
+      <find>sldiein</find>
     </findStrings>
     <replaceStrings>
       <replace>255</replace>
@@ -241,7 +159,6 @@
         <option value="$PROJECT_DIR$/src/store.js" />
         <option value="$PROJECT_DIR$/src/Reducers/profile.js" />
         <option value="$PROJECT_DIR$/src/Components/Common/IntroWrapper.js" />
-        <option value="$PROJECT_DIR$/src/Components/HomeDash/FullJourneyBanner.js" />
         <option value="$PROJECT_DIR$/src/Components/Dashes/About.js" />
         <option value="$PROJECT_DIR$/src/Components/Dashes/ProfileDash.js" />
         <option value="$PROJECT_DIR$/src/Components/Dashes/ProfileDash/ListView.js" />
@@ -267,9 +184,10 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/Components/Dashes/ProfileDash/statistics.js" />
         <option value="$PROJECT_DIR$/src/Components/Map/Map.js" />
+        <option value="$PROJECT_DIR$/src/style.scss" />
         <option value="$PROJECT_DIR$/src/Components/Dashes/MapView.js" />
         <option value="$PROJECT_DIR$/src/Components/Cards/AltitudePreview.js" />
-        <option value="$PROJECT_DIR$/src/style.scss" />
+        <option value="$PROJECT_DIR$/src/Components/HomeDash/FullJourneyBanner.js" />
       </list>
     </option>
   </component>
@@ -593,12 +511,12 @@
       <workItem from="1527013682601" duration="4527000" />
       <workItem from="1527135521186" duration="11304000" />
       <workItem from="1527201965121" duration="15501000" />
-      <workItem from="1527376750445" duration="14487000" />
+      <workItem from="1527376750445" duration="14863000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="483442000" />
+    <option name="totallyTimeSpent" value="483818000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -674,13 +592,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/HomeDash.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="110" column="33" lean-forward="true" selection-start-line="110" selection-start-column="33" selection-end-line="110" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Reducers/dashState.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -776,14 +687,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/HomeDash/FullJourneyBanner.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="90" column="37" lean-forward="false" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Map/JourneyMapContainerSmall.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
@@ -856,14 +759,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="36" lean-forward="false" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/JourneyDash.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="274" column="29" lean-forward="true" selection-start-line="274" selection-start-column="29" selection-end-line="274" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -991,26 +886,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reducers/choreographer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Map/MapContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="43" column="44" lean-forward="true" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Common/GetStarted.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="62" column="39" lean-forward="true" selection-start-line="56" selection-start-column="32" selection-end-line="62" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -1047,10 +926,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/MapView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="112" column="49" lean-forward="true" selection-start-line="112" selection-start-column="49" selection-end-line="112" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Map/Map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Cards/AltitudePreview.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="41" column="43" lean-forward="false" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Helpers/customizedAxisTick.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="34" lean-forward="true" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Common/GetStarted.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="62" column="39" lean-forward="true" selection-start-line="56" selection-start-column="32" selection-end-line="62" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/JourneyDash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="274" column="29" lean-forward="true" selection-start-line="274" selection-start-column="29" selection-end-line="274" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -1063,33 +988,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/MapView.js">
+    <entry file="file://$PROJECT_DIR$/src/Reducers/choreographer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="147" column="37" lean-forward="true" selection-start-line="147" selection-start-column="37" selection-end-line="147" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="126">
+          <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Cards/AltitudePreview.js">
+    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/HomeDash.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="35" column="25" lean-forward="false" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="141">
+          <caret line="115" column="33" lean-forward="false" selection-start-line="115" selection-start-column="33" selection-end-line="115" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Map/Map.js">
+    <entry file="file://$PROJECT_DIR$/src/Components/HomeDash/FullJourneyBanner.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="307">
+          <caret line="90" column="19" lean-forward="false" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -39,7 +39,7 @@ class AltitudePreview extends Component {
 
 
                 />
-                <XAxis dataKey="name" tick={<CustomizedAxisTick/>}/>
+                <XAxis dataKey="coordinates" tick={<CustomizedAxisTick/>}/>
                 <YAxis domain={[1, 'dataMax']} interval={1}/>
                 <Tooltip/>
             </LineChart>
