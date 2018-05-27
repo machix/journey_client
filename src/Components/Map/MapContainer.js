@@ -41,21 +41,23 @@ class MapContainer extends Component {
 
     render() {
         return (
+            this.props.coordinates.length > 0 ? <Map isMarkerShown={true}
+                                                     coordinates={this.props.coordinates}
+                                                     overlayIcon={this.props.overlayIcon}
+                                                     googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIpabTnIbXsdIgI2Zo2zO6g3GGxUbYqw8&v=3.exp&libraries=geometry,drawing,places"
+                                                     loadingElement={<div style={{height: `100px`,}}/>}
+                                                     containerElement={
+                                                         <div className={'map-element'}
+                                                              style={{
+                                                                  minHeight: '100px',
+                                                                  minWidth: '100px',
+                                                                  height: '100%',
+                                                                  width: '100%',
+                                                              }}/>}
+                                                     mapElement={<div style={{height: `100%`, width: '100%'}}/>}/>
+                : null
 
-            <Map isMarkerShown={true}
-                 coordinates={this.props.coordinates}
-                 overlayIcon={this.props.overlayIcon}
-                 googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIpabTnIbXsdIgI2Zo2zO6g3GGxUbYqw8&v=3.exp&libraries=geometry,drawing,places"
-                 loadingElement={<div style={{height: `100px`,}}/>}
-                 containerElement={
-                     <div className={'map-element'}
-                          style={{
-                              minHeight: '100px',
-                              minWidth: '100px',
-                              height: '100%',
-                              width: '100%',
-                          }}/>}
-                 mapElement={<div style={{height: `100%`, width: '100%'}}/>}/>
+
 
         );
     }

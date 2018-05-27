@@ -96,7 +96,7 @@ class Statistics extends Component {
                             3 Contributors
                         </div>
                     </div>
-                    <div className={'stat hvr-grow'}>
+                    <div className={'stat hvr-grow'} onClick={()=>this.props.altitudeOnClick()}>
                         <div className={'stat-top'}>
 
                             <Icon className={'social-icon'} viewBox="0 0 40 40" size={25}>

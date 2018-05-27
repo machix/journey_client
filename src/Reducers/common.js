@@ -41,9 +41,10 @@ export default (state = defaultState, action) => {
                 ...state,
                 liveJourneyData: action.liveJourneyData
             };
-        case 'SET_CONTRIBUTION_VALUE':
+        case 'SET_CONTRIBUTION':
             return {
                 ...state,
+                contributionName: action.name,
                 contributionValue: action.value
             };
         case 'SET_CHAT_EXPANDED':
