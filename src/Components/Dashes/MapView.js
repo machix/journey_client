@@ -16,6 +16,8 @@ import StripeCard from '../Cards/Billing/StripeCard';
 import ContributionPill from './ContributionPill';
 import agent from '../../Helpers/agent';
 import AltitudePreview from '../Cards/AltitudePreview';
+import MediaDisplay from '../Cards/MediaDisplay';
+
 
 const mapStateToProps = state => ({
     altitudeVisible: state.mapview.altitudeVisible,
@@ -98,11 +100,9 @@ class MapView extends Component {
             <div className={'mapview-container'}>
                 <div className={'mapview-sidebar'}>
 
-                    <div className={'title'}>
-                        January 26, 2018
-                    </div>
+                   <MediaDisplay/>
 
-                    <Statistics displayMobile={false} altitudeOnClick={() => this.altitudeToggle()}/>
+                    <Statistics displayMobile={null} altitudeOnClick={() => this.altitudeToggle()}/>
                 </div>
                 <div className={'map-container'}>
                     {this.state.contributionVisible === true ? <div className={'billing-modal slideInVertical'}>

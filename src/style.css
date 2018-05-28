@@ -675,10 +675,18 @@ h1, h2, h3, h4, h5 {
   .mapview-container .mapview-sidebar {
     width: 30%;
     height: 100%;
-    position: relative; }
-    .mapview-container .mapview-sidebar .title {
-      font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
-      text-transform: uppercase; }
+    position: relative;
+    display: flex;
+    flex-direction: column; }
+    .mapview-container .mapview-sidebar .media-container {
+      display: flex;
+      flex: 1;
+      height: 100%;
+      justify-content: flex-end;
+      align-items: flex-end; }
+      .mapview-container .mapview-sidebar .media-container .media {
+        display: flex;
+        width: 100%; }
     .mapview-container .mapview-sidebar .statistics {
       position: absolute;
       bottom: 0;
@@ -1281,21 +1289,6 @@ h1, h2, h3, h4, h5 {
         margin: 0 5px 0 5px; }
       .sidebar-container .sidebar .footer .social-icon:hover {
         color: red; }
-
-.player-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%; }
-  @media screen and (max-width: 800px) {
-    .player-wrapper {
-      padding-top: 0; } }
-  .player-wrapper .react-player {
-    position: absolute;
-    top: 0;
-    left: 0; }
-    @media screen and (max-width: 800px) {
-      .player-wrapper .react-player {
-        position: relative; } }
 
 .info-panel {
   text-align: right;
