@@ -1,7 +1,8 @@
 import moment from 'moment';
 
 const defaultState = {
-    altitudeVisible: false,
+    altitudeVisible: true,
+    indexMap: {},
     currentIndex: 0,
     fitBounds: false
 

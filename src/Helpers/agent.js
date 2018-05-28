@@ -340,14 +340,18 @@ const FirebaseQuery = {
                     for (var i = 0; i <= sortable.length - 1; i++) {
                         if (i == 0) {
                             sortable[i].distance = 0;
+                            sortable[i].markerIndex = 0;
 
                         } else {
                             distance += calculateDistance(sortable[i - 1].coordinates.lat, sortable[i - 1].coordinates.lng, sortable[i].coordinates.lat, sortable[i].coordinates.lng,);
                             console.log(distance);
                             sortable[i].distance = Math.round(distance * 100) / 100;
+                            sortable[i].markerIndex = i;
+
                         }
-                    }
-                    ;
+                    };
+
+                    var altitudeArray = flattener(sortable, sortable[0].distance, sortable[sortable.length-1].distance);
 
 
                     //There are -1 altitudes in the altitudes which need to be averaged
@@ -383,6 +387,8 @@ const FirebaseQuery = {
                         journeyLength: sortable.length,
                         legDistance: Math.round(distance * 100) / 100,
                         legAltitudeChange: Math.round(altitude * 100) / 100,
+                        altitudeArray: altitudeArray[0],
+                        indexMap: altitudeArray[1]
                     })
                     ;
                 }

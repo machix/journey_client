@@ -125,8 +125,7 @@ class MapView extends Component {
                             <h2>
                                 Oh, a {this.props.contributionName} for ${this.props.contributionValue / 100}!
                             </h2>
-                            Contributions are a fun way to interact with someone on their Journey.<br/>
-                            <span style={{fontSize: '0.8rem', marginTop: '10px', fontWeight: 'normal'}}>Events are triggered as contributions are used.</span>
+                            Contributions are a fun way to interact with someone on their Journey. Events are triggered when they are created and used.<br/>
 
 
                             <div className={'stripe-container'}>
@@ -184,3 +183,4 @@ class MapView extends Component {
 
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MapView));
+//                            <span style={{fontSize: '0.8rem', marginTop: '10px', fontWeight: 'normal'}}>Events are triggered as contributions are used.</span>

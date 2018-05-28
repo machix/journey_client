@@ -7,6 +7,8 @@ const defaultState = {
     altitudeArray: [],
     beautifulUnsplash: null,
     chatExpanded: false,
+    indexMap: {},
+
     legDistance: 0,
     legAltitudeChange: 0,
     liveJourneyData: [],
@@ -41,12 +43,14 @@ export default (state = defaultState, action) => {
                 arrowKey: action.value
             };
         case 'LIVE_JOURNEY_DATA':
+            console.log(action.indexMap);
             return {
                 ...state,
                 liveJourneyData: action.liveJourneyData,
                 legDistance: action.legDistance,
                 legAltitudeChange: action.legAltitudeChange,
-                altitudeArray: action.altitudeArray
+                altitudeArray: action.altitudeArray,
+                indexMap: action.indexMap
             };
         case 'SET_CONTRIBUTION':
             return {

@@ -6,8 +6,12 @@ import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, ReferenceDo
 
 
 const mapStateToProps = state => ({
+    altitudeArray: state.common.altitudeArray,
+    indexMap: state.common.indexMap,
+
     liveJourneyData: state.common.liveJourneyData,
-    currentIndex: state.mapview.currentIndex
+    currentIndex: state.mapview.currentIndex,
+
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -25,40 +29,42 @@ class AltitudePreview extends Component {
     }
 
 
-    componentWillReceiveProps (nextProps) {
+    componentWillReceiveProps(nextProps) {
         console.log(nextProps);
     }
 
     render() {
         return <div style={{width: '100%'}}>
-            {this.props.liveJourneyData[this.props.currentIndex].distance}
-            {this.props.liveJourneyData[this.props.currentIndex].altitude}<ResponsiveContainer width="100%" height={300}>
-            <LineChart margin={{top: 20, right: 50, left: 0, bottom: 0}}
-                       onClick={(data, index) => {
-                           if(data === null) {
+            <ResponsiveContainer width="100%" height={300}>
+                <LineChart margin={{top: 20, right: 50, left: 0, bottom: 0}}
+                           onClick={(data, index) => {
+                               if (data === null || data.activePayload[0].payload.altitude == null) {
 
-                           } else {
-                               this.props.setCurrentIndex(data.activeTooltipIndex);
-                           }
+                               } else {
+                                   console.log(data);
+                                   this.props.setCurrentIndex(data.activePayload[0].payload.markerIndex);
+                               }
 
-                       }}
-                       data={this.props.liveJourneyData}>
-                <Line type='monotone' dataKey='altitude' stroke='#8884d8' strokeWidth={2}
-                />
-                {this.props.liveJourneyData.length > 0 ?
-                    <ReferenceDot
-                                  x={this.props.currentIndex}
-                                  y={this.props.liveJourneyData[this.props.currentIndex].altitude}
-                                  r={7}
-                                  alwaysShow={true}
-                                  isFront={true}
-                                  fill="#8686D2" stroke="none"/>
-                    : null}
-                <XAxis label={{ value: "Distance (km)", position: 'insideBottom', offset: -20 }} dataKey="distance" tick={<CustomizedAxisTick/>}/>
-                <YAxis label={{ value: "Altitude (m)", angle: -90, position: 'insideLeft'}}  domain={['auto', 'auto']} interval={1}/>
-                <Tooltip/>
-            </LineChart>
-        </ResponsiveContainer>
+                           }}
+                           data={this.props.altitudeArray}>
+                    <Line type='curveLinear' dataKey='altitude' stroke='#8884d8' connectNulls={true} strokeWidth={2}
+                    />
+                    {this.props.altitudeArray.length > 0 ?
+                        <ReferenceDot
+                            x={this.props.altitudeArray[this.props.indexMap[this.props.currentIndex]].distance}
+                            y={this.props.altitudeArray[this.props.indexMap[this.props.currentIndex]].altitude}
+                            r={7}
+                            alwaysShow={true}
+                            isFront={true}
+                            fill="#8686D2" stroke="none"/>
+                        : null}
+                    <XAxis label={{value: "Distance (km)", position: 'insideBottom', offset: -20}} minTickGap={80}
+                           dataKey="distance" tick={<CustomizedAxisTick/>}/>
+                    <YAxis label={{value: "Altitude (m)", angle: -90, position: 'insideLeft'}} domain={['auto', 'auto']}
+                           interval={1}/>
+                    <Tooltip/>
+                </LineChart>
+            </ResponsiveContainer>
         </div>
             ;
     }

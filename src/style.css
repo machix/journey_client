@@ -758,7 +758,7 @@ h1, h2, h3, h4, h5 {
       align-items: center;
       justify-content: center;
       font-weight: bold;
-      font-size: 1rem;
+      font-size: 0.9rem;
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
       text-align: center; }
       .mapview-container .map-container .billing-modal .medkit-container {
@@ -775,6 +775,20 @@ h1, h2, h3, h4, h5 {
       .mapview-container .map-container .billing-modal .stripe-container {
         width: 100%;
         margin-top: 40px; }
+        .mapview-container .map-container .billing-modal .stripe-container input {
+          background-color: transparent;
+          border: none;
+          color: inherit;
+          text-shadow: inherit;
+          font-size: 1.2rem;
+          margin-bottom: 20px;
+          text-align: center;
+          border-bottom: solid white 1px; }
+          .mapview-container .map-container .billing-modal .stripe-container input::placeholder {
+            color: inherit;
+            text-shadow: inherit;
+            font-size: 1.2rem;
+            text-align: center; }
     .mapview-container .map-container .check-in {
       background-color: #EB5D57;
       color: white;
