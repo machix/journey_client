@@ -363,7 +363,6 @@ const FirebaseQuery = {
                                 object.altitude = sortable[index - 1].altitude;
                             } else {
                                 object.altitude = Math.round((sortable[index - 1].altitude + sortable[index + 1].altitude) / 2*100)/100
-
                             }
                         } else {
                         }
@@ -371,11 +370,9 @@ const FirebaseQuery = {
 
                     //Calculate the altitude change in meters
                     let altitude = 0;
-                    for (var i = 1; i < sortable.length - 1; i++) {
-                        console.log(i);
-                        console.log(Math.abs(sortable[i].altitude - sortable[i - 1].altitude));
+                    for (var i = 1; i <= sortable.length - 1; i++) {
+
                         altitude += Math.abs(sortable[i].altitude - sortable[i - 1].altitude);
-                        console.log(altitude);
                     };
 
 
