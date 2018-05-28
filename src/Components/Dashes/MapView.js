@@ -138,6 +138,9 @@ class MapView extends Component {
 
 
                     {this.props.altitudeVisible === true ? <div className={'altitude-container slideInVerticalMedium'}>
+                        <div className={'altitude-title'}>
+                            <h1>Elevation Change</h1>
+                        </div>
                         <Icon viewBox="0 0 40 40" style={{
                             color: 'black',
                             position: 'absolute',

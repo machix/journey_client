@@ -723,14 +723,26 @@ h1, h2, h3, h4, h5 {
     justify-content: center;
     align-items: center; }
     .mapview-container .map-container .altitude-container {
-      padding: 50px 40px 60px 40px;
+      align-text: center;
+      padding: 40px 40px 60px 40px;
       bottom: 0;
-      overflow: hidden;
       position: absolute;
       z-index: 25;
       width: 95%;
       background-color: rgba(255, 255, 255, 0.93);
       border-radius: 10px; }
+      .mapview-container .map-container .altitude-container .altitude-title {
+        position: absolute;
+        font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
+        color: black;
+        width: 100%;
+        text-align: center;
+        margin-left: -40px;
+        text-transform: uppercase;
+        top: -2.8rem;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
+        font-weight: 700;
+        font-size: 1.7rem; }
     .mapview-container .map-container .billing-modal {
       position: absolute;
       z-index: 25;
