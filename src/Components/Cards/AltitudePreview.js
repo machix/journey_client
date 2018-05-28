@@ -24,40 +24,30 @@ class AltitudePreview extends Component {
         super(props);
     }
 
-    componentWillMount() {
-        console.log(this.props.liveJourneyData);
-    }
-    componentDidMount() {
-        console.log(this.props.liveJourneyData);
-    }
 
     componentWillReceiveProps (nextProps) {
         console.log(nextProps);
     }
 
     render() {
-        return <ResponsiveContainer width="100%" height={300}>
+        return <div style={{width: '100%'}}>
+            {this.props.liveJourneyData[this.props.currentIndex].distance}
+            {this.props.liveJourneyData[this.props.currentIndex].altitude}<ResponsiveContainer width="100%" height={300}>
             <LineChart margin={{top: 20, right: 50, left: 0, bottom: 0}}
                        onClick={(data, index) => {
                            if(data === null) {
 
                            } else {
-                               console.log('click');
-                               console.log(data);
-                               console.log(index);
                                this.props.setCurrentIndex(data.activeTooltipIndex);
                            }
 
-                       }}
-                       onMouseEnter={line => {
-                           console.log(line);
                        }}
                        data={this.props.liveJourneyData}>
                 <Line type='monotone' dataKey='altitude' stroke='#8884d8' strokeWidth={2}
                 />
                 {this.props.liveJourneyData.length > 0 ?
                     <ReferenceDot
-                                  x={this.props.liveJourneyData[this.props.currentIndex].timestamp}
+                                  x={this.props.currentIndex}
                                   y={this.props.liveJourneyData[this.props.currentIndex].altitude}
                                   r={7}
                                   alwaysShow={true}
@@ -69,7 +59,7 @@ class AltitudePreview extends Component {
                 <Tooltip/>
             </LineChart>
         </ResponsiveContainer>
-
+        </div>
             ;
     }
 }

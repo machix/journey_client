@@ -350,7 +350,7 @@ const FirebaseQuery = {
                     ;
 
 
-                    //There are -1 altitudes in the altitudes which need to be removed.
+                    //There are -1 altitudes in the altitudes which need to be averaged
                     sortable.forEach((object, index) => {
                         if (object.altitude == -1) {
                             if (index == 0) {
@@ -358,14 +358,12 @@ const FirebaseQuery = {
                             } else if (index === object.length - 1) {
                                 object.altitude = sortable[index - 1].altitude;
                             } else {
-                                object.altitude = (sortable[index - 1].altitude + sortable[index + 1].altitude) / 2
+                                object.altitude = Math.round((sortable[index - 1].altitude + sortable[index + 1].altitude) / 2*100)/100
 
                             }
                         } else {
                         }
                     });
-                    console.log(sortable);
-
 
                     //Calculate the altitude change in meters
                     let altitude = 0;
@@ -374,10 +372,7 @@ const FirebaseQuery = {
                         console.log(Math.abs(sortable[i].altitude - sortable[i - 1].altitude));
                         altitude += Math.abs(sortable[i].altitude - sortable[i - 1].altitude);
                         console.log(altitude);
-                    }
-                    ;
-
-                    console.log(altitude);
+                    };
 
 
                     // console.log(sortable);
