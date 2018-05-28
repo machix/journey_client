@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {withScriptjs, withGoogleMap, GoogleMap, Marker, OverlayView} from "react-google-maps"
+
+
 import {Polyline} from "react-google-maps";
 import Icon from 'react-icon-base';
 import {withRouter} from 'react-router-dom';
@@ -9,6 +11,7 @@ import mealSmall from '../Assets/meal-small.svg'
 import mealMedium from '../Assets/meal-medium.svg'
 import mealLarge from '../Assets/meal-large.svg'
 import pickaxe from '../Assets/pickaxe.svg'
+const {MarkerClusterer} = require("react-google-maps/lib/components/addons/MarkerClusterer");
 
 
 const mapStateToProps = state => ({
@@ -132,7 +135,7 @@ class Map extends Component {
         var proj = this.overlayView.getProjection();
         console.log(proj);
         console.log(latlng);
-        var curPosition = new window.google.maps.LatLng(latlng.lat,latlng.lng);
+        var curPosition = new window.google.maps.LatLng(latlng.lat, latlng.lng);
 
 
         var aPoint = proj.fromLatLngToContainerPixel(curPosition);
@@ -153,8 +156,15 @@ class Map extends Component {
                 center={this.props.coordinates[0].coordinates}
                 ref={c => this.map = c}
             >
+                <MarkerClusterer
+                    averageCenter
+                    enableRetinaIcons
+                    gridSize={10}
+                    minimumClusterSize={3}
 
-                {this.markerMapper()}
+                >
+                    {this.markerMapper()}
+                </MarkerClusterer>
 
                 <OverlayView
                     mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}

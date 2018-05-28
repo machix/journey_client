@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8eb92d85-80e0-4af9-8dc4-e20ffe8708d5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Reducers/mapview.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Cards/AltitudePreview.js" afterPath="$PROJECT_DIR$/src/Components/Cards/AltitudePreview.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/MapView.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/MapView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/ProfileDash/statistics.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/ProfileDash/statistics.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Map/Map.js" afterPath="$PROJECT_DIR$/src/Components/Map/Map.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Helpers/agent.js" afterPath="$PROJECT_DIR$/src/Helpers/agent.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Helpers/customizedAxisTick.js" afterPath="$PROJECT_DIR$/src/Helpers/customizedAxisTick.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reducers/common.js" afterPath="$PROJECT_DIR$/src/Reducers/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/store.js" afterPath="$PROJECT_DIR$/src/store.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
     </list>
     <ignored path="gifty-console-client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Map.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Map.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Components/Map/Map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="163" column="25" lean-forward="true" selection-start-line="163" selection-start-column="25" selection-end-line="163" selection-end-column="25" />
+            <state relative-caret-position="185">
+              <caret line="161" column="32" lean-forward="false" selection-start-line="161" selection-start-column="32" selection-end-line="161" selection-end-column="32" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -87,10 +77,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AltitudePreview.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AltitudePreview.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/Cards/AltitudePreview.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
+            <state relative-caret-position="1005">
               <caret line="67" column="115" lean-forward="false" selection-start-line="67" selection-start-column="115" selection-end-line="67" selection-end-column="115" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -134,8 +124,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>altitude</find>
-      <find>s</find>
       <find>sldiein</find>
       <find>&lt;Mark</find>
       <find>mapbi</find>
@@ -155,7 +143,6 @@
       <find>yaxis</find>
       <find>Helpers</find>
       <find>altitude-c</find>
-      <find>black</find>
       <find>chart</find>
       <find>line-chart</find>
       <find>altitudeVisible</find>
@@ -164,6 +151,9 @@
       <find>pantowithoffset</find>
       <find>currentIndex</find>
       <find>ref</find>
+      <find>black</find>
+      <find>markerMapper</find>
+      <find>markercluster</find>
     </findStrings>
     <replaceStrings>
       <replace>LIVE_JOURNEY_DATA</replace>
@@ -261,8 +251,8 @@
         <option value="$PROJECT_DIR$/src/style.scss" />
         <option value="$PROJECT_DIR$/src/Reducers/mapview.js" />
         <option value="$PROJECT_DIR$/src/Components/Dashes/MapView.js" />
-        <option value="$PROJECT_DIR$/src/Components/Map/Map.js" />
         <option value="$PROJECT_DIR$/src/Components/Cards/AltitudePreview.js" />
+        <option value="$PROJECT_DIR$/src/Components/Map/Map.js" />
       </list>
     </option>
   </component>
@@ -593,12 +583,12 @@
       <workItem from="1527013682601" duration="4527000" />
       <workItem from="1527135521186" duration="11304000" />
       <workItem from="1527201965121" duration="15501000" />
-      <workItem from="1527376750445" duration="25450000" />
+      <workItem from="1527376750445" duration="26128000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="494405000" />
+    <option name="totallyTimeSpent" value="495083000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1081,20 +1071,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Map/Map.js">
+    <entry file="file://$PROJECT_DIR$/src/Components/Cards/AltitudePreview.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="163" column="25" lean-forward="true" selection-start-line="163" selection-start-column="25" selection-end-line="163" selection-end-column="25" />
+        <state relative-caret-position="1005">
+          <caret line="67" column="115" lean-forward="false" selection-start-line="67" selection-start-column="115" selection-end-line="67" selection-end-column="115" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Cards/AltitudePreview.js">
+    <entry file="file://$PROJECT_DIR$/src/Components/Map/Map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="67" column="115" lean-forward="false" selection-start-line="67" selection-start-column="115" selection-end-line="67" selection-end-column="115" />
+        <state relative-caret-position="185">
+          <caret line="161" column="32" lean-forward="false" selection-start-line="161" selection-start-column="32" selection-end-line="161" selection-end-column="32" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
