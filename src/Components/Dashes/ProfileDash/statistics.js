@@ -27,7 +27,12 @@ const mapDispatchToProps = dispatch => ({
     fetchLiveJourney: (journey_uid) => dispatch(agent.FirebaseQuery.liveJourney(journey_uid)),
     fetchJourneyMeta: (journey_uid) => dispatch(agent.FireStoreQuery.fetchJourneyMeta(journey_uid)),
 
-    fetchJourneyThumbs: (journey_uid) => dispatch(agent.common.getMultipleUnsplash(journey_uid))
+    fetchJourneyThumbs: (journey_uid) => dispatch(agent.common.getMultipleUnsplash(journey_uid)),
+
+    setFitBounds: () => dispatch({
+        type: 'SET_FIT_BOUNDS',
+        value: true
+    }),
 
 
 });
@@ -47,6 +52,8 @@ class Statistics extends Component {
     constructor(props) {
         super(props);
     }
+
+
 
 
     render() {
@@ -72,7 +79,7 @@ class Statistics extends Component {
                             3 days
                         </div>
                     </div>
-                    <div className={'stat hvr-grow'}>
+                    <div className={'stat hvr-grow'} onClick={()=>this.props.setFitBounds()}>
                         <div className={'stat-top'}>
                             <Icon className={'social-icon'} viewBox="0 0 40 40" size={25}>
                                 <g>

@@ -16,6 +16,7 @@ const {MarkerClusterer} = require("react-google-maps/lib/components/addons/Marke
 
 const mapStateToProps = state => ({
     altitudeVisible: state.mapview.altitudeVisible,
+    fitBounds: state.mapview.fitBounds,
 
     liveJourneyData: state.common.liveJourneyData,
     currentIndex: state.mapview.currentIndex
@@ -26,6 +27,7 @@ const mapDispatchToProps = dispatch => ({
         type: 'SET_CURRENT_INDEX',
         value: index
     }),
+
 });
 
 const getPixelPositionOffset = (width, height) => ({
@@ -91,7 +93,6 @@ class Map extends Component {
 
 
     componentWillReceiveProps(nextProps) {
-
         //This is for receive the currentIndex from other things like the AltitudePreview
         // if (nextProps.currentIndex !== this.props.currentIndex) {
         //     this.panTo(nextProps.currentIndex);
@@ -100,6 +101,10 @@ class Map extends Component {
             this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, 200);
         } else if (nextProps.altitudeVisible === false) {
             this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, 0);
+        }
+
+        if(nextProps.fitBounds === true) {
+            this.fitBounds();
         }
     }
 
@@ -145,6 +150,14 @@ class Map extends Component {
         this.map.panTo(proj.fromContainerPixelToLatLng(aPoint));
         // this.overlayView.setMap(this.map);
     };
+
+    fitBounds = () => {
+        var bounds = new window.google.maps.LatLngBounds();
+        for (var i = 0; i < this.props.liveJourneyData.length; i++) {
+            bounds.extend(this.props.liveJourneyData[i].coordinates);
+        }
+        this.map.fitBounds(bounds);
+    }
 
 
     render() {

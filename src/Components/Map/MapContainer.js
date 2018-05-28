@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Motion, spring} from 'react-motion'
-import {withScriptjs, withGoogleMap, GoogleMap, Marker} from "react-google-maps"
+import {withScriptjs, withGoogleMap, Marker} from "react-google-maps"
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import moment from 'moment';
