@@ -528,6 +528,9 @@ h1, h2, h3, h4, h5 {
   .feedback-indication div {
     display: inline-block; }
 
+.recharts-surface {
+  overflow: visible !important; }
+
 /* 	-----------------------------------------
      Page
     ----------------------------------------- */
@@ -720,7 +723,7 @@ h1, h2, h3, h4, h5 {
     justify-content: center;
     align-items: center; }
     .mapview-container .map-container .altitude-container {
-      padding: 50px 10px 30px 10px;
+      padding: 50px 40px 60px 40px;
       bottom: 0;
       overflow: hidden;
       position: absolute;
@@ -3062,8 +3065,7 @@ ul.top-links {
     /*Modifier for left-hand list-header*/
     /*}*/
     /*section.analytics {*/
-    /*padding-bottom: 23px;*/
-    /*}*/ }
+    /*padding-bottom: 23px;*/ }
     @media screen and (max-width: 800px) {
       .main .content {
         min-width: 100vw; } }
@@ -3557,68 +3559,6 @@ ul.top-links {
           line-height: normal; }
       .main .content .analytics-tabs .tab:not(:last-of-type):not(.is-selected):not(:active) {
         border-right-color: rgba(103, 114, 229, 0.37); }
-    .main .content .analytics-chart {
-      position: relative; }
-      .main .content .analytics-chart .line-chart-container {
-        position: relative;
-        background: #F6F9FC; }
-      .main .content .analytics-chart .line-chart-y-legend {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        padding: 14px 10px;
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: space-between;
-        pointer-events: none; }
-        .main .content .analytics-chart .line-chart-y-legend .line-chart-y-legend-item {
-          position: relative;
-          height: 30px;
-          font-size: 10px;
-          color: #b4b4b4;
-          box-sizing: border-box; }
-          .main .content .analytics-chart .line-chart-y-legend .line-chart-y-legend-item .line-chart-y-legend-item-right {
-            float: right; }
-        .main .content .analytics-chart .line-chart-y-legend .line-chart-y-legend-item:first-child {
-          visibility: hidden;
-          margin-bottom: -30px; }
-      .main .content .analytics-chart .line-chart-x-legend {
-        padding: 6px 48px 0;
-        height: 19px;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-        pointer-events: none;
-        margin-left: -38px;
-        margin-right: -38px; }
-        .main .content .analytics-chart .line-chart-x-legend .line-chart-x-legend-item {
-          flex: 1;
-          position: relative; }
-          .main .content .analytics-chart .line-chart-x-legend .line-chart-x-legend-item span {
-            position: absolute;
-            left: -50px;
-            right: -50px;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            text-align: center;
-            font-size: 11px;
-            color: #b4b4b4; }
-      .main .content .analytics-chart .line-chart {
-        padding: 18px 48px;
-        height: 144px;
-        box-sizing: border-box;
-        /* Sparkline */ }
-        .main .content .analytics-chart .line-chart .sparkline-wrapper {
-          width: 100%;
-          height: 100%; }
-          .main .content .analytics-chart .line-chart .sparkline-wrapper .sparkline {
-            position: relative;
-            height: 100%; }
     .main .content section.columns {
       display: flex;
       flex-direction: row;

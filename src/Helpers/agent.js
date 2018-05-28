@@ -44,6 +44,24 @@ let token = null;
  };
  */
 
+function calculateDistance(lat1, lon1, lat2, lon2) {
+    var R = 6371; // Radius of the earth in km
+    var dLat = deg2rad(lat2 - lat1);  // deg2rad below
+    var dLon = deg2rad(lon2 - lon1);
+    var a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2)
+    ;
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var d = R * c; // Distance in km
+    return d;
+}
+
+function deg2rad(deg) {
+    return deg * (Math.PI / 180)
+}
+
 const Auth = {
     getCurrentUser: () => {
         return dispatch => {
@@ -291,6 +309,7 @@ const FireStoreQuery = {
     }
 };
 
+
 const FirebaseQuery = {
     liveJourney: (journey_id) => {
         return dispatch => {
@@ -310,17 +329,67 @@ const FirebaseQuery = {
                             sortable.push(temp[uid]);
                         }
                     }
-
                     sortable.sort(function (a, b) {
                         return a.timestamp - b.timestamp
                     });
+
+                    //Calculate latlng distances in km
+                    console.log(sortable);
+                    let distance = 0;
+
+                    for (var i = 0; i <= sortable.length - 1; i++) {
+                        if (i == 0) {
+                            sortable[i].distance = 0;
+
+                        } else {
+                            distance += calculateDistance(sortable[i - 1].coordinates.lat, sortable[i - 1].coordinates.lng, sortable[i].coordinates.lat, sortable[i].coordinates.lng,);
+                            console.log(distance);
+                            sortable[i].distance = Math.round(distance * 100) / 100;
+                        }
+                    }
+                    ;
+
+
+                    //There are -1 altitudes in the altitudes which need to be removed.
+                    sortable.forEach((object, index) => {
+                        if (object.altitude == -1) {
+                            if (index == 0) {
+                                object.altitude = sortable[index + 1].altitude;
+                            } else if (index === object.length - 1) {
+                                object.altitude = sortable[index - 1].altitude;
+                            } else {
+                                object.altitude = (sortable[index - 1].altitude + sortable[index + 1].altitude) / 2
+
+                            }
+                        } else {
+                        }
+                    });
+                    console.log(sortable);
+
+
+                    //Calculate the altitude change in meters
+                    let altitude = 0;
+                    for (var i = 1; i < sortable.length - 1; i++) {
+                        console.log(i);
+                        console.log(Math.abs(sortable[i].altitude - sortable[i - 1].altitude));
+                        altitude += Math.abs(sortable[i].altitude - sortable[i - 1].altitude);
+                        console.log(altitude);
+                    }
+                    ;
+
+                    console.log(altitude);
+
+
                     // console.log(sortable);
                     dispatch({
                         type: 'LIVE_JOURNEY_DATA',
                         liveJourneyData: sortable,
                         journeyId: journey_id,
-                        journeyLength: sortable.length
-                    });
+                        journeyLength: sortable.length,
+                        legDistance: Math.round(distance * 100) / 100,
+                        legAltitudeChange: Math.round(altitude * 100) / 100,
+                    })
+                    ;
                 }
             })
             ;

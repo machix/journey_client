@@ -4,8 +4,11 @@ let SelectedStartDate = moment().subtract(7, 'days');
 var SelectedEndDate = moment();
 
 const defaultState = {
+    altitudeArray: [],
     beautifulUnsplash: null,
     chatExpanded: false,
+    legDistance: 0,
+    legAltitudeChange: 0,
     liveJourneyData: [],
     windowWidth: 0,
     windowHeight: 0,
@@ -14,7 +17,8 @@ const defaultState = {
     sidebarExpanded: true,
     arrowKey: null,
     alertNew: false,
-    contributionValue: null
+    contributionValue: null,
+
 
 };
 
@@ -39,7 +43,10 @@ export default (state = defaultState, action) => {
         case 'LIVE_JOURNEY_DATA':
             return {
                 ...state,
-                liveJourneyData: action.liveJourneyData
+                liveJourneyData: action.liveJourneyData,
+                legDistance: action.legDistance,
+                legAltitudeChange: action.legAltitudeChange,
+                altitudeArray: action.altitudeArray
             };
         case 'SET_CONTRIBUTION':
             return {

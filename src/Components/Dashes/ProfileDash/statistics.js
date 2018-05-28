@@ -15,7 +15,9 @@ import Overdrive from 'react-overdrive';
 import agent from '../../../Helpers/agent';
 
 
-const mapStateToProps = (state,ownProps) => ({
+const mapStateToProps = (state, ownProps) => ({
+    legDistance: state.common.legDistance,
+    legAltitudeChange: state.common.legAltitudeChange,
 
     thumbnails: state.profile.thumbnails,
     displayMobile: ownProps.displayMobile
@@ -49,7 +51,8 @@ class Statistics extends Component {
 
     render() {
         return (
-            <div className={this.props.displayMobile === false ? 'statistics conditional-display' : 'statistics conditional-nodisplay-desktop'}>
+            <div
+                className={this.props.displayMobile === false ? 'statistics conditional-display' : 'statistics conditional-nodisplay-desktop'}>
                 <div className={'stats-title'}>
                     Live Stats {this.props.displayMobile}
                 </div>
@@ -79,7 +82,7 @@ class Statistics extends Component {
                             </Icon>
                         </div>
                         <div className={'stat-bottom'}>
-                            8800 kms
+                            {this.props.legDistance} kms
                         </div>
                     </div>
                     <div className={'stat hvr-grow'}>
@@ -96,7 +99,7 @@ class Statistics extends Component {
                             3 Contributors
                         </div>
                     </div>
-                    <div className={'stat hvr-grow'} onClick={()=>this.props.altitudeOnClick()}>
+                    <div className={'stat hvr-grow'} onClick={() => this.props.altitudeOnClick()}>
                         <div className={'stat-top'}>
 
                             <Icon className={'social-icon'} viewBox="0 0 40 40" size={25}>
@@ -107,7 +110,7 @@ class Statistics extends Component {
                             </Icon>
                         </div>
                         <div className={'stat-bottom'}>
-                            9900 m total elevation change
+                            {this.props.legAltitudeChange} m total elevation change
                         </div>
                     </div>
                 </div>

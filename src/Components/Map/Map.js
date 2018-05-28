@@ -12,13 +12,18 @@ import pickaxe from '../Assets/pickaxe.svg'
 
 
 const mapStateToProps = state => ({
-    ...state,
-    liveJourneyData: state.common.liveJourneyData,
-    position: state.choreographer.position,
+    altitudeVisible: state.mapview.altitudeVisible,
 
+    liveJourneyData: state.common.liveJourneyData,
+    currentIndex: state.mapview.currentIndex
 });
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+    setCurrentIndex: (index) => dispatch({
+        type: 'SET_CURRENT_INDEX',
+        value: index
+    }),
+});
 
 const getPixelPositionOffset = (width, height) => ({
     x: -(width / 3),
@@ -50,28 +55,56 @@ class Map extends Component {
                 console.log('in here');
                 return <OverlayView
                     key={index}
+
                     mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
                     getPixelPositionOffset={getPixelPositionOffset}
                     position={object.coordinates}>
-                    <div style={{
-                        height: '25px',
-                        width: '25px',
-                        backgroundColor: 'white',
-                        borderRadius: '25px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)'
-                    }}>
+                    <div
+                        onClick={() => this.props.setCurrentIndex(index)}
+
+                        style={{
+                            height: '25px',
+                            width: '25px',
+                            backgroundColor: 'white',
+                            borderRadius: '25px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)'
+                        }}>
                         <img src={this.imgSrc(object.contribution)} style={{height: '15px'}}/>
                     </div>
                 </OverlayView>;
 
             } else {
-                return <Marker key={index} position={object.coordinates}></Marker>
+                return <Marker
+                    onClick={() => this.props.setCurrentIndex(index)}
+                    key={index}
+                    position={object.coordinates}></Marker>
 
             }
         })
+    };
+
+
+    componentWillReceiveProps(nextProps) {
+
+        //This is for receive the currentIndex from other things like the AltitudePreview
+        // if (nextProps.currentIndex !== this.props.currentIndex) {
+        //     this.panTo(nextProps.currentIndex);
+        // }
+        if (nextProps.altitudeVisible === true) {
+            this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, 200);
+        } else if (nextProps.altitudeVisible === false) {
+            this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, 0);
+        }
+    }
+
+    panTo = (index) => {
+        console.log(index);
+        this.map.panTo(this.props.liveJourneyData[index].coordinates);
+        // this.props.setCurrentIndex(index);
+
     };
 
 
@@ -88,6 +121,28 @@ class Map extends Component {
         }
     };
 
+    panToWithOffset = (latlng, offsetX, offsetY) => {
+        var map = this.map;
+
+        this.overlayView.onAdd(() => {
+                console.log('added');
+            }
+        )
+
+        var proj = this.overlayView.getProjection();
+        console.log(proj);
+        console.log(latlng);
+        var curPosition = new window.google.maps.LatLng(latlng.lat,latlng.lng);
+
+
+        var aPoint = proj.fromLatLngToContainerPixel(curPosition);
+        console.log(aPoint)
+        aPoint.x = aPoint.x + offsetX;
+        aPoint.y = aPoint.y + offsetY;
+        this.map.panTo(proj.fromContainerPixelToLatLng(aPoint));
+        // this.overlayView.setMap(this.map);
+    };
+
 
     render() {
         return (
@@ -96,11 +151,18 @@ class Map extends Component {
                 defaultZoom={12}
                 defaultCenter={this.props.coordinates[0].coordinates}
                 center={this.props.coordinates[0].coordinates}
-
-                // ref={c => this.map = c}
+                ref={c => this.map = c}
             >
 
                 {this.markerMapper()}
+
+                <OverlayView
+                    mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
+                    getPixelPositionOffset={getPixelPositionOffset}
+                    ref={c => this.overlayView = c}
+                    position={this.props.coordinates[this.props.currentIndex].coordinates}>
+                    <div></div>
+                </OverlayView>
 
 
                 {this.props.overlayIcon != null ? <OverlayView

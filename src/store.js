@@ -7,6 +7,7 @@ import auth from './Reducers/auth.js';
 import choreographer from './Reducers/choreographer.js';
 import dashState from './Reducers/dashState';
 import profile from './Reducers/profile';
+import mapview from './Reducers/mapview';
 
 
 const reducer = combineReducers({
@@ -14,7 +15,8 @@ const reducer = combineReducers({
     dashState,
     choreographer,
     auth,
-    profile
+    profile,
+    mapview
 });
 
 const middleware = applyMiddleware(thunk, promiseMiddleware/*, localStorageMiddleware*/);

@@ -18,6 +18,8 @@ import agent from '../../Helpers/agent';
 import AltitudePreview from '../Cards/AltitudePreview';
 
 const mapStateToProps = state => ({
+    altitudeVisible: state.mapview.altitudeVisible,
+    
     contributionName: state.common.contributionName,
     contributionValue: state.common.contributionValue,
 
@@ -27,7 +29,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     fetchLiveJourney: (journey_uid) => dispatch(agent.FirebaseQuery.liveJourney(journey_uid)),
-    setContribution: (name, value) => dispatch({type: 'SET_CONTRIBUTION', name: name, value: value})
+    setContribution: (name, value) => dispatch({type: 'SET_CONTRIBUTION', name: name, value: value}),
+    setAltitudeVisible: (value) => dispatch({type: 'SET_ALTITUDE_VISIBLE', value: value})
+
 });
 
 
@@ -85,11 +89,9 @@ class MapView extends Component {
 
     altitudeToggle = () => {
         console.log('altitudetotggle');
-        this.setState({
-            ...this.state,
-            altitudeVisible: !this.state.altitudeVisible
-        })
-    }
+        this.props.setAltitudeVisible(!this.props.altitudeVisible);
+      
+    };
 
     render() {
         return (
@@ -135,7 +137,7 @@ class MapView extends Component {
                         : null}
 
 
-                    {this.state.altitudeVisible === true ? <div className={'altitude-container slideInVerticalMedium'}>
+                    {this.props.altitudeVisible === true ? <div className={'altitude-container slideInVerticalMedium'}>
                         <Icon viewBox="0 0 40 40" style={{
                             color: 'black',
                             position: 'absolute',
