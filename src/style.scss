@@ -1098,9 +1098,8 @@ h1, h2, h3, h4, h5 {
         //background-color: #f7f5d6;
         //border-radius: 5px;
         justify-content: center;
-        margin: 10px 10px 0 0;
         position: relative;
-        padding: 5px 0 10px 0;
+        margin: 10px 0 0 0;
 
         .contribution-circle {
           border-radius: 100px;
@@ -5647,7 +5646,11 @@ footer {
   //border-radius: 5px;
   justify-content: center;
   position: relative;
-  padding: 5px 0 10px 0;
+  padding: 10px 0 15px 0;
+
+  .list-description{
+    padding-top: 10px;
+  }
 
   $size: 50px;
   $yellow: #FFDD4A;

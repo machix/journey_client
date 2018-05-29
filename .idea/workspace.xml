@@ -54,8 +54,8 @@
       <file leaf-file-name="MapMarker.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/Map/MapMarker.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-358">
-              <caret line="112" column="63" lean-forward="false" selection-start-line="112" selection-start-column="63" selection-end-line="112" selection-end-column="63" />
+            <state relative-caret-position="476">
+              <caret line="149" column="34" lean-forward="true" selection-start-line="149" selection-start-column="34" selection-end-line="149" selection-end-column="34" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -86,8 +86,8 @@
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="1100" column="18" lean-forward="false" selection-start-line="1100" selection-start-column="18" selection-end-line="1100" selection-end-column="18" />
+            <state relative-caret-position="256">
+              <caret line="5648" column="20" lean-forward="false" selection-start-line="5648" selection-start-column="20" selection-end-line="5648" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -116,7 +116,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>transition</find>
       <find>.interact</find>
       <find>34</find>
       <find>25</find>
@@ -140,12 +139,13 @@
       <find>class</find>
       <find>drop</find>
       <find>infowin</find>
-      <find>.weather</find>
       <find>cloud</find>
       <find>2x</find>
       <find>.2x</find>
       <find>margin:</find>
+      <find>.weather</find>
       <find>.list-item</find>
+      <find>weather</find>
     </findStrings>
     <replaceStrings>
       <replace>10</replace>
@@ -591,12 +591,12 @@
       <workItem from="1527135521186" duration="11304000" />
       <workItem from="1527201965121" duration="15501000" />
       <workItem from="1527376750445" duration="29931000" />
-      <workItem from="1527530541927" duration="27962000" />
+      <workItem from="1527530541927" duration="28160000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="526848000" />
+    <option name="totallyTimeSpent" value="527046000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1006,14 +1006,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Helpers/constants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Map/JourneyMap.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1067,16 +1059,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Map/MapMarker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-358">
-          <caret line="112" column="63" lean-forward="false" selection-start-line="112" selection-start-column="63" selection-end-line="112" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Cards/MediaDisplay.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
@@ -1095,6 +1077,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Map/MapMarker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="149" column="34" lean-forward="true" selection-start-line="149" selection-start-column="34" selection-end-line="149" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Map/WeatherContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
@@ -1105,10 +1097,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Helpers/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="1100" column="18" lean-forward="false" selection-start-line="1100" selection-start-column="18" selection-end-line="1100" selection-end-column="18" />
+        <state relative-caret-position="256">
+          <caret line="5648" column="20" lean-forward="false" selection-start-line="5648" selection-start-column="20" selection-end-line="5648" selection-end-column="20" />
           <folding />
         </state>
       </provider>

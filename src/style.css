@@ -781,9 +781,8 @@ h1, h2, h3, h4, h5 {
         align-items: center;
         color: #c693f0;
         justify-content: center;
-        margin: 10px 10px 0 0;
         position: relative;
-        padding: 5px 0 10px 0; }
+        margin: 10px 0 0 0; }
         .mapview-container .map-container .info-window .list-item .contribution-circle {
           border-radius: 100px;
           width: 60px;
@@ -3884,9 +3883,11 @@ ul.top-links {
   color: #c693f0;
   justify-content: center;
   position: relative;
-  padding: 5px 0 10px 0;
+  padding: 10px 0 15px 0;
   --moon-color: #ebf3ff;
   --moon-shadow-color: #cedfff; }
+  .weather .list-description {
+    padding-top: 10px; }
   .weather .sun {
     height: 50px;
     width: 50px;

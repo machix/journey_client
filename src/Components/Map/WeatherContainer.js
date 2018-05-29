@@ -109,7 +109,8 @@ class WeatherContainer extends Component {
                 <Cloud/>
 
                 <div className={'list-description'}>
-                    <h3>14degC Cloudy </h3></div>
+                    <h3>14degC Cloudy </h3>
+                </div>
 
             </div>
         );
