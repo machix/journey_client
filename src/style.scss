@@ -1097,8 +1097,10 @@ h1, h2, h3, h4, h5 {
         color: #c693f0;
         //background-color: #f7f5d6;
         //border-radius: 5px;
-        margin: 5px 10px 0 0;
+        justify-content: center;
+        margin: 10px 10px 0 0;
         position: relative;
+        padding: 5px 0 10px 0;
 
         .contribution-circle {
           border-radius: 100px;
@@ -5637,6 +5639,15 @@ footer {
 //-------------------WEATHER---------------------//
 
 .weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #c693f0;
+  //background-color: #f7f5d6;
+  //border-radius: 5px;
+  justify-content: center;
+  position: relative;
+  padding: 5px 0 10px 0;
 
   $size: 50px;
   $yellow: #FFDD4A;
@@ -5826,14 +5837,17 @@ footer {
 
   @keyframes animateCloud {
     0% {
-      margin-left: -200px;
+      margin-left: -100px;
+      opacity: 0.1
+    }
+    15% {
       opacity: 1
     }
     75% {
       opacity: 0.95
     }
     100% {
-      margin-left: 0;
+      margin-left: 100px;
       opacity: 0
     }
   }

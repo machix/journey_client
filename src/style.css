@@ -780,8 +780,10 @@ h1, h2, h3, h4, h5 {
         display: flex;
         align-items: center;
         color: #c693f0;
-        margin: 5px 10px 0 0;
-        position: relative; }
+        justify-content: center;
+        margin: 10px 10px 0 0;
+        position: relative;
+        padding: 5px 0 10px 0; }
         .mapview-container .map-container .info-window .list-item .contribution-circle {
           border-radius: 100px;
           width: 60px;
@@ -3876,6 +3878,13 @@ ul.top-links {
   text-align: center; }
 
 .weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #c693f0;
+  justify-content: center;
+  position: relative;
+  padding: 5px 0 10px 0;
   --moon-color: #ebf3ff;
   --moon-shadow-color: #cedfff; }
   .weather .sun {
@@ -4018,12 +4027,14 @@ ul.top-links {
 
 @keyframes animateCloud {
   0% {
-    margin-left: -200px;
+    margin-left: -100px;
+    opacity: 0.1; }
+  15% {
     opacity: 1; }
   75% {
     opacity: 0.95; }
   100% {
-    margin-left: 0;
+    margin-left: 100px;
     opacity: 0; } }
   .weather .x2 {
     -webkit-animation: animateCloud 5s linear infinite;

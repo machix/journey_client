@@ -104,13 +104,12 @@ class WeatherContainer extends Component {
 
     render() {
         return (
-            <div className={'list-item weather'}>
+            <div className={'weather'}>
                 <Moon/>
                 <Cloud/>
 
                 <div className={'list-description'}>
-                    <h3>14degC Cloudy
-                    </h3></div>
+                    <h3>14degC Cloudy </h3></div>
 
             </div>
         );
