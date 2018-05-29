@@ -23,14 +23,11 @@ const flattener = (obj, startRange, endRange) => {
         for (let i = 0; i < points + 5; i++) {
             if (i === 0) {
                 filtered = obj.filter((object) => {
-                    console.log('TopRange: ' + object.distance >= (i - 1) * segment + ' BottomRange: ' + object.distance <= i * segment);
 
-                    console.log(object);
                     return (object.distance <= i * segment)
                 });
             } else {
                 filtered = obj.filter((object) => {
-                    console.log('TopRange: ' + (i - 1) * segment + ' BottomRange: ' + i * segment);
                     return (object.distance <= i * segment && object.distance >= (i - 1) * segment)
                 });
             }
@@ -48,9 +45,8 @@ const flattener = (obj, startRange, endRange) => {
                 });
             }
         }
-        console.log(holder);
         return holder;
-    }
+    };
 
 
     //THIS IS THE BEGINNING OF THE FUNCITON INVOCATION

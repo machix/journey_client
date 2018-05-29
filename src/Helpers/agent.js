@@ -316,7 +316,6 @@ const FirebaseQuery = {
             console.log('GET_LIVE_JOURNEY');
             // new Promise(function (resolve, reject) {
             database.ref('live_journeys/' + journey_id).on('value', (snapshot) => {
-                console.log('new snapshot');
                 // console.log(snapshot.val());
                 if (snapshot.val() !== null) {
                     // resolve(snapshot.val());
@@ -334,7 +333,6 @@ const FirebaseQuery = {
                     });
 
                     //Calculate latlng distances in km
-                    console.log(sortable);
                     let distance = 0;
 
                     for (var i = 0; i <= sortable.length - 1; i++) {
@@ -344,7 +342,6 @@ const FirebaseQuery = {
 
                         } else {
                             distance += calculateDistance(sortable[i - 1].coordinates.lat, sortable[i - 1].coordinates.lng, sortable[i].coordinates.lat, sortable[i].coordinates.lng,);
-                            console.log(distance);
                             sortable[i].distance = Math.round(distance * 100) / 100;
                             sortable[i].markerIndex = i;
 
@@ -375,8 +372,6 @@ const FirebaseQuery = {
                         altitude += Math.abs(sortable[i].altitude - sortable[i - 1].altitude);
                     };
 
-
-                    // console.log(sortable);
                     dispatch({
                         type: 'LIVE_JOURNEY_DATA',
                         liveJourneyData: sortable,

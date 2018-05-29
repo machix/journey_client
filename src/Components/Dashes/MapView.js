@@ -100,8 +100,7 @@ class MapView extends Component {
             <div className={'mapview-container'}>
                 <div className={'mapview-sidebar'}>
 
-                   <MediaDisplay/>
-
+                    <MediaDisplay/>
                     <Statistics displayMobile={null} altitudeOnClick={() => this.altitudeToggle()}/>
                 </div>
                 <div className={'map-container'}>
@@ -184,3 +183,4 @@ class MapView extends Component {
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MapView));
 //                            <span style={{fontSize: '0.8rem', marginTop: '10px', fontWeight: 'normal'}}>Events are triggered as contributions are used.</span>
+//

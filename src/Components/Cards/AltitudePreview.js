@@ -47,8 +47,7 @@ class AltitudePreview extends Component {
 
                            }}
                            data={this.props.altitudeArray}>
-                    <Line type='curveLinear' dataKey='altitude' stroke='#8884d8' connectNulls={true} strokeWidth={2}
-                    />
+                    <Line type='linear' dataKey='altitude' stroke='#8884d8' connectNulls={true} strokeWidth={2}/>
                     {this.props.altitudeArray.length > 0 ?
                         <ReferenceDot
                             x={this.props.altitudeArray[this.props.indexMap[this.props.currentIndex]].distance}

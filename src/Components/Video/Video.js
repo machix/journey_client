@@ -49,7 +49,7 @@ class Video extends Component {
                              controls
                              playing
                              playsinline={true}
-                             autoplay={true}
+                             autoPlay={true}
                              onReady={() => {
                                  console.log('onReadyCalled');
                                  this.setState({...this.state, playing: true})

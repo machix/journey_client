@@ -63,7 +63,6 @@ class Map extends Component {
                     //lat: 28.003514, lng: 86.852070}
                     defaultCenter={this.props.liveJourneyData[0].coordinates}
                     center={this.props.liveJourneyData[this.props.position].coordinates}
-
                     ref={(map) => this.map = map}
                     onClick={(e) => {
                         console.log(e.target);
