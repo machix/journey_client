@@ -1034,9 +1034,24 @@ h1, h2, h3, h4, h5 {
 
     .info-window {
       align-items: center;
-      padding: 15px;
+      padding: 10px 0 15px 15px;
       text-align: center;
       overflow: hidden;
+      min-width: 20vw;
+
+      .header-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+        border-bottom: solid 1px $c-set-border-0;
+
+        .text-info {
+          margin-left: 20px;
+          text-align: left;
+        }
+      }
       a {
         color: inherit
       }
@@ -1077,7 +1092,6 @@ h1, h2, h3, h4, h5 {
           align-items: center;
           justify-content: center;
           margin-left: 10px;
-          margin-top: 10px;
           border-radius: 100px;
           width: 30px;
           height: 30px;
@@ -1093,13 +1107,20 @@ h1, h2, h3, h4, h5 {
 
       .list-item {
         display: flex;
-        align-items: center;
         color: #c693f0;
         //background-color: #f7f5d6;
         //border-radius: 5px;
-        justify-content: center;
+        align-items:center;
+        //justify-content: center;
         position: relative;
         margin: 10px 0 0 0;
+
+        &.description {
+          color: black;
+          text-align: center;
+          margin: 25px 0 25px 0;
+          justify-content:center;
+        }
 
         .contribution-circle {
           border-radius: 100px;
@@ -5646,13 +5667,13 @@ footer {
   //border-radius: 5px;
   justify-content: center;
   position: relative;
-  padding: 10px 0 15px 0;
+  padding: 10px 0 5px 0;
 
-  .list-description{
+  .list-description {
     padding-top: 10px;
   }
 
-  $size: 50px;
+  $size: 40px;
   $yellow: #FFDD4A;
   $blue: #85C7F2;
 
@@ -5728,11 +5749,11 @@ footer {
       @include animate(blink, 2.5s, linear, infinite);
     }
     .left {
-      left: 10px;
+      left: 5px;
       bottom: 2px;
     }
     .right {
-      right: 10px;
+      right: 5px;
       bottom: 2px;
 
     }
@@ -5786,16 +5807,16 @@ footer {
     height: 55px;
     background: var(--moon-color);
     border-radius: 100px;
-    box-shadow: inset 5px 0 0px 0 var(--moon-shadow-color);
+    box-shadow: inset 10px 0 0px 0 var(--moon-shadow-color);
   }
   .crater#one {
     margin-left: -10px;
-    margin-top: -20px;
+    margin-top: -25px;
     transform: rotate(45deg) scale(0.2);;
   }
   .crater#two {
-    margin-left: -10px;
-    margin-top: 10px;
+    margin-left: -5px;
+    margin-top: -5px;
     box-shadow: inset 10px 0 0 0 var(--moon-shadow-color);
     transform: rotate(-10deg) scale(0.2);;
   }
@@ -5807,7 +5828,7 @@ footer {
   }
   .crater#four {
     margin-top: 10px;
-    margin-left: 15px;
+    margin-left: 7px;
     box-shadow: inset 10px 0 0 0 var(--moon-shadow-color);
     transform: rotate(230deg) scale(0.2);;
   }
@@ -5864,6 +5885,7 @@ footer {
     -moz-transform: scale(0.3);
     transform: scale(0.3);
     position: absolute;
+    top: -50px;
     z-index: 25;
   }
   .cloud {

@@ -734,9 +734,20 @@ h1, h2, h3, h4, h5 {
     align-items: center; }
     .mapview-container .map-container .info-window {
       align-items: center;
-      padding: 15px;
+      padding: 10px 0 15px 15px;
       text-align: center;
-      overflow: hidden; }
+      overflow: hidden;
+      min-width: 20vw; }
+      .mapview-container .map-container .info-window .header-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+        border-bottom: solid 1px #EFEFEF; }
+        .mapview-container .map-container .info-window .header-title .text-info {
+          margin-left: 20px;
+          text-align: left; }
       .mapview-container .map-container .info-window a {
         color: inherit; }
       .mapview-container .map-container .info-window .media-container-infowindow {
@@ -767,7 +778,6 @@ h1, h2, h3, h4, h5 {
           align-items: center;
           justify-content: center;
           margin-left: 10px;
-          margin-top: 10px;
           border-radius: 100px;
           width: 30px;
           height: 30px;
@@ -778,11 +788,15 @@ h1, h2, h3, h4, h5 {
             color: white; }
       .mapview-container .map-container .info-window .list-item {
         display: flex;
-        align-items: center;
         color: #c693f0;
-        justify-content: center;
+        align-items: center;
         position: relative;
         margin: 10px 0 0 0; }
+        .mapview-container .map-container .info-window .list-item.description {
+          color: black;
+          text-align: center;
+          margin: 25px 0 25px 0;
+          justify-content: center; }
         .mapview-container .map-container .info-window .list-item .contribution-circle {
           border-radius: 100px;
           width: 60px;
@@ -3883,14 +3897,14 @@ ul.top-links {
   color: #c693f0;
   justify-content: center;
   position: relative;
-  padding: 10px 0 15px 0;
+  padding: 10px 0 5px 0;
   --moon-color: #ebf3ff;
   --moon-shadow-color: #cedfff; }
   .weather .list-description {
     padding-top: 10px; }
   .weather .sun {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     position: relative;
     display: flex;
     align-items: center;
@@ -3901,23 +3915,23 @@ ul.top-links {
       -webkit-animation: spin 15s linear infinite;
       -moz-animation: spin 15s linear infinite;
       animation: spin 15s linear infinite;
-      height: 50px;
-      width: 50px;
+      height: 40px;
+      width: 40px;
       position: absolute;
       display: flex;
       align-items: center;
       justify-content: center; }
   .weather .circle {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     z-index: 1;
     background: #ffe77d;
     position: absolute;
     border-radius: 50%; }
   .weather .sunrays span {
     background: #FFDD4A;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     position: absolute; }
     .weather .sunrays span:first-child {
       -ms-transform: rotate(30deg);
@@ -3941,10 +3955,10 @@ ul.top-links {
       -moz-animation: blink 2.5s linear infinite;
       animation: blink 2.5s linear infinite; }
     .weather .eyes .left {
-      left: 10px;
+      left: 5px;
       bottom: 2px; }
     .weather .eyes .right {
-      right: 10px;
+      right: 5px;
       bottom: 2px; }
 
 @keyframes spin {
@@ -3973,28 +3987,28 @@ ul.top-links {
     width: 8px;
     border-radius: 50%; } }
   .weather #moon {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background: var(--moon-color);
     border-radius: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: inset -10px 0 0px 0 var(--moon-shadow-color), 0 0 50px rgba(255, 255, 255, 0.5); }
+    box-shadow: inset -10px 0 0px 0 var(--moon-shadow-color), 0 0 40px rgba(255, 255, 255, 0.5); }
   .weather .crater {
     position: absolute;
     width: 50px;
     height: 55px;
     background: var(--moon-color);
     border-radius: 100px;
-    box-shadow: inset 5px 0 0px 0 var(--moon-shadow-color); }
+    box-shadow: inset 10px 0 0px 0 var(--moon-shadow-color); }
   .weather .crater#one {
     margin-left: -10px;
-    margin-top: -20px;
+    margin-top: -25px;
     transform: rotate(45deg) scale(0.2); }
   .weather .crater#two {
-    margin-left: -10px;
-    margin-top: 10px;
+    margin-left: -5px;
+    margin-top: -5px;
     box-shadow: inset 10px 0 0 0 var(--moon-shadow-color);
     transform: rotate(-10deg) scale(0.2); }
   .weather .crater#three {
@@ -4004,7 +4018,7 @@ ul.top-links {
     box-shadow: inset 15px 0 0 0 var(--moon-shadow-color); }
   .weather .crater#four {
     margin-top: 10px;
-    margin-left: 15px;
+    margin-left: 7px;
     box-shadow: inset 10px 0 0 0 var(--moon-shadow-color);
     transform: rotate(230deg) scale(0.2); }
   .weather .crater-round {
@@ -4045,6 +4059,7 @@ ul.top-links {
     -moz-transform: scale(0.3);
     transform: scale(0.3);
     position: absolute;
+    top: -50px;
     z-index: 25; }
   .weather .cloud {
     background: #41ff00;

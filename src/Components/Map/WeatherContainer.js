@@ -86,8 +86,6 @@ const Moon = (props) => {
             <div className="crater" id="three"></div>
             <div className="crater" id="four"></div>
             <div className="crater-round" id="one"></div>
-            <div className="crater-round" id="two"></div>
-            <div className="crater-round" id="three"></div>
         </div>
     )
 };
@@ -105,12 +103,12 @@ class WeatherContainer extends Component {
     render() {
         return (
             <div className={'weather'}>
-                <Moon/>
-                <Cloud/>
-
-                <div className={'list-description'}>
-                    <h3>14degC Cloudy </h3>
+                <div style={{position: 'relative', display: 'flex', justifyContent: 'center'}}>
+                    <Moon/>
+                    <Cloud/>
                 </div>
+
+                <h3>14 &#8451; </h3>
 
             </div>
         );

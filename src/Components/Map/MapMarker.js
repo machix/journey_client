@@ -107,16 +107,19 @@ class MapMarker extends Component {
                 {this.state.isOpen && <InfoWindow style={{width: '100%'}}
                                                   onCloseClick={() => this.setState({isOpen: !this.state.isOpen})}>
                     <div className={'info-window'}>
-                        <h3>{moment(-this.props.liveJourneyData[this.props.index].timestamp).format('YYYY MMM DD hh:mm a')} </h3>
 
+                        <div className={'header-title'}>
+                            <WeatherContainer/>
+                            <div className={'text-info'}>
+                                <h3>{moment(-this.props.liveJourneyData[this.props.index].timestamp).format('YYYY MMM DD hh:mm a')} </h3>
 
-                        <a href={`https://www.google.com/maps/?q=${this.props.liveJourneyData[this.props.index].coordinates.lat},${this.props.liveJourneyData[this.props.index].coordinates.lng}`}>Location:{' '}
-                            {this.props.liveJourneyData[this.props.index].coordinates.lat}, {this.props.liveJourneyData[this.props.index].coordinates.lng}<br/>
-                        </a>
-                        Altitude: {this.props.liveJourneyData[this.props.index].altitude} meters <br/><br/>
-
-                     <WeatherContainer/>
-
+                                {moment(-this.props.liveJourneyData[this.props.index].timestamp).fromNow('d')} ago <br/>
+                                <a href={`https://www.google.com/maps/?q=${this.props.liveJourneyData[this.props.index].coordinates.lat},${this.props.liveJourneyData[this.props.index].coordinates.lng}`}>Location:{' '}
+                                    {this.props.liveJourneyData[this.props.index].coordinates.lat}, {this.props.liveJourneyData[this.props.index].coordinates.lng}<br/>
+                                </a>
+                                Altitude: {this.props.liveJourneyData[this.props.index].altitude} meters <br/>
+                            </div>
+                        </div>
                         {typeof(this.props.contribution) != 'undefined' ? <div className={'list-item'}>
                             <div className={'contribution-circle'}>
                                 <img src={this.iconSrc(this.props.contribution)}/>
@@ -127,6 +130,12 @@ class MapMarker extends Component {
                             </div>
 
                         </div> : null}
+                        {typeof(this.props.liveJourneyData[this.props.index].description) != 'undefined' ?
+                            <div className={'list-item description'}>
+                                {this.props.liveJourneyData[this.props.index].description}
+
+                            </div> : null}
+
                         <div className={'media-container-infowindow'}>
                             <div className={'media-holder'}>
                             </div>
