@@ -19,6 +19,7 @@ import WeatherContainer from './WeatherContainer';
 const mapStateToProps = (state, ownProps) => ({
     currentIndex: state.mapview.currentIndex,
     liveJourneyData: state.common.liveJourneyData,
+    windowWidth: state.common.windowWidth,
 
 
     index: ownProps.index,
@@ -103,6 +104,10 @@ class MapMarker extends Component {
                 }}
                 zIndex={typeof(this.props.contribution) != 'undefined' ? 100 : 0}
                 position={this.props.position}>
+                {this.props.windowWidth < 800 ? this.state.isOpen && <InfoWindow style={{width: '100%'}}
+                                                                                 onCloseClick={() => this.setState({isOpen: !this.state.isOpen})}>
+                    <div>asdf</div>
+                </InfoWindow> : null}
 
 
             </Marker>

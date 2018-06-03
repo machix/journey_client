@@ -86,7 +86,7 @@ class Map extends Component {
         if (nextProps.altitudeVisible === true) {
             this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, this.props.windowWidth > 800 ? 100 : 40);
         } else if (nextProps.altitudeVisible === false) {
-            this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, this.props.windowWidth > 800 ? 0 : -100);
+            this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, this.props.windowWidth > 800 ? 0 : -200);
         }
 
         if (nextProps.fitBounds === true) {
