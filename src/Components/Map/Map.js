@@ -84,7 +84,7 @@ class Map extends Component {
         //     this.panTo(nextProps.currentIndex);
         // }
         if (nextProps.altitudeVisible === true) {
-            this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, this.props.windowWidth > 800 ? 100 :40);
+            this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, this.props.windowWidth > 800 ? 100 : 40);
         } else if (nextProps.altitudeVisible === false) {
             this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, 0);
         }
@@ -152,6 +152,8 @@ class Map extends Component {
                 center={this.props.coordinates[0].coordinates}
                 ref={c => this.map = c}
                 mapTypeId="terrain"
+                options={{scrollwheel: false,}
+                }
 
             >
                 <MarkerClusterer

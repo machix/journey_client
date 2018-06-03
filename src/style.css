@@ -921,11 +921,14 @@ h1, h2, h3, h4, h5 {
         color: #b5b5b5;
         justify-content: space-around;
         align-items: center;
-        align-self: stretch;
-        z-index: 100; }
+        align-self: stretch; }
         @media screen and (max-width: 800px) {
           .mapview-container .map-container .info-modal .interact-container {
-            left: -45px; } }
+            flex-direction: row;
+            left: auto;
+            right: auto;
+            top: 100%;
+            height: 50px; } }
         .mapview-container .map-container .info-modal .interact-container .interact {
           background-color: white;
           cursor: pointer;
