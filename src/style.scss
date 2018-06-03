@@ -1377,7 +1377,6 @@ h1, h2, h3, h4, h5 {
             border-bottom: none;
             border-bottom: solid white 1px;
             margin-bottom: 60px;
-            font-size: 0.9rem;
 
             @media screen and (max-width: 800px) {
               margin-bottom: 40px;
@@ -1390,6 +1389,9 @@ h1, h2, h3, h4, h5 {
               text-shadow: inherit;
               text-align: center;
               font-size: 1.2rem;
+              @media screen and (max-width: 800px) {
+                font-size: 1rem;
+              }
             }
           }
 
