@@ -152,7 +152,7 @@ class Map extends Component {
                 center={this.props.coordinates[0].coordinates}
                 ref={c => this.map = c}
                 mapTypeId="terrain"
-                options={{scrollwheel: false,}
+                options={{scrollwheel: false, isDraggable: this.props.windowWidth > 800 ? true : false}
                 }
 
             >
