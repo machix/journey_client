@@ -28,7 +28,8 @@ const Error = () => {
 }
 
 const mapStateToProps = state => ({
-    contributionValue: state.common.contributionValue
+    contributionValue: state.common.contributionValue,
+    windowWidth: state.common.windowWidth
 
 });
 
@@ -100,7 +101,8 @@ class CheckoutForm extends React.Component {
                                  style={{
 
                                      base: {
-                                         fontSize: '18px', color: this.props.color,
+                                         fontSize: this.props.windowWidth > 800 ? '18px' : 'auto',
+                                         color: this.props.color,
                                          iconColor: this.props.color,
                                          '::placeholder': {
                                              color: this.props.color,

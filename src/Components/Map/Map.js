@@ -19,9 +19,12 @@ const {MarkerClusterer} = require("react-google-maps/lib/components/addons/Marke
 const mapStateToProps = state => ({
     altitudeVisible: state.mapview.altitudeVisible,
     fitBounds: state.mapview.fitBounds,
+    currentIndex: state.mapview.currentIndex,
+
 
     liveJourneyData: state.common.liveJourneyData,
-    currentIndex: state.mapview.currentIndex
+    windowHeight: state.common.windowHeight,
+    windowWidth: state.common.windowWidth,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -81,7 +84,7 @@ class Map extends Component {
         //     this.panTo(nextProps.currentIndex);
         // }
         if (nextProps.altitudeVisible === true) {
-            this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, 100);
+            this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, this.props.windowWidth > 800 ? 100 :40);
         } else if (nextProps.altitudeVisible === false) {
             this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, 0);
         }

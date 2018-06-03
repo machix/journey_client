@@ -8,6 +8,8 @@ import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, ReferenceDo
 const mapStateToProps = state => ({
     altitudeArray: state.common.altitudeArray,
     indexMap: state.common.indexMap,
+    windowHeight: state.common.windowHeight,
+    windowWidth: state.common.windowWidth,
 
     liveJourneyData: state.common.liveJourneyData,
     currentIndex: state.mapview.currentIndex,
@@ -35,7 +37,7 @@ class AltitudePreview extends Component {
 
     render() {
         return <div style={{width: '100%'}}>
-            <ResponsiveContainer width="100%" height={300}>
+            <ResponsiveContainer width="100%" height={this.props.windowWidth > 800 ? 300 : 200}>
                 <LineChart margin={{top: 20, right: 50, left: 0, bottom: 0}}
                            onClick={(data, index) => {
                                if (data === null || data.activePayload[0].payload.altitude == null) {
