@@ -710,8 +710,6 @@ h1, h2, h3, h4, h5 {
         display: flex; }
         .mapview-container .mapview-sidebar .media-container .media .react-player {
           overflow: hidden; }
-          .mapview-container .mapview-sidebar .media-container .media .react-player video {
-            width: auto !important; }
     .mapview-container .mapview-sidebar .info {
       max-width: 40%; }
     .mapview-container .mapview-sidebar .statistics {
@@ -834,7 +832,10 @@ h1, h2, h3, h4, h5 {
       justify-content: center; }
       @media screen and (max-width: 800px) {
         .mapview-container .map-container .info-modal {
-          width: 90%; } }
+          width: 100%;
+          top: 0;
+          left: 0;
+          right: 0; } }
       .mapview-container .map-container .info-modal .info-container {
         align-items: center;
         text-align: center;
@@ -852,6 +853,9 @@ h1, h2, h3, h4, h5 {
             background-color: white;
             border-radius: 5px;
             box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5); }
+            @media screen and (max-width: 800px) {
+              .mapview-container .map-container .info-modal .info-container .header-title .weather {
+                height: 50px; } }
           .mapview-container .map-container .info-modal .info-container .header-title .text-info {
             text-align: left;
             font-size: 0.7rem;
@@ -867,7 +871,8 @@ h1, h2, h3, h4, h5 {
             box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5); }
             @media screen and (max-width: 800px) {
               .mapview-container .map-container .info-modal .info-container .header-title .text-info {
-                font-size: 0.6rem; } }
+                font-size: 0.6rem;
+                height: 50px; } }
             .mapview-container .map-container .info-modal .info-container .header-title .text-info .title {
               font-size: 1.1rem;
               font-weight: 500;
@@ -902,7 +907,7 @@ h1, h2, h3, h4, h5 {
             @media screen and (max-width: 800px) {
               .mapview-container .map-container .info-modal .info-container .list-item.description {
                 padding: 15px;
-                font-size: 0.7rem; } }
+                font-size: 0.6rem; } }
           .mapview-container .map-container .info-modal .info-container .list-item.contribution {
             position: absolute;
             top: 110%;
@@ -4079,6 +4084,10 @@ ul.top-links {
     justify-content: center;
     margin: 0 auto;
     top: -5px; }
+    @media screen and (max-width: 800px) {
+      .weather .sun {
+        height: 25px;
+        width: 25px; } }
     .weather .sun .sunrays {
       -webkit-animation: spin 15s linear infinite;
       -moz-animation: spin 15s linear infinite;
@@ -4089,6 +4098,10 @@ ul.top-links {
       display: flex;
       align-items: center;
       justify-content: center; }
+      @media screen and (max-width: 800px) {
+        .weather .sun .sunrays {
+          height: 25px;
+          width: 25px; } }
   .weather .circle {
     height: 30px;
     width: 30px;
@@ -4096,11 +4109,19 @@ ul.top-links {
     background: #ffe77d;
     position: absolute;
     border-radius: 50%; }
+    @media screen and (max-width: 800px) {
+      .weather .circle {
+        height: 25px;
+        width: 25px; } }
   .weather .sunrays span {
     background: #FFDD4A;
     width: 30px;
     height: 30px;
     position: absolute; }
+    @media screen and (max-width: 800px) {
+      .weather .sunrays span {
+        height: 25px;
+        width: 25px; } }
     .weather .sunrays span:first-child {
       -ms-transform: rotate(30deg);
       -webkit-transform: rotate(30deg);

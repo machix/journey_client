@@ -104,12 +104,6 @@ class MapMarker extends Component {
                 }}
                 zIndex={typeof(this.props.contribution) != 'undefined' ? 100 : 0}
                 position={this.props.position}>
-                {this.props.windowWidth < 800 ? this.state.isOpen && <InfoWindow style={{width: '100%'}}
-                                                                                 onCloseClick={() => this.setState({isOpen: !this.state.isOpen})}>
-                    <div className={'info-window'}>
-                        <MediaDisplay/>
-                    </div>
-                </InfoWindow> : null}
 
 
             </Marker>
@@ -121,3 +115,12 @@ class MapMarker extends Component {
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MapMarker));
 
 //                                    ({moment(-this.props.liveJourneyData[this.props.index].timestamp).fromNow('d')} ago)
+
+
+/*     {this.props.windowWidth < 800 ? this.state.isOpen && <InfoWindow style={{width: '100%'}}
+                                                                                 onCloseClick={() => this.setState({isOpen: !this.state.isOpen})}>
+                    <div className={'info-window'}>
+                        <MediaDisplay/>
+                    </div>
+                </InfoWindow> : null}
+*/

@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8eb92d85-80e0-4af9-8dc4-e20ffe8708d5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/MapView.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/MapView.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Map/MapMarker.js" afterPath="$PROJECT_DIR$/src/Components/Map/MapMarker.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
@@ -43,14 +42,13 @@
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="990" column="4" lean-forward="false" selection-start-line="990" selection-start-column="4" selection-end-line="990" selection-end-column="4" />
+            <state relative-caret-position="310">
+              <caret line="1184" column="14" lean-forward="false" selection-start-line="1184" selection-start-column="14" selection-end-line="1184" selection-end-column="14" />
               <folding>
-                <element signature="e#22609#23613#0" expanded="false" />
-                <element signature="e#23631#28854#0" expanded="false" />
-                <element signature="e#28875#30902#0" expanded="false" />
-                <element signature="e#30918#31213#0" expanded="false" />
-                <element signature="e#31251#32063#0" expanded="false" />
+                <element signature="e#22581#23585#0" expanded="false" />
+                <element signature="e#29020#31045#0" expanded="false" />
+                <element signature="e#31061#31356#0" expanded="false" />
+                <element signature="e#31394#32206#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -69,8 +67,8 @@
       <file leaf-file-name="MapMarker.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/Map/MapMarker.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="112" column="0" lean-forward="true" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+            <state relative-caret-position="217">
+              <caret line="117" column="0" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -111,11 +109,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>with this wish</find>
-      <find>.pill</find>
-      <find>contribution</find>
-      <find>Only the Holy</find>
-      <find>Rad</find>
       <find>Holy Grail</find>
       <find>mystic</find>
       <find>input</find>
@@ -130,7 +123,6 @@
       <find>panto</find>
       <find>marker</find>
       <find>.info-container</find>
-      <find>.info-window</find>
       <find>.infow</find>
       <find>.info-</find>
       <find>.media-container</find>
@@ -141,6 +133,12 @@
       <find>.statistics</find>
       <find>.media</find>
       <find>.mapview-sidebar</find>
+      <find>&amp;.DESCR</find>
+      <find>.WEATHER</find>
+      <find>.header-title</find>
+      <find>.weather</find>
+      <find>text-</find>
+      <find>.info-window</find>
     </findStrings>
     <replaceStrings>
       <replace>htmlFor</replace>
@@ -237,8 +235,8 @@
         <option value="$PROJECT_DIR$/src/Components/Cards/Billing/Stripe/CheckoutForm.js" />
         <option value="$PROJECT_DIR$/src/Components/Map/Map.js" />
         <option value="$PROJECT_DIR$/src/Components/Dashes/MapView.js" />
-        <option value="$PROJECT_DIR$/src/Components/Map/MapMarker.js" />
         <option value="$PROJECT_DIR$/src/Components/Video/Video.js" />
+        <option value="$PROJECT_DIR$/src/Components/Map/MapMarker.js" />
         <option value="$PROJECT_DIR$/src/style.scss" />
       </list>
     </option>
@@ -598,12 +596,12 @@
       <workItem from="1527530541927" duration="28245000" />
       <workItem from="1527642341414" duration="6109000" />
       <workItem from="1527787194740" duration="360000" />
-      <workItem from="1527954075193" duration="21678000" />
+      <workItem from="1527954075193" duration="22430000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="555278000" />
+    <option name="totallyTimeSpent" value="556030000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1048,16 +1046,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Map/MapMarker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="112" column="0" lean-forward="true" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Map/Map.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -1074,16 +1062,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Map/MapMarker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="117" column="0" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="990" column="4" lean-forward="false" selection-start-line="990" selection-start-column="4" selection-end-line="990" selection-end-column="4" />
+        <state relative-caret-position="310">
+          <caret line="1184" column="14" lean-forward="false" selection-start-line="1184" selection-start-column="14" selection-end-line="1184" selection-end-column="14" />
           <folding>
-            <element signature="e#22609#23613#0" expanded="false" />
-            <element signature="e#23631#28854#0" expanded="false" />
-            <element signature="e#28875#30902#0" expanded="false" />
-            <element signature="e#30918#31213#0" expanded="false" />
-            <element signature="e#31251#32063#0" expanded="false" />
+            <element signature="e#22581#23585#0" expanded="false" />
+            <element signature="e#29020#31045#0" expanded="false" />
+            <element signature="e#31061#31356#0" expanded="false" />
+            <element signature="e#31394#32206#0" expanded="false" />
           </folding>
         </state>
       </provider>
