@@ -9,6 +9,7 @@ import mealSmall from '../Assets/meal-small.svg'
 import mealMedium from '../Assets/meal-medium.svg'
 import mealLarge from '../Assets/meal-large.svg'
 import pickaxe from '../Assets/pickaxe.svg'
+import radio from '../Assets/antenna.svg';
 
 import MapContainer from '../Map/MapContainer';
 import Statistics from './ProfileDash/statistics';
@@ -88,6 +89,8 @@ class MapView extends Component {
                 return mealLarge;
             case 5000:
                 return pickaxe;
+            case 50000:
+                return radio;
         }
     };
 
@@ -107,6 +110,17 @@ class MapView extends Component {
                 return 'large meal ';
             case 5000:
                 return 'pickaxe ';
+        }
+    };
+
+    contributionDescription = (contribution)=> {
+        switch (contribution) {
+            case 5000:
+                return 'The Pickaxe allows you to send a direct message. Also pickaxes are great.';
+            case 50000:
+                return 'You found a radio! Include instructions and be careful with your wish. Funds will be returned if instructions are not possible. ';
+            default:
+                return 'Contributions are a fun way to interact with someone on their Journey. Events are triggered when they are created and used'
         }
     };
 
@@ -136,11 +150,16 @@ class MapView extends Component {
                             <div className={'medkit-container'}>
                                 <img src={this.imgSrc(this.props.contributionValue)} style={{height: '50px'}}/>
                             </div>
-                            <h2>
+
+                            {this.props.contributionValue === 50000 ? <h2>
+                                A Radio for ${this.props.contributionValue / 100}!
+                            </h2> : <h2>
                                 Oh, a {this.props.contributionName} for ${this.props.contributionValue / 100}!
-                            </h2>
-                            Contributions are a fun way to interact with someone on their Journey. Events are triggered when
-                            they are created and used.<br/>
+                            </h2>}
+
+                            {this.contributionDescription(this.props.contributionValue)}
+
+                            <br/>
 
 
                             <div className={'stripe-container'}>
@@ -178,10 +197,11 @@ class MapView extends Component {
 
                     <div className={'mapview-contribution-container'}>
                         <ContributionPill string={' Meal: $5'} onClick={() => this.contributionToggle('Meal', 500)}/>
-                        <ContributionPill string={' Meal: $10'} onClick={() => this.contributionToggle('Meal', 1000)}/>
                         <ContributionPill string={' Meal: $15'} onClick={() => this.contributionToggle('Meal', 1500)}/>
                         <ContributionPill string={' Pickaxe: $50'}
                                           onClick={() => this.contributionToggle('Pickaxe', 5000)}/>
+                        <ContributionPill string={' Radio: $500'}
+                                          onClick={() => this.contributionToggle('Pickaxe', 50000)}/>
                     </div>
                     {this.props.liveJourneyData !== null && typeof(this.props.liveJourneyData) !== 'undefined' && this.props.liveJourneyData.length > 0 ?
                         <div className={'info-modal slideInDown'}>
@@ -266,7 +286,6 @@ class MapView extends Component {
                         coordinates={this.props.liveJourneyData}
                         overlayIcon={null}
                     />
-
 
 
                 </div>

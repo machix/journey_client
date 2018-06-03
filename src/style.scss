@@ -1373,8 +1373,28 @@ h1, h2, h3, h4, h5 {
           text-align: center;
           border-bottom: solid white 1px;
 
+          &.message {
+            border-bottom: none;
+            border-bottom: solid white 1px;
+            margin-bottom: 60px;
+            font-size: 0.9rem;
+
+            @media screen and (max-width: 800px) {
+              margin-bottom: 40px;
+            }
+
+
+
+            &::placeholder {
+              color: inherit;
+              text-shadow: inherit;
+              text-align: center;
+              font-size: 1.2rem;
+            }
+          }
+
           @media screen and (max-width: 800px) {
-            font-size: 1rem !important;
+            font-size: 1rem;
           }
 
           &::placeholder {
@@ -1434,8 +1454,8 @@ h1, h2, h3, h4, h5 {
         align-self: center;
 
         @media screen and (max-width: 800px) {
-          font-size: 0.7rem;
-          padding: 5px 10px;
+          font-size: 0.6rem;
+          padding: 10px 10px;
         }
       }
 

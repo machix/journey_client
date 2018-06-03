@@ -86,7 +86,7 @@ class Map extends Component {
         if (nextProps.altitudeVisible === true) {
             this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, this.props.windowWidth > 800 ? 100 : 40);
         } else if (nextProps.altitudeVisible === false) {
-            this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, 0);
+            this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, this.props.windowWidth > 800 ? 0 : -40);
         }
 
         if (nextProps.fitBounds === true) {
@@ -152,9 +152,6 @@ class Map extends Component {
                 center={this.props.coordinates[0].coordinates}
                 ref={c => this.map = c}
                 mapTypeId="terrain"
-                options={{scrollwheel: false, isDraggable: this.props.windowWidth > 800 ? true : false}
-                }
-
             >
                 <MarkerClusterer
                     averageCenter

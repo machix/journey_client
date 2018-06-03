@@ -991,9 +991,22 @@ h1, h2, h3, h4, h5 {
           margin-bottom: 20px;
           text-align: center;
           border-bottom: solid white 1px; }
+          .mapview-container .map-container .billing-modal .stripe-container input.message {
+            border-bottom: none;
+            border-bottom: solid white 1px;
+            margin-bottom: 60px;
+            font-size: 0.9rem; }
+            @media screen and (max-width: 800px) {
+              .mapview-container .map-container .billing-modal .stripe-container input.message {
+                margin-bottom: 40px; } }
+            .mapview-container .map-container .billing-modal .stripe-container input.message::placeholder {
+              color: inherit;
+              text-shadow: inherit;
+              text-align: center;
+              font-size: 1.2rem; }
           @media screen and (max-width: 800px) {
             .mapview-container .map-container .billing-modal .stripe-container input {
-              font-size: 1rem !important; } }
+              font-size: 1rem; } }
           .mapview-container .map-container .billing-modal .stripe-container input::placeholder {
             color: inherit;
             text-shadow: inherit;
@@ -1035,8 +1048,8 @@ h1, h2, h3, h4, h5 {
         align-self: center; }
         @media screen and (max-width: 800px) {
           .mapview-container .map-container .mapview-contribution-container .pill {
-            font-size: 0.7rem;
-            padding: 5px 10px; } }
+            font-size: 0.6rem;
+            padding: 10px 10px; } }
 
 .contribution-container {
   background-image: linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%);
