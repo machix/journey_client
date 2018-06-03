@@ -26,6 +26,7 @@ const mapStateToProps = state => ({
 
     contributionName: state.common.contributionName,
     contributionValue: state.common.contributionValue,
+    windowWidth: state.common.windowWidth,
 
     liveJourneyData: state.common.liveJourneyData,
     currentIndex: state.mapview.currentIndex,
@@ -127,11 +128,12 @@ class MapView extends Component {
     render() {
         return (
             <div className={'mapview-container no-select'}>
-                <div className={'mapview-sidebar conditional-nodisplay-mobile'}>
+                {this.props.windowWidth < 800 ? null : <div className={'mapview-sidebar'}>
 
                     <MediaDisplay/>
                     <Statistics className={''} displayMobile={null} altitudeOnClick={() => this.altitudeToggle()}/>
-                </div>
+                </div>}
+
                 <div className={'map-container'}>
                     {this.state.contributionVisible === true ? <div className={'billing-modal slideIndown'}>
 
