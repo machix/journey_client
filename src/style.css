@@ -836,7 +836,8 @@ h1, h2, h3, h4, h5 {
           top: 110%;
           width: 100%;
           font-size: 0.7rem;
-          text-align: left; }
+          text-align: left;
+          z-index: 10; }
           .mapview-container .map-container .info-window .list-item.contribution .xyzr {
             border: solid #c693f0 3px; }
           .mapview-container .map-container .info-window .list-item.contribution .list-description {

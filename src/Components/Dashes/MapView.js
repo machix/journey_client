@@ -113,10 +113,10 @@ class MapView extends Component {
     render() {
         return (
             <div className={'mapview-container no-select'}>
-                <div className={'mapview-sidebar'}>
+                <div className={'mapview-sidebar conditional-nodisplay-mobile'}>
 
                     <MediaDisplay/>
-                    <Statistics className={'conditional-nodisplay-mobile'} displayMobile={null} altitudeOnClick={() => this.altitudeToggle()}/>
+                    <Statistics className={''} displayMobile={null} altitudeOnClick={() => this.altitudeToggle()}/>
                 </div>
                 <div className={'map-container'}>
                     {this.state.contributionVisible === true ? <div className={'billing-modal slideIndown'}>
