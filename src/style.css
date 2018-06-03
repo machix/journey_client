@@ -199,6 +199,12 @@ h1, h2, h3, h4, h5 {
 .slideInVerticalMedium {
   animation: slide-in-vertical 0.8s cubic-bezier(0.23, 1, 0.32, 1) both; }
 
+.slideInDown {
+  animation: slide-in-down 0.2s cubic-bezier(0.23, 1, 0.32, 1) both; }
+
+.slideInDownMedium {
+  animation: slide-in-down 0.8s cubic-bezier(0.23, 1, 0.32, 1) both; }
+
 .loader,
 .loader:before,
 .loader:after {
@@ -307,6 +313,14 @@ h1, h2, h3, h4, h5 {
 @keyframes slide-in-vertical {
   0% {
     transform: translateY(50px);
+    opacity: 0; }
+  100% {
+    transform: none;
+    opacity: 1; } }
+
+@keyframes slide-in-down {
+  0% {
+    transform: translateY(-50px);
     opacity: 0; }
   100% {
     transform: none;
@@ -672,12 +686,19 @@ h1, h2, h3, h4, h5 {
   display: flex;
   flex-direction: row;
   overflow: hidden; }
+  @media screen and (max-width: 800px) {
+    .mapview-container {
+      height: auto;
+      flex-direction: column; } }
   .mapview-container .mapview-sidebar {
     width: 30%;
     height: 100%;
     position: relative;
     display: flex;
     flex-direction: column; }
+    @media screen and (max-width: 800px) {
+      .mapview-container .mapview-sidebar {
+        width: 100%; } }
     .mapview-container .mapview-sidebar .info {
       max-width: 40%; }
     .mapview-container .mapview-sidebar .media-container {
@@ -732,6 +753,10 @@ h1, h2, h3, h4, h5 {
     display: flex;
     justify-content: center;
     align-items: center; }
+    @media screen and (max-width: 800px) {
+      .mapview-container .map-container {
+        width: 100%;
+        height: 100vh; } }
     .mapview-container .map-container .info-window {
       align-items: center;
       text-align: center;
@@ -745,7 +770,7 @@ h1, h2, h3, h4, h5 {
         justify-content: center; }
         .mapview-container .map-container .info-window .header-title .weather {
           width: 80px;
-          height: 80px;
+          height: 70px;
           background-color: white;
           border-radius: 5px;
           box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5); }
@@ -757,7 +782,7 @@ h1, h2, h3, h4, h5 {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          height: 80px;
+          height: 70px;
           margin-left: 3px;
           flex: 1;
           border-radius: 5px;
@@ -776,33 +801,6 @@ h1, h2, h3, h4, h5 {
         display: flex;
         align-items: center;
         padding: 4px; }
-      .mapview-container .map-container .info-window .interact-container {
-        position: absolute;
-        left: -50px;
-        bottom: 0;
-        height: 80px;
-        margin-top: 5px;
-        display: flex;
-        flex-direction: column;
-        color: #b5b5b5;
-        justify-content: space-between;
-        align-items: center;
-        align-self: stretch;
-        z-index: 100; }
-        .mapview-container .map-container .info-window .interact-container .interact {
-          background-color: white;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 30px;
-          height: 30px;
-          transition: all 0.2s ease-out;
-          border-radius: 30px;
-          overflow: visible;
-          box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5), inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 3px 4px -1px rgba(255, 255, 255, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.8), inset 0 20px 30px 0 rgba(255, 255, 255, 0.2); }
-          .mapview-container .map-container .info-window .interact-container .interact:active {
-            box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 25px -1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 20px 0 rgba(0, 0, 0, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.6); }
       .mapview-container .map-container .info-window .list-item {
         display: flex;
         color: #c693f0;
@@ -813,10 +811,10 @@ h1, h2, h3, h4, h5 {
         .mapview-container .map-container .info-window .list-item.description {
           color: black;
           text-align: center;
-          padding: 15px 0 15px 0;
+          padding: 30px 15px;
           justify-content: center;
           font-family: 'Rock Salt', cursive;
-          font-size: 1rem;
+          font-size: 0.8rem;
           background-color: white;
           margin-top: 5px;
           box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5); }
@@ -865,7 +863,7 @@ h1, h2, h3, h4, h5 {
         font-size: 1.7rem; }
     .mapview-container .map-container .info-modal {
       position: absolute;
-      z-index: 25;
+      z-index: 20;
       right: 20px;
       top: 20px;
       width: 30%;
@@ -877,6 +875,43 @@ h1, h2, h3, h4, h5 {
       flex-direction: column;
       align-items: center;
       justify-content: center; }
+      @media screen and (max-width: 800px) {
+        .mapview-container .map-container .info-modal {
+          width: 90%; } }
+      .mapview-container .map-container .info-modal .raised {
+        box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.5);
+        background-color: rgba(249, 249, 249, 0.95);
+        border-radius: 33px;
+        display: flex;
+        align-items: center;
+        padding: 3px; }
+      .mapview-container .map-container .info-modal .interact-container {
+        position: absolute;
+        left: -50px;
+        bottom: 0;
+        height: 80px;
+        margin-top: 5px;
+        display: flex;
+        flex-direction: column;
+        color: #b5b5b5;
+        justify-content: space-around;
+        align-items: center;
+        align-self: stretch;
+        z-index: 100; }
+        .mapview-container .map-container .info-modal .interact-container .interact {
+          background-color: white;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 30px;
+          height: 30px;
+          transition: all 0.2s ease-out;
+          border-radius: 30px;
+          overflow: visible;
+          box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5), inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 3px 4px -1px rgba(255, 255, 255, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.8), inset 0 20px 30px 0 rgba(255, 255, 255, 0.2); }
+          .mapview-container .map-container .info-modal .interact-container .interact:active {
+            box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 25px -1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 20px 0 rgba(0, 0, 0, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.6); }
     .mapview-container .map-container .billing-modal {
       position: absolute;
       z-index: 25;
@@ -895,6 +930,12 @@ h1, h2, h3, h4, h5 {
       font-size: 0.9rem;
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
       text-align: center; }
+      @media screen and (max-width: 800px) {
+        .mapview-container .map-container .billing-modal {
+          width: 95%;
+          padding: 30px 15px;
+          border: solid white 5px;
+          font-size: 0.7rem; } }
       .mapview-container .map-container .billing-modal .medkit-container {
         width: 100px;
         height: 100px;
@@ -942,6 +983,9 @@ h1, h2, h3, h4, h5 {
       width: 80%;
       justify-content: space-around;
       z-index: 20; }
+      @media screen and (max-width: 800px) {
+        .mapview-container .map-container .mapview-contribution-container {
+          width: 100%; } }
       .mapview-container .map-container .mapview-contribution-container .pill {
         border-radius: 50px;
         cursor: pointer;
@@ -955,6 +999,10 @@ h1, h2, h3, h4, h5 {
         text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
         overflow: hidden;
         align-self: center; }
+        @media screen and (max-width: 800px) {
+          .mapview-container .map-container .mapview-contribution-container .pill {
+            font-size: 0.7rem;
+            padding: 5px 10px; } }
 
 .contribution-container {
   background-image: linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%);
@@ -3940,7 +3988,8 @@ ul.top-links {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #45d1ff;
+  color: white;
+  background-color: #b0caff !important;
   justify-content: center;
   position: relative;
   padding: 10px 0 5px 0;
@@ -4093,17 +4142,17 @@ ul.top-links {
 @keyframes animateCloud {
   0% {
     margin-left: -30px;
-    opacity: 0.1; }
+    opacity: 0.7; }
   15% {
     opacity: 1; }
   50% {
     margin-left: 30px;
-    opacity: 0.1; }
+    opacity: 0.4; }
   75% {
     opacity: 0.95; }
   100% {
     margin-left: -30px;
-    opacity: 0.1; } }
+    opacity: 0.7; } }
   .weather .x2 {
     -webkit-animation: animateCloud 10s linear infinite;
     -moz-animation: animateCloud 10s linear infinite;
@@ -4167,7 +4216,7 @@ ul.top-links {
   .weather .drop {
     position: relative;
     float: left;
-    width: 1px;
+    width: 5px;
     margin: 20px;
     left: 5px;
     background: #789;
@@ -4198,5 +4247,5 @@ ul.top-links {
     opacity: 1;
     transform: translate(0, 0); }
   100% {
-    opacity: 0.2;
+    opacity: 0.4;
     transform: translate(0, 100px); } }
