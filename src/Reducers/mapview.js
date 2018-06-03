@@ -5,7 +5,6 @@ const defaultState = {
     indexMap: {},
     currentIndex: 0,
     fitBounds: false
-
 };
 
 export default (state = defaultState, action) => {

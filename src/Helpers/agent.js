@@ -329,27 +329,9 @@ const FirebaseQuery = {
                         }
                     }
                     sortable.sort(function (a, b) {
-                        return a.timestamp - b.timestamp
+                        //Reversed Timestamps
+                        return b.timestamp - a.timestamp;
                     });
-
-                    //Calculate latlng distances in km
-                    let distance = 0;
-
-                    for (var i = 0; i <= sortable.length - 1; i++) {
-                        if (i == 0) {
-                            sortable[i].distance = 0;
-                            sortable[i].markerIndex = 0;
-
-                        } else {
-                            distance += calculateDistance(sortable[i - 1].coordinates.lat, sortable[i - 1].coordinates.lng, sortable[i].coordinates.lat, sortable[i].coordinates.lng,);
-                            sortable[i].distance = Math.round(distance * 100) / 100;
-                            sortable[i].markerIndex = i;
-
-                        }
-                    };
-
-                    var altitudeArray = flattener(sortable, sortable[0].distance, sortable[sortable.length-1].distance);
-
 
                     //There are -1 altitudes in the altitudes which need to be averaged
                     sortable.forEach((object, index) => {
@@ -364,6 +346,31 @@ const FirebaseQuery = {
                         } else {
                         }
                     });
+
+
+                    console.log(sortable);
+
+                    //Calculate latlng distances in km
+                    let distance = 0;
+
+                    for (let i = 0; i <= sortable.length - 1; i++) {
+                        if (i === 0) {
+                            sortable[i].distance = 0;
+                            sortable[i].markerIndex = 0;
+
+                        } else {
+                            distance += calculateDistance(sortable[i - 1].coordinates.lat, sortable[i - 1].coordinates.lng, sortable[i].coordinates.lat, sortable[i].coordinates.lng,);
+                            sortable[i].distance = Math.round(distance * 100) / 100;
+                            sortable[i].markerIndex = i;
+
+                        }
+                    };
+
+                    var altitudeArray = flattener(sortable, sortable[0].distance, sortable[sortable.length-1].distance);
+
+                    console.log(altitudeArray);
+
+
 
                     //Calculate the altitude change in meters
                     let altitude = 0;
