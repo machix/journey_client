@@ -985,8 +985,8 @@ h1, h2, h3, h4, h5 {
     flex-direction: column;
 
     @media screen and (max-width: 800px) {
-
       width: 100%;
+
     }
 
     .info {
@@ -1017,6 +1017,10 @@ h1, h2, h3, h4, h5 {
       background-color: rgba(0, 0, 0, 0.8);
       padding: 20px;
 
+      @media screen and (max-width: 800px) {
+   padding: 10px;
+      }
+
       .stats-title {
         font-weight: bold;
         display: block;
@@ -1035,6 +1039,11 @@ h1, h2, h3, h4, h5 {
           max-width: 100px;
           padding-top: 10px;
           cursor: pointer;
+
+          @media screen and (max-width: 800px) {
+           padding: 5px;
+
+          }
 
           .stat-top {
             font-size: 1rem;
@@ -1199,13 +1208,15 @@ h1, h2, h3, h4, h5 {
       z-index: 25;
       width: 95%;
       background-color: rgba(255, 255, 255, 0.93);
-      border-radius: 10px;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+
       font-size: 0.7rem;
       fill: $c-set-text-2;
 
       @media screen and (max-width: 800px) {
         width: 100%;
-        padding: 5px;
+        padding: 5px 5px 40px 5px;
       }
 
       .altitude-title {
@@ -1222,7 +1233,7 @@ h1, h2, h3, h4, h5 {
         font-size: 1.7rem;
 
         @media screen and (max-width: 800px) {
-          font-size: 1rem;
+          font-size: 0.8rem;
           margin-left: auto;
           margin-right: auto;
 
@@ -2856,12 +2867,14 @@ h1, h2, h3, h4, h5 {
     .stats-title {
       font-weight: bold;
       display: block;
+      text-transform: uppercase;
     }
 
     .stats-container {
       display: flex;
       flex-direction: column;
       width: 100%;
+
       @media screen and (max-width: 800px) {
         flex-direction: row;
         justify-content: space-around;

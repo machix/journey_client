@@ -20,7 +20,9 @@ const mapStateToProps = (state, ownProps) => ({
     legAltitudeChange: state.common.legAltitudeChange,
 
     thumbnails: state.profile.thumbnails,
-    displayMobile: ownProps.displayMobile
+
+    displayMobile: ownProps.displayMobile,
+    className: ownProps.className
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -58,7 +60,7 @@ class Statistics extends Component {
         return (
 
             this.props.displayMobile === null ? <div
-                    className={'statistics'} style={{position: 'relative'}}>
+                    className={'statistics ' + this.props.className} style={{position: 'relative'}}>
                     <div className={'stats-title'}>
                         Live Stats {this.props.displayMobile}
                     </div>

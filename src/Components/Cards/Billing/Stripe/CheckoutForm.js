@@ -101,7 +101,7 @@ class CheckoutForm extends React.Component {
                                  style={{
 
                                      base: {
-                                         fontSize: this.props.windowWidth > 800 ? '18px' : 'auto',
+                                         fontSize: this.props.windowWidth > 800 ? '18px' : undefined,
                                          color: this.props.color,
                                          iconColor: this.props.color,
                                          '::placeholder': {

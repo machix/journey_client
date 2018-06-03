@@ -116,7 +116,7 @@ class MapView extends Component {
                 <div className={'mapview-sidebar'}>
 
                     <MediaDisplay/>
-                    <Statistics displayMobile={null} altitudeOnClick={() => this.altitudeToggle()}/>
+                    <Statistics className={'conditional-nodisplay-mobile'} displayMobile={null} altitudeOnClick={() => this.altitudeToggle()}/>
                 </div>
                 <div className={'map-container'}>
                     {this.state.contributionVisible === true ? <div className={'billing-modal slideIndown'}>
@@ -268,8 +268,11 @@ class MapView extends Component {
                     />
 
 
-                </div>
 
+                </div>
+                <div className={'mapview-sidebar conditional-nodisplay-desktop'}>
+                    <Statistics className={''} displayMobile={null} altitudeOnClick={() => this.altitudeToggle()}/>
+                </div>
 
             </div>
 

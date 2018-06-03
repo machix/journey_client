@@ -721,6 +721,9 @@ h1, h2, h3, h4, h5 {
       color: white;
       background-color: rgba(0, 0, 0, 0.8);
       padding: 20px; }
+      @media screen and (max-width: 800px) {
+        .mapview-container .mapview-sidebar .statistics {
+          padding: 10px; } }
       .mapview-container .mapview-sidebar .statistics .stats-title {
         font-weight: bold;
         display: block; }
@@ -737,6 +740,9 @@ h1, h2, h3, h4, h5 {
           max-width: 100px;
           padding-top: 10px;
           cursor: pointer; }
+          @media screen and (max-width: 800px) {
+            .mapview-container .mapview-sidebar .statistics .stats-container .stat {
+              padding: 5px; } }
           .mapview-container .mapview-sidebar .statistics .stats-container .stat .stat-top {
             font-size: 1rem;
             font-weight: bold; }
@@ -855,13 +861,14 @@ h1, h2, h3, h4, h5 {
       z-index: 25;
       width: 95%;
       background-color: rgba(255, 255, 255, 0.93);
-      border-radius: 10px;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
       font-size: 0.7rem;
       fill: #939393; }
       @media screen and (max-width: 800px) {
         .mapview-container .map-container .altitude-container {
           width: 100%;
-          padding: 5px; } }
+          padding: 5px 5px 40px 5px; } }
       .mapview-container .map-container .altitude-container .altitude-title {
         position: absolute;
         font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
@@ -876,7 +883,7 @@ h1, h2, h3, h4, h5 {
         font-size: 1.7rem; }
         @media screen and (max-width: 800px) {
           .mapview-container .map-container .altitude-container .altitude-title {
-            font-size: 1rem;
+            font-size: 0.8rem;
             margin-left: auto;
             margin-right: auto; } }
     .mapview-container .map-container .info-modal {
@@ -2078,7 +2085,8 @@ h1, h2, h3, h4, h5 {
         color: white; } }
     .profile-container .statistics .stats-title {
       font-weight: bold;
-      display: block; }
+      display: block;
+      text-transform: uppercase; }
     .profile-container .statistics .stats-container {
       display: flex;
       flex-direction: column;
