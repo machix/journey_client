@@ -207,7 +207,7 @@ class MapView extends Component {
                     </div>
                     {this.props.liveJourneyData !== null && typeof(this.props.liveJourneyData) !== 'undefined' && this.props.liveJourneyData.length > 0 ?
                         <div className={'info-modal slideInDown'}>
-                            <div className={'info-window'}>
+                            <div className={'info-container'}>
 
                                 <div className={'header-title'}>
                                     <WeatherContainer/>

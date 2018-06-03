@@ -988,23 +988,45 @@ h1, h2, h3, h4, h5 {
       width: 100%;
 
     }
+    .media-container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .media {
+      max-height: 100%;
+      display: flex;
+
+      .react-player {
+        overflow: hidden;
+
+        video {
+          width: auto !important;
+        }
+      }
+    }
+  }
 
     .info {
       max-width: 40%;
     }
 
-    .media-container {
-      display: flex;
-      flex: 1;
-      justify-content: center;
-      align-items: center;
-
-      .media {
-        max-height: 100%;
-        display: flex;
-        width: 100%;
-      }
-    }
+    //.media-container {
+    //  display: flex;
+    //  flex: 1;
+    //  justify-content: center;
+    //  align-items: center;
+    //  width: 100%;
+    //  height: 100%;
+    //
+    //  .media {
+    //    max-height: 100%;
+    //    display: flex;
+    //    width: 100%;
+    //  }
+    //}
     .statistics {
       position: absolute;
       bottom: 0;
@@ -1016,6 +1038,7 @@ h1, h2, h3, h4, h5 {
       color: white;
       background-color: rgba(0, 0, 0, 0.8);
       padding: 20px;
+      align-self: flex-end;
 
       @media screen and (max-width: 800px) {
    padding: 10px;
@@ -1076,126 +1099,27 @@ h1, h2, h3, h4, h5 {
     }
 
     .info-window {
-      align-items: center;
-      text-align: center;
-      width: 100%;
-      min-width: 20vw;
+      max-width: 70vw;
       position: relative;
-      overflow: visible !important;
+      height: 40vh;
 
-      .header-title {
+      .media-container {
         display: flex;
-        align-items: center;
+        flex: 1;
         justify-content: center;
-
-        .weather {
-          width: 80px;
-          height: 70px;
-          background-color: white;
-          border-radius: 5px;
-          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
-
-        }
-
-        .text-info {
-          text-align: left;
-          font-size: 0.7rem;
-          background-color: white;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          height: 70px;
-          margin-left: 3px;
-          flex: 1;
-          border-radius: 5px;
-
-          @media screen and (max-width: 800px) {
-            font-size: 0.6rem;
-          }
-
-          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
-
-          .title {
-            font-size: 1.1rem;
-            font-weight: 500;
-            font-family: Londrina Solid;
-            color: rgb(69, 209, 255);
-          }
-        }
-      }
-      a {
-        color: inherit
-      }
-
-      .raised {
-        box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.5);
-        background-color: rgba(249, 249, 249, 0.95);
-        border-radius: 33px;
-        display: flex;
         align-items: center;
-        padding: 4px;
-      }
+        height: 100%;
 
-      .list-item {
-        display: flex;
-        color: #c693f0;
-        //background-color: #f7f5d6;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        border-radius: 5px;
-
-        &.description {
-          color: black;
-          text-align: center;
-          padding: 15px;
-          justify-content: center;
-          font-family: 'Rock Salt', cursive;
-          font-size: 0.8rem;
-          background-color: white;
-          margin-top: 5px;
-          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
-
-          @media screen and (max-width: 800px) {
-            padding: 15px;
-            font-size: 0.7rem;
-
-          }
-        }
-
-        &.contribution {
-          position: absolute;
-          top: 110%;
-          width: 100%;
-          font-size: 0.7rem;
-          text-align: left;
-          z-index: 10;
-
-          .xyzr {
-            border: solid #c693f0 3px;
-
-          }
-
-          .list-description {
-            padding: 0 15px 0 10px;
-          }
-
-        }
-
-        .contribution-circle {
-          border-radius: 100px;
-          width: 40px;
-          height: 40px;
-          background-color: #f7f5d6;
+        .media {
+          max-height: 100%;
           display: flex;
-          align-items: center;
-          justify-content: center;
-          border: solid #c693f0 2px;
 
-          img {
-            width: 20px;
-            height: 20px;
+          .react-player {
+            overflow: hidden;
+
+            video {
+              width: auto !important;
+            }
           }
         }
       }
@@ -1262,6 +1186,133 @@ h1, h2, h3, h4, h5 {
       @media screen and (max-width: 800px) {
         width: 90%;
       }
+
+      .info-container {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        min-width: 20vw;
+        position: relative;
+        overflow: visible !important;
+
+        .header-title {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .weather {
+            width: 80px;
+            height: 70px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+
+          }
+
+          .text-info {
+            text-align: left;
+            font-size: 0.7rem;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 70px;
+            margin-left: 3px;
+            flex: 1;
+            border-radius: 5px;
+
+            @media screen and (max-width: 800px) {
+              font-size: 0.6rem;
+            }
+
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+
+            .title {
+              font-size: 1.1rem;
+              font-weight: 500;
+              font-family: Londrina Solid;
+              color: rgb(69, 209, 255);
+            }
+          }
+        }
+        a {
+          color: inherit
+        }
+
+        .raised {
+          box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.5);
+          background-color: rgba(249, 249, 249, 0.95);
+          border-radius: 33px;
+          display: flex;
+          align-items: center;
+          padding: 4px;
+        }
+
+        .list-item {
+          display: flex;
+          color: #c693f0;
+          //background-color: #f7f5d6;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          border-radius: 5px;
+
+          &.description {
+            color: black;
+            text-align: center;
+            padding: 15px;
+            justify-content: center;
+            font-family: 'Rock Salt', cursive;
+            font-size: 0.8rem;
+            background-color: white;
+            margin-top: 5px;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+
+            @media screen and (max-width: 800px) {
+              padding: 15px;
+              font-size: 0.7rem;
+
+            }
+          }
+
+          &.contribution {
+            position: absolute;
+            top: 110%;
+            width: 100%;
+            font-size: 0.7rem;
+            text-align: left;
+            z-index: 10;
+
+            .xyzr {
+              border: solid #c693f0 3px;
+
+            }
+
+            .list-description {
+              padding: 0 15px 0 10px;
+            }
+
+          }
+
+          .contribution-circle {
+            border-radius: 100px;
+            width: 40px;
+            height: 40px;
+            background-color: #f7f5d6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: solid #c693f0 2px;
+
+            img {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+      }
+
       .raised {
         box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.5);
         background-color: rgba(249, 249, 249, 0.95);
@@ -1376,11 +1427,7 @@ h1, h2, h3, h4, h5 {
           &.message {
             border-bottom: none;
             border-bottom: solid white 1px;
-            margin-bottom: 60px;
-
-            @media screen and (max-width: 800px) {
-              margin-bottom: 40px;
-            }
+            margin-bottom: 40px;
 
 
 
@@ -2113,9 +2160,6 @@ h1, h2, h3, h4, h5 {
   display: flex;
   align-items: center;
   justify-content: center;
-  .info-container {
-
-  }
 
   .image-container {
     margin-right: 10px;

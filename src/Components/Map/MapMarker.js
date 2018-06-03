@@ -106,7 +106,9 @@ class MapMarker extends Component {
                 position={this.props.position}>
                 {this.props.windowWidth < 800 ? this.state.isOpen && <InfoWindow style={{width: '100%'}}
                                                                                  onCloseClick={() => this.setState({isOpen: !this.state.isOpen})}>
-                    <div>asdf</div>
+                    <div className={'info-window'}>
+                        <MediaDisplay/>
+                    </div>
                 </InfoWindow> : null}
 
 

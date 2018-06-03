@@ -699,17 +699,21 @@ h1, h2, h3, h4, h5 {
     @media screen and (max-width: 800px) {
       .mapview-container .mapview-sidebar {
         width: 100%; } }
-    .mapview-container .mapview-sidebar .info {
-      max-width: 40%; }
     .mapview-container .mapview-sidebar .media-container {
       display: flex;
       flex: 1;
       justify-content: center;
-      align-items: center; }
+      align-items: center;
+      height: 100%; }
       .mapview-container .mapview-sidebar .media-container .media {
         max-height: 100%;
-        display: flex;
-        width: 100%; }
+        display: flex; }
+        .mapview-container .mapview-sidebar .media-container .media .react-player {
+          overflow: hidden; }
+          .mapview-container .mapview-sidebar .media-container .media .react-player video {
+            width: auto !important; }
+    .mapview-container .mapview-sidebar .info {
+      max-width: 40%; }
     .mapview-container .mapview-sidebar .statistics {
       position: absolute;
       bottom: 0;
@@ -720,7 +724,8 @@ h1, h2, h3, h4, h5 {
       width: 100%;
       color: white;
       background-color: rgba(0, 0, 0, 0.8);
-      padding: 20px; }
+      padding: 20px;
+      align-self: flex-end; }
       @media screen and (max-width: 800px) {
         .mapview-container .mapview-sidebar .statistics {
           padding: 10px; } }
@@ -764,96 +769,22 @@ h1, h2, h3, h4, h5 {
         width: 100%;
         height: 100vh; } }
     .mapview-container .map-container .info-window {
-      align-items: center;
-      text-align: center;
-      width: 100%;
-      min-width: 20vw;
+      max-width: 70vw;
       position: relative;
-      overflow: visible !important; }
-      .mapview-container .map-container .info-window .header-title {
+      height: 40vh; }
+      .mapview-container .map-container .info-window .media-container {
         display: flex;
-        align-items: center;
-        justify-content: center; }
-        .mapview-container .map-container .info-window .header-title .weather {
-          width: 80px;
-          height: 70px;
-          background-color: white;
-          border-radius: 5px;
-          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5); }
-        .mapview-container .map-container .info-window .header-title .text-info {
-          text-align: left;
-          font-size: 0.7rem;
-          background-color: white;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          height: 70px;
-          margin-left: 3px;
-          flex: 1;
-          border-radius: 5px;
-          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5); }
-          @media screen and (max-width: 800px) {
-            .mapview-container .map-container .info-window .header-title .text-info {
-              font-size: 0.6rem; } }
-          .mapview-container .map-container .info-window .header-title .text-info .title {
-            font-size: 1.1rem;
-            font-weight: 500;
-            font-family: Londrina Solid;
-            color: #45d1ff; }
-      .mapview-container .map-container .info-window a {
-        color: inherit; }
-      .mapview-container .map-container .info-window .raised {
-        box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.5);
-        background-color: rgba(249, 249, 249, 0.95);
-        border-radius: 33px;
-        display: flex;
-        align-items: center;
-        padding: 4px; }
-      .mapview-container .map-container .info-window .list-item {
-        display: flex;
-        color: #c693f0;
-        align-items: center;
+        flex: 1;
         justify-content: center;
-        position: relative;
-        border-radius: 5px; }
-        .mapview-container .map-container .info-window .list-item.description {
-          color: black;
-          text-align: center;
-          padding: 15px;
-          justify-content: center;
-          font-family: 'Rock Salt', cursive;
-          font-size: 0.8rem;
-          background-color: white;
-          margin-top: 5px;
-          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5); }
-          @media screen and (max-width: 800px) {
-            .mapview-container .map-container .info-window .list-item.description {
-              padding: 15px;
-              font-size: 0.7rem; } }
-        .mapview-container .map-container .info-window .list-item.contribution {
-          position: absolute;
-          top: 110%;
-          width: 100%;
-          font-size: 0.7rem;
-          text-align: left;
-          z-index: 10; }
-          .mapview-container .map-container .info-window .list-item.contribution .xyzr {
-            border: solid #c693f0 3px; }
-          .mapview-container .map-container .info-window .list-item.contribution .list-description {
-            padding: 0 15px 0 10px; }
-        .mapview-container .map-container .info-window .list-item .contribution-circle {
-          border-radius: 100px;
-          width: 40px;
-          height: 40px;
-          background-color: #f7f5d6;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border: solid #c693f0 2px; }
-          .mapview-container .map-container .info-window .list-item .contribution-circle img {
-            width: 20px;
-            height: 20px; }
+        align-items: center;
+        height: 100%; }
+        .mapview-container .map-container .info-window .media-container .media {
+          max-height: 100%;
+          display: flex; }
+          .mapview-container .map-container .info-window .media-container .media .react-player {
+            overflow: hidden; }
+            .mapview-container .map-container .info-window .media-container .media .react-player video {
+              width: auto !important; }
     .mapview-container .map-container .altitude-container {
       text-align: center;
       padding: 40px 40px 60px 40px;
@@ -904,6 +835,97 @@ h1, h2, h3, h4, h5 {
       @media screen and (max-width: 800px) {
         .mapview-container .map-container .info-modal {
           width: 90%; } }
+      .mapview-container .map-container .info-modal .info-container {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        min-width: 20vw;
+        position: relative;
+        overflow: visible !important; }
+        .mapview-container .map-container .info-modal .info-container .header-title {
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          .mapview-container .map-container .info-modal .info-container .header-title .weather {
+            width: 80px;
+            height: 70px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5); }
+          .mapview-container .map-container .info-modal .info-container .header-title .text-info {
+            text-align: left;
+            font-size: 0.7rem;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 70px;
+            margin-left: 3px;
+            flex: 1;
+            border-radius: 5px;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5); }
+            @media screen and (max-width: 800px) {
+              .mapview-container .map-container .info-modal .info-container .header-title .text-info {
+                font-size: 0.6rem; } }
+            .mapview-container .map-container .info-modal .info-container .header-title .text-info .title {
+              font-size: 1.1rem;
+              font-weight: 500;
+              font-family: Londrina Solid;
+              color: #45d1ff; }
+        .mapview-container .map-container .info-modal .info-container a {
+          color: inherit; }
+        .mapview-container .map-container .info-modal .info-container .raised {
+          box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.5);
+          background-color: rgba(249, 249, 249, 0.95);
+          border-radius: 33px;
+          display: flex;
+          align-items: center;
+          padding: 4px; }
+        .mapview-container .map-container .info-modal .info-container .list-item {
+          display: flex;
+          color: #c693f0;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          border-radius: 5px; }
+          .mapview-container .map-container .info-modal .info-container .list-item.description {
+            color: black;
+            text-align: center;
+            padding: 15px;
+            justify-content: center;
+            font-family: 'Rock Salt', cursive;
+            font-size: 0.8rem;
+            background-color: white;
+            margin-top: 5px;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5); }
+            @media screen and (max-width: 800px) {
+              .mapview-container .map-container .info-modal .info-container .list-item.description {
+                padding: 15px;
+                font-size: 0.7rem; } }
+          .mapview-container .map-container .info-modal .info-container .list-item.contribution {
+            position: absolute;
+            top: 110%;
+            width: 100%;
+            font-size: 0.7rem;
+            text-align: left;
+            z-index: 10; }
+            .mapview-container .map-container .info-modal .info-container .list-item.contribution .xyzr {
+              border: solid #c693f0 3px; }
+            .mapview-container .map-container .info-modal .info-container .list-item.contribution .list-description {
+              padding: 0 15px 0 10px; }
+          .mapview-container .map-container .info-modal .info-container .list-item .contribution-circle {
+            border-radius: 100px;
+            width: 40px;
+            height: 40px;
+            background-color: #f7f5d6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: solid #c693f0 2px; }
+            .mapview-container .map-container .info-modal .info-container .list-item .contribution-circle img {
+              width: 20px;
+              height: 20px; }
       .mapview-container .map-container .info-modal .raised {
         box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.5);
         background-color: rgba(249, 249, 249, 0.95);
@@ -994,10 +1016,7 @@ h1, h2, h3, h4, h5 {
           .mapview-container .map-container .billing-modal .stripe-container input.message {
             border-bottom: none;
             border-bottom: solid white 1px;
-            margin-bottom: 60px; }
-            @media screen and (max-width: 800px) {
-              .mapview-container .map-container .billing-modal .stripe-container input.message {
-                margin-bottom: 40px; } }
+            margin-bottom: 40px; }
             .mapview-container .map-container .billing-modal .stripe-container input.message::placeholder {
               color: inherit;
               text-shadow: inherit;
