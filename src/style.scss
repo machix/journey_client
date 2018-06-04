@@ -1165,7 +1165,7 @@ h1, h2, h3, h4, h5 {
     }
 
     .info-modal {
-      position: absolute;
+      position: fixed;
       z-index: 20;
       right: 20px;
       top: 5px;
@@ -1194,6 +1194,14 @@ h1, h2, h3, h4, h5 {
         min-width: 20vw;
         position: relative;
         overflow: visible !important;
+
+        .marker-index {
+          position: absolute;
+          font-size: 0.5rem;
+          right: 5px;
+          bottom: 0;
+          color: $c-set-text-2-sub;
+        }
 
         .header-title {
           display: flex;

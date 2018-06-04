@@ -817,7 +817,7 @@ h1, h2, h3, h4, h5 {
             margin-left: auto;
             margin-right: auto; } }
     .mapview-container .map-container .info-modal {
-      position: absolute;
+      position: fixed;
       z-index: 20;
       right: 20px;
       top: 5px;
@@ -843,6 +843,12 @@ h1, h2, h3, h4, h5 {
         min-width: 20vw;
         position: relative;
         overflow: visible !important; }
+        .mapview-container .map-container .info-modal .info-container .marker-index {
+          position: absolute;
+          font-size: 0.5rem;
+          right: 5px;
+          bottom: 0;
+          color: #b4b4b4; }
         .mapview-container .map-container .info-modal .info-container .header-title {
           display: flex;
           align-items: center;

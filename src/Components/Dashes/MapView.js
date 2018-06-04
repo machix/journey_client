@@ -249,12 +249,7 @@ class MapView extends Component {
                                     </div> : null}
 
 
-                                <span style={{
-                                    position: 'absolute',
-                                    fontSize: '0.7rem',
-                                    bottom: 0,
-                                    right: 0
-                                }}>Entry: {this.props.liveJourneyData[this.props.currentIndex].markerIndex}</span>
+                                <span className={'marker-index'}>Entry: {this.props.liveJourneyData[this.props.currentIndex].markerIndex}</span>
                             </div>
                             <div className={'interact-container'}>
                                 <div className={'raised'}>

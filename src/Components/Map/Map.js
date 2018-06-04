@@ -79,19 +79,22 @@ class Map extends Component {
 
 
     componentWillReceiveProps(nextProps) {
-        //This is for receive the currentIndex from other things like the AltitudePreview
-        // if (nextProps.currentIndex !== this.props.currentIndex) {
-        //     this.panTo(nextProps.currentIndex);
-        // }
-        // if (nextProps.altitudeVisible === true) {
-        //     this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, this.props.windowWidth > 800 ? 100 : 40);
-        // } else if (nextProps.altitudeVisible === false) {
-        //     this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, this.props.windowWidth > 800 ? 0 : -200);
-        // }
-        //
-        // if (nextProps.fitBounds === true) {
-        //     this.fitBounds();
-        // }
+        // This is for receive the currentIndex from other things like the AltitudePreview
+        if (nextProps.currentIndex !== this.props.currentIndex) {
+            console.log('Panto Called. The current Index does not match the future index');
+            this.panTo(nextProps.currentIndex);
+        }
+        if (this.props.altitudeVisible !== nextProps.altitudeVisible &&  nextProps.altitudeVisible === true) {
+            console.log('Altitude Toggled On');
+            this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, this.props.windowWidth > 800 ? 100 : 40);
+        } else if (his.props.altitudeVisible !== nextProps.altitudeVisible  && nextProps.altitudeVisible === false) {
+            console.log('Altitude Toggled Off');
+            this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, this.props.windowWidth > 800 ? 0 : -200);
+        }
+
+        if (nextProps.fitBounds === true) {
+            this.fitBounds();
+        }
     }
 
     panTo = (index) => {
@@ -115,24 +118,24 @@ class Map extends Component {
         }
     };
 
-    // panToWithOffset = (latlng, offsetX, offsetY) => {
-    //     var map = this.map;
-    //
-    //     this.overlayView.onAdd(() => {
-    //             console.log('added');
-    //         }
-    //     );
-    //
-    //     var proj = this.overlayView.getProjection();
-    //     var curPosition = new window.google.maps.LatLng(latlng.lat, latlng.lng);
-    //
-    //
-    //     var aPoint = proj.fromLatLngToContainerPixel(curPosition);
-    //     aPoint.x = aPoint.x + offsetX;
-    //     aPoint.y = aPoint.y + offsetY;
-    //     this.map.panTo(proj.fromContainerPixelToLatLng(aPoint));
-    //     // this.overlayView.setMap(this.map);
-    // };
+    panToWithOffset = (latlng, offsetX, offsetY) => {
+        var map = this.map;
+
+        this.overlayView.onAdd(() => {
+                console.log('added');
+            }
+        );
+
+        var proj = this.overlayView.getProjection();
+        var curPosition = new window.google.maps.LatLng(latlng.lat, latlng.lng);
+
+
+        var aPoint = proj.fromLatLngToContainerPixel(curPosition);
+        aPoint.x = aPoint.x + offsetX;
+        aPoint.y = aPoint.y + offsetY;
+        this.map.panTo(proj.fromContainerPixelToLatLng(aPoint));
+        // this.overlayView.setMap(this.map);
+    };
 
     fitBounds = () => {
         var bounds = new window.google.maps.LatLngBounds();
