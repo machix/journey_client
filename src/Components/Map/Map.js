@@ -87,7 +87,7 @@ class Map extends Component {
         if (this.props.altitudeVisible !== nextProps.altitudeVisible &&  nextProps.altitudeVisible === true) {
             console.log('Altitude Toggled On');
             this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, this.props.windowWidth > 800 ? 100 : 40);
-        } else if (his.props.altitudeVisible !== nextProps.altitudeVisible  && nextProps.altitudeVisible === false) {
+        } else if (this.props.altitudeVisible !== nextProps.altitudeVisible  && nextProps.altitudeVisible === false) {
             console.log('Altitude Toggled Off');
             this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, this.props.windowWidth > 800 ? 0 : -200);
         }
