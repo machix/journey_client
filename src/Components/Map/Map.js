@@ -12,6 +12,8 @@ import mealMedium from '../Assets/meal-medium.svg'
 import mealLarge from '../Assets/meal-large.svg'
 import pickaxe from '../Assets/pickaxe.svg'
 import MapMarker from './MapMarker';
+import {mapStyle, dayMap} from '../../Helpers/mapStyles';
+
 
 const {MarkerClusterer} = require("react-google-maps/lib/components/addons/MarkerClusterer");
 
@@ -155,6 +157,8 @@ class Map extends Component {
                 center={this.props.coordinates[0].coordinates}
                 ref={c => this.map = c}
                 mapTypeId="terrain"
+                defaultOptions={{ styles: dayMap }}
+
             >
                 <MarkerClusterer
                     averageCenter

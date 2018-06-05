@@ -19,6 +19,7 @@ import agent from '../../Helpers/agent';
 import AltitudePreview from '../Cards/AltitudePreview';
 import MediaDisplay from '../Cards/MediaDisplay';
 import WeatherContainer from '../Map/WeatherContainer';
+import VideoModal from '../Map/VideoModal';
 
 
 const mapStateToProps = state => ({
@@ -27,16 +28,18 @@ const mapStateToProps = state => ({
     contributionName: state.common.contributionName,
     contributionValue: state.common.contributionValue,
     windowWidth: state.common.windowWidth,
-
     liveJourneyData: state.common.liveJourneyData,
+
     currentIndex: state.mapview.currentIndex,
+    videoModalVisible: state.mapview.videoModalVisible
 
 });
 
 const mapDispatchToProps = dispatch => ({
     fetchLiveJourney: (journey_uid) => dispatch(agent.FirebaseQuery.liveJourney(journey_uid)),
     setContribution: (name, value) => dispatch({type: 'SET_CONTRIBUTION', name: name, value: value}),
-    setAltitudeVisible: (value) => dispatch({type: 'SET_ALTITUDE_VISIBLE', value: value})
+    setAltitudeVisible: (value) => dispatch({type: 'SET_ALTITUDE_VISIBLE', value: value}),
+    setVideoModalVisible: (value) => dispatch({type: 'SET_VIDEO_MODAL_VISIBLE', value: value})
 
 });
 
@@ -119,9 +122,9 @@ class MapView extends Component {
             case 5000:
                 return 'Wow a Pickaxe! Pickaxes are amazing!';
             case 50000:
-                return "Whoa, a radio? Maybe you can send instruction with this! ";
+                return "Whoa, a radio? Maybe there's a way to send instructions with this! ";
             default:
-                return 'Contributions are a fun way to interact with someone on their Journey. Events are triggered when they are created and used'
+                return 'Contributions are a fun way to interact with someone on their Journey. Events are triggered when they are created and used.'
         }
     };
 
@@ -135,7 +138,7 @@ class MapView extends Component {
                 </div>}
 
                 <div className={'map-container'}>
-                    {this.state.contributionVisible === true ? <div className={'billing-modal slideIndown'}>
+                    {this.state.contributionVisible === true ? <div className={'billing-modal slideInDown'}>
 
                             <Icon viewBox="0 0 40 40" style={{
                                 color: 'white',
@@ -161,7 +164,7 @@ class MapView extends Component {
 
                             {this.contributionDescription(this.props.contributionValue)}
                             {this.props.contributionValue === 50000 ?
-                                <span className={'radio-extra'}>Funds will be returned if your instructions cannot be carried out.</span> : null}
+                                <span className={'radio-extra'}>(Funds will be returned if your instructions cannot be carried out.)</span> : null}
 
                             <br/>
 
@@ -172,8 +175,9 @@ class MapView extends Component {
 
                         </div>
                         : null}
-                    <div className={'video-modal'}><MediaDisplay/>
-                    </div>
+
+                    {this.props.videoModalVisible === true && this.props.windowWidth < 800 ? <VideoModal/>
+                        : null}
 
 
                     {this.props.altitudeVisible === true ? <div className={'altitude-container slideInVerticalMedium'}>

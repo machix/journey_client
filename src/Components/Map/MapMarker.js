@@ -34,6 +34,10 @@ const mapDispatchToProps = dispatch => ({
         type: 'SET_CURRENT_INDEX',
         value: index
     }),
+    setVideoModalVisible: (value) => dispatch({
+        type: 'SET_VIDEO_MODAL_VISIBLE',
+        value: value
+    }),
 
 });
 
@@ -63,6 +67,7 @@ class MapMarker extends Component {
             isOpen: !this.state.isOpen
         });
         this.props.setCurrentIndex(this.props.index);
+        this.props.setVideoModalVisible(true);
         console.log(this.state.isOpen);
     }
 

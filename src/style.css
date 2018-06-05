@@ -990,8 +990,8 @@ h1, h2, h3, h4, h5 {
             box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 25px -1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 20px 0 rgba(0, 0, 0, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.6); }
     .mapview-container .map-container .video-modal {
       position: absolute;
-      z-index: 24;
-      width: 60%;
+      z-index: 15;
+      max-width: 60%;
       border-radius: 10px;
       box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.5);
       border: solid white 10px;
@@ -1004,7 +1004,7 @@ h1, h2, h3, h4, h5 {
           border: solid white 5px;
           background-color: white;
           margin-bottom: 20px;
-          bottom: 35vh;
+          bottom: 30vh;
           overflow: hidden; }
           .mapview-container .map-container .video-modal .react-player {
             margin-bottom: -5px; } }

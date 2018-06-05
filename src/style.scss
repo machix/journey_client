@@ -1396,8 +1396,8 @@ h1, h2, h3, h4, h5 {
 
     .video-modal {
       position: absolute;
-      z-index: 24;
-      width: 60%;
+      z-index: 15;
+      max-width: 60%;
       border-radius: 10px;
       box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.5);
       border: solid white 10px;
@@ -1411,7 +1411,7 @@ h1, h2, h3, h4, h5 {
         border: solid white 5px;
         background-color: white;
         margin-bottom: 20px;
-        bottom: 35vh;
+        bottom: 30vh;
         overflow: hidden;
 
         .react-player {

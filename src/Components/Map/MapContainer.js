@@ -3,6 +3,7 @@ import {Motion, spring} from 'react-motion'
 import {withScriptjs, withGoogleMap, Marker} from "react-google-maps"
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
+
 import moment from 'moment';
 
 import Icon from 'react-icon-base';
@@ -43,9 +44,10 @@ class MapContainer extends Component {
         return (
             this.props.coordinates.length > 0 ? <Map isMarkerShown={true}
                                                      coordinates={this.props.coordinates}
-                                                     overlayIcon={this.props.overlayIcon}
+                                                     // overlayIcon={this.props.overlayIcon}
                                                      googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIpabTnIbXsdIgI2Zo2zO6g3GGxUbYqw8&v=3.exp&libraries=geometry,drawing,places"
                                                      loadingElement={<div style={{height: `100px`,}}/>}
+
                                                      containerElement={
                                                          <div className={'map-element'}
                                                               style={{

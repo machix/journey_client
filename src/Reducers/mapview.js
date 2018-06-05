@@ -4,7 +4,8 @@ const defaultState = {
     altitudeVisible: false,
     indexMap: {},
     currentIndex: 0,
-    fitBounds: false
+    fitBounds: false,
+    videoModalVisible: false
 };
 
 export default (state = defaultState, action) => {
@@ -26,6 +27,11 @@ export default (state = defaultState, action) => {
             return {
                 ...state,
                 altitudeVisible: action.value
+            };
+        case 'SET_VIDEO_MODAL_VISIBLE':
+            return {
+                ...state,
+                videoModalVisible: action.value
             };
 
         default:
