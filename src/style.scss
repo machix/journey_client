@@ -6004,7 +6004,7 @@ footer {
   flex-direction: column;
   align-items: center;
   color: white;
-  //background-color: #b0caff !important;
+  background-color: #b0caff !important;
   //background-color: #f7f5d6;
   //border-radius: 5px;
   justify-content: center;
@@ -6013,15 +6013,19 @@ footer {
 
   @media screen and (max-width: 800px) {
     color: $c-set-text-1;
+    background-color: transparent !important;
+
   }
 
   .weather-icon-container {
     position: relative;
     display: flex;
     justify-content: center;
-    margin-bottom: 5px;
-    margin-right: 10px;
 
+    @media screen and (max-width: 800px) {
+      margin-bottom: 5px;
+      margin-right: 10px;
+    }
   }
 
   $yellow: #FFDD4A;

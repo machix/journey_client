@@ -230,7 +230,50 @@ class MapView extends Component {
                         <ContributionPill string={' Radio: $500'}
                                           onClick={() => this.contributionToggle('Pickaxe', 50000)}/>
                     </div>
-                    {this.props.liveJourneyData !== null && typeof(this.props.liveJourneyData) !== 'undefined' && this.props.liveJourneyData.length > 0 ?
+
+
+                    {this.props.videoModalVisible === true && this.props.windowWidth < 800 ?
+                        <div className={'info-modal slideInDown'}>
+                            <div className={'info-container'}>
+                                <div className={'contribution list-item'}>
+
+
+                                    {typeof(this.props.liveJourneyData[this.props.currentIndex].description) != 'undefined' ?
+
+                                        <div className={'list-item  slideInDownMedium'}>
+                                            <div className={'raised xyzr'}>
+
+                                                <div className={'list-description'}>
+                                                    {this.props.liveJourneyData[this.props.currentIndex].description}
+
+                                                </div>
+                                            </div>
+
+                                        </div> : null}
+
+                                    {typeof(this.props.liveJourneyData[this.props.currentIndex].contribution) != 'undefined' ?
+                                        <div className={'list-item  slideInDownMedium'}>
+                                            <div className={'raised xyzr'}>
+
+                                                <div className={'contribution-circle'}>
+                                                    <img
+                                                        src={this.imgSrc(this.props.liveJourneyData[this.props.currentIndex].contribution)}/>
+                                                </div>
+                                                <div className={'list-description'}>
+                                                    <h3>
+                                                        A {this.contributionName(this.props.liveJourneyData[this.props.currentIndex].contribution)}
+                                                        came!</h3>
+                                                    Delivered by Anonymous
+                                                </div>
+                                            </div>
+
+                                        </div> : null}
+
+                                </div>
+                            </div>
+                        </div>
+                        : null}
+                    {this.props.windowWidth > 800 && this.props.liveJourneyData !== null && typeof(this.props.liveJourneyData) !== 'undefined' && this.props.liveJourneyData.length > 0 ?
                         <div className={'info-modal slideInDown'}>
                             <div className={'info-container'}>
                                 {this.props.windowWidth > 800 ? <div className={'header-title'}>
@@ -249,6 +292,7 @@ class MapView extends Component {
                                 </div> : null}
 
                                 <div className={'contribution list-item'}>
+
 
                                     {typeof(this.props.liveJourneyData[this.props.currentIndex].description) != 'undefined' ?
 

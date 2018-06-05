@@ -4136,6 +4136,7 @@ ul.top-links {
   flex-direction: column;
   align-items: center;
   color: white;
+  background-color: #b0caff !important;
   justify-content: center;
   position: relative;
   font-size: 0.7rem;
@@ -4143,13 +4144,16 @@ ul.top-links {
   --moon-shadow-color: #cedfff; }
   @media screen and (max-width: 800px) {
     .weather {
-      color: #2a2a2a; } }
+      color: #2a2a2a;
+      background-color: transparent !important; } }
   .weather .weather-icon-container {
     position: relative;
     display: flex;
-    justify-content: center;
-    margin-bottom: 5px;
-    margin-right: 10px; }
+    justify-content: center; }
+    @media screen and (max-width: 800px) {
+      .weather .weather-icon-container {
+        margin-bottom: 5px;
+        margin-right: 10px; } }
   .weather .sun {
     height: 30px;
     width: 30px;
