@@ -27,11 +27,6 @@ class MediaDisplay extends Component {
     }
 
 
-    componentWillReceiveProps(nextProps) {
-        console.log(nextProps);
-    }
-
-
     renderMedia = () => {
         console.log('render the media');
         if (this.props.liveJourneyData[this.props.currentIndex].dataUploaded === true) {
@@ -47,7 +42,6 @@ class MediaDisplay extends Component {
         }
     };
     renderMediaInfoWindow = () => {
-        console.log('render the media');
         if (this.props.liveJourneyData[this.props.currentIndex].dataUploaded === true) {
             switch (this.props.liveJourneyData[this.props.currentIndex].type) {
                 case 'image':

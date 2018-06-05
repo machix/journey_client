@@ -68,11 +68,9 @@ class MapMarker extends Component {
         });
         this.props.setCurrentIndex(this.props.index);
         this.props.setVideoModalVisible(true);
-        console.log(this.state.isOpen);
     }
 
     iconSrc = (value) => {
-        console.log(typeof(this.props.contribution) != 'undefined')
         switch (value) {
             case 500:
                 return mealSmallMarker;

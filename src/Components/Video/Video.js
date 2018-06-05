@@ -53,7 +53,6 @@ class Video extends Component {
                     // autoPlay={true}
                              fileConfig={{attributes: {poster: this.props.poster}}}
                              onReady={() => {
-                                 console.log('onReadyCalled');
                                  setTimeout(() => this.setState({...this.state, playing: true})
                                      , 200)
                              }}

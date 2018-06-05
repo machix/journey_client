@@ -18,7 +18,6 @@ const flattener = (obj, startRange, endRange) => {
         let segment = (endRange - startRange) / points;
         let filtered = [];
 
-        console.log(obj);
 
         //Go through every point in the Array populating data into the appropriate segment
         for (let i = 0; i < points + 2; i++) {
@@ -32,7 +31,6 @@ const flattener = (obj, startRange, endRange) => {
             } else {
 
                 filtered = obj.filter((object) => {
-                    console.log(object);
                     return (object.distance <= i * segment && object.distance >= (i - 1) * segment)
                 });
             }
@@ -60,7 +58,6 @@ const flattener = (obj, startRange, endRange) => {
 
     /*Initialize Variables*/
     var result = builder(obj, startRange, endRange, 50);
-    console.log(result);
 
     return [result, indexMap];
 

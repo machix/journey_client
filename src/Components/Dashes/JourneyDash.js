@@ -123,7 +123,6 @@ class HomeDash extends Component {
 
     componentWillMount() {
         //==================FETCH THE journey_id FROM THE PARAMS ==================>
-        console.log('This is the path: ' + this.props.match.params.journey_id);
         this.props.fetchJourneyMeta(this.props.match.params.journey_id);
 
         this.props.fetchLiveJourney(this.props.match.params.journey_id);
@@ -169,7 +168,6 @@ class HomeDash extends Component {
     }
 
     photosMap = () => {
-        console.log('photosMap');
         return Object.keys(this.props.liveJourneyData).sort((a, b) => this.props.liveJourneyData[a].timeStamp - this.props.liveJourneyData[b].timeStamp).map((key, index) => {
             return
         });
@@ -197,7 +195,6 @@ class HomeDash extends Component {
         console.log('toggle: ' + value);
         switch (value) {
             case 'menu': {
-                console.log('menu');
                 this.setState({
                     ...this.state,
                     menuToggled: !this.state.menuToggled
@@ -205,7 +202,6 @@ class HomeDash extends Component {
                 return;
             }
             case 'annotation': {
-                console.log('annotation');
                 this.setState({
                     ...this.state,
                     annotationVisible: !this.state.annotationVisible
