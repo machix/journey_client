@@ -1169,11 +1169,11 @@ h1, h2, h3, h4, h5 {
       z-index: 20;
       right: 20px;
       top: 5px;
-      width: 30%;
+      width: 25%;
       border-radius: 7px;
-      padding: 3px;
+      padding: 2px;
       box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.5);
-      background-color: rgba(249, 249, 249, 0.95);
+      background-color: rgba(0, 0, 0, 0.4);
 
       display: flex;
       flex-direction: column;
@@ -1185,6 +1185,7 @@ h1, h2, h3, h4, h5 {
         top: 0;
         left: 0;
         right: 0;
+        border-radius: 0;
       }
 
       .info-container {
@@ -1199,7 +1200,7 @@ h1, h2, h3, h4, h5 {
           position: absolute;
           font-size: 0.5rem;
           right: 5px;
-          bottom: 0;
+          bottom: 3px;
           color: $c-set-text-2-sub;
         }
 
@@ -1216,6 +1217,7 @@ h1, h2, h3, h4, h5 {
             box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
             @media screen and (max-width: 800px) {
               height: 50px;
+              border-radius: 0;
             }
 
           }
@@ -1229,13 +1231,15 @@ h1, h2, h3, h4, h5 {
             align-items: center;
             justify-content: center;
             height: 70px;
-            margin-left: 3px;
+            margin-left: 2px;
             flex: 1;
             border-radius: 5px;
 
             @media screen and (max-width: 800px) {
               font-size: 0.6rem;
               height: 50px;
+              border-radius: 0;            margin-left: 3px;
+
             }
 
             box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
@@ -1259,6 +1263,7 @@ h1, h2, h3, h4, h5 {
           display: flex;
           align-items: center;
           padding: 4px;
+
         }
 
         .list-item {
@@ -1270,7 +1275,11 @@ h1, h2, h3, h4, h5 {
           position: relative;
           border-radius: 5px;
 
-          &.description {
+          @media screen and (max-width: 800px) {
+            border-radius: 0;
+          }
+
+            &.description {
             color: black;
             text-align: center;
             padding: 15px;
@@ -1278,7 +1287,7 @@ h1, h2, h3, h4, h5 {
             font-family: 'Rock Salt', cursive;
             font-size: 0.8rem;
             background-color: white;
-            margin-top: 5px;
+            margin-top: 2px;
             box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
 
             @media screen and (max-width: 800px) {
@@ -1332,6 +1341,7 @@ h1, h2, h3, h4, h5 {
         display: flex;
         align-items: center;
         padding: 3px;
+        margin-left: 5px;
       }
 
       .interact-container {
@@ -1422,9 +1432,14 @@ h1, h2, h3, h4, h5 {
         margin-bottom: 15px;
       }
 
+      .radio-extra {
+        font-size: 0.6rem;
+        padding: 5px 20px 0 20px;
+      }
+
       .stripe-container {
         width: 100%;
-        margin-top: 40px;
+        margin-top: 30px;
 
         input {
           background-color: transparent;
@@ -1513,7 +1528,7 @@ h1, h2, h3, h4, h5 {
         align-self: center;
 
         @media screen and (max-width: 800px) {
-          font-size: 0.6rem;
+          font-size: 0.7rem;
           padding: 10px 10px;
         }
       }

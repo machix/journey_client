@@ -114,12 +114,12 @@ class MapView extends Component {
         }
     };
 
-    contributionDescription = (contribution)=> {
+    contributionDescription = (contribution) => {
         switch (contribution) {
             case 5000:
-                return 'The Pickaxe allows you to send a direct message. Also pickaxes are great.';
+                return 'Wow a Pickaxe! Pickaxes are amazing!';
             case 50000:
-                return 'You found a radio! Include instructions and be careful with your wish. Funds will be returned if instructions are not possible. ';
+                return "Whoa, a radio? Maybe you can send instruction with this! ";
             default:
                 return 'Contributions are a fun way to interact with someone on their Journey. Events are triggered when they are created and used'
         }
@@ -160,6 +160,8 @@ class MapView extends Component {
                             </h2>}
 
                             {this.contributionDescription(this.props.contributionValue)}
+                            {this.props.contributionValue === 50000 ?
+                                <span className={'radio-extra'}>Funds will be returned if your instructions cannot be carried out.</span> : null}
 
                             <br/>
 
@@ -249,7 +251,8 @@ class MapView extends Component {
                                     </div> : null}
 
 
-                                <span className={'marker-index'}>Entry: {this.props.liveJourneyData[this.props.currentIndex].markerIndex}</span>
+                                <span
+                                    className={'marker-index'}>Entry: {this.props.liveJourneyData[this.props.currentIndex].markerIndex}</span>
                             </div>
                             <div className={'interact-container'}>
                                 <div className={'raised'}>

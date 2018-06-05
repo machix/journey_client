@@ -82,7 +82,7 @@ class Map extends Component {
         // This is for receive the currentIndex from other things like the AltitudePreview
         if (nextProps.currentIndex !== this.props.currentIndex) {
             console.log('Panto Called. The current Index does not match the future index');
-            this.panTo(nextProps.currentIndex);
+            this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, this.props.windowWidth > 800 ? 0 : -200);
         }
         if (this.props.altitudeVisible !== nextProps.altitudeVisible &&  nextProps.altitudeVisible === true) {
             console.log('Altitude Toggled On');
@@ -92,7 +92,7 @@ class Map extends Component {
             this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, this.props.windowWidth > 800 ? 0 : -200);
         }
 
-        if (nextProps.fitBounds === true) {
+        if (nextProps.fitBounds !== this.props.fitBounds) {
             this.fitBounds();
         }
     }

@@ -97,7 +97,7 @@ class CheckoutForm extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <input placeholder={'Your Name: (Optional)'}/><br/>
                 {this.props.contributionValue === 5000 ?
-                <input className={'message'} placeholder={'Your Message:'}/> : null}
+                <input className={'message'} placeholder={'Send a Message:'}/> : null}
                 {this.props.contributionValue === 50000 ?
                     <input className={'message'} placeholder={'Your instructions:'}/> : null}
 
