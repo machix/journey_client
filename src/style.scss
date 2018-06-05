@@ -150,6 +150,12 @@ $c-main-attribution-text: $c-set-text-1-alt;*/
   */
 }
 
+@mixin centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @mixin font {
   /*@include proxima-nova;*/
   font-family: Camphor, Segoe UI, Open Sans, sans-serif;
@@ -1187,6 +1193,9 @@ h1, h2, h3, h4, h5 {
         left: 0;
         right: 0;
         border-radius: 0;
+        box-shadow: none;
+        background-color: transparent;
+
       }
 
       .info-container {
@@ -1423,7 +1432,6 @@ h1, h2, h3, h4, h5 {
         flex-direction: column;
         //background-color: #b0caff !important;
 
-
         align-items: center;
         justify-content: center;
 
@@ -1544,19 +1552,28 @@ h1, h2, h3, h4, h5 {
     }
 
     .check-in {
-      background-color: #EB5D57;
       color: white;
       cursor: pointer;
       position: absolute;
       word-wrap: none;
       left: 0;
       z-index: 21;
-      padding: 20px 10px;
-      box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.5);
 
       div {
         writing-mode: tb-rl;
+        background-color: #EB5D57;
+        padding: 20px 10px;
+        box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.5);
+        width: 40px;
+        margin-top: 5px;
+        &.controls {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 40px;
 
+          padding: 0;
+        }
       }
     }
 
@@ -5995,7 +6012,7 @@ footer {
   font-size: 0.7rem;
 
   @media screen and (max-width: 800px) {
-   color: $c-set-text-1;
+    color: $c-set-text-1;
   }
 
   .weather-icon-container {

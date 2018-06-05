@@ -203,6 +203,23 @@ class MapView extends Component {
                         <div>
                             Check-In
                         </div>
+
+                        <div className={'controls'}>
+                            <Icon viewBox="0 0 40 40" size={15}>
+                                <g>
+                                    <path
+                                        d="m6.5 21.6v-3.2h20.3l-9.3-9.4 2.4-2.4 13.3 13.4-13.3 13.4-2.5-2.4 9.4-9.4h-20.3z"/>
+                                </g>
+                            </Icon>
+                        </div>
+                        <div className={'controls'}>
+                            <Icon viewBox="0 0 40 40" size={15}>
+                                <g>
+                                    <path
+                                        d="m33.2 18.4v3.2h-20.3l9.3 9.4-2.3 2.4-13.4-13.4 13.4-13.4 2.4 2.4-9.4 9.4h20.3z"/>
+                                </g>
+                            </Icon>
+                        </div>
                     </div>
 
                     <div className={'mapview-contribution-container'}>
@@ -213,11 +230,10 @@ class MapView extends Component {
                         <ContributionPill string={' Radio: $500'}
                                           onClick={() => this.contributionToggle('Pickaxe', 50000)}/>
                     </div>
-                    {this.props.windowWidth > 800 && this.props.liveJourneyData !== null && typeof(this.props.liveJourneyData) !== 'undefined' && this.props.liveJourneyData.length > 0 ?
+                    {this.props.liveJourneyData !== null && typeof(this.props.liveJourneyData) !== 'undefined' && this.props.liveJourneyData.length > 0 ?
                         <div className={'info-modal slideInDown'}>
                             <div className={'info-container'}>
-
-                                <div className={'header-title'}>
+                                {this.props.windowWidth > 800 ? <div className={'header-title'}>
                                     <WeatherContainer/>
                                     <div className={'text-info'}>
                                         <div
@@ -230,7 +246,8 @@ class MapView extends Component {
                                         Altitude: {this.props.liveJourneyData[this.props.currentIndex].altitude}
                                         meters <br/>
                                     </div>
-                                </div>
+                                </div> : null}
+
                                 <div className={'contribution list-item'}>
 
                                     {typeof(this.props.liveJourneyData[this.props.currentIndex].description) != 'undefined' ?
@@ -268,30 +285,7 @@ class MapView extends Component {
                                 <span
                                     className={'marker-index'}>Entry: {this.props.liveJourneyData[this.props.currentIndex].markerIndex}</span>
                             </div>
-                            <div className={'interact-container'}>
-                                <div className={'raised'}>
-                                    <div className={'interact'}>
-                                        <Icon viewBox="0 0 40 40" size={15}>
-                                            <g>
-                                                <path
-                                                    d="m20 8.6q-4.6 0-8.5 1.5t-6.3 4.2-2.3 5.7q0 2.5 1.6 4.8t4.4 3.9l2 1.1-0.6 2.1q-0.5 2.1-1.6 3.9 3.4-1.4 6.2-3.8l0.9-0.9 1.3 0.2q1.5 0.1 2.9 0.1 4.6 0 8.5-1.5t6.3-4.2 2.3-5.7-2.3-5.7-6.3-4.2-8.5-1.5z m20 11.4q0 3.9-2.7 7.2t-7.3 5.2-10 1.9q-1.6 0-3.2-0.2-4.5 3.9-10.3 5.4-1.1 0.3-2.6 0.5h-0.1q-0.3 0-0.6-0.2t-0.3-0.6v-0.1q-0.1-0.1 0-0.2t0-0.3 0.1-0.2l0.1-0.2 0.2-0.2 0.2-0.2q0.1-0.1 0.7-0.7t0.7-0.9 0.7-0.9 0.8-1.1 0.6-1.3 0.5-1.7q-3.5-2-5.5-4.9t-2-6.3q0-3.9 2.7-7.2t7.3-5.2 10-1.9 10 1.9 7.3 5.2 2.7 7.2z"/>
-                                            </g>
-                                        </Icon>
-                                    </div>
-                                </div>
-                                <div className={'raised'}>
 
-                                    <div className={'interact'}>
-
-                                        <Icon viewBox="0 0 40 40" size={15}>
-                                            <g>
-                                                <path
-                                                    d="m8.7 30q0-0.6-0.4-1t-1-0.4-1 0.4-0.4 1 0.4 1 1 0.4 1-0.4 0.4-1z m25.7-12.9q0-1.1-0.8-2t-2-0.8h-7.9q0-1.3 1.1-3.6t1.1-3.6q0-2.1-0.8-3.2t-2.8-1q-0.6 0.5-0.9 1.9t-0.6 2.8-1.4 2.4q-0.5 0.5-1.7 2-0.1 0.1-0.5 0.7t-0.7 0.9-0.8 1-0.9 0.9-0.8 0.8-0.9 0.6-0.8 0.2h-0.7v14.3h0.7q0.3 0 0.7 0.1t0.7 0.1 0.9 0.3 0.8 0.2 0.7 0.3 0.7 0.3q4.7 1.6 7.6 1.6h2.7q4.3 0 4.3-3.7 0-0.6-0.1-1.3 0.7-0.3 1.1-1.2t0.4-1.6-0.4-1.5q1.1-1.2 1.1-2.7 0-0.6-0.2-1.2t-0.5-1.1q0.7 0 1.1-1t0.5-1.9z m2.9 0q0 2-1.1 3.7 0.2 0.7 0.2 1.5 0 1.7-0.9 3.2 0.1 0.5 0.1 1 0 2.2-1.3 3.9 0 3.2-1.9 4.9t-5.1 1.8h-2.9q-2.1 0-4.2-0.5t-4.8-1.4q-2.6-0.9-3.1-0.9h-6.4q-1.2 0-2.1-0.8t-0.8-2.1v-14.3q0-1.1 0.8-2t2.1-0.8h6.1q0.8-0.6 3-3.5 1.3-1.6 2.4-2.8 0.6-0.6 0.8-1.9t0.7-2.9 1.4-2.4q0.8-0.8 2-0.8 1.9 0 3.4 0.7t2.2 2.3 0.8 4.1q0 2.1-1.1 4.3h4q2.3 0 4 1.7t1.7 4z"/>
-                                            </g>
-                                        </Icon>
-                                    </div>
-                                </div>
-                            </div>
 
                         </div> : null}
 
@@ -318,3 +312,29 @@ class MapView extends Component {
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MapView));
 //                            <span style={{fontSize: '0.8rem', marginTop: '10px', fontWeight: 'normal'}}>Events are triggered as contributions are used.</span>
 //
+
+
+/* <div className={'interact-container'}>
+                                <div className={'raised'}>
+                                    <div className={'interact'}>
+                                        <Icon viewBox="0 0 40 40" size={15}>
+                                            <g>
+                                                <path
+                                                    d="m20 8.6q-4.6 0-8.5 1.5t-6.3 4.2-2.3 5.7q0 2.5 1.6 4.8t4.4 3.9l2 1.1-0.6 2.1q-0.5 2.1-1.6 3.9 3.4-1.4 6.2-3.8l0.9-0.9 1.3 0.2q1.5 0.1 2.9 0.1 4.6 0 8.5-1.5t6.3-4.2 2.3-5.7-2.3-5.7-6.3-4.2-8.5-1.5z m20 11.4q0 3.9-2.7 7.2t-7.3 5.2-10 1.9q-1.6 0-3.2-0.2-4.5 3.9-10.3 5.4-1.1 0.3-2.6 0.5h-0.1q-0.3 0-0.6-0.2t-0.3-0.6v-0.1q-0.1-0.1 0-0.2t0-0.3 0.1-0.2l0.1-0.2 0.2-0.2 0.2-0.2q0.1-0.1 0.7-0.7t0.7-0.9 0.7-0.9 0.8-1.1 0.6-1.3 0.5-1.7q-3.5-2-5.5-4.9t-2-6.3q0-3.9 2.7-7.2t7.3-5.2 10-1.9 10 1.9 7.3 5.2 2.7 7.2z"/>
+                                            </g>
+                                        </Icon>
+                                    </div>
+                                </div>
+                                <div className={'raised'}>
+
+                                    <div className={'interact'}>
+
+                                        <Icon viewBox="0 0 40 40" size={15}>
+                                            <g>
+                                                <path
+                                                    d="m8.7 30q0-0.6-0.4-1t-1-0.4-1 0.4-0.4 1 0.4 1 1 0.4 1-0.4 0.4-1z m25.7-12.9q0-1.1-0.8-2t-2-0.8h-7.9q0-1.3 1.1-3.6t1.1-3.6q0-2.1-0.8-3.2t-2.8-1q-0.6 0.5-0.9 1.9t-0.6 2.8-1.4 2.4q-0.5 0.5-1.7 2-0.1 0.1-0.5 0.7t-0.7 0.9-0.8 1-0.9 0.9-0.8 0.8-0.9 0.6-0.8 0.2h-0.7v14.3h0.7q0.3 0 0.7 0.1t0.7 0.1 0.9 0.3 0.8 0.2 0.7 0.3 0.7 0.3q4.7 1.6 7.6 1.6h2.7q4.3 0 4.3-3.7 0-0.6-0.1-1.3 0.7-0.3 1.1-1.2t0.4-1.6-0.4-1.5q1.1-1.2 1.1-2.7 0-0.6-0.2-1.2t-0.5-1.1q0.7 0 1.1-1t0.5-1.9z m2.9 0q0 2-1.1 3.7 0.2 0.7 0.2 1.5 0 1.7-0.9 3.2 0.1 0.5 0.1 1 0 2.2-1.3 3.9 0 3.2-1.9 4.9t-5.1 1.8h-2.9q-2.1 0-4.2-0.5t-4.8-1.4q-2.6-0.9-3.1-0.9h-6.4q-1.2 0-2.1-0.8t-0.8-2.1v-14.3q0-1.1 0.8-2t2.1-0.8h6.1q0.8-0.6 3-3.5 1.3-1.6 2.4-2.8 0.6-0.6 0.8-1.9t0.7-2.9 1.4-2.4q0.8-0.8 2-0.8 1.9 0 3.4 0.7t2.2 2.3 0.8 4.1q0 2.1-1.1 4.3h4q2.3 0 4 1.7t1.7 4z"/>
+                                            </g>
+                                        </Icon>
+                                    </div>
+                                </div>
+                            </div>*/

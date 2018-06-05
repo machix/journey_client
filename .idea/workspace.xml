@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8eb92d85-80e0-4af9-8dc4-e20ffe8708d5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Cards/MediaDisplay.js" afterPath="$PROJECT_DIR$/src/Components/Cards/MediaDisplay.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/MapView.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/MapView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/ProfileDash/statistics.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/ProfileDash/statistics.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Map/VideoModal.js" afterPath="$PROJECT_DIR$/src/Components/Map/VideoModal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Video/Video.js" afterPath="$PROJECT_DIR$/src/Components/Video/Video.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reducers/mapview.js" afterPath="$PROJECT_DIR$/src/Reducers/mapview.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
     </list>
@@ -32,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MediaDisplay.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Cards/MediaDisplay.js">
+      <file leaf-file-name="VideoModal.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/Map/VideoModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-94">
-              <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+            <state relative-caret-position="175">
+              <caret line="70" column="13" lean-forward="true" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -44,21 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Video.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Components/Video/Video.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="56" column="95" lean-forward="true" selection-start-line="56" selection-start-column="95" selection-end-line="56" selection-end-column="95" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="WeatherContainer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/Map/WeatherContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="107" column="28" lean-forward="true" selection-start-line="107" selection-start-column="28" selection-end-line="107" selection-end-column="28" />
+            <state relative-caret-position="244">
+              <caret line="109" column="0" lean-forward="true" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -67,8 +53,8 @@
       <file leaf-file-name="mapview.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Reducers/mapview.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+            <state relative-caret-position="140">
+              <caret line="11" column="10" lean-forward="false" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -77,25 +63,10 @@
       <file leaf-file-name="MapView.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/Dashes/MapView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="223" column="58" lean-forward="true" selection-start-line="223" selection-start-column="58" selection-end-line="223" selection-end-column="58" />
+            <state relative-caret-position="158">
+              <caret line="327" column="58" lean-forward="true" selection-start-line="327" selection-start-column="58" selection-end-line="327" selection-end-column="58" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/style.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="1428" column="0" lean-forward="true" selection-start-line="1428" selection-start-column="0" selection-end-line="1428" selection-end-column="0" />
-              <folding>
-                <marker date="1528236985903" expanded="false" signature="88880:89420" ph="data:image/svg+xml" />
-                <marker date="1528236985903" expanded="false" signature="90345:90841" ph="data:image/svg+xml" />
-                <marker date="1528236985903" expanded="false" signature="93041:95461" ph="data:image/svg+xml" />
-                <marker date="1528236985903" expanded="false" signature="121911:122715" ph="data:image/svg+xml" />
               </folding>
             </state>
           </provider>
@@ -113,6 +84,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/style.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-199">
+              <caret line="1195" column="25" lean-forward="true" selection-start-line="1195" selection-start-column="25" selection-end-line="1195" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -126,21 +107,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>map</find>
-      <find>daymap</find>
-      <find>kms</find>
-      <find>true</find>
-      <find>SET_FIT_BOUNDS</find>
-      <find>.entry</find>
-      <find>.title</find>
-      <find>.info-container</find>
-      <find>.check-in</find>
-      <find>info-container</find>
-      <find>.text-info</find>
-      <find>className=&quot;weather</find>
-      <find>.altitude-</find>
-      <find>video</find>
-      <find>.altitude-container</find>
       <find>altitude</find>
       <find>moment</find>
       <find>Weather</find>
@@ -150,12 +116,27 @@
       <find>.weather {</find>
       <find>weather-icon-container</find>
       <find>.video-modal-title</find>
-      <find>.weather</find>
       <find>info-mo</find>
-      <find>.video</find>
       <find>video-modal-title</find>
       <find>AUTOPLAY</find>
       <find>autoplay</find>
+      <find>.weather</find>
+      <find>.video</find>
+      <find>Check-in</find>
+      <find>Check-In</find>
+      <find>check</find>
+      <find>&lt;Icon</find>
+      <find>react-icon</find>
+      <find>&lt;check-in</find>
+      <find>check-in</find>
+      <find>.check-in</find>
+      <find>rotate</find>
+      <find>mixin</find>
+      <find>font</find>
+      <find>.controls</find>
+      <find>windowW</find>
+      <find>.info-modal</find>
+      <find>info-modal</find>
     </findStrings>
     <replaceStrings>
       <replace>15</replace>
@@ -250,11 +231,11 @@
         <option value="$PROJECT_DIR$/src/Components/Map/Map.js" />
         <option value="$PROJECT_DIR$/src/Helpers/mapStyles.js" />
         <option value="$PROJECT_DIR$/src/Components/Dashes/ProfileDash/statistics.js" />
+        <option value="$PROJECT_DIR$/src/Components/Cards/MediaDisplay.js" />
+        <option value="$PROJECT_DIR$/src/Components/Video/Video.js" />
         <option value="$PROJECT_DIR$/src/Components/Map/VideoModal.js" />
         <option value="$PROJECT_DIR$/src/Components/Dashes/MapView.js" />
         <option value="$PROJECT_DIR$/src/style.scss" />
-        <option value="$PROJECT_DIR$/src/Components/Cards/MediaDisplay.js" />
-        <option value="$PROJECT_DIR$/src/Components/Video/Video.js" />
       </list>
     </option>
   </component>
@@ -616,12 +597,12 @@
       <workItem from="1527954075193" duration="22540000" />
       <workItem from="1528136047295" duration="8736000" />
       <workItem from="1528215084698" duration="193000" />
-      <workItem from="1528215293890" duration="3745000" />
+      <workItem from="1528215293890" duration="4845000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="568814000" />
+    <option name="totallyTimeSpent" value="569914000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -945,13 +926,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/JourneyDash.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="392" column="44" lean-forward="false" selection-start-line="392" selection-start-column="44" selection-end-line="392" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Helpers/constants.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -989,16 +963,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Map/Map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1335">
-          <caret line="89" column="47" lean-forward="false" selection-start-line="89" selection-start-column="47" selection-end-line="89" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/store.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1015,11 +979,73 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/JourneyDash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="345" column="69" lean-forward="false" selection-start-line="345" selection-start-column="61" selection-end-line="345" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reducers/mapview.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="11" column="10" lean-forward="false" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Video/Video.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Cards/MediaDisplay.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-205">
+          <caret line="40" column="50" lean-forward="false" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Map/WeatherContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="107" column="28" lean-forward="true" selection-start-line="107" selection-start-column="28" selection-end-line="107" selection-end-column="28" />
+        <state relative-caret-position="244">
+          <caret line="109" column="0" lean-forward="true" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Map/VideoModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="70" column="13" lean-forward="true" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Map/Map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="89" column="47" lean-forward="false" selection-start-line="89" selection-start-column="47" selection-end-line="89" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/MapView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="327" column="58" lean-forward="true" selection-start-line="327" selection-start-column="58" selection-end-line="327" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1033,61 +1059,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reducers/mapview.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/MapView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="223" column="58" lean-forward="true" selection-start-line="223" selection-start-column="58" selection-end-line="223" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="1428" column="0" lean-forward="true" selection-start-line="1428" selection-start-column="0" selection-end-line="1428" selection-end-column="0" />
-          <folding>
-            <marker date="1528236985903" expanded="false" signature="88880:89420" ph="data:image/svg+xml" />
-            <marker date="1528236985903" expanded="false" signature="90345:90841" ph="data:image/svg+xml" />
-            <marker date="1528236985903" expanded="false" signature="93041:95461" ph="data:image/svg+xml" />
-            <marker date="1528236985903" expanded="false" signature="121911:122715" ph="data:image/svg+xml" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Map/VideoModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="91" column="28" lean-forward="true" selection-start-line="91" selection-start-column="28" selection-end-line="91" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Cards/MediaDisplay.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-94">
-          <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Video/Video.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="56" column="95" lean-forward="true" selection-start-line="56" selection-start-column="95" selection-end-line="56" selection-end-column="95" />
+        <state relative-caret-position="-199">
+          <caret line="1195" column="25" lean-forward="true" selection-start-line="1195" selection-start-column="25" selection-end-line="1195" selection-end-column="25" />
           <folding />
         </state>
       </provider>

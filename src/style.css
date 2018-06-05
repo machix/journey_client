@@ -837,7 +837,9 @@ h1, h2, h3, h4, h5 {
           top: 0;
           left: 0;
           right: 0;
-          border-radius: 0; } }
+          border-radius: 0;
+          box-shadow: none;
+          background-color: transparent; } }
       .mapview-container .map-container .info-modal .info-container {
         align-items: center;
         text-align: center;
@@ -1101,17 +1103,25 @@ h1, h2, h3, h4, h5 {
             text-shadow: inherit;
             text-align: center; }
     .mapview-container .map-container .check-in {
-      background-color: #EB5D57;
       color: white;
       cursor: pointer;
       position: absolute;
       word-wrap: none;
       left: 0;
-      z-index: 21;
-      padding: 20px 10px;
-      box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.5); }
+      z-index: 21; }
       .mapview-container .map-container .check-in div {
-        writing-mode: tb-rl; }
+        writing-mode: tb-rl;
+        background-color: #EB5D57;
+        padding: 20px 10px;
+        box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.5);
+        width: 40px;
+        margin-top: 5px; }
+        .mapview-container .map-container .check-in div.controls {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 40px;
+          padding: 0; }
     .mapview-container .map-container .mapview-contribution-container {
       display: flex;
       position: absolute;

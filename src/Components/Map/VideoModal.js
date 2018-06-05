@@ -67,6 +67,7 @@ class VideoModal extends Component {
                  ref={(video) => {
                      this.videoModalRef = video;
                  }}
+                 onBlur={() => this.handleBlur()}
             >
 
                 <div className={'video-modal-title'}>
@@ -100,4 +101,4 @@ class VideoModal extends Component {
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(VideoModal));
 
 
-//                 onBlur={() => this.handleBlur()}
+//
