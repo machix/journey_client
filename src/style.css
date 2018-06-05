@@ -927,9 +927,12 @@ h1, h2, h3, h4, h5 {
             width: 100%;
             font-size: 0.7rem;
             text-align: left;
-            z-index: 10; }
+            z-index: 10;
+            display: flex;
+            flex-direction: column; }
             .mapview-container .map-container .info-modal .info-container .list-item.contribution .xyzr {
-              border: solid #c693f0 3px; }
+              border: solid #c693f0 3px;
+              margin: 5px 0 5px 0; }
             .mapview-container .map-container .info-modal .info-container .list-item.contribution .list-description {
               padding: 0 15px 0 10px; }
           .mapview-container .map-container .info-modal .info-container .list-item .contribution-circle {
@@ -985,6 +988,26 @@ h1, h2, h3, h4, h5 {
           box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5), inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 3px 4px -1px rgba(255, 255, 255, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.8), inset 0 20px 30px 0 rgba(255, 255, 255, 0.2); }
           .mapview-container .map-container .info-modal .interact-container .interact:active {
             box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 25px -1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 20px 0 rgba(0, 0, 0, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.6); }
+    .mapview-container .map-container .video-modal {
+      position: absolute;
+      z-index: 24;
+      width: 60%;
+      border-radius: 10px;
+      box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.5);
+      border: solid white 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      @media screen and (max-width: 800px) {
+        .mapview-container .map-container .video-modal {
+          border: solid white 5px;
+          background-color: white;
+          margin-bottom: 20px;
+          bottom: 35vh;
+          overflow: hidden; }
+          .mapview-container .map-container .video-modal .react-player {
+            margin-bottom: -5px; } }
     .mapview-container .map-container .billing-modal {
       position: absolute;
       z-index: 25;

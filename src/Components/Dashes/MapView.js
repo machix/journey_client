@@ -172,6 +172,8 @@ class MapView extends Component {
 
                         </div>
                         : null}
+                    <div className={'video-modal'}><MediaDisplay/>
+                    </div>
 
 
                     {this.props.altitudeVisible === true ? <div className={'altitude-container slideInVerticalMedium'}>
@@ -225,39 +227,40 @@ class MapView extends Component {
                                         meters <br/>
                                     </div>
                                 </div>
+                                <div className={'contribution list-item'}>
 
-                                {typeof(this.props.liveJourneyData[this.props.currentIndex].description) != 'undefined' ?
+                                    {typeof(this.props.liveJourneyData[this.props.currentIndex].description) != 'undefined' ?
 
-                                    <div className={'list-item contribution slideInDownMedium'}>
-                                        <div className={'raised xyzr'}>
+                                        <div className={'list-item  slideInDownMedium'}>
+                                            <div className={'raised xyzr'}>
 
-                                            <div className={'list-description'}>
-                                                {this.props.liveJourneyData[this.props.currentIndex].description}
+                                                <div className={'list-description'}>
+                                                    {this.props.liveJourneyData[this.props.currentIndex].description}
 
+                                                </div>
                                             </div>
-                                        </div>
 
-                                    </div> : null}
+                                        </div> : null}
 
-                                {typeof(this.props.liveJourneyData[this.props.currentIndex].contribution) != 'undefined' ?
-                                    <div className={'list-item contribution slideInDownMedium'}>
-                                        <div className={'raised xyzr'}>
+                                    {typeof(this.props.liveJourneyData[this.props.currentIndex].contribution) != 'undefined' ?
+                                        <div className={'list-item  slideInDownMedium'}>
+                                            <div className={'raised xyzr'}>
 
-                                            <div className={'contribution-circle'}>
-                                                <img
-                                                    src={this.imgSrc(this.props.liveJourneyData[this.props.currentIndex].contribution)}/>
+                                                <div className={'contribution-circle'}>
+                                                    <img
+                                                        src={this.imgSrc(this.props.liveJourneyData[this.props.currentIndex].contribution)}/>
+                                                </div>
+                                                <div className={'list-description'}>
+                                                    <h3>
+                                                        A {this.contributionName(this.props.liveJourneyData[this.props.currentIndex].contribution)}
+                                                        came!</h3>
+                                                    Delivered by Anonymous
+                                                </div>
                                             </div>
-                                            <div className={'list-description'}>
-                                                <h3>
-                                                    A {this.contributionName(this.props.liveJourneyData[this.props.currentIndex].contribution)}
-                                                    came!</h3>
-                                                Delivered by Anonymous
-                                            </div>
-                                        </div>
 
-                                    </div> : null}
+                                        </div> : null}
 
-
+                                </div>
                                 <span
                                     className={'marker-index'}>Entry: {this.props.liveJourneyData[this.props.currentIndex].markerIndex}</span>
                             </div>
