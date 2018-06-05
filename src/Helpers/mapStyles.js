@@ -173,7 +173,22 @@ const dayMap =
                     "visibility": "on"
                 },
                 {
-                    "hue": "#18ff00"
+                    "hue": "#ff5100"
+                },
+                {
+                    "weight": "10.00"
+                }
+            ]
+        },
+        {
+            "featureType": "poi.park",
+            "elementType": "labels.text.stroke",
+            "stylers": [
+                {
+                    "visibility": "on"
+                },
+                {
+                    "weight": "3.20"
                 }
             ]
         },
