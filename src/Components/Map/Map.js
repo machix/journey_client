@@ -92,6 +92,8 @@ class Map extends Component {
         } else if (this.props.altitudeVisible !== nextProps.altitudeVisible  && nextProps.altitudeVisible === false) {
             console.log('Altitude Toggled Off');
             this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, this.props.windowWidth > 800 ? 0 : -200);
+        } else if (this.props.altitudeVisible == nextProps.altitudeVisible &&  nextProps.altitudeVisible === true) {
+            this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, this.props.windowWidth > 800 ? 100 : 40);
         }
 
         if (nextProps.fitBounds !== this.props.fitBounds) {
