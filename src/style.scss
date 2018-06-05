@@ -64,7 +64,7 @@ $c-set-bg-1: #FFFFFF; /* white */
 $c-set-bg-2: #F6F9FC;
 
 $c-set-text-0: #484848; /* #333333; */
-$c-set-text-1: #6b6b6b;
+$c-set-text-1: #2a2a2a;
 $c-set-text-2: #939393; /*#32325d;*/
 $c-set-text-1-super: #666;
 $c-set-text-1-sub: #e6e6e6;
@@ -1158,6 +1158,7 @@ h1, h2, h3, h4, h5 {
           font-size: 0.8rem;
           margin-left: auto;
           margin-right: auto;
+          top: -1.8rem;
 
         }
 
@@ -1407,16 +1408,46 @@ h1, h2, h3, h4, h5 {
       align-items: center;
       justify-content: center;
 
+      .video-modal-title {
+        position: absolute;
+        font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
+        color: $c-set-text-1;
+        width: 100vw;
+        text-align: center;
+        margin-left: -40px;
+        text-transform: uppercase;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
+        font-weight: 700;
+        font-size: 1.7rem;
+        display: flex;
+        flex-direction: column;
+        //background-color: #b0caff !important;
+
+
+        align-items: center;
+        justify-content: center;
+
+        @media screen and (max-width: 800px) {
+          font-size: 1rem;
+          margin-left: auto;
+          margin-right: auto;
+          top: -60px;
+        }
+      }
+
       @media screen and (max-width: 800px) {
         border: solid white 5px;
         background-color: white;
         margin-bottom: 20px;
         bottom: 30vh;
-        overflow: hidden;
+        .overflow-hidden {
+          overflow: hidden;
 
-        .react-player {
-          margin-bottom: -5px;
+          .react-player {
+            margin-bottom: -5px;
+          }
         }
+
       }
     }
 
@@ -5956,26 +5987,30 @@ footer {
   flex-direction: column;
   align-items: center;
   color: white;
-  background-color: #b0caff !important;
+  //background-color: #b0caff !important;
   //background-color: #f7f5d6;
   //border-radius: 5px;
   justify-content: center;
   position: relative;
-  padding: 10px 0 5px 0;
   font-size: 0.7rem;
+
+  @media screen and (max-width: 800px) {
+   color: $c-set-text-1;
+  }
 
   .weather-icon-container {
     position: relative;
     display: flex;
     justify-content: center;
     margin-bottom: 5px;
+    margin-right: 10px;
 
   }
 
   $yellow: #FFDD4A;
   $blue: #85C7F2;
   $size: 30px;
-  $sizeSmall: 25px;
+  $sizeSmall: 20px;
 
   //mixins
   @mixin rotate($deg) {

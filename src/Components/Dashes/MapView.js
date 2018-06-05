@@ -213,7 +213,7 @@ class MapView extends Component {
                         <ContributionPill string={' Radio: $500'}
                                           onClick={() => this.contributionToggle('Pickaxe', 50000)}/>
                     </div>
-                    {this.props.liveJourneyData !== null && typeof(this.props.liveJourneyData) !== 'undefined' && this.props.liveJourneyData.length > 0 ?
+                    {this.props.windowWidth > 800 && this.props.liveJourneyData !== null && typeof(this.props.liveJourneyData) !== 'undefined' && this.props.liveJourneyData.length > 0 ?
                         <div className={'info-modal slideInDown'}>
                             <div className={'info-container'}>
 

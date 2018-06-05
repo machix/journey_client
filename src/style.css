@@ -113,7 +113,7 @@ body {
   font-size: 14px;
   font-weight: 400;
   line-height: normal;
-  color: #6b6b6b;
+  color: #2a2a2a;
   text-transform: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -815,7 +815,8 @@ h1, h2, h3, h4, h5 {
           .mapview-container .map-container .altitude-container .altitude-title {
             font-size: 0.8rem;
             margin-left: auto;
-            margin-right: auto; } }
+            margin-right: auto;
+            top: -1.8rem; } }
     .mapview-container .map-container .info-modal {
       position: fixed;
       z-index: 20;
@@ -999,15 +1000,37 @@ h1, h2, h3, h4, h5 {
       flex-direction: column;
       align-items: center;
       justify-content: center; }
+      .mapview-container .map-container .video-modal .video-modal-title {
+        position: absolute;
+        font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
+        color: #2a2a2a;
+        width: 100vw;
+        text-align: center;
+        margin-left: -40px;
+        text-transform: uppercase;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
+        font-weight: 700;
+        font-size: 1.7rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; }
+        @media screen and (max-width: 800px) {
+          .mapview-container .map-container .video-modal .video-modal-title {
+            font-size: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+            top: -60px; } }
       @media screen and (max-width: 800px) {
         .mapview-container .map-container .video-modal {
           border: solid white 5px;
           background-color: white;
           margin-bottom: 20px;
-          bottom: 30vh;
-          overflow: hidden; }
-          .mapview-container .map-container .video-modal .react-player {
-            margin-bottom: -5px; } }
+          bottom: 30vh; }
+          .mapview-container .map-container .video-modal .overflow-hidden {
+            overflow: hidden; }
+            .mapview-container .map-container .video-modal .overflow-hidden .react-player {
+              margin-bottom: -5px; } }
     .mapview-container .map-container .billing-modal {
       position: absolute;
       z-index: 25;
@@ -4103,18 +4126,20 @@ ul.top-links {
   flex-direction: column;
   align-items: center;
   color: white;
-  background-color: #b0caff !important;
   justify-content: center;
   position: relative;
-  padding: 10px 0 5px 0;
   font-size: 0.7rem;
   --moon-color: #ebf3ff;
   --moon-shadow-color: #cedfff; }
+  @media screen and (max-width: 800px) {
+    .weather {
+      color: #2a2a2a; } }
   .weather .weather-icon-container {
     position: relative;
     display: flex;
     justify-content: center;
-    margin-bottom: 5px; }
+    margin-bottom: 5px;
+    margin-right: 10px; }
   .weather .sun {
     height: 30px;
     width: 30px;
@@ -4126,8 +4151,8 @@ ul.top-links {
     top: -5px; }
     @media screen and (max-width: 800px) {
       .weather .sun {
-        height: 25px;
-        width: 25px; } }
+        height: 20px;
+        width: 20px; } }
     .weather .sun .sunrays {
       -webkit-animation: spin 15s linear infinite;
       -moz-animation: spin 15s linear infinite;
@@ -4140,8 +4165,8 @@ ul.top-links {
       justify-content: center; }
       @media screen and (max-width: 800px) {
         .weather .sun .sunrays {
-          height: 25px;
-          width: 25px; } }
+          height: 20px;
+          width: 20px; } }
   .weather .circle {
     height: 30px;
     width: 30px;
@@ -4151,8 +4176,8 @@ ul.top-links {
     border-radius: 50%; }
     @media screen and (max-width: 800px) {
       .weather .circle {
-        height: 25px;
-        width: 25px; } }
+        height: 20px;
+        width: 20px; } }
   .weather .sunrays span {
     background: #FFDD4A;
     width: 30px;
@@ -4160,8 +4185,8 @@ ul.top-links {
     position: absolute; }
     @media screen and (max-width: 800px) {
       .weather .sunrays span {
-        height: 25px;
-        width: 25px; } }
+        height: 20px;
+        width: 20px; } }
     .weather .sunrays span:first-child {
       -ms-transform: rotate(30deg);
       -webkit-transform: rotate(30deg);

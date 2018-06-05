@@ -21,6 +21,8 @@ const mapStateToProps = (state, ownProps) => ({
 
     thumbnails: state.profile.thumbnails,
 
+    fitBounds: state.mapview.fitBounds,
+
     displayMobile: ownProps.displayMobile,
     className: ownProps.className
 });
@@ -31,9 +33,9 @@ const mapDispatchToProps = dispatch => ({
 
     fetchJourneyThumbs: (journey_uid) => dispatch(agent.common.getMultipleUnsplash(journey_uid)),
 
-    setFitBounds: () => dispatch({
+    setFitBounds: (value) => dispatch({
         type: 'SET_FIT_BOUNDS',
-        value: true
+        value: value
     }),
 
 
@@ -55,6 +57,9 @@ class Statistics extends Component {
         super(props);
     }
 
+    fitBoundsToggle() {
+        this.props.setFitBounds(!this.props.fitBounds)
+    }
 
     render() {
         return (
@@ -80,7 +85,7 @@ class Statistics extends Component {
                                 3 days
                             </div>
                         </div>
-                        <div className={'stat hvr-grow'} onClick={() => this.props.setFitBounds()}>
+                        <div className={'stat hvr-grow'} onClick={() => this.fitBoundsToggle()}>
                             <div className={'stat-top'}>
                                 <Icon className={'social-icon'} viewBox="0 0 40 40" size={25}>
                                     <g>

@@ -20,7 +20,7 @@ export default (state = defaultState, action) => {
         case 'SET_FIT_BOUNDS':
             return {
                 ...state,
-                fitBounds: true
+                fitBounds: action.value
             };
 
         case 'SET_ALTITUDE_VISIBLE':

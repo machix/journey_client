@@ -20,9 +20,9 @@ import WeatherContainer from './WeatherContainer';
 
 const mapStateToProps = (state, ownProps) => ({
     currentIndex: state.mapview.currentIndex,
+
     liveJourneyData: state.common.liveJourneyData,
     windowWidth: state.common.windowWidth,
-
 
     index: ownProps.index,
     position: ownProps.position,
@@ -67,8 +67,12 @@ class VideoModal extends Component {
                  ref={(video) => {
                      this.videoModalRef = video;
                  }}
-                 onBlur={()=>this.handleBlur()}
             >
+
+                <div className={'video-modal-title'}>
+                    <WeatherContainer/>
+                    {moment(-this.props.liveJourneyData[this.props.currentIndex].timestamp).format('YYYY MMM DD hh:mm a')}
+                </div>
                 <Icon viewBox="0 0 40 40"
                       onClick={() => this.props.setVideoModalVisible(false)}
                       style={{
@@ -84,7 +88,9 @@ class VideoModal extends Component {
                             d="m31.8 10.7l-9.3 9.3 9.3 9.3-2.4 2.3-9.3-9.3-9.3 9.3-2.3-2.3 9.3-9.3-9.3-9.3 2.3-2.3 9.3 9.3 9.3-9.3z"/>
                     </g>
                 </Icon>
-                <MediaDisplay/>
+                <div className={'overflow-hidden'}>
+                    <MediaDisplay/>
+                </div>
             </div>
         );
     }
@@ -92,3 +98,6 @@ class VideoModal extends Component {
 
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(VideoModal));
+
+
+//                 onBlur={() => this.handleBlur()}
