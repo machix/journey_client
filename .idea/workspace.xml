@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8eb92d85-80e0-4af9-8dc4-e20ffe8708d5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Cards/MediaDisplay.js" afterPath="$PROJECT_DIR$/src/Components/Cards/MediaDisplay.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/JourneyDash.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/JourneyDash.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Map/JourneyMapContainerSmall.js" afterPath="$PROJECT_DIR$/src/Components/Map/JourneyMapContainerSmall.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Map/MapMarker.js" afterPath="$PROJECT_DIR$/src/Components/Map/MapMarker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Dashes/MapView.js" afterPath="$PROJECT_DIR$/src/Components/Dashes/MapView.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Video/Video.js" afterPath="$PROJECT_DIR$/src/Components/Video/Video.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reducers/mapview.js" afterPath="$PROJECT_DIR$/src/Reducers/mapview.js" />
     </list>
     <ignored path="gifty-console-client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,18 +26,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="VideoModal.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Map/VideoModal.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="70" column="13" lean-forward="true" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="WeatherContainer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/Map/WeatherContainer.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -62,25 +46,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapMarker.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Components/Map/MapMarker.js">
+      <file leaf-file-name="MapView.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/Dashes/MapView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="100" column="9" lean-forward="false" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="308">
+              <caret line="225" column="41" lean-forward="true" selection-start-line="225" selection-start-column="41" selection-end-line="225" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#12316#13472#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapView.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Dashes/MapView.js">
+      <file leaf-file-name="Video.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Components/Video/Video.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="297" column="0" lean-forward="true" selection-start-line="297" selection-start-column="0" selection-end-line="297" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-                <element signature="e#11980#13136#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="167">
+              <caret line="50" column="36" lean-forward="false" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -120,8 +104,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Weather</find>
-      <find>&lt;WeatherContainer</find>
       <find>header-title</find>
       <find>.video-modal</find>
       <find>.weather {</find>
@@ -150,6 +132,8 @@
       <find>.weather</find>
       <find>videomodal</find>
       <find>console.log</find>
+      <find>console.</find>
+      <find>check-</find>
     </findStrings>
     <replaceStrings>
       <replace>15</replace>
@@ -229,7 +213,6 @@
         <option value="$PROJECT_DIR$/node_modules/react-rain-animation/lib/index.js" />
         <option value="$PROJECT_DIR$/src/Components/Assets/meal-small.svg" />
         <option value="$PROJECT_DIR$/src/Components/Assets/meal-small-marker.svg" />
-        <option value="$PROJECT_DIR$/src/Helpers/jsonFlattener.js" />
         <option value="$PROJECT_DIR$/src/Helpers/agent.js" />
         <option value="$PROJECT_DIR$/src/Components/Map/WeatherContainer.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
@@ -244,11 +227,12 @@
         <option value="$PROJECT_DIR$/src/Helpers/mapStyles.js" />
         <option value="$PROJECT_DIR$/src/Components/Dashes/ProfileDash/statistics.js" />
         <option value="$PROJECT_DIR$/src/Components/Cards/MediaDisplay.js" />
-        <option value="$PROJECT_DIR$/src/Components/Video/Video.js" />
         <option value="$PROJECT_DIR$/src/Components/Map/VideoModal.js" />
         <option value="$PROJECT_DIR$/src/style.scss" />
-        <option value="$PROJECT_DIR$/src/Components/Dashes/MapView.js" />
         <option value="$PROJECT_DIR$/src/Components/Map/MapMarker.js" />
+        <option value="$PROJECT_DIR$/src/Helpers/jsonFlattener.js" />
+        <option value="$PROJECT_DIR$/src/Components/Dashes/MapView.js" />
+        <option value="$PROJECT_DIR$/src/Components/Video/Video.js" />
       </list>
     </option>
   </component>
@@ -610,12 +594,12 @@
       <workItem from="1527954075193" duration="22540000" />
       <workItem from="1528136047295" duration="8736000" />
       <workItem from="1528215084698" duration="193000" />
-      <workItem from="1528215293890" duration="5452000" />
+      <workItem from="1528215293890" duration="6201000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="570521000" />
+    <option name="totallyTimeSpent" value="571270000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -869,13 +853,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Helpers/jsonFlattener.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Dashes/ContributionPill.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
@@ -985,34 +962,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reducers/mapview.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="11" column="10" lean-forward="false" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Video/Video.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Cards/MediaDisplay.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-205">
           <caret line="40" column="50" lean-forward="false" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Map/WeatherContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="109" column="0" lean-forward="true" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1043,16 +996,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Map/VideoModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="70" column="13" lean-forward="true" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Helpers/aggregator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
@@ -1061,21 +1004,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/MapView.js">
+    <entry file="file://$PROJECT_DIR$/src/Helpers/jsonFlattener.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="297" column="0" lean-forward="true" selection-start-line="297" selection-start-column="0" selection-end-line="297" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#11980#13136#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="188">
+          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Map/MapMarker.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-129">
+          <caret line="101" column="32" lean-forward="true" selection-start-line="101" selection-start-column="32" selection-end-line="101" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reducers/mapview.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
-          <caret line="100" column="9" lean-forward="false" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
+          <caret line="11" column="10" lean-forward="false" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Map/VideoModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="68" column="19" lean-forward="true" selection-start-line="68" selection-start-column="19" selection-end-line="68" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Map/WeatherContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="109" column="0" lean-forward="true" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Dashes/MapView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="225" column="41" lean-forward="true" selection-start-line="225" selection-start-column="41" selection-end-line="225" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#12316#13472#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Video/Video.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="50" column="36" lean-forward="false" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="36" />
           <folding />
         </state>
       </provider>

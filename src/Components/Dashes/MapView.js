@@ -215,6 +215,14 @@ class MapView extends Component {
                         <div className={'controls'}>
                             <Icon viewBox="0 0 40 40" size={15}>
                                 <g>
+                                    <path d="m10 7.5l20 12.5-20 12.5v-25z"/>
+                                </g>
+
+                            </Icon>
+                        </div>
+                        <div className={'controls'}>
+                            <Icon viewBox="0 0 40 40" size={15}>
+                                <g>
                                     <path
                                         d="m33.2 18.4v3.2h-20.3l9.3 9.4-2.3 2.4-13.4-13.4 13.4-13.4 2.4 2.4-9.4 9.4h20.3z"/>
                                 </g>

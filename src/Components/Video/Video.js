@@ -48,13 +48,10 @@ class Video extends Component {
                              height='100%'
                              url={this.props.url}
                              controls
-                             playing={this.state.playing}
-                             playsinline={true}
-                    // autoPlay={true}
-                             fileConfig={{attributes: {poster: this.props.poster}}}
+                             playing                    // playsinline={true}
+                             autoPlay fileConfig={{attributes: {poster: this.props.poster}}}
                              onReady={() => {
-                                 setTimeout(() => this.setState({...this.state, playing: true})
-                                     , 200)
+
                              }}
                 />
             </div>
