@@ -11,7 +11,9 @@ import {connect} from 'react-redux';
 import mealSmallMarker from '../Assets/meal-small-marker.svg'
 import mealMediumMarker from '../Assets/meal-medium-marker.svg'
 import mealLargeMarker from '../Assets/meal-large-marker.svg'
-import pickaxeMarker from '../Assets/pickaxeMarker.svg'
+import pickaxeMarker from '../Assets/pickaxeMarker.svg';
+import hi from '../Assets/hi.svg';
+
 import MediaDisplay from '../Cards/MediaDisplay';
 import WeatherContainer from './WeatherContainer';
 
@@ -76,7 +78,7 @@ class MapMarker extends Component {
             case 5000:
                 return pickaxeMarker;
             default:
-                return null;
+                return hi;
         }
     };
 
@@ -93,6 +95,15 @@ class MapMarker extends Component {
         }
     };
 
+    iconSize = (value) => {
+        switch (typeof(value)) {
+            case 'undefined':
+                return new window.google.maps.Size(60, 80);;
+            default:
+                return new window.google.maps.Size(28, 40);
+        }
+    };
+
     render() {
         return (
             <Marker
@@ -100,7 +111,7 @@ class MapMarker extends Component {
                 key={this.props.key}
                 icon={{
                     url: this.iconSrc(this.props.contribution),
-                    size: new window.google.maps.Size(28, 40),
+                    size: this.iconSize(this.props.contribution),
                 }}
                 zIndex={typeof(this.props.contribution) != 'undefined' ? 100 : 0}
                 position={this.props.position}>

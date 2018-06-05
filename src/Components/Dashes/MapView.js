@@ -227,8 +227,15 @@ class MapView extends Component {
                                 </div>
 
                                 {typeof(this.props.liveJourneyData[this.props.currentIndex].description) != 'undefined' ?
-                                    <div className={'list-item description slideInDown'}>
-                                        {this.props.liveJourneyData[this.props.currentIndex].description}
+
+                                    <div className={'list-item contribution slideInDownMedium'}>
+                                        <div className={'raised xyzr'}>
+
+                                            <div className={'list-description'}>
+                                                {this.props.liveJourneyData[this.props.currentIndex].description}
+
+                                            </div>
+                                        </div>
 
                                     </div> : null}
 
