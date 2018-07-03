@@ -113,7 +113,7 @@ body {
   font-size: 14px;
   font-weight: 400;
   line-height: normal;
-  color: #6b6b6b;
+  color: #2a2a2a;
   text-transform: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -198,6 +198,12 @@ h1, h2, h3, h4, h5 {
 
 .slideInVerticalMedium {
   animation: slide-in-vertical 0.8s cubic-bezier(0.23, 1, 0.32, 1) both; }
+
+.slideInDown {
+  animation: slide-in-down 0.2s cubic-bezier(0.23, 1, 0.32, 1) both; }
+
+.slideInDownMedium {
+  animation: slide-in-down 0.8s cubic-bezier(0.23, 1, 0.32, 1) both; }
 
 .loader,
 .loader:before,
@@ -307,6 +313,14 @@ h1, h2, h3, h4, h5 {
 @keyframes slide-in-vertical {
   0% {
     transform: translateY(50px);
+    opacity: 0; }
+  100% {
+    transform: none;
+    opacity: 1; } }
+
+@keyframes slide-in-down {
+  0% {
+    transform: translateY(-50px);
     opacity: 0; }
   100% {
     transform: none;
@@ -672,23 +686,32 @@ h1, h2, h3, h4, h5 {
   display: flex;
   flex-direction: row;
   overflow: hidden; }
+  @media screen and (max-width: 800px) {
+    .mapview-container {
+      height: auto;
+      flex-direction: column; } }
   .mapview-container .mapview-sidebar {
     width: 30%;
     height: 100%;
     position: relative;
     display: flex;
     flex-direction: column; }
-    .mapview-container .mapview-sidebar .info {
-      max-width: 40%; }
+    @media screen and (max-width: 800px) {
+      .mapview-container .mapview-sidebar {
+        width: 100%; } }
     .mapview-container .mapview-sidebar .media-container {
       display: flex;
       flex: 1;
       justify-content: center;
-      align-items: center; }
+      align-items: center;
+      height: 100%; }
       .mapview-container .mapview-sidebar .media-container .media {
         max-height: 100%;
-        display: flex;
-        width: 100%; }
+        display: flex; }
+        .mapview-container .mapview-sidebar .media-container .media .react-player {
+          overflow: hidden; }
+    .mapview-container .mapview-sidebar .info {
+      max-width: 40%; }
     .mapview-container .mapview-sidebar .statistics {
       position: absolute;
       bottom: 0;
@@ -699,7 +722,11 @@ h1, h2, h3, h4, h5 {
       width: 100%;
       color: white;
       background-color: rgba(0, 0, 0, 0.8);
-      padding: 20px; }
+      padding: 20px;
+      align-self: flex-end; }
+      @media screen and (max-width: 800px) {
+        .mapview-container .mapview-sidebar .statistics {
+          padding: 10px; } }
       .mapview-container .mapview-sidebar .statistics .stats-title {
         font-weight: bold;
         display: block; }
@@ -716,6 +743,9 @@ h1, h2, h3, h4, h5 {
           max-width: 100px;
           padding-top: 10px;
           cursor: pointer; }
+          @media screen and (max-width: 800px) {
+            .mapview-container .mapview-sidebar .statistics .stats-container .stat {
+              padding: 5px; } }
           .mapview-container .mapview-sidebar .statistics .stats-container .stat .stat-top {
             font-size: 1rem;
             font-weight: bold; }
@@ -732,93 +762,43 @@ h1, h2, h3, h4, h5 {
     display: flex;
     justify-content: center;
     align-items: center; }
+    @media screen and (max-width: 800px) {
+      .mapview-container .map-container {
+        width: 100%;
+        height: 100vh; } }
     .mapview-container .map-container .info-window {
-      align-items: center;
-      padding: 10px 0 15px 15px;
-      text-align: center;
-      overflow: hidden;
-      min-width: 20vw; }
-      .mapview-container .map-container .info-window .header-title {
+      max-width: 70vw;
+      position: relative;
+      height: 40vh; }
+      .mapview-container .map-container .info-window .media-container {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-bottom: 10px;
-        margin-bottom: 15px;
-        border-bottom: solid 1px #EFEFEF; }
-        .mapview-container .map-container .info-window .header-title .text-info {
-          margin-left: 20px;
-          text-align: left; }
-      .mapview-container .map-container .info-window a {
-        color: inherit; }
-      .mapview-container .map-container .info-window .media-container-infowindow {
-        position: relative;
-        align-items: center;
-        display: flex;
+        flex: 1;
         justify-content: center;
+        align-items: center;
         height: 100%; }
-        .mapview-container .map-container .info-window .media-container-infowindow .media-holder {
-          display: flex;
-          align-items: center;
-          justify-content: center; }
-          .mapview-container .map-container .info-window .media-container-infowindow .media-holder img {
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 5px;
-            width: 150px; }
-      .mapview-container .map-container .info-window .interact-container {
-        display: flex;
-        color: #c693f0;
-        height: 100%;
-        justify-content: space-between;
-        align-items: center;
-        align-self: stretch; }
-        .mapview-container .map-container .info-window .interact-container .interact {
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-left: 10px;
-          border-radius: 100px;
-          width: 30px;
-          height: 30px;
-          border: solid 1px #c693f0;
-          transition: all 0.4s ease-in-out; }
-          .mapview-container .map-container .info-window .interact-container .interact:hover {
-            background-color: #c693f0;
-            color: white; }
-      .mapview-container .map-container .info-window .list-item {
-        display: flex;
-        color: #c693f0;
-        align-items: center;
-        position: relative;
-        margin: 10px 0 0 0; }
-        .mapview-container .map-container .info-window .list-item.description {
-          color: black;
-          text-align: center;
-          margin: 25px 0 25px 0;
-          justify-content: center; }
-        .mapview-container .map-container .info-window .list-item .contribution-circle {
-          border-radius: 100px;
-          width: 60px;
-          height: 60px;
-          background-color: #f7f5d6;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border: solid #c693f0 4px;
-          margin-right: 10px; }
-          .mapview-container .map-container .info-window .list-item .contribution-circle img {
-            width: 35px;
-            height: 35px; }
+        .mapview-container .map-container .info-window .media-container .media {
+          max-height: 100%;
+          display: flex; }
+          .mapview-container .map-container .info-window .media-container .media .react-player {
+            overflow: hidden; }
+            .mapview-container .map-container .info-window .media-container .media .react-player video {
+              width: auto !important; }
     .mapview-container .map-container .altitude-container {
-      align-text: center;
+      text-align: center;
       padding: 40px 40px 60px 40px;
       bottom: 0;
       position: absolute;
       z-index: 25;
       width: 95%;
       background-color: rgba(255, 255, 255, 0.93);
-      border-radius: 10px; }
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      font-size: 0.7rem;
+      fill: #939393; }
+      @media screen and (max-width: 800px) {
+        .mapview-container .map-container .altitude-container {
+          width: 100%;
+          padding: 5px 5px 40px 5px; } }
       .mapview-container .map-container .altitude-container .altitude-title {
         position: absolute;
         font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
@@ -831,6 +811,228 @@ h1, h2, h3, h4, h5 {
         text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
         font-weight: 700;
         font-size: 1.7rem; }
+        @media screen and (max-width: 800px) {
+          .mapview-container .map-container .altitude-container .altitude-title {
+            font-size: 0.8rem;
+            margin-left: auto;
+            margin-right: auto;
+            top: -1.8rem; } }
+    .mapview-container .map-container .info-modal {
+      position: fixed;
+      z-index: 20;
+      right: 20px;
+      top: 5px;
+      width: 25%;
+      border-radius: 7px;
+      padding: 2px;
+      box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      @media screen and (max-width: 800px) {
+        .mapview-container .map-container .info-modal {
+          width: 100%;
+          top: 0;
+          left: 0;
+          right: 0;
+          border-radius: 0;
+          box-shadow: none;
+          background-color: transparent; } }
+      .mapview-container .map-container .info-modal .info-container {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        min-width: 20vw;
+        position: relative;
+        overflow: visible !important; }
+        .mapview-container .map-container .info-modal .info-container .marker-index {
+          position: absolute;
+          font-size: 0.5rem;
+          right: 5px;
+          bottom: 3px;
+          color: #b4b4b4; }
+        .mapview-container .map-container .info-modal .info-container .header-title {
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          .mapview-container .map-container .info-modal .info-container .header-title .weather {
+            width: 80px;
+            height: 70px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5); }
+            @media screen and (max-width: 800px) {
+              .mapview-container .map-container .info-modal .info-container .header-title .weather {
+                height: 50px;
+                border-radius: 0; } }
+          .mapview-container .map-container .info-modal .info-container .header-title .text-info {
+            text-align: left;
+            font-size: 0.7rem;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 70px;
+            margin-left: 2px;
+            flex: 1;
+            border-radius: 5px;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5); }
+            @media screen and (max-width: 800px) {
+              .mapview-container .map-container .info-modal .info-container .header-title .text-info {
+                font-size: 0.6rem;
+                height: 50px;
+                border-radius: 0;
+                margin-left: 3px; } }
+            .mapview-container .map-container .info-modal .info-container .header-title .text-info .title {
+              font-size: 1.1rem;
+              font-weight: 500;
+              font-family: Londrina Solid;
+              color: #45d1ff; }
+        .mapview-container .map-container .info-modal .info-container a {
+          color: inherit; }
+        .mapview-container .map-container .info-modal .info-container .raised {
+          box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.5);
+          background-color: rgba(249, 249, 249, 0.95);
+          border-radius: 33px;
+          display: flex;
+          align-items: center;
+          padding: 4px; }
+        .mapview-container .map-container .info-modal .info-container .list-item {
+          display: flex;
+          color: #c693f0;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          border-radius: 5px; }
+          @media screen and (max-width: 800px) {
+            .mapview-container .map-container .info-modal .info-container .list-item {
+              border-radius: 0; } }
+          .mapview-container .map-container .info-modal .info-container .list-item.description {
+            color: black;
+            text-align: center;
+            padding: 15px;
+            justify-content: center;
+            font-family: 'Rock Salt', cursive;
+            font-size: 0.8rem;
+            background-color: white;
+            margin-top: 2px;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5); }
+            @media screen and (max-width: 800px) {
+              .mapview-container .map-container .info-modal .info-container .list-item.description {
+                padding: 15px;
+                font-size: 0.6rem; } }
+          .mapview-container .map-container .info-modal .info-container .list-item.contribution {
+            position: absolute;
+            top: 110%;
+            width: 100%;
+            font-size: 0.7rem;
+            text-align: left;
+            z-index: 10;
+            display: flex;
+            flex-direction: column; }
+            .mapview-container .map-container .info-modal .info-container .list-item.contribution .xyzr {
+              border: solid #c693f0 3px;
+              margin: 5px 0 5px 0; }
+            .mapview-container .map-container .info-modal .info-container .list-item.contribution .list-description {
+              padding: 0 15px 0 10px; }
+          .mapview-container .map-container .info-modal .info-container .list-item .contribution-circle {
+            border-radius: 100px;
+            width: 40px;
+            height: 40px;
+            background-color: #f7f5d6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: solid #c693f0 2px; }
+            .mapview-container .map-container .info-modal .info-container .list-item .contribution-circle img {
+              width: 20px;
+              height: 20px; }
+      .mapview-container .map-container .info-modal .raised {
+        box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.5);
+        background-color: rgba(249, 249, 249, 0.95);
+        border-radius: 33px;
+        display: flex;
+        align-items: center;
+        padding: 3px;
+        margin-left: 5px; }
+      .mapview-container .map-container .info-modal .interact-container {
+        position: absolute;
+        left: -50px;
+        bottom: 0;
+        height: 80px;
+        margin-top: 5px;
+        display: flex;
+        flex-direction: column;
+        color: #b5b5b5;
+        justify-content: space-around;
+        align-items: center;
+        align-self: stretch; }
+        @media screen and (max-width: 800px) {
+          .mapview-container .map-container .info-modal .interact-container {
+            flex-direction: row;
+            left: auto;
+            right: auto;
+            top: 100%;
+            height: 50px; } }
+        .mapview-container .map-container .info-modal .interact-container .interact {
+          background-color: white;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 30px;
+          height: 30px;
+          transition: all 0.2s ease-out;
+          border-radius: 30px;
+          overflow: visible;
+          box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5), inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 3px 4px -1px rgba(255, 255, 255, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.8), inset 0 20px 30px 0 rgba(255, 255, 255, 0.2); }
+          .mapview-container .map-container .info-modal .interact-container .interact:active {
+            box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 25px -1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 20px 0 rgba(0, 0, 0, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.6); }
+    .mapview-container .map-container .video-modal {
+      position: absolute;
+      z-index: 15;
+      max-width: 60%;
+      border-radius: 10px;
+      box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.5);
+      border: solid white 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      .mapview-container .map-container .video-modal .video-modal-title {
+        position: absolute;
+        font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
+        color: #2a2a2a;
+        width: 100vw;
+        text-align: center;
+        margin-left: -40px;
+        text-transform: uppercase;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
+        font-weight: 700;
+        font-size: 1.7rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; }
+        @media screen and (max-width: 800px) {
+          .mapview-container .map-container .video-modal .video-modal-title {
+            font-size: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+            top: -60px; } }
+      @media screen and (max-width: 800px) {
+        .mapview-container .map-container .video-modal {
+          border: solid white 5px;
+          background-color: white;
+          margin-bottom: 20px;
+          bottom: 30vh; }
+          .mapview-container .map-container .video-modal .overflow-hidden {
+            overflow: hidden; }
+            .mapview-container .map-container .video-modal .overflow-hidden .react-player {
+              margin-bottom: -5px; } }
     .mapview-container .map-container .billing-modal {
       position: absolute;
       z-index: 25;
@@ -849,6 +1051,12 @@ h1, h2, h3, h4, h5 {
       font-size: 0.9rem;
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
       text-align: center; }
+      @media screen and (max-width: 800px) {
+        .mapview-container .map-container .billing-modal {
+          width: 95%;
+          padding: 30px 30px;
+          border: solid white 5px;
+          font-size: 0.7rem; } }
       .mapview-container .map-container .billing-modal .medkit-container {
         width: 100px;
         height: 100px;
@@ -860,9 +1068,12 @@ h1, h2, h3, h4, h5 {
         justify-content: center;
         border: solid white 4px;
         margin-bottom: 15px; }
+      .mapview-container .map-container .billing-modal .radio-extra {
+        font-size: 0.6rem;
+        padding: 5px 20px 0 20px; }
       .mapview-container .map-container .billing-modal .stripe-container {
         width: 100%;
-        margin-top: 40px; }
+        margin-top: 30px; }
         .mapview-container .map-container .billing-modal .stripe-container input {
           background-color: transparent;
           border: none;
@@ -872,23 +1083,45 @@ h1, h2, h3, h4, h5 {
           margin-bottom: 20px;
           text-align: center;
           border-bottom: solid white 1px; }
+          .mapview-container .map-container .billing-modal .stripe-container input.message {
+            border-bottom: none;
+            border-bottom: solid white 1px;
+            margin-bottom: 40px; }
+            .mapview-container .map-container .billing-modal .stripe-container input.message::placeholder {
+              color: inherit;
+              text-shadow: inherit;
+              text-align: center;
+              font-size: 1.2rem; }
+              @media screen and (max-width: 800px) {
+                .mapview-container .map-container .billing-modal .stripe-container input.message::placeholder {
+                  font-size: 1rem; } }
+          @media screen and (max-width: 800px) {
+            .mapview-container .map-container .billing-modal .stripe-container input {
+              font-size: 1rem; } }
           .mapview-container .map-container .billing-modal .stripe-container input::placeholder {
             color: inherit;
             text-shadow: inherit;
-            font-size: 1.2rem;
             text-align: center; }
     .mapview-container .map-container .check-in {
-      background-color: #EB5D57;
       color: white;
       cursor: pointer;
       position: absolute;
       word-wrap: none;
       left: 0;
-      z-index: 21;
-      padding: 20px 10px;
-      box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.5); }
+      z-index: 21; }
       .mapview-container .map-container .check-in div {
-        writing-mode: tb-rl; }
+        writing-mode: tb-rl;
+        background-color: #EB5D57;
+        padding: 20px 10px;
+        box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.5);
+        width: 40px;
+        margin-top: 5px; }
+        .mapview-container .map-container .check-in div.controls {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 40px;
+          padding: 0; }
     .mapview-container .map-container .mapview-contribution-container {
       display: flex;
       position: absolute;
@@ -896,6 +1129,9 @@ h1, h2, h3, h4, h5 {
       width: 80%;
       justify-content: space-around;
       z-index: 20; }
+      @media screen and (max-width: 800px) {
+        .mapview-container .map-container .mapview-contribution-container {
+          width: 100%; } }
       .mapview-container .map-container .mapview-contribution-container .pill {
         border-radius: 50px;
         cursor: pointer;
@@ -909,6 +1145,10 @@ h1, h2, h3, h4, h5 {
         text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
         overflow: hidden;
         align-self: center; }
+        @media screen and (max-width: 800px) {
+          .mapview-container .map-container .mapview-contribution-container .pill {
+            font-size: 0.7rem;
+            padding: 10px 10px; } }
 
 .contribution-container {
   background-image: linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%);
@@ -952,7 +1192,7 @@ h1, h2, h3, h4, h5 {
     @media screen and (max-width: 800px) {
       .contribution-container .map-container {
         width: 100%;
-        height: 100vw; }
+        height: 100vh; }
         .contribution-container .map-container .map-element {
           height: auto; } }
   .contribution-container .card {
@@ -1961,7 +2201,8 @@ h1, h2, h3, h4, h5 {
         color: white; } }
     .profile-container .statistics .stats-title {
       font-weight: bold;
-      display: block; }
+      display: block;
+      text-transform: uppercase; }
     .profile-container .statistics .stats-container {
       display: flex;
       flex-direction: column;
@@ -3894,45 +4135,72 @@ ul.top-links {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #c693f0;
+  color: white;
+  background-color: #b0caff !important;
   justify-content: center;
   position: relative;
-  padding: 10px 0 5px 0;
+  font-size: 0.7rem;
   --moon-color: #ebf3ff;
   --moon-shadow-color: #cedfff; }
-  .weather .list-description {
-    padding-top: 10px; }
+  @media screen and (max-width: 800px) {
+    .weather {
+      color: #2a2a2a;
+      background-color: transparent !important; } }
+  .weather .weather-icon-container {
+    position: relative;
+    display: flex;
+    justify-content: center; }
+    @media screen and (max-width: 800px) {
+      .weather .weather-icon-container {
+        margin-bottom: 5px;
+        margin-right: 10px; } }
   .weather .sun {
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    top: calc(50% - 65px); }
+    top: -5px; }
+    @media screen and (max-width: 800px) {
+      .weather .sun {
+        height: 20px;
+        width: 20px; } }
     .weather .sun .sunrays {
       -webkit-animation: spin 15s linear infinite;
       -moz-animation: spin 15s linear infinite;
       animation: spin 15s linear infinite;
-      height: 40px;
-      width: 40px;
+      height: 30px;
+      width: 30px;
       position: absolute;
       display: flex;
       align-items: center;
       justify-content: center; }
+      @media screen and (max-width: 800px) {
+        .weather .sun .sunrays {
+          height: 20px;
+          width: 20px; } }
   .weather .circle {
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     z-index: 1;
     background: #ffe77d;
     position: absolute;
     border-radius: 50%; }
+    @media screen and (max-width: 800px) {
+      .weather .circle {
+        height: 20px;
+        width: 20px; } }
   .weather .sunrays span {
     background: #FFDD4A;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     position: absolute; }
+    @media screen and (max-width: 800px) {
+      .weather .sunrays span {
+        height: 20px;
+        width: 20px; } }
     .weather .sunrays span:first-child {
       -ms-transform: rotate(30deg);
       -webkit-transform: rotate(30deg);
@@ -3948,8 +4216,8 @@ ul.top-links {
     .weather .eyes .left, .weather .eyes .right {
       background: black;
       position: absolute;
-      height: 8px;
-      width: 8px;
+      height: 6px;
+      width: 6px;
       border-radius: 50%;
       -webkit-animation: blink 2.5s linear infinite;
       -moz-animation: blink 2.5s linear infinite;
@@ -3975,26 +4243,26 @@ ul.top-links {
 
 @keyframes blink {
   0% {
-    height: 8px;
-    width: 8px;
+    height: 6px;
+    width: 6px;
     border-radius: 50%; }
   5% {
     height: 1px;
     width: 8px;
     border-radius: 0; }
   10% {
-    height: 8px;
-    width: 8px;
+    height: 6px;
+    width: 6px;
     border-radius: 50%; } }
   .weather #moon {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background: var(--moon-color);
     border-radius: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: inset -10px 0 0px 0 var(--moon-shadow-color), 0 0 40px rgba(255, 255, 255, 0.5); }
+    box-shadow: inset -10px 0 0px 0 var(--moon-shadow-color), 0 0 30px rgba(255, 255, 255, 0.5); }
   .weather .crater {
     position: absolute;
     width: 50px;
@@ -4003,8 +4271,8 @@ ul.top-links {
     border-radius: 100px;
     box-shadow: inset 10px 0 0px 0 var(--moon-shadow-color); }
   .weather .crater#one {
-    margin-left: -10px;
-    margin-top: -25px;
+    margin-left: 10px;
+    margin-top: 20px;
     transform: rotate(45deg) scale(0.2); }
   .weather .crater#two {
     margin-left: -5px;
@@ -4017,7 +4285,7 @@ ul.top-links {
     transform: rotate(-65deg) scale(0.2);
     box-shadow: inset 15px 0 0 0 var(--moon-shadow-color); }
   .weather .crater#four {
-    margin-top: 10px;
+    margin-top: 6px;
     margin-left: 7px;
     box-shadow: inset 10px 0 0 0 var(--moon-shadow-color);
     transform: rotate(230deg) scale(0.2); }
@@ -4042,22 +4310,25 @@ ul.top-links {
 
 @keyframes animateCloud {
   0% {
-    margin-left: -100px;
-    opacity: 0.1; }
+    margin-left: -30px;
+    opacity: 0.7; }
   15% {
     opacity: 1; }
+  50% {
+    margin-left: 30px;
+    opacity: 0.4; }
   75% {
     opacity: 0.95; }
   100% {
-    margin-left: 100px;
-    opacity: 0; } }
+    margin-left: -30px;
+    opacity: 0.7; } }
   .weather .x2 {
-    -webkit-animation: animateCloud 5s linear infinite;
-    -moz-animation: animateCloud 5s linear infinite;
-    animation: animateCloud 5s linear infinite;
-    -webkit-transform: scale(0.3);
-    -moz-transform: scale(0.3);
-    transform: scale(0.3);
+    -webkit-animation: animateCloud 10s linear infinite;
+    -moz-animation: animateCloud 10s linear infinite;
+    animation: animateCloud 10s linear infinite;
+    -webkit-transform: scale(0.2);
+    -moz-transform: scale(0.2);
+    transform: scale(0.2);
     position: absolute;
     top: -50px;
     z-index: 25; }
@@ -4114,7 +4385,7 @@ ul.top-links {
   .weather .drop {
     position: relative;
     float: left;
-    width: 1px;
+    width: 5px;
     margin: 20px;
     left: 5px;
     background: #789;
@@ -4145,5 +4416,5 @@ ul.top-links {
     opacity: 1;
     transform: translate(0, 0); }
   100% {
-    opacity: 0.2;
+    opacity: 0.4;
     transform: translate(0, 100px); } }

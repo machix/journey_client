@@ -66,7 +66,6 @@ class MapContainerSmall extends Component {
         switch (value) {
 
             case 'map': {
-                console.log('this.props.mapExpanded: ' + this.props.mapExpanded);
                 if (this.props.mapExpanded) {
                     return;
                 } else {

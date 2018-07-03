@@ -28,7 +28,8 @@ const Error = () => {
 }
 
 const mapStateToProps = state => ({
-    contributionValue: state.common.contributionValue
+    contributionValue: state.common.contributionValue,
+    windowWidth: state.common.windowWidth
 
 });
 
@@ -94,13 +95,19 @@ class CheckoutForm extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input placeholder={'Your Name: (Optional)'}/>
+                <input placeholder={'Your Name: (Optional)'}/><br/>
+                {this.props.contributionValue === 5000 ?
+                <input className={'message'} placeholder={'Send a Message:'}/> : null}
+                {this.props.contributionValue === 50000 ?
+                    <input className={'message'} placeholder={'Your instructions:'}/> : null}
+
                 <label>
                     <CardElement elementRef={(c) => this._element = c}
                                  style={{
 
                                      base: {
-                                         fontSize: '18px', color: this.props.color,
+                                         fontSize: this.props.windowWidth > 800 ? '18px' : undefined,
+                                         color: this.props.color,
                                          iconColor: this.props.color,
                                          '::placeholder': {
                                              color: this.props.color,

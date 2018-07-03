@@ -20,7 +20,11 @@ const mapStateToProps = (state, ownProps) => ({
     legAltitudeChange: state.common.legAltitudeChange,
 
     thumbnails: state.profile.thumbnails,
-    displayMobile: ownProps.displayMobile
+
+    fitBounds: state.mapview.fitBounds,
+
+    displayMobile: ownProps.displayMobile,
+    className: ownProps.className
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -29,9 +33,9 @@ const mapDispatchToProps = dispatch => ({
 
     fetchJourneyThumbs: (journey_uid) => dispatch(agent.common.getMultipleUnsplash(journey_uid)),
 
-    setFitBounds: () => dispatch({
+    setFitBounds: (value) => dispatch({
         type: 'SET_FIT_BOUNDS',
-        value: true
+        value: value
     }),
 
 
@@ -53,12 +57,15 @@ class Statistics extends Component {
         super(props);
     }
 
+    fitBoundsToggle() {
+        this.props.setFitBounds(!this.props.fitBounds)
+    }
 
     render() {
         return (
 
             this.props.displayMobile === null ? <div
-                    className={'statistics'} style={{position: 'relative'}}>
+                    className={'statistics ' + this.props.className} style={{position: 'relative'}}>
                     <div className={'stats-title'}>
                         Live Stats {this.props.displayMobile}
                     </div>
@@ -78,7 +85,7 @@ class Statistics extends Component {
                                 3 days
                             </div>
                         </div>
-                        <div className={'stat hvr-grow'} onClick={() => this.props.setFitBounds()}>
+                        <div className={'stat hvr-grow'} onClick={() => this.fitBoundsToggle()}>
                             <div className={'stat-top'}>
                                 <Icon className={'social-icon'} viewBox="0 0 40 40" size={25}>
                                     <g>

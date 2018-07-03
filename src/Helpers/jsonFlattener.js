@@ -18,19 +18,23 @@ const flattener = (obj, startRange, endRange) => {
         let segment = (endRange - startRange) / points;
         let filtered = [];
 
-        console.log(obj);
 
-        for (let i = 0; i < points + 5; i++) {
+        //Go through every point in the Array populating data into the appropriate segment
+        for (let i = 0; i < points + 2; i++) {
+
             if (i === 0) {
-                filtered = obj.filter((object) => {
 
+                //POPULATE THE X-AXIS (DISTANCE)
+                filtered = obj.filter((object) => {
                     return (object.distance <= i * segment)
                 });
             } else {
+
                 filtered = obj.filter((object) => {
                     return (object.distance <= i * segment && object.distance >= (i - 1) * segment)
                 });
             }
+
             holder[i] = {
                 distance: Math.round(segment * i * 100) / 100,
                 altitude: filtered.length > 0 ? filtered[filtered.length - 1].altitude : null,
@@ -38,7 +42,7 @@ const flattener = (obj, startRange, endRange) => {
             };
 
 
-            //indexSync is the corresponds with the marker Index {markerIndex: altitudeIndex}
+            //This is a lazy way of maintaining sync with the marker Index {markerIndex: altitudeIndex}
             if (filtered.length > 0) {
                 filtered.forEach((object) => {
                     indexMap[object.markerIndex] = i;
@@ -57,7 +61,7 @@ const flattener = (obj, startRange, endRange) => {
 
     return [result, indexMap];
 
-}
+};
 
 
 export default flattener;

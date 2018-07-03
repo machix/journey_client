@@ -103,12 +103,12 @@ class WeatherContainer extends Component {
     render() {
         return (
             <div className={'weather'}>
-                <div style={{position: 'relative', display: 'flex', justifyContent: 'center'}}>
-                    <Moon/>
+                <div className={'weather-icon-container'}>
+                    <Sun/>
                     <Cloud/>
                 </div>
 
-                <h3>14 &#8451; </h3>
+                14 &#8451;
 
             </div>
         );

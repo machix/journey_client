@@ -4,8 +4,9 @@ import {withRouter} from 'react-router-dom';
 import ReactPlayer from 'react-player';
 
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
     ...state,
+    poster: ownProps.poster
 });
 
 const mapDispatchToProps = dispatch => ({});
@@ -47,12 +48,10 @@ class Video extends Component {
                              height='100%'
                              url={this.props.url}
                              controls
-                             playing
-                             playsinline={true}
-                             autoPlay={true}
+                             playing                    // playsinline={true}
+                             autoPlay fileConfig={{attributes: {poster: this.props.poster}}}
                              onReady={() => {
-                                 console.log('onReadyCalled');
-                                 this.setState({...this.state, playing: true})
+
                              }}
                 />
             </div>

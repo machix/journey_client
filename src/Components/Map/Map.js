@@ -12,6 +12,8 @@ import mealMedium from '../Assets/meal-medium.svg'
 import mealLarge from '../Assets/meal-large.svg'
 import pickaxe from '../Assets/pickaxe.svg'
 import MapMarker from './MapMarker';
+import {mapStyle, dayMap} from '../../Helpers/mapStyles';
+
 
 const {MarkerClusterer} = require("react-google-maps/lib/components/addons/MarkerClusterer");
 
@@ -19,9 +21,12 @@ const {MarkerClusterer} = require("react-google-maps/lib/components/addons/Marke
 const mapStateToProps = state => ({
     altitudeVisible: state.mapview.altitudeVisible,
     fitBounds: state.mapview.fitBounds,
+    currentIndex: state.mapview.currentIndex,
+
 
     liveJourneyData: state.common.liveJourneyData,
-    currentIndex: state.mapview.currentIndex
+    windowHeight: state.common.windowHeight,
+    windowWidth: state.common.windowWidth,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -76,17 +81,22 @@ class Map extends Component {
 
 
     componentWillReceiveProps(nextProps) {
-        //This is for receive the currentIndex from other things like the AltitudePreview
-        // if (nextProps.currentIndex !== this.props.currentIndex) {
-        //     this.panTo(nextProps.currentIndex);
-        // }
-        if (nextProps.altitudeVisible === true) {
-            this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, 100);
-        } else if (nextProps.altitudeVisible === false) {
-            this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, 0);
+        // This is for receive the currentIndex from other things like the AltitudePreview
+        if (nextProps.currentIndex !== this.props.currentIndex) {
+            console.log('Panto Called. The current Index does not match the future index');
+            this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, this.props.windowWidth > 800 ? 0 : -200);
+        }
+        if (this.props.altitudeVisible !== nextProps.altitudeVisible &&  nextProps.altitudeVisible === true) {
+            console.log('Altitude Toggled On');
+            this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, this.props.windowWidth > 800 ? 100 : 40);
+        } else if (this.props.altitudeVisible !== nextProps.altitudeVisible  && nextProps.altitudeVisible === false) {
+            console.log('Altitude Toggled Off');
+            this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, this.props.windowWidth > 800 ? 0 : -200);
+        } else if (this.props.altitudeVisible == nextProps.altitudeVisible &&  nextProps.altitudeVisible === true) {
+            this.panToWithOffset(this.props.liveJourneyData[nextProps.currentIndex].coordinates, 0, this.props.windowWidth > 800 ? 100 : 40);
         }
 
-        if (nextProps.fitBounds === true) {
+        if (nextProps.fitBounds !== this.props.fitBounds) {
             this.fitBounds();
         }
     }
@@ -149,6 +159,7 @@ class Map extends Component {
                 center={this.props.coordinates[0].coordinates}
                 ref={c => this.map = c}
                 mapTypeId="terrain"
+                defaultOptions={{ styles: dayMap }}
 
             >
                 <MarkerClusterer
